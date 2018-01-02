@@ -469,19 +469,19 @@ Let $n \geq 1$.
 Consider the functor which associates
 to any scheme $T$ the group
 $$
-\text{GL}_n(\Gamma(T, \mathcal{O}_T))
+\GL_n(\Gamma(T, \mathcal{O}_T))
 $$
 of invertible $n \times n$ matrices over
 the global sections of the structure sheaf.
 This is representable by the scheme
 $$
-\text{GL}_n = \Spec(\mathbf{Z}[\{x_{ij}\}_{1 \leq i, j \leq n}][1/d])
+\GL_n = \Spec(\mathbf{Z}[\{x_{ij}\}_{1 \leq i, j \leq n}][1/d])
 $$
 where $d = \det((x_{ij}))$ with $(x_{ij})$ the $n \times n$ matrix
 with entry $x_{ij}$ in the $(i, j)$-spot.
 The morphism giving the group structure is the morphism
 \begin{eqnarray*}
-\text{GL}_n \times \text{GL}_n & \to & \text{GL}_n \\
+\GL_n \times \text{GL}_n & \to & \text{GL}_n \\
 \Spec(\mathbf{Z}[x_{ij}, 1/d] \otimes_{\mathbf{Z}}
 \mathbf{Z}[x_{ij}, 1/d])
 & \to &
@@ -491,13 +491,13 @@ The morphism giving the group structure is the morphism
 \mathbf{Z}[x_{ij}, 1/d] \\
 \sum x_{ik} \otimes x_{kj} & \leftarrow & x_{ij}
 \end{eqnarray*}
-Hence we see that $\text{GL}_n$ is a group scheme over $\mathbf{Z}$.
-For any scheme $S$ the base change $\text{GL}_{n, S}$ is a
+Hence we see that $\GL_n$ is a group scheme over $\mathbf{Z}$.
+For any scheme $S$ the base change $\GL_{n, S}$ is a
 group scheme over $S$ whose functor of points is
 $$
 T/S
 \longmapsto
-\text{GL}_{n, S}(T) = \text{GL}_n(T) =\text{GL}_n(\Gamma(T, \mathcal{O}_T))
+\GL_{n, S}(T) = \text{GL}_n(T) =\text{GL}_n(\Gamma(T, \mathcal{O}_T))
 $$
 as before.
 \end{example}
@@ -506,10 +506,10 @@ as before.
 \label{example-determinant}
 The determinant defines a morphism of group schemes
 $$
-\det : \text{GL}_n \longrightarrow \mathbf{G}_m
+\det : \GL_n \longrightarrow \mathbf{G}_m
 $$
 over $\mathbf{Z}$. By base change it gives a morphism
-of group schemes $\text{GL}_{n, S} \to \mathbf{G}_{m, S}$
+of group schemes $\GL_{n, S} \to \mathbf{G}_{m, S}$
 over any base scheme $S$.
 \end{example}
 
@@ -1469,14 +1469,14 @@ as a $k$-vector space
 Since every automorphism of $G_n$ induces in particular an invertible
 linear map $A_n \to A_n$, we obtain transformations of functors
 $$
-G \to \text{Aut}(G) \to \text{Aut}(G_n) \to \text{GL}(A_n)
+G \to \text{Aut}(G) \to \text{Aut}(G_n) \to \GL(A_n)
 $$
 The final group valued functor is representable, see
 Example \ref{example-general-linear-group}, and the
 last arrow is visibly injective.
 Thus for every $n$ we obtain a closed subgroup scheme
 $$
-H_n = \Ker(G \to \text{Aut}(G_n)) = \Ker(G \to \text{GL}(A_n)).
+H_n = \Ker(G \to \text{Aut}(G_n)) = \Ker(G \to \GL(A_n)).
 $$
 As a first approximation we set $H = \bigcap_{n \geq 1} H_n$
 (scheme theoretic intersection). This is a closed subgroup scheme
@@ -2136,8 +2136,8 @@ If $S$ is the spectrum of a field, then the answer to (1) is yes
 because then $\{X \to S\}$ is a fpqc covering trivializing $X$.
 If $G \to S$ is affine, then the answer to (2) is yes
 (insert future reference here).
-If $G = \text{GL}_{n, S}$ then the answer to (3) is yes
-and in fact any $\text{GL}_{n, S}$-torsor is locally trivial
+If $G = \GL_{n, S}$ then the answer to (3) is yes
+and in fact any $\GL_{n, S}$-torsor is locally trivial
 (insert future reference here).
 \end{remark}
 
@@ -3957,15 +3957,15 @@ locally free.
 
 \begin{example}
 \label{example-quotient-projective-line}
-Let $k$ be a field. Let $U = \text{GL}_{2, k}$. Let $B \subset \text{GL}_2$
+Let $k$ be a field. Let $U = \GL_{2, k}$. Let $B \subset \text{GL}_2$
 be the closed subgroup scheme of upper triangular matrices.
-Then the quotient sheaf $\text{GL}_{2, k}/B$ (in the Zariski, \'etale or
+Then the quotient sheaf $\GL_{2, k}/B$ (in the Zariski, \'etale or
 fppf topology, see Definition \ref{definition-quotient-sheaf}) is
-representable by the projective line: $\mathbf{P}^1 = \text{GL}_{2, k}/B$.
+representable by the projective line: $\mathbf{P}^1 = \GL_{2, k}/B$.
 (Details omitted.)
 On the other hand, the ring of invariant functions in this case is just $k$.
 Note that in this case the morphisms
-$s, t : R = \text{GL}_{2, k} \times_k B \to \text{GL}_{2, k} = U$ are smooth
+$s, t : R = \GL_{2, k} \times_k B \to \text{GL}_{2, k} = U$ are smooth
 of relative dimension $3$.
 \end{example}
 

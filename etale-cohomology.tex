@@ -8599,7 +8599,7 @@ we denote $\xi_A$ the corresponding cohomology class in
 $H^1(\text{Gal}(K^{sep}/K), \text{PGL}_d(K^{sep}))$.
 Consider the short exact sequence
 $$
-1 \to (K^{sep})^* \to \text{GL}_d(K^{sep}) \to \text{PGL}_d(K^{sep}) \to 1,
+1 \to (K^{sep})^* \to \GL_d(K^{sep}) \to \text{PGL}_d(K^{sep}) \to 1,
 $$
 which gives rise to a long exact cohomology sequence (up to degree 2) with
 coboundary map
@@ -8619,7 +8619,7 @@ class of the 2-cocycle
 \tilde g_\sigma^{-1} \tilde g_{\sigma \tau} \sigma(\tilde g_\tau^{-1})
 \in (K^{sep})^*
 \end{equation}
-where $\tilde g_\sigma \in \text{GL}_d(K^{sep})$ is a lift of $g_\sigma$.
+where $\tilde g_\sigma \in \GL_d(K^{sep})$ is a lift of $g_\sigma$.
 Using this we can make explicit the map
 $$
 \delta : \text{Br}(K) \longrightarrow H^2(\text{Gal}(K^{sep}/K), (K^{sep})^*),
@@ -8644,8 +8644,8 @@ defined above is a group isomorphism.
 \begin{proof}[Sketch of proof]
 In the abelian case ($d = 1$), one has the identification
 $$
-H^1(\text{Gal}(K^{sep}/K), \text{GL}_d(K^{sep})) =
-H_\etale^1(\Spec(K), \text{GL}_d(\mathcal{O}))
+H^1(\text{Gal}(K^{sep}/K), \GL_d(K^{sep})) =
+H_\etale^1(\Spec(K), \GL_d(\mathcal{O}))
 $$
 the latter of which is trivial by fpqc descent. If this were true in the
 non-abelian case, this would readily imply injectivity of $\delta$. (See
@@ -16068,7 +16068,7 @@ a correspondence between finite locally constant sheaves $\mathcal{F}$ on
 $C_\etale$ whose stalks are isomorphic to
 ${(\mathbf{Z}/\ell^n\mathbf{Z})}^{\oplus m}$ on the one hand, and continuous
 representations $\rho : \pi_1 (C, \bar c) \to
-\text{GL}_m(\mathbf{Z}/\ell^n\mathbf{Z}))$ (for some fixed choice of $\bar c$)
+\GL_m(\mathbf{Z}/\ell^n\mathbf{Z}))$ (for some fixed choice of $\bar c$)
 on the other hand. We denote $\mathcal{F}_\rho$ the sheaf corresponding to
 $\rho$. Then $H^2 (C_{\bar k}, \mathcal{F}_\rho)$ is the group of coinvariants
 for the action of $\rho(\pi_1 (C, \bar c))$ on
@@ -18942,7 +18942,7 @@ $$
 In particular lisse $\mathbf{Q}_l$-sheaves correspond to continuous
 homomorphisms
 $$
-\pi_1(X, \overline{x}) \to \text{GL}_r(\mathbf{Q}_l), \quad r\geq 0
+\pi_1(X, \overline{x}) \to \GL_r(\mathbf{Q}_l), \quad r\geq 0
 $$
 
 \noindent
@@ -18954,7 +18954,7 @@ $\mathcal{F}_\rho$.
 \begin{enumerate}
 \item $\Lambda$ finite ring $(\# \Lambda, \# k)=1$
 $$
-\rho : \pi_1(X, \overline{x})\to \text{GL}_r(\Lambda)
+\rho : \pi_1(X, \overline{x})\to \GL_r(\Lambda)
 $$
 continuous. For every $n\geq 1$ we have
 $$
@@ -18965,7 +18965,7 @@ $$
 (\pi_x^n)^* |_{R\Gamma_c(X_{\overline{k}}, \mathcal{F}_\rho)}\right)
 $$
 \item $l\neq char(k)$ prime, $\rho : \pi_1(X, \overline{x})\to
-\text{GL}_r(\mathbf{Q}_l)$. For any $n\geq 1$
+\GL_r(\mathbf{Q}_l)$. For any $n\geq 1$
 $$
 \sum_{d|n} d\left(
 \sum_{x\in |X| \atop \deg(x)=d}
@@ -18990,7 +18990,7 @@ $\# k = q$, then the eigenvalues of $\pi_X^*$ on $H^i(X_{\overline{k}},
 {\bf Deligne's conjectures.} (almost completely proved by
 Lafforgue + $\ldots$) Let $X$ be a normal variety over $k$ finite
 $$
-\rho : \pi_1(X, \overline{x}) \longrightarrow \text{GL}_r(\mathbf{Q}_l)
+\rho : \pi_1(X, \overline{x}) \longrightarrow \GL_r(\mathbf{Q}_l)
 $$
 continuous. Assume: $\rho$ irreducible $\det(\rho)$ of finite order. Then
 \begin{enumerate}
@@ -19002,7 +19002,7 @@ r$ of $\rho(F_x)$ have complex absolute value $1$.
 \item for every finite place $\lambda$( not dividing $p$), of $E$
 (maybe after enlarging $E$ a bit) there exists
 $$
-\rho\lambda : \pi_1(X, \overline{x}) \to \text{GL}_r(E_\lambda)
+\rho\lambda : \pi_1(X, \overline{x}) \to \GL_r(E_\lambda)
 $$
 compatible with $\rho$. (some char. polys of $F_x$'s)
 \end{enumerate}
@@ -19405,19 +19405,19 @@ and we let $\Lambda$ be any ring with $p$ invertible in $\Lambda$.
 
 \begin{definition}
 \label{definition-unramified}
-An {\it unramified cusp form on $\text{GL}_2(\mathbf{A})$ with values in
+An {\it unramified cusp form on $\GL_2(\mathbf{A})$ with values in
 $\Lambda$}\footnote{This is likely nonstandard notation.}
 is a function
 $$
-f : \text{GL}_2(\mathbf{A}) \to \Lambda
+f : \GL_2(\mathbf{A}) \to \Lambda
 $$
 such that
 \begin{enumerate}
-\item $f(x\gamma) = f(x)$ for all $x\in \text{GL}_2(\mathbf{A})$ and all
-$\gamma\in \text{GL}_2(K)$
-\item $f(ux) = f(x)$ for all $x\in \text{GL}_2(\mathbf{A})$ and all
-$u\in \text{GL}_2(O)$
-\item for all $x\in \text{GL}_2(\mathbf{A})$,
+\item $f(x\gamma) = f(x)$ for all $x\in \GL_2(\mathbf{A})$ and all
+$\gamma\in \GL_2(K)$
+\item $f(ux) = f(x)$ for all $x\in \GL_2(\mathbf{A})$ and all
+$u\in \GL_2(O)$
+\item for all $x\in \GL_2(\mathbf{A})$,
 $$
 \int_{\mathbf{A} \mod K} f
 \left(x
@@ -19459,8 +19459,8 @@ M_v =
 \left\{
 h\in Mat(2\times 2, O_v) | \det h = \pi_vO_v^*\right\}
 $$
-and $dg = $ is the Haar measure on $\text{GL}_2(K_v)$ with
-$\int_{\text{GL}_2(O_v)} dg = 1$. Explicitly we have
+and $dg = $ is the Haar measure on $\GL_2(K_v)$ with
+$\int_{\GL_2(O_v)} dg = 1$. Explicitly we have
 $$
 T_v(f)(x) =
 f\left(
@@ -19494,7 +19494,7 @@ Given an eigenform $f$ with values in
 $\overline{\mathbf{Q}}_l$ and eigenvalues
 $u_v\in \overline{\mathbf{Z}}_l^*$ then there exists
 $$
-\rho : \pi_1(X)\to \text{GL}_2(E)
+\rho : \pi_1(X)\to \GL_2(E)
 $$
 continuous, absolutely irreducible where
 $E$ is a finite extension of $\mathbf{Q}_\ell$ contained in
@@ -19511,7 +19511,7 @@ See \cite{D0}.
 \label{theorem-drinfeld-make-f}
 Suppose $\mathbf{Q}_l \subset E$ finite, and
 $$
-\rho : \pi_1(X)\to \text{GL}_2(E)
+\rho : \pi_1(X)\to \GL_2(E)
 $$
 absolutely irreducible, continuous. Then there exists an eigenform $f$ with
 values in $\overline{\mathbf{Q}}_l$ whose eigenvalues $t_v$, $u_v$
@@ -19526,9 +19526,9 @@ See \cite{D1}.
 \begin{remark}
 \label{remark-lafforgue}
 We now have, thanks to Lafforgue and many other mathematicians,
-complete theorems like this two above for $\text{GL}_n$
+complete theorems like this two above for $\GL_n$
 and allowing ramification!
-In other words, the full global Langlands correspondence for $\text{GL}_n$
+In other words, the full global Langlands correspondence for $\GL_n$
 is known for function fields of curves over finite fields. At the same
 time this does not mean there aren't a lot of interesting questions left
 to answer about the fundamental groups of curves over finite fields, as
@@ -19649,7 +19649,7 @@ one arrives at the following conjecture.
 (See \cite{dJ-conjecture})
 For any continuous
 $$
-\rho : \pi_1(X)\to \text{GL}_n(\mathbf{F}_l[[t]])
+\rho : \pi_1(X)\to \GL_n(\mathbf{F}_l[[t]])
 $$
 we have $\# \rho(\pi_1(X_{\overline{k}}))<\infty$.
 
@@ -19686,7 +19686,7 @@ the much more down to earth application as follows.
 (See \cite[Theorem 3.5]{dJ-conjecture})
 Suppose
 $$
-\rho_0: \pi_1(X)\to \text{GL}_n(\mathbf{F}_l)
+\rho_0: \pi_1(X)\to \GL_n(\mathbf{F}_l)
 $$
 is a continuous, $l\neq p$. Assume
 \begin{enumerate}
@@ -19700,12 +19700,12 @@ finite flat over $\mathbf{Z}_l$.
 
 \noindent
 Explanation: There is a representation $\rho_{\text{univ}}:
-\pi_1(X)\to \text{GL}_n(R_{\text{univ}})$ (Univ. Defo ring)
+\pi_1(X)\to \GL_n(R_{\text{univ}})$ (Univ. Defo ring)
 $R_{\text{univ}}$ loc.
 complete, residue field $\mathbf{F}_l$ and $(R_{\text{univ}}\to
 \mathbf{F}_l)\circ\rho_{\text{univ}}\cong\rho_0$.
 And given any $R\to \mathbf{F}_l$, $R$ local complete and
-$\rho : \pi_1(X)\to \text{GL}_n(R)$ then there exists
+$\rho : \pi_1(X)\to \GL_n(R)$ then there exists
 $\psi : R_{\text{univ}}\to R$ such that
 $\psi\circ\rho_{\text{univ}}\cong \rho$. The theorem says that the morphism
 $$
@@ -19714,7 +19714,7 @@ $$
 \Spec(\mathbf{Z}_l)
 $$
 is finite and flat. In particular, such a $\rho_0$
-lifts to a $\rho : \pi_1(X) \to \text{GL}_n(\overline{\mathbf{Q}}_l)$.
+lifts to a $\rho : \pi_1(X) \to \GL_n(\overline{\mathbf{Q}}_l)$.
 
 \medskip\noindent
 Notes:

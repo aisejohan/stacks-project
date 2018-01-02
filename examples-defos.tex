@@ -271,7 +271,7 @@ Let $\mathcal{F}$ be the category defined as follows
 \begin{enumerate}
 \item an object is a triple $(A, M, \rho)$ consisting of an
 object $A$ of $\mathcal{C}_\Lambda$, a finite projective $A$-module $M$,
-and a homomorphism $\rho : \Gamma \to \text{GL}_A(M)$, and
+and a homomorphism $\rho : \Gamma \to \GL_A(M)$, and
 \item a morphism $(f, g) : (B, N, \tau) \to (A, M, \rho)$ consists of
 a morphism $f : B \to A$ in $\mathcal{C}_\Lambda$ together
 with a map $g : N \to M$ which is $f$-linear and $\Gamma$-equivariant
@@ -280,7 +280,7 @@ and induces an isomorpism $N \otimes_{B, f} A \cong M$.
 The functor $p : \mathcal{F} \to \mathcal{C}_\Lambda$ sends $(A, M, \rho)$
 to $A$ and $(f, g)$ to $f$. It is clear that $p$ is cofibred in groupoids.
 Given a finite dimensional $k$-vector space $V$ and a representation
-$\rho_0 : \Gamma \to \text{GL}_k(V)$,
+$\rho_0 : \Gamma \to \GL_k(V)$,
 let $x_0 = (k, V, \rho_0)$ be the corresponding object of $\mathcal{F}(k)$.
 We set
 $$
@@ -300,8 +300,8 @@ $$
 =
 \coprod\nolimits_{n \geq 0}\quad
 \begin{matrix}
-\text{GL}_n(A)\text{-conjugacy classes of}\\
-\text{homomorphisms }\rho : \Gamma \to \text{GL}_n(A)
+\GL_n(A)\text{-conjugacy classes of}\\
+\text{homomorphisms }\rho : \Gamma \to \GL_n(A)
 \end{matrix}
 $$
 This is already more interesting than the discussion in
@@ -313,7 +313,7 @@ Example \ref{example-representations}
 satisfies the Rim-Schlessinger condition (RS).
 In particular, $\Deformationcategory_{V, \rho_0}$ is a deformation category
 for any finite dimensional representation
-$\rho_0 : \Gamma \to \text{GL}_k(V)$.
+$\rho_0 : \Gamma \to \GL_k(V)$.
 \end{lemma}
 
 \begin{proof}
@@ -338,7 +338,7 @@ $A_1 \times_A A_2$-module $M_1 \times_\varphi M_2$.
 Since $\varphi$ is compatible with the given actions we obtain
 $$
 \rho_1 \times \rho_2 : \Gamma \longrightarrow
-\text{GL}_{A_1 \times_A A_2}(M_1 \times_\varphi M_2)
+\GL_{A_1 \times_A A_2}(M_1 \times_\varphi M_2)
 $$
 Then $(M_1 \times_\varphi M_2, \rho_1 \times \rho_2)$
 is an object of $\mathcal{F}(A_1 \times_A A_2)$.
@@ -348,7 +348,7 @@ This construction determines a quasi-inverse to our functor.
 \begin{lemma}
 \label{lemma-representations-TI}
 In Example \ref{example-representations} let 
-$\rho_0 : \Gamma \to \text{GL}_k(V)$
+$\rho_0 : \Gamma \to \GL_k(V)$
 be a finite dimensional representation. Then
 $$
 T\Deformationcategory_{V, \rho_0} = \Ext^1_{k[\Gamma]}(V, V) =
@@ -365,7 +365,7 @@ if $\Gamma$ is finitely generated.
 \begin{proof}
 We first deal with the infinitesimal automorphisms.
 Let $M = V \otimes_k k[\epsilon]$ with induced action
-$\rho_0' : \Gamma \to \text{GL}_n(M)$.
+$\rho_0' : \Gamma \to \GL_n(M)$.
 Then an infinitesimal automorphism, i.e., an element of
 $\text{Inf}(\Deformationcategory_{V, \rho_0})$,
 is given by an automorphism
@@ -425,8 +425,8 @@ Let $\mathcal{F}$ be the category defined as follows
 \begin{enumerate}
 \item an object is a triple $(A, M, \rho)$ consisting of an
 object $A$ of $\mathcal{C}_\Lambda$, a finite projective $A$-module $M$,
-and a continuous homomorphism $\rho : \Gamma \to \text{GL}_A(M)$
-where $\text{GL}_A(M)$ is given the discrete topology\footnote{An alternative
+and a continuous homomorphism $\rho : \Gamma \to \GL_A(M)$
+where $\GL_A(M)$ is given the discrete topology\footnote{An alternative
 would be to require the $A$-module $M$ with $G$-action given by $\rho$
 is an $A\text{-}G$-module as defined in \'Etale Cohomology, Definition
 \ref{etale-cohomology-definition-G-module-continuous}. However,
@@ -439,7 +439,7 @@ and induces an isomorpism $N \otimes_{B, f} A \cong M$.
 The functor $p : \mathcal{F} \to \mathcal{C}_\Lambda$ sends $(A, M, \rho)$
 to $A$ and $(f, g)$ to $f$. It is clear that $p$ is cofibred in groupoids.
 Given a finite dimensional $k$-vector space $V$ and a
-continuous representation $\rho_0 : \Gamma \to \text{GL}_k(V)$,
+continuous representation $\rho_0 : \Gamma \to \GL_k(V)$,
 let $x_0 = (k, V, \rho_0)$ be the corresponding object of $\mathcal{F}(k)$.
 We set
 $$
@@ -459,8 +459,8 @@ $$
 =
 \coprod\nolimits_{n \geq 0}\quad
 \begin{matrix}
-\text{GL}_n(A)\text{-conjugacy classes of}\\
-\text{continuous homomorphisms }\rho : \Gamma \to \text{GL}_n(A)
+\GL_n(A)\text{-conjugacy classes of}\\
+\text{continuous homomorphisms }\rho : \Gamma \to \GL_n(A)
 \end{matrix}
 $$
 
@@ -470,7 +470,7 @@ Example \ref{example-continuous-representations}
 satisfies the Rim-Schlessinger condition (RS).
 In particular, $\Deformationcategory_{V, \rho_0}$ is a deformation category
 for any finite dimensional continuous representation
-$\rho_0 : \Gamma \to \text{GL}_k(V)$.
+$\rho_0 : \Gamma \to \GL_k(V)$.
 \end{lemma}
 
 \begin{proof}
@@ -481,7 +481,7 @@ Lemma \ref{lemma-representations-RS}.
 \begin{lemma}
 \label{lemma-continuous-representations-TI}
 In Example \ref{example-continuous-representations} let
-$\rho_0 : \Gamma \to \text{GL}_k(V)$ be a finite dimensional
+$\rho_0 : \Gamma \to \GL_k(V)$ be a finite dimensional
 continuous representation. Then
 $$
 T\Deformationcategory_{V, \rho_0} = H^1(\Gamma, \text{End}_k(V))
