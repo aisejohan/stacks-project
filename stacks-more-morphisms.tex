@@ -714,7 +714,7 @@ in the calculus of $2$-categories of Categories, Sections
 \ref{categories-section-formal-cat-cat} and
 \ref{categories-section-2-categories} this reads
 $$
-\beta = (\gamma \star \text{id}_j) \circ (\alpha \star \text{id}_f)
+\beta = (\gamma \star \id_j) \circ (\alpha \star \text{id}_f)
 $$
 (more succinctly: $\beta = j^*\gamma \circ f^*\alpha$).
 Another formulation is that objects are commutative diagrams
@@ -765,10 +765,10 @@ Namely, set $b = a \circ f$. Let $f' : V' \to U'$ be the \'etale morphism
 whose restriction to $V$ is $f$ (More on Morphisms of Spaces,
 Lemma \ref{spaces-more-morphisms-lemma-topological-invariance}).
 Denote $j : V \to V'$ the corresponding thickening.
-Let $y' = x' \circ f'$ and $\gamma = \text{id} : x' \circ f' \to y'$.
+Let $y' = x' \circ f'$ and $\gamma = \id : x' \circ f' \to y'$.
 Set
 $$
-\beta = \alpha \star \text{id}_f :
+\beta = \alpha \star \id_f :
 x \circ b = x \circ a \circ f \to
 x' \circ i \circ f = x' \circ f' \circ j = y' \circ j
 $$
@@ -1055,7 +1055,7 @@ replacing $W'$ by an \'etale covering.
 
 \medskip\noindent
 If this is true, then we can set $f''_k = q' \circ \delta_k$
-and $\gamma_k = \gamma \star \text{id}_{\delta_k}$ (more succinctly
+and $\gamma_k = \gamma \star \id_{\delta_k}$ (more succinctly
 $\gamma_k = \delta_k^*\gamma$). Namely, the only thing left to show
 at this is that the morphism $f''_k$ is \'etale.
 By construction the morphism $x' \circ p'$ is $2$-isomorphic
@@ -1159,8 +1159,8 @@ is smooth as a base change.
 \medskip\noindent
 A section of $\mathit{Aut}(\xi)$ over $U$ is a morphism $\delta' : U' \to I'$
 such that $\delta'|_U = \Delta$ and such that
-$p' \circ \delta' = \text{id}_{U'}$. To be explicit,
-$(\text{id}_U, q' \circ \delta', (\delta')^*\gamma) : \xi \to \xi$
+$p' \circ \delta' = \id_{U'}$. To be explicit,
+$(\id_U, q' \circ \delta', (\delta')^*\gamma) : \xi \to \xi$
 is a formula for the corresponding automorphism.
 More generally, if
 $f : V \to U$ is an \'etale morphism, then there is a thickening
@@ -1172,9 +1172,9 @@ Lemma \ref{lemma-gerbe-of-lifts-fibred}.
 $\delta' : V' \to I'$
 such that $\delta'|_V = \Delta \circ f$
 and $p' \circ \delta' = f'$\footnote{A formula for the corresponding
-automorphism is $(\text{id}_V, h', (\delta')^*\gamma)$.
+automorphism is $(\id_V, h', (\delta')^*\gamma)$.
 Here $h' : V' \to V'$ is the unique (iso)morphism such that
-$h'|_V = \text{id}_V$ and such that
+$h'|_V = \id_V$ and such that
 $$
 \xymatrix{
 V' \ar[r]_{h'} \ar[rd]_{q' \circ \delta'} & V' \ar[d]^{f'} \\
@@ -1187,7 +1187,7 @@ Theorem \ref{spaces-more-morphisms-theorem-topological-invariance}.
 The reader may feel we should instead look at morphisms
 $\delta'' : V' \to V' \times_{\mathcal{X}'} V'$ with
 $\delta'' \circ j = \Delta_{V'/\mathcal{X}'}$ and
-$\text{pr}_1 \circ \delta'' = \text{id}_{V'}$.
+$\text{pr}_1 \circ \delta'' = \id_{V'}$.
 This would be fine too: as $V' \times_{\mathcal{X}'} V' \to I'$ is \'etale,
 the same topological invariance tells us that sending
 $\delta''$ to $\delta' = (V' \times_{\mathcal{X}'} V' \to I') \circ \delta''$
@@ -1200,7 +1200,7 @@ the sheaf defined in
 More on Morphisms of Spaces, Remark
 \ref{spaces-more-morphisms-remark-another-special-case}
 for the thickenings $(U \subset U')$ and $(I \subset I')$ over
-$(U \subset U')$ via $\text{id}_{U'}$ and $p'$.
+$(U \subset U')$ via $\id_{U'}$ and $p'$.
 The diagonal $\Delta'$ is a section of this sheaf and by
 acting on this section using More on Morphisms of Spaces, Lemma
 \ref{spaces-more-morphisms-lemma-action-sheaf}
@@ -1260,7 +1260,7 @@ $$
 $$
 corresponding to sections of $\mathit{Aut}(\xi)$ over $U$ as above,
 in other words, we have $\delta'_i|U = \Delta_U$ and
-$p' \circ \delta'_i = \text{id}_{U'}$. Then the composition
+$p' \circ \delta'_i = \id_{U'}$. Then the composition
 in $\mathit{Aut}(\xi)$ is
 $$
 \delta'_1 \circ \delta'_2 = c'(\delta'_1 \circ q' \circ \delta'_2, \delta'_2)
@@ -1688,20 +1688,20 @@ a {\it dotted arrow} is a triple $(x', \alpha, \beta)$ consisting of a
 morphism $x' : T' \to \mathcal{X}$ and $2$-arrows
 $\alpha : x' \circ i \to x$, $\beta : y \to f \circ x'$
 such that
-$\gamma = (\text{id}_f \star \alpha) \circ (\beta \star \text{id}_i)$,
+$\gamma = (\id_f \star \alpha) \circ (\beta \star \text{id}_i)$,
 in other words such that
 $$
 \xymatrix{
-& f \circ x' \circ i \ar[rd]^{\text{id}_f \star \alpha} \\
-y \circ i \ar[ru]^{\beta \star \text{id}_i} \ar[rr]^\gamma & &
+& f \circ x' \circ i \ar[rd]^{\id_f \star \alpha} \\
+y \circ i \ar[ru]^{\beta \star \id_i} \ar[rr]^\gamma & &
 f \circ x
 }
 $$
 is commutative. A {\it morphism of dotted arrows}
 $(x'_1, \alpha_1, \beta_1) \to (x'_2, \alpha_2, \beta_2)$ is a
 $2$-arrow $\theta : x'_1 \to x'_2$ such that
-$\alpha_1 = \alpha_2 \circ (\theta \star \text{id}_i)$ and
-$\beta_2 = (\text{id}_f \star \theta) \circ \beta_1$.
+$\alpha_1 = \alpha_2 \circ (\theta \star \id_i)$ and
+$\beta_2 = (\id_f \star \theta) \circ \beta_1$.
 
 \begin{lemma}
 \label{lemma-reformulate-formal-smoothness}
@@ -2032,7 +2032,7 @@ described in the next paragraph.
 Assume there exists $n \geq 0$, quasi-compact opens
 $W_i \subset Y$, $i = 1, \ldots, n$, and
 morphisms $x_i : W_i \to \mathcal{X}$ such that
-(a) $f \circ x_i = \text{id}_{W_i}$,
+(a) $f \circ x_i = \id_{W_i}$,
 (b) $W = \bigcup_{i = 1, \ldots, n} W_i$ contains $V$, and
 (c) $W$ is the image of $|f|$.
 We will use induction on $n$. The base case is $n = 0$: this
@@ -2068,7 +2068,7 @@ the next paragraph.
 Assume there exists $n \geq 0$, quasi-compact opens
 $W_i \subset Y$, $i = 1, \ldots, n$, and
 morphisms $x_i : W_i \to \mathcal{X}$ such that
-(a) $f \circ x_i = \text{id}_{W_i}$,
+(a) $f \circ x_i = \id_{W_i}$,
 (b) $W = \bigcup_{i = 1, \ldots, n} W_i$ contains $V$,
 (c) $W$ is the image of $|f|$, and
 (d) $V \subset W_1 \cap \ldots \cap W_n$.
@@ -2090,7 +2090,7 @@ in the next paragraph.
 Assume there exists $n \geq 0$, quasi-compact opens
 $W_i \subset Y$, $i = 1, \ldots, n$, and
 morphisms $x_i : W_i \to \mathcal{X}$ such that
-(a) $f \circ x_i = \text{id}_{W_i}$,
+(a) $f \circ x_i = \id_{W_i}$,
 (b) $W = \bigcup_{i = 1, \ldots, n} W_i$ contains $V$,
 (c) $W$ is the image of $|f|$,
 (d) $V \subset W_1 \cap \ldots \cap W_n$, and
@@ -2120,7 +2120,7 @@ This leads us to the situation described in the next paragraph.
 Assume there exists $n \geq 0$, quasi-compact opens
 $W_i \subset Y$, $i = 1, \ldots, n$, and
 morphisms $x_i : W_i \to \mathcal{X}$ such that
-(a) $f \circ x_i = \text{id}_{W_i}$,
+(a) $f \circ x_i = \id_{W_i}$,
 (b) $W = \bigcup_{i = 1, \ldots, n} W_i$ contains $V$,
 (c) $W$ is the image of $|f|$,
 (d) $V \subset W_1 \cap \ldots \cap W_n$, and
@@ -2148,7 +2148,7 @@ over $Y$ we get to the situation described in the next paragraph.
 Assume there exists $n \geq 0$, quasi-compact opens
 $W_i \subset Y$, $i = 1, \ldots, n$, and
 morphisms $x_i : W_i \to \mathcal{X}$ such that
-(a) $f \circ x_i = \text{id}_{W_i}$,
+(a) $f \circ x_i = \id_{W_i}$,
 (b) $W = \bigcup_{i = 1, \ldots, n} W_i$ contains $V$,
 (c) $W$ is the image of $|f|$,
 (d) $V \subset W_1 \cap \ldots \cap W_n$, and
@@ -2179,7 +2179,7 @@ Since $x$ is a section of the separated morphism
 $\mathcal{X} \to W$ we see that $x$ is proper
 (Morphisms of Stacks, Lemma \ref{stacks-morphisms-lemma-section-immersion}).
 Thus the lemma now holds with $\overline{Z} = Y$,
-$Z = W$, $\overline{g} = \text{id}_Y$, $g = \text{id}_W$,
+$Z = W$, $\overline{g} = \id_Y$, $g = \text{id}_W$,
 $h = x$.
 \end{proof}
 

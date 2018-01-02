@@ -526,7 +526,7 @@ It is the unique map so that for all $(U, \phi) \in \Ob(\mathcal{I}_V)$
 the diagram
 $$
 \xymatrix{
-\mathcal{F}(U) \ar[r]^{c(\phi)} \ar[d]_{\text{id}}
+\mathcal{F}(U) \ar[r]^{c(\phi)} \ar[d]_{\id}
 &
 u_p\mathcal{F}(V) \ar[d]^{g^*}
 \\
@@ -547,7 +547,7 @@ which is compatible with restriction maps
 \end{lemma}
 
 \begin{proof}
-This is just the map $c(\text{id}_{u(U)})$ introduced above.
+This is just the map $c(\id_{u(U)})$ introduced above.
 \end{proof}
 
 \noindent
@@ -817,7 +817,7 @@ $\{\varphi_i : U_i \to U\}_{i \in I}$ such that $I$ is countable.
 \begin{example}
 \label{example-indiscrete}
 Let $\mathcal{C}$ be a category. There is a canonical way to turn this
-into a site where $\{\text{id}_U : U \to U\}$ are the coverings.
+into a site where $\{\id_U : U \to U\}$ are the coverings.
 Sheaves on this site are the presheaves on $\mathcal{C}$.
 This corresponding topology is called the {\it chaotic} or
 {\it indiscrete topology}.
@@ -1204,7 +1204,7 @@ $$
 in $\mathcal{F}(U_i \times_U U_{i'})$ for all pairs $(i, i') \in I \times I$.
 Then we can define $s_j = \psi_j^*s_{\beta(j)}$. For any pair
 $(j, j') \in J \times J$ the morphism
-$\psi_j \times_{\text{id}_U} \psi_{j'} : V_j \times_U V_{j'} \to
+$\psi_j \times_{\id_U} \psi_{j'} : V_j \times_U V_{j'} \to
 U_{\beta(j)} \times_U U_{\beta(j')}$ is an isomorphism as well.
 Hence by transport of structure we see that
 $$
@@ -1296,7 +1296,7 @@ Also, the family
 $\mathcal{V}' = \{V_j \times_U U_{i_0} \to U_{i_0}\}_{j \in J}$
 is an element of $\text{Cov}_2$.
 Then $\mathcal{V}'$ refines $\mathcal{U}'$
-via $\alpha : J \to I$ and the maps $f'_j = f_j \times \text{id}_{U_{i_0}}$.
+via $\alpha : J \to I$ and the maps $f'_j = f_j \times \id_{U_{i_0}}$.
 The element $s_{i_0}$ restricts to $s_i|_{U_i \times_U U_{i_0}}$
 on the members of the covering $\mathcal{U}'$ and hence via
 $(f_j')^*$ to the elements $s_j|_{V_j \times_U U_{i_0}}$ on the members
@@ -1687,7 +1687,7 @@ of $U$ in $\mathcal{C}$, and the morphisms are the refinements.
 By our conventions on sites this is indeed a category, i.e.,
 the collection of objects and morphisms forms a set.
 Note that $\Ob(\mathcal{J}_U)$ is not empty since
-$\{\text{id}_U\}$ is an object of it. According to the remarks
+$\{\id_U\}$ is an object of it. According to the remarks
 above the construction $\mathcal{U} \mapsto H^0(\mathcal{U}, \mathcal{F})$
 is a contravariant functor on $\mathcal{J}_U$.
 We define
@@ -1903,7 +1903,7 @@ the same element of the colimit if and only if there exists a covering
 $\mathcal{V}$ of $U$ and refinements $f : \mathcal{V} \to \mathcal{U}$ and
 $f' : \mathcal{V} \to \mathcal{U}'$ such that $f^*s = (f')^*s'$
 in $H^0(\mathcal{V}, \mathcal{F})$. Since the trivial covering
-$\{\text{id}_U\}$ is an object of $\mathcal{J}_U$ we get
+$\{\id_U\}$ is an object of $\mathcal{J}_U$ we get
 a canonical map $\mathcal{F}(U) \to \mathcal{F}^+(U)$.
 
 \begin{lemma}
@@ -2365,7 +2365,7 @@ $$
 (h_U)^\# \longrightarrow \mathcal{F}
 $$
 Here the arrow restricted to the component corresponding to $(U, s)$ maps
-the element $\text{id}_U \in h_U^\#(U)$ to the section $s \in \mathcal{F}(U)$.
+the element $\id_U \in h_U^\#(U)$ to the section $s \in \mathcal{F}(U)$.
 This is an epimorphism according to Lemma \ref{lemma-mono-epi-sheaves} and
 our condition on $E$. To construct $\mathcal{F}_1$ first set
 $\mathcal{G} = \mathcal{F}_0 \times_\mathcal{F} \mathcal{F}_0$ and
@@ -2806,7 +2806,7 @@ use this abuse of notation.
 \medskip\noindent
 Two examples of topoi. The {\it empty topos} is topos
 of sheaves on the site $\mathcal{C}$, where $\mathcal{C}$ has
-a single object $\emptyset$ and a single morphism $\text{id}_\emptyset$
+a single object $\emptyset$ and a single morphism $\id_\emptyset$
 and a single covering, namely the empty covering of $\emptyset$.
 We will sometimes write $\emptyset$ for this site.
 This is a site and every sheaf on $\mathcal{C}$ assigns a singleton to
@@ -2814,8 +2814,8 @@ $\emptyset$. Thus $\Sh(\emptyset)$ is equivalent to the category
 having a single object and a single morphism.
 The {\it punctual topos} is the topos of sheaves on the site
 $\mathcal{C}$ which has a single object $pt$ and one morphism
-$\text{id}_{pt}$ and whose only covering is the covering
-$\{\text{id}_{pt}\}$. We will simply write $pt$ for this site.
+$\id_{pt}$ and whose only covering is the covering
+$\{\id_{pt}\}$. We will simply write $pt$ for this site.
 It is clear that the category of sheaves $ = $ the category of
 presheaves $ = $ the category of sets.
 In a formula $\Sh(pt) = \textit{Sets}$.
@@ -3132,22 +3132,22 @@ $\coprod_{i \in J} \mathcal{F}_i \to h_U^\#$ is surjective.
 
 \begin{proof}
 Assume (1) and let $\coprod_{i \in I} \mathcal{F}_i \to h_U^\#$
-be a surjection. Then $\text{id}_U$ is a section of
+be a surjection. Then $\id_U$ is a section of
 $h_U^\#$ over $U$. Hence there exists a covering
 $\{U_a \to U\}_{a \in A}$ and for each $a \in A$
 a section $s_a$ of $\coprod_{i \in I} \mathcal{F}_i$
-over $U_a$ mapping to $\text{id}_U$. By the construction of coproducts as
+over $U_a$ mapping to $\id_U$. By the construction of coproducts as
 sheafification of coproducts of presheaves
 (Lemma \ref{lemma-colimit-sheaves}), for each $a$
 there exists a covering $\{U_{ab} \to U_a\}_{b \in B_a}$ and
 for all $b \in B_a$ an $\iota(b) \in I$ and a section
 $s_{b}$ of $\mathcal{F}_{\iota(b)}$ over $U_{ab}$
-mapping to $\text{id}_U|_{U_{ab}}$. Thus after replacing
+mapping to $\id_U|_{U_{ab}}$. Thus after replacing
 the covering $\{U_a \to U\}_{a \in A}$ by
 $\{U_{ab} \to U\}_{a \in A, b \in B_a}$
 we may assume we have a map $\iota : A \to I$
 and for each $a \in A$ a section $s_a$ of $\mathcal{F}_{\iota(a)}$
-over $U_a$ mapping to $\text{id}_U$.
+over $U_a$ mapping to $\id_U$.
 Since $U$ is quasi-compact, there is a covering
 $\{V_c \to U\}_{c \in C}$, a map $\alpha : C \to A$
 with finite image, and $V_c \to U_{\alpha(c)}$ over $U$.
@@ -3159,7 +3159,7 @@ and factors through $\coprod_{i \in J} \mathcal{F}_i \to h_U^\#$.
 $h_{V_c}^\# \to h_{U_{\alpha(c)}}
 \xrightarrow{s_{\alpha(c)}} \mathcal{F}_{\iota(\alpha(c))} \to h_U^\#$
 is the map $h_{V_c}^\# \to h_U^\#$ coming from the morphism
-$V_c \to U$ because $s_{\alpha(c)}$ maps to $\text{id}_U|_{U_{\alpha(c)}}$.)
+$V_c \to U$ because $s_{\alpha(c)}$ maps to $\id_U|_{U_{\alpha(c)}}$.)
 
 \medskip\noindent
 Assume (2). Let $\{U_i \to U\}_{i \in I}$ be a covering.
@@ -3170,10 +3170,10 @@ $\coprod_{j \in J} h_{U_j}^\# \to h_U^\#$ is surjective.
 Then arguing as above we find a covering
 $\{V_c \to U\}_{c \in C}$ of $U$ in $\mathcal{C}$
 and a map $\iota : C \to J$
-such that $\text{id}_U$ lifts to a section
+such that $\id_U$ lifts to a section
 of $s_c$ of $h_{U_{\iota(c)}}^\#$ over $V_c$.
 Refining the covering even further we may assume
-$s_c \in h_{U_{\iota(c)}}(V_c)$ mapping to $\text{id}_U$.
+$s_c \in h_{U_{\iota(c)}}(V_c)$ mapping to $\id_U$.
 Then $s_c : V_c \to U_{\iota(c)}$ is a morphism over $U$
 and we conclude.
 \end{proof}
@@ -3461,11 +3461,11 @@ f_{a \circ b}^{-1}\mathcal{F}(u_b(V_j))
 $$
 for all $a : j \to i$, $b : k \to j$ and $V_j \in \Ob(\mathcal{C}_j)$.
 The compatibilities force the maps $\varphi_{a, b, V_j}$ to be equal
-to $\varphi_{a \circ b, \text{id}, u_b(V_j)}$. Given $a : j \to i$, the
-family of maps $\varphi_{a, \text{id}, V_j}$ corresponds to a map
+to $\varphi_{a \circ b, \id, u_b(V_j)}$. Given $a : j \to i$, the
+family of maps $\varphi_{a, \id, V_j}$ corresponds to a map
 of sheaves $\varphi_a : f_a^{-1}\mathcal{F} \to f_{j, *}\mathcal{H}$.
-The compatibilities between the $\varphi_{a, \text{id}, u_a(V_i)}$
-and the $\varphi_{\text{id}, \text{id}, V_i}$ implies that $\varphi_a$
+The compatibilities between the $\varphi_{a, \id, u_a(V_i)}$
+and the $\varphi_{\id, \text{id}, V_i}$ implies that $\varphi_a$
 is the adjoint of the map $\varphi_{id}$ via
 $$
 \Mor_{\Sh(\mathcal{C}_j)}(f_a^{-1}\mathcal{F}, f_{j, *}\mathcal{H}) =
@@ -3601,7 +3601,7 @@ which is compatible with restriction maps.
 \end{lemma}
 
 \begin{proof}
-This is just the projection map $c(\text{id}_{u(U)})$ above.
+This is just the projection map $c(\id_{u(U)})$ above.
 \end{proof}
 
 \noindent
@@ -3681,7 +3681,7 @@ by assumption.
 \medskip\noindent
 Proof of (2). Let $U$ be an object of $\mathcal{C}$. Let
 $\eta : U \to v(u(U))$ be the map adjoint to the map
-$\text{id} : u(U) \to u(U)$. Then we claim $(u(U), \eta)$
+$\id : u(U) \to u(U)$. Then we claim $(u(U), \eta)$
 is an initial object of $\mathcal{I}_U^v$. Namely, given
 an object $(V, \phi : U \to v(V))$ of $\mathcal{I}_U^v$
 the morphism $\phi$ is adjoint to a map $\psi : u(U) \to V$
@@ -3690,7 +3690,7 @@ which then defines a morphism $(u(U), \eta) \to (V, \phi)$.
 \medskip\noindent
 Proof of (3). Let $V$ be an object of $\mathcal{D}$. Let
 $\xi : u(v(V)) \to V$ be the map adjoint to the map
-$\text{id} : v(V) \to v(V)$. Then we claim $(v(V), \xi)$
+$\id : v(V) \to v(V)$. Then we claim $(v(V), \xi)$
 is a final object of ${}_V^u\mathcal{I}$. Namely, given
 an object $(U, \psi : u(U) \to V)$ of ${}_V^u\mathcal{I}$
 the morphism $\psi$ is adjoint to a map $\phi : U \to v(V)$
@@ -4185,7 +4185,7 @@ where the morphisms $u(Y) \to u(X)$ are not required to be
 of the form $u(\alpha)$ with $\alpha$ a morphism of $\mathcal{C}$.
 By assumption (c) we see that they automatically come from
 morphisms of $\mathcal{C}$ and we deduce that the limit is the
-value on $(X, u(\text{id}_X))$, i.e., $\mathcal{F}(X)$.
+value on $(X, u(\id_X))$, i.e., $\mathcal{F}(X)$.
 This proves that $g^{-1}g_{*}\mathcal{F} = \mathcal{F}$.
 
 \medskip\noindent
@@ -4197,7 +4197,7 @@ where the morphisms $u(X) \to u(Y)$ are not required to be
 of the form $u(\alpha)$ with $\alpha$ a morphism of $\mathcal{C}$.
 By assumption (c) we see that they automatically come
 from morphisms of $\mathcal{C}$ and we deduce that the colimit is the
-value on $(X, u(\text{id}_X))$, i.e., $\mathcal{F}(X)$. Thus for every
+value on $(X, u(\id_X))$, i.e., $\mathcal{F}(X)$. Thus for every
 $X \in \Ob(\mathcal{C})$ we have
 $u_p\mathcal{F}(u(X)) = \mathcal{F}(X)$.
 Since $u$ is cocontinuous and continuous any covering of $u(X)$ in
@@ -4261,8 +4261,8 @@ Lemma \ref{lemma-morphism-sites-topoi}. The formulas
 $f_* = g^{-1}$ and $f^{-1} = g_!$ are clear from the lemma cited and
 Lemma \ref{lemma-when-shriek}.
 We have
-$f_* \circ g_* = g^{-1} \circ g_* \cong \text{id}$, and
-$g^{-1} \circ f^{-1} = g^{-1} \circ g_! \cong \text{id}$
+$f_* \circ g_* = g^{-1} \circ g_* \cong \id$, and
+$g^{-1} \circ f^{-1} = g^{-1} \circ g_! \cong \id$
 by Lemma \ref{lemma-back-and-forth}.
 
 \medskip\noindent
@@ -4486,7 +4486,7 @@ $f^{-1}\mathcal{F}(V) = \Mor_{\Sh(\mathcal{C})}(\mathcal{G}_V, \mathcal{F})$.
 Recall that
 $f^{-1}\mathcal{F}(V) = \Mor_{\Sh(\mathcal{D})}(h_V^\#, f^{-1}\mathcal{F})$.
 Denote $i_V : h_V^\# \to f^{-1}\mathcal{G}_V$ the map corresponding to
-$\text{id}$ in $\Mor(\mathcal{G}_V, \mathcal{G}_V)$.
+$\id$ in $\Mor(\mathcal{G}_V, \mathcal{G}_V)$.
 Functoriality in (1) implies that the bijection is given by
 $$
 \Mor_{\Sh(\mathcal{C})}(\mathcal{G}_V, \mathcal{F}) \to
@@ -4655,7 +4655,7 @@ $$
 \colim_{(W/U, V \to W)} \mathcal{G}(W)
 $$
 Now it is clear that the category of pairs $(W/U, V \to W)$
-has an object $O_\varphi = (\varphi : V \to U, \text{id} : V \to V)$ for every
+has an object $O_\varphi = (\varphi : V \to U, \id : V \to V)$ for every
 $\varphi : V \to U$, and moreover for any object there is a unique
 morphism from one of the $O_\varphi$ into it. The result follows.
 \end{proof}
@@ -5249,7 +5249,7 @@ such that the diagrams
 $$
 \xymatrix{
 \mathcal{F}|_{\mathcal{C}/U_i \times_U U_j}
-\ar[d]_{\text{id}} \ar[r]_{\varphi_i} &
+\ar[d]_{\id} \ar[r]_{\varphi_i} &
 \mathcal{F}_i|_{\mathcal{C}/U_i \times_U U_j} \ar[d]^{\varphi_{ij}} \\
 \mathcal{F}|_{\mathcal{C}/U_i \times_U U_j} \ar[r]^{\varphi_j} &
 \mathcal{F}_j|_{\mathcal{C}/U_i \times_U U_j}
@@ -5462,7 +5462,7 @@ is over the category of pairs $(Y/U, Y \to X)$
 where the morphisms $Y \to X$ are not required to be over $U$.
 By our assumption however we see that they are automatically
 morphisms over $U$ and we deduce that the limit is the
-value on $\text{id}_X$, i.e., $\mathcal{F}(X/U)$.
+value on $\id_X$, i.e., $\mathcal{F}(X/U)$.
 This proves that $j_U^{-1}j_{U*}\mathcal{F} = \mathcal{F}$.
 
 \medskip\noindent
@@ -5474,7 +5474,7 @@ Here the colimit is over the category of pairs $(Y/U, X \to Y)$
 where the morphisms $X \to Y$ are not required to be over $U$.
 By our assumption however we see that they are automatically
 morphisms over $U$ and we deduce that the colimit is the
-value on $\text{id}_X$, i.e., $\mathcal{F}(X/U)$.
+value on $\id_X$, i.e., $\mathcal{F}(X/U)$.
 This shows that the sheafification is not necessary (since any
 object over $X$ is automatically in a unique way an object over $U$)
 and the result follows.
@@ -5946,18 +5946,18 @@ g^{-1}g_*\mathcal{F}(U) = \lim_{U', u(U') \to u(U)} \mathcal{F}(U')
 $$
 where the morphisms $\psi : u(U') \to u(U)$ need not be of the form
 $u(\alpha)$. The category of such pairs $(U', \psi)$ has a final
-object, namely $(U, \text{id})$, which gives rise to the map from
+object, namely $(U, \id)$, which gives rise to the map from
 the limit into $\mathcal{F}(U)$. Let $(s_{(U', \psi)})$ be an element
 of the limit. We want to show that $s_{(U', \psi)}$ is uniquely determined
-by the value $s_{(U, \text{id})} \in \mathcal{F}(U)$. By property (4) given
+by the value $s_{(U, \id)} \in \mathcal{F}(U)$. By property (4) given
 any $(U', \psi)$ there exists a covering $\{U'_i \to U'\}$ such that the
 compositions $u(U'_i) \to u(U') \to u(U)$ are of the form $u(c_i)$
 for some $c_i : U'_i \to U$ in $\mathcal{C}$. Hence
 $$
-s_{(U', \psi)}|_{U'_i} = c_i^*(s_{(U, \text{id})}).
+s_{(U', \psi)}|_{U'_i} = c_i^*(s_{(U, \id)}).
 $$
 Since $\mathcal{F}$ is a sheaf it follows that indeed $s_{(U', \psi)}$
-is determined by $s_{(U, \text{id})}$. This proves uniqueness.
+is determined by $s_{(U, \id)}$. This proves uniqueness.
 For existence, assume given any
 $s \in \mathcal{F}(U)$, $\psi : u(U') \to u(U)$, $\{f_i : U_i' \to U'\}$
 and $c_i : U_i' \to U$ such that $\psi \circ u(f_i) = u(c_i)$ as above.
@@ -6552,10 +6552,10 @@ $$
 \psi \longmapsto \varphi|_{\mathcal{C}/U} \circ \psi,
 $$
 the element $h_U^\# \times \mathcal{F} \to \mathcal{F}$
-becomes $\text{id}_{\mathcal{F}|_{\mathcal{C}/U}}$.
+becomes $\id_{\mathcal{F}|_{\mathcal{C}/U}}$.
 Therefore $(j_{\mathcal{F}, *}\mathcal{G}/\mathcal{F})(U)$
 is isomorphic to the fiber of
-$\text{id}_{\mathcal{F}|_{\mathcal{C}/U}}$ under the map
+$\id_{\mathcal{F}|_{\mathcal{C}/U}}$ under the map
 $$
 \Mor_{\Sh(\mathcal{C}/U)}(\mathcal{F}|_{\mathcal{C}/U},
 \mathcal{G}|_{\mathcal{C}/U})
@@ -7055,11 +7055,11 @@ there exists a morphism $\phi : V \to V'$ such that
 $u(\phi)(y) = y'$ and $f' \circ \phi = f$, and in general you have
 to take chains of identities like this to get the correct equivalence
 relation. In any case, every $(V, y, f)$ is equivalent to
-the element $(U, u(f)(y), \text{id}_U)$. If $\phi$ exists as above,
+the element $(U, u(f)(y), \id_U)$. If $\phi$ exists as above,
 then the triples $(V, y, f)$, $(V', y', f')$ determine the same triple
-$(U, u(f)(y), \text{id}_U) = (U, u(f')(y'), \text{id}_U)$.
+$(U, u(f)(y), \id_U) = (U, u(f')(y'), \text{id}_U)$.
 This proves that the map
-$u(U) \to (h_U)_p$, $x \mapsto \text{class of }(U, x, \text{id}_U)$
+$u(U) \to (h_U)_p$, $x \mapsto \text{class of }(U, x, \id_U)$
 is bijective.
 \end{proof}
 
@@ -7297,7 +7297,7 @@ For any set $E$ there are canonical maps
 $$
 E \longrightarrow (p_*E)_p \longrightarrow E
 $$
-whose composition is $\text{id}_E$.
+whose composition is $\id_E$.
 \end{lemma}
 
 \begin{proof}
@@ -7674,12 +7674,12 @@ Categories, Lemma \ref{categories-lemma-colimit-constant-connected-fibers}
 to the functor $F$ of diagram categories defined by the rule
 $F((V, x, U, \phi : V \to u(U))) = (U, v(\phi)(x))$.
 The lemma applies, because $F$ has a right inverse, namely
-$(U, x) \mapsto (u(U), x, U, \text{id} : u(U) \to u(U))$ and
+$(U, x) \mapsto (u(U), x, U, \id : u(U) \to u(U))$ and
 because there is always a morphism
 $$
 (V, x, U, \phi : V \to u(U))
 \longrightarrow
-(u(U), v(\phi)(x), U, \text{id} : u(U) \to u(U))
+(u(U), v(\phi)(x), U, \id : u(U) \to u(U))
 $$
 in the fibre category over $(U, x)$ which shows the fibre categories
 are connected. The fifth equality is clear.
@@ -7810,7 +7810,7 @@ $E \to u(U)$ with value $x$.
 Then $j_x$ is a fully faithful cocontinuous functor which has a
 continuous right adjoint
 $v_x : (\psi : E \to u(U)) \mapsto \psi^{-1}(\{x\})$.
-Note that $j_{u(U)} \circ j_x = \text{id}_\mathcal{S}$, and
+Note that $j_{u(U)} \circ j_x = \id_\mathcal{S}$, and
 $v_x \circ u' = v$.
 These observations imply that we have the following commutative
 diagram of topoi
@@ -7835,7 +7835,7 @@ Lemma \ref{lemma-cocontinuous-morphism-topoi}
 and
 Section \ref{section-cocontinuous-adjoint}.
 \item The composition $p \circ j_{u(U)} \circ a = p$ since
-$j_{u(U)} \circ j_x = \text{id}_\mathcal{S}$.
+$j_{u(U)} \circ j_x = \id_\mathcal{S}$.
 \item The composition $p' \circ a$ gives a morphism of topoi.
 Moreover, it is the morphism of topoi associated to the continuous
 functor $v_x \circ u' = v$. Hence $v$ does indeed define a point $q$ of
@@ -8482,7 +8482,7 @@ and any distinct sections $s, s' \in \mathcal{F}(U)$, there exists
 a point $p$ such that $s, s'$ have distinct image in
 $\mathcal{F}_p$. See Lemma \ref{lemma-enough}.
 Consider the system $(J, \geq, V_j, g_{jj'})$
-with $J = \{1\}$, $V_1 = U$, $g_{11} = \text{id}_U$.
+with $J = \{1\}$, $V_1 = U$, $g_{11} = \id_U$.
 Apply Lemma \ref{lemma-refine-all-at-once}.
 By the result of that lemma we get a system
 $(I, \geq, U_i, f_{ii'})$ refining our system such
@@ -8570,7 +8570,7 @@ Assume (2) holds. Let $\{U_i \to U\}$ be a covering.
 Then $\coprod h_{U_i}^\# \to h_U^\#$ is surjective
 (Lemma \ref{lemma-covering-surjective-after-sheafification}).
 Hence by (2) there exists a section $s$ of $\coprod h_{U_i}^\#$ mapping
-to the section $\text{id}_U$ of $h_U^\#$. This section corresponds to a map
+to the section $\id_U$ of $h_U^\#$. This section corresponds to a map
 $h_U^\# \to \coprod h_{U_i}^\#$ which is right inverse to the sheafification
 of $\coprod h_{U_i} \to h_U$ which proves (1).
 \end{proof}
@@ -9218,7 +9218,7 @@ Categories, Lemma \ref{categories-lemma-characterize-mono-epi}
 $U \to X$ is a monomorphism, in other words (1) holds.
 
 \medskip\noindent
-Assume (1). Then $j_U^{-1} j_{U, *} = \text{id}$ by
+Assume (1). Then $j_U^{-1} j_{U, *} = \id$ by
 Lemma \ref{lemma-restrict-back}.
 \end{proof}
 
@@ -9619,9 +9619,9 @@ such that
 $\lambda_r \circ 0 = 0$,
 $\lambda_r \circ + = + \circ (\lambda_r, \lambda_r)$,
 $\lambda_{r + r'} =
-+ \circ \lambda_r \times \lambda_{r'} \circ (\text{id}, \text{id})$,
++ \circ \lambda_r \times \lambda_{r'} \circ (\id, \text{id})$,
 $\lambda_{rr'} = \lambda_r \circ \lambda_{r'}$,
-$\lambda_1 = \text{id}$, $\lambda_0 = 0 \circ (\mathcal{F} \to *)$.
+$\lambda_1 = \id$, $\lambda_0 = 0 \circ (\mathcal{F} \to *)$.
 \end{proof}
 
 \noindent
@@ -10594,7 +10594,7 @@ restriction of $\varphi$ to $T$ (via $f$) and the desired
 equality follows because $\mathcal{F}$ is separated.
 Denote the common restriction $\psi$.
 The independence of choice follows because
-$\varphi_{V, \alpha}(g) = \psi(\text{id}_T) =
+$\varphi_{V, \alpha}(g) = \psi(\id_T) =
 \varphi_{V', \alpha'}(g')$. OK, so now $\varphi''$
 gives an element $s \in L\mathcal{F}(U)$. We leave it to
 the reader to check that $s$ restricts to $\varphi$.
@@ -10658,25 +10658,25 @@ First we make a couple of general remarks.
 We will use that $S^\# = LLS$, and $h_U^\# = LLh_U$.
 In particular, by Lemma \ref{lemma-L-presheaf}, we see that
 $S^\# \to h_U^\#$ is injective. Note that
-$\text{id}_U \in h_U(U)$. Hence it gives rise to
+$\id_U \in h_U(U)$. Hence it gives rise to
 sections of $Lh_U$ and $h_U^\# = LLh_U$ over $U$ which
-we will also denote $\text{id}_U$.
+we will also denote $\id_U$.
 
 \medskip\noindent
 Suppose $S$ is a covering sieve. It clearly suffices to
 find a morphism $h_U \to S^\#$ such that the composition
 $h_U \to h_U^\#$ is the canonical map. To find such a map
 it suffices to find a section $s \in S^\#(U)$ wich restricts
-to $\text{id}_U$. But since $S$ is a
+to $\id_U$. But since $S$ is a
 covering sieve, the element
-$\text{id}_S \in \Mor_{\textit{PSh}(\mathcal{C})}(S, S)$
+$\id_S \in \Mor_{\textit{PSh}(\mathcal{C})}(S, S)$
 gives rise to a section of $LS$ over $U$ which restricts to
-$\text{id}_U$ in $Lh_U$. Hence we win.
+$\id_U$ in $Lh_U$. Hence we win.
 
 \medskip\noindent
 Suppose that $S^\# \to h_U^\#$ is an isomorphism.
 Let $1 \in S^\#(U)$ be the element corresponding to
-$\text{id}_U$ in $h_U^\#(U)$. Because $S^\# = LLS$
+$\id_U$ in $h_U^\#(U)$. Because $S^\# = LLS$
 there exists a covering sieve $S'$ on $U$ such that
 $1$ comes from a
 $$
@@ -10684,7 +10684,7 @@ $$
 $$
 This in turn means that for every $\alpha : V \to U$,
 $\alpha\in S'(V)$ there exists a covering sieve $S_{V, \alpha}$
-on $V$ such that $\varphi(\text{id}_V)$ corresponds to
+on $V$ such that $\varphi(\id_V)$ corresponds to
 a morphism of presheaves $S_{V, \alpha} \to S$. In other words
 $S_{V, \alpha}$ is contained in $S \times_U V$. By the second
 axiom of a topology we see that $S$ is a covering sieve.

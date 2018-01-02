@@ -1438,7 +1438,7 @@ of lifts is principal homogeneous under
 $\Ext^1_{\mathcal{O}_X}(
 \mathcal{F}, f^*\mathcal{J} \otimes_{\mathcal{O}_X} \mathcal{F})$.
 \item Given a lift $\mathcal{F}'$, the set of automorphisms of
-$\mathcal{F}'$ which pull back to $\text{id}_\mathcal{F}$ is canonically
+$\mathcal{F}'$ which pull back to $\id_\mathcal{F}$ is canonically
 isomorphic to $\Ext^0_{\mathcal{O}_X}(
 \mathcal{F}, f^*\mathcal{J} \otimes_{\mathcal{O}_X} \mathcal{F})$.
 \end{enumerate}
@@ -3276,7 +3276,7 @@ of lifts is principal homogeneous under
 $\Ext^1_\mathcal{O}(
 \mathcal{F}, f^*\mathcal{J} \otimes_\mathcal{O} \mathcal{F})$.
 \item Given a lift $\mathcal{F}'$, the set of automorphisms of
-$\mathcal{F}'$ which pull back to $\text{id}_\mathcal{F}$ is canonically
+$\mathcal{F}'$ which pull back to $\id_\mathcal{F}$ is canonically
 isomorphic to $\Ext^0_\mathcal{O}(
 \mathcal{F}, f^*\mathcal{J} \otimes_\mathcal{O} \mathcal{F})$.
 \end{enumerate}
@@ -3566,7 +3566,7 @@ $g^{-1}f_1^{-1}\mathcal{O}_{\mathcal{B}'_1}$-algebras
 $g^{-1}\mathcal{O}'_1 \to \mathcal{O}'_2$ which are compatible with
 $f^\sharp$ and $\nu$. In this way we see that we may assume we have a
 diagram (\ref{equation-huge-2-ringed-topoi}) of sheaves on a site
-$\mathcal{C}$ (with $f_1 = f_2 = \text{id}$ on underlying topoi)
+$\mathcal{C}$ (with $f_1 = f_2 = \id$ on underlying topoi)
 and we are looking to find a homomorphism of sheaves of rings
 $\mathcal{O}'_1 \to \mathcal{O}'_2$ fitting into it.
 
@@ -3574,7 +3574,7 @@ $\mathcal{O}'_1 \to \mathcal{O}'_2$ fitting into it.
 In the rest of the proof of the lemma we assume
 all underlying topological spaces are the
 same, i.e., we have a diagram (\ref{equation-huge-2-ringed-topoi})
-of sheaves on a site $\mathcal{C}$ (with $f_1 = f_2 = \text{id}$
+of sheaves on a site $\mathcal{C}$ (with $f_1 = f_2 = \id$
 on underlying topoi) and we are looking for
 homomorphisms of sheaves of rings
 $\mathcal{O}'_1 \to \mathcal{O}'_2$ fitting into it.
@@ -4188,8 +4188,8 @@ of $(d')^n_L \circ (\alpha')^n - (\alpha')^{n + 1} \circ (d')_K^n$.
 Then it is an pleasant calculation to show that
 $$
 \omega^n_L \circ \alpha^n =
-(d_L^{n + 1} \otimes \text{id}_I) \circ h^n + h^{n + 1} \circ d_K^n +
-(\alpha^{n + 2} \otimes \text{id}_I) \circ \omega^n_K
+(d_L^{n + 1} \otimes \id_I) \circ h^n + h^{n + 1} \circ d_K^n +
+(\alpha^{n + 2} \otimes \id_I) \circ \omega^n_K
 $$
 This proves the commutativity of the diagram in (2) of the lemma
 in this particular case. Using this for two different choices
@@ -4204,7 +4204,7 @@ Conversely, going back to our choices $K^\bullet$,
 $(K')^n$, $(d')^n_K$, if $\omega(K) = 0$, then we can find
 $g^n : K^n \to K^{n + 1} \otimes_R I$ with
 $$
-\omega^n = (d_K^{n + 1} \otimes \text{id}_I) \circ g^n +
+\omega^n = (d_K^{n + 1} \otimes \id_I) \circ g^n +
 g^{n + 1} \circ d_K^n
 $$
 This means that with differentials
@@ -4219,7 +4219,7 @@ the square zero kernel of $S' \to S$. Then given $K \in D^-(R)$
 the statement is that we get a commutative diagram
 $$
 \xymatrix{
-K \otimes_R^\mathbf{L} S \ar[d] \ar[rr]_-{\omega(K) \otimes \text{id}} & &
+K \otimes_R^\mathbf{L} S \ar[d] \ar[rr]_-{\omega(K) \otimes \id} & &
 (K \otimes^\mathbf{L}_R I[2]) \otimes_R^\mathbf{L} S \ar[d] \\
 K \otimes_R^\mathbf{L} S \ar[rr]^-{\omega(K \otimes_R^\mathbf{L} S)} & &
 (K \otimes_R^\mathbf{L} S) \otimes^\mathbf{L}_S J[2]
@@ -4234,7 +4234,7 @@ $$
 $$
 Choose $K^\bullet$, $(K')^n$, and $(d')^n_K$ as above.
 Then we can use $K^\bullet \otimes_R S$, $(K')^n \otimes_{R'} S'$, and
-$(d')^n_K \otimes \text{id}_{S'}$ for the construction of
+$(d')^n_K \otimes \id_{S'}$ for the construction of
 $\omega(K \otimes_R^\mathbf{L} S)$.
 With these choices commutativity
 is immediately verified on the level of maps of complexes.
@@ -4531,11 +4531,11 @@ Let $\mathcal{F}$ be a sheaf of $\mathcal{O}$-modules.
 Let $n \in \mathbf{Z}$.
 \begin{enumerate}
 \item If $H^i(\alpha)$ is an isomorphism for $i \geq n$,
-then $H^i(\alpha \otimes_\mathcal{O}^\mathbf{L} \text{id}_\mathcal{F})$
+then $H^i(\alpha \otimes_\mathcal{O}^\mathbf{L} \id_\mathcal{F})$
 is an isomorphism for $i \geq n$.
 \item If $H^i(\alpha)$ is an isomorphism for $i > n$ 
 and surjective for $i = n$,
-then $H^i(\alpha \otimes_\mathcal{O}^\mathbf{L} \text{id}_\mathcal{F})$
+then $H^i(\alpha \otimes_\mathcal{O}^\mathbf{L} \id_\mathcal{F})$
 is an isomorphism for $i > n$ and surjective for $i = n$.
 \end{enumerate}
 \end{lemma}
@@ -4550,7 +4550,7 @@ Hence $H^i(C \otimes_\mathcal{O}^\mathbf{L} \mathcal{F}) = 0$
 for $i \geq n$ by (the dual of)
 Derived Categories, Lemma \ref{derived-lemma-negative-vanishing}.
 This in turn shows that
-$H^i(\alpha \otimes_\mathcal{O}^\mathbf{L} \text{id}_\mathcal{F})$
+$H^i(\alpha \otimes_\mathcal{O}^\mathbf{L} \id_\mathcal{F})$
 is an isomorphism for $i > n$ and surjective for $i = n$.
 In case (1) we moreover see that $H^{n - 1}(L) \to H^{n - 1}(C)$
 is surjective. Considering the diagram
@@ -4564,7 +4564,7 @@ H^{n - 1}(C \otimes_\mathcal{O}^\mathbf{L} \mathcal{F})
 $$
 we conclude the lower horizontal arrow is surjective. Combined with what
 was said before this implies that
-$H^n(\alpha \otimes_\mathcal{O}^\mathbf{L} \text{id}_\mathcal{F})$
+$H^n(\alpha \otimes_\mathcal{O}^\mathbf{L} \id_\mathcal{F})$
 is an isomorphism.
 \end{proof}
 
@@ -4672,12 +4672,12 @@ $\mathcal{F}_0^\bullet \otimes_{\mathcal{O}_0} \mathcal{I}$
 represents
 $\mathcal{G}_0^\bullet \otimes_{\mathcal{O}_0}^\mathbf{L} \mathcal{I}$,
 and that
-$\beta = \delta \otimes_{\mathcal{O}_0}^\mathbf{L} \text{id}_\mathcal{I}$
+$\beta = \delta \otimes_{\mathcal{O}_0}^\mathbf{L} \id_\mathcal{I}$
 as maps in $D(\mathcal{O}_0)$. This is true because
 $\beta =
-(\alpha \otimes \text{id}_\mathcal{I})
+(\alpha \otimes \id_\mathcal{I})
 \circ
-(\delta \otimes \text{id}_\mathcal{I})$.
+(\delta \otimes \id_\mathcal{I})$.
 Suppose that $H^i(\delta)$ is an isomorphism in degrees $\geq n$.
 Then the same is true for $\beta$ by what we just said
 and Lemma \ref{lemma-induced-map}.
@@ -4761,7 +4761,7 @@ L_0 \otimes_{\mathcal{O}_0}^\mathbf{L} \mathcal{I})
 $$
 whose vanishing is necessary and sufficient for the
 existence of a map $\alpha : K \to L$ in $D(\mathcal{O})$
-with $\alpha_0 = \alpha \otimes_\mathcal{O}^\mathbf{L} \text{id}$.
+with $\alpha_0 = \alpha \otimes_\mathcal{O}^\mathbf{L} \id$.
 \end{lemma}
 
 \begin{proof}
@@ -4823,10 +4823,10 @@ K_0 \otimes_{\mathcal{O}_0}^\mathbf{L} \mathcal{I})$.
 \begin{proof}
 An automorphism of $(K, \alpha)$ is a map $\varphi : K \to K$
 in $D(\mathcal{O})$ with
-$\varphi \otimes_\mathcal{O} \text{id}_{\mathcal{O}_0} = \text{id}$.
+$\varphi \otimes_\mathcal{O} \id_{\mathcal{O}_0} = \text{id}$.
 This is the same thing as saying that
 $$
-K \xrightarrow{\varphi - \text{id}} K \to
+K \xrightarrow{\varphi - \id} K \to
 K \otimes_\mathcal{O}^\mathbf{L} \mathcal{O}_0
 $$
 is zero. We conclude the group of automorphisms is

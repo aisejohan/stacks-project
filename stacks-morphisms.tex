@@ -618,7 +618,7 @@ $\mathcal{X} = \mathcal{X} \times_\mathcal{Y} \mathcal{Y} \to
 \label{lemma-section-immersion}
 Let $f : \mathcal{X} \to \mathcal{T}$ be a morphism of algebraic stacks.
 Let $s : \mathcal{T} \to \mathcal{X}$ be a morphism such that
-$f \circ s$ is $2$-isomorphic to $\text{id}_\mathcal{T}$. Then
+$f \circ s$ is $2$-isomorphic to $\id_\mathcal{T}$. Then
 \begin{enumerate}
 \item $s$ is representable by algebraic spaces and locally of finite type,
 \item if $f$ is DM, then $s$ is unramified,
@@ -1066,7 +1066,7 @@ a {\it group object}. Recall that an object of
 $\mathcal{I}_{\mathcal{X}/\mathcal{Y}}$
 is just a pair $(x, \alpha)$ where $x$ is an object of $\mathcal{X}$
 and $\alpha$ is an automorphism of $x$ in the fibre category of $\mathcal{X}$
-that $x$ lives in with $f(\alpha) = \text{id}$. The composition
+that $x$ lives in with $f(\alpha) = \id$. The composition
 $$
 c :
 \mathcal{I}_{\mathcal{X}/\mathcal{Y}}
@@ -1082,7 +1082,7 @@ $$
 which makes sense as $\beta : x \to x'$ is an isomorphism in the fibre
 category by our definition of fibre products. The neutral element
 $e : \mathcal{X} \to \mathcal{I}_{\mathcal{X}/\mathcal{Y}}$ is given by the
-functor $x \mapsto (x, \text{id}_x)$. We omit the proof that the
+functor $x \mapsto (x, \id_x)$. We omit the proof that the
 axioms of a group object hold.
 \end{remark}
 
@@ -1221,7 +1221,7 @@ are fibre product squares.
 \begin{proof}
 The inertia stack $\mathcal{I}_{\mathcal{X}'/\mathcal{Y}'}$ is defined as the
 category of pairs $(x', \alpha')$ where $x'$ is an object of $\mathcal{X}'$
-and $\alpha'$ is an automorphism of $x'$ with $\pi'(\alpha') = \text{id}$, see
+and $\alpha'$ is an automorphism of $x'$ with $\pi'(\alpha') = \id$, see
 Categories, Section \ref{categories-section-inertia}.
 Suppose that $x'$ lies over the scheme $U$ and maps to the object
 $x$ of $\mathcal{X}$. By the construction of the $2$-fibre product in
@@ -1233,9 +1233,9 @@ By the very construction of the $2$-fibre product the automorphism $\alpha'$
 is a pair $(\alpha, \gamma)$ where $\alpha$ is an automorphism of $x$ over $U$
 and $\gamma$ is an automorphism of $y'$ over $U$ such that
 $\alpha$ and $\gamma$ are compatible via $\beta$. The condition
-$\pi'(\alpha') = \text{id}$ signifies that $\gamma = \text{id}$
+$\pi'(\alpha') = \id$ signifies that $\gamma = \text{id}$
 whereupon the condition that $\alpha, \beta, \gamma$ are compatible
-is exactly the condition $\pi(\alpha) = \text{id}$, i.e., means
+is exactly the condition $\pi(\alpha) = \id$, i.e., means
 exactly that $(x, \alpha)$ is an object of
 $\mathcal{I}_{\mathcal{X}/\mathcal{Y}}$.
 In this way we see that the left square is a fibre product square
@@ -2629,7 +2629,7 @@ is surjective, and
 $x_1, x_2 : \Spec(k) \to \mathcal{X}$, and for a $2$-arrow
 $\beta : f \circ x_1 \to f \circ x_2$ there is a
 $2$-arrow $\alpha : x_1 \to x_2$ with
-$\beta = \text{id}_f \star \alpha$.
+$\beta = \id_f \star \alpha$.
 \end{enumerate}
 \end{lemma}
 
@@ -2664,7 +2664,7 @@ $t$ by $(x_1, x_2, \beta)$ where $x_1, x_2 : \Spec(k) \to \mathcal{X}$
 and $\beta : f \circ x_1 \to f \circ x_2$ is a $2$-morphism.
 Then (3) implies that there is a $2$-morphism
 $\alpha : x_1 \to x_2$ mapping to $\beta$.
-This exactly means that $\Delta(x_1) = (x_1, x_1, \text{id})$
+This exactly means that $\Delta(x_1) = (x_1, x_1, \id)$
 is isomorphic to $t$. Hence (2) holds.
 
 \medskip\noindent
@@ -2684,7 +2684,7 @@ Condition (2) implies that $T$ is nonempty. Then since $k$ is
 algebraically closed, there is a $k$-point in $T$.
 Unwinding the definitions this means there is a morphism
 $\alpha : x_1 \to x_2$ in $\Mor(\Spec(k), \mathcal{X})$
-such that $\beta = \text{id}_f \star \alpha$.
+such that $\beta = \id_f \star \alpha$.
 \end{proof}
 
 \begin{lemma}
@@ -4156,7 +4156,7 @@ Artinian local rings finite over $k$ via either $s$ or $t$. Let
 $P = \Spec(A) \subset R$ be the open and
 closed subscheme whose underlying point is the identity $e$ of the groupoid
 scheme $(U, R, s, t, c)$. As
-$s \circ e = t \circ e = \text{id}_{\Spec(k)}$ we see that $A$
+$s \circ e = t \circ e = \id_{\Spec(k)}$ we see that $A$
 is an Artinian local ring whose residue field is identified with $k$
 via either $s^\sharp : k \to A$ or $t^\sharp : k \to A$.
 Note that $s, t : \Spec(A) \to \Spec(k)$
@@ -8567,7 +8567,7 @@ which is representable by algebraic spaces and separated.
 Let $\mathcal{V} \subset \mathcal{Y}$ be an open substack such that
 $\mathcal{V} \to \mathcal{Y}$ is quasi-compact.
 Let $s : \mathcal{V} \to \mathcal{X}$ be a morphism such that
-$f \circ s = \text{id}_\mathcal{V}$.
+$f \circ s = \id_\mathcal{V}$.
 Let $\mathcal{Y}'$ be the scheme theoretic image of $s$.
 Then $\mathcal{Y}' \to \mathcal{Y}$ is an isomorphism over $\mathcal{V}$.
 \end{lemma}
@@ -8627,20 +8627,20 @@ a {\it dotted arrow} is a triple $(a, \alpha, \beta)$ consisting of a
 morphism $a : \Spec(A) \to \mathcal{X}$ and $2$-arrows
 $\alpha : a \circ j \to x$, $\beta : y \to f \circ a$
 such that
-$\gamma = (\text{id}_f \star \alpha) \circ (\beta \star \text{id}_j)$,
+$\gamma = (\id_f \star \alpha) \circ (\beta \star \text{id}_j)$,
 in other words such that
 $$
 \xymatrix{
-& f \circ a \circ j \ar[rd]^{\text{id}_f \star \alpha} \\
-y \circ j \ar[ru]^{\beta \star \text{id}_j} \ar[rr]^\gamma & &
+& f \circ a \circ j \ar[rd]^{\id_f \star \alpha} \\
+y \circ j \ar[ru]^{\beta \star \id_j} \ar[rr]^\gamma & &
 f \circ x
 }
 $$
 is commutative. A {\it morphism of dotted arrows}
 $(a, \alpha, \beta) \to (a', \alpha', \beta')$ is a
 $2$-arrow $\theta : a \to a'$ such that
-$\alpha = \alpha' \circ (\theta \star \text{id}_j)$ and
-$\beta' = (\text{id}_f \star \theta) \circ \beta$.
+$\alpha = \alpha' \circ (\theta \star \id_j)$ and
+$\beta' = (\id_f \star \theta) \circ \beta$.
 \end{definition}
 
 \noindent
@@ -8666,17 +8666,17 @@ Since $2$-arrows are invertible it is clear that the category of
 dotted arrows is a groupoid. Given a dotted arrow $(a, \alpha, \beta)$
 an automorphism of $(a, \alpha, \beta)$ is a $2$-morphism
 $\theta : a \to a$ satisfying two conditions. The first condition
-$\beta = (\text{id}_f \star \theta) \circ \beta$ signifies that
+$\beta = (\id_f \star \theta) \circ \beta$ signifies that
 $\theta$ defines a morphism
 $(a, \theta) : \Spec(A) \to \mathcal{I}_{\mathcal{X}/\mathcal{Y}}$.
 The second condition
-$\alpha = \alpha \circ (\theta \star \text{id}_j)$
+$\alpha = \alpha \circ (\theta \star \id_j)$
 implies that the restriction of $(a, \theta)$ to $\Spec(K)$
 is the identity. Picture
 $$
 \xymatrix{
 \mathcal{I}_{\mathcal{X}/\mathcal{Y}} \ar[d] & &
-\Spec(K) \ar[d]^j \ar[ll]_{(a \circ j, \text{id})} \\
+\Spec(K) \ar[d]^j \ar[ll]_{(a \circ j, \id)} \\
 \mathcal{X} & & \Spec(A) \ar[ll]_a \ar[llu]_{(a, \theta)}
 }
 $$
@@ -8765,8 +8765,8 @@ Then the object $x'$ becomes the triple $(y' \circ j, x, \gamma)$.
 Then we can go from a dotted arrow $(a, \alpha, \beta)$ for the
 outer rectangle to a dotted arrow $(a', \alpha', \beta')$
 for the left square by taking $a' = (y', a, \beta)$ and
-$\alpha' = (\text{id}_{y' \circ j}, \alpha)$ and
-$\beta' = \text{id}_{y'}$. Details omitted.
+$\alpha' = (\id_{y' \circ j}, \alpha)$ and
+$\beta' = \id_{y'}$. Details omitted.
 \end{proof}
 
 \begin{lemma}
@@ -8804,12 +8804,12 @@ and some choice of $y \circ j \to f \circ x$.
 
 \begin{proof}
 Omitted. Hint: If $(a, \alpha, \beta)$ is an object of $\mathcal{C}$,
-then $(f \circ a, \text{id}_f \star \alpha, \beta)$ is an object
+then $(f \circ a, \id_f \star \alpha, \beta)$ is an object
 of $\mathcal{C}'$. Conversely, if $(y, \delta, \epsilon)$ is an
 object of $\mathcal{C}'$ and $(a, \alpha, \beta)$ is an object
 of the category of dotted arrows of the last displayed diagram
 with $y \circ j \to f \circ x$ given by $\delta$, then
-$(a, \alpha, (\text{id}_g \star \beta) \circ \epsilon)$ is an
+$(a, \alpha, (\id_g \star \beta) \circ \epsilon)$ is an
 object of $\mathcal{C}$.
 \end{proof}
 
@@ -9032,12 +9032,12 @@ $$
 and let $\alpha : (a, \theta) \circ j \to e \circ x$ be any $2$-morphism
 witnessing the $2$-commutativity of the diagram (we use $\alpha$ instead
 of the letter $\gamma$ used in Definition \ref{definition-fill-in-diagram}).
-Note that $f \circ \theta = \text{id}$; we will use this below.
-Observe that $e \circ x = (x, \text{id}_x)$ and
-$(a, \theta) \circ j = (a \circ j, \theta \star \text{id}_j)$.
+Note that $f \circ \theta = \id$; we will use this below.
+Observe that $e \circ x = (x, \id_x)$ and
+$(a, \theta) \circ j = (a \circ j, \theta \star \id_j)$.
 Thus we see that $\alpha$ is a $2$-arrow $\alpha : a \circ j \to x$
-compatible with $\theta \star \text{id}_j$ and $\text{id}_x$.
-Set $y = f \circ x$ and $\beta = \text{id}_{f \circ a}$.
+compatible with $\theta \star \id_j$ and $\text{id}_x$.
+Set $y = f \circ x$ and $\beta = \id_{f \circ a}$.
 Reading the arguments given in the proof of
 Lemma \ref{lemma-cat-dotted-arrows}
 backwards, we see that $\theta$ is an automorphism of the
@@ -9045,14 +9045,14 @@ dotted arrow $(a, \alpha, \beta)$ with
 $$
 \gamma : y \circ j \to f \circ x
 \quad\text{equal to}\quad
-\text{id}_f \star \alpha : f \circ a \circ j \to f \circ x
+\id_f \star \alpha : f \circ a \circ j \to f \circ x
 $$
-On the other hand, $\text{id}_a$ is an automorphism too, hence
-we conclude $\theta = \text{id}_a$ from the assumption on $f$.
+On the other hand, $\id_a$ is an automorphism too, hence
+we conclude $\theta = \id_a$ from the assumption on $f$.
 Then we can take as dotted arrow for the displayed diagram above
 the morphism $a : \Spec(A) \to \mathcal{X}$ with $2$-morphisms
-$(a, \text{id}_a) \circ j \to (x, \text{id}_x)$ given by $\alpha$
-and $(a, \theta) \to e \circ a$ given by $\text{id}_a$.
+$(a, \id_a) \circ j \to (x, \text{id}_x)$ given by $\alpha$
+and $(a, \theta) \to e \circ a$ given by $\id_a$.
 
 \medskip\noindent
 By Lemma \ref{lemma-base-change-existence} any base change of $e$
@@ -9102,7 +9102,7 @@ Then
 \begin{enumerate}
 \item Writing $\gamma = (\alpha_1, \alpha_2)$ with
 $\alpha_i : a_i \circ j \to x$ we obtain two dotted arrows
-$(a_1, \alpha_1, \text{id})$ and $(a_2, \alpha_2, \varphi)$ in
+$(a_1, \alpha_1, \id)$ and $(a_2, \alpha_2, \varphi)$ in
 the diagram
 $$
 \xymatrix{
@@ -9113,7 +9113,7 @@ $$
 \item The category of dotted arrows for the original diagram
 and $\gamma$ is a setoid whose set of isomorphism
 classes of objects equal to the set of morphisms
-$(a_1, \alpha_1, \text{id}) \to (a_2, \alpha_2, \varphi)$ in
+$(a_1, \alpha_1, \id) \to (a_2, \alpha_2, \varphi)$ in
 the category of dotted arrows.
 \end{enumerate}
 \end{lemma}
@@ -9198,8 +9198,8 @@ a $2$-arrow
 $$
 (a, a', \beta' \circ \beta^{-1}) \circ j =
 (a \circ j, a' \circ j,
-(\beta' \star \text{id}_j) \circ (\beta \star \text{id}_j)^{-1})
-\xrightarrow{(\alpha, \alpha')} (x, x, \text{id}) = \Delta_f \circ x
+(\beta' \star \id_j) \circ (\beta \star \text{id}_j)^{-1})
+\xrightarrow{(\alpha, \alpha')} (x, x, \id) = \Delta_f \circ x
 $$
 Here we use that both $(a, \alpha, \beta)$ and $(a', \alpha', \beta')$
 are dotted arrows with respect to $\gamma$.
@@ -9696,7 +9696,7 @@ Then $\alpha$ and $\beta$ differ by a $k$-valued point
 $\epsilon$ of the automorphism group algebraic space $G_{f(x)}$.
 Since $f$ induces an isomorphism $G_x \to G_{f(x)}$ by
 assumption, this means we can lift $\epsilon$ to a $k$-valued point
-$\gamma$ of $G_x$. Then $(\gamma, \text{id}) : (x, y', \alpha) \to
+$\gamma$ of $G_x$. Then $(\gamma, \id) : (x, y', \alpha) \to
 (x, y', \beta)$ is an isomorphism as desired.
 \end{proof}
 

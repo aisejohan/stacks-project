@@ -133,7 +133,7 @@ $$
 \end{matrix}
 $$
 and the correspondence is given by precomposing with the map $B \to D$
-which corresponds to $\text{id}_D$. Here are some properties of
+which corresponds to $\id_D$. Here are some properties of
 $(D, \bar J, \bar \gamma)$ which follow directly from the universal
 property. There are $A$-algebra maps
 \begin{equation}
@@ -1884,7 +1884,7 @@ For the first assertion see
 Lemma \ref{lemma-divided-power-thickening-fibre-products}.
 This gives us a morphism of topoi
 $i : (X/S)_{\text{cris}} \to (X/S)_{\text{CRIS}}$ and a left adjoint
-$i_!$ such that $i^{-1}i_! = i^{-1}i_* = \text{id}$, see
+$i_!$ such that $i^{-1}i_! = i^{-1}i_* = \id$, see
 Sites, Lemmas \ref{sites-lemma-when-shriek},
 \ref{sites-lemma-preserve-equalizers}, and
 \ref{sites-lemma-back-and-forth}.
@@ -2253,7 +2253,7 @@ In Situation \ref{situation-global} let
 $p : \mathcal{C} \to \text{Cris}(X/S)$ be a stack.
 A {\it crystal in objects of $\mathcal{C}$ on $X$ relative to $S$}
 is a {\it cartesian section} $\sigma : \text{Cris}(X/S) \to \mathcal{C}$,
-i.e., a functor $\sigma$ such that $p \circ \sigma = \text{id}$
+i.e., a functor $\sigma$ such that $p \circ \sigma = \id$
 and such that $\sigma(f)$ is strongly cartesian for all
 morphisms $f$ of $\text{Cris}(X/S)$. Similarly for the big crystalline site.
 \end{remark}
@@ -2511,7 +2511,7 @@ Thus we get an object $(U, T', \delta')$ of $\text{Cris}(X/S)$
 and a commutative diagram
 $$
 \xymatrix{
-& T \ar[ld]_{\text{id}} \ar[d]^i \ar[rd]^{\text{id}} \\
+& T \ar[ld]_{\id} \ar[d]^i \ar[rd]^{\text{id}} \\
 T & T' \ar[l]_{p_0} \ar[r]^{p_1} & T
 }
 $$
@@ -3279,7 +3279,7 @@ $$
 a : D \longrightarrow D',\quad b : D' \longrightarrow D
 $$
 compatible with the maps $D \to C$ and $D' \to C$ such that
-$a \circ b = \text{id}_{D'}$. These maps induce
+$a \circ b = \id_{D'}$. These maps induce
 an equivalence of categories of pairs $(M, \nabla)$ satisfying
 (\ref{item-complete}), (\ref{item-connection}),
 (\ref{item-integrable}), and (\ref{item-topologically-quasi-nilpotent})
@@ -3318,7 +3318,7 @@ we see that we can find an $A$-algebra map $\beta : P' \to D$ whose
 composition with $a$ is the given map $P' \to D'$.
 By the universal property of the divided power envelope we obtain a
 map $D_{P', \gamma}(J') \to D$. As $D$ is $p$-adically complete we
-obtain $b : D' \to D$ such that $a \circ b = \text{id}_{D'}$.
+obtain $b : D' \to D$ such that $a \circ b = \id_{D'}$.
 
 \medskip\noindent
 Consider the base change functor
@@ -3332,11 +3332,11 @@ Similarly, we have the base change functor corresponding to the divided
 power homomorphism $D' \to D$. To finish the proof of the lemma we have
 to show that the base change for the compositions $b \circ a : D \to D$
 and $a \circ b : D' \to D'$ are isomorphic to the identity functor.
-This is clear for the second as $a \circ b = \text{id}_{D'}$.
+This is clear for the second as $a \circ b = \id_{D'}$.
 To prove it for the first, we use the functorial isomorphism
 $$
-c_{\text{id}_D, b \circ a} :
-M \otimes_{D, \text{id}_D} D
+c_{\id_D, b \circ a} :
+M \otimes_{D, \id_D} D
 \longrightarrow
 M \otimes_{D, b \circ a} D
 $$
@@ -4058,7 +4058,7 @@ M \otimes^\wedge_D \Omega^*_D
 \longrightarrow
 M' \otimes^\wedge_{D'} \Omega^*_{D'}
 $$
-are quasi-isomorphisms. Since $a \circ b = \text{id}_{D'}$ we see
+are quasi-isomorphisms. Since $a \circ b = \id_{D'}$ we see
 that the composition one way around is the identity on the complex
 $M' \otimes^\wedge_{D'} \Omega^*_{D'}$. Hence it suffices to show that
 the map
@@ -5573,7 +5573,7 @@ F_\mathcal{E} : (F_X)_{\text{cris}}^*\mathcal{E} \longrightarrow \mathcal{E}
 $$
 An $F$-crystal is called {\it nondegenerate} if there exists an integer
 $i \geq 0$ a map $V : \mathcal{E} \to (F_X)_{\text{cris}}^*\mathcal{E}$
-such that $V \circ F_{\mathcal{E}} = p^i \text{id}$.
+such that $V \circ F_{\mathcal{E}} = p^i \id$.
 \end{definition}
 
 \begin{remark}
@@ -5582,7 +5582,7 @@ Let $(\mathcal{E}, F)$ be an $F$-crystal as in
 Definition \ref{definition-F-crystal}.
 In the literature the nondegeneracy condition is often part of the
 definition of an $F$-crystal. Moreover, often it is also assumed that
-$F \circ V = p^n\text{id}$. What is needed for the result below is
+$F \circ V = p^n\id$. What is needed for the result below is
 that there exists an integer $j \geq 0$ such that $\Ker(F)$ and
 $\Coker(F)$ are killed by $p^j$. If the rank of $\mathcal{E}$
 is bounded (for example if $X$ is quasi-compact), then both of these

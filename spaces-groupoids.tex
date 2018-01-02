@@ -551,7 +551,7 @@ X\ar[u]^{e \times 1_X} \ar[ru]_{1_X}
 are commutative. In situation (2) this just means that the diagram
 $$
 \xymatrix{
-G \times_B X \ar[r]_-{\text{id} \times f} \ar[d]_a &
+G \times_B X \ar[r]_-{\id \times f} \ar[d]_a &
 G \times_B Y \ar[d]^a \\
 X \ar[r]^f & Y
 }
@@ -930,8 +930,8 @@ The diagram
 R \times_{t, U, t} R
 \ar@<1ex>[r]^-{\text{pr}_1} \ar@<-1ex>[r]_-{\text{pr}_0}
 \ar[d]_{\text{pr}_0 \times c \circ (i, 1)} &
-R \ar[r]^t \ar[d]^{\text{id}_R} &
-U \ar[d]^{\text{id}_U} \\
+R \ar[r]^t \ar[d]^{\id_R} &
+U \ar[d]^{\id_U} \\
 R \times_{s, U, t} R
 \ar@<1ex>[r]^-c \ar@<-1ex>[r]_-{\text{pr}_0} \ar[d]_{\text{pr}_1} &
 R \ar[r]^t \ar[d]^s &
@@ -1204,7 +1204,7 @@ on $Y = (J, \Psi)$ by setting $\mathcal{H}_{(i, U)} = \mathcal{F}_i|_U$
 for $(i, U) \in J$ and setting $\beta_\psi$ for $\psi \in \Psi$
 equal to the restriction of $\alpha_\phi$ to $U$
 if $\psi = (\phi, U, V)$ and
-equal to $\text{id} : (\mathcal{F}_i|_{U'})|_U \to \mathcal{F}_i|_U$
+equal to $\id : (\mathcal{F}_i|_{U'})|_U \to \mathcal{F}_i|_U$
 when $\psi = (i, U, U')$. Moreover, submodules of
 $(\{\mathcal{H}_j\}_{j \in J}, \{\beta_\psi\}_{\psi \in \Psi})$
 correspond $1$-to-$1$ with submodules of
@@ -2336,18 +2336,18 @@ The vertical composition of
 $$
 \xymatrix@C=15pc{
 \mathcal{S}_{R \times_{s, U, t} R}
-\ruppertwocell^{\pi \circ s \circ \text{pr}_1 = \pi \circ s \circ c}{\ \ \ \ \ \ \alpha \star \text{id}_{\text{pr}_1}}
+\ruppertwocell^{\pi \circ s \circ \text{pr}_1 = \pi \circ s \circ c}{\ \ \ \ \ \ \alpha \star \id_{\text{pr}_1}}
 \ar[r]_(.3){\pi \circ t \circ \text{pr}_1 = \pi \circ s \circ \text{pr}_0}
-\rlowertwocell_{\pi \circ t \circ \text{pr}_0 = \pi \circ t \circ c}{\ \ \ \ \ \ \alpha \star \text{id}_{\text{pr}_0}}
+\rlowertwocell_{\pi \circ t \circ \text{pr}_0 = \pi \circ t \circ c}{\ \ \ \ \ \ \alpha \star \id_{\text{pr}_0}}
 &
 [U/R]
 }
 $$
-is the $2$-morphism $\alpha \star \text{id}_c$. In a formula
-$\alpha \star \text{id}_c =
-(\alpha \star \text{id}_{\text{pr}_0})
+is the $2$-morphism $\alpha \star \id_c$. In a formula
+$\alpha \star \id_c =
+(\alpha \star \id_{\text{pr}_0})
 \circ
-(\alpha \star \text{id}_{\text{pr}_1})
+(\alpha \star \id_{\text{pr}_1})
 $.
 \end{lemma}
 
@@ -2355,8 +2355,8 @@ $.
 We make two remarks:
 \begin{enumerate}
 \item The formula
-$\alpha \star \text{id}_c = (\alpha \star \text{id}_{\text{pr}_0}) \circ
-(\alpha \star \text{id}_{\text{pr}_1})$ only makes sense if you realize
+$\alpha \star \id_c = (\alpha \star \text{id}_{\text{pr}_0}) \circ
+(\alpha \star \id_{\text{pr}_1})$ only makes sense if you realize
 the {\it equalities} $\pi \circ s \circ \text{pr}_1 = \pi \circ s \circ c$,
 $\pi \circ t \circ \text{pr}_1 = \pi \circ s \circ \text{pr}_0$, and
 $\pi \circ t \circ \text{pr}_0 = \pi \circ t \circ c$. Namely, the second
@@ -2394,11 +2394,11 @@ Given
 \end{enumerate}
 such that
 $$
-\beta \star \text{id}_c
+\beta \star \id_c
 =
-(\beta \star \text{id}_{\text{pr}_0})
+(\beta \star \id_{\text{pr}_0})
 \circ
-(\beta \star \text{id}_{\text{pr}_1})
+(\beta \star \id_{\text{pr}_1})
 $$
 then there exists a $1$-morphism $[U/R] \to \mathcal{X}$ which makes the
 diagram
@@ -2731,7 +2731,7 @@ we may assume $\xi_i$ comes from a morphism $a_i : U'_i \to U$.
 The fact that $[f](\xi_i) \cong (g'_i)^*\xi'$ means that, after possibly
 refining the covering $\mathcal{U}'$ once more, there exist morphisms
 $r'_i : U'_i \to R'$ with $t' \circ r'_i = f \circ a_i$ and
-$s' \circ r'_i = \text{id}_{U'} \circ g'_i$. Picture
+$s' \circ r'_i = \id_{U'} \circ g'_i$. Picture
 $$
 \xymatrix{
 U \ar[d]^f & & U'_i \ar[ll]^{a_i} \ar[ld]_{r'_i} \ar[d]^{g'_i} \\
@@ -2839,7 +2839,7 @@ Hence we see that there is an isomorphism
 $[U''/R''] \cong [R/R \times_{s, U, s} R]$ where as a groupoid
 in algebraic spaces $(R, R \times_{s, U, s} R, s'', t'', c'')$
 is the restriction of the trivial groupoid
-$(U, U, \text{id}, \text{id}, \text{id})$ via $s : R \to U$.
+$(U, U, \id, \text{id}, \text{id})$ via $s : R \to U$.
 Since $s : R \to U$ is a surjection of fppf sheaves (as it has a
 right inverse) the morphism
 $$
@@ -3109,7 +3109,7 @@ U
 }
 $$
 and such a morphism is an element of $I$ if and only if
-$T'_1 = T'_2$ and $a' = \text{id}$.
+$T'_1 = T'_2$ and $a' = \id$.
 We define a functor
 $$
 u_{pp}[U/_{\!p}R] \longrightarrow [f^{-1}U/_{\!p}f^{-1}R]

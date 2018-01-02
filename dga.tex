@@ -549,8 +549,8 @@ in $\text{Mod}_{(A, \text{d})}$ such that
 \item $\tilde \alpha$ is an admissible monomorphism (see
 Definition \ref{definition-admissible-ses}),
 \item there is a morphism $s : L \to \tilde L$
-such that $\pi \circ s = \text{id}_L$ and such that
-$s \circ \pi$ is homotopic to $\text{id}_{\tilde L}$.
+such that $\pi \circ s = \id_L$ and such that
+$s \circ \pi$ is homotopic to $\id_{\tilde L}$.
 \end{enumerate}
 \end{lemma}
 
@@ -2122,7 +2122,7 @@ $$
 It is clear that $q \circ i = b$ where $i$ is as in
 Definition \ref{definition-cone}.
 Note that, as $a$ is injective, the kernel of $q$ is identified with the
-cone of $\text{id}_K$ which is acyclic. Hence we see that
+cone of $\id_K$ which is acyclic. Hence we see that
 $q$ is a quasi-isomorphism. According to
 Lemma \ref{lemma-the-same-up-to-isomorphisms}
 the triangle
@@ -2389,7 +2389,7 @@ by simple composition of right $A$-module maps: $(g, f) \mapsto g \circ f$.
 Let $R$ be a ring. Let $\mathcal{D}$ be an $R$-linear category endowed with a
 collection of $R$-linear functors $[n] : \mathcal{D} \to \mathcal{D}$,
 $x \mapsto x[n]$ indexed by $n \in \mathbf{Z}$ such that
-$[n] \circ [m] = [n + m]$ and $[0] = \text{id}_\mathcal{D}$ (equality as
+$[n] \circ [m] = [n + m]$ and $[0] = \id_\mathcal{D}$ (equality as
 functors). This allows us to construct a graded category $\mathcal{D}^{gr}$
 over $R$ with the same objects of $\mathcal{D}$ setting
 $$
@@ -2399,7 +2399,7 @@ $$
 for $x, y$ in $\mathcal{D}$. Observe that $(\mathcal{D}^{gr})^0 = \mathcal{D}$
 (see Definition \ref{definition-H0-of-graded-category}). Moreover, the graded
 category $\mathcal{D}^{gr}$ inherits $R$-linear graded functors $[n]$
-satisfying $[n] \circ [m] = [n + m]$ and $[0] = \text{id}_{\mathcal{D}^{gr}}$
+satisfying $[n] \circ [m] = [n + m]$ and $[0] = \id_{\mathcal{D}^{gr}}$
 with the property that
 $$
 \Hom_{\mathcal{D}^{gr}}(x, y[n]) = \Hom_{\mathcal{D}^{gr}}(x, y)[n]
@@ -2409,7 +2409,7 @@ as graded $R$-modules compatible with composition of morphisms.
 \medskip\noindent
 Conversely, suppose given a graded category $\mathcal{A}$ over $R$ endowed
 with a collection of $R$-linear graded functors $[n]$
-satisfying $[n] \circ [m] = [n + m]$ and $[0] = \text{id}_\mathcal{A}$
+satisfying $[n] \circ [m] = [n + m]$ and $[0] = \id_\mathcal{A}$
 which are moreover equipped with isomorphisms
 $$
 \Hom_\mathcal{A}(x, y[n]) = \Hom_\mathcal{A}(x, y)[n]
@@ -2813,7 +2813,7 @@ graded direct sums of two objects
 (as in Definition \ref{definition-dg-direct-sum}).
 \item[(B)] there are functors $[n] : \mathcal{A} \longrightarrow \mathcal{A}$
 of differential graded categories such that
-$[0] = \text{id}_\mathcal{A}$ and $[n + m] = [n] \circ [m]$
+$[0] = \id_\mathcal{A}$ and $[n + m] = [n] \circ [m]$
 and given isomorphisms
 $$
 \Hom_\mathcal{A}(x, y[n]) = \Hom_\mathcal{A}(x, y)[n]
@@ -3221,7 +3221,7 @@ $\tilde{b}'\tilde{b}$. We now want to show that $\tilde{b}'\tilde{b}=0$.
 Because $x_2\xrightarrow{f} y_2\xrightarrow{g} z_2$ is an admissible
 short exact sequence, there exist degree $0$ morphisms
 $\pi : y_2 \to x_2$ and $s : z_2 \to y_2$ such that
-$\text{id}_{y_2} = f\pi + sg$. Therefore
+$\id_{y_2} = f\pi + sg$. Therefore
 $$
 \tilde{b}'\tilde{b} = \tilde{b}'(f\pi + sg)\tilde{b} = 0
 $$
@@ -5271,7 +5271,7 @@ a graded $A$-module. Example: take $A = R = k[\epsilon]$ where $k$ is
 a field and $k[\epsilon] = k[x]/(x^2)$ is the ring of dual numbers.
 Let $P$ be the object with $P^n = R$ for all $n \in \mathbf{Z}$
 and differential given by multiplication by $\epsilon$. Then
-$\text{id}_P \in \Hom_{K(A, \text{d})}(P, P)$ is a nonzero element
+$\id_P \in \Hom_{K(A, \text{d})}(P, P)$ is a nonzero element
 but $P$ is acyclic.
 \end{remark}
 
@@ -5386,7 +5386,7 @@ $\delta_i : P \to F_iP[1]$. Since the composition of $\delta$
 with the map $\bigoplus F_iP[1] \to \bigoplus F_iP[1]$ is zero
 (Derived Categories, Lemma \ref{derived-lemma-composition-zero})
 it follows that $\delta = 0$ (follows as $\bigoplus F_iP \to \bigoplus F_iP$
-maps the summand $F_iP$ via the difference of $\text{id}$ and the inclusion
+maps the summand $F_iP$ via the difference of $\id$ and the inclusion
 map into $F_{i - 1}P$).
 Thus we see that the identity on $E$ factors through
 $\bigoplus F_iP$ in $D(A, \text{d})$ (by
@@ -5545,12 +5545,12 @@ zero. Therefore $\delta = 0$ as a morphism in $K(A, \text{d})$
 as $P$ is an object of $\mathcal{D}$.
 By Derived Categories, Lemma \ref{derived-lemma-split}
 we can find a map $s : P \to P_1 \oplus P_2$ such that
-$\pi \circ s = \text{id}_P + \text{d}h + h\text{d}$ for some $h : P \to P$
+$\pi \circ s = \id_P + \text{d}h + h\text{d}$ for some $h : P \to P$
 of degree $-1$. Since $P_1 \oplus P_2 \to P$ is surjective and since $P$
 is projective as a graded $A$-module we can choose a homogeneous
 lift $\tilde h : P \to P_1 \oplus P_2$ of $h$. Then we change
 $s$ into $s + \text{d} \tilde h + \tilde h \text{d}$ to get
-$\pi \circ s = \text{id}_P$. This means we obtain a direct
+$\pi \circ s = \id_P$. This means we obtain a direct
 sum decomposition $P = s^{-1}(P_1) \oplus s^{-1}(P_2)$.
 Since $s^{-1}(P_2)$ is equal to $P$ in degrees $\geq b - n + 2c$
 we see that $s^{-1}(P_2) \to P \to E$ is a quasi-isomorphism,

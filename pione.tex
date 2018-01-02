@@ -330,7 +330,7 @@ is an isomorphism (details omitted).
 Since $|F_G(G/U)| = |F(G/U)|$ it suffices to show
 that $t_{G/U}$ is surjective. The image contains at least
 one element, namely
-$t_{G/U}(eU) = F(\text{id}_{G/U})(\gamma_U) = \gamma_U$.
+$t_{G/U}(eU) = F(\id_{G/U})(\gamma_U) = \gamma_U$.
 For $g \in G$ denote $R_g : G/U \to G/U$ right multiplication.
 Then set of fixed points of $F(R_g) : F(G/U) \to F(G/U)$
 is equal to $F(\emptyset) = \emptyset$ if $g \not \in U$ because $F$
@@ -475,7 +475,7 @@ By the lemma above we see that, given a connected object $X$ of a
 Galois category $(\mathcal{C}, F)$, the automorphism group
 $\text{Aut}(X)$ has order at most $|F(X)|$. Namely, given $s \in F(X)$
 and $g \in \text{Aut}(X)$ we see that $g(s) = s$ if and only
-if $g = \text{id}_X$ by (\ref{item-one-element}).
+if $g = \id_X$ by (\ref{item-one-element}).
 We say $X$ is {\it Galois} if equality holds.
 Equivalently, $X$ is Galois if it is connected and
 $\text{Aut}(X)$ acts transitively on $F(X)$.
@@ -1530,7 +1530,7 @@ $$
 \varphi : U \times_Y X \to X \times_Y U
 $$
 of schemes finite \'etale over $X \times_Y X$ which pulls back under
-$\Delta$ to $\text{id} : U \to U$ over $X$.
+$\Delta$ to $\id : U \to U$ over $X$.
 Since $X \to X \times_Y X \times_Y X$
 is a thickening as well (it is bijective and a closed immersion)
 we conclude that $(U, \varphi)$ is a descent datum relative to $X/Y$.
@@ -2480,13 +2480,13 @@ over the prime $\mathfrak q \subset R$. Then
 $$
 I_\mathfrak q = \{\sigma \in G \mid
 \sigma(\mathfrak q) = \mathfrak q\text{ and }
-\sigma \bmod \mathfrak q = \text{id}_{\kappa(\mathfrak q)}\}
+\sigma \bmod \mathfrak q = \id_{\kappa(\mathfrak q)}\}
 $$
 is equal to
 $$
 I_{\mathfrak q'} = \{\sigma \in G \mid
 \sigma(\mathfrak q') = \mathfrak q'\text{ and }
-\sigma \bmod \mathfrak q' = \text{id}_{\kappa(\mathfrak q')}\}
+\sigma \bmod \mathfrak q' = \id_{\kappa(\mathfrak q')}\}
 $$
 \end{lemma}
 
@@ -2506,7 +2506,7 @@ Let $G$ be a finite group acting on a ring $R$. Let $\mathfrak q \subset R$
 be a prime. Set
 $$
 I = \{\sigma \in G \mid \sigma(\mathfrak q) = \mathfrak q
-\text{ and } \sigma \bmod \mathfrak q = \text{id}_\mathfrak q\}
+\text{ and } \sigma \bmod \mathfrak q = \id_\mathfrak q\}
 $$
 Then $R^G \to R^I$ is \'etale at $R^I \cap \mathfrak q$.
 \end{lemma}
@@ -2630,7 +2630,7 @@ Let $\mathfrak q \subset B$. Set
 $$
 I = \{\sigma \in G \mid
 \sigma(\mathfrak q) = \mathfrak q \text{ and }
-\sigma \bmod \mathfrak q = \text{id}_{\kappa(\mathfrak q)}\}
+\sigma \bmod \mathfrak q = \id_{\kappa(\mathfrak q)}\}
 $$
 Then $(B^I)_{B^I \cap \mathfrak q}$ is a filtered colimit
 of \'etale $A$-algebras.
@@ -2712,7 +2712,7 @@ $$
 D = \{\sigma \in G \mid \sigma(\mathfrak m^{sep}) = \mathfrak m^{sep}\}
 \supset
 I = \{\sigma \in D \mid \sigma \bmod \mathfrak m^{sep} =
-\text{id}_{\kappa(\mathfrak m^{sep})}\}
+\id_{\kappa(\mathfrak m^{sep})}\}
 $$
 These groups are sometimes called the
 {\it decomposition group} and the {\it inertia group}
@@ -2812,7 +2812,7 @@ For $y \in X^{sep}$ define
 $$
 D_y = \{\sigma \in G \mid \sigma(y) = y\} \supset
 I_y = \{\sigma \in D \mid \sigma \bmod \mathfrak m_y =
-\text{id}_{\kappa(y)} \}
+\id_{\kappa(y)} \}
 $$
 similarly to the above. On the other hand, for $x \in X$
 let $\mathcal{O}_{X, x}^{sh}$ be a strict henselization,
@@ -2916,7 +2916,7 @@ equivalent to
 \begin{enumerate}
 \item[(9)] for $y \in Y$ the group
 $I_y = \{g \in G \mid g(y) = y\text{ and }
-g \bmod \mathfrak m_y = \text{id}_{\kappa(y)}\}$ is trivial.
+g \bmod \mathfrak m_y = \id_{\kappa(y)}\}$ is trivial.
 \end{enumerate}
 \end{lemma}
 
@@ -3019,7 +3019,7 @@ Let $\mathfrak m$ be a maximal ideal of $B$.
 Let $G = \text{Gal}(L/K)$,
 $D = \{\sigma \in G \mid \sigma(\mathfrak m) = \mathfrak m\}$, and
 $I = \{\sigma \in D \mid \sigma \bmod \mathfrak m =
-\text{id}_{\kappa(\mathfrak m)}\}$.
+\id_{\kappa(\mathfrak m)}\}$.
 The decomposition group $D$ fits into a canonical exact sequence
 $$
 1 \to I \to D \to \text{Aut}(\kappa(\mathfrak m)/\kappa_A) \to 1
@@ -3193,7 +3193,7 @@ Then $\overline{\kappa}$ is an algebraic closure of $\kappa$.
 Let $G = \text{Gal}(K^{sep}/K)$,
 $D = \{\sigma \in G \mid \sigma(\mathfrak m^{sep}) = \mathfrak m^{sep}\}$, and
 $I = \{\sigma \in D \mid \sigma \bmod \mathfrak m^{sep} =
-\text{id}_{\kappa(\mathfrak m^{sep})}\}$.
+\id_{\kappa(\mathfrak m^{sep})}\}$.
 The decomposition group $D$ fits into a canonical exact sequence
 $$
 1 \to I \to D \to \text{Gal}(\kappa^{sep}/\kappa) \to 1

@@ -1279,7 +1279,7 @@ v(\overline{C}) = \colim_{A \to B \to \overline{C}} B
 $$
 is a right adjoint to the base change functor $u$ as required by the lemma.
 The functor $v$ is fully faithful because
-$u \circ v = \text{id}$ by construction, see
+$u \circ v = \id$ by construction, see
 Categories, Lemma \ref{categories-lemma-adjoint-fully-faithful}.
 \end{proof}
 
@@ -1675,7 +1675,7 @@ map $A \to D$ such that $D$ is w-contractible.
 
 \begin{proof}
 Applying Lemma \ref{lemma-get-w-local-algebraic-residue-field-extensions}
-to $\text{id}_A : A \to A$ we find a faithfully flat, ind-\'etale ring map
+to $\id_A : A \to A$ we find a faithfully flat, ind-\'etale ring map
 $A \to C$ such that $C$ is w-local and such that every local ring at a
 maximal ideal of $C$ is strictly henselian.
 Choose an extremally disconnected space $T$ and a surjective
@@ -2331,8 +2331,8 @@ and a morphism of topoi
 $$
 i_S : \Sh(S_\proetale) \longrightarrow \Sh((\Sch/S)_\proetale)
 $$
-such that $\pi_S \circ i_S = \text{id}$. Moreover, $i_S = i_{\text{id}_S}$
-with $i_{\text{id}_S}$ as in Lemma \ref{lemma-put-in-T}. In particular the
+such that $\pi_S \circ i_S = \id$. Moreover, $i_S = i_{\text{id}_S}$
+with $i_{\id_S}$ as in Lemma \ref{lemma-put-in-T}. In particular the
 functor $i_S^{-1} = \pi_{S, *}$ is described by the rule
 $i_S^{-1}(\mathcal{G})(U/S) = \mathcal{G}(U/S)$.
 \end{lemma}
@@ -4031,8 +4031,8 @@ $i^{-1}\mathcal{F}(V) = \mathcal{F}(v(V))$,
 has a left adjoint $i^{Sh}_!$,
 \item $i^{-1} : \textit{Ab}(X_\proetale) \to \textit{Ab}(Z_\proetale)$
 has a left adjoint $i_!$,
-\item $\text{id} \to i^{-1}i^{Sh}_!$, $\text{id} \to i^{-1}i_!$, and
-$i^{-1}i_* \to \text{id}$ are isomorphisms, and
+\item $\id \to i^{-1}i^{Sh}_!$, $\text{id} \to i^{-1}i_!$, and
+$i^{-1}i_* \to \id$ are isomorphisms, and
 \item $i_*$, $i^{Sh}_!$ and $i_!$ are fully faithful.
 \end{enumerate}
 \end{lemma}
@@ -4095,11 +4095,11 @@ Then $i^{-1}i^{Sh}_!h_V = i^{-1}h_{v(V)} = h_{u(v(V))} = h_V$.
 (It is a general fact that $i^{-1}h_U = h_{u(U)}$.) Since the
 sheaves $h_V$ for $V$ contractible generate $\Sh(Z_{app})$
 (Sites, Lemma \ref{sites-lemma-sheaf-coequalizer-representable})
-we conclude $\text{id} \to i^{-1}i^{Sh}_!$ is an isomorphism.
-Similarly for the map $\text{id} \to i^{-1}i_!$. Then
+we conclude $\id \to i^{-1}i^{Sh}_!$ is an isomorphism.
+Similarly for the map $\id \to i^{-1}i_!$. Then
 $(i^{-1}i_*\mathcal{H})(V) = i_*\mathcal{H}(v(V)) =
 \mathcal{H}(u(v(V))) = \mathcal{H}(V)$ and we find that
-$i^{-1}i_* \to \text{id}$ is an isomorphism.
+$i^{-1}i_* \to \id$ is an isomorphism.
 
 \medskip\noindent
 The fully faithfulness statements of (6) now follow from
@@ -4112,7 +4112,7 @@ Let $i : Z \to X$ be a closed immersion of schemes. Then
 \begin{enumerate}
 \item $i_\proetale^{-1}$ commutes with limits,
 \item $i_{\proetale, *}$ is fully faithful, and
-\item $i_\proetale^{-1}i_{\proetale, *} \cong \text{id}_{\Sh(Z_\proetale)}$.
+\item $i_\proetale^{-1}i_{\proetale, *} \cong \id_{\Sh(Z_\proetale)}$.
 \end{enumerate}
 \end{lemma}
 
@@ -4281,7 +4281,7 @@ $W_i \to U$ over $X$.
 \begin{lemma}
 \label{lemma-open-immersion}
 Let $j : U \to X$ be an open immersion of schemes.
-Then $\text{id} \cong j^{-1}j_!$ and $j^{-1}j_* \cong \text{id}$
+Then $\id \cong j^{-1}j_!$ and $j^{-1}j_* \cong \text{id}$
 and the functors $j_!$ and $j_*$ are fully faithful.
 \end{lemma}
 

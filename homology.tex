@@ -74,7 +74,7 @@ The following are equivalent
 \begin{enumerate}
 \item $x$ is an initial object,
 \item $x$ is a final object, and
-\item $\text{id}_x = 0$ in $\Mor_\mathcal{A}(x, x)$.
+\item $\id_x = 0$ in $\Mor_\mathcal{A}(x, x)$.
 \end{enumerate}
 Furthermore, if such an object $0$ exists, then a morphism
 $\alpha : x \to y$ factors through $0$ if and only if $\alpha = 0$.
@@ -145,16 +145,16 @@ $i, j, p, q$ as in Lemma \ref{lemma-preadditive-direct-sum} above.
 \label{remark-direct-sum}
 Note that the proof of Lemma \ref{lemma-preadditive-direct-sum}
 shows that given $p$ and $q$ the morphisms $i$, $j$ are uniquely
-determined by the rules $p \circ i = \text{id}_x$,
-$q \circ j = \text{id}_y$, $p \circ j = 0$, $q \circ i = 0$.
+determined by the rules $p \circ i = \id_x$,
+$q \circ j = \id_y$, $p \circ j = 0$, $q \circ i = 0$.
 Moreover, we automatically have
-$i \circ p + j \circ q = \text{id}_{x \oplus y}$.
+$i \circ p + j \circ q = \id_{x \oplus y}$.
 Similarly, given $i$, $j$ the morphisms $p$ and $q$ are uniquely determined.
 Finally, given objects $x, y, z$ and morphisms
 $i : x \to z$, $j : y \to z$, $p : z \to x$ and
-$q : z \to y$ such that $p \circ i = \text{id}_x$,
-$q \circ j = \text{id}_y$, $p \circ j = 0$, $q \circ i = 0$
-and $i \circ p + j \circ q = \text{id}_z$, then $z$
+$q : z \to y$ such that $p \circ i = \id_x$,
+$q \circ j = \id_y$, $p \circ j = 0$, $q \circ i = 0$
+and $i \circ p + j \circ q = \id_z$, then $z$
 is the direct sum of $x$ and $y$ with the four morphisms
 equal to $i, j, p, q$.
 \end{remark}
@@ -170,9 +170,9 @@ Then $F$ transforms direct sums to direct sums and zero to zero.
 Suppose $F$ is additive. A direct sum $z$
 of $x$ and $y$ is characterized by having morphisms
 $i : x \to z$, $j : y \to z$, $p : z \to x$ and
-$q : z \to y$ such that $p \circ i = \text{id}_x$,
-$q \circ j = \text{id}_y$, $p \circ j = 0$, $q \circ i = 0$
-and $i \circ p + j \circ q = \text{id}_z$, according
+$q : z \to y$ such that $p \circ i = \id_x$,
+$q \circ j = \id_y$, $p \circ j = 0$, $q \circ i = 0$
+and $i \circ p + j \circ q = \id_z$, according
 to Remark \ref{remark-direct-sum}. Clearly $F(x), F(y), F(z)$
 and the morphisms $F(i), F(j), F(p), F(q)$ satisfy exactly the
 same relations (by additivity) and we see that $F(z)$ is
@@ -332,7 +332,7 @@ W & \text{if} & i \leq 0 \\
 \end{matrix}
 \right.
 $$
-The map $f : V \to W$ corresponding to $\text{id}_k$ on the underlying
+The map $f : V \to W$ corresponding to $\id_k$ on the underlying
 vector spaces has trivial kernel and cokernel but is not
 an isomorphism. Note also that $\Coim(f) = V$ and $\Im(f) = W$.
 This means that the category of filtered vector spaces over $k$
@@ -707,9 +707,9 @@ and $g\circ t=j$. Hence, there exists $u:\Ker(k)\to\Ker(f)$
 with $i\circ u=t$. It follows 
 $g\circ i\circ u\circ e=g\circ t\circ e=j\circ e=g\circ i$ and 
 $f\circ i\circ u\circ e=0=f\circ i$, hence $i\circ u\circ e=i$. Since 
-$i$ is a monomorphism this implies $u\circ e=\text{id}_{\Ker(f)}$.
+$i$ is a monomorphism this implies $u\circ e=\id_{\Ker(f)}$.
 Furthermore, we have $j\circ e\circ u=g\circ i\circ u=g\circ t=j$. 
-Since $j$ is a monomorphism this implies $e\circ u=\text{id}_{\Ker(k)}$.
+Since $j$ is a monomorphism this implies $e\circ u=\id_{\Ker(k)}$.
 This proves (1). Now, (2) follows by duality.
 \end{proof}
 
@@ -1105,9 +1105,9 @@ $f : E \to F$ in $\mathcal{A}$ making the diagram
 $$
 \xymatrix{
 0 \ar[r] &
-A \ar[r] \ar[d]^{\text{id}} &
+A \ar[r] \ar[d]^{\id} &
 E \ar[r] \ar[d]^f &
-B \ar[r] \ar[d]^{\text{id}} &
+B \ar[r] \ar[d]^{\id} &
 0 \\
 0 \ar[r] &
 A \ar[r] &
@@ -1478,7 +1478,7 @@ be functors. Assume that
 \item $\mathcal{A}$, $\mathcal{B}$ are additive categories,
 $a$, $b$ are additive functors, and $a$ is right adjoint to $b$,
 \item $\mathcal{B}$ is abelian and $b$ is left exact, and
-\item $ba \cong \text{id}_\mathcal{A}$.
+\item $ba \cong \id_\mathcal{A}$.
 \end{enumerate}
 Then $\mathcal{A}$ is abelian.
 \end{lemma}
@@ -1499,7 +1499,7 @@ the coequalizer of $0$ and $\varphi$ and hence
 $bQ$ is the coequalizer of $0$ and $b\varphi$, hence
 $bQ$ is the cokernel of $b\varphi$. Thus we see that every morphism
 of the form $b\varphi$ in $\mathcal{A}$ has a kernel and a cokernel.
-However, since $ba \cong \text{id}$ we see that every morphism of
+However, since $ba \cong \id$ we see that every morphism of
 $\mathcal{A}$ is of this form, and we conclude that kernels and
 cokernels exist in $\mathcal{A}$. In fact, the argument shows that
 if $\psi : A_1 \to A_2$ is a morphism then
@@ -1541,7 +1541,7 @@ b\Ker(aA_2 \to \Coker(a\psi))
 & b\text{ preserves kernels} \\
 & =
 \Ker(A_2 \to b\Coker(a\psi))
-& ba = \text{id}_\mathcal{A} \\
+& ba = \id_\mathcal{A} \\
 & =
 \Ker(A_2 \to \Coker(\psi))
 & \text{by formula above} \\
@@ -1973,8 +1973,8 @@ assumption on the kernel of $F$. Thus $f = 0$.
 
 \medskip\noindent
 For the ``if'' direction, let $X$ be an object of $\mathcal{A}$ such that $F(X)
-= 0$. Then $\overline{F}(\text{id}_X) = \text{id}_{\overline{F}(X)} = 0$, thus
-$\text{id}_X = 0$ in $\mathcal{A}/\mathcal{C}$ by faithfulness of
+= 0$. Then $\overline{F}(\id_X) = \text{id}_{\overline{F}(X)} = 0$, thus
+$\id_X = 0$ in $\mathcal{A}/\mathcal{C}$ by faithfulness of
 $\overline{F}$. Hence $X = 0$ in $\mathcal{A}/\mathcal{C}$, that is $X \in
 \Ob(\mathcal{C})$.
 \end{proof}
@@ -2467,8 +2467,8 @@ We say a morphism $a : A_\bullet \to B_\bullet$
 is a {\it homotopy equivalence} if there exists
 a morphism $b : B_\bullet \to A_\bullet$
 such that there exists a homotopy between
-$a \circ b$ and $\text{id}_A$
-and there exists a homotopy between $b \circ a$ and $\text{id}_B$.
+$a \circ b$ and $\id_A$
+and there exists a homotopy between $b \circ a$ and $\id_B$.
 If there exists such a morphism between $A_\bullet$ and $B_\bullet$, then
 we say that $A_\bullet$ and $B_\bullet$ are {\it homotopy equivalent}.
 \end{definition}
@@ -2690,8 +2690,8 @@ We say a morphism $a : A^\bullet \to B^\bullet$
 is a {\it homotopy equivalence} if there exists
 a morphism $b : B^\bullet \to A^\bullet$
 such that there exists a homotopy between
-$a \circ b$ and $\text{id}_A$
-and there exists a homotopy between $b \circ a$ and $\text{id}_B$.
+$a \circ b$ and $\id_A$
+and there exists a homotopy between $b \circ a$ and $\id_B$.
 If there exists such a morphism between $A^\bullet$ and $B^\bullet$, then
 we say that $A^\bullet$ and $B^\bullet$ are {\it homotopy equivalent}.
 \end{definition}
@@ -2868,7 +2868,7 @@ $[k] : \text{Ch}(\mathcal{A}) \to \text{Ch}(\mathcal{A})$
 which mutually commute (on the nose, without
 any intervening isomorphisms of functors),
 such that $A[k][l]_\bullet = A[k + l]_\bullet$ and
-with $[0] = \text{id}_{\text{Ch}(\mathcal{A})}$.
+with $[0] = \id_{\text{Ch}(\mathcal{A})}$.
 
 \medskip\noindent
 Recall that we view $\mathcal{A}$ as a full subcategory of
@@ -2896,7 +2896,7 @@ of identifications of all the homology
 objects $H_{i - k}(A[k]_\bullet)$, which are
 further compatible with the identifications
 $A[k][l]_\bullet = A[k + l]_\bullet$ and
-with $[0] = \text{id}_{\text{Ch}(\mathcal{A})}$.
+with $[0] = \id_{\text{Ch}(\mathcal{A})}$.
 
 \medskip\noindent
 Let $\mathcal{A}$ be an additive category.
@@ -3027,7 +3027,7 @@ $[k] : \text{CoCh}(\mathcal{A}) \to \text{CoCh}(\mathcal{A})$
 which mutually commute (on the nose, without
 any intervening isomorphisms of functors) and
 such that $A[k][l]^\bullet = A[k + l]^\bullet$ and
-with $[0] = \text{id}_{\text{CoCh}(\mathcal{A})}$.
+with $[0] = \id_{\text{CoCh}(\mathcal{A})}$.
 
 \medskip\noindent
 Recall that we view $\mathcal{A}$ as a full subcategory of
@@ -3054,7 +3054,7 @@ of identifications of all the homology
 objects $H^{i - k}(A[k]^\bullet)$, which are
 further compatible with the identifications
 $A[k][l]^\bullet = A[k + l]^\bullet$ and
-with $[0] = \text{id}_{\text{CoCh}(\mathcal{A})}$.
+with $[0] = \id_{\text{CoCh}(\mathcal{A})}$.
 
 \medskip\noindent
 Let $\mathcal{A}$ be an additive category.
@@ -4662,7 +4662,7 @@ which is given in degree $p$ by the inclusions $F^{p + 1}A \to F^pA$.
 This is clearly an injective morphism of differential objects
 $\alpha : (A, d) \to (A, d)[-1]$. Hence, we can apply
 Remark \ref{remark-differential-object-selfmap}
-with $S = \text{id}$ and $T = [1]$.
+with $S = \id$ and $T = [1]$.
 The corresponding spectral sequence $(E_r, d_r)_{r \geq 0}$
 in $\text{Gr}(\mathcal{A})$ is the spectral sequence we are looking
 for. Let us unwind the definitions a bit.
@@ -6066,7 +6066,7 @@ J : \mathcal{A} \longrightarrow \text{Arrows}(\mathcal{A})
 $$
 such that
 \begin{enumerate}
-\item $s \circ J = \text{id}_\mathcal{A}$,
+\item $s \circ J = \id_\mathcal{A}$,
 \item for any object $A \in \Ob(\mathcal{A})$
 the morphism $J(A)$ is injective, and
 \item for any object $A \in \Ob(\mathcal{A})$
@@ -6155,7 +6155,7 @@ P : \mathcal{A} \longrightarrow \text{Arrows}(\mathcal{A})
 $$
 such that
 \begin{enumerate}
-\item $t \circ J = \text{id}_\mathcal{A}$,
+\item $t \circ J = \id_\mathcal{A}$,
 \item for any object $A \in \Ob(\mathcal{A})$
 the morphism $P(A)$ is surjective, and
 \item for any object $A \in \Ob(\mathcal{A})$
@@ -6315,7 +6315,7 @@ the object $Q$ of $\mathcal{A}$ corresponding to $P$ is defined up to
 unique isomorphism by the formula
 $\Hom_\mathcal{A}(Q, A) = \Hom_\mathcal{B}(P, u(A))$. Let us write
 $Q = v(P)$. Denote $i_P : P \to u(v(P))$ the map corresponding to
-$\text{id}_{v(P)}$ in $\Hom_\mathcal{A}(v(P), v(P))$. Functoriality
+$\id_{v(P)}$ in $\Hom_\mathcal{A}(v(P), v(P))$. Functoriality
 in (2) implies that the bijection is given by
 $$
 \Hom_\mathcal{A}(v(P), A) \to \Hom_\mathcal{B}(P, u(A)),\quad

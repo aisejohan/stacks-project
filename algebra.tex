@@ -421,7 +421,7 @@ the solid diagram
 $$
 \xymatrix{
 & R^{\oplus m} \ar[r] \ar@{..>}[d] & R^{\oplus n} \ar[r] \ar[d] &
-M_3 \ar[r] \ar[d]^{\text{id}} & 0 \\
+M_3 \ar[r] \ar[d]^{\id} & 0 \\
 0 \ar[r] & M_1 \ar[r] & M_2 \ar[r] & M_3 \ar[r] & 0
 }
 $$
@@ -711,7 +711,7 @@ consists of a family of $R$-modules $\{M_i\}_{i\in I}$ indexed
 by $I$ and a family of $R$-module maps $\{\mu_{ij} : M_i \to M_j\}_{i \leq j}$
 such that for all $i \leq j \leq k$
 $$
-\mu_{ii} = \text{id}_{M_i}\quad
+\mu_{ii} = \id_{M_i}\quad
 \mu_{ik} = \mu_{jk}\circ \mu_{ij}
 $$
 We say $(M_i, \mu_{ij})$ is a {\it directed system} if $I$ is a directed set.
@@ -1880,7 +1880,7 @@ Then for all $i\leq j$, the following diagram commutes:
 $$
 \xymatrix{
 M_i \otimes N \ar[r]_{\mu_i \otimes 1} \ar[d]_{\mu_{ij} \otimes 1} &
-M \otimes N \ar[d]^{\text{id}} \\
+M \otimes N \ar[d]^{\id} \\
 M_j \otimes N \ar[r]^{\mu_j \otimes 1} &
 M \otimes N
 }
@@ -1901,9 +1901,9 @@ $R$-linear mapping $\phi : M \otimes N \to P$.
 From the commutative diagram below:
 $$
 \xymatrix{
-M_i \times N \ar[r]^{g_i} \ar[d]^{\mu_i \times \text{id}} &
-M_i \otimes N\ar[r]_{\text{id}} \ar[d]_{\lambda_i} &
-M_i \otimes N \ar[d]_{\mu_i \otimes \text{id}} \ar[rd]^{\lambda_i} \\
+M_i \times N \ar[r]^{g_i} \ar[d]^{\mu_i \times \id} &
+M_i \otimes N\ar[r]_{\id} \ar[d]_{\lambda_i} &
+M_i \otimes N \ar[d]_{\mu_i \otimes \id} \ar[rd]^{\lambda_i} \\
 M \times N \ar[r]^{\widehat{\phi}} &
 P \ar[r]^{\psi} & M \otimes N \ar[r]^{\phi} & P
 }
@@ -2638,7 +2638,7 @@ in the statement of the lemma.
 Let $R$ be a ring. Let $A = (a_{ij})$ be an $n \times n$
 matrix with coefficients in $R$. Let $P(x) \in R[x]$
 be the characteristic polynomial of $A$ (defined
-as $\det(x\text{id}_{n \times n} - A)$).
+as $\det(x\id_{n \times n} - A)$).
 Then $P(A) = 0$ in $\text{Mat}(n \times n, R)$.
 \end{lemma}
 
@@ -2709,7 +2709,7 @@ $$
 is commutative where $A = (a_{ij})$. By
 Lemma \ref{lemma-charpoly}
 the polynomial
-$P(t) = \det(t\text{id}_{n \times n} - A)$
+$P(t) = \det(t\id_{n \times n} - A)$
 has all the desired properties.
 \end{proof}
 
@@ -2729,12 +2729,12 @@ Write $R' = R[x]$ and think of $M$ as a finite $R'$-module with
 $x$ acting via $\varphi$. Set $I = (x) \subset R'$. By our assumption that
 $\varphi$ is surjective we have $IM = M$. Hence we may apply
 Lemma \ref{lemma-charpoly-module-ideal}
-to $M$ as an $R'$-module, the ideal $I$ and the endomorphism $\text{id}_M$.
+to $M$ as an $R'$-module, the ideal $I$ and the endomorphism $\id_M$.
 We conclude that
-$(1 + a_1 + \ldots + a_n)\text{id}_M = 0$ with $a_j \in I$.
+$(1 + a_1 + \ldots + a_n)\id_M = 0$ with $a_j \in I$.
 Write $a_j = b_j(x)x$ for some $b_j(x) \in R[x]$.
 Translating back into $\varphi$ we see that
-$\text{id}_M = -(\sum_{j = 1, \ldots, n} b_j(\varphi)) \varphi$, and hence
+$\id_M = -(\sum_{j = 1, \ldots, n} b_j(\varphi)) \varphi$, and hence
 $\varphi$ is invertible.
 \end{proof}
 
@@ -8034,7 +8034,7 @@ that $P^\varphi(g) = 0$ in $S$.
 \end{definition}
 
 \noindent
-This is mostly used when $\varphi = \text{id}_R : R \to R$.
+This is mostly used when $\varphi = \id_R : R \to R$.
 In this case the set $I'$ of elements integral over $I$ is called
 the {\it integral closure of $I$}. We will see that $I'$ is
 an ideal of $R$ (and of course $I \subset I'$).
@@ -8767,7 +8767,7 @@ The following are equivalent
 \begin{enumerate}
 \item $M$ is faithfully flat, and
 \item $M$ is flat and for all $R$-module homomorphisms $\alpha : N \to N'$
-we have $\alpha = 0$ if and only if $\alpha \otimes \text{id}_M = 0$.
+we have $\alpha = 0$ if and only if $\alpha \otimes \id_M = 0$.
 \end{enumerate}
 \end{lemma}
 
@@ -8782,7 +8782,7 @@ is exact. Take $x \in \Ker(N_2 \to N_3)$,
 and consider the map $\alpha : R \to N_2/\Im(N_1)$,
 $r \mapsto rx + \Im(N_1)$. By the exactness
 of the complex $-\otimes_R M$ we see that $\alpha \otimes
-\text{id}_M$ is zero. By assumption we get that $\alpha$ is
+\id_M$ is zero. By assumption we get that $\alpha$ is
 zero. Hence $x $ is in the image of $N_1 \to N_2$.
 \end{proof}
 
@@ -16195,7 +16195,7 @@ $J^nM \otimes_R R' = (J')^nM'$ and then that
 $(J')^nM'/(J')^{n + 1}M' = J^nM/J^{n + 1}M \otimes_R R'$.
 Thus $\mu$ is the tensor product of (\ref{equation-quasi-regular}),
 which is an isomorphism by assumption,
-with $\text{id}_{R'}$ and we conclude.
+with $\id_{R'}$ and we conclude.
 \end{proof}
 
 \begin{lemma}
@@ -16766,7 +16766,7 @@ OK, and now consider the map
 $H^i(\alpha) \circ H^i(\beta) =
 H^i(\alpha \circ \beta)$. By the above the
 map $H^i(\alpha \circ \beta)$ is the {\it same}
-as the map $H^i(\text{id}_{G_{\bullet}}) = \text{id}$.
+as the map $H^i(\id_{G_{\bullet}}) = \text{id}$.
 Similarly for the composition $H^i(\beta) \circ H^i(\alpha)$.
 Hence $H^i(\alpha)$ and $H^i(\beta)$ are inverses of each other.
 \end{proof}
@@ -16955,7 +16955,7 @@ on $M/(f_1, \ldots, f_{i - 1})M$.
 
 \begin{proof}
 Suppose that $IM = M$. Then Lemma \ref{lemma-NAK} shows there exists
-an $f \in I$ such that $f : M \to M$ is $\text{id}_M$. Hence
+an $f \in I$ such that $f : M \to M$ is $\id_M$. Hence
 $f, 0, 0, 0, \ldots$ is an infinite sequence of successive
 nonzerodivisors and we see agreement holds in this case.
 If $IM \not =  M$, then we see that a sequence as in the lemma
@@ -17677,9 +17677,9 @@ as follows:
 \begin{enumerate}
 \item set $A_{i, j} = F_i \otimes_R G_j$,
 \item set $d_{i, j} : F_i \otimes_R G_j \to F_{i-1} \otimes G_j$
-equal to $d_{F, i} \otimes \text{id}$, and
+equal to $d_{F, i} \otimes \id$, and
 \item set $\delta_{i, j} : F_i \otimes_R G_j \to F_i \otimes G_{j-1}$
-equal to $\text{id} \otimes d_{G, j}$.
+equal to $\id \otimes d_{G, j}$.
 \end{enumerate}
 This double complex is usually simply denoted $F_\bullet \otimes_R G_\bullet$.
 
@@ -17935,7 +17935,7 @@ The following are equivalent
 \begin{proof}
 Assume $P$ is projective. Choose a surjection $\pi : F \to P$ where $F$
 is a free $R$-module. As $P$ is projective there exists a
-$i \in \Hom_R(P, F)$ such that $i \circ \pi = \text{id}_P$.
+$i \in \Hom_R(P, F)$ such that $i \circ \pi = \id_P$.
 In other words $F \cong \Ker(\pi) \oplus i(P)$ and we see
 that $P$ is a direct summand of $F$.
 
@@ -18762,7 +18762,7 @@ are in a sense complementary to flat modules (see Lemma
 \label{definition-universally-injective}
 Let $f: M \to N$ be a map of $R$-modules.  Then $f$ is called
 {\it universally injective} if for every $R$-module $Q$, the map $f
-\otimes_R \text{id}_Q: M \otimes_R Q \to N \otimes_R Q$
+\otimes_R \id_Q: M \otimes_R Q \to N \otimes_R Q$
 is injective.  A sequence $0 \to M_1 \to M_2 \to M_3
 \to 0$ of $R$-modules is called {\it universally exact} if it is exact
 and $M_1 \to M_2$ is universally injective.
@@ -19315,7 +19315,7 @@ of $M \otimes_R S$ over $S$. Write $y_j = \sum x_i \otimes f_i$ for some
 $x_1, \ldots, x_n \in M$. Then we see that the map
 $\varphi : R^{\oplus n} \to M$
 has the property that
-$\varphi \otimes \text{id}_S : S^{\oplus n} \to M \otimes_R S$
+$\varphi \otimes \id_S : S^{\oplus n} \to M \otimes_R S$
 is surjective. Since $R \to S$ is faithfully flat we see that
 $\varphi$ is surjective, and $M$ is finitely generated.
 
@@ -19881,7 +19881,7 @@ Mittag-Leffler directed systems of modules.
 \label{definition-domination}
 Let $f: M \to N$ and $g: M \to M'$ be maps of $R$-modules.
 Then we say $g$ {\it dominates} $f$ if for any $R$-module $Q$, we have $\Ker(f
-\otimes_R \text{id}_Q) \subset \Ker(g \otimes_R \text{id}_Q)$.
+\otimes_R \id_Q) \subset \Ker(g \otimes_R \text{id}_Q)$.
 \end{definition}
 
 \noindent
@@ -19891,20 +19891,20 @@ It is enough to check this condition for finitely presented modules.
 \label{lemma-domination-fp}
 Let $f: M \to N$ and $g: M \to M'$ be maps of $R$-modules.
 Then $g$ dominates $f$ if and only if for any finitely presented $R$-module
-$Q$, we have $\Ker(f \otimes_R \text{id}_Q) \subset \Ker(g \otimes_R
-\text{id}_Q)$.
+$Q$, we have $\Ker(f \otimes_R \id_Q) \subset \Ker(g \otimes_R
+\id_Q)$.
 \end{lemma}
 
 \begin{proof}
-Suppose $\Ker(f \otimes_R \text{id}_Q) \subset \Ker(g \otimes_R
-\text{id}_Q)$ for all finitely presented modules $Q$.  If $Q$ is an
+Suppose $\Ker(f \otimes_R \id_Q) \subset \Ker(g \otimes_R
+\id_Q)$ for all finitely presented modules $Q$.  If $Q$ is an
 arbitrary module, write $Q = \colim_{i \in I} Q_i$ as a colimit of a
 directed
 system of finitely presented modules $Q_i$.  Then $\Ker(f \otimes_R
-\text{id}_{Q_i}) \subset \Ker(g \otimes_R \text{id}_{Q_i})$ for
+\id_{Q_i}) \subset \Ker(g \otimes_R \text{id}_{Q_i})$ for
 all $i$.  Since taking directed colimits is exact and commutes with tensor
-product, it follows that $\Ker(f \otimes_R \text{id}_Q) \subset \Ker(g
-\otimes_R \text{id}_Q)$.
+product, it follows that $\Ker(f \otimes_R \id_Q) \subset \Ker(g
+\otimes_R \id_Q)$.
 \end{proof}
 
 \begin{lemma}
@@ -19931,13 +19931,13 @@ $$
 Since tensoring commutes with taking pushouts, we have such a short exact
 sequence
 $$
-0 \to \Ker(f \otimes \text{id}_Q ) \cap \Ker(g \otimes
-\text{id}_Q) \to \Ker(f \otimes \text{id}_Q)
-\to \Ker(f' \otimes \text{id}_Q) \to 0
+0 \to \Ker(f \otimes \id_Q ) \cap \Ker(g \otimes
+\id_Q) \to \Ker(f \otimes \text{id}_Q)
+\to \Ker(f' \otimes \id_Q) \to 0
 $$
 for every $R$-module $Q$.  So $f'$ is universally injective if and only if
-$\Ker(f \otimes \text{id}_Q ) \subset \Ker(g \otimes
-\text{id}_Q)$ for every $Q$, if and only if $g$ dominates $f$.
+$\Ker(f \otimes \id_Q ) \subset \Ker(g \otimes
+\id_Q)$ for every $Q$, if and only if $g$ dominates $f$.
 \end{proof}
 
 \noindent
@@ -19965,7 +19965,7 @@ $$
 0 \to M' \xrightarrow{f'} N' \to \Coker(f') \to 0
 $$
 splits. This is the case if and only if there is a map $h' : N' \to M'$
-such that $h' \circ f' = \text{id}_{M'}$.  From the universal
+such that $h' \circ f' = \id_{M'}$.  From the universal
 property of the pushout, the existence of such an $h'$ is equivalent to $g$
 factoring through $f$.
 \end{proof}
@@ -19981,7 +19981,7 @@ M_i \to M$ be the canonical map.  The following are equivalent:
 \item For every finitely presented $R$-module $P$ and module map $f: P
 \to M$, there exists a finitely presented $R$-module $Q$ and a module
 map $g: P \to Q$ such that $g$ and $f$ dominate each other, i.e.,
-$\Ker(f \otimes_R \text{id}_N) = \Ker(g \otimes_R \text{id}_N)$
+$\Ker(f \otimes_R \id_N) = \Ker(g \otimes_R \text{id}_N)$
 for every $R$-module $N$.
 \item For each $i \in I$, there exists $j \geq i$ such that $f_{ij}: M_i
 \to M_j$ dominates $f_i: M_i \to M$.
@@ -20040,13 +20040,13 @@ $f_{ik}$ for $k \geq i$. All $M_i$ are of finite presentation, so
 $\Coker(f_{ik})$ is of finite presentation for $k \geq i$.  By Lemma
 \ref{lemma-domination}, $f_{ij}$ factors through $f_{ik}$ for all $k \geq i$.
 Thus (2) implies (3).  On the other hand, if (3) holds then for any $R$-module
-$N$, $f_{ij} \otimes_R \text{id}_N$ factors through $f_{ik}
-\otimes_R \text{id}_N$ for $k \geq i$.  So $\Ker(f_{ik} \otimes_R
-\text{id}_N) \subset \Ker(f_{ij} \otimes_R \text{id}_N)$ for $k
-\geq i$.  But $\Ker(f_i \otimes_R \text{id}_N: M_i \otimes_R N
+$N$, $f_{ij} \otimes_R \id_N$ factors through $f_{ik}
+\otimes_R \id_N$ for $k \geq i$.  So $\Ker(f_{ik} \otimes_R
+\id_N) \subset \Ker(f_{ij} \otimes_R \text{id}_N)$ for $k
+\geq i$.  But $\Ker(f_i \otimes_R \id_N: M_i \otimes_R N
 \to M \otimes_R N)$ is the union of $\Ker(f_{ik} \otimes_R
-\text{id}_N)$ for $k \geq i$.  Thus $\Ker(f_i \otimes_R
-\text{id}_N) \subset \Ker(f_{ij} \otimes_R \text{id}_N)$ for
+\id_N)$ for $k \geq i$.  Thus $\Ker(f_i \otimes_R
+\id_N) \subset \Ker(f_{ij} \otimes_R \text{id}_N)$ for
 any $R$-module $N$, which by definition means $f_{ij}$ dominates $f_i$.
 
 \medskip\noindent
@@ -20070,7 +20070,7 @@ $$
 \Im( \Hom(M_k, M_j) \to   \Hom(M_i, M_j))
 $$
 for all $k \geq j$.  Since $f_{ij}$ is the image of
-$\text{id} \in  \Hom(M_j, M_j)$ under
+$\id \in  \Hom(M_j, M_j)$ under
 $\Hom(M_j, M_j) \to  \Hom(M_i, M_j)$,
 this shows  that for any $k \geq j$ there is $h \in \Hom(M_k, M_j)$
 such that $f_{ij} = h \circ f_{ik}$.  If $j \geq k$ then we can take
@@ -20140,7 +20140,7 @@ Let $R$ be a ring and $M$ an $R$-module. Then $M$ is Mittag-Leffler if and
 only if for every finite free $R$-module $F$ and module map
 $f: F \to M$, there exists a finitely presented $R$-module $Q$
 and a module map $g : F \to Q$ such that $g$ and $f$ dominate each other, i.e.,
-$\Ker(f \otimes_R \text{id}_N) = \Ker(g \otimes_R \text{id}_N)$
+$\Ker(f \otimes_R \id_N) = \Ker(g \otimes_R \text{id}_N)$
 for every $R$-module $N$.
 \end{lemma}
 
@@ -21131,7 +21131,7 @@ $$
 Choose and fix $j \in I$ such that $\Im(P \to M) \subset \Im(M_j \to M)$.
 This is possible as $P$ is finitely generated. Set $k = k(j)$.
 Let
-$x = (0, \ldots, 0, \text{id}_{M_k}, 0, \ldots, 0) \in M_k^*$ and
+$x = (0, \ldots, 0, \id_{M_k}, 0, \ldots, 0) \in M_k^*$ and
 note that this maps to $y = (0, \ldots, 0, f_{jk}, 0, \ldots, 0) \in M_j^*$.
 By our choice of $k$ we see that $y \in E_j$. By
 Example \ref{example-ML-surjective-maps}
@@ -22292,7 +22292,7 @@ have $N \otimes_R {\mathfrak m}^n/{\mathfrak m}^{n + 1}
 = N/{\mathfrak m}N \otimes_{R/{\mathfrak m}}
 {\mathfrak m}^n/{\mathfrak m}^{n + 1}$. Thus the map $u_{n + 1}$ is
 injective as both $u_n$ and the map
-$\overline{u} \otimes \text{id}_{{\mathfrak m}^n/{\mathfrak m}^{n + 1}}$ are.
+$\overline{u} \otimes \id_{{\mathfrak m}^n/{\mathfrak m}^{n + 1}}$ are.
 
 \medskip\noindent
 By Krull's intersection theorem
@@ -23341,7 +23341,7 @@ $$
 is {\it trivial}. More precisely, we say
 $0 \to R^{n_e} \to R^{n_{e-1}} \to \ldots \to R^{n_0}$
 is trivial if either there exists an $e \geq i \geq 1$
-with $n_i = n_{i - 1} = 1$, $\varphi_i = \text{id}_R$, and
+with $n_i = n_{i - 1} = 1$, $\varphi_i = \id_R$, and
 $n_j = 0$ for $j \not \in \{i, i - 1\}$ or
 $n_0 = 1$ and $n_i = 0$ for $i > 0$.
 The lemma above clearly says that
@@ -23483,7 +23483,7 @@ and that $I(\varphi)$ contains a nonzerodivisor $x$.
 The rank being $m$ implies $n \geq m$. By
 Lemma \ref{lemma-matrix-left-inverse}
 we can find a map $\psi : R^n \to R^m$ such that
-$\psi \circ \varphi = x \text{id}_{R^m}$. Thus $\varphi$
+$\psi \circ \varphi = x \id_{R^m}$. Thus $\varphi$
 is injective.
 \end{proof}
 
@@ -30615,8 +30615,8 @@ Let $v : N \otimes_A R \to M \otimes_A R$ be an inverse to
 $u \otimes 1$. Apply part (3) to get a map
 $v_i : N \otimes_A R_i \to M \otimes_A R_i$ for some $i$.
 Apply part (1) to see that, after increasing $i$ we have
-$v_i \circ (u \otimes 1) = \text{id}_{M \otimes_R R_i}$ and
-$(u \otimes 1) \circ v_i = \text{id}_{N \otimes_R R_i}$.
+$v_i \circ (u \otimes 1) = \id_{M \otimes_R R_i}$ and
+$(u \otimes 1) \circ v_i = \id_{N \otimes_R R_i}$.
 \end{proof}
 
 \begin{lemma}
@@ -30732,8 +30732,8 @@ $B$ is a finite type $A$-algebra, and that $C$ is a finitely presented
 $A$-algebra. Let $v : B \otimes_A R \to C \otimes_A R$ be an inverse to
 $u \otimes 1$. Let $v_i : C \otimes_A R_i \to B \otimes_A R_i$ be as
 in part (3). Apply part (1) to see that, after increasing $i$ we have
-$v_i \circ (u \otimes 1) = \text{id}_{B \otimes_R R_i}$ and
-$(u \otimes 1) \circ v_i = \text{id}_{C \otimes_R R_i}$.
+$v_i \circ (u \otimes 1) = \id_{B \otimes_R R_i}$ and
+$(u \otimes 1) \circ v_i = \id_{C \otimes_R R_i}$.
 \end{proof}
 
 \begin{lemma}
@@ -33414,7 +33414,7 @@ in degree $0$.
 
 \begin{proof}
 Follows from Lemma \ref{lemma-NL-homotopy}
-and the fact that $\text{id}_B : B \to B$ is a presentation of $B$ over $A$
+and the fact that $\id_B : B \to B$ is a presentation of $B$ over $A$
 with zero kernel.
 \end{proof}
 
@@ -33717,22 +33717,22 @@ $R$-modules.
 \begin{proof}
 Choose a map $h : A_0 \to A_1$ such that
 $$
-\text{id}_{A_1} - \psi_1 \circ \varphi_1 = h \circ d_A
+\id_{A_1} - \psi_1 \circ \varphi_1 = h \circ d_A
 \text{ and }
-\text{id}_{A_0} - \psi_0 \circ \varphi_0 = d_A \circ h.
+\id_{A_0} - \psi_0 \circ \varphi_0 = d_A \circ h.
 $$
 Similarly, choose a map $h' : B_0 \to B_1$ such that
 $$
-\text{id}_{B_1} - \varphi_1 \circ \psi_1 = h' \circ d_B
+\id_{B_1} - \varphi_1 \circ \psi_1 = h' \circ d_B
 \text{ and }
-\text{id}_{B_0} - \varphi_0 \circ \psi_0 = d_B \circ h'.
+\id_{B_0} - \varphi_0 \circ \psi_0 = d_B \circ h'.
 $$
 A trivial computation shows that
 $$
 \left(
 \begin{matrix}
-\text{id}_{A_1} & -h' \circ \psi_1 + h \circ \psi_0 \\
-0 & \text{id}_{B_0}
+\id_{A_1} & -h' \circ \psi_1 + h \circ \psi_0 \\
+0 & \id_{B_0}
 \end{matrix}
 \right)
 =
@@ -36090,7 +36090,7 @@ $$
 with the property that $\tilde\sigma(\text{d}x_t) = f_t$.
 As $\sigma$ is a section to $\text{d}$ the difference
 $$
-\Delta = \text{id}_{J/J^2} - \tilde \sigma \circ \text{d}
+\Delta = \id_{J/J^2} - \tilde \sigma \circ \text{d}
 $$
 is a self map $J/J^2 \to J/J^2$ whose image is contained in
 $(IJ + J^2)/J^2$. In particular $\Delta((IJ + J^2)/J^2) = 0$
@@ -36593,7 +36593,7 @@ $$
 \xymatrix{
 S_K = K \otimes_k S \ar[r] &
 K \otimes_k \kappa(\mathfrak q)
-\ar[r]^-{\text{id}_K \otimes \psi} &
+\ar[r]^-{\id_K \otimes \psi} &
 K.
 }
 $$

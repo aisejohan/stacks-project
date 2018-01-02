@@ -208,7 +208,7 @@ D_{\textit{Coh}}(\mathcal{O}_X)
 D_{\textit{Coh}}(\mathcal{O}_X)
 $$
 which comes equipped with a canonical isomorphism
-$\text{id} \to D \circ D$. If $X$ is quasi-compact, then
+$\id \to D \circ D$. If $X$ is quasi-compact, then
 $D$ exchanges $D^+_{\textit{Coh}}(\mathcal{O}_X)$ and
 $D^-_{\textit{Coh}}(\mathcal{O}_X)$ and induces an equivalence
 $D^b_{\textit{Coh}}(\mathcal{O}_X) \to D^b_{\textit{Coh}}(\mathcal{O}_X)$.
@@ -633,8 +633,8 @@ of functors $D_\QCoh(\mathcal{O}_Y) \to D_\QCoh(\mathcal{O}_U)$
 (j')^* \circ a \circ Rj_* \circ j^* \xrightarrow{\xi^{-1}}
 (j')^* \circ Rj'_* \circ a' \circ j^* \to a' \circ j^*
 \end{equation}
-where the first arrow comes from $\text{id} \to Rj_* \circ j^*$
-and the final arrow from the isomorphism $(j')^* \circ Rj'_* \to \text{id}$.
+where the first arrow comes from $\id \to Rj_* \circ j^*$
+and the final arrow from the isomorphism $(j')^* \circ Rj'_* \to \id$.
 In particular, we see that (\ref{equation-sheafy}) is an isomorphism
 when evaluated on $K$ if and only if $a(K)|_U \to a(Rj_*(K|_V))|_U$
 is an isomorphism.
@@ -837,8 +837,8 @@ L(g')^* \circ a \to
 L(g')^* \circ a \circ Rg_* \circ Lg^* \leftarrow
 L(g')^* \circ Rg'_* \circ a' \circ Lg^* \to a' \circ Lg^*
 \end{equation}
-The first arrow comes from the adjunction map $\text{id} \to Rg_* Lg^*$
-and the last arrow from the adjunction map $L(g')^*Rg'_* \to \text{id}$.
+The first arrow comes from the adjunction map $\id \to Rg_* Lg^*$
+and the last arrow from the adjunction map $L(g')^*Rg'_* \to \id$.
 We need the assumption on Tor independence to invert the arrow
 in the middle, see Lemma \ref{lemma-flat-precompose-pus}.
 Alternatively, we can think of (\ref{equation-base-change-map}) by
@@ -1166,8 +1166,8 @@ $$
 \gamma_{B + D} = \gamma_D \circ \gamma_B
 $$
 Here it would be more correct to write
-$\gamma_{A + B} = (\gamma_A \star \text{id}_{l^*}) \circ
-(\text{id}_{(k')^*} \star \gamma_B)$ with notation as in
+$\gamma_{A + B} = (\gamma_A \star \id_{l^*}) \circ
+(\id_{(k')^*} \star \gamma_B)$ with notation as in
 Categories, Section \ref{categories-section-formal-cat-cat}
 and similarly for the others. However, we continue the
 abuse of notation used in the proofs of
@@ -1482,7 +1482,7 @@ be the right adjoint as in Lemma \ref{lemma-twisted-inverse-image}. By
 Categories, Section \ref{categories-section-adjoint} we obtain a
 transformation of functors
 $$
-\text{Tr}_f : Rf_* \circ a \longrightarrow \text{id}
+\text{Tr}_f : Rf_* \circ a \longrightarrow \id
 $$
 The corresponding map $\text{Tr}_{f, K} : Rf_*a(K) \longrightarrow K$
 for $K \in D_\QCoh(\mathcal{O}_Y)$ is sometimes called the {\it trace map}.
@@ -1575,7 +1575,7 @@ $$
 g^* \circ f_* \circ g'_* \circ a' \ar[d]_{\beta^\vee} \ar[r]_-\beta &
 f'_* \circ (g')^* \circ g'_* \circ a' \ar[d] \\
 g^* \circ f_* \circ a \circ g_* \ar[r] &
-\text{id}
+\id
 }
 $$
 commutes which implies the pentagon in the big diagram commutes.
@@ -1592,7 +1592,7 @@ Lemma \ref{lemma-twisted-inverse-image}. By
 Categories, Section \ref{categories-section-adjoint} we obtain a
 transformation of functors
 $$
-\eta_f : \text{id} \to  a \circ Rf_*
+\eta_f : \id \to  a \circ Rf_*
 $$
 which is called the unit of the adjunction.
 
@@ -1665,7 +1665,7 @@ Categories, Lemma
 the square
 $$
 \xymatrix{
-\text{id} \ar[r] \ar[d] &
+\id \ar[r] \ar[d] &
 g'_* \circ a' \circ g^* \circ f_* \ar[d]^\beta \\
 g'_* \circ a' \circ g^* \circ f_* \ar[r]^{\beta^\vee} &
 a \circ g_* \circ f'_* \circ (g')^*
@@ -1798,7 +1798,7 @@ applied to Cohomology, Equation
 (\ref{cohomology-equation-projection-formula-map}) which is an
 isomorphism by Derived Categories of Schemes, Lemma
 \ref{perfect-lemma-cohomology-base-change}, the third arrow is
-$a$ applied to $\text{id}_K \otimes \text{Tr}_f$, and the fourth
+$a$ applied to $\id_K \otimes \text{Tr}_f$, and the fourth
 arrow is $a$ applied to the isomorphism $K \otimes \mathcal{O}_Y = K$.
 The proof of the lemma consists in showing that each of these
 maps gives rise to a commutative square as in the statement of the lemma.
@@ -1870,19 +1870,19 @@ g_*f_*(f^*b(\mathcal{O}_Z) \otimes a(\mathcal{O}_Y))
 g_*(b(\mathcal{O}_Z) \otimes f_*a(\mathcal{O}_Y)) \xrightarrow{g_*\alpha}
 g_*(b(\mathcal{O}_Z)) \xrightarrow{\beta} \mathcal{O}_Z
 $$
-tensored with $\text{id}_K$. Here $\epsilon$ is the isomorphism from
+tensored with $\id_K$. Here $\epsilon$ is the isomorphism from
 Derived Categories of Schemes, Lemma
 \ref{perfect-lemma-cohomology-base-change} and
 $\beta$ comes from the counit map
-$g_*b \to \text{id}$. Similarly, the composition of the lower
-horizontal arrows is adjoint to $\text{id}_K$ tensored with the composition 
+$g_*b \to \id$. Similarly, the composition of the lower
+horizontal arrows is adjoint to $\id_K$ tensored with the composition 
 $$
 g_*f_*(f^*b(\mathcal{O}_Z) \otimes a(\mathcal{O}_Y)) \xrightarrow{g_*f_*\delta}
 g_*f_*(ab(\mathcal{O}_Z)) \xrightarrow{g_*\gamma}
 g_*(b(\mathcal{O}_Z)) \xrightarrow{\beta}
 \mathcal{O}_Z
 $$
-where $\gamma$ comes from the counit map $f_*a \to \text{id}$
+where $\gamma$ comes from the counit map $f_*a \to \id$
 and $\delta$ is the map whose adjoint is the composition
 $$
 f_*(f^*b(\mathcal{O}_Z) \otimes a(\mathcal{O}_Y))
@@ -2303,7 +2303,7 @@ K \otimes_{\mathcal{O}_X}^\mathbf{L} M
 $$
 by Lemmas \ref{lemma-sheaf-with-exact-support-adjoint} and
 \ref{lemma-sheaf-with-exact-support-ext}. For this map we take the
-counit $Ri_*R\SheafHom(\mathcal{O}_Z, K) \to K$ tensored with $\text{id}_M$.
+counit $Ri_*R\SheafHom(\mathcal{O}_Z, K) \to K$ tensored with $\id_M$.
 To see this map is an isomorphism under the hypotheses given,
 translate into algebra using
 Lemma \ref{lemma-sheaf-with-exact-support-quasi-coherent}
@@ -2604,7 +2604,7 @@ K \ar@{=}[d] \\
 Rf_*(Lf^*K \otimes_{\mathcal{O}_X}^\mathbf{L} \omega_{X/Y}^\bullet)
 \ar@{=}[r] &
 K \otimes_{\mathcal{O}_Y}^\mathbf{L} Rf_*\omega_{X/Y}^\bullet
-\ar[rr]^-{\text{id}_K \otimes \text{Tr}_{f, \mathcal{O}_Y}} & & K
+\ar[rr]^-{\id_K \otimes \text{Tr}_{f, \mathcal{O}_Y}} & & K
 }
 $$
 where the equality on the lower right is
@@ -2767,7 +2767,7 @@ Taking $E = \mathcal{O}_X$ in the above we get a map
 $\alpha : \mathcal{O}_X \to
 R\SheafHom_{\mathcal{O}_X}(\omega_{X/Y}^\bullet, \omega_{X/Y}^\bullet)$
 corresponding to
-$\text{id}_{\mathcal{O}_X} \in \Hom_X(\mathcal{O}_X, \mathcal{O}_X)$.
+$\id_{\mathcal{O}_X} \in \Hom_X(\mathcal{O}_X, \mathcal{O}_X)$.
 Since all the isomorphisms above are functorial in $E$ we
 see that the cone on $\alpha$ is an object $C$ of $D_\QCoh(\mathcal{O}_X)$
 such that $\Hom(E, C) = 0$ for all perfect $E$.
@@ -2833,8 +2833,8 @@ Lq^*\omega_{X/Y}^\bullet)
 \end{align*}
 as in (\ref{equation-rigid}). Explanation as follows:
 \begin{enumerate}
-\item The first equality holds as $\text{id} = c \circ b$ because
-$\text{id}_X = p \circ \Delta$.
+\item The first equality holds as $\id = c \circ b$ because
+$\id_X = p \circ \Delta$.
 \item The second equality holds by
 Lemma \ref{lemma-compare-with-pullback-flat-proper}.
 \item The third holds by Lemma \ref{lemma-proper-flat-base-change}
@@ -3538,7 +3538,7 @@ c(\mathcal{O}_{X \times_S X}) \\
 The first equality is (\ref{equation-pre-rigid}) because
 $\omega_{X/S}^\bullet = a(\mathcal{O}_S)$. The second equality by
 Lemma \ref{lemma-compare-with-pullback-flat-proper-noetherian}.
-The third equality because $p \circ \Delta = \text{id}_X$.
+The third equality because $p \circ \Delta = \id_X$.
 The fourth equality by Lemma \ref{lemma-regular-immersion}.
 Observe that $\wedge^d(\mathcal{N}_\Delta)$ is an invertible
 $\mathcal{O}_X$-module. Hence $\wedge^d(\mathcal{N}_\Delta)[-d]$
@@ -3616,7 +3616,7 @@ Let $\overline{X} \subset \overline{X}_1$ be the equalizer of
 $f_1$ and $f_2$. As $\overline{X}_2 \to S$ is separated, we see
 that $\overline{X}$ is a closed subscheme of $\overline{X}_1$
 and hence proper over $S$. Moreover, we obtain an
-open immersion $X \to \overline{X}$ because $f_1|_X = f_2|_X = \text{id}_X$.
+open immersion $X \to \overline{X}$ because $f_1|_X = f_2|_X = \id_X$.
 The morphism $(X \to \overline{X}) \to (j_1 : X \to \overline{X}_1)$
 given by the closed immersion $\overline{X} \to \overline{X}_1$
 equalizes $f_1$ and $f_2$ which proves condition (3) and
@@ -3924,7 +3924,7 @@ $$
 via the identification $\overline{e} = \overline{c} \circ \overline{d}$.
 This was proven in Lemma \ref{lemma-compose-base-change-maps}
 (note that in the current case the morphisms $f', g'$ of that
-lemma are equal to $\text{id}_X$).
+lemma are equal to $\id_X$).
 \end{proof}
 
 \begin{lemma}
@@ -4282,7 +4282,7 @@ Then there is a canonical isomorphism $j^! = j^*$ of functors.
 In this case we may choose $\overline{X} = Y$ as our compactification.
 Then the
 right adjoint of Lemma \ref{lemma-twisted-inverse-image} for
-$\text{id} : Y \to Y$ is the
+$\id : Y \to Y$ is the
 identity functor and hence $j^! = j^*$ by definition.
 \end{proof}
 
@@ -5241,8 +5241,8 @@ f^!_{new} \circ (h \circ g)^!_{new} \ar[d] \\
 f^!_{new} \circ g^!_{new} \circ h^!_{new}
 }
 $$
-is commutative. Let $\eta_Y : \text{id} \to D_Y^2$
-and $\eta_Z : \text{id} \to D_Z^2$ be the canonical isomorphisms
+is commutative. Let $\eta_Y : \id \to D_Y^2$
+and $\eta_Z : \id \to D_Z^2$ be the canonical isomorphisms
 of Lemma \ref{lemma-dualizing-schemes}. Then, using
 Categories, Lemma \ref{categories-lemma-properties-2-cat-cats},
 a computation (omitted) shows that both arrows
@@ -6674,7 +6674,7 @@ two paragraphs.
 Observe that $\text{Ext}^i(K|_U, K|_U) = 0$ for $i < 0$
 and any open $U$ of $X$ by Lemma \ref{lemma-relative-dualizing-RHom}.
 By Cohomology, Lemma \ref{cohomology-lemma-vanishing-and-glueing}
-applied to $\text{id} : X \to X$ we get a unique morphism
+applied to $\id : X \to X$ we get a unique morphism
 $\alpha : K \to L$ agreeing
 with $\alpha_U$ for all $U \in \mathcal{B}$.
 Then $\alpha$ sends $\xi$ to $\eta$ as this is true locally.

@@ -243,7 +243,7 @@ category of $R$-modules has enough injectives
 
 \medskip\noindent
 Assume (1). Let $E \subset E' \subset I$ as in (2).
-Then the map $\text{id}_E : E \to E$ can be extended
+Then the map $\id_E : E \to E$ can be extended
 to a map $\alpha : E' \to E$. The kernel of $\alpha$ has to be
 zero because it intersects $E$ trivially and $E'$ is an essential
 extension. Hence $E = E'$.
@@ -746,11 +746,11 @@ Let $(R, \mathfrak m, \kappa)$ be an artinian local ring.
 Let $E$ be an injective hull of $\kappa$.
 The functor $D(-) = \Hom_R(-, E)$ induces an exact anti-equivalence
 $\text{Mod}^{fg}_R \to \text{Mod}^{fg}_R$ and
-$D \circ D \cong \text{id}$.
+$D \circ D \cong \id$.
 \end{lemma}
 
 \begin{proof}
-We have seen that $D \circ D = \text{id}$ on $\text{Mod}^{fg}_R$
+We have seen that $D \circ D = \id$ on $\text{Mod}^{fg}_R$
 in Lemma \ref{lemma-evaluate}. It follows immediately that
 $D$ is an anti-equivalence.
 \end{proof}
@@ -977,7 +977,7 @@ R\text{-modules with the} \\
 \end{matrix}
 \right\}
 $$
-and we have $D \circ D = \text{id}$ on either side of the equivalence.
+and we have $D \circ D = \id$ on either side of the equivalence.
 \end{proposition}
 
 \begin{proof}
@@ -1290,7 +1290,7 @@ $$
 is functorial in $K^\bullet$ and defines an exact functor
 $D(A) \to D_{I^\infty\text{-torsion}}(A)$ between
 triangulated categories. It follows formally from the
-existence of the natural transformation $R\Gamma_Z \to \text{id}$
+existence of the natural transformation $R\Gamma_Z \to \id$
 given above and the fact that this evaluates to an isomorphism
 on $K^\bullet$ in the subcategory, that $R\Gamma_Z$ is the desired
 right adjoint.
@@ -2050,7 +2050,7 @@ $\alpha : K \to L$ in $D(A)$ to the morphism
 $R\Gamma_Z(\alpha) : R\Gamma_Z(K) \to R\Gamma_Z(L)$.
 We omit the verification (hint: note that $R\Gamma_Z(\alpha)$
 is just the map
-$\alpha \otimes \text{id}_C :
+$\alpha \otimes \id_C :
 K \otimes^\mathbf{L} C
 \to
 L \otimes^\mathbf{L} C$ which is almost the same as the
@@ -2343,7 +2343,7 @@ $$
 K \otimes_R^\mathbf{L} R'
 $$
 in $D(R')$ where $\varphi_* : D(A) \to D(R)$ is the restriction functor.
-For this we can choose $can \otimes^\mathbf{L} \text{id}_{R'}$
+For this we can choose $can \otimes^\mathbf{L} \id_{R'}$
 where $can : \varphi_*(R\Hom(A, K)) \to K$ is the
 counit of the adjunction between $R\Hom(A, -)$ and $\varphi_*$.
 
@@ -4519,14 +4519,14 @@ Let $A \to B \to C$ be finite type homomorphisms of Noetherian rings.
 If the lemma holds for $A \to B$ and $B \to C$, then the lemma holds for
 $A \to C$. This follows from
 Lemma \ref{lemma-composition-shriek-algebraic}
-and the fact that $D_B \circ D_B \cong \text{id}$ by
+and the fact that $D_B \circ D_B \cong \id$ by
 Lemma \ref{lemma-dualizing}.
 Thus it suffices to prove the lemma in case $A \to B$ is
 a surjection and in the case where $B$ is a
 polynomial ring over $A$.
 
 \medskip\noindent
-Assume $B = A[x_1, \ldots, x_n]$. Since $D_A \circ D_A \cong \text{id}$,
+Assume $B = A[x_1, \ldots, x_n]$. Since $D_A \circ D_A \cong \id$,
 it suffices to prove
 $D_B(K \otimes_A B) \cong D_A(K) \otimes_A B[n]$ for $K$
 in $D_{\textit{Coh}}(A)$.
@@ -4585,7 +4585,7 @@ D_A(K) \otimes_A^\mathbf{L} i_*F$
 (More on Algebra, Lemma \ref{more-algebra-lemma-derived-base-change}).
 The third equality follows from More on Algebra, Lemma
 \ref{more-algebra-lemma-internal-hom}. The fourth because
-$D_A \circ D_A = \text{id}$. The final equality by adjointness again.
+$D_A \circ D_A = \id$. The final equality by adjointness again.
 Thus the result holds by the Yoneda lemma.
 \end{proof}
 

@@ -351,13 +351,13 @@ On pulling back the cocycle condition for the triple $(i, i, i)$
 by $\Delta_{123} : U_i \to U_i \times_U U_i \times_U U_i$ we deduce that
 $\Delta^\ast \varphi_{ii} \circ \Delta^\ast \varphi_{ii} =
 \Delta^\ast \varphi_{ii}$; thus $\Delta^\ast \varphi_{ii} =
-\text{id}_{x_i}$.
+\id_{x_i}$.
 \item There is a morphism
 $\Delta_{13}: U_i \times_U U_j \to U_i \times_U U_j \times_U U_i$
 and we can pull back the
 cocycle condition for the triple $(i, j, i)$ to get the
 identity $(\sigma^\ast \varphi_{ji}) \circ \varphi_{ij} =
-\text{id}_{\text{pr}_0^\ast x_i}$, where
+\id_{\text{pr}_0^\ast x_i}$, where
 $\sigma : U_i \times_U U_j \to U_j \times_U U_i$ is the switching morphism.
 \end{enumerate}
 \end{remarks}
@@ -436,13 +436,13 @@ with target $U$. Assume all the fibre products
 $U_i \times_U U_j$ and $U_i \times_U U_j \times_U U_k$ exist.
 \begin{enumerate}
 \item Given an object $X$ of $\mathcal{S}_U$ the {\it trivial descent datum}
-is the descent datum $(X, \text{id}_X)$ with respect to the family
-$\{\text{id}_U : U \to U\}$.
+is the descent datum $(X, \id_X)$ with respect to the family
+$\{\id_U : U \to U\}$.
 \item Given an object $X$ of $\mathcal{S}_U$
 we have a {\it canonical descent datum} on the family of
 objects $f_i^*X$ by pulling back the trivial
-descent datum $(X, \text{id}_X)$ via the
-obvious map $\{f_i : U_i \to U\} \to \{\text{id}_U : U \to U\}$.
+descent datum $(X, \id_X)$ via the
+obvious map $\{f_i : U_i \to U\} \to \{\id_U : U \to U\}$.
 We denote this descent datum $(f_i^*X, can)$.
 \item A descent datum $(X_i, \varphi_{ij})$
 relative to $\{f_i : U_i \to U\}$ is called {\it effective}
@@ -590,8 +590,8 @@ $\mathcal{S}_2$ is a stack over $\mathcal{C}$.
 \begin{proof}
 Let $F : \mathcal{S}_1 \to \mathcal{S}_2$,
 $G : \mathcal{S}_2 \to \mathcal{S}_1$ be functors over $\mathcal{C}$, and let
-$i : F \circ G \to \text{id}_{\mathcal{S}_2}$,
-$j : G \circ F \to \text{id}_{\mathcal{S}_1}$ be isomorphisms of
+$i : F \circ G \to \id_{\mathcal{S}_2}$,
+$j : G \circ F \to \id_{\mathcal{S}_1}$ be isomorphisms of
 functors over $\mathcal{C}$. By
 Categories, Lemma \ref{categories-lemma-fibred-equivalent}
 we see that $\mathcal{S}_1$ is fibred if and only if $\mathcal{S}_2$
@@ -646,7 +646,7 @@ morphisms to strongly cartesian morphisms.
 \item Its $2$-morphisms $t : G \to H$ for
 $G, H : (\mathcal{S}, p) \to (\mathcal{S}', p')$
 will be morphisms of functors
-such that $p'(t_x) = \text{id}_{p(x)}$
+such that $p'(t_x) = \id_{p(x)}$
 for all $x \in \Ob(\mathcal{S})$.
 \end{enumerate}
 \end{definition}
@@ -750,9 +750,9 @@ Now, since $F$ is fully faithful, the corresponding map
 $\Mor_{\mathcal{S}_1}(x|_V, y|_V) \to \Mor_{\mathcal{S}_2}(F(x|_V), F(y|_V))$
 is a bijection. Morphisms in the fibre category $\mathcal{S}_{1, V}$ are
 exactly those morphisms between $x|_V$ and $y|_V$ in $\mathcal{S}_1$ lying
-over $\text{id}_V$. Similarly, morphisms in the fibre category
+over $\id_V$. Similarly, morphisms in the fibre category
 $\mathcal{S}_{2, V}$ are exactly those morphisms between $F(x|_V)$ and
-$F(y|_V)$ in $\mathcal{S}_2$ lying over $\text{id}_V$. Thus we find that $F$
+$F(y|_V)$ in $\mathcal{S}_2$ lying over $\id_V$. Thus we find that $F$
 induces a bijection between these also. Hence (2) holds.
 
 \medskip\noindent
@@ -955,7 +955,7 @@ every functor preserves them.)
 \item Its $2$-morphisms $t : G \to H$ for
 $G, H : (\mathcal{S}, p) \to (\mathcal{S}', p')$
 will be morphisms of functors
-such that $p'(t_x) = \text{id}_{p(x)}$
+such that $p'(t_x) = \id_{p(x)}$
 for all $x \in \Ob(\mathcal{S})$.
 \end{enumerate}
 \end{definition}
@@ -1104,7 +1104,7 @@ every functor preserves them.)
 \item Its $2$-morphisms $t : G \to H$ for
 $G, H : (\mathcal{S}, p) \to (\mathcal{S}', p')$
 will be morphisms of functors
-such that $p'(t_x) = \text{id}_{p(x)}$
+such that $p'(t_x) = \id_{p(x)}$
 for all $x \in \Ob(\mathcal{S})$.
 \end{enumerate}
 \end{definition}
@@ -1201,11 +1201,11 @@ Suppose that $y, y'$ are objects of $\mathcal{T}_1$ over the object $U$
 of $\mathcal{C}$. Let $\alpha, \beta : y \to y'$ be morphisms of
 $(\mathcal{T}_1)_U$ such that $G(\alpha) = G(\beta)$. Our object is to
 show that $\alpha = \beta$. Considering instead
-$\gamma = \alpha^{-1} \circ \beta$ we see that $G(\gamma) = \text{id}_{G(y)}$
-and we have to show that $\gamma = \text{id}_y$. By assumption we
+$\gamma = \alpha^{-1} \circ \beta$ we see that $G(\gamma) = \id_{G(y)}$
+and we have to show that $\gamma = \id_y$. By assumption we
 can find a covering $\{U_i \to U\}$ such that $G(y)|_{U_i}$ is in the
 essential image of $F :(\mathcal{S}_2)_{U_i} \to (\mathcal{S}_1)_{U_i}$.
-Since it suffices to show that $\gamma|_{U_i} = \text{id}$ for each $i$,
+Since it suffices to show that $\gamma|_{U_i} = \id$ for each $i$,
 we may therefore assume that we have
 $f : F(x) \to G(y)$ for some object $x$ of $\mathcal{S}_2$ over $U$
 and morphisms $f$ of $(\mathcal{S}_1)_U$. In this case we get
@@ -1214,8 +1214,8 @@ $$
 (1, \gamma) : (U, x, y, f) \longrightarrow (U, x, y, f)
 $$
 in the fibre category of $\mathcal{S}_2 \times_{\mathcal{S}_1} \mathcal{T}_1$
-over $U$ whose image under $G'$ in $\mathcal{S}_1$ is $\text{id}_x$.
-As $G'$ is faithful we conclude that $\gamma = \text{id}_y$ and we win.
+over $U$ whose image under $G'$ in $\mathcal{S}_1$ is $\id_x$.
+As $G'$ is faithful we conclude that $\gamma = \id_y$ and we win.
 \end{proof}
 
 \begin{lemma}
@@ -1294,11 +1294,11 @@ such that $\alpha_i$ and $\alpha_j$ restrict to the same morphism
 $x|_{U_i \times_U U_j} \to x'|_{U_i \times_U U_j}$.
 Because $\mathcal{T}$ is a stack in groupoids, there is a morphism
 $\beta : F(x) \to F(x')$ over $U$ whose restriction to $U_i$ is $F(\alpha_i)$.
-Then we can think of $\xi = (x, \beta)$ and $\xi' = (x', \text{id}_{F(x')})$
+Then we can think of $\xi = (x, \beta)$ and $\xi' = (x', \id_{F(x')})$
 as sections of the presheaf associated to $y = F(x')$ over $U$
 in assumption (3). On the other hand, the restrictions of
 $\xi$ and $\xi'$ to $U_i$ are $(x|_{U_i}, F(\alpha_i))$
-and $(x'|_{U_i}, \text{id}_{F(x'|_{U_i})})$.
+and $(x'|_{U_i}, \id_{F(x'|_{U_i})})$.
 These are isomorphic to each other by the morphism $\alpha_i$.
 Thus $\xi$ and $\xi'$ are isomorphic by assumption (3). This means there is a
 morphism $\alpha : x \to x'$ over $U$ with $F(\alpha) = \beta$.
@@ -1352,7 +1352,7 @@ an {\it relative inertia fibred category}
 $\mathcal{I}_{\mathcal{S}/\mathcal{S}'} \to \mathcal{C}$ as the
 category whose objects are pairs $(x , \alpha)$ where
 $x \in \Ob(\mathcal{S})$ and $\alpha : x \to x$ with
-$F(\alpha) = \text{id}_{F(x)}$. There is also an absolute version,
+$F(\alpha) = \id_{F(x)}$. There is also an absolute version,
 namely the {\it inertia} $\mathcal{I}_\mathcal{S}$ of $\mathcal{S}$.
 These inertia categories are actually stacks over $\mathcal{C}$ provided
 that $\mathcal{S}$ and $\mathcal{S}'$ are stacks.
@@ -1480,7 +1480,7 @@ $$
 (f_i \times f_j)^*x \to f_j^*x \xrightarrow{a_j} y
 $$
 are equal. Note that a usual morphism $a : x \to y$ gives a locally
-defined morphism $(p(a) : U \to V, \{\text{id}_U\}, a)$.
+defined morphism $(p(a) : U \to V, \{\id_U\}, a)$.
 We say two locally defined morphisms
 $(f, \{f_i : U_i \to U\}, a_i)$ and $(g, \{g_j : U'_j \to U\}, b_j)$
 are {\it equal} if $f = g$ and the compositions
@@ -1686,7 +1686,7 @@ there exists a covering $\{U_i \to U\}_{i \in I}$
 such that $x'|_{U_i} = G(x_i)$ for some $x_i \in \Ob(\mathcal{S}_{U_i})$.
 Moreover, there exist coverings $\{U_{ijk} \to U_i \times_U U_j\}$
 and isomorphisms $\alpha_{ijk} : x_i|_{U_{ijk}} \to x_j|_{U_{ijk}}$
-with $G(\alpha_{ijk}) = \text{id}_{x'|_{U_{ijk}}}$. Set $y_i = F(x_i)$.
+with $G(\alpha_{ijk}) = \id_{x'|_{U_{ijk}}}$. Set $y_i = F(x_i)$.
 Then you can check that
 $$
 F(\alpha_{ijk}) : y_i|_{U_{ijk}} \to y_j|_{U_{ijk}}
@@ -2081,7 +2081,7 @@ $$
 $$
 Consider the sheaf $\mathit{I} = \mathit{Isom}_\mathcal{Y}(F(x), y)$
 on $\mathcal{C}/p(x)$. Note that $s_i = F(\psi_i) \in \mathit{I}(q(x_i))$
-because $F(x_i) = y_i$. Because $F(\varphi_{ij}) = \text{id}$ (as we started
+because $F(x_i) = y_i$. Because $F(\varphi_{ij}) = \id$ (as we started
 with a descent datum over $\{y_i \to y\}$) the displayed formula shows
 that $s_i|_{q(y_i) \times_{q(y)} q(y_j)} = s_j|_{q(y_i) \times_{q(y)} q(y_j)}$.
 Hence the local sections $s_i$ glue to $s : F(x) \to y$. As $F$ is fibred in
@@ -2275,7 +2275,7 @@ categories over $\mathcal{Y}$. Hence
 Lemma \ref{lemma-gerbe-equivalent}
 guarantees that the condition (1) is independent of the choice of the
 factorization. Moreover, this means that we may assume
-$\mathcal{X}' = \mathcal{X} \times_{F, \mathcal{Y}, \text{id}} \mathcal{Y}$
+$\mathcal{X}' = \mathcal{X} \times_{F, \mathcal{Y}, \id} \mathcal{Y}$
 as in the proof of
 Categories, Lemma
 \ref{categories-lemma-ameliorate-morphism-categories-fibred-groupoids}
@@ -2298,7 +2298,7 @@ Set $b = (f')^{-1} \circ f$. By condition (b) we can find a covering
 $\{U_i \to U\}$ and isomorphisms $a_i : x|_{U_i} \to x'|_{U_i}$
 in $\mathcal{X}_{U_i}$ with $F(a_i) = b|_{U_i}$. Then
 $$
-(a_i, \text{id}) : (U, x, y, f)|_{U_i} \to (U, x', y, f')|_{U_i}
+(a_i, \id) : (U, x, y, f)|_{U_i} \to (U, x', y, f')|_{U_i}
 $$
 is a morphism in $\mathcal{X}'_{U_i}$ as desired. This proves that
 (2) implies (1).
@@ -2485,7 +2485,7 @@ morphism $F'(x'_{1i}) \to F'(x'_{2i})$. By (2)(b) for
 $\mathcal{X}' \to \mathcal{Y}'$ there exist coverings
 $\{U_{ij} \to U_i\}$ and morphisms
 $a'_{ij} : x'_{1i}|_{U_{ij}} \to x'_{2i}|_{U_{ij}}$
-such that $F'(a'_{ij}) = \text{id}_{y'_i}|_{U_{ij}}$. Unwinding the definition
+such that $F'(a'_{ij}) = \id_{y'_i}|_{U_{ij}}$. Unwinding the definition
 of morphisms in $\mathcal{Y}' \times_\mathcal{Y} \mathcal{X}$
 we see that $G'(a'_{ij}) : x_1|_{U_{ij}} \to x_2|_{U_{ij}}$ are
 the morphisms we're looking for, i.e., (2)(b) holds for
@@ -2800,7 +2800,7 @@ In the situation above assume
 Consider the set $R \subset \text{Arrows}(u_{pp}\mathcal{S})$ of morphisms
 of the form
 $$
-(a, \text{id}_V, \alpha) :
+(a, \id_V, \alpha) :
 (U', \phi' : V \to u(U'), x')
 \longrightarrow
 (U, \phi : V \to u(U), x)
@@ -2826,7 +2826,7 @@ $$
 $$
 of $u_{pp}\mathcal{S}$ and a morphism
 $$
-(c, \text{id}_V, \gamma) :
+(c, \id_V, \gamma) :
 (U', \phi' : V \to u(U'), x')
 \longrightarrow
 (U, \phi : V \to u(U), x)
@@ -2851,7 +2851,7 @@ $$
 $$
 is a morphism and that
 $$
-(c', \text{id}_{V_1}, \gamma_1) :
+(c', \id_{V_1}, \gamma_1) :
 (U'_1, \phi'_1 : V_1 \to u(U'_1), x'_1)
 \longrightarrow
 (U_1, \phi : V_1 \to u(U_1), x_1)
@@ -2869,7 +2869,7 @@ $$
 $$
 are two morphisms of $u_{pp}\mathcal{S}$ and suppose that
 $$
-(c, \text{id}_V, \gamma) :
+(c, \id_V, \gamma) :
 (U, \phi : V \to u(U), x)
 \longrightarrow
 (U', \phi : V \to u(U'), x')
@@ -2890,7 +2890,7 @@ $\gamma \circ \alpha \circ \delta = \gamma \circ \alpha' \circ \delta$, and
 $p(\alpha \circ \delta) = p(\alpha' \circ \delta)$.
 Hence the arrow
 $$
-(d, \text{id}_{V_1}, \delta) :
+(d, \id_{V_1}, \delta) :
 (U_2, \phi_2 : V_1 \to u(U_2), x_2)
 \longrightarrow
 (U_1, \phi_1 : V_1 \to u(U_1), x_1)
@@ -2982,14 +2982,14 @@ Set $X' = (U', \phi' : V \to u(U'), x')$.
 Thus we see that
 $$
 f_1 =
-((a_1, b_1, \alpha_1) : X' \to X_1, (c, \text{id}_V, \gamma) : X' \to X) :
+((a_1, b_1, \alpha_1) : X' \to X_1, (c, \id_V, \gamma) : X' \to X) :
 X \longrightarrow X_1
 $$
 works, in fact the diagram
 $$
 \xymatrix{
 (U', \phi' : V \to u(U'), x')
-\ar[d]_{(c, \text{id}_V, \gamma)}
+\ar[d]_{(c, \id_V, \gamma)}
 \ar[rr]_{(a_1, b_1, \alpha_1)}
 & & (U_1, V_1 \to u(U_1), x_1) \ar[d]^{(a, b, \alpha)} \\
 (U, V \to u(U), x) \ar[rr]^{(a_2, b_2, \alpha_2)} & &
@@ -3027,7 +3027,7 @@ $$
 (a, b, \alpha) \circ f'_1 =
 (a_2, b_2, \alpha_2).
 $$
-Write $r = (c, \text{id}_V, \gamma) : (U', \phi' : V \to u(U'), x')$,
+Write $r = (c, \id_V, \gamma) : (U', \phi' : V \to u(U'), x')$,
 $f_1 = (a_1, b_1, \alpha_1)$, and $f'_1 = (a'_1, b_1, \alpha'_1)$.
 Here we have used the condition that $p_p(g_1) = p_p(g'_1)$.
 The equalities above are now equivalent to
@@ -3044,7 +3044,7 @@ $u(U'') = u(\text{Eq}(a_1, a'_1)) = \text{Eq}(u(a_1), u(a'_1))$.
 Hence we get a new object $(U'', \phi'' : V \to u(U''), x'')$, where
 $\gamma' : x'' \to x'$ is a strongly cartesian morphism lifting $\gamma$.
 Then we see that we may precompose $f_1$ and $f'_1$ with the element
-$(c', \text{id}_V, \gamma')$ of $R$. After doing this, i.e., replacing
+$(c', \id_V, \gamma')$ of $R$. After doing this, i.e., replacing
 $(U', \phi' : V \to u(U'), x')$ with
 $(U'', \phi'' : V \to u(U''), x'')$, we get back to the previous
 situation where in addition we now have that $a_1 = a'_1$.
@@ -3063,7 +3063,7 @@ in the rest of the proof, although we do use it later in this section.)
 Let $(U, \phi : V \to u(U), x)$ be an object of $u_p\mathcal{S}$.
 Let $b : V' \to V$ be a morphism of $\mathcal{D}$. Then the morphism
 $$
-(\text{id}_U, b, \text{id}_x) :
+(\id_U, b, \text{id}_x) :
 (U, \phi \circ b : V' \to u(U), x)
 \longrightarrow
 (U, \phi : V \to u(U), x)
@@ -3084,11 +3084,11 @@ By
 Lemma \ref{lemma-fibred-category-pullback}
 we know that $u_p\mathcal{S}$ is a fibred category.
 Let $f : X \to Y$ be a morphism of $u_p\mathcal{S}$ with
-$p_p(f) = \text{id}_V$. We are done if we can show that $f$ is invertible, see
+$p_p(f) = \id_V$. We are done if we can show that $f$ is invertible, see
 Categories, Lemma \ref{categories-lemma-fibred-groupoids}.
 Write $f$ as the equivalence class of
-a pair $((a, b, \alpha), r)$ with $r \in R$. Then $p_p(r) = \text{id}_V$,
-hence $p_{pp}((a, b, \alpha)) = \text{id}_V$. Hence $b = \text{id}_V$.
+a pair $((a, b, \alpha), r)$ with $r \in R$. Then $p_p(r) = \id_V$,
+hence $p_{pp}((a, b, \alpha)) = \id_V$. Hence $b = \text{id}_V$.
 But any morphism of $\mathcal{S}$ is strongly cartesian, see
 Categories, Lemma \ref{categories-lemma-fibred-groupoids}
 hence we see that $(a, b, \alpha) \in R$ is invertible
@@ -3130,7 +3130,7 @@ the composition of $G$ with the canonical (localization) functor
 $u_{pp}\mathcal{S} \to u_p\mathcal{S}$. Then consider the functor
 $H : \mathcal{S} \to u^p\mathcal{T}$ given by
 $$
-H(x/U) = (U, G'(U, \text{id}_{u(U)} : u(U) \to u(U), x))
+H(x/U) = (U, G'(U, \id_{u(U)} : u(U) \to u(U), x))
 $$
 on objects and by
 $$
@@ -3185,7 +3185,7 @@ category.
 We check that $G'(r)$ is an isomorphism if $r \in R$.
 Namely, if
 $$
-(a, \text{id}_V, \alpha) :
+(a, \id_V, \alpha) :
 (U', \phi' : V \to u(U'), x')
 \longrightarrow
 (U, \phi : V \to u(U), x)
@@ -3196,7 +3196,7 @@ Lemma \ref{lemma-right-multiplicative-system}
 then $H(\alpha)$ is strongly cartesian, and
 $\text{pr}(H(\alpha))$ is strongly cartesian, see proof of
 Lemma \ref{lemma-fibred-category-pushforward}.
-Hence in this case the morphism $\beta$ has $q(\beta) = \text{id}_V$
+Hence in this case the morphism $\beta$ has $q(\beta) = \id_V$
 and is strongly cartesian. Hence $\beta$ is an isomorphism by
 Categories, Lemma \ref{categories-lemma-composition-cartesian}.
 Thus by
@@ -3354,7 +3354,7 @@ We quickly describe the functor $can$, see proof of
 Lemma \ref{lemma-adjointness-pullback-pushforward}.
 To do this we introduce the functor
 $c'' : \mathcal{S} \to u_{pp}\mathcal{S}$ defined by
-$c''(x/U) = (U, \text{id} : u(U) \to u(U), x)$, and
+$c''(x/U) = (U, \id : u(U) \to u(U), x)$, and
 $c''(\alpha/a) = (a, u(a), \alpha)$. We set
 $c' : \mathcal{S} \to u_p\mathcal{S}$ equal to the composition
 of $c''$ and the canonical functor $u_{pp}\mathcal{S} \to u_p\mathcal{S}$.
@@ -3400,27 +3400,27 @@ is given by an equivalence class of diagrams
 $$
 \xymatrix{
 (U', \phi : u(U) \to u(U'), x')
-\ar[d]_{(c, \text{id}_{u(U)}, \gamma)}
+\ar[d]_{(c, \id_{u(U)}, \gamma)}
 \ar[r]_{(a, b, \alpha)} &
-(U, \text{id} : u(U) \to u(U), y)
+(U, \id : u(U) \to u(U), y)
 \\
-(U, \text{id} : u(U) \to u(U), x)
+(U, \id : u(U) \to u(U), x)
 }
 $$
-with $\gamma$ strongly cartesian and $b = \text{id}_{u(U)}$.
+with $\gamma$ strongly cartesian and $b = \id_{u(U)}$.
 But since $u$ is fully faithful we can write $\phi = u(c')$ for some
 morphism $c' : U \to U'$
-and then we see that $a \circ c' = \text{id}_U$ and
-$c \circ c' = \text{id}_{U'}$. Because $\gamma$ is strongly cartesian
+and then we see that $a \circ c' = \id_U$ and
+$c \circ c' = \id_{U'}$. Because $\gamma$ is strongly cartesian
 we can find a morphism $\gamma' : x \to x'$ lifting $c'$ such that
-$\gamma \circ \gamma' = \text{id}_x$. By definition of the equivalence
+$\gamma \circ \gamma' = \id_x$. By definition of the equivalence
 classes defining morphisms in $u_p\mathcal{S}$ it follows that
 the morphism
 $$
 \xymatrix{
-(U, \text{id} : u(U) \to u(U), x)
-\ar[rr]_{(\text{id}, \text{id}, \alpha \circ \gamma')} & &
-(U, \text{id} : u(U) \to u(U), y)
+(U, \id : u(U) \to u(U), x)
+\ar[rr]_{(\id, \text{id}, \alpha \circ \gamma')} & &
+(U, \id : u(U) \to u(U), y)
 }
 $$
 of $u_{pp}\mathcal{S}$ induces the morphism $f$ in $u_p\mathcal{S}$.

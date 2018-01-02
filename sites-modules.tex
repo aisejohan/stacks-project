@@ -169,7 +169,7 @@ Assumption (2) says that $\textit{PAb}(\mathcal{C})$ is abelian
 which we saw in Section \ref{section-abelian-pre-sheaves} and
 that sheafification is left exact, which is
 Sites, Section \ref{sites-section-sheaves-algebraic-structures} ($\zeta$).
-The final assumption is that $ba \cong \text{id}_\mathcal{A}$ which is
+The final assumption is that $ba \cong \id_\mathcal{A}$ which is
 Sites, Section \ref{sites-section-sheaves-algebraic-structures} ($\delta$).
 Hence Homology, Lemma \ref{homology-lemma-adjoint-get-abelian}
 applies and we conclude that $\textit{Ab}(\mathcal{C})$ is abelian.
@@ -693,7 +693,7 @@ $\varphi : \mathcal{F} \to \mathcal{G}$ such that
 the diagram
 $$
 \xymatrix{
-\mathcal{O} \times \mathcal{F} \ar[r] \ar[d]_{\text{id} \times \varphi} &
+\mathcal{O} \times \mathcal{F} \ar[r] \ar[d]_{\id \times \varphi} &
 \mathcal{F} \ar[d]^{\varphi} \\
 \mathcal{O} \times \mathcal{G} \ar[r] &
 \mathcal{G}
@@ -1089,7 +1089,7 @@ f_*f^{-1}(\mathcal{O} \times \mathcal{G}) \ar[d] \\
 }
 $$
 is commutative. This holds because the adjunction mapping
-$\text{id}_{\Sh(\mathcal{D})} \to f_*f^{-1}$ is a
+$\id_{\Sh(\mathcal{D})} \to f_*f^{-1}$ is a
 transformation of functors. We omit the proof of the implication
 $\beta$ linear $\Rightarrow$ $\alpha$ linear.
 \end{proof}
@@ -5467,7 +5467,7 @@ $\mathcal{F} = \Ker(\pi)$ is its kernel. Assume $\mathcal{F}$ an ideal
 sheaf with square zero in $\mathcal{A}$. So $\mathcal{F}$
 has a natural structure of an $\mathcal{O}_2$-module.
 A section $s : \mathcal{O}_2 \to \mathcal{A}$ of $\pi$
-is a $\mathcal{O}_1$-algebra map such that $\pi \circ s = \text{id}$.
+is a $\mathcal{O}_1$-algebra map such that $\pi \circ s = \id$.
 Given any section $s : \mathcal{O}_2 \to \mathcal{F}$
 of $\pi$ and any $\varphi$-derivation $D : \mathcal{O}_1 \to \mathcal{F}$
 the map
@@ -5576,7 +5576,7 @@ $$
 f^{-1}h_U^\#
 \ar[rr]^{f^{-1}\text{d}_{X/Y}(t)}
 \ar@/^4ex/[rrrr]^{f^*\text{d}_{X/Y}(t)} & &
-f^{-1}\Omega_{X/Y} \ar[rr]^{1 \otimes \text{id}} & &
+f^{-1}\Omega_{X/Y} \ar[rr]^{1 \otimes \id} & &
 f^*\Omega_{X/Y}
 }
 $$
@@ -5937,7 +5937,7 @@ $\NL(\alpha) = \NL_{\mathcal{B}/\mathcal{A}}$ in $D(\mathcal{B})$.
 \end{lemma}
 
 \begin{proof}
-Observe that $\NL_{\mathcal{B}/\mathcal{A}} = \NL(\text{id}_\mathcal{B})$.
+Observe that $\NL_{\mathcal{B}/\mathcal{A}} = \NL(\id_\mathcal{B})$.
 Thus it suffices to show that given two maps
 $\alpha_i : \mathcal{E}_i \to \mathcal{B}$ as above, there is a
 canonical quasi-isomorphism $\NL(\alpha_1) = \NL(\alpha_2)$ in $D(\mathcal{B})$.
@@ -6300,7 +6300,7 @@ for $A \in \Ob(\textit{Ab})$.
 By
 Sites, Lemma \ref{sites-lemma-stalk-skyscraper}
 there are functorial maps $A \to p^{-1}p_*A \to A$ whose composition
-equals $\text{id}_A$. Hence a functorial direct sum decomposition
+equals $\id_A$. Hence a functorial direct sum decomposition
 as in (2) with $I(A)$ the kernel of the adjunction map
 $p^{-1}p_*A \to A$. The functor $p_*$ is left exact by
 Lemma \ref{lemma-exactness-pushforward-pullback}.
@@ -6315,7 +6315,7 @@ $p$ of a ringed topos $(\Sh(\mathcal{C}), \mathcal{O})$.
 Recall that $p^{-1}$ is just the stalk functor.
 Hence we can think of $p$ as a morphism of ringed topoi
 $$
-(p, \text{id}_{\mathcal{O}_p}) :
+(p, \id_{\mathcal{O}_p}) :
 (\Sh(pt), \mathcal{O}_p)
 \longrightarrow
 (\Sh(\mathcal{C}), \mathcal{O}).
@@ -6599,7 +6599,7 @@ $\mathcal{F}_p$ is a flat $\mathcal{O}_p$-module.
 In Section \ref{section-skyscraper} we have seen
 that we can think of $p$ as a morphism of ringed topoi
 $$
-(p, \text{id}_{\mathcal{O}_p}) :
+(p, \id_{\mathcal{O}_p}) :
 (\Sh(pt), \mathcal{O}_p)
 \longrightarrow
 (\Sh(\mathcal{C}), \mathcal{O}).
@@ -7033,7 +7033,7 @@ $$
 f^{-1}(\mathcal{O}^*) = (f^{-1}\mathcal{O})^*.
 $$
 In particular, if $\mathcal{O}$ turns $\mathcal{C}$ into a locally
-ringed site, then setting $f^\sharp = \text{id}$
+ringed site, then setting $f^\sharp = \id$
 the morphism of ringed topoi
 $$
 (f, f^\sharp) :

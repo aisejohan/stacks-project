@@ -107,9 +107,9 @@ $$
 $$
 commutes.
 \item If $0 \leq j \leq n - 1$, then
-$\sigma^{n - 1}_j \circ \delta^n_j = \text{id}_{[n - 1]}$
+$\sigma^{n - 1}_j \circ \delta^n_j = \id_{[n - 1]}$
 and
-$\sigma^{n - 1}_j \circ \delta^n_{j + 1} = \text{id}_{[n - 1]}$.
+$\sigma^{n - 1}_j \circ \delta^n_{j + 1} = \id_{[n - 1]}$.
 In other words the diagram
 $$
 \xymatrix{
@@ -117,7 +117,7 @@ $$
 [n - 1]
 \ar[ru]^{\delta^n_j}
 \ar[rd]_{\delta^n_{j + 1}}
-\ar[rr]^{\text{id}_{[n - 1]}} & & [n - 1] \\
+\ar[rr]^{\id_{[n - 1]}} & & [n - 1] \\
 & [n] \ar[ru]_{\sigma^{n - 1}_j} &
 }
 $$
@@ -247,7 +247,7 @@ may be expressed as follows:
 \begin{enumerate}
 \item If $i < j$, then $d_i \circ d_j = d_{j - 1} \circ d_i$.
 \item If $i < j$, then $d_i \circ s_j = s_{j - 1} \circ d_i$.
-\item We have $\text{id} = d_j \circ s_j = d_{j + 1} \circ s_j$.
+\item We have $\id = d_j \circ s_j = d_{j + 1} \circ s_j$.
 \item If $i > j + 1$, then $d_i \circ s_j = s_j \circ d_{i - 1}$.
 \item If $i \leq j$, then $s_i \circ s_j = s_{j + 1} \circ s_i$.
 \end{enumerate}
@@ -290,7 +290,7 @@ $s$-morphisms are the arrows pointing left.
 \label{example-constant-simplicial-object}
 The simplest example is the {\it constant} simplicial object with
 value $X \in \Ob(\mathcal{C})$. In other words, $U_n = X$ and
-all maps are $\text{id}_X$.
+all maps are $\id_X$.
 \end{example}
 
 \begin{example}
@@ -324,7 +324,7 @@ has a left inverse. In particular $s^n_i$ is a monomorphism.
 \end{lemma}
 
 \begin{proof}
-This is true because $d_i^{n + 1} \circ s^n_i = \text{id}_{U_n}$.
+This is true because $d_i^{n + 1} \circ s^n_i = \id_{U_n}$.
 \end{proof}
 
 \section{Simplicial objects as presheaves}
@@ -443,7 +443,7 @@ $\delta_j \circ \delta_i = \delta_i \circ \delta_{j - 1}$.
 \item If $i < j$, then
 $\sigma_j \circ \delta_i = \delta_i \circ \sigma_{j - 1}$.
 \item We have
-$\text{id} = \sigma_j \circ \delta_j = \sigma_j \circ \delta_{j + 1}$.
+$\id = \sigma_j \circ \delta_j = \sigma_j \circ \delta_{j + 1}$.
 \item If $i > j + 1$, then
 $\sigma_j \circ \delta_i = \delta_{i - 1} \circ \sigma_j$.
 \item If $i \leq j$, then
@@ -490,7 +490,7 @@ $\sigma$-morphisms are the arrows pointing left.
 \label{example-constant-cosimplicial-object}
 The simplest example is the {\it constant} cosimplicial object with
 value $X \in \Ob(\mathcal{C})$. In other words, $U_n = X$ and
-all maps are $\text{id}_X$.
+all maps are $\id_X$.
 \end{example}
 
 \begin{example}
@@ -531,7 +531,7 @@ has a left inverse. In particular $\delta^n_i$ is a monomorphism.
 
 \begin{proof}
 This is true because
-$\sigma_i^{n - 1} \circ \delta^n_i = \text{id}_{U_n}$
+$\sigma_i^{n - 1} \circ \delta^n_i = \id_{U_n}$
 for $j < n$.
 \end{proof}
 
@@ -841,7 +841,7 @@ $$
 We leave it to the reader to verify the following statements.
 Every $m$-simplex of $\Delta[n]$ with $m > n$ is degenerate.
 There is a unique nondegenerate $n$-simplex of $\Delta[n]$,
-namely $\text{id}_{[n]}$.
+namely $\id_{[n]}$.
 \end{example}
 
 \begin{lemma}
@@ -1073,7 +1073,7 @@ $$
 $$
 which maps $\gamma$ to the restriction of the
 morphism $\gamma_k$ to the component corresponding
-to $\text{id}_{[k]}$.
+to $\id_{[k]}$.
 Similarly, for any $n \geq k$, if $W$ is an
 $n$-truncated simplicial object
 of $\mathcal{C}$, then we have
@@ -1091,15 +1091,15 @@ $\alpha : [n] \to [k]$. The morphisms have to satisfy the
 rules that for all $\varphi : [m] \to [n]$ the diagrams
 $$
 \xymatrix{
-X \ar[r]^{\gamma_\alpha} \ar[d]^{\text{id}_X} & V_n \ar[d]^{V(\varphi)} \\
+X \ar[r]^{\gamma_\alpha} \ar[d]^{\id_X} & V_n \ar[d]^{V(\varphi)} \\
 X \ar[r]^{\gamma_{\alpha \circ \varphi}} & V_m
 }
 $$
-commute. Taking $\alpha = \text{id}_{[k]}$, we see that
+commute. Taking $\alpha = \id_{[k]}$, we see that
 for any $\varphi : [m] \to [k]$ we have $\gamma_\varphi =
-V(\varphi) \circ \gamma_{\text{id}_{[k]}}$. Thus the morphism
+V(\varphi) \circ \gamma_{\id_{[k]}}$. Thus the morphism
 $\gamma$ is determined by the value of $\gamma$ on the
-component corresponding to $\text{id}_{[k]}$. Conversely,
+component corresponding to $\id_{[k]}$. Conversely,
 given such a morphism $f : X \to V_k$ we easily
 construct a morphism $\gamma$ by putting
 $\gamma_\alpha = V(\alpha) \circ f$.
@@ -1267,7 +1267,7 @@ $$
 \Mor_\mathcal{C}(V_k, X).
 $$
 wich maps $\gamma$ to the morphism $\gamma_k$ composed with
-the projection onto the factor corresponding to $\text{id}_{[k]}$.
+the projection onto the factor corresponding to $\id_{[k]}$.
 \item Similarly, if $W$ is an $k$-truncated simplicial object
 of $\mathcal{C}$, then we have
 $$
@@ -1290,7 +1290,7 @@ The morphisms have to satisfy the
 rules that for all $\varphi : [m] \to [n]$ the diagrams
 $$
 \xymatrix{
-X \ar[d]^{\text{id}_X} &
+X \ar[d]^{\id_X} &
 V_n \ar[d]^{V(\varphi)}
 \ar[l]^{\gamma_{\varphi \circ \alpha'}} \\
 X &
@@ -1298,11 +1298,11 @@ V_m \ar[l]_{\gamma_{\alpha'}}
 }
 $$
 commute for all $\alpha' : [k] \to [m]$.
-Taking $\alpha' = \text{id}_{[k]}$, we see that
+Taking $\alpha' = \id_{[k]}$, we see that
 for any $\varphi : [k] \to [n]$ we have $\gamma_\varphi =
-\gamma_{\text{id}_{[k]}} \circ V(\varphi)$. Thus the morphism
+\gamma_{\id_{[k]}} \circ V(\varphi)$. Thus the morphism
 $\gamma$ is determined by the component of $\gamma_k$
-corresponding to $\text{id}_{[k]}$. Conversely,
+corresponding to $\id_{[k]}$. Conversely,
 given such a morphism $f : V_k \to X$ we easily
 construct a morphism $\gamma$ by putting
 $\gamma_\alpha = f \circ V(\alpha)$.
@@ -1419,7 +1419,7 @@ And such a collection actually defines a morphism if and only
 if for all $\varphi : [m] \to [n]$ all the diagrams
 $$
 \xymatrix{
-X \ar[r]^{f_u} \ar[d]_{\text{id}_X} & V_n \ar[d]^{V(\varphi)} \\
+X \ar[r]^{f_u} \ar[d]_{\id_X} & V_n \ar[d]^{V(\varphi)} \\
 X \ar[r]^{f_{U(\varphi)(u)}} & V_m
 }
 $$
@@ -1595,8 +1595,8 @@ diagram
 $$
 \xymatrix{
 W_n \times U \times \Delta[m]
-\ar[rr]_{W(\varphi)\times \text{id} \times \text{id}}
-\ar[d]_{\text{id} \times \text{id} \times \varphi} & &
+\ar[rr]_{W(\varphi)\times \id \times \text{id}}
+\ar[d]_{\id \times \text{id} \times \varphi} & &
 W_m \times U \times \Delta[m] \ar[d]^{f_m} \\
 W_n \times U \times \Delta[n] \ar[rr]^{f_n} & & V
 }
@@ -1605,10 +1605,10 @@ is commutative. For $\psi : [n] \to [k]$ in $(\Delta[n])_k$
 we denote $(f_n)_{k, \psi} : W_n \times U_k \to V_k$
 the component of $(f_n)_k$ corresponding to the element
 $\psi$. We define $f'_n : W_n \times U_n \to V_n$
-as $f'_n = (f_n)_{n, \text{id}}$, in other words, as
+as $f'_n = (f_n)_{n, \id}$, in other words, as
 the restriction of
 $(f_n)_n : W_n \times U_n \times (\Delta[n])_n \to V_n$
-to $W_n \times U_n \times \text{id}_{[n]}$.
+to $W_n \times U_n \times \id_{[n]}$.
 To see that the collection $(f'_n)$ defines a
 morphism of simplicial objects, we have to show
 for any $\varphi : [m] \to [n]$ that
@@ -1617,7 +1617,7 @@ f'_m \circ W(\varphi) \times U(\varphi)$.
 The commutative diagram above says that
 $(f_n)_{m, \varphi} : W_n \times U_m \to V_m$
 is equal to
-$(f_m)_{m, \text{id}} \circ W(\varphi) :
+$(f_m)_{m, \id} \circ W(\varphi) :
 W_n \times U_m \to V_m$.
 But then the fact that $f_n$ is a morphism of simplicial
 objects implies that the diagram
@@ -1625,23 +1625,23 @@ $$
 \xymatrix{
 W_n \times U_n \times (\Delta[n])_n
 \ar[r]_-{(f_n)_n}
-\ar[d]_{\text{id} \times U(\varphi) \times \varphi}
+\ar[d]_{\id \times U(\varphi) \times \varphi}
 & V_n \ar[d]^{V(\varphi)} \\
 W_n \times U_m \times (\Delta[n])_m \ar[r]^-{(f_n)_m} & V_m
 }
 $$
 is commutative. And this implies that
 $(f_n)_{m, \varphi} \circ U(\varphi)$ is
-equal to $V(\varphi) \circ (f_n)_{n, \text{id}}$.
+equal to $V(\varphi) \circ (f_n)_{n, \id}$.
 Altogether we obtain
 $
-V(\varphi) \circ (f_n)_{n, \text{id}}
+V(\varphi) \circ (f_n)_{n, \id}
 =
 (f_n)_{m, \varphi} \circ U(\varphi)
 =
-(f_m)_{m, \text{id}} \circ W(\varphi)\circ U(\varphi)
+(f_m)_{m, \id} \circ W(\varphi)\circ U(\varphi)
 =
-(f_m)_{m, \text{id}} \circ W(\varphi)\times U(\varphi)
+(f_m)_{m, \id} \circ W(\varphi)\times U(\varphi)
 $
 as desired.
 
@@ -1650,7 +1650,7 @@ On the other hand, given a morphism
 $f' : W \times U \to V$ we define
 a morphism $f : W \to \Hom(U, V)$
 as follows. By Lemma \ref{lemma-morphism-from-coproduct} the morphisms
-$\text{id} : W_n \to W_n$ corresponds to a unique
+$\id : W_n \to W_n$ corresponds to a unique
 morphism $c_n : W_n \times \Delta[n] \to W$.
 Hence we can consider the composition
 $$
@@ -1794,7 +1794,7 @@ Let $x \in U_n$. Suppose that there are surjections $\varphi : [n] \to [k]$
 and $\psi : [n] \to [l]$ and nondegenerate simplices
 $y \in U_k$, $z \in U_l$ such that $x = U(\varphi)(y)$
 and $x = U(\psi)(z)$. Choose a right inverse $\xi : [l] \to [n]$
-of $\psi$, i.e., $\psi \circ \xi = \text{id}_{[l]}$.
+of $\psi$, i.e., $\psi \circ \xi = \id_{[l]}$.
 Then $z = U(\xi)(x)$. Hence $z = U(\xi)(x) = U(\varphi \circ \xi)(y)$.
 Since $z$ is nondegenerate we conclude that $\varphi \circ \xi :
 [l] \to [k]$ is surjective, and hence $l \geq k$. Similarly
@@ -2262,9 +2262,9 @@ are commutative, given any $0 \leq k, k' \leq m$, $0 \leq n, n'$
 and any $\psi : [k] \to [k']$, $\varphi : [n] \to [n']$,
 $\alpha : [k] \to [n]$ and $\alpha' : [k'] \to [n']$ in $\Delta$
 such that $\varphi \circ \alpha = \alpha' \circ \psi$.
-Taking $n = k$, $\varphi = \alpha'$, and $\alpha = \psi = \text{id}_{[k]}$
-we deduce that $\gamma(\alpha') = \gamma(\text{id}_{[k]}) \circ V(\alpha')$.
-In other words, the morphisms $\gamma(\text{id}_{[k]})$, $k \leq m$
+Taking $n = k$, $\varphi = \alpha'$, and $\alpha = \psi = \id_{[k]}$
+we deduce that $\gamma(\alpha') = \gamma(\id_{[k]}) \circ V(\alpha')$.
+In other words, the morphisms $\gamma(\id_{[k]})$, $k \leq m$
 determine the morphism $\gamma$. And it is easy to see that these
 morphisms form a morphism $\text{sk}_m V \to U$.
 
@@ -2273,7 +2273,7 @@ Conversely, given a morphism $\gamma : \text{sk}_m V \to U$,
 we obtain a family of morphisms $\gamma(\alpha)$
 where $\alpha$ ranges over all $\alpha : [k] \to [n]$
 with $k \leq m$ by setting $\gamma(\alpha) =
-\gamma(\text{id}_{[k]}) \circ V(\alpha)$. These morphisms
+\gamma(\id_{[k]}) \circ V(\alpha)$. These morphisms
 satisfy all the displayed commutativity restraints pictured
 above, and hence give rise to a morphism $V \to \text{cosk}_m U$.
 \end{proof}
@@ -2965,7 +2965,7 @@ a morphism $\gamma : U \to \text{sk}_m V$ by setting
 $\gamma_i : U_i \to V_i$ equal to the composition
 $$
 U_i
-\xrightarrow{\text{id}_{[i]}}
+\xrightarrow{\id_{[i]}}
 \colim_{([i]/\Delta)_{\leq m}^{opp}} U(i)
 \xrightarrow{\gamma'_i}
 V_i
@@ -2987,7 +2987,7 @@ exists and is equal to $U_n$.
 
 \begin{proof}
 This is so because the category $([n]/\Delta)_{\leq m}$
-has an initial object, namely $\text{id} : [n] \to [n]$.
+has an initial object, namely $\id : [n] \to [n]$.
 \end{proof}
 
 \begin{lemma}
@@ -3298,7 +3298,7 @@ $U$ with
 \item $U_i = 0$ for $i < k$,
 \item $U_k = A$,
 \item all morphisms $U(\varphi)$ equal to zero,
-except $U(\text{id}_{[k]}) = \text{id}_A$.
+except $U(\id_{[k]}) = \text{id}_A$.
 \end{enumerate}
 Since $\mathcal{A}$ has both finite limits and finite colimits
 we see that both $\text{cosk}_k U$ and $i_{k!}U$ exist.
@@ -3349,7 +3349,7 @@ c : i_{k !} U \to \text{cosk}_k U
 $
 in degree $n$ has $(\alpha, \beta)$ coefficient $A \to A$
 equal to zero if $\alpha \circ \beta$ is not the identity
-and equal to $\text{id}_A$ if it is.
+and equal to $\id_A$ if it is.
 \item The canonical map
 $
 c : i_{k !} U \to \text{cosk}_k U
@@ -3396,7 +3396,7 @@ The commutativity in general may be checked for each summand
 of the left upper corner separately. It is clear for the
 summands corresponding to $\alpha$ where
 $\alpha \circ \varphi$ is surjective, because those get
-mapped by $\text{id}_A$ to the summand with
+mapped by $\id_A$ to the summand with
 $\alpha' = \alpha \circ \varphi$, and we have
 $\tilde f_{\alpha'} = V(\alpha') \circ f_k =
 V(\alpha \circ \varphi) \circ f_k = V(\varphi) \circ \tilde f_\alpha$.
@@ -3497,7 +3497,7 @@ the matrix of (5) has a nonzero
 $(\beta', \beta)$ entry if and only if
 $\beta = \varphi \circ \beta'$. The upper matrix
 of (6) has a nonzero $(\alpha, \beta)$ entry if and only if
-$\alpha \circ \beta = \text{id}_{[k]}$. Similarly for the
+$\alpha \circ \beta = \id_{[k]}$. Similarly for the
 lower matrix of (6). The commutativity of the
 diagram then comes down to computing the
 $(\alpha, \beta')$ entry for both compositions
@@ -3509,7 +3509,7 @@ $$
 \mid
 \beta = \varphi \circ \beta'
 \text{ and }
-\alpha \circ \beta = \text{id}_{[k]}
+\alpha \circ \beta = \id_{[k]}
 \right\}
 =
 \# \left\{
@@ -3517,7 +3517,7 @@ $$
 \mid
 \alpha' = \alpha \circ \varphi
 \text{ and }
-\alpha' \circ \beta' = \text{id}_{[k]}
+\alpha' \circ \beta' = \id_{[k]}
 \right\}
 $$
 whose proof may safely be left to the reader.
@@ -3553,7 +3553,7 @@ sum is over $\alpha : [n] \to [k + 1]$ whose
 image is either $[k]$ or $[k + 1]$.
 \item Given $\varphi : [m] \to [n]$ the map
 $E_n \to E_m$ maps the summand corresponding
-to $\alpha$ via $\text{id}_A$ to the summand
+to $\alpha$ via $\id_A$ to the summand
 corresponding to $\alpha \circ \varphi$,
 provided $\Im(\alpha \circ \varphi)$
 is equal to $[k]$ or $[k + 1]$.
@@ -3715,10 +3715,10 @@ $0$ else.
 First, let us prove this if $k = 0$.
 In this case we have $K(A, 0)_n = A$ for all $n$.
 Furthermore, all the maps in this simplicial abelian
-group are $\text{id}_A$, in other words $K(A, 0)$
+group are $\id_A$, in other words $K(A, 0)$
 is the constant simplicial object with value $A$.
-The boundary maps $d_n = \sum_{i = 0}^n (-1)^i \text{id}_A
-= 0$ if $n$ odd and $ = \text{id}_A$ if $n$ is even.
+The boundary maps $d_n = \sum_{i = 0}^n (-1)^i \id_A
+= 0$ if $n$ odd and $ = \id_A$ if $n$ is even.
 Thus $s(K(A, 0))$ looks like this
 $$
 \ldots \to A \xrightarrow{0} A \xrightarrow{1} A \xrightarrow{0} A \to 0
@@ -3868,7 +3868,7 @@ $$
 \sum (-1)^i d^n_i \circ s^{n - 1}_j
 $$
 Recall from Remark \ref{remark-relations} that
-$d^n_j \circ s^{n - 1}_j = d^n_{j + 1} \circ s^{n - 1}_j = \text{id}$
+$d^n_j \circ s^{n - 1}_j = d^n_{j + 1} \circ s^{n - 1}_j = \id$
 and these drop out because the corresponding terms have opposite signs.
 The map $d^n_n \circ s^{n - 1}_j$, if $j < n - 1$, is equal to
 $s^{n - 2}_j \circ d^{n - 1}_{n - 1}$. Since
@@ -3981,7 +3981,7 @@ $S : \mathcal{B} \to \mathcal{A}$ be functors.
 Suppose that
 \begin{enumerate}
 \item the functors $S$ and $N$ are exact,
-\item there is an isomorphism $g : N \circ S \to \text{id}_\mathcal{B}$
+\item there is an isomorphism $g : N \circ S \to \id_\mathcal{B}$
 to the identity functor of $\mathcal{B}$,
 \item $N$ is faithful, and
 \item $S$ is essentially surjective.
@@ -4000,7 +4000,7 @@ S(N(A)) \to S(N(S(B))) \to S(B) \to A.
 $$
 It is easy to show this does not depend on
 the choice of $f, B$ and gives the desired
-isomorphism $S \circ N \to \text{id}_\mathcal{A}$.
+isomorphism $S \circ N \to \id_\mathcal{A}$.
 \end{proof}
 
 \begin{theorem}
@@ -4107,14 +4107,14 @@ are functorial isomorphisms.
 \medskip\noindent
 It is actually easy to identify the map $A_k \to N(S(A_\bullet))_k$.
 Note that there is a unique map $A_k \to S(A_\bullet)_k$
-corresponding to the summand $\alpha = \text{id}_{[k]}$.
-Note that $\Im(\text{id}_{[k]} \circ \delta^k_i)$
+corresponding to the summand $\alpha = \id_{[k]}$.
+Note that $\Im(\id_{[k]} \circ \delta^k_i)$
 has cardinality $k - 1$ but does not
 have image $[k - 1]$ unless $i = k$. Hence
-$d^k_i$ kills the summand $A_k \cdot \text{id}_{[k]}$
+$d^k_i$ kills the summand $A_k \cdot \id_{[k]}$
 for $i = 0, \ldots, k - 1$. From the abstract computation
 of $N(S(A_\bullet))_k$ above we conclude that
-the summand $A_k \cdot \text{id}_{[k]}$ is equal to
+the summand $A_k \cdot \id_{[k]}$ is equal to
 $N(S(A_\bullet))_k$.
 
 \medskip\noindent
@@ -4131,10 +4131,10 @@ By definition the map
 $N(S(A_\bullet))_{k + 1} \to N(S(A_\bullet))_k$
 corresponds to the restriction of $(-1)^{k + 1}d^{k + 1}_{k + 1}$
 to $N(S(A_\bullet))$ which is
-the summand $A_{k + 1} \cdot \text{id}_{[k + 1]}$.
+the summand $A_{k + 1} \cdot \id_{[k + 1]}$.
 And by the definition of $S(A_\bullet)$ above the
-map $d^{k + 1}_{k + 1}$ maps $A_{k + 1} \cdot \text{id}_{[k + 1]}$
-into $A_k \cdot \text{id}_{[k]}$ by $(-1)^{k + 1}d_{A, k + 1}$.
+map $d^{k + 1}_{k + 1}$ maps $A_{k + 1} \cdot \id_{[k + 1]}$
+into $A_k \cdot \id_{[k]}$ by $(-1)^{k + 1}d_{A, k + 1}$.
 The signs cancel and hence the desired equality.
 
 \medskip\noindent
@@ -4169,7 +4169,7 @@ $$
 between ext groups (see
 Homology, Definition \ref{homology-definition-ext-group}).
 We want to show that $S$ is surjective. We know that
-$N \circ S = \text{id}$. Hence it suffices to show that
+$N \circ S = \id$. Hence it suffices to show that
 $\Ker(N) = 0$. Clearly an extension
 $$
 \xymatrix{
@@ -4219,7 +4219,7 @@ $$
 and if $A = N(V)_n \to N(V)_{n - 1}$ is zero, then
 the intersection occurring in the formula above is
 equal to $A$. Let $i : K(A, n) \to V$ be the morphism
-corresponding to $\text{id}_A$ on the right hand side
+corresponding to $\id_A$ on the right hand side
 of the displayed formula. Clearly this is a section
 to the map $V \to K(A, n)$ and the extension is split
 as desired.
@@ -4506,8 +4506,8 @@ between $b \circ a \circ c$ and $b \circ a' \circ c$.
 Let $U$ and $V$ be two simplicial objects of a category $\mathcal{C}$.
 We say a morphism $a : U \to V$ is a {\it homotopy equivalence}
 if there exists a morphism $b : V \to U$
-such that $a \circ b$ is homotopic to $\text{id}_V$
-and $b \circ a$ is homotopic to $\text{id}_U$.
+such that $a \circ b$ is homotopic to $\id_V$
+and $b \circ a$ is homotopic to $\id_U$.
 If there exists such a morphism between $U$ and $V$, then
 we say that $U$ and $V$ are
 {\it homotopy equivalent}\footnote{Warning: This notion is {\bf not}
@@ -4520,9 +4520,9 @@ The simplicial set $\Delta[m]$ is homotopy equivalent to $\Delta[0]$.
 Namely, there is a unique morphism $f : \Delta[m] \to \Delta[0]$ and
 we take $g : \Delta[0] \to \Delta[m]$ to be
 given by the inclusion of the last $0$-simplex of $\Delta[m]$.
-We have $f \circ g = \text{id}$ and we will give a
+We have $f \circ g = \id$ and we will give a
 homotopy $h : \Delta[m] \times \Delta[1] \to \Delta[m]$
-between $\text{id}_{\Delta[m]}$ and $g \circ f$. Namely $h$ given by
+between $\id_{\Delta[m]}$ and $g \circ f$. Namely $h$ given by
 the maps
 $$
 \Mor_\Delta([n], [m]) \times \Mor_\Delta([n], [1]) \to \Mor_\Delta([n], [m])
@@ -4539,7 +4539,7 @@ m & \text{if} & \alpha(k) = 1
 $$
 Note that this only works because we took $g$ to be the inclusion of the
 last $0$-simplex. If we took $g$ to be the inclusion of the first $0$-simplex
-we could find a homotopy from $g \circ f$ to $\text{id}_{\Delta[m]}$.
+we could find a homotopy from $g \circ f$ to $\id_{\Delta[m]}$.
 This is an illustration of the asymmetry inherent in homotopies in the
 category of simplicial sets.
 \end{example}
@@ -4557,10 +4557,10 @@ Consider the maps $e_1, e_0 : U \to U \times \Delta[1]$,
 and $\pi : U \times \Delta[1] \to U$, see
 Lemma \ref{lemma-back-to-U}.
 \begin{enumerate}
-\item We have $\pi \circ e_1 = \pi \circ e_0 = \text{id}_U$, and
-\item The morphisms $\text{id}_{U \times \Delta[1]}$,
+\item We have $\pi \circ e_1 = \pi \circ e_0 = \id_U$, and
+\item The morphisms $\id_{U \times \Delta[1]}$,
 and $e_0 \circ \pi$ are homotopic.
-\item The morphisms $\text{id}_{U \times \Delta[1]}$,
+\item The morphisms $\id_{U \times \Delta[1]}$,
 and $e_1 \circ \pi$ are homotopic.
 \end{enumerate}
 \end{lemma}
@@ -4589,7 +4589,7 @@ U \times \Delta[1] \times \Delta[1]
 U \times \Delta[1]
 $$
 of Lemma \ref{lemma-back-to-U}
-is a homotopy between $\text{id}_{U \times \Delta[1]}$ and $e_0 \circ \pi$.
+is a homotopy between $\id_{U \times \Delta[1]}$ and $e_0 \circ \pi$.
 Similarly for $e_1 \circ \pi$ (use minimum instead of maximum).
 \end{proof}
 
@@ -4607,7 +4607,7 @@ simplicial object $X$.
 \end{lemma}
 
 \begin{proof}
-Set $g^0 = \text{id}_Y$ and $g^1 = s \circ f$.
+Set $g^0 = \id_Y$ and $g^1 = s \circ f$.
 We use the morphisms
 \begin{eqnarray*}
 Y \times_X \ldots \times_X Y \times \Mor([n], [1])
@@ -4619,8 +4619,8 @@ Y \times_X \ldots \times_X Y \\
 \end{eqnarray*}
 where we use the functor of points point of view to define the maps.
 Another way to say this is to say that
-$h_{n, 0} = \text{id}$, $h_{n, n + 1} = (s \circ f)^{n + 1}$ and
-$h_{n, i} = \text{id}_Y^{i + 1} \times (s \circ f)^{n + 1 - i}$.
+$h_{n, 0} = \id$, $h_{n, n + 1} = (s \circ f)^{n + 1}$ and
+$h_{n, i} = \id_Y^{i + 1} \times (s \circ f)^{n + 1 - i}$.
 We leave it to the reader to show that these satisfy the relations
 of Lemma \ref{lemma-relations-homotopy}. Hence they define
 the desired homotopy. See also Remark \ref{remark-homotopy-better}
@@ -4984,8 +4984,8 @@ d_{\diamond A, n}
 =
 \left(
 \begin{matrix}
-d_{A, n} & 0 & \text{id}_{A_{n - 1}} \\
-0 & d_{A, n} & -\text{id}_{A_{n - 1}} \\
+d_{A, n} & 0 & \id_{A_{n - 1}} \\
+0 & d_{A, n} & -\id_{A_{n - 1}} \\
 0 & 0 & -d_{A, n - 1}
 \end{matrix}
 \right) :
@@ -5158,7 +5158,7 @@ show that the homotopy between $N(e_0), N(e_1) :
 N(U) \to N(U \times \Delta[1])$ coming from
 (\ref{equation-homotopy-to-homotopy}) and
 Lemma \ref{lemma-homotopy-s-N} with
-$h = \text{id}_{U \times \Delta[1]}$ is mapped via
+$h = \id_{U \times \Delta[1]}$ is mapped via
 $\psi$ to the canonical homotopy $\diamond h$ between the two
 maps $\diamond a, \diamond b : N(U) \to \diamond{N(U)}$. Certainly this
 will imply the lemma.
@@ -5176,7 +5176,7 @@ corresponding properties. This is what we do below.
 By Definition \ref{definition-homotopy}
 the morphisms $e_0 : U \to U \times \Delta[1]$
 and $e_1 : U \to U \times \Delta[1]$ are homotopic
-with homotopy $\text{id}_{U \times \Delta[1]}$.
+with homotopy $\id_{U \times \Delta[1]}$.
 By Lemma \ref{lemma-homotopy-s-N}
 we get an explicit homotopy
 $\{h_n : s(U)_n \to s(U \times \Delta[1])_{n + 1}\}$
@@ -5497,7 +5497,7 @@ $$
 \Delta[1] \times X \ar[r] \ar@{-->}[ru] & Y
 }
 $$
-Here the top horizontal arrow is given by $\text{id}_X$ and $g \circ f$
+Here the top horizontal arrow is given by $\id_X$ and $g \circ f$
 where we use that
 $(\partial \Delta[1] \times X)_n = X_n \amalg X_n$ for all $n \geq 0$.
 The bottom horizontal arrow is given by the map $\Delta[1] \to \Delta[0]$
@@ -5740,8 +5740,8 @@ chain complexes.
 \begin{proof}
 By assumption there exists a map $g : Y \to X$ of simplicial sets,
 a homotopy $h : X \times \Delta[1] \to X$ between $g \circ f$ and
-$\text{id}_X$, and a homotopy $h' : Y \times \Delta[1] \to Y$ between
-$f \circ g$ and $\text{id}_Y$. During this proof we will write
+$\id_X$, and a homotopy $h' : Y \times \Delta[1] \to Y$ between
+$f \circ g$ and $\id_Y$. During this proof we will write
 $H_n(X) = H_n(s(X)) = H_n(N(X))$, see
 Section \ref{section-complexes}.
 
@@ -5778,7 +5778,7 @@ See Definition \ref{definition-eilenberg-maclane}
 and the description of the Eilenberg-Maclane objects in
 Lemma \ref{lemma-eilenberg-maclane-object}. Note that the extension
 above is split, for example because the element
-$\xi = [\text{id}_{[n]}] - [*] \in E_n$ satisfies $d_i\xi = 0$ and
+$\xi = [\id_{[n]}] - [*] \in E_n$ satisfies $d_i\xi = 0$ and
 maps to the ``generator'' of $K(\mathbf{Z}, n)$. We have
 $$
 \Mor_{\text{Simp}(\textit{Sets})}(S, X) =
@@ -6022,7 +6022,7 @@ of simplicial sets.
 \medskip\noindent
 In case (B) we conclude that $l = k = n$ and
 $\varphi$ is bijective, since otherwise $V(\varphi)(v)$
-is degenerate. Thus $\varphi = \text{id}_{[n]}$, which is a trivial case.
+is degenerate. Thus $\varphi = \id_{[n]}$, which is a trivial case.
 \end{proof}
 
 \begin{lemma}
@@ -6114,8 +6114,8 @@ augmentation is a homotopy equivalence.
 For the general construction we will use the horizontal composition as
 defined in Categories, Section \ref{categories-section-formal-cat-cat}.
 The definition of the adjunction morphisms
-$k : F \circ i \to \text{id}_\mathcal{A}$ and
-$t : \text{id}_\mathcal{S} \to i \circ F$
+$k : F \circ i \to \id_\mathcal{A}$ and
+$t : \id_\mathcal{S} \to i \circ F$
 in Categories, Section \ref{categories-section-adjoint}
 shows that the compositions
 \begin{equation}
@@ -6125,8 +6125,8 @@ i \xrightarrow{t \star 1_i} i \circ F \circ i \xrightarrow{1_i \star k} i
 F \xrightarrow{1_F \star t} F \circ i \circ F \xrightarrow{k \star 1_F} F
 \end{equation}
 are the identity morphisms. Here to define the morphism $t \star 1$ we
-silently identify $i$ with $\text{id}_\mathcal{S} \circ i$ and
-$1$ stands for $\text{id}_i : i \to i$. We will use this notation and
+silently identify $i$ with $\id_\mathcal{S} \circ i$ and
+$1$ stands for $\id_i : i \to i$. We will use this notation and
 these relations repeatedly in what follows.
 For $n \geq 0$ we set
 $$
@@ -6134,7 +6134,7 @@ X_n = (F \circ i)^{\circ (n + 1)} =
 F \circ i \circ F \circ \ldots \circ i \circ F
 $$
 In other words, $X_n$ is the $(n + 1)$-fold composition of $F \circ i$
-with itself. We also set $X_{-1} = \text{id}_\mathcal{A}$.
+with itself. We also set $X_{-1} = \id_\mathcal{A}$.
 We have $X_{n + m + 1} = X_n \circ X_m$ for all $n, m \geq -1$.
 We will endow this sequence of functors with the structure of a
 simplicial object of $\text{Fun}(\mathcal{A}, \mathcal{A})$ by constructing
@@ -6183,7 +6183,7 @@ In Situation \ref{situation-adjoint-functors}
 the system $X = (X_n, d^n_j, s^n_j)$
 is a simplicial object of $\text{Fun}(\mathcal{A}, \mathcal{A})$
 and $\epsilon_0$ defines an augmentation $\epsilon$ from $X$
-to the constant simplicial object with value $X_{-1} = \text{id}_\mathcal{A}$.
+to the constant simplicial object with value $X_{-1} = \id_\mathcal{A}$.
 \end{lemma}
 
 \begin{proof}
@@ -6197,17 +6197,17 @@ $$
 F \circ i \circ F \circ i
 \ar[rr]_{1_{F \circ i} \star k}
 \ar[d]_{k \star 1_{F \circ i}} & & F \circ i \ar[d]^k \\
-F \circ i \ar[rr]^k & & \text{id}_\mathcal{A}
+F \circ i \ar[rr]^k & & \id_\mathcal{A}
 }
 $$
 is commutative. More precisely we should write this as the equality
 $$
-(k \star 1_{\text{id}_\mathcal{A}}) \circ (1_{F \circ i} \star k) =
-(1_{\text{id}_\mathcal{A}} \star k) \circ (k \star 1_{F \circ i})
+(k \star 1_{\id_\mathcal{A}}) \circ (1_{F \circ i} \star k) =
+(1_{\id_\mathcal{A}} \star k) \circ (k \star 1_{F \circ i})
 $$
 as morphisms
 $(F \circ i) \circ (F \circ i) \to
-\text{id}_\mathcal{A} \circ \text{id}_\mathcal{A}$.
+\id_\mathcal{A} \circ \text{id}_\mathcal{A}$.
 Applying the general property of
 Categories, Lemma \ref{categories-lemma-properties-2-cat-cats}
 both sides expand to $k \star k$ when equality holds.
@@ -6218,7 +6218,7 @@ To prove that $X$ is a simplicial object we have to check
 \begin{enumerate}
 \item If $i < j$, then $d_i \circ d_j = d_{j - 1} \circ d_i$.
 \item If $i < j$, then $d_i \circ s_j = s_{j - 1} \circ d_i$.
-\item We have $\text{id} = d_j \circ s_j = d_{j + 1} \circ s_j$.
+\item We have $\id = d_j \circ s_j = d_{j + 1} \circ s_j$.
 \item If $i > j + 1$, then $d_i \circ s_j = s_j \circ d_{i - 1}$.
 \item If $i \leq j$, then $s_i \circ s_j = s_{j + 1} \circ s_i$.
 \end{enumerate}
@@ -6239,7 +6239,7 @@ F \circ i \circ F \circ i \circ F \circ i
 $$
 which holds because both compositions expand to the morphism
 $1_F \star t \star t \star 1_i$ from
-$F \circ \text{id}_\mathcal{A} \circ \text{id}_\mathcal{A} \circ i$
+$F \circ \id_\mathcal{A} \circ \text{id}_\mathcal{A} \circ i$
 to $F \circ (i \circ F) \circ (i \circ F) \circ i$.
 All other cases of (5) are proved in the same manner.
 
@@ -6258,8 +6258,8 @@ F \circ i \circ F \circ i
 $$
 which again holds because both compositions expand to give
 $1_F \star k \star 1_i \star t$ as maps from
-$F \circ (i \circ F) \circ i \circ \text{id}_\mathcal{A}$
-to $F \circ \text{id}_\mathcal{A} \circ i \circ (F \circ i)$.
+$F \circ (i \circ F) \circ i \circ \id_\mathcal{A}$
+to $F \circ \id_\mathcal{A} \circ i \circ (F \circ i)$.
 All other cases of (2) and (4) are proved in the same manner.
 
 \medskip\noindent
@@ -6305,7 +6305,7 @@ are homotopy equivalences.
 Denote $\epsilon_n : X_n \to X_{-1}$ the components of the augmentation
 morphism. We observe that $\epsilon_n = k^{\star (n + 1)}$, the $(n + 1)$-fold
 $\star$-composition of $k$.
-Recall that $t : \text{id}_\mathcal{S} \to i \circ F$ is the
+Recall that $t : \id_\mathcal{S} \to i \circ F$ is the
 adjunction map. We have the morphisms
 $$
 t^{\star (n + 1)} \star 1_i :
@@ -6351,8 +6351,8 @@ $$
 i \circ X_n = i \circ F \circ i \circ \ldots \circ F \circ i
 $$
 we can think of the morphism $h_{n, j}$ as collapsing the first
-$j$ pairs $(F \circ i)$ to $\text{id}_\mathcal{S}$ using $k^{\star (j)}$,
-then adding a $\text{id}_\mathcal{S}$ in front and expanding this
+$j$ pairs $(F \circ i)$ to $\id_\mathcal{S}$ using $k^{\star (j)}$,
+then adding a $\id_\mathcal{S}$ in front and expanding this
 to $j$ pairs $(i \circ F)$ using $t^{\star (j)}$. We have to prove
 \begin{enumerate}
 \item We have $d^n_m \circ h_{n, j} = h_{n - 1, j - 1} \circ d^n_m$
@@ -6401,8 +6401,8 @@ $$
 X_n \circ F = F \circ i \circ F \circ \ldots \circ i \circ F
 $$
 we can think of the morphism $h_{n, j}$ as collapsing the first
-$j$ pairs $(F \circ i)$ to $\text{id}_\mathcal{S}$ using $k^{\star (j)}$,
-then inserting a $\text{id}_\mathcal{S}$ just after the first $F$ and
+$j$ pairs $(F \circ i)$ to $\id_\mathcal{S}$ using $k^{\star (j)}$,
+then inserting a $\id_\mathcal{S}$ just after the first $F$ and
 expanding this to $j$ pairs $(i \circ F)$ using $t^{\star (j)}$.
 We have to prove
 \begin{enumerate}

@@ -2976,7 +2976,7 @@ quasi-isomorphism of K-flat complexes of $\mathcal{O}$-modules.
 For every complex $\mathcal{F}^\bullet$ of $\mathcal{O}$-modules
 the induced map
 $$
-\text{Tot}(\text{id}_{\mathcal{F}^\bullet} \otimes \alpha) :
+\text{Tot}(\id_{\mathcal{F}^\bullet} \otimes \alpha) :
 \text{Tot}(\mathcal{F}^\bullet \otimes_\mathcal{O} \mathcal{P}^\bullet)
 \longrightarrow
 \text{Tot}(\mathcal{F}^\bullet \otimes_\mathcal{O} \mathcal{Q}^\bullet)
@@ -3654,7 +3654,7 @@ Lf^*Rf_*K \otimes_{\mathcal{O}_\mathcal{C}}^\mathbf{L} Lf^*Rf_*L$
 with the map
 $Lf^*Rf_*K \otimes_{\mathcal{O}_\mathcal{C}}^\mathbf{L} Lf^*Rf_*L
 \to K \otimes_{\mathcal{O}_\mathcal{C}}^\mathbf{L} L$
-coming from the counit $Lf^* \circ Rf_* \to \text{id}$.
+coming from the counit $Lf^* \circ Rf_* \to \id$.
 \end{remark}
 
 \begin{lemma}
@@ -5321,7 +5321,7 @@ Let $X$ be an object of $\textit{LC}_{Zar}$. Then
 $H^n_{Zar}(X, \pi_X^{-1}\mathcal{F}) = H^n(X, \mathcal{F})$,
 \item $\pi_{X, *} : \textit{Ab}(\textit{LC}_{Zar}/X) \to \textit{Ab}(X)$
 is exact,
-\item the unit $\text{id} \to \pi_{X, *} \circ \pi_X^{-1}$
+\item the unit $\id \to \pi_{X, *} \circ \pi_X^{-1}$
 of the adjunction is an isomorphism, and
 \item for $K \in D(X)$ the canonical map
 $K \to R\pi_{X, *} \pi_X^{-1}K$ is an isomorphism.
@@ -6445,7 +6445,7 @@ R\SheafHom(K, L) \otimes^\mathbf{L} K \longrightarrow L.
 $$
 For this we take the arrow corresponding to
 $$
-\text{id} :
+\id :
 R\SheafHom(K, L)
 \longrightarrow
 R\SheafHom(K, L)
@@ -6486,7 +6486,7 @@ Lh^*R\SheafHom(K, L) \\
 R\SheafHom(Lh^*K, Lh^*L)
 \end{align*}
 where the first arrow uses the adjunction mapping
-$Lf^*Rf_* \to \text{id}$ and the second arrow is the canonical map
+$Lf^*Rf_* \to \id$ and the second arrow is the canonical map
 constructed in Remark \ref{remark-prepare-fancy-base-change}.
 \end{remark}
 
@@ -6848,7 +6848,7 @@ Then there exists a morphism of topoi
 $$
 \sigma : \Sh(\mathcal{D}/p(U)) \to \Sh(\mathcal{C}/U)
 $$
-such that $\pi_U \circ \sigma = \text{id}$ and $\sigma^{-1} = \pi_{U, *}$.
+such that $\pi_U \circ \sigma = \id$ and $\sigma^{-1} = \pi_{U, *}$.
 \end{lemma}
 
 \begin{proof}
@@ -6878,9 +6878,9 @@ are strongly cartesian). Hence $v$ defines a morphism $\sigma$ as
 indicated in the lemma. The equality $\sigma^{-1} = \pi_{U, *}$
 is immediate from the definition. Since $\pi_U^{-1}\mathcal{G}$
 is given by the rule $U'/U \mapsto \mathcal{G}(p(U')/p(U))$
-it follows that $\sigma^{-1} \circ \pi_U^{-1} = \text{id}$
+it follows that $\sigma^{-1} \circ \pi_U^{-1} = \id$
 which proves the equality
-$\pi_U \circ \sigma = \text{id}$.
+$\pi_U \circ \sigma = \id$.
 \end{proof}
 
 \begin{situation}
@@ -6929,7 +6929,7 @@ $$
 \sigma' : \Sh(\mathcal{D}/V) \to \Sh(\mathcal{C}'/U'),
 $$
 such that setting $\sigma = g' \circ \sigma'$ we have
-$\pi'_{U'} \circ \sigma' = \text{id}$, $\pi_U \circ \sigma = \text{id}$,
+$\pi'_{U'} \circ \sigma' = \id$, $\pi_U \circ \sigma = \text{id}$,
 $(\sigma')^{-1} = \pi'_{U', *}$, and $\sigma^{-1} = \pi_{U, *}$.
 \end{lemma}
 
@@ -7204,7 +7204,7 @@ $$
 This simplicial set is homotopy equivalent to the constant simplicial
 set on a singleton $\{*\}$. Namely, the map $X_\bullet \to \{*\}$
 is obvious, the map $\{*\} \to X_n$ is given
-by mapping $*$ to $(U \to \ldots \to U, \text{id}_U)$, and the
+by mapping $*$ to $(U \to \ldots \to U, \id_U)$, and the
 maps
 $$
 h_{n, i} : X_n \longrightarrow X_n
@@ -7216,9 +7216,9 @@ $$
 h_{n, i} :
 (U_n \to \ldots \to U_0, f)
 \longmapsto
-(U_n \to \ldots \to U_i \to U \to \ldots \to U, \text{id})
+(U_n \to \ldots \to U_i \to U \to \ldots \to U, \id)
 $$
-for $i > 0$ and $h_{n, 0} = \text{id}$. Verifications omitted.
+for $i > 0$ and $h_{n, 0} = \id$. Verifications omitted.
 This implies that $K_\bullet(j_{U!}\mathbf{Z}_U)$ has trivial
 cohomology in negative degrees
 (by the functoriality of
@@ -7309,19 +7309,19 @@ the computation of $\pi_!$ as a colimit we obtain the desired arrow.
 \label{lemma-initial-final}
 Notation and assumptions as in Example \ref{example-category-to-point}.
 If $\mathcal{C}$ has either an initial or a final object, then
-$L\pi_! \circ \pi^{-1} = \text{id}$ on $D(\textit{Ab})$, resp.\ $D(B)$.
+$L\pi_! \circ \pi^{-1} = \id$ on $D(\textit{Ab})$, resp.\ $D(B)$.
 \end{lemma}
 
 \begin{proof}
 If $\mathcal{C}$ has an initial object, then $\pi_!$ is computed by
 evaluating on this object and the statement is clear. If $\mathcal{C}$
 has a final object, then $R\pi_*$ is computed by evaluating on this
-object, hence $R\pi_* \circ \pi^{-1} \cong \text{id}$ on
+object, hence $R\pi_* \circ \pi^{-1} \cong \id$ on
 $D(\textit{Ab})$, resp.\ $D(B)$. This implies that
 $\pi^{-1} : D(\textit{Ab}) \to D(\mathcal{C})$,
 resp.\ $\pi^{-1} : D(B) \to D(\underline{B})$ is fully faithful, see
 Categories, Lemma \ref{categories-lemma-adjoint-fully-faithful}.
-Then the same lemma implies that $L\pi_! \circ \pi^{-1} = \text{id}$
+Then the same lemma implies that $L\pi_! \circ \pi^{-1} = \id$
 as desired.
 \end{proof}
 
@@ -7809,7 +7809,7 @@ For notation and restriction maps see proof.
 \begin{proof}
 Say $p(U) = V$. The category $\mathcal{I}_U$ is the category of pairs
 $(U', \varphi)$ where $\varphi : U \to u(U')$ is a morphism of $\mathcal{C}$
-with $p(\varphi) = \text{id}_V$, i.e., $\varphi$ is a morphism of the
+with $p(\varphi) = \id_V$, i.e., $\varphi$ is a morphism of the
 fibre category $\mathcal{C}_V$. Morphisms
 $(U'_1, \varphi_1) \to (U'_2, \varphi_2)$ are given by morphisms
 $a : U'_1 \to U'_2$ of the fibre category $\mathcal{C}'_V$ such that
@@ -8059,7 +8059,7 @@ $$
 This simplicial set is homotopy equivalent to the constant simplicial
 set on a singleton $\{*\}$. Namely, the map $X_\bullet \to \{*\}$
 is obvious, the map $\{*\} \to X_n$ is given
-by mapping $*$ to $(U \to \ldots \to U, \text{id}_U)$, and the
+by mapping $*$ to $(U \to \ldots \to U, \id_U)$, and the
 maps
 $$
 h_{n, i} : X_n \longrightarrow X_n
@@ -8071,9 +8071,9 @@ $$
 h_{n, i} :
 (U_0 \to \ldots \to U_n, f)
 \longmapsto
-(U \to \ldots \to U \to U_i \to \ldots \to U_n, \text{id})
+(U \to \ldots \to U \to U_i \to \ldots \to U_n, \id)
 $$
-for $i > 0$ and $h_{n, 0} = \text{id}$. Verifications omitted.
+for $i > 0$ and $h_{n, 0} = \id$. Verifications omitted.
 Since $\text{Map}(-, A)$ is a contravariant functor, implies that
 $K^\bullet(p_{U, *}A)$ has trivial cohomology in positive degrees
 (by the functoriality of

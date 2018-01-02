@@ -296,10 +296,10 @@ $\Delta_\Delta$ is the identity section of $\mathcal{I}_\mathcal{X}$, see
 Categories, Section \ref{categories-section-inertia}.
 Thus condition (1) says the following: Given a scheme $V$, an object $x$ of
 $\mathcal{X}$ over $V$, and a morphism $\alpha : x \to x$ of $\mathcal{X}_V$
-the condition ``$\alpha = \text{id}_x$'' defines an algebraic space over $V$.
+the condition ``$\alpha = \id_x$'' defines an algebraic space over $V$.
 (In other words, there exists a monomorphism of algebraic spaces $W \to V$
 such that a morphism of schemes $f : T \to V$ factors through $W$
-if and only if $f^*\alpha = \text{id}_{f^*x}$.)
+if and only if $f^*\alpha = \id_{f^*x}$.)
 
 \medskip\noindent
 On the other hand, let $V$ be a scheme and let $x, y$ be objects of
@@ -314,9 +314,9 @@ condition ``$\alpha = \beta$'' defines an algebraic space over $V$.
 
 \medskip\noindent
 To see the equivalence, given $(\alpha, \beta)$ as in (2) we see that
-(1) implies that ``$\alpha^{-1} \circ \beta = \text{id}_{h^*x}$''
+(1) implies that ``$\alpha^{-1} \circ \beta = \id_{h^*x}$''
 defines an algebraic space. The implication (2) $\Rightarrow$ (1)
-follows by taking $h = \text{id}_V$ and $\beta = \text{id}_x$.
+follows by taking $h = \id_V$ and $\beta = \text{id}_x$.
 \end{proof}
 
 
@@ -402,7 +402,7 @@ w_{i'}|_U = (U, x_{i'}|_U, z_i|_U, \gamma_{i'}|_U)
 $$
 and
 $$
-p'(w_{i'}) = z_i|_{U_{i'}} \xrightarrow{\text{id}} z_i|_{U_{i'}}.
+p'(w_{i'}) = z_i|_{U_{i'}} \xrightarrow{\id} z_i|_{U_{i'}}.
 $$
 These combine to give a solution to the problem.
 \end{proof}
@@ -713,7 +713,7 @@ w'|_U = (U, x'|_U, z'|_U, \gamma'|_U)
 $$
 and
 $$
-p'(w') = z' \xrightarrow{\text{id}} z'.
+p'(w') = z' \xrightarrow{\id} z'.
 $$
 These combine to give a solution to the problem.
 \end{proof}
@@ -1064,7 +1064,7 @@ T/V \mapsto \{\alpha : x_{1, T} \to x_{2, T}
 \text{ in }\mathcal{X}_T \mid F(\alpha) = \beta|_T\}
 $$
 is an algebraic space. Consider the objects
-$z_1 = (V, x_{1, V}, \text{id})$ and 
+$z_1 = (V, x_{1, V}, \id)$ and 
 $z_2 = (V, x_{2, V}, \beta)$ of
 $$
 \mathcal{Z} = (\Sch/V)_{fppf} \times_{y_{1, V}, \mathcal{Y}} \mathcal{X}
@@ -1677,7 +1677,7 @@ algebraic spaces over $S$. The following diagram
 $$
 \xymatrix{
 \mathit{Mor}_B(Z, X) \ar[r] & \mathit{Mor}_B(Z, Z) \\
-\text{Res}_{Z/B}(X) \ar[r] \ar[u] & B \ar[u]_{\text{id}_Z}
+\text{Res}_{Z/B}(X) \ar[r] \ar[u] & B \ar[u]_{\id_Z}
 }
 $$
 is a cartesian diagram of sheaves on $(\Sch/S)_{fppf}$.
@@ -1744,7 +1744,7 @@ Equation (\ref{examples-stacks-equation-diagram-hilbert-d-stack}).
 
 \begin{proof}
 We map the object $(U, Z, y', x', \alpha')$ to the object
-$(U, Z, H(y'), G(x'), \gamma \star \text{id}_H \star \alpha')$
+$(U, Z, H(y'), G(x'), \gamma \star \id_H \star \alpha')$
 where $\star$ denotes horizontal composition of $2$-morphisms, see
 Categories, Definition \ref{categories-definition-horizontal-composition}.
 To a morphism
@@ -1799,7 +1799,7 @@ In the situation of
 Lemma \ref{lemma-map-hilbert}
 assume
 \begin{enumerate}
-\item $\mathcal{Y}' = \mathcal{Y}$ and $H = \text{id}_\mathcal{Y}$,
+\item $\mathcal{Y}' = \mathcal{Y}$ and $H = \id_\mathcal{Y}$,
 \item $G$ is representable by algebraic spaces and \'etale.
 \end{enumerate}
 Then $\mathcal{H}_d(\mathcal{X}'/\mathcal{Y}) \to

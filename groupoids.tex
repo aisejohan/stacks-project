@@ -703,7 +703,7 @@ $$
 \xymatrix{
 G \times_k G \ar[d]^m \ar[rrr]_{(g, g') \mapsto (m(g, g'), g')} & & &
 G \times_k G \ar[d]^{(g, g') \mapsto g} \\
-G \ar[rrr]^{\text{id}} & & & G
+G \ar[rrr]^{\id} & & & G
 }
 $$
 is commutative with isomorphisms as horizontal arrows. The projection
@@ -791,8 +791,8 @@ $Z_1 \times_k Z_2 \subset G \times_k G$ is irreducible too, see
 Varieties, Lemma \ref{varieties-lemma-bijection-irreducible-components}.
 Hence $m(Z_1 \times_k Z_2)$ is contained in an irreducible
 component of $G$. On the other hand it contains
-$Z_1$ and $Z_2$ since $m|_{e \times G} = \text{id}_G$ and
-$m|_{G \times e} = \text{id}_G$. We conclude $Z_1 = Z_2$ as desired.
+$Z_1$ and $Z_2$ since $m|_{e \times G} = \id_G$ and
+$m|_{G \times e} = \id_G$. We conclude $Z_1 = Z_2$ as desired.
 \end{proof}
 
 \begin{remark}
@@ -1973,7 +1973,7 @@ X\ar[u]^{e \times 1_X} \ar[ru]_{1_X}
 are commutative. In situation (2) this just means that the diagram
 $$
 \xymatrix{
-G \times_S X \ar[r]_-{\text{id} \times f} \ar[d]_a &
+G \times_S X \ar[r]_-{\id \times f} \ar[d]_a &
 G \times_S Y \ar[d]^a \\
 X \ar[r]^f & Y
 }
@@ -2232,7 +2232,7 @@ $\text{Arrows} \times_{s, \text{Ob}, t}
 \item (identity) there exists a map $e : \text{Ob} \to \text{Arrows}$
 such that
 \begin{enumerate}
-\item $s \circ e = t \circ e = \text{id}$ as maps $\text{Ob} \to \text{Ob}$,
+\item $s \circ e = t \circ e = \id$ as maps $\text{Ob} \to \text{Ob}$,
 \item $c \circ (1, e \circ s) = c \circ (e \circ t, 1) = 1$
 as maps $\text{Arrows} \to \text{Arrows}$,
 \end{enumerate}
@@ -2370,8 +2370,8 @@ The diagram
 R \times_{t, U, t} R
 \ar@<1ex>[r]^-{\text{pr}_1} \ar@<-1ex>[r]_-{\text{pr}_0}
 \ar[d]_{(\text{pr}_0, c \circ (i, 1))} &
-R \ar[r]^t \ar[d]^{\text{id}_R} &
-U \ar[d]^{\text{id}_U} \\
+R \ar[r]^t \ar[d]^{\id_R} &
+U \ar[d]^{\id_U} \\
 R \times_{s, U, t} R
 \ar@<1ex>[r]^-c \ar@<-1ex>[r]_-{\text{pr}_0} \ar[d]_{\text{pr}_1} &
 R \ar[r]^t \ar[d]^s &
@@ -3744,7 +3744,7 @@ V \times_{U, t} R
 \longrightarrow
 R \times_{s, U} V
 $$
-is an isomorphism over $R$ such that $e^*\varphi = \text{id}_V$ and such that
+is an isomorphism over $R$ such that $e^*\varphi = \id_V$ and such that
 $$
 c^*\varphi = \text{pr}_1^*\varphi \circ \text{pr}_0^*\varphi
 $$
@@ -4076,9 +4076,9 @@ of $x$ as the coordinate on $\mathbf{A}^1$.
 Since
 $$
 (U \times \mathbf{A}^1, R \times \mathbf{A}^1,
-s \times \text{id}_{\mathbf{A}^1},
-t \times \text{id}_{\mathbf{A}^1},
-c \times \text{id}_{\mathbf{A}^1})
+s \times \id_{\mathbf{A}^1},
+t \times \id_{\mathbf{A}^1},
+c \times \id_{\mathbf{A}^1})
 $$
 is also a groupoid scheme with finite source and target, we may apply
 Lemma \ref{lemma-determinant-trick} to it and we see that

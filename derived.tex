@@ -50,7 +50,7 @@ and pre-triangulated categories.
 Let $\mathcal{D}$ be an additive category.
 Let $[n] : \mathcal{D} \to \mathcal{D}$, $E \mapsto E[n]$
 be a collection of additive functors indexed by $n \in \mathbf{Z}$ such that
-$[n] \circ [m] = [n + m]$  and $[0] = \text{id}$ (equality as functors).
+$[n] \circ [m] = [n + m]$  and $[0] = \id$ (equality as functors).
 In this situation we define a {\it triangle} to be a sextuple
 $(X, Y, Z, f, g, h)$ where $X, Y, Z \in \Ob(\mathcal{D})$ and
 $f : X \to Y$, $g : Y \to Z$ and $h : Z \to X[1]$ are morphisms
@@ -90,7 +90,7 @@ where
 \item $\mathcal{D}$ is an additive category,
 \item $[n] : \mathcal{D} \to \mathcal{D}$, $E \mapsto E[n]$
 is a collection of additive functors indexed by $n \in \mathbf{Z}$ such that
-$[n] \circ [m] = [n + m]$ and $[0] = \text{id}$ (equality as functors), and
+$[n] \circ [m] = [n + m]$ and $[0] = \id$ (equality as functors), and
 \item $\mathcal{T}$ is a set of triangles called the
 {\it distinguished triangles}
 \end{enumerate}
@@ -98,7 +98,7 @@ subject to the following conditions
 \begin{enumerate}
 \item[TR1] Any triangle isomorphic to a distinguished triangle is
 a distinguished triangle. Any triangle of the form
-$(X, X, 0, \text{id}, 0, 0)$ is distinguished.
+$(X, X, 0, \id, 0, 0)$ is distinguished.
 For any morphism $f : X \to Y$ of $\mathcal{D}$ there exists a
 distinguished triangle of the form $(X, Y, Z, f, g, h)$.
 \item[TR2] The triangle $(X, Y, Z, f, g, h)$ is distinguished
@@ -131,10 +131,10 @@ that
 \begin{enumerate}
 \item $(Q_1, Q_2, Q_3, a, b, p_1[1] \circ d_3)$ is a
 distinguished triangle,
-\item the triple $(\text{id}_X, g, a)$ is
+\item the triple $(\id_X, g, a)$ is
 a morphism of triangles
 $(X, Y, Q_1, f, p_1, d_1) \to (X, Z, Q_2, g \circ f, p_2, d_2)$, and
-\item the triple $(f, \text{id}_Z, b)$ is a morphism of triangles
+\item the triple $(f, \id_Z, b)$ is a morphism of triangles
 $(X, Z, Q_2, g \circ f, p_2, d_2) \to (Y, Z, Q_3, g, p_3, d_3)$.
 \end{enumerate}
 \end{enumerate}
@@ -667,7 +667,7 @@ The following are equivalent
 \item $f$ has a kernel,
 \item $f$ has a cokernel,
 \item $f$ is isomorphic to a map $K \oplus Z \to Z \oplus Q$
-induced by $\text{id}_Z$.
+induced by $\id_Z$.
 \end{enumerate}
 \end{lemma}
 
@@ -1434,7 +1434,7 @@ Categories, Lemma \ref{categories-lemma-what-gets-inverted}
 the fact that $S$ is saturated implies that $0 \to Z$ is in $S$.
 Hence (1) $\Rightarrow$ (4). Dually (1) $\Rightarrow$ (5).
 Finally, if $0 \to Z$ is in $S$, then the triangle
-$(0, Z, Z, 0, \text{id}_Z, 0)$ is distinguished by TR1 and TR2 and
+$(0, Z, Z, 0, \id_Z, 0)$ is distinguished by TR1 and TR2 and
 is a triangle as in (4).
 \end{proof}
 
@@ -2212,7 +2212,7 @@ Then $F$ is an equivalence of categories.
 \end{lemma}
 
 \begin{proof}
-Since $F$ is fully faithful the adjunction map $\text{id} \to G \circ F$
+Since $F$ is fully faithful the adjunction map $\id \to G \circ F$
 is an isomorphism (Categories, Lemma
 \ref{categories-lemma-adjoint-fully-faithful}).
 Let $X$ be an object of $\mathcal{D}'$.
@@ -2293,7 +2293,7 @@ complexes up to homotopy. Note that the shift functors
 $[n]$ on complexes, see
 Homology, Definition \ref{homology-definition-shift-cochain},
 give rise to functors $[n] : K(\mathcal{A}) \to K(\mathcal{A})$
-such that $[n] \circ [m] = [n + m]$ and $[0] = \text{id}$.
+such that $[n] \circ [m] = [n + m]$ and $[0] = \id$.
 
 \begin{definition}
 \label{definition-cone}
@@ -2465,8 +2465,8 @@ such that
 \item $\tilde \alpha$ is a termwise split injection (see
 Definition \ref{definition-termwise-split-map}),
 \item there is a map of complexes $s : L^\bullet \to \tilde L^\bullet$
-such that $\pi \circ s = \text{id}_{L^\bullet}$ and such that
-$s \circ \pi$ is homotopic to $\text{id}_{\tilde L^\bullet}$.
+such that $\pi \circ s = \id_{L^\bullet}$ and such that
+$s \circ \pi$ is homotopic to $\id_{\tilde L^\bullet}$.
 \end{enumerate}
 Moreover, if both $K^\bullet$ and $L^\bullet$ are in
 $K^{+}(\mathcal{A})$, $K^{-}(\mathcal{A})$, or $K^b(\mathcal{A})$,
@@ -2484,7 +2484,7 @@ d^n_{\tilde L} =
 \left(
 \begin{matrix}
 d^n_L & 0 & 0 \\
-0 & d^n_K & \text{id}_{K^{n + 1}} \\
+0 & d^n_K & \id_{K^{n + 1}} \\
 0 & 0 & -d^{n + 1}_K
 \end{matrix}
 \right)
@@ -2496,7 +2496,7 @@ $$
 \left(
 \begin{matrix}
 \alpha \\
-\text{id}_{K^n} \\
+\id_{K^n} \\
 0
 \end{matrix}
 \right)
@@ -2507,7 +2507,7 @@ $$
 \pi =
 \left(
 \begin{matrix}
-\text{id}_{L^n} &
+\id_{L^n} &
 0 &
 0
 \end{matrix}
@@ -2518,19 +2518,19 @@ $$
 s =
 \left(
 \begin{matrix}
-\text{id}_{L^n} \\
+\id_{L^n} \\
 0 \\
 0
 \end{matrix}
 \right)
 $$
-so that $\pi \circ s = \text{id}_{L^\bullet}$. Finally,
+so that $\pi \circ s = \id_{L^\bullet}$. Finally,
 let $h^n : \tilde L^n \to \tilde L^{n - 1}$ be the map
 which maps the summand $K^n$ of $\tilde L^n$ via the identity morphism
 to the summand $K^n$ of $\tilde L^{n - 1}$. Then it is a trivial matter
 (see computations in remark below) to prove that
 $$
-\text{id}_{\tilde L^\bullet} - s \circ \pi
+\id_{\tilde L^\bullet} - s \circ \pi
 =
 d \circ h + h \circ d
 $$
@@ -2570,8 +2570,8 @@ such that
 \item $\tilde \alpha$ is a termwise split surjection (see
 Definition \ref{definition-termwise-split-map}),
 \item there is a map of complexes $s : \tilde K^\bullet \to K^\bullet$
-such that $s \circ i = \text{id}_{K^\bullet}$ and such that
-$i \circ s$ is homotopic to $\text{id}_{\tilde K^\bullet}$.
+such that $s \circ i = \id_{K^\bullet}$ and such that
+$i \circ s$ is homotopic to $\id_{\tilde K^\bullet}$.
 \end{enumerate}
 Moreover, if both $K^\bullet$ and $L^\bullet$ are in
 $K^{+}(\mathcal{A})$, $K^{-}(\mathcal{A})$, or $K^b(\mathcal{A})$,
@@ -2590,7 +2590,7 @@ d^n_{\tilde K} =
 \left(
 \begin{matrix}
 d^n_K & 0 & 0 \\
-0 & - d^{n - 1}_L & \text{id}_{L^n} \\
+0 & - d^{n - 1}_L & \id_{L^n} \\
 0 & 0 & d^n_L
 \end{matrix}
 \right)
@@ -2603,7 +2603,7 @@ $$
 \begin{matrix}
 \alpha &
 0 &
-\text{id}_{L^n}
+\id_{L^n}
 \end{matrix}
 \right)
 $$
@@ -2613,7 +2613,7 @@ $$
 i =
 \left(
 \begin{matrix}
-\text{id}_{K^n} \\
+\id_{K^n} \\
 0 \\
 0
 \end{matrix}
@@ -2624,19 +2624,19 @@ $$
 s =
 \left(
 \begin{matrix}
-\text{id}_{K^n} &
+\id_{K^n} &
 0 &
 0
 \end{matrix}
 \right)
 $$
-so that $s \circ i = \text{id}_{K^\bullet}$. Finally,
+so that $s \circ i = \id_{K^\bullet}$. Finally,
 let $h^n : \tilde K^n \to \tilde K^{n - 1}$ be the map
 which maps the summand $L^{n - 1}$ of $\tilde K^n$ via the identity morphism
 to the summand $L^{n - 1}$ of $\tilde K^{n - 1}$. Then it is a trivial matter
 to prove that
 $$
-\text{id}_{\tilde K^\bullet} - i \circ s
+\id_{\tilde K^\bullet} - i \circ s
 =
 d \circ h + h \circ d
 $$
@@ -3632,7 +3632,7 @@ It is clear that $q \circ i = b$ where $i$ is as in
 Definition \ref{definition-cone}.
 Note that, as $a^\bullet$ is injective in each degree,
 the kernel of $q$ is identified with the cone of
-$\text{id}_{A^\bullet}$ which is acyclic. Hence we see that
+$\id_{A^\bullet}$ which is acyclic. Hence we see that
 $q$ is a quasi-isomorphism. According to
 Lemma \ref{lemma-the-same-up-to-isomorphisms}
 the triangle
@@ -3958,7 +3958,7 @@ $$
 \left(
 \begin{matrix}
 0 & f^i & s^{i + 1} \\
-0 & 0 & - \text{id}_{Y^{i + 1}} \\
+0 & 0 & - \id_{Y^{i + 1}} \\
 0 & 0 & 0
 \end{matrix}
 \right).
@@ -3966,7 +3966,7 @@ $$
 This complex becomes quasi-isomorphic to the complex $(X^\bullet, d^\bullet)$
 in $\mathcal{A}/\mathcal{B}$ by the maps
 $$
-(\text{id}_{X^i}, s^i, 0) : X^i \oplus Y^i \oplus Y^{i + 1} \to X^i
+(\id_{X^i}, s^i, 0) : X^i \oplus Y^i \oplus Y^{i + 1} \to X^i
 $$
 Calculation omitted.
 \end{proof}
@@ -3977,7 +3977,7 @@ Let $\mathcal{A}$ be an abelian category.
 Let $\mathcal{B} \subset \mathcal{A}$ be a Serre subcategory.
 Suppose that the functor $v : \mathcal{A} \to \mathcal{A}/\mathcal{B}$
 has a left adjoint $u : \mathcal{A}/\mathcal{B} \to \mathcal{A}$
-such that $vu \cong \text{id}$. Then
+such that $vu \cong \id$. Then
 $$
 D(\mathcal{A})/D_\mathcal{B}(\mathcal{A}) = D(\mathcal{A}/\mathcal{B})
 $$
@@ -3990,7 +3990,7 @@ is essentially surjective by
 Lemma \ref{lemma-derived-of-quotient}.
 For an object $X$ of $D(\mathcal{A})$ the adjunction mapping
 $c_X : uvX \to X$ maps to an isomorphism in $D(\mathcal{A}/\mathcal{B})$
-because $vuv \cong v$ by the assumption that $vu \cong \text{id}$.
+because $vuv \cong v$ by the assumption that $vu \cong \id$.
 Thus in a distinguished triangle $(uvX, X, Z, c_X, g, h)$ the object
 $Z$ is an object of $D_\mathcal{B}(\mathcal{A})$ as we see by looking
 at the long exact cohomology sequence.
@@ -4634,7 +4634,7 @@ $$
 is bijective. Choose an object
 $(t, t', t'') : (X', Y', Z') \to (X'', Y'', Z'')$ of $\mathcal{I}$.
 Applying what we just showed to $W = F(Z'')$ and the element
-$\text{id}_{F(X'')}$ of the colimit we find a unique morphism
+$\id_{F(X'')}$ of the colimit we find a unique morphism
 $c_{(X'', Y'', Z'')} : F(Z'') \to C$ such that for some
 $(X'', Y'', Z'') \to (X''', Y''', Z'')$ in $\mathcal{I}$
 $$
@@ -6503,7 +6503,7 @@ into a complex. By
 Lemma \ref{lemma-morphisms-lift}
 we see that $\alpha$ has a left inverse. Hence the category
 $I^\bullet/\text{Qis}^{+}(\mathcal{A})$ is essentially constant with value
-$\text{id} : I^\bullet \to I^\bullet$. Thus also the ind-object
+$\id : I^\bullet \to I^\bullet$. Thus also the ind-object
 $$
 I^\bullet/\text{Qis}^{+}(\mathcal{A}) \longrightarrow \mathcal{D}, \quad
 (I^\bullet \to K^\bullet) \longmapsto F(K^\bullet)
@@ -7150,10 +7150,10 @@ Homology, Definition \ref{homology-definition-functorial-injective-embedding}.
 \begin{enumerate}
 \item There exists a functor
 $inj : \text{Comp}^{+}(\mathcal{A}) \to \text{InjRes}(\mathcal{A})$
-such that $s \circ inj = \text{id}$.
+such that $s \circ inj = \id$.
 \item For any functor
 $inj : \text{Comp}^{+}(\mathcal{A}) \to \text{InjRes}(\mathcal{A})$
-such that $s \circ inj = \text{id}$ we obtain a resolution functor, see
+such that $s \circ inj = \id$ we obtain a resolution functor, see
 Definition \ref{definition-localization-functor}.
 \end{enumerate}
 \end{lemma}
@@ -7200,7 +7200,7 @@ rests to show that the construction above
 is functorial. This verification is omitted.
 
 \medskip\noindent
-Suppose we have a functor $inj$ such that $s \circ inj = \text{id}$.
+Suppose we have a functor $inj$ such that $s \circ inj = \id$.
 For every object $K^\bullet$ of $\text{Comp}^{+}(\mathcal{A})$
 we can write
 $$
@@ -7212,7 +7212,7 @@ Definition \ref{definition-localization-functor}.
 
 \begin{remark}
 \label{remark-match}
-Suppose $inj$ is a functor such that $s \circ inj = \text{id}$
+Suppose $inj$ is a functor such that $s \circ inj = \id$
 as in part (2) of
 Lemma \ref{lemma-functorial-injective-resolutions}.
 Write $inj(K^\bullet) = (i_{K^\bullet} : K^\bullet \to j(K^\bullet))$
@@ -8307,11 +8307,11 @@ $$
 0 \ar[r] & A \ar[r] & Z_{i - 1} \ar[r] & \ldots \ar[r] &
 Z_0 \ar[r] & B \ar[r] & 0 \\
 0 \ar[r] &
-A \ar[r] \ar[u]^{\text{id}} \ar[d]_{\text{id}} &
+A \ar[r] \ar[u]^{\id} \ar[d]_{\text{id}} &
 Z''_{i - 1} \ar[r] \ar[u] \ar[d] &
 \ldots \ar[r] &
 Z''_0 \ar[r] \ar[u] \ar[d] &
-B \ar[r] \ar[u]_{\text{id}} \ar[d]^{\text{id}} & 0 \\
+B \ar[r] \ar[u]_{\id} \ar[d]^{\text{id}} & 0 \\
 0 \ar[r] & A \ar[r] & Z'_{i - 1} \ar[r] & \ldots \ar[r] &
 Z'_0 \ar[r] & B \ar[r] & 0
 }
@@ -9251,7 +9251,7 @@ $\text{hocolim} K_{n_i} \to \text{hocolim} K_n$
 such that
 $$
 \xymatrix{
-K_{n_i} \ar[r] \ar[d]_{\text{id}} & \text{hocolim} K_{n_i} \ar[d] \\
+K_{n_i} \ar[r] \ar[d]_{\id} & \text{hocolim} K_{n_i} \ar[d] \\
 K_{n_i} \ar[r] & \text{hocolim} K_n
 }
 $$
@@ -9317,9 +9317,9 @@ h_j : K_j
 \ \ldots,\ f_{n_i - 1} \circ \ldots \circ f_j}
 K_j \oplus \ldots \oplus K_{n_i}
 $$
-Then the reader verifies that $(1 - f) \circ h = \text{id} - a \circ c$
-and $h \circ (1 - f) = \text{id} - b \circ d$. This means that
-$\text{id} - \psi \circ \varphi$ has square zero by
+Then the reader verifies that $(1 - f) \circ h = \id - a \circ c$
+and $h \circ (1 - f) = \id - b \circ d$. This means that
+$\id - \psi \circ \varphi$ has square zero by
 Lemma \ref{lemma-third-map-square-zero} (small argument omitted).
 In other words, $\psi \circ \varphi$ differs from the identity
 by a nilpotent endomorphism, hence is an isomorphism. Thus
@@ -9751,7 +9751,7 @@ Assume $E$ is a classical generator. Let $K$ be an object of $\mathcal{D}$
 such that $\Hom(E, K[i]) = 0$ for all $i \in \mathbf{Z}$. By
 Lemma \ref{lemma-right-orthogonal}
 $\Hom(E', K) = 0$ for all $E'$ in $\langle E \rangle$. However, since
-$\mathcal{D} = \langle E \rangle$ we conclude that $\text{id}_K = 0$,
+$\mathcal{D} = \langle E \rangle$ we conclude that $\id_K = 0$,
 i.e., $K = 0$.
 \end{proof}
 

@@ -248,8 +248,8 @@ See Formal Deformation Theory, Definition
 \medskip\noindent
 Given $(M, \alpha)$ as in the second paragraph, we see that an element of
 $\text{Inf}_{x_0}(\mathcal{F})$ is an automorphism $\gamma : M \to M$ with
-$\gamma \bmod \epsilon = \text{id}$. Then we can write
-$\gamma = \text{id}_M + \epsilon \psi$ where
+$\gamma \bmod \epsilon = \id$. Then we can write
+$\gamma = \id_M + \epsilon \psi$ where
 $\psi : M/\epsilon M \to M/\epsilon M$ is $k$-linear.
 Using $\alpha$ we can think of $\psi$ as an element of
 $\text{End}_k(V)$ and this finishes the proof.
@@ -329,7 +329,7 @@ is an equivalence of categories.
 \medskip\noindent
 Consider an object
 $$
-((A_1, M_1, \rho_1), (A_2, M_2, \rho_2), (\text{id}_A, \varphi))
+((A_1, M_1, \rho_1), (A_2, M_2, \rho_2), (\id_A, \varphi))
 $$
 of the category $\mathcal{F}(A_1) \times_{\mathcal{F}(A)} \mathcal{F}(A_2)$.
 Then, as seen in the proof of Lemma \ref{lemma-finite-projective-modules-RS},
@@ -369,7 +369,7 @@ $\rho_0' : \Gamma \to \GL_n(M)$.
 Then an infinitesimal automorphism, i.e., an element of
 $\text{Inf}(\Deformationcategory_{V, \rho_0})$,
 is given by an automorphism
-$\gamma = \text{id} + \epsilon \psi : M \to M$
+$\gamma = \id + \epsilon \psi : M \to M$
 as in the proof of Lemma \ref{lemma-finite-projective-modules-TI},
 where moreover $\psi$ has to commute
 with the action of $\Gamma$ (given by $\rho_0$).
@@ -553,7 +553,7 @@ is an equivalence of categories.
 \medskip\noindent
 Consider an object
 $$
-((A_1, P_1), (A_2, P_2), (\text{id}_A, \varphi))
+((A_1, P_1), (A_2, P_2), (\id_A, \varphi))
 $$
 of the category $\mathcal{F}(A_1) \times_{\mathcal{F}(A)} \mathcal{F}(A_2)$.
 Then we consider $P_1 \times_\varphi P_2$. Since
@@ -583,7 +583,7 @@ We first deal with the infinitesimal automorphisms.
 Let $Q = P \otimes_k k[\epsilon]$.
 Then an element of $\text{Inf}(\Deformationcategory_P)$
 is given by an automorphism
-$\gamma = \text{id} + \epsilon \delta : Q \to Q$
+$\gamma = \id + \epsilon \delta : Q \to Q$
 as above where now $\delta : P \to P$.
 The fact that $\gamma$ is graded implies that
 $\delta$ is homogeneous of degree $0$.
@@ -593,7 +593,7 @@ The fact that $\gamma$ is multiplicative implies that
 $\delta$ is a $k$-derivation.
 Conversely, given a $k$-derivation $\delta : P \to P$
 homogeneous of degree $0$, we obtain an automorphism
-$\gamma = \text{id} + \epsilon \delta$ as above.
+$\gamma = \id + \epsilon \delta$ as above.
 Thus we see that
 $$
 \text{Inf}(\Deformationcategory_P) = \text{Der}_k(P, P)
@@ -1269,7 +1269,7 @@ Now $F_i(A, V_i) = (A, V_{i, 3 - i})$ where $V_{i, 3 - i} \subset V_i$
 is the open subscheme whose base change to $k$ is $U_{12} \subset U_i$.
 The morphism $g$ defines an isomorphism
 $V_{1, 2} \to V_{2, 1}$ of schemes over $A$ compatible
-with $\text{id} : U_{12} \to U_{12}$ over $k$.
+with $\id : U_{12} \to U_{12}$ over $k$.
 Thus $(\{1, 2\}, V_i, V_{i, 3 - i}, g, g^{-1})$ is a glueing
 data as in Schemes, Section \ref{schemes-section-glueing-schemes}.
 Let $Y$ be the glueing, see Schemes, Lemma \ref{schemes-lemma-glue}.
@@ -1386,7 +1386,7 @@ Recall that $\text{Inf}(\Deformationcategory_{X \to Y})$
 is the set of automorphisms of the trivial deformation
 $$
 f' :  X' = X \times_{\Spec(k)} \Spec(k[\epsilon])
-\xrightarrow{f \times \text{id}}
+\xrightarrow{f \times \id}
 Y' = Y \times_{\Spec(k)} \Spec(k[\epsilon])
 $$
 of $X \to Y$ to $k[\epsilon]$ equal to the identity modulo $\epsilon$.
@@ -1860,9 +1860,9 @@ is a $A$-algebra isomorpism $C \to C'$ such that the diagram
 $$
 \xymatrix{
 0 \ar[r] &
-N \ar[r] \ar[d]_{\text{id}} &
+N \ar[r] \ar[d]_{\id} &
 C \ar[r] \ar[d] &
-B \ar[r] \ar[d]_{\text{id}} & 0 \\
+B \ar[r] \ar[d]_{\id} & 0 \\
 0 \ar[r] &
 N \ar[r] &
 C' \ar[r] &

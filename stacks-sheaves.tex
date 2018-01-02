@@ -606,7 +606,7 @@ $(\Sch/U)_{fppf} \times_{y, \mathcal{Y}} \mathcal{X}$
 is representable, i.e., of the form $(\Sch/V_y)_{fppf}$ for some
 scheme $V_y$ over $U$. Objects in this $2$-fibre products are triples
 $(h : V \to U, x, \alpha : f(x) \to h^*y)$ where $\alpha$ lies
-over $\text{id}_V$. Dropping the $h$ from the notation we see that this
+over $\id_V$. Dropping the $h$ from the notation we see that this
 is equivalent to the data of an object $x$ of $\mathcal{X}$ and a
 morphism $f(x) \to y$. Hence the $2$-fibre product is
 representable by $V_y$ and $f(x_y) \to y$ where $x_y$ is an object
@@ -708,7 +708,7 @@ Let $\tau \in \{Zar, \etale, smooth, syntomic, fppf\}$.
 Let $p : \mathcal{X} \to (\Sch/S)_{fppf}$ be a category
 fibred in groupoids. The 2-category of categories fibred in groupoids over
 $(\Sch/S)_{fppf}$ has a final object, namely,
-$\text{id} : (\Sch/S)_{fppf} \to (\Sch/S)_{fppf}$
+$\id : (\Sch/S)_{fppf} \to (\Sch/S)_{fppf}$
 and $p$ is a $1$-morphism from $\mathcal{X}$ to this final object.
 Hence any presheaf $\mathcal{G}$ on $(\Sch/S)_{fppf}$ gives a
 presheaf $p^{-1}\mathcal{G}$ on $\mathcal{X}$ defined by the rule
@@ -1229,7 +1229,7 @@ i_F :
 \longrightarrow
 (\Sh(\mathcal{X}_\etale), \mathcal{O}_\mathcal{X})
 $$
-such that $\pi_F \circ i_F = \text{id}$. Moreover $\pi_{F, *} = i_F^{-1}$.
+such that $\pi_F \circ i_F = \id$. Moreover $\pi_{F, *} = i_F^{-1}$.
 \end{lemma}
 
 \begin{proof}
@@ -1947,20 +1947,20 @@ compatible with compositions, see
 Lemma \ref{lemma-comparison}.
 If $U$, $R$ are schemes, then we can
 construct the quasi-coherent sheaf on the groupoid as follows: First
-the object $(U, \text{id})$ corresponds to a quasi-coherent sheaf
-$\mathcal{F}_{(U, \text{id})}$ on $U$. Next, the isomorphism
-$\alpha : t_{small}^*\mathcal{F}_{(U, \text{id})} \to
-s_{small}^*\mathcal{F}_{(U, \text{id})}$
+the object $(U, \id)$ corresponds to a quasi-coherent sheaf
+$\mathcal{F}_{(U, \id)}$ on $U$. Next, the isomorphism
+$\alpha : t_{small}^*\mathcal{F}_{(U, \id)} \to
+s_{small}^*\mathcal{F}_{(U, \id)}$
 comes from
 \begin{enumerate}
-\item the morphism $(R, \text{id}_R) : (R, s) \to (R, t)$
+\item the morphism $(R, \id_R) : (R, s) \to (R, t)$
 in the category $[U/_{\!p}R]$ which produces an isomorphism
 $\mathcal{F}_{(R, t)} \to \mathcal{F}_{(R, s)}$,
-\item the special morphism $(R, s) \to (U, \text{id})$ which produces an
+\item the special morphism $(R, s) \to (U, \id)$ which produces an
 isomorphism
-$s_{small}^*\mathcal{F}_{(U, \text{id})} \to \mathcal{F}_{(R, s)}$, and
-\item the special morphism $(R, t) \to (U, \text{id})$ which produces an
-isomorphism $t_{small}^*\mathcal{F}_{(U, \text{id})} \to \mathcal{F}_{(R, t)}$.
+$s_{small}^*\mathcal{F}_{(U, \id)} \to \mathcal{F}_{(R, s)}$, and
+\item the special morphism $(R, t) \to (U, \id)$ which produces an
+isomorphism $t_{small}^*\mathcal{F}_{(U, \id)} \to \mathcal{F}_{(R, t)}$.
 \end{enumerate}
 The cocycle condition for $\alpha$ follows from the condition
 that $(U, R, s, t, c)$ is groupoid, i.e., that composition is
@@ -1998,7 +1998,7 @@ Given a morphism $(f, r) : (T, u) \to (T', u')$ we get a map
 \end{align*}
 where the first arrow is pullback along $f$ and the second arrow is
 $\alpha$. Note that if $(T, r)$ is a special morphism, then this
-map is just pullback along $f$ as $e_{small}^*\alpha = \text{id}$ by
+map is just pullback along $f$ as $e_{small}^*\alpha = \id$ by
 the axioms of a sheaf of quasi-coherent modules on a groupoid.
 The cocycle condition implies that $\mathcal{F}$ is a presheaf
 of modules (details omitted). It is immediate from the definition that
@@ -2429,17 +2429,17 @@ and $b \circ c$. Thus we may assume that $p(a) = p(b) = f : U \to V$.
 As $\mathcal{X}$ is fibred in groupoids, there exists a unique automorphism
 $i : x \to x$ in the fibre category of $\mathcal{X}$ over $U$ such that
 $a \circ i = b$. Again the equalizer of $a$ and $b$ is the equalizer
-of $\text{id}_x$ and $i$. Recall that the $\mathit{Isom}_\mathcal{X}(x)$
+of $\id_x$ and $i$. Recall that the $\mathit{Isom}_\mathcal{X}(x)$
 is the presheaf on $(\Sch/U)_{fppf}$ which to
 $V/U$ associates the set of automorphisms of $x|_V$ in the fibre category
 of $\mathcal{X}$ over $V$, see
 Stacks, Definition \ref{stacks-definition-mor-presheaf}.
 If $\mathit{Isom}_\mathcal{X}(x)$ is representable by an algebraic space
-$G \to U$, then we see that $\text{id}_x$ and $i$ define morphisms
+$G \to U$, then we see that $\id_x$ and $i$ define morphisms
 $e, i : U \to G$ over $U$. Set $V = U \times_{e, G, i} U$, which by
 Morphisms of Spaces, Lemma \ref{spaces-morphisms-lemma-section-immersion}
 is a scheme. Then it is clear that $x|_V \to x$ is the equalizer of
-the maps $\text{id}_x$ and $i$ in $\mathcal{X}$.
+the maps $\id_x$ and $i$ in $\mathcal{X}$.
 This proves (2).
 
 \medskip\noindent
@@ -2792,7 +2792,7 @@ of categories. Part (3) follows on combining (1) and (2).
 \begin{lemma}
 \label{lemma-homotopy}
 If there exists a $1$-morphism $s : \mathcal{X} \to \mathcal{U}$
-such that $f \circ s$ is $2$-isomorphic to $\text{id}_\mathcal{X}$
+such that $f \circ s$ is $2$-isomorphic to $\id_\mathcal{X}$
 then the extended {\v C}ech complex is homotopic to zero.
 \end{lemma}
 
@@ -2806,13 +2806,13 @@ is an equivalence over $\mathcal{X}$, hence we may replace
 $(\mathcal{U}, f)$ by $(\mathcal{U}', f')$ by
 Lemma \ref{lemma-generalities}.
 The advantage of this is that now $f'$ has a section $s'$ such
-that $f' \circ s' = \text{id}_\mathcal{X}$ on the nose. Namely, if
-$t : s \circ f \to \text{id}_\mathcal{X}$ is a $2$-isomorphism
+that $f' \circ s' = \id_\mathcal{X}$ on the nose. Namely, if
+$t : s \circ f \to \id_\mathcal{X}$ is a $2$-isomorphism
 then we can set $s'(x) = (s(x), x, t_x)$. Thus we may assume that
-$f \circ s = \text{id}_\mathcal{X}$.
+$f \circ s = \id_\mathcal{X}$.
 
 \medskip\noindent
-In the case that $f \circ s = \text{id}_\mathcal{X}$ the result follows
+In the case that $f \circ s = \id_\mathcal{X}$ the result follows
 from general principles. We give the homotopy explicitly. Namely,
 for $n \geq 0$ define $s_n : \mathcal{U}_n \to \mathcal{U}_{n + 1}$
 to be the $1$-morphism defined by the rule on objects
@@ -2820,7 +2820,7 @@ $$
 (u_0, \ldots, u_n, x, \alpha_0, \ldots, \alpha_n)
 \longmapsto
 (u_0, \ldots, u_n, s(x), x,
-\alpha_0, \ldots, \alpha_n, \text{id}_x).
+\alpha_0, \ldots, \alpha_n, \id_x).
 $$
 Define
 $$
@@ -2957,7 +2957,7 @@ Remark \ref{remark-cech-complex-presheaves}.
 \begin{lemma}
 \label{lemma-homotopy-sheafified}
 If there exists a $1$-morphism $s : \mathcal{X} \to \mathcal{U}$
-such that $f \circ s$ is $2$-isomorphic to $\text{id}_\mathcal{X}$
+such that $f \circ s$ is $2$-isomorphic to $\id_\mathcal{X}$
 then the extended relative {\v C}ech complex is homotopic to zero.
 \end{lemma}
 

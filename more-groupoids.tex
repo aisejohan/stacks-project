@@ -88,8 +88,8 @@ The diagram
 R \times_{t, U, t} R
 \ar@<1ex>[r]^-{\text{pr}_1} \ar@<-1ex>[r]_-{\text{pr}_0}
 \ar[d]_{\text{pr}_0 \times c \circ (i, 1)} &
-R \ar[r]^t \ar[d]^{\text{id}_R} &
-U \ar[d]^{\text{id}_U} \\
+R \ar[r]^t \ar[d]^{\id_R} &
+U \ar[d]^{\id_U} \\
 R \times_{s, U, t} R
 \ar@<1ex>[r]^-c \ar@<-1ex>[r]_-{\text{pr}_0} \ar[d]_{\text{pr}_1} &
 R \ar[r]^t \ar[d]^s &
@@ -646,7 +646,7 @@ finite presentation.
 Apply
 Lemma \ref{lemma-local-source}
 with
-$g = \text{id}$ and
+$g = \id$ and
 $\mathcal{Q} =$``locally of finite presentation'',
 $\mathcal{R} =$``flat and locally of finite presentation'', and
 $\mathcal{P}=$``Cohen-Macaulay'', see
@@ -915,7 +915,7 @@ $(U, R, s, t, c)$ over $\mathbf{Z}$ by setting
 \begin{align*}
 U & = \Spec(k) \\
 R & = \coprod\nolimits_{g \in G} \Spec(k) \\
-s & = \coprod\nolimits_{g \in G} \Spec(\text{id}_k) \\
+s & = \coprod\nolimits_{g \in G} \Spec(\id_k) \\
 t & = \coprod\nolimits_{g \in G} \Spec(\varphi(g)) \\
 c & = \text{composition in }G
 \end{align*}
@@ -1126,10 +1126,10 @@ which maps $e$ to $r$.
 This is completely obvious if you think about groupoids in a
 functorial way. But we will also spell it out completely.
 Denote $a : U \to R$ the morphism with image $r$ such that
-$s \circ a = \text{id}_U$ which exists by the hypothesis
+$s \circ a = \id_U$ which exists by the hypothesis
 that $s : k \to \kappa(r)$ is an isomorphism. Similarly, denote
 $b : U \to R$ the morphism with image $r$ such that
-$t \circ b = \text{id}_U$. Note that
+$t \circ b = \id_U$. Note that
 $b = a \circ (t \circ a)^{-1}$, in particular
 $a \circ s \circ b = b$.
 
@@ -1461,7 +1461,7 @@ Let $S$ be a scheme.
 Let $U = \Spec(k)$ be a scheme over $S$ with $k$ a field.
 Let $(U, R_1, s_1, t_1, c_1)$, $(U, R_2, s_2, t_2, c_2)$ be groupoid schemes
 over $S$ with identical first component. Let $a : R_1 \to R_2$ be a morphism
-such that $(\text{id}_U, a)$ defines a morphism of groupoid
+such that $(\id_U, a)$ defines a morphism of groupoid
 schemes over $S$, see
 Groupoids, Definition \ref{groupoids-definition-groupoid}.
 In particular, the following diagrams commute
@@ -1618,7 +1618,7 @@ If $k$ is perfect, then the closure of the image is
 a groupoid scheme $Z \subset R_2$, by
 Lemma \ref{lemma-map-groupoids-on-perfect-field-image}.
 By the same lemma applied to
-$\text{id}_{R_1} : R_1 \to R_1$
+$\id_{R_1} : R_1 \to R_1$
 we see that $(R_2)_{red}$ is a groupoid scheme.
 Thus we may apply
 Lemma \ref{lemma-open-image-is-closed}
@@ -1901,7 +1901,7 @@ A_{\mathfrak m} \ar[u]^t
 $$
 Note that the two induced maps
 $s, t : \kappa(\mathfrak m) \to \kappa(\mathfrak q)$
-are equal and isomorphisms as $s \circ e = t \circ e = \text{id}_U$.
+are equal and isomorphisms as $s \circ e = t \circ e = \id_U$.
 In particular we see that $\mathfrak q$
 is a maximal ideal as well. The ring maps $s, t : A \to B$ are
 of finite presentation and flat. By assumption the ring

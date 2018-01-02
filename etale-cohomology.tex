@@ -157,7 +157,7 @@ and each morphism $U \to U'$ over $X$ (which is
 automatically \'etale) a restriction map
 $\rho^{U'}_U : \mathcal{F}(U') \to \mathcal{F}(U)$
 \end{enumerate}
-These data have to satisfy the condition that $\rho^U_U = \text{id}$
+These data have to satisfy the condition that $\rho^U_U = \id$
 in case of the identity morphism $U \to U$
 and that $\rho^{U'}_U \circ \rho^{U''}_{U'} = \rho^{U''}_U$
 when we have morphisms $U \to U' \to U''$ of schemes \'etale over $X$
@@ -433,7 +433,7 @@ $W \to V \to U$ are morphisms in $\mathcal{C}$ and
 $s \in \Gamma(U, \mathcal{F})$ then
 $(s|_V)|_W = s |_W$, with the abuse of
 notation just seen. Moreover, the restriction mappings corresponding to
-the identity morphisms $\text{id}_U : U \to U$ are the identity.
+the identity morphisms $\id_U : U \to U$ are the identity.
 
 \medskip\noindent
 The category of presheaves of sets (respectively of abelian presheaves) on
@@ -1239,7 +1239,7 @@ $$
 & {B \otimes_A B \otimes_A N}
 }
 $$
-commutes where $\varphi_{01} = \varphi \otimes \text{id}_B$ and similarly
+commutes where $\varphi_{01} = \varphi \otimes \id_B$ and similarly
 for $\varphi_{12}$ and $\varphi_{02}$.
 \end{definition}
 
@@ -3829,7 +3829,7 @@ $$
 $$
 where the colimit is over pairs $U \to S$, $x \in U(k)$ as usual.
 But... this category has an initial object, namely
-$(\Spec(k), \text{id})$, hence we see that
+$(\Spec(k), \id)$, hence we see that
 $$
 \mathcal{F}_p = \mathcal{F}(\Spec(k))
 $$
@@ -4171,7 +4171,7 @@ of the trivial extension $R \to R$ and the extensions
 $R \to R[X, X^{-1}]/(X^n-t)$.
 The latter ones factor through the open $D(t) \subset \Spec(R)$, so any
 \'etale covering can be refined by the covering
-$\{\text{id} : \Spec(R) \to \Spec(R)\}$. We will see below that
+$\{\id : \Spec(R) \to \Spec(R)\}$. We will see below that
 this is a somewhat general fact on \'etale coverings of spectra of henselian
 rings. This will show that higher \'etale cohomology of the spectrum of a
 strictly henselian ring is zero.
@@ -5094,7 +5094,7 @@ Let $X$, $Y$ be schemes. Let $f : X \to Y$ be a morphism of schemes.
 Let $t$ be a $2$-morphism from $(f_{small}, f_{small}^\sharp)$ to itself, see
 Modules on Sites,
 Definition \ref{sites-modules-definition-2-morphism-ringed-topoi}.
-Then $t = \text{id}$.
+Then $t = \id$.
 \end{lemma}
 
 \begin{proof}
@@ -5138,7 +5138,7 @@ $$
 f_{small}^{-1}h_V \ar[r]^-{f^{-1}h_i} \ar[d]^t &
 \prod_{j = 1, \ldots, n} f_{small}^{-1}\mathcal{O}_Y
 \ar[r]^-{\prod f^\sharp} \ar[d]^{\prod t} &
-\prod_{j = 1, \ldots, n} \mathcal{O}_X \ar[d]^{\text{id}}\\
+\prod_{j = 1, \ldots, n} \mathcal{O}_X \ar[d]^{\id}\\
 f_{small}^{-1}h_V \ar[r]^-{f^{-1}h_i} &
 \prod_{j = 1, \ldots, n} f_{small}^{-1}\mathcal{O}_Y
 \ar[r]^-{\prod f^\sharp} &
@@ -5500,11 +5500,11 @@ notation)
 $$
 \xymatrix{
 g \circ j_{i, small} \circ j_{i, i', small}
-\ar[rr]^{t_i \star \text{id}_{j_{i, i', small}}}
+\ar[rr]^{t_i \star \id_{j_{i, i', small}}}
 \ar@{=}[d] & &
 f_{small} \circ j_{i, small} \circ j_{i, i', small} \ar@{=}[d] \\
 g \circ j_{i', small} \circ j_{i', i, small}
-\ar[rr]^{t_{i'} \star \text{id}_{j_{i', i, small}}} & &
+\ar[rr]^{t_{i'} \star \id_{j_{i', i, small}}} & &
 f_{small} \circ j_{i', small} \circ j_{i', i, small}
 }
 $$
@@ -6203,7 +6203,7 @@ $$
 \varphi' : X' \times_S S' \to S' \times_S X'
 $$
 of schemes \'etale over $S' \times_S S'$ which pulls back under
-$\Delta$ to $\text{id} : X' \to X'$ over $S'$.
+$\Delta$ to $\id : X' \to X'$ over $S'$.
 Since $S' \to S' \times_S S' \times_S S'$
 is a thickening as well (it is bijective and a closed immersion)
 we conclude that $(X', \varphi')$ is a descent datum relative to $S'/S$.
@@ -9441,15 +9441,15 @@ f_!, f^{-1}, f_*
 $$
 of adjoint functors between
 $\textit{Ab}(X_\etale)$ and $\textit{Ab}(Y_\etale)$. The
-adjunction map $\text{id} \to f_* f^{-1}$ is called {\it restriction}.
-The adjunction map $f_! f^{-1} \to \text{id}$ is often
+adjunction map $\id \to f_* f^{-1}$ is called {\it restriction}.
+The adjunction map $f_! f^{-1} \to \id$ is often
 called the {\it trace map}. If $f$ is finite, then $f_* = f_!$ and
-we can view this as a map $f_*f^{-1} \to \text{id}$.
+we can view this as a map $f_*f^{-1} \to \id$.
 
 \begin{definition}
 \label{definition-trace-map}
 Let $f : Y \to X$ be a finite \'etale morphism of schemes.
-The map $f_* f^{-1} \to \text{id}$ described above is called the {\it trace}.
+The map $f_* f^{-1} \to \id$ described above is called the {\it trace}.
 \end{definition}
 
 \noindent
@@ -13993,7 +13993,7 @@ Topologies, Lemma \ref{topologies-lemma-at-the-bottom-etale}
 we have introduced comparison morphisms
 $\pi_S : (\Sch/S)_\etale \to S_\etale$ and
 $i_S : \Sh(S_\etale) \to \Sh((\Sch/S)_\etale)$
-with $\pi_S \circ i_S = \text{id}$ and $\pi_{S, *} = i_S^{-1}$.
+with $\pi_S \circ i_S = \id$ and $\pi_{S, *} = i_S^{-1}$.
 More generally, if $f : T \to S$ is an object of $(\Sch/S)_\etale$,
 then there is a morphism $i_f : \Sh(T_\etale) \to \Sh((\Sch/S)_\etale)$
 such that $f_{small} = \pi_S \circ i_f$, see
@@ -14494,7 +14494,7 @@ $(f_{small}^{-1}\mathcal{F}, a_Y^{-1}\mathcal{F}, can)$ is an equivalence.
 \end{lemma}
 
 \begin{proof}
-The functor $a_X^{-1}$ is fully faithful (as $a_{X, *}a_X^{-1} = \text{id}$ by
+The functor $a_X^{-1}$ is fully faithful (as $a_{X, *}a_X^{-1} = \id$ by
 Lemma \ref{lemma-describe-pullback-pi-fppf}). Hence the forgetful functor
 $(\mathcal{G}, \mathcal{H}, \alpha) \mapsto \mathcal{H}$ identifies the
 category of triples with a full subcategory of $\Sh((\Sch/Y)_{fppf})$.
@@ -14562,7 +14562,7 @@ $$
 \to
 (\mathcal{G}_1, \mathcal{H}_1, \alpha_1)
 $$
-which uses the unit $\text{id} \to f_{big, fppf, *}f_{big, fppf}^{-1}$
+which uses the unit $\id \to f_{big, fppf, *}f_{big, fppf}^{-1}$
 on the second entry (it is enough to prescribe morphisms on the
 second entry by the first paragraph of the proof). Since
 $\{f : X \to Y\}$ is an fppf covering the map
@@ -15824,7 +15824,7 @@ cohomology group $H^j (X_{\bar k}, \mathcal{F}|_{X_{\bar k}})$
 as follows: if $\sigma \in G_k$, the diagram
 $$
 \xymatrix{
-X_{\bar k} \ar[rd] \ar[rr]^{\Spec(\sigma) \times \text{id}_X} & &
+X_{\bar k} \ar[rd] \ar[rr]^{\Spec(\sigma) \times \id_X} & &
 X_{\bar k} \ar[ld] \\
 & X
 }
@@ -15832,8 +15832,8 @@ $$
 commutes. Thus we can set, for $\xi \in H^j (X_{\bar k}, \mathcal{F}|_{X_{\bar
 k}})$
 $$
-\sigma \cdot \xi := (\Spec(\sigma) \times \text{id}_X)^*\xi \in
-H^j(X_{\bar k}, (\Spec(\sigma) \times \text{id}_X)^{-1}
+\sigma \cdot \xi := (\Spec(\sigma) \times \id_X)^*\xi \in
+H^j(X_{\bar k}, (\Spec(\sigma) \times \id_X)^{-1}
 \mathcal{F}|{X_{\bar k}})
 = H^j (X_{\bar k}, \mathcal{F}|_{X_{\bar k}}),
 $$
@@ -16046,7 +16046,7 @@ of a free $\Lambda$-module, i.e., consider maps $P \xrightarrow{a}
 \item
 $\Lambda^{\oplus n} = \Im(a) \oplus \Ker(b)$; and
 \item
-$b\circ a = \text{id}_P$.
+$b\circ a = \id_P$.
 \end{enumerate}
 Then we set $\text{Tr}(\varphi) = \text{Tr}(a\varphi b)$. It is easy to check
 that this is well-defined, using the previous exercise.
@@ -17107,7 +17107,7 @@ V(\varphi) =
 $$
 where $m_{\text{Fix}(\varphi)} (c)$ is the multiplicity of $c$ as a fixed point
 of $\varphi$, namely the order or vanishing of the image of a local uniformizer
-under $\varphi - \text{id}_C$. Proofs of this theorem can be found in
+under $\varphi - \id_C$. Proofs of this theorem can be found in
 \cite{Lang} and \cite{Weil}.
 \end{proof}
 
@@ -17164,7 +17164,7 @@ $$
 {\text{pr}_{13}}_* ({\text{pr}_{12}}^*(\alpha) \circ {\text{pr}_{23}}^*(\beta))
 \\
 & \\
-\text{id}_J &
+\id_J &
 \Delta_C - \{c_0\} \times C - C \times \{c_0\} \\
 & \\
 \varphi^* &
@@ -17238,7 +17238,7 @@ $\{c_0\} \times C + C \times \{c_0\}$,
 \int_{C \times C} \left(\Gamma_\varphi - C \times \{\varphi(c_0)\} -
 \sum_{\varphi(c) = c_0} \{c\} \times C \right). \left(\Delta_C - \{c_0\} \times
 C - C \times \{c_0\}\right) \\
-& = & - \text{Tr}_J (\varphi^* \circ \text{id}_J).
+& = & - \text{Tr}_J (\varphi^* \circ \id_J).
 \end{eqnarray*}
 Recapitulating, we have
 $$

@@ -694,7 +694,7 @@ $\mathfrak m_B/(\mathfrak m_\Lambda B + \mathfrak m_B^2) \to
 is an isomorphism.
 \item If $f$ is a small extension, then $f$ is not essential if and only if
 $f$ has a section $s: A \to B$ in $\mathcal{C}_\Lambda$
-with $f \circ s = \text{id}_A$.
+with $f \circ s = \id_A$.
 \end{enumerate}
 \end{lemma}
 
@@ -1169,7 +1169,7 @@ Let $\mathcal{C}$ be a category.
 notation.
 \item The fiber category over an object $U$ in $\mathcal{C}$ is denoted by
 $\mathcal{F}(U)$. Its objects are those of $\mathcal{F}$ lying over $U$ and its
-morphisms are those of $\mathcal{F}$ lying over $\text{id}_U$.
+morphisms are those of $\mathcal{F}$ lying over $\id_U$.
 If $x, y$  are objects of $\mathcal{F}(U)$, we sometimes write
 $\Mor_U(x, y)$ for $\Mor_{\mathcal{F}(U)}(x, y)$.
 \item The fibre categories $\mathcal{F}(U)$ are groupoids, see
@@ -1209,7 +1209,7 @@ $\text{Cof}(\mathcal{C})$. Its 1-morphisms are the morphisms described in
 $p': \mathcal{F}' \to \mathcal{C}$ are categories cofibered in groupoids
 and $\varphi, \psi : \mathcal{F} \to \mathcal{F}'$ are $1$-morphisms, then
 a 2-morphism $t : \varphi \to \psi$ is a morphism of functors such that
-$p'(t_x) = \text{id}_{p(x)}$ for all $x \in \Ob(\mathcal{F})$.
+$p'(t_x) = \id_{p(x)}$ for all $x \in \Ob(\mathcal{F})$.
 \item
 \label{item-construction-associated-cofibered-groupoid}
 Let $F : \mathcal{C} \to \textit{Groupoids}$ be a functor. There
@@ -1861,7 +1861,7 @@ $$
 \longrightarrow
 \underline{\eta}(\alpha) = \alpha_{m, *}\eta_m
 $$
-lying over $\text{id}_A$ such that
+lying over $\id_A$ such that
 $$
 \xymatrix{
 \xi_m \ar[r] \ar[d]^{a_m} &  \beta_{m, *}\xi_m \ar[d] \\
@@ -1901,7 +1901,7 @@ a surjective ring map in $\mathcal{C}_\Lambda$.  Let $y \in
 \to \varphi(x)$ be a morphism lying over $B \to A$.  Then there
 exists $x' \in \Ob(\mathcal{F}(B))$, a morphism $x' \to x$
 lying over $B \to A$, and a morphism $\varphi(x') \to y$ lying
-over $\text{id}: B \to B$, such that the diagram
+over $\id: B \to B$, such that the diagram
 $$
 \xymatrix{
 \varphi(x') \ar[r] \ar[dr] & y \ar[d] \\
@@ -1932,7 +1932,7 @@ $y \to f_* y$ of $y$ along $f$, so that the morphism $y \to \varphi(x)$
 factors as $y \to f_* y \to \varphi(x)$. By the induction hypothesis
 we can find $x_{n - 1} \to x$ lying over $g : B_{n - 1} \to A$ and
 $a : \varphi(x_{n - 1}) \to f_*y$ lying over
-$\text{id} : B_{n - 1} \to B_{n - 1}$ such that
+$\id : B_{n - 1} \to B_{n - 1}$ such that
 $$
 \xymatrix{
 \varphi(x_{n - 1}) \ar[r]_-a \ar[dr] & f_*y \ar[d] \\
@@ -1943,7 +1943,7 @@ commutes. We can apply the assumption to the composition
 $y \to \varphi(x_{n - 1})$ of
 $y \to f_*y$ with $a^{-1} : f_*y \to \varphi(x_{n - 1})$. We obtain
 $x_n \to x_{n - 1}$ lying over $B_n \to B_{n - 1}$ and
-$\varphi(x_n) \to y$ lying over  $\text{id} : B_n \to B_n$ so that the diagram
+$\varphi(x_n) \to y$ lying over  $\id : B_n \to B_n$ so that the diagram
 $$
 \xymatrix{
 \varphi(x_n) \ar[r] \ar[d] & y \ar[d] \\
@@ -2093,7 +2093,7 @@ Lemma \ref{lemma-surjective-cotangent-space}
 Choose preimages $y_i \in S$ of $X_i \in T$ under $f$. As $T$ is a
 power series ring over $R$ there exists a local
 $R$-algebra homomorphism $s : T \to S$ mapping $X_i$ to $y_i$.
-By construction $f \circ s = \text{id}$. Then $s$ is injective.
+By construction $f \circ s = \id$. Then $s$ is injective.
 But $s$ induces an isomorphism on relative cotangent spaces since
 $f$ does, so it is also surjective by
 Lemma \ref{lemma-surjective-cotangent-space}
@@ -3010,7 +3010,7 @@ A \ar[r] & k.
 }
 $$
 in $\mathcal{C}_\Lambda$. Assume $\mathcal{F}$ satisfies (S2).
-Then there exists a morphism $s : x \to y$ with $a \circ s = \text{id}_x$
+Then there exists a morphism $s : x \to y$ with $a \circ s = \id_x$
 if and only if there exists a morphism $s_\epsilon : x \to x_\epsilon$
 with $e \circ s_\epsilon = d$.
 \end{lemma}
@@ -3021,12 +3021,12 @@ morphism $s_\epsilon : x \to x_\epsilon$ with $e \circ s_\epsilon = d$.
 Note that $p(s_\epsilon) : A \to k[\epsilon]$ is a ring map compatible
 with the map $A \to k$. Hence we obtain
 $$
-\sigma = (\text{id}_A, p(s_\epsilon)) : A \to A \times_k k[\epsilon].
+\sigma = (\id_A, p(s_\epsilon)) : A \to A \times_k k[\epsilon].
 $$
 Choose a pushforward $x \to \sigma_*x$. By construction we can factor
 $s_\epsilon$ as $x \to \sigma_*x \to x_\epsilon$. Moreover, as $\sigma$
 is a section of $A \times_k k[\epsilon] \to A$, we get a morphism
-$\sigma_*x \to x$ such that $x \to \sigma_*x \to x$ is $\text{id}_x$.
+$\sigma_*x \to x$ such that $x \to \sigma_*x \to x$ is $\id_x$.
 Because $e \circ s_\epsilon = d$ we find that the diagram
 $$
 \xymatrix{
@@ -3073,7 +3073,7 @@ morphism $b: x_1 \to x_2$ such that $a_1 =  a_2 \circ b$.
 
 \begin{proof}
 Note that
-$\text{id}_{A_1} \times g : A_1 \times_A A_2 \to A_1 \times_k k[I]$
+$\id_{A_1} \times g : A_1 \times_A A_2 \to A_1 \times_k k[I]$
 is an isomorphism and that $k[I] \cong k[\epsilon]$. Hence we have a diagram
 $$
 \vcenter{
@@ -4855,7 +4855,7 @@ A_1 \ar[r]      & A.
 }
 $$
 The induced map $y \to x_1 \times_x x_2$ lies over
-$\text{id} : A_1 \times_A A_1 \to A_1 \times_A A_1$, hence it is an
+$\id : A_1 \times_A A_1 \to A_1 \times_A A_1$, hence it is an
 isomorphism.
 \end{proof}
 
@@ -5043,7 +5043,7 @@ over a surjective ring map $f: A' \to A$. Let
 $a \in \text{Aut}_A(x)$. The
 objects
 $$
-(x', x', a : x \to x), \ (x', x', \text{id} : x \to x)
+(x', x', a : x \to x), \ (x', x', \id : x \to x)
 $$
 of
 $\mathcal{F}(A') \times_{\mathcal{F}(A)} \mathcal{F}(A')$
@@ -5054,7 +5054,7 @@ $b_1, b_2 : x' \to x'$ such that
 $$
 \xymatrix{
 x \ar[r]_a \ar[d]_{f_*b_1} & x \ar[d]^{f_*b_2} \\
-x \ar[r]^{\text{id}} & x
+x \ar[r]^{\id} & x
 }
 $$
 commutes. Hence $b_2^{-1} \circ b_1 \in \text{Aut}_{A'}(x')$ has image
@@ -5448,7 +5448,7 @@ in the following commutative diagram
 $$
 \xymatrix{
 \text{Lift}(x, A') \times (T\mathcal{F} \otimes_k I)
-\ar[d]_{(\varphi, d\varphi \otimes \text{id}_I)} \ar[r] &
+\ar[d]_{(\varphi, d\varphi \otimes \id_I)} \ar[r] &
 \text{Lift}(x, A') \ar[d]^\varphi \\
 \text{Lift}(\varphi(x), A') \times (T\mathcal{G} \otimes_k I) \ar[r] &
 \text{Lift}(\varphi(x), A')
@@ -5502,7 +5502,7 @@ bijectivity by checking it on fibers $F(f)^{-1}(x) \to
 G(f)^{-1}(\varphi(x))$ for $x \in F(A)$ such that $F(f)^{-1}(x)$ is nonempty.
 These fibers are precisely $\text{Lift}(x, A')$ and
 $\text{Lift}(\varphi(x), A')$ and by assumption we have an isomorphism
-$d\varphi \otimes \text{id} :
+$d\varphi \otimes \id :
 TF \otimes_k \Ker(f)  \to TG \otimes_k \Ker(f)$.
 Thus, by
 Lemma \ref{lemma-free-transitive-action} and
@@ -5714,13 +5714,13 @@ $\mathcal{C}_\Lambda$ satisfying (RS). Let
 $x \in \Ob(\mathcal{F}(A))$. Let $x_0$ be a pushforward of $x$ to
 $\mathcal{F}(k)$.
 \begin{enumerate}
-\item $T_{\text{id}_{x_0}} \mathit{Aut}(x)$ has a natural $k$-vector
+\item $T_{\id_{x_0}} \mathit{Aut}(x)$ has a natural $k$-vector
 space structure such that addition agrees with composition in
-$T_{\text{id}_{x_0}} \mathit{Aut}(x)$. In particular, composition in
-$T_{\text{id}_{x_0}} \mathit{Aut}(x)$ is commutative.
+$T_{\id_{x_0}} \mathit{Aut}(x)$. In particular, composition in
+$T_{\id_{x_0}} \mathit{Aut}(x)$ is commutative.
 \item There is a canonical isomorphism
-$T_{\text{id}_{x_0}} \mathit{Aut}(x) \to
-T_{\text{id}_{x_0}} \mathit{Aut}(x_0)$
+$T_{\id_{x_0}} \mathit{Aut}(x) \to
+T_{\id_{x_0}} \mathit{Aut}(x_0)$
 of $k$-vector spaces.
 \end{enumerate}
 \end{lemma}
@@ -5729,11 +5729,11 @@ of $k$-vector spaces.
 We apply
 Remark \ref{remark-localize-cofibered-groupoid}
 to the functor $\mathit{Aut}(x) : \mathcal{C}_A \to \textit{Sets}$
-and the element $\text{id}_{x_0} \in \mathit{Aut}(x)(k)$ to get
-a predeformation functor $F = \mathit{Aut}(x)_{\text{id}_{x_0}}$. By
+and the element $\id_{x_0} \in \mathit{Aut}(x)(k)$ to get
+a predeformation functor $F = \mathit{Aut}(x)_{\id_{x_0}}$. By
 Lemmas \ref{lemma-Aut-functor-RS} and \ref{lemma-localize-RS}
 $F$ is a deformation functor. By definition
-$T_{\text{id}_{x_0}} \mathit{Aut}(x) = TF = F(k[\epsilon])$
+$T_{\id_{x_0}} \mathit{Aut}(x) = TF = F(k[\epsilon])$
 which has a natural
 $k$-vector space structure specified by Lemma
 \ref{lemma-tangent-space-functor}.
@@ -5750,15 +5750,15 @@ second is induced by the $k$-algebra map
 $k[\epsilon] \times_k k[\epsilon] \to k[\epsilon]$
 which maps $(\epsilon, 0)$ and $(0, \epsilon)$ to $\epsilon$.
 If $A \to B$ is a ring map in $\mathcal{C}_\Lambda$, then $F(A) \to F(B)$
-is a homomorphism where $F(A) = \mathit{Aut}(x)_{\text{id}_{x_0}}(A)$ and
-$F(B) = \mathit{Aut}(x)_{\text{id}_{x_0}}(B)$ are groups under
+is a homomorphism where $F(A) = \mathit{Aut}(x)_{\id_{x_0}}(A)$ and
+$F(B) = \mathit{Aut}(x)_{\id_{x_0}}(B)$ are groups under
 composition. We conclude that
 $+ : F(k[\epsilon]) \times F(k[\epsilon])\to F(k[\epsilon])$
 is a homomorphism where $F(k[\epsilon])$ is regarded as a
-group under composition. With $\text{id} \in F(k[\epsilon])$ the
-unit element we see that $+(v, \text{id}) =
-+(\text{id}, v) = v$ for any $v \in F(k[\epsilon])$ because
-$(\text{id}, v)$ is the pushforward of $v$ along the ring map
+group under composition. With $\id \in F(k[\epsilon])$ the
+unit element we see that $+(v, \id) =
++(\id, v) = v$ for any $v \in F(k[\epsilon])$ because
+$(\id, v)$ is the pushforward of $v$ along the ring map
 $k[\epsilon] \to k[\epsilon] \times_k k[\epsilon]$ with
 $\epsilon \mapsto (\epsilon, 0)$.
 In general, given a group $G$ with multiplication $\circ$
@@ -5769,10 +5769,10 @@ agrees with composition.
 
 \medskip\noindent
 Finally, (2) is a matter of unwinding the definitions. Namely
-$T_{\text{id}_{x_0}} \mathit{Aut}(x)$ is the set of
+$T_{\id_{x_0}} \mathit{Aut}(x)$ is the set of
 automorphisms $\alpha$ of the pushforward of $x$ along
 $A \to k \to k[\epsilon]$ which are trivial modulo $\epsilon$.
-On the other hand $T_{\text{id}_{x_0}} \mathit{Aut}(x_0)$ is the set of
+On the other hand $T_{\id_{x_0}} \mathit{Aut}(x_0)$ is the set of
 automorphisms of the pushforward of $x_0$ along
 $k \to k[\epsilon]$ which are trivial modulo $\epsilon$.
 Since $x_0$ is the pushforward of $x$ along $A \to k$ the result
@@ -5787,16 +5787,16 @@ $\mathcal{F}$ be a category cofibered in groupoids over $\mathcal{C}_\Lambda$.
 Let $x' \to x$ be a morphism lying over a ring map $A' \to A$.
 Then from the definitions we have an equality
 $$
-\text{Inf}(x'/x) = \text{Lift}(\text{id}_x, A')
+\text{Inf}(x'/x) = \text{Lift}(\id_x, A')
 $$
-where the liftings are of $\text{id}_x$ as an object of
+where the liftings are of $\id_x$ as an object of
 $\mathit{Aut}(x')$.  If $x_0 \in \Ob(\mathcal{F}(k))$ and $x'_0$
 is the pushforward to $\mathcal{F}(k[\epsilon])$, then applying this to
 $x'_0 \to x_0$ we get
 $$
 \text{Inf}_{x_0}(\mathcal{F}) =
-\text{Lift}(\text{id}_{x_0}, k[\epsilon]) =
-T_{\text{id}_{x_0}} \mathit{Aut}(x_0),
+\text{Lift}(\id_{x_0}, k[\epsilon]) =
+T_{\id_{x_0}} \mathit{Aut}(x_0),
 $$
 the last equality following directly from the definitions.
 \end{remark}
@@ -5806,7 +5806,7 @@ the last equality following directly from the definitions.
 Let $\mathcal{F}$ be a category cofibered in groupoids over
 $\mathcal{C}_\Lambda$ satisfying (RS). Let $x_0 \in \Ob(\mathcal{F}(k))$.
 Then $\text{Inf}_{x_0}(\mathcal{F})$ is equal as a set to
-$T_{\text{id}_{x_0}} \mathit{Aut}(x_0)$, and so has a natural $k$-vector
+$T_{\id_{x_0}} \mathit{Aut}(x_0)$, and so has a natural $k$-vector
 space structure such that addition agrees with composition of automorphisms.
 \end{lemma}
 
@@ -5840,7 +5840,7 @@ $\mathcal{C}_\Lambda$ satisfying (RS). Let $x' \to x$ be a
 morphism lying over a surjective ring map $A' \to A$ with kernel $I$
 annihilated by $\mathfrak m_{A'}$. Let $x_0$ be a pushforward of $x$ to
 $\mathcal{F}(k)$. Then $\text{Inf}(x'/x)$ has a free and transitive action by
-$T_{\text{id}_{x_0}} \mathit{Aut}(x') \otimes_k I
+$T_{\id_{x_0}} \mathit{Aut}(x') \otimes_k I
 = \text{Inf}_{x_0}(\mathcal{F}) \otimes_k I$.
 \end{lemma}
 
@@ -5851,22 +5851,22 @@ in the setting of automorphism sheaves.
 To be precise, we apply
 Remark \ref{remark-localize-cofibered-groupoid}
 to the functor $\mathit{Aut}(x') : \mathcal{C}_{A'} \to \textit{Sets}$
-and the element $\text{id}_{x_0} \in \mathit{Aut}(x)(k)$ to get
-a predeformation functor $F = \mathit{Aut}(x')_{\text{id}_{x_0}}$. By
+and the element $\id_{x_0} \in \mathit{Aut}(x)(k)$ to get
+a predeformation functor $F = \mathit{Aut}(x')_{\id_{x_0}}$. By
 Lemmas \ref{lemma-Aut-functor-RS} and \ref{lemma-localize-RS}
 $F$ is a deformation functor. Hence
 Lemma \ref{lemma-free-transitive-action}
 gives a free and transitive action
-of $TF \otimes_k I$ on $\text{Lift}(\text{id}_x, A')$, because as
-$\text{Lift}(\text{id}_x, A')$ is a group it is always nonempty.
+of $TF \otimes_k I$ on $\text{Lift}(\id_x, A')$, because as
+$\text{Lift}(\id_x, A')$ is a group it is always nonempty.
 Note that we have equalities of vector spaces
 $$
-TF = T_{\text{id}_{x_0}} \mathit{Aut}(x') \otimes_k I =
+TF = T_{\id_{x_0}} \mathit{Aut}(x') \otimes_k I =
 \text{Inf}_{x_0}(\mathcal{F}) \otimes_k I
 $$
 by
 Lemma \ref{lemma-Aut-functor-tangent-space}.
-The equality $\text{Inf}(x'/x) = \text{Lift}(\text{id}_x, A')$ of
+The equality $\text{Inf}(x'/x) = \text{Lift}(\id_x, A')$ of
 Remark \ref{remark-infaut-lifting-equalities}
 finishes the proof.
 \end{proof}
@@ -5980,7 +5980,7 @@ with a morphism $(k[\epsilon], y'_0, z'_0, c' \circ \alpha \circ b') \to w_0$
 over $k[\epsilon] \to k$ as $\alpha$ pushes forward to the identity over $k$.
 More generally, for any $k$-vector space $V$ we can define a map
 $$
-\text{Lift}(\text{id}_{x_0}, k[V])
+\text{Lift}(\id_{x_0}, k[V])
 \longrightarrow
 \text{Lift}(w_0, k[V])
 $$
@@ -6277,7 +6277,7 @@ rules
 \begin{enumerate}
 \item $x \in U(T)$ maps to the object $(T, x) \in \Ob([U/R](T))$, and
 \item $x \in U(T)$ and $f : T \to T'$ give rise to the morphism
-$(f, \text{id}_{U(f)(x)}): (T, x) \to (T, U(f)(x))$ lying over
+$(f, \id_{U(f)(x)}): (T, x) \to (T, U(f)(x))$ lying over
 $f : T \to T'$.
 \end{enumerate}
 \end{enumerate}
@@ -7243,7 +7243,7 @@ Finally, $h(\mathfrak p)R[[t_1, \ldots, t_r]]$ is a minimal
 prime as $h$ is flat, and hence of the form
 $\mathfrak q R[[t_1, \ldots, t_r]]$ for some minimal
 prime $\mathfrak q \subset R$ by what we just said.
-But since $h \bmod (t_1, \ldots, t_r) = \text{id}_R$ by
+But since $h \bmod (t_1, \ldots, t_r) = \id_R$ by
 definition of a formal homotopy, we conclude that
 $\mathfrak q = \mathfrak p$ as desired.
 \end{proof}

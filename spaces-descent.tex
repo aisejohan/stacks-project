@@ -2541,7 +2541,7 @@ Let $\{X_i \to X\}_{i \in I}$ be a smooth covering of $X$. If each composition
 $h_i : X_i \to Y$ has $\mathcal{P}$, then for each $|x| \in X$ we can find
 an $i \in I$ and a point $x_i \in |X_i|$ mapping to $x$. Then
 $(X_i, x_i) \to (X, x)$ is a smooth morphism of pairs, and
-$\text{id}_Y : Y \to Y$ is a smooth morphism, and $h_i$ is as in part (3) of
+$\id_Y : Y \to Y$ is a smooth morphism, and $h_i$ is as in part (3) of
 Definition \ref{definition-local-source-target}.
 Thus we see that $f$ has $\mathcal{P}$.
 Conversely, if $f$ has $\mathcal{P}$ then each $X_i \to Y$ has
@@ -2812,7 +2812,7 @@ Let $\{X_i \to X\}_{i \in I}$ be an \'etale covering of $X$. If each composition
 $h_i : X_i \to Y$ has $\mathcal{P}$, then for each $|x| \in X$ we can find
 an $i \in I$ and a point $x_i \in |X_i|$ mapping to $x$. Then
 $(X_i, x_i) \to (X, x)$ is an \'etale morphism of pairs, and
-$\text{id}_Y : Y \to Y$ is a smooth morphism, and $h_i$ is as in part (3) of
+$\id_Y : Y \to Y$ is a smooth morphism, and $h_i$ is as in part (3) of
 Definition \ref{definition-etale-smooth-local-source-target}.
 Thus we see that $f$ has $\mathcal{P}$.
 Conversely, if $f$ has $\mathcal{P}$ then each $X_i \to Y$ has
@@ -3088,8 +3088,8 @@ $f : V \to V'$ of algebraic spaces over $Y$ such that
 the diagram
 $$
 \xymatrix{
-V \times_X Y \ar[r]_{\varphi} \ar[d]_{f \times \text{id}_Y} &
-Y \times_X V \ar[d]^{\text{id}_Y \times f} \\
+V \times_X Y \ar[r]_{\varphi} \ar[d]_{f \times \id_Y} &
+Y \times_X V \ar[d]^{\id_Y \times f} \\
 V' \times_X Y \ar[r]^{\varphi'} & Y \times_X V'
 }
 $$
@@ -3162,8 +3162,8 @@ of morphisms $\psi_i : V_i \to V'_i$ of algebraic spaces over $X_i$
 such that all the diagrams
 $$
 \xymatrix{
-V_i \times_X X_j \ar[r]_{\varphi_{ij}} \ar[d]_{\psi_i \times \text{id}} &
-X_i \times_X V_j \ar[d]^{\text{id} \times \psi_j} \\
+V_i \times_X X_j \ar[r]_{\varphi_{ij}} \ar[d]_{\psi_i \times \id} &
+X_i \times_X V_j \ar[d]^{\id \times \psi_j} \\
 V'_i \times_X X_j \ar[r]^{\varphi'_{ij}} & X_i \times_X V'_j
 }
 $$
@@ -3251,7 +3251,7 @@ $$
 V' \times_{X'} Y' \ar@{=}[r] &
 (Y' \times_Y V) \times_{X'} Y' \ar@{=}[r] &
 (Y' \times_{X'} Y') \times_{Y \times_X Y} (V \times_X Y)
-\ar[d]^{\text{id} \times \varphi} \\
+\ar[d]^{\id \times \varphi} \\
 Y' \times_{X'} V' \ar@{=}[r] &
 Y' \times_{X'} (Y' \times_Y V) &
 (Y' \times_X Y') \times_{Y \times_X Y} (Y \times_X V) \ar@{=}[l]
@@ -3367,7 +3367,7 @@ Let $S$ be a scheme. Let $f : Y \to X$ be a morphism of algebraic spaces over
 $S$.
 \begin{enumerate}
 \item Given an algebraic space $U$ over $X$ we have the
-{\it trivial descent datum} of $U$ relative to $\text{id} : X \to X$, namely
+{\it trivial descent datum} of $U$ relative to $\id : X \to X$, namely
 the identity morphism on $U$.
 \item By Lemma \ref{lemma-pullback} we get a
 {\it canonical descent datum} on $Y \times_X U$
@@ -3386,10 +3386,10 @@ Thus being effective means there exists an algebraic space $U$
 over $X$ and an isomorphism $\psi : V \to Y \times_X U$
 over $Y$ such that $\varphi$ is equal to the composition
 $$
-V \times_X Y \xrightarrow{\psi \times \text{id}_Y}
+V \times_X Y \xrightarrow{\psi \times \id_Y}
 Y \times_X U \times_S Y =
 Y \times_X Y \times_X U
-\xrightarrow{\text{id}_Y \times \psi^{-1}}
+\xrightarrow{\id_Y \times \psi^{-1}}
 Y \times_X V
 $$
 There is a slight problem here which is that this definition
@@ -3407,7 +3407,7 @@ with fixed target $X$.
 \item  Given an algebraic space $U$ over $X$
 we have a {\it canonical descent datum} on the family of
 algebraic spaces $X_i \times_X U$ by pulling back the trivial
-descent datum for $U$ relative to $\{\text{id} : S \to S\}$.
+descent datum for $U$ relative to $\{\id : S \to S\}$.
 We denote this descent datum $(X_i \times_X U, can)$.
 \item A descent datum $(V_i, \varphi_{ij})$
 relative to $\{X_i \to S\}$ is called {\it effective}

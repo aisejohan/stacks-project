@@ -78,7 +78,7 @@ Let $X$ be a topological space.
 assigns to each open $U \subset X$ a set $\mathcal{F}(U)$ and
 to each inclusion $V \subset U$ a map
 $\rho^U_V : \mathcal{F}(U) \to \mathcal{F}(V)$ such that
-$\rho^U_U = \text{id}_{\mathcal{F}(U)}$ and
+$\rho^U_U = \id_{\mathcal{F}(U)}$ and
 whenever $W \subset V \subset U$ we have
 $\rho^U_W = \rho^V_W \circ \rho ^U_V$.
 \item A {\it morphism $\varphi : \mathcal{F} \to \mathcal{G}$
@@ -130,7 +130,7 @@ Let $X$ be a topological space. Let $A$ be a set.
 The {\it constant presheaf with value $A$} is the
 presheaf that assigns the set $A$ to every open
 $U \subset X$, and such that all restriction mappings
-are $\text{id}_A$.
+are $\id_A$.
 \end{definition}
 
 \section{Abelian presheaves}
@@ -414,7 +414,7 @@ $\varphi : \mathcal{F} \to \mathcal{G}$ such that
 the diagram
 $$
 \xymatrix{
-\mathcal{O} \times \mathcal{F} \ar[r] \ar[d]_{\text{id} \times \varphi} &
+\mathcal{O} \times \mathcal{F} \ar[r] \ar[d]_{\id \times \varphi} &
 \mathcal{F} \ar[d]^{\varphi} \\
 \mathcal{O} \times \mathcal{G} \ar[r] &
 \mathcal{G}
@@ -2804,11 +2804,11 @@ Lemma \ref{lemma-adjoint-push-pull-presheaves-modules}.
 The third equality is given by the equality
 $f_*(\mathcal{F}_{f_pf_*\mathcal{O}}) = f_*\mathcal{F}$
 of abelian sheaves which is $f_*\mathcal{O}$-linear. Namely,
-$\text{id}_{f_*\mathcal{O}}$ corresponds to $c_\mathcal{O}$
+$\id_{f_*\mathcal{O}}$ corresponds to $c_\mathcal{O}$
 under the adjunction described in the proof of
 Lemma \ref{lemma-pullback-presheaves}
 and thus
-$\text{id}_{f_*\mathcal{O}} = f_*c_\mathcal{O} \circ i_{f_*\mathcal{O}}$.
+$\id_{f_*\mathcal{O}} = f_*c_\mathcal{O} \circ i_{f_*\mathcal{O}}$.
 \end{proof}
 
 \begin{lemma}
@@ -4394,8 +4394,8 @@ we have a canonical identification of stalks
 $$
 j^{-1}\mathcal{G}_u = (\mathcal{G}|_U)_u = \mathcal{G}_u.
 $$
-\item On the category of presheaves of $U$ we have $j_pj_* = \text{id}$.
-\item On the category of sheaves of $U$ we have $j^{-1}j_* = \text{id}$.
+\item On the category of presheaves of $U$ we have $j_pj_* = \id$.
+\item On the category of sheaves of $U$ we have $j^{-1}j_* = \id$.
 \end{enumerate}
 The same description holds for (pre)sheaves of abelian groups,
 (pre)sheaves of algebraic structures, and (pre)sheaves of modules.
@@ -4502,8 +4502,8 @@ j_{!}\mathcal{F}_x =
 \end{matrix}
 \right.
 $$
-\item On the category of presheaves of $U$ we have $j_pj_{p!} = \text{id}$.
-\item On the category of sheaves of $U$ we have $j^{-1}j_! = \text{id}$.
+\item On the category of presheaves of $U$ we have $j_pj_{p!} = \id$.
+\item On the category of sheaves of $U$ we have $j^{-1}j_! = \id$.
 \end{enumerate}
 \end{lemma}
 
@@ -4641,9 +4641,9 @@ j_{!}\mathcal{F}_x =
 \right.
 $$
 \item On the category of abelian presheaves of $U$
-we have $j_pj_{p!} = \text{id}$.
+we have $j_pj_{p!} = \id$.
 \item On the category of abelian sheaves of $U$
-we have $j^{-1}j_! = \text{id}$.
+we have $j^{-1}j_! = \id$.
 \end{enumerate}
 \end{lemma}
 
@@ -4685,9 +4685,9 @@ e & \text{if} & x \not \in U \\
 \right.
 $$
 \item On the category of presheaves of algebraic structures on $U$
-we have $j_pj_{p!} = \text{id}$.
+we have $j_pj_{p!} = \id$.
 \item On the category of sheaves of algebraic structures on $U$
-we have $j^{-1}j_! = \text{id}$.
+we have $j^{-1}j_! = \id$.
 \end{enumerate}
 \end{lemma}
 
@@ -4732,7 +4732,7 @@ j_{!}\mathcal{F}_x =
 \right.
 $$
 \item On the category of sheaves of $\mathcal{O}|_U$-modules on $U$
-we have $j^{-1}j_! = \text{id}$.
+we have $j^{-1}j_! = \id$.
 \end{enumerate}
 \end{lemma}
 
@@ -4762,7 +4762,7 @@ $\mathcal{G}_x = \emptyset$ for all $x \in X \setminus U$.
 \end{lemma}
 
 \begin{proof}
-Fully faithfulness follows formally from $j^{-1} j_! = \text{id}$.
+Fully faithfulness follows formally from $j^{-1} j_! = \id$.
 We have seen that any sheaf in the image of the functor has
 the property on the stalks mentioned in the lemma. Conversely, suppose
 that $\mathcal{G}$ has the indicated property.
@@ -4876,7 +4876,7 @@ i_*\mathcal{F}_x =
 \right.
 $$
 where $\{*\}$ denotes a singleton set. Moreover,
-$i^{-1}i_* = \text{id}$ on the category of sheaves
+$i^{-1}i_* = \id$ on the category of sheaves
 of sets on $Z$. Moreover, the same holds for abelian
 sheaves on $Z$, resp.\ sheaves of algebraic structures on $Z$
 where $\{*\}$ has to be replaced by $0$, resp.\ a
@@ -4892,7 +4892,7 @@ see Remark \ref{remark-confusion}. This proves the first case.
 The second case comes from the fact that for $z \in Z$
 any open neighbourhood of $z$ is of the form $Z \cap U$ for
 some open $U$ of $X$. For the statement that
-$i^{-1}i_* = \text{id}$ consider the canonical map
+$i^{-1}i_* = \id$ consider the canonical map
 $i^{-1}i_*\mathcal{F} \to \mathcal{F}$. This is an isomorphism
 on stalks (see above) and hence an isomorphism.
 
@@ -4916,7 +4916,7 @@ $\mathcal{G}_x = \{*\}$ for all $x \in X \setminus Z$.
 \end{lemma}
 
 \begin{proof}
-Fully faithfulness follows formally from $i^{-1} i_* = \text{id}$.
+Fully faithfulness follows formally from $i^{-1} i_* = \id$.
 We have seen that any sheaf in the image of the functor has
 the property on the stalks mentioned in the lemma. Conversely, suppose
 that $\mathcal{G}$ has the indicated property.
@@ -5088,7 +5088,7 @@ $$
 such that the diagrams
 $$
 \xymatrix{
-\mathcal{F}|_{U_i \cap U_j} \ar[r]_{\varphi_i} \ar[d]_{\text{id}} &
+\mathcal{F}|_{U_i \cap U_j} \ar[r]_{\varphi_i} \ar[d]_{\id} &
 \mathcal{F}_i|_{U_i \cap U_j} \ar[d]^{\varphi_{ij}} \\
 \mathcal{F}|_{U_i \cap U_j} \ar[r]^{\varphi_j} &
 \mathcal{F}_j|_{U_i \cap U_j}

@@ -96,8 +96,8 @@ $\{S_i \to S\}_{i\in I}$ is an fpqc covering.
 
 \medskip\noindent
 In the extreme case where the covering $\{S \to S\}$
-is given by $\text{id}_S$ a descent datum is necessarily
-of the form $(\mathcal{F}, \text{id}_\mathcal{F})$. The cocycle
+is given by $\id_S$ a descent datum is necessarily
+of the form $(\mathcal{F}, \id_\mathcal{F})$. The cocycle
 condition guarantees that the identity on $\mathcal{F}$ is the
 only permitted map in this case. The following lemma shows
 in particular that to every quasi-coherent sheaf of
@@ -295,8 +295,8 @@ is a morphism of $A$-modules $\psi : N \to N'$ such that
 the diagram
 $$
 \xymatrix{
-N \otimes_R A \ar[r]_\varphi \ar[d]_{\psi \otimes \text{id}_A} &
-A \otimes_R N \ar[d]^{\text{id}_A \otimes \psi} \\
+N \otimes_R A \ar[r]_\varphi \ar[d]_{\psi \otimes \id_A} &
+A \otimes_R N \ar[d]^{\id_A \otimes \psi} \\
 N' \otimes_R A \ar[r]^{\varphi'} &
 A \otimes_R N'
 }
@@ -307,8 +307,8 @@ is commutative.
 
 \noindent
 In the definition we use the notation that
-$\varphi_{01} = \varphi \otimes \text{id}_A$,
-$\varphi_{12} = \text{id}_A \otimes \varphi$, and
+$\varphi_{01} = \varphi \otimes \id_A$,
+$\varphi_{12} = \id_A \otimes \varphi$, and
 $\varphi_{02}(n \otimes 1 \otimes 1) = \sum a_i \otimes 1 \otimes n_i$
 if $\varphi(n \otimes 1) = \sum a_i \otimes n_i$. All three are
 $A \otimes_R A \otimes_R A$-module homomorphisms. Equivalently we have
@@ -353,7 +353,7 @@ $$
 N_{n, i} \longrightarrow N_{n, j}
 $$
 of $(A/R)_n$-modules when $i < j$. If $i = j$ we set
-$\varphi^n_{ij} = \text{id}$. Since these are all isomorphisms they allow us
+$\varphi^n_{ij} = \id$. Since these are all isomorphisms they allow us
 to move the factor $N$ to any spot we like. And the cocycle condition
 exactly means that it does not matter how we do this (e.g., as a composition
 of two of these or at once). Finally, for any $\beta : [n] \to [m]$
@@ -408,9 +408,9 @@ a_0 \otimes a_1 \otimes n & \mapsto & a_0 \otimes a_1n
 $$
 with notation as in
 Simplicial, Section \ref{simplicial-section-cosimplicial-object}.
-We first verify the two properties $\sigma^0_0 \circ \delta^1_0 = \text{id}$
-and $\sigma^0_0 \circ \delta^1_1 = \text{id}$.
-The first one, $\sigma^0_0 \circ \delta^1_0 = \text{id}$, is clear from
+We first verify the two properties $\sigma^0_0 \circ \delta^1_0 = \id$
+and $\sigma^0_0 \circ \delta^1_1 = \id$.
+The first one, $\sigma^0_0 \circ \delta^1_0 = \id$, is clear from
 the explicit description of the morphisms above.
 To prove the second relation we have to use the cocycle condition
 (because it does not holds for an arbitrary isomorphism
@@ -418,7 +418,7 @@ $\varphi : N \otimes_R A \to A \otimes_R N$). Write
 $p = \sigma^0_0 \circ \delta^1_1 : N \to N$. By the description of the
 maps above we deduce that $p$ is also equal to
 $$
-p = \varphi \otimes \text{id} :
+p = \varphi \otimes \id :
 N = (N \otimes_R A) \otimes_{(A \otimes_R A)} A
 \longrightarrow
 (A \otimes_R N) \otimes_{(A \otimes_R A)} A = N
@@ -447,7 +447,7 @@ The relations on composing $\sigma$'s are obvious.
 The relations on composing $\delta$'s come down to the
 cocycle condition for $\varphi$.
 In exactly the same way as above one checks the relations
-$\sigma_j \circ \delta_j = \sigma_j \circ \delta_{j + 1} = \text{id}$.
+$\sigma_j \circ \delta_j = \sigma_j \circ \delta_{j + 1} = \id$.
 Finally, the other relations on compositions of $\delta$'s and $\sigma$'s
 hold for any $\varphi$ whatsoever.
 \end{proof}
@@ -622,7 +622,7 @@ for $R' \to A'$ are effective, then so are all descent data for $R \to A$.
 \begin{proof}
 Let $(N, \varphi)$ be a descent datum for $R \to A$.
 Set $N' = R' \otimes_R N = A' \otimes_A N$, and denote
-$\varphi' = \text{id}_{R'} \otimes \varphi$ the base change
+$\varphi' = \id_{R'} \otimes \varphi$ the base change
 of the descent datum $\varphi$. Then $(N', \varphi')$ is
 a descent datum for $R' \to A'$ and
 $H^0(s(N'_\bullet)) = R' \otimes_R H^0(s(N_\bullet))$.
@@ -677,7 +677,7 @@ Take an element $n \in N$. Write
 $\varphi(n \otimes 1) = \sum a_i \otimes x_i$ for certain
 $a_i \in A$ and $x_i \in N$. By Lemma \ref{lemma-descent-datum-cosimplicial}
 we have $n = \sum a_i x_i$ in $N$ (because
-$\sigma^0_0 \circ \delta^1_1 = \text{id}$ in any cosimplicial object).
+$\sigma^0_0 \circ \delta^1_1 = \id$ in any cosimplicial object).
 Next, write $\varphi(x_i \otimes 1) = \sum a_{ij} \otimes y_j$ for
 certain $a_{ij} \in A$ and $y_j \in N$.
 The cocycle condition means that
@@ -1735,7 +1735,7 @@ The reason for choosing here $a\sigma(b)\sigma(\tau(c))$
 and not $a\sigma(b)\tau(c)$ is that the formulas below simplify but
 it isn't strictly necessary. Given $\sigma \in G$ we denote
 $$
-f_\sigma = \text{id}_X \times \Spec(\sigma) :
+f_\sigma = \id_X \times \Spec(\sigma) :
 X_{k'} \longrightarrow X_{k'}
 $$
 Please keep in mind that because $\Spec(-)$ is a contravariant functor we have
@@ -1747,7 +1747,7 @@ $$
 such that $\text{pr}_0$ corresponds to the map
 $$
 \coprod\nolimits_{\sigma \in G} X_{k'}
-\xrightarrow{\coprod \text{id}}
+\xrightarrow{\coprod \id}
 X_{k'}
 $$
 and such that $\text{pr}_1$ corresponds to the map
@@ -1816,7 +1816,7 @@ is an isomorphism of modules,
 \item $\varphi_{\sigma\tau} = f_\sigma^*\varphi_\tau \circ \varphi_\sigma$
 for all $\sigma, \tau \in G$.
 \end{enumerate}
-Here $f_\sigma = \text{id}_X \times \Spec(\sigma) : X_{k'} \to X_{k'}$.
+Here $f_\sigma = \id_X \times \Spec(\sigma) : X_{k'} \to X_{k'}$.
 \end{lemma}
 
 \begin{proof}
@@ -2286,12 +2286,12 @@ big and small sites we have the following.
 Let $S$ be a scheme. Denote
 $$
 \begin{matrix}
-\text{id}_{\tau, Zar} & : & (\Sch/S)_\tau \to S_{Zar}, &
+\id_{\tau, Zar} & : & (\Sch/S)_\tau \to S_{Zar}, &
 \tau \in \{Zar, \etale, smooth, syntomic, fppf\} \\
-\text{id}_{\tau, \etale} & : &
+\id_{\tau, \etale} & : &
 (\Sch/S)_\tau \to S_\etale, &
 \tau \in \{\etale, smooth, syntomic, fppf\} \\
-\text{id}_{small, \etale, Zar} & : & S_\etale \to S_{Zar},
+\id_{small, \etale, Zar} & : & S_\etale \to S_{Zar},
 \end{matrix}
 $$
 the morphisms of ringed sites of
@@ -2299,13 +2299,13 @@ Remark \ref{remark-change-topologies-ringed}.
 Let $\mathcal{F}$ be a sheaf of $\mathcal{O}_S$-modules
 which we view a sheaf of $\mathcal{O}$-modules on $S_{Zar}$. Then
 \begin{enumerate}
-\item $(\text{id}_{\tau, Zar})^*\mathcal{F}$ is the $\tau$-sheafification
+\item $(\id_{\tau, Zar})^*\mathcal{F}$ is the $\tau$-sheafification
 of the Zariski sheaf
 $$
 (f : T \to S) \longmapsto \Gamma(T, f^*\mathcal{F})
 $$
 on $(\Sch/S)_\tau$, and
-\item $(\text{id}_{small, \etale, Zar})^*\mathcal{F}$ is the
+\item $(\id_{small, \etale, Zar})^*\mathcal{F}$ is the
 \'etale sheafification of the Zariski sheaf
 $$
 (f : T \to S) \longmapsto \Gamma(T, f^*\mathcal{F})
@@ -2315,7 +2315,7 @@ on $S_\etale$.
 Let $\mathcal{G}$ be a sheaf of $\mathcal{O}$-modules
 on $S_\etale$. Then
 \begin{enumerate}
-\item[(3)] $(\text{id}_{\tau, \etale})^*\mathcal{G}$ is the
+\item[(3)] $(\id_{\tau, \etale})^*\mathcal{G}$ is the
 $\tau$-sheafification of the \'etale sheaf
 $$
 (f : T \to S) \longmapsto \Gamma(T, f_{small}^*\mathcal{G})
@@ -2330,7 +2330,7 @@ Remark \ref{remark-change-topologies-ringed}.
 Proof of (1). We first note that the result is true when $\tau = Zar$
 because in that case we have the morphism of topoi
 $i_f : \Sh(T_{Zar}) \to \Sh(\Sch/S)_{Zar})$
-such that $\text{id}_{\tau, Zar} \circ i_f = f_{small}$ as morphisms
+such that $\id_{\tau, Zar} \circ i_f = f_{small}$ as morphisms
 $T_{Zar} \to S_{Zar}$, see
 Topologies, Lemmas \ref{topologies-lemma-put-in-T} and
 \ref{topologies-lemma-morphism-big-small}.
@@ -2338,9 +2338,9 @@ Since pullback is transitive (see
 Modules on Sites,
 Lemma \ref{sites-modules-lemma-push-pull-composition-modules})
 we see that
-$i_f^*(\text{id}_{\tau, Zar})^*\mathcal{F} = f_{small}^*\mathcal{F}$
+$i_f^*(\id_{\tau, Zar})^*\mathcal{F} = f_{small}^*\mathcal{F}$
 as desired. Hence, by the remark preceding this lemma we see that
-$(\text{id}_{\tau, Zar})^*\mathcal{F}$ is the $\tau$-sheafification of
+$(\id_{\tau, Zar})^*\mathcal{F}$ is the $\tau$-sheafification of
 the presheaf $T \mapsto \Gamma(T, f^*\mathcal{F})$.
 
 \medskip\noindent
@@ -2361,10 +2361,10 @@ have the following applications:
 \item Let $S$ be a scheme.
 The construction $\mathcal{F} \mapsto \mathcal{F}^a$ is
 the pullback under the morphism of ringed sites
-$\text{id}_{\tau, Zar} : ((\Sch/S)_\tau, \mathcal{O})
+$\id_{\tau, Zar} : ((\Sch/S)_\tau, \mathcal{O})
 \to (S_{Zar}, \mathcal{O})$
 or the morphism
-$\text{id}_{small, \etale, Zar} :
+$\id_{small, \etale, Zar} :
 (S_\etale, \mathcal{O}) \to (S_{Zar}, \mathcal{O})$.
 \item Let $f : X \to Y$ be a morphism of schemes.
 For any of the morphisms $f_{sites}$ of ringed sites of
@@ -2588,7 +2588,7 @@ the last equality by
 Cohomology of Schemes, Lemma
 \ref{coherent-lemma-cech-cohomology-quasi-coherent}.
 In particular, if $S$ is separated we can take $U = S$ and
-$f = \text{id}_S$ and the proposition is proved.
+$f = \id_S$ and the proposition is proved.
 We suggest the reader skip the rest of the proof (or rewrite it
 to give a clearer exposition).
 
@@ -6223,7 +6223,7 @@ Let $\{X_i \to X\}_{i \in I}$ be an \'etale covering of $X$. If each composition
 $h_i : X_i \to Y$ has $\mathcal{P}$, then for each $x \in X$ we can find
 an $i \in I$ and a point $x_i \in X_i$ mapping to $x$. Then
 $(X_i, x_i) \to (X, x)$ is an \'etale morphism of germs, and
-$\text{id}_Y : Y \to Y$ is an \'etale morphism, and $h_i$ is as in part (3) of
+$\id_Y : Y \to Y$ is an \'etale morphism, and $h_i$ is as in part (3) of
 Definition \ref{definition-local-source-target}.
 Thus we see that $f$ has $\mathcal{P}$.
 Conversely, if $f$ has $\mathcal{P}$ then each $X_i \to Y$ has
@@ -7144,8 +7144,8 @@ $f : V \to V'$ of schemes over $X$ such that
 the diagram
 $$
 \xymatrix{
-V \times_S X \ar[r]_{\varphi} \ar[d]_{f \times \text{id}_X} &
-X \times_S V \ar[d]^{\text{id}_X \times f} \\
+V \times_S X \ar[r]_{\varphi} \ar[d]_{f \times \id_X} &
+X \times_S V \ar[d]^{\id_X \times f} \\
 V' \times_S X \ar[r]^{\varphi'} & X \times_S V'
 }
 $$
@@ -7226,8 +7226,8 @@ $\psi = (\psi_i)_{i \in I}$ of morphisms of
 $X_i$-schemes $\psi_i : V_i \to V'_i$ such that all the diagrams
 $$
 \xymatrix{
-V_i \times_S X_j \ar[r]_{\varphi_{ij}} \ar[d]_{\psi_i \times \text{id}} &
-X_i \times_S V_j \ar[d]^{\text{id} \times \psi_j} \\
+V_i \times_S X_j \ar[r]_{\varphi_{ij}} \ar[d]_{\psi_i \times \id} &
+X_i \times_S V_j \ar[d]^{\id \times \psi_j} \\
 V'_i \times_S X_j \ar[r]^{\varphi'_{ij}} & X_i \times_S V'_j
 }
 $$
@@ -7318,7 +7318,7 @@ $$
 V' \times_{S'} X' \ar@{=}[r] &
 (X' \times_X V) \times_{S'} X' \ar@{=}[r] &
 (X' \times_{S'} X') \times_{X \times_S X} (V \times_S X)
-\ar[d]^{\text{id} \times \varphi} \\
+\ar[d]^{\id \times \varphi} \\
 X' \times_{S'} V' \ar@{=}[r] &
 X' \times_{S'} (X' \times_X V) &
 (X' \times_{S'} X') \times_{X \times_S X} (X \times_S V) \ar@{=}[l]
@@ -7435,7 +7435,7 @@ Let $f : X \to S$ be a morphism of schemes.
 \begin{enumerate}
 \item  Given a scheme $U$ over $S$ we have the
 {\it trivial descent datum} of $U$ relative to
-$\text{id} : S \to S$, namely the identity morphism on $U$.
+$\id : S \to S$, namely the identity morphism on $U$.
 \item By Lemma \ref{lemma-pullback} we get a
 {\it canonical descent datum} on $X \times_S U$
 relative to $X \to S$ by pulling back the trivial
@@ -7453,10 +7453,10 @@ Thus being effective means there exists a scheme $U$
 over $S$ and an isomorphism $\psi : V \to X \times_S U$
 of $X$-schemes such that $\varphi$ is equal to the composition
 $$
-V \times_S X \xrightarrow{\psi \times \text{id}_X}
+V \times_S X \xrightarrow{\psi \times \id_X}
 X \times_S U \times_S X =
 X \times_S X \times_S U
-\xrightarrow{\text{id}_X \times \psi^{-1}}
+\xrightarrow{\id_X \times \psi^{-1}}
 X \times_S V
 $$
 
@@ -7469,7 +7469,7 @@ with target $S$.
 \item  Given a scheme $U$ over $S$
 we have a {\it canonical descent datum} on the family of
 schemes $X_i \times_S U$ by pulling back the trivial
-descent datum for $U$ relative to $\{\text{id} : S \to S\}$.
+descent datum for $U$ relative to $\{\id : S \to S\}$.
 We denote this descent datum $(X_i \times_S U, can)$.
 \item A descent datum $(V_i, \varphi_{ij})$
 relative to $\{X_i \to S\}$ is called {\it effective}
@@ -7608,8 +7608,8 @@ $\varphi'$ is the base change of $\varphi$ by $f \times f$
 By assumption the diagram
 $$
 \xymatrix{
-V' \times_{S'} X' \ar[r]_{\varphi'} \ar[d]_{\alpha' \times \text{id}} &
-X' \times_{S'} V' \ar[d]^{\text{id} \times \alpha'} \\
+V' \times_{S'} X' \ar[r]_{\varphi'} \ar[d]_{\alpha' \times \id} &
+X' \times_{S'} V' \ar[d]^{\id \times \alpha'} \\
 W' \times_{S'} X' \ar[r]^{\psi'} &
 X' \times_{S'} W'
 }
@@ -7653,7 +7653,7 @@ for all $i, j \in \{0, 1\}$. This shows that $\psi(u_0, x) = \psi(u_1, x)$
 and hence $u_0 = u_1$ by taking $\psi^{-1}$.
 This proves the claim because the argument above was formal
 and we can take scheme points (in other words, we may
-take $(v_0, v_1) = \text{id}_{V' \times_V V'}$).
+take $(v_0, v_1) = \id_{V' \times_V V'}$).
 
 \medskip\noindent
 At this point we can use
@@ -7667,8 +7667,8 @@ a unique morphism $\alpha : V \to W$ whose base change is
 necessarily $\alpha'$. Finally, we see the diagram
 $$
 \xymatrix{
-V \times_S X \ar[r]_{\varphi} \ar[d]_{\alpha \times \text{id}} &
-X \times_S V \ar[d]^{\text{id} \times \alpha} \\
+V \times_S X \ar[r]_{\varphi} \ar[d]_{\alpha \times \id} &
+X \times_S V \ar[d]^{\id \times \alpha} \\
 W \times_S X \ar[r]^{\psi} & X \times_S W
 }
 $$
@@ -7694,7 +7694,7 @@ relative to $X \to S$.
 
 \begin{proof}
 This is clear from Lemma \ref{lemma-pullback} since it tells us that
-$f^* \cong \text{id}^*$.
+$f^* \cong \id^*$.
 \end{proof}
 
 \begin{lemma}
@@ -7758,7 +7758,7 @@ Let $S$ be a scheme.
 Let $\mathcal{U} = \{U_i \to S\}_{i \in I}$, and
 $\mathcal{V} = \{V_j \to S\}_{j \in J}$,
 be families of morphisms with target $S$.
-Let $\alpha : I \to J$, $\text{id} : S \to S$ and
+Let $\alpha : I \to J$, $\id : S \to S$ and
 $g_i : U_i \to V_{\alpha(i)}$ be a morphism of families
 of maps with fixed target, see
 Sites, Definition \ref{sites-definition-morphism-coverings}.
@@ -7826,7 +7826,7 @@ Let $S$ be a scheme.
 Let $\mathcal{U} = \{U_i \to S\}_{i \in I}$, and
 $\mathcal{V} = \{V_j \to S\}_{j \in J}$,
 be families of morphisms with target $S$.
-Let $\alpha : I \to J$, $\text{id} : S \to S$ and
+Let $\alpha : I \to J$, $\id : S \to S$ and
 $g_i : U_i \to V_{\alpha(i)}$ be a morphism of families
 of maps with fixed target, see
 Sites, Definition \ref{sites-definition-morphism-coverings}.
@@ -7977,7 +7977,7 @@ Then $(U_i, U_{ij}, \varphi_{ij})$ is a glueing
 data as in Schemes, Section \ref{schemes-section-glueing-schemes}
 (proof omitted). Thus we may assume there is a scheme $U$ over $S$
 such that $U_i \subset U$ is open, $U_{ij} = U_i \cap U_j$ and
-$\varphi_{ij} = \text{id}_{U_i \cap U_j}$, see
+$\varphi_{ij} = \id_{U_i \cap U_j}$, see
 Schemes, Lemma \ref{schemes-lemma-glue}.
 Pulling back to $X$ we can use the $\alpha_i$ to
 get the desired isomorphism $\alpha : X \times_S U \to V$.
@@ -8281,9 +8281,9 @@ The projections $\text{pr}_i : X \times_S X \to X$ are flat
 and hence we have
 $$
 \text{pr}_0^*\pi_*\mathcal{O}_V =
-(\pi \times \text{id}_X)_*\mathcal{O}_{V \times_S X}, \quad
+(\pi \times \id_X)_*\mathcal{O}_{V \times_S X}, \quad
 \text{pr}_1^*\pi_*\mathcal{O}_V =
-(\text{id}_X \times \pi)_*\mathcal{O}_{X \times_S V}
+(\id_X \times \pi)_*\mathcal{O}_{X \times_S V}
 $$
 by flat base change
 (Cohomology of Schemes, Lemma \ref{coherent-lemma-flat-base-change-cohomology}).

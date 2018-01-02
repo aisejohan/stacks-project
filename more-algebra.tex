@@ -2606,7 +2606,7 @@ the desired adjoint.
 \medskip\noindent
 We first prove that $\mathcal{C}$ is directed
 (Categories, Definition \ref{categories-definition-directed}).
-It is nonempty because $\text{id} : A \to A$ is an object.
+It is nonempty because $\id : A \to A$ is an object.
 If $B$ and $B'$ are two objects of $\mathcal{C}$, then
 $B'' = B \otimes_A B'$ is an object of $\mathcal{C}$
 (use Algebra, Lemma \ref{algebra-lemma-etale})
@@ -3223,7 +3223,7 @@ For any integer $n$ the restriction of $u$ to
 $\bigoplus_{i = 1, \ldots, n} Re_i$ is injective as the images
 $u(e_1), \ldots, u(e_n)$ are $R$-linearly independent. Hence
 $u$ is injective and hence universally injective by the lemma.
-Since $u \otimes \text{id}_k$ is bijective we see that if
+Since $u \otimes \id_k$ is bijective we see that if
 $u$ were a split injection then $u$ would be surjective. But $u$ is not
 surjective because the inverse image of $f_1$ would be the element
 $$
@@ -8229,7 +8229,7 @@ by definition. (It also follows that $f$ is an isomorphism.)
 Let $k$ be a field. Let $(A, \mathfrak m, \kappa)$ be a complete
 local $k$-algebra. If $\kappa/k$ is separable, then there exists
 a $k$-algebra map $\kappa \to A$ such that $\kappa \to A \to \kappa$
-is $\text{id}_\kappa$.
+is $\id_\kappa$.
 \end{lemma}
 
 \begin{proof}
@@ -12526,8 +12526,8 @@ Let $\alpha, \beta : L^\bullet \to M^\bullet$ be homotopy equivalent
 maps of complexes. Then $\alpha$ and $\beta$ induce homotopy equivalent
 maps
 $$
-\text{Tot}(\alpha \otimes \text{id}_P),
-\text{Tot}(\beta \otimes \text{id}_P) :
+\text{Tot}(\alpha \otimes \id_P),
+\text{Tot}(\beta \otimes \id_P) :
 \text{Tot}(L^\bullet \otimes_R P^\bullet)
 \longrightarrow
 \text{Tot}(M^\bullet \otimes_R P^\bullet).
@@ -12541,15 +12541,15 @@ defines an endo-functor of the homotopy category of complexes.
 Say $\alpha = \beta + dh + hd$ for some homotopy $h$ defined by
 $h^n : L^n \to M^{n - 1}$. Set
 $$
-H^n = \bigoplus\nolimits_{a + b = n} h^a \otimes \text{id}_{P^b} :
+H^n = \bigoplus\nolimits_{a + b = n} h^a \otimes \id_{P^b} :
 \bigoplus\nolimits_{a + b = n} L^a \otimes_R P^b
 \longrightarrow
 \bigoplus\nolimits_{a + b = n} M^{a - 1} \otimes_R P^b
 $$
 Then a straightforward computation shows that
 $$
-\text{Tot}(\alpha \otimes \text{id}_P) =
-\text{Tot}(\beta \otimes \text{id}_P) + dH + Hd
+\text{Tot}(\alpha \otimes \id_P) =
+\text{Tot}(\beta \otimes \id_P) + dH + Hd
 $$
 as maps $\text{Tot}(L^\bullet \otimes_R P^\bullet) \to
 \text{Tot}(M^\bullet \otimes_R P^\bullet)$.
@@ -12856,7 +12856,7 @@ $\alpha : P^\bullet \to Q^\bullet$ be a quasi-isomorphism of
 K-flat complexes of $R$-modules. For every complex $L^\bullet$
 of $R$-modules the induced map
 $$
-\text{Tot}(\text{id}_L \otimes \alpha) :
+\text{Tot}(\id_L \otimes \alpha) :
 \text{Tot}(L^\bullet \otimes_R P^\bullet)
 \longrightarrow
 \text{Tot}(L^\bullet \otimes_R Q^\bullet)
@@ -13686,7 +13686,7 @@ Derived Categories, Lemmas \ref{derived-lemma-morphisms-lift-projective} and
 \ref{derived-lemma-morphisms-equal-up-to-homotopy-projective}
 guarantee the existence and uniqueness of a map of complexes
 $\mu : \text{Tot}(P_\bullet \otimes_R Q_\bullet) \to T_\bullet$ such that
-$H_0(\mu) = \text{id}_{M \otimes_R N}$. This induces a canonical map
+$H_0(\mu) = \id_{M \otimes_R N}$. This induces a canonical map
 \begin{align*}
 (M \otimes_R^{\mathbf{L}} A) \otimes_A^{\mathbf{L}}
 (N \otimes_R^{\mathbf{L}} A)
@@ -15776,7 +15776,7 @@ $\alpha^{r, s, q}(x)$ are nonzero. By our sign rules we get
 - (-1)^n \alpha^{r, s, q} \circ \text{d}_L
 \end{align*}
 Now an element $\beta \in K^n$ we send to $\alpha$ with
-$\alpha^{n, -q, q} = \beta \otimes \text{id}_{L^{-q}}$
+$\alpha^{n, -q, q} = \beta \otimes \id_{L^{-q}}$
 and $\alpha^{r, s, q} = 0$ if $r \not = n$. This is indeed
 an element as above, as for fixed $q$ there is only one nonzero
 $\alpha^{r, s, q}$. The description of
@@ -21289,7 +21289,7 @@ to the category $\text{Glue}(R \to R^\wedge, f)$ of glueing data.
 \begin{proof}
 The functor is fully faithful due to the exactness of
 (\ref{equation-BL-cech-mod}) for glueable modules, which tells
-us exactly that $H^0 \circ \text{Can} = \text{id}$ on the
+us exactly that $H^0 \circ \text{Can} = \id$ on the
 full subcategory of glueable modules.
 Hence it suffices to check essential surjectivity.
 That is, we must show that an arbitrary glueing datum
@@ -25861,7 +25861,7 @@ is a subfield such that $M/K$ is Galois, $\sigma \in \text{Gal}(M/K)$
 with $\sigma(\mathfrak q \cap M) = \mathfrak q' \cap M$.
 We say $(M', \sigma') \geq (M, \sigma)$ if and only if
 $M \subset M'$ and $\sigma'|_M = \sigma$.
-Observe that $(K, \text{id}_K)$ is such a pair as $A = K \cap B$
+Observe that $(K, \id_K)$ is such a pair as $A = K \cap B$
 since $A$ is a normal domain.
 The collection of these pairs satisfies the hypotheses of Zorn's lemma,
 hence there exists a maximal pair $(M, \sigma)$.
@@ -25894,7 +25894,7 @@ $$
 $$
 commutes. We say $(M', \sigma') \geq (M, \sigma)$ if and only if
 $M \subset M'$ and $\sigma'|_M = \sigma$.
-As above $(K, \text{id}_K)$ is such a pair.
+As above $(K, \id_K)$ is such a pair.
 The collection of these pairs satisfies the hypotheses of Zorn's lemma,
 hence there exists a maximal pair $(M, \sigma)$.
 If $M \not = L$, then we can find
@@ -25936,7 +25936,7 @@ Set
 $D_\mathfrak r = \{\tau \in H \mid \tau(\mathfrak r) = \mathfrak r\}$
 and
 $I_\mathfrak r = \{\tau \in D_\mathfrak r \mid
-\tau \bmod \mathfrak r = \text{id}_{\kappa(\mathfrak r)}\}$
+\tau \bmod \mathfrak r = \id_{\kappa(\mathfrak r)}\}$
 and similarly for $D_\mathfrak q$ and $I_\mathfrak q$.
 Under the map $H \to G$ the induced maps
 $D_\mathfrak r \to D_\mathfrak q$ and
@@ -26208,7 +26208,7 @@ $$
 such that
 \begin{enumerate}
 \item $P = \{\sigma \in D \mid
-\sigma|_{B/\mathfrak m^2} = \text{id}_{B/\mathfrak m^2}\}$
+\sigma|_{B/\mathfrak m^2} = \id_{B/\mathfrak m^2}\}$
 where $D$ is the decomposition group,
 \item $P$ is a normal subgroup of $D$,
 \item $P$ is a $p$-group if the characteristic of $\kappa_A$ is

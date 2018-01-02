@@ -87,7 +87,7 @@ $U \subset X_n$, $V \subset X_m$ and $\varphi$ is such that
 $X(\varphi)(U) \subset V$, and
 \item a covering $\{U_i \to U\}$ in $X_{Zar}$ means
 that $U, U_i \subset X_n$ are open, the maps $U_i \to U$ are
-given by $\text{id} : [n] \to [n]$, and $U = \bigcup U_i$.
+given by $\id : [n] \to [n]$, and $U = \bigcup U_i$.
 \end{enumerate}
 Note that in particular, if $U \to V$ is a morphism of $X_{Zar}$
 given by $\varphi$, then $X(\varphi) : X_n \to X_m$ does in fact
@@ -175,19 +175,19 @@ It is our task to show that $\mathcal{I}_V^u$ is cofiltered.
 \medskip\noindent
 We verify the conditions of
 Categories, Definition \ref{categories-definition-codirected}.
-Condition (1) holds because $(X_n, \text{id}_{[n]})$ is an object.
+Condition (1) holds because $(X_n, \id_{[n]})$ is an object.
 Let $(U, \varphi)$ be an object. The condition
 $Y(\varphi)(V) \subset f_m^{-1}(U)$ is equivalent to
 $V \subset f_n^{-1}(X(\varphi)^{-1}(U))$. Hence we obtain a morphism
-$(X(\varphi)^{-1}(U), \text{id}_{[n]}) \to (U, \varphi)$ given
+$(X(\varphi)^{-1}(U), \id_{[n]}) \to (U, \varphi)$ given
 by setting $\psi = \varphi$. Moreover, given a pair of objects
-of the form $(U, \text{id}_{[n]})$ and $(U', \text{id}_{[n]})$
-we see there exists an object, namely $(U \cap U', \text{id}_{[n]})$,
+of the form $(U, \id_{[n]})$ and $(U', \text{id}_{[n]})$
+we see there exists an object, namely $(U \cap U', \id_{[n]})$,
 which maps to both of them. Thus condition (2) holds.
 To verify condition (3) suppose given two morphisms
 $a, a': (U, \varphi) \to (U', \varphi')$ given by $\psi, \psi' : [m'] \to [m]$.
 Then precomposing with the morphism
-$(X(\varphi)^{-1}(U), \text{id}_{[n]}) \to (U, \varphi)$ given
+$(X(\varphi)^{-1}(U), \id_{[n]}) \to (U, \varphi)$ given
 by $\varphi$ equalizes $a, a'$ because
 $\varphi \circ \psi = \varphi' = \varphi \circ \psi'$.
 This finishes the proof.
@@ -587,7 +587,7 @@ $\mathcal{C}_n$ for some $n$,
 is given by a map $\varphi : [m] \to [n]$ with
 $U \in \Ob(\mathcal{C}_n)$, $V \in \Ob(\mathcal{C}_m)$
 and a morphism $f : U \to u_\varphi(V)$ of $\mathcal{C}_n$, and
-\item a covering $\{(\text{id}, f_i) :  U_i \to U\}$ in $\mathcal{C}_{total}$
+\item a covering $\{(\id, f_i) :  U_i \to U\}$ in $\mathcal{C}_{total}$
 is given by an $n$ and a covering $\{f_i : U_i \to U\}$
 of $\mathcal{C}_n$.
 \end{enumerate}
@@ -599,11 +599,11 @@ is given by $(\varphi \circ \psi, u_\varphi(g) \circ f)$.
 This uses that $u_\varphi \circ u_\psi = u_{\varphi \circ \psi}$.
 
 \medskip\noindent
-Let $\{(\text{id}, f_i) :  U_i \to U\}$ be a covering as in (3)
+Let $\{(\id, f_i) :  U_i \to U\}$ be a covering as in (3)
 and let $(\varphi, g) : W \to U$ be a morphism with
 $W \in \Ob(\mathcal{C}_m)$. We claim that
 $$
-W \times_{(\varphi, g), U, (\text{id}, f_i)} U_i =
+W \times_{(\varphi, g), U, (\id, f_i)} U_i =
 W \times_{g, u_\varphi(U), u_\varphi(f_i)} u_\varphi(U_i)
 $$
 in the category $\mathcal{C}_{total}$. This makes sense as by our
@@ -637,7 +637,7 @@ $\mathcal{C}_n$ for some $n$,
 is given by a map $\varphi : [m] \to [n]$ with
 $U \in \Ob(\mathcal{C}_n)$, $V \in \Ob(\mathcal{C}_m)$
 and a morphism $f : u_\varphi(U) \to V$ of $\mathcal{C}_m$, and
-\item a covering $\{(\text{id}, f_i) :  U_i \to U\}$ in $\mathcal{C}_{total}$
+\item a covering $\{(\id, f_i) :  U_i \to U\}$ in $\mathcal{C}_{total}$
 is given by an $n$ and a covering $\{f_i : U_i \to U\}$
 of $\mathcal{C}_n$.
 \end{enumerate}
@@ -649,11 +649,11 @@ is given by $(\varphi \circ \psi, g \circ u_\psi(f))$.
 This uses that $u_\psi \circ u_\varphi = u_{\varphi \circ \psi}$.
 
 \medskip\noindent
-Let $\{(\text{id}, f_i) :  U_i \to U\}$ be a covering as in (3)
+Let $\{(\id, f_i) :  U_i \to U\}$ be a covering as in (3)
 and let $(\varphi, g) : W \to U$ be a morphism with
 $W \in \Ob(\mathcal{C}_m)$. We claim that
 $$
-W \times_{(\varphi, g), U, (\text{id}, f_i)} U_i =
+W \times_{(\varphi, g), U, (\id, f_i)} U_i =
 W \times_{g, U, f_i} U_i
 $$
 in the category $\mathcal{C}_{total}$ where the right hand side
@@ -2225,7 +2225,7 @@ $(f_{\delta^n_j})^{-1}\mathcal{F}_{n - 1} \to \mathcal{F}_n$
 and $(f_{\sigma^n_j})^{-1}\mathcal{F}_{n + 1} \to \mathcal{F}_n$ are
 isomorphisms, see
 Simplicial, Lemma \ref{simplicial-lemma-characterize-simplicial-object}
-for notation. Since $\sigma^n_j \circ \delta_j^{n + 1} = \text{id}_{[n]}$
+for notation. Since $\sigma^n_j \circ \delta_j^{n + 1} = \id_{[n]}$
 the composition
 $$
 \mathcal{F}_n =
@@ -2492,7 +2492,7 @@ The map is the adjoint of the map
 $K_n \to (g_n^{-1}g_{n!}\mathbf{Z}) \otimes^\mathbf{L}_\mathbf{Z} K_n$
 corresponding to $\mathbf{Z} \to g_n^{-1}g_{n!}\mathbf{Z}$
 which in turn is adjoint to
-$\text{id} : g_{n!}\mathbf{Z} \to g_{n!}\mathbf{Z}$.
+$\id : g_{n!}\mathbf{Z} \to g_{n!}\mathbf{Z}$.
 Using the description of $g_{n!}$
 given in Lemma \ref{lemma-restriction-to-components-site}
 we see that the restriction to $\mathcal{C}_m$ of this map
@@ -2512,7 +2512,7 @@ The map is the adjoint of the map
 $K_n \to (g_n^*g_{n!}\mathcal{O}_n) \otimes^\mathbf{L}_{\mathcal{O}_n} K_n$
 corresponding to $\mathcal{O}_n \to g_n^*g_{n!}\mathcal{O}_n$
 which in turn is adjoint to
-$\text{id} : g_{n!}\mathcal{O}_n \to g_{n!}\mathcal{O}_n$.
+$\id : g_{n!}\mathcal{O}_n \to g_{n!}\mathcal{O}_n$.
 Using the description of $g_{n!}$
 given in Lemma \ref{lemma-restriction-module-to-components-site}
 we see that the restriction to $\mathcal{C}_m$ of this map
@@ -3940,7 +3940,7 @@ $$
 is commutative, and
 \item coverings of the object $U/U_{n, i}$ are constructed
 by starting with a covering $\{f_j : U_j \to U\}$ in $\mathcal{C}$
-and letting $\{(\text{id}, f_j) : U_j/U_{n, i} \to U/U_{n, i}\}$
+and letting $\{(\id, f_j) : U_j/U_{n, i} \to U/U_{n, i}\}$
 be a covering in $(\mathcal{C}/K)_{total}$.
 \end{enumerate}
 All of our general theory developed for simplicial sites applies to
@@ -5566,7 +5566,7 @@ $$
 \quad\text{and}\quad
 \rho_b \circ \rho_W|_{\mathcal{C}/u(U)} = \rho_U
 $$
-Taking $i = (U, V, U, a, \text{id}_U) \in \Omega$ for example, we find
+Taking $i = (U, V, U, a, \id_U) \in \Omega$ for example, we find
 that we have the desired compatibility. The uniqueness of $F$ follows
 from the uniqueness of $E$ in the previous lemma (small detail omitted).
 \end{proof}
@@ -5910,7 +5910,7 @@ $$
 Here there are two morphisms $d^1_0, d^1_1 : X_1 \to X_0$
 and a single morphism $s^0_0 : X_0 \to X_1$, etc.
 These morphisms satisfy some required relations such as
-$d^1_0 \circ s^0_0 = \text{id}_{X_0} = d^1_1 \circ s^0_0$, see
+$d^1_0 \circ s^0_0 = \id_{X_0} = d^1_1 \circ s^0_0$, see
 Simplicial, Lemma \ref{simplicial-lemma-characterize-simplicial-object}.
 It is useful to think of $d^n_i : X_n \to X_{n - 1}$
 as the ``projection forgetting the $i$th coordinate'' and
@@ -6091,7 +6091,7 @@ V \times_{X_0, d^1_1} X_1
 X_1 \times_{d^1_0, X_0} V
 $$
 is an isomorphism over $X_1$ such that
-$(s_0^0)^*\varphi = \text{id}_V$ and such that
+$(s_0^0)^*\varphi = \id_V$ and such that
 $$
 (d^2_1)^*\varphi = (d^2_0)^*\varphi \circ (d^2_2)^*\varphi
 $$
@@ -6747,7 +6747,7 @@ $$
 Here there are two morphisms $d^1_0, d^1_1 : X_1 \to X_0$
 and a single morphism $s^0_0 : X_0 \to X_1$, etc.
 These morphisms satisfy some required relations such as
-$d^1_0 \circ s^0_0 = \text{id}_{X_0} = d^1_1 \circ s^0_0$, see
+$d^1_0 \circ s^0_0 = \id_{X_0} = d^1_1 \circ s^0_0$, see
 Simplicial, Lemma \ref{simplicial-lemma-characterize-simplicial-object}.
 It is useful to think of $d^n_i : X_n \to X_{n - 1}$
 as the ``projection forgetting the $i$th coordinate'' and
@@ -7087,7 +7087,7 @@ Fix an isomorphism $\theta : a^{-1}\mathcal{F} \to \mathcal{G}$.
 To finish the proof we have to show $\mathcal{G} = a^{-1}a_*\mathcal{G}$
 (in order to show that the quasi-inverse is given by $a_*$; everything
 else has been proven above).
-Because $a^{-1}$ is fully faithful we have $\text{id} \cong a_*a^{-1}$ by
+Because $a^{-1}$ is fully faithful we have $\id \cong a_*a^{-1}$ by
 Categories, Lemma \ref{categories-lemma-adjoint-fully-faithful}.
 Thus $\mathcal{F} \cong a_*a^{-1}\mathcal{F}$ and
 $a_*\theta : a_*a^{-1}\mathcal{F} \to a_*\mathcal{G}$

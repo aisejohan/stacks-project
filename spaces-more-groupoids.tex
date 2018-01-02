@@ -89,8 +89,8 @@ The diagram
 R \times_{t, U, t} R
 \ar@<1ex>[r]^-{\text{pr}_1} \ar@<-1ex>[r]_-{\text{pr}_0}
 \ar[d]_{\text{pr}_0 \times c \circ (i, 1)} &
-R \ar[r]^t \ar[d]^{\text{id}_R} &
-U \ar[d]^{\text{id}_U} \\
+R \ar[r]^t \ar[d]^{\id_R} &
+U \ar[d]^{\id_U} \\
 R \times_{s, U, t} R
 \ar@<1ex>[r]^-c \ar@<-1ex>[r]_-{\text{pr}_0} \ar[d]_{\text{pr}_1} &
 R \ar[r]^t \ar[d]^s &
@@ -208,7 +208,7 @@ fact that $c \circ (1, i) = e \circ t$. Some details omitted.
 Suppose we have a groupoid $(\text{Ob}, \text{Arrows}, s, t, c, e, i)$.
 Then we can construct a monoid $\Gamma$ whose elements are
 maps $\delta : \text{Ob} \to \text{Arrows}$ with
-$s \circ \delta = \text{id}_{\text{Ob}}$ and composition given by
+$s \circ \delta = \id_{\text{Ob}}$ and composition given by
 $$
 \delta_1 \circ \delta_2 = c(\delta_1 \circ t \circ \delta_2, \delta_2)
 $$
@@ -247,7 +247,7 @@ The same procedure can be applied to a groupoid in algebraic
 spaces $(U, R, s, t, c, e, i)$ over a scheme $S$.
 Namely, as elements of $\Gamma$ we take the set
 $$
-\Gamma = \{\delta : U \to R \mid s \circ \delta = \text{id}_U\}
+\Gamma = \{\delta : U \to R \mid s \circ \delta = \id_U\}
 $$
 and composition $\circ : \Gamma \times \Gamma \to \Gamma$
 is given by the rule above
@@ -312,7 +312,7 @@ where the left square is cartesian and this is our definition
 of $Y$; we will not need to know more about $Y$.
 There is a similar diagram with similar properties obtained by
 base change to $U_0$ everywhere.
-We are trying to show that $\text{id}_U = s \circ \delta$
+We are trying to show that $\id_U = s \circ \delta$
 and $f = t \circ \delta$ induce the same maps on conormal sheaves.
 Since $s$ is flat and surjective, it suffices to prove the same
 thing for the two compositions $a, b : Y \to R$ along the top row.
@@ -349,7 +349,7 @@ to the diagram
 $$
 \xymatrix{
 (U_0 \subset U) \ar@{..>}[rr]_{(e_0, \delta)}
-\ar[rd]_{(\text{id}_{U_0}, \text{id}_U)} & &
+\ar[rd]_{(\id_{U_0}, \text{id}_U)} & &
 (R_0 \subset R) \ar[ld]^{(s_0, s)} \\
 & (U_0 \subset U)
 }
@@ -1308,7 +1308,7 @@ Z \subset T \times_Y X\text{ is an open subspace} \\
 \end{equation}
 Suppose $h : T' \to T$ is a morphism of algebraic spaces over $S$
 and $(a, Z)$ is a pair over $T$. Set
-$a' = a \circ h$ and $Z' = (h \times \text{id}_X)^{-1}(Z) = T' \times_T Z$.
+$a' = a \circ h$ and $Z' = (h \times \id_X)^{-1}(Z) = T' \times_T Z$.
 Then the pair $(a', Z')$ satisfies (1), (2) over $T'$.
 This follows as finite morphisms are preserved under base change, see
 Morphisms of Spaces, Lemma \ref{spaces-morphisms-lemma-base-change-integral}.

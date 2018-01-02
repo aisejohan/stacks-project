@@ -49,8 +49,8 @@ map $ \Mor_\mathcal{C}(y, z) \times \Mor_\mathcal{C}(x, y)
 These data are to satisfy the following rules:
 \begin{enumerate}
 \item For every element $x\in \Ob(\mathcal{C})$ there exists a
-morphism $\text{id}_x\in \Mor_\mathcal{C}(x, x)$ such that
-$\text{id}_x \circ \phi = \phi$ and $\psi \circ \text{id}_x = \psi $ whenever
+morphism $\id_x\in \Mor_\mathcal{C}(x, x)$ such that
+$\id_x \circ \phi = \phi$ and $\psi \circ \text{id}_x = \psi $ whenever
 these compositions make sense.
 \item Composition is associative, i.e., $(\phi \circ \psi) \circ \chi =
 \phi \circ ( \psi \circ \chi)$ whenever these compositions make sense.
@@ -116,15 +116,15 @@ which I think definitively is a meta-mathematical object.
 \label{remark-unique-identity}
 It follows directly from the definition that any two identity morphisms
 of an object $x$ of $\mathcal{A}$ are the same. Thus we may and will
-speak of {\it the} identity morphism $\text{id}_x$ of $x$.
+speak of {\it the} identity morphism $\id_x$ of $x$.
 \end{remark}
 
 \begin{definition}
 \label{definition-isomorphism}
 A morphism $\phi : x \to y$ is an {\it isomorphism} of the category
 $\mathcal{C}$ if there exists a morphism $\psi : y \to x$
-such that $\phi \circ \psi = \text{id}_y$ and
-$\psi \circ \phi = \text{id}_x$.
+such that $\phi \circ \psi = \id_y$ and
+$\psi \circ \phi = \id_x$.
 \end{definition}
 
 \noindent
@@ -154,7 +154,7 @@ object is of this form.
 A set $C$ gives rise to a groupoid $\mathcal{C}$ defined as follows:
 As objects we take $\Ob(\mathcal{C}) := C$ and for morphisms
 we take $\Mor(x, y)$ empty if $x\neq y$ and equal to
-$\{\text{id}_x\}$ if $x = y$.
+$\{\id_x\}$ if $x = y$.
 \end{example}
 
 \begin{definition}
@@ -171,12 +171,12 @@ denoted $\phi \mapsto F(\phi)$.
 These data should be compatible with composition and identity morphisms
 in the following manner: $F(\phi \circ \psi) =
 F(\phi) \circ F(\psi)$ for a composable pair $(\phi, \psi)$ of
-morphisms of $\mathcal{A}$ and $F(\text{id}_x) = \text{id}_{F(x)}$.
+morphisms of $\mathcal{A}$ and $F(\id_x) = \text{id}_{F(x)}$.
 \end{definition}
 
 \noindent
 Note that every category $\mathcal{A}$ has an
-{\it identity} functor $\text{id}_\mathcal{A}$.
+{\it identity} functor $\id_\mathcal{A}$.
 In addition, given a functor $G : \mathcal{B} \to \mathcal{C}$
 and a functor $F : \mathcal{A} \to \mathcal{B}$ there is
 a {\it composition} functor $G \circ F : \mathcal{A} \to \mathcal{C}$
@@ -318,7 +318,7 @@ to indicate that $t$ is a morphism from $F$ to $G$.
 
 \medskip\noindent
 Note that every functor $F$ comes with the {\it identity} transformation
-$\text{id}_F : F \to F$. In addition, given a morphism of
+$\id_F : F \to F$. In addition, given a morphism of
 functors $t : F \to G$ and a morphism of functors $s : E \to F$
 then the {\it composition} $t \circ s$ is defined by the rule
 $$
@@ -352,8 +352,8 @@ An {\it equivalence of categories}
 $F : \mathcal{A} \to \mathcal{B}$ is a functor such that there
 exists a functor $G : \mathcal{B} \to \mathcal{A}$ such that
 the compositions $F \circ G$ and $G \circ F$ are isomorphic to the
-identity functors $\text{id}_\mathcal{B}$,
-respectively $\text{id}_\mathcal{A}$.
+identity functors $\id_\mathcal{B}$,
+respectively $\id_\mathcal{A}$.
 In this case we say that $G$ is a {\it quasi-inverse} to $F$.
 \end{definition}
 
@@ -365,7 +365,7 @@ object $j(X)$ of $\mathcal{A}$ and an isomorphism $i_X : X \to F(j(X))$.
 Then there is a unique functor $j : \mathcal{B} \to \mathcal{A}$
 such that $j$ extends the rule on objects, and the isomorphisms
 $i_X$ define an isomorphism of functors
-$\text{id}_\mathcal{B} \to F \circ j$. Moreover, $j$ and $F$
+$\id_\mathcal{B} \to F \circ j$. Moreover, $j$ and $F$
 are quasi-inverse equivalences of categories.
 \end{lemma}
 
@@ -528,13 +528,13 @@ $U$ of $\mathcal{C}$ we have a natural bijection
 $$
 \Mor_{\textit{PSh}(\mathcal{C})}(h_U, F) \longrightarrow F(U),
 \quad
-s \longmapsto s_U(\text{id}_U).
+s \longmapsto s_U(\id_U).
 $$
 \end{lemma}
 
 \begin{proof}
 For the first statement, just take
-$\phi = s_U(\text{id}_U) \in \Mor_\mathcal{C}(U, V)$.
+$\phi = s_U(\id_U) \in \Mor_\mathcal{C}(U, V)$.
 For the second statement, given $\xi \in F(U)$ define
 $s$ by $s_V : h_U(V) \to F(V)$ by sending the element $f : V \to U$
 of $h_U(V) = \Mor_\mathcal{C}(V, U)$ to $F(f)(\xi)$.
@@ -1768,7 +1768,7 @@ $g_j : y_{s(j)} \to z_{t(j)}$, $j = 1, \ldots, m$ and morphisms
 $h_i : y_i \to z_i$, $i = 1, \ldots, n$. Since all of the nonidentity
 morphisms in $\mathcal{J}$ go from a $y$ to a $z$ there are no
 compositions to define and no associativities to check.
-Set $F(y_i) = F(z_i) = x_i$. Set $F(g_j) = f_j$ and $F(h_i) = \text{id}_{x_i}$.
+Set $F(y_i) = F(z_i) = x_i$. Set $F(g_j) = f_j$ and $F(h_i) = \id_{x_i}$.
 It is clear that $F$ is a functor.
 It is clear that $\mathcal{J}$ is finite.
 It is clear that $\mathcal{J}$ is connected, resp.\ nonempty
@@ -1789,7 +1789,7 @@ as in
 Definition \ref{definition-limit}
 for the diagram $M \circ F$. Since
 $$
-M(F(h_i)) = \text{id} : M(F(y_i)) = M(x_i) \longrightarrow M(x_i) = M(F(z_i))
+M(F(h_i)) = \id : M(F(y_i)) = M(x_i) \longrightarrow M(x_i) = M(F(z_i))
 $$
 we conclude that $qy_i = qz_i$ for all $i$. Set $q_i$ equal to this common
 value. The compatibility of
@@ -1983,7 +1983,7 @@ there exists a morphism $c : y \to z$ of $\mathcal{I}$
 such that $M(c \circ a) = M(c \circ b)$ as morphisms in $\mathcal{C}$.
 \end{enumerate}
 We say that an index category $\mathcal{I}$ is {\it directed}, or
-{\it filtered} if $\text{id} : \mathcal{I} \to \mathcal{I}$ is filtered
+{\it filtered} if $\id : \mathcal{I} \to \mathcal{I}$ is filtered
 (in other words you erase the $M$ in part (3) above).
 \end{definition}
 
@@ -2374,7 +2374,7 @@ there exists a morphism $c : w \to x$ of $\mathcal{I}$
 such that $M(a \circ c) = M(b \circ c)$ as morphisms in $\mathcal{C}$.
 \end{enumerate}
 We say that an index category $\mathcal{I}$ is {\it codirected}, or
-{\it cofiltered} if $\text{id} : \mathcal{I} \to \mathcal{I}$ is
+{\it cofiltered} if $\id : \mathcal{I} \to \mathcal{I}$ is
 cofiltered (in other words you erase the $M$ in part (3) above).
 \end{definition}
 
@@ -2449,13 +2449,13 @@ Let $(I, \leq)$ be a preordered set. Let $\mathcal{C}$ be a category.
 {\it inductive system over $I$ in $\mathcal{C}$} is given by
 objects $M_i$ of $\mathcal{C}$ and for every $i \leq i'$ a
 morphism $f_{ii'} : M_i \to M_{i'}$ such that $f_{ii}
-= \text{id}$ and such that $f_{ii''} = f_{i'i''} \circ f_{i i'}$
+= \id$ and such that $f_{ii''} = f_{i'i''} \circ f_{i i'}$
 whenever $i \leq i' \leq i''$.
 \item An {\it inverse system over $I$ in $\mathcal{C}$},
 sometimes called a {\it projective system over $I$ in $\mathcal{C}$}
 is given by objects $M_i$ of $\mathcal{C}$ and for every $i' \leq i$ a
 morphism $f_{ii'} : M_i \to M_{i'}$ such that $f_{ii}
-= \text{id}$ and such that $f_{ii''} = f_{i'i''} \circ f_{i i'}$
+= \id$ and such that $f_{ii''} = f_{i'i''} \circ f_{i i'}$
 whenever $i'' \leq i' \leq i$. (Note reversal of inequalities.)
 \end{enumerate}
 We will say $(M_i, f_{ii'})$ is a (inverse) system over $I$ to
@@ -2632,7 +2632,7 @@ strictly increasing on the $\omega$-component.
 Now let $\mathcal{F}^+$ denote the category consisting of all
 objects and arrows in $\mathcal{F}$
 together with the object $i_\infty$, the identity
-arrow $\text{id}_{i_\infty}$ and the arrows $f_i$.
+arrow $\id_{i_\infty}$ and the arrows $f_i$.
 Since there are no arrows from $i_\infty$ in $\mathcal{F}^+$
 to any object of $\mathcal{F}$, the arrow set in $\mathcal{F}^+$
 is closed under composition, so $\mathcal{F}^+$ is indeed
@@ -2760,7 +2760,7 @@ $$
 Then $X$ comes equipped with the coprojections $M_i \to X$.
 A stronger condition would be to require that $X$ is the colimit and
 that there exists an $i \in \mathcal{I}$ and a morphism $X \to M_i$ such
-that the composition $X \to M_i \to X$ is $\text{id}_X$. A stronger condition
+that the composition $X \to M_i \to X$ is $\id_X$. A stronger condition
 is the following.
 
 \begin{definition}
@@ -2773,7 +2773,7 @@ We say $M$ {\it is essentially constant} with {\it value} $X$ if
 $X = \colim_i M_i$ and there exists an $i \in \mathcal{I}$
 and a morphism $X \to M_i$ such that
 \begin{enumerate}
-\item $X \to M_i \to X$ is $\text{id}_X$, and
+\item $X \to M_i \to X$ is $\id_X$, and
 \item for all $j$ there exist $k$ and morphisms $i \to k$ and $j \to k$
 such that the morphism $M_j \to M_k$ equals the composition
 $M_j \to X \to M_i \to M_k$.
@@ -2783,7 +2783,7 @@ $M$ is {\it essentially constant} with {\it value} $X$ if
 $X = \lim_i M_i$ and there exists an $i \in \mathcal{I}$
 and a morphism $M_i \to X$ such that
 \begin{enumerate}
-\item $X \to M_i \to X$ is $\text{id}_X$, and
+\item $X \to M_i \to X$ is $\id_X$, and
 \item for all $j$ there exist $k$ and morphisms $k \to i$ and $k \to j$
 such that the morphism $M_k \to M_j$ equals the composition
 $M_k \to M_i \to X \to M_j$.
@@ -2898,7 +2898,7 @@ is bijective.
 \end{lemma}
 
 \begin{proof}
-Assume (2) holds. Then $\text{id}_X \in \Mor_\mathcal{C}(X, X)$
+Assume (2) holds. Then $\id_X \in \Mor_\mathcal{C}(X, X)$
 comes from a morphism $X \to M_i$ for some $i$, i.e., $X \to M_i \to X$
 is the identity. Then both maps
 $$
@@ -2918,7 +2918,7 @@ $$
 \longrightarrow
 \colim_i \Mor_\mathcal{C}(W, M_i)
 $$
-is the identity too. Setting $W = M_j$ and starting with $\text{id}_{M_j}$
+is the identity too. Setting $W = M_j$ and starting with $\id_{M_j}$
 in the colimit, we see that $M_j \to X \to M_i \to M_k$ is equal to
 $M_j \to M_k$ for some $k$ large enough. This proves (1) holds.
 The proof of (1) $\Rightarrow$ (2) is omitted.
@@ -2943,7 +2943,7 @@ is bijective.
 \end{lemma}
 
 \begin{proof}
-Assume (2) holds. Then $\text{id}_X \in \Mor_\mathcal{C}(X, X)$
+Assume (2) holds. Then $\id_X \in \Mor_\mathcal{C}(X, X)$
 comes from a morphism $M_i \to X$ for some $i$, i.e., $X \to M_i \to X$
 is the identity. Then both maps
 $$
@@ -2963,7 +2963,7 @@ $$
 \longrightarrow
 \colim_i \Mor_\mathcal{C}(M_i, W)
 $$
-is the identity too. Setting $W = M_j$ and starting with $\text{id}_{M_j}$
+is the identity too. Setting $W = M_j$ and starting with $\id_{M_j}$
 in the colimit, we see that $M_k \to M_i \to X \to M_j$ is equal to
 $M_k \to M_j$ for some $k$ large enough. This proves (1) holds.
 The proof of (1) $\Rightarrow$ (2) is omitted.
@@ -3090,14 +3090,14 @@ In other words, this means that there is a {\it given} isomorphism of functors
 $\mathcal{C}^{opp} \times \mathcal{D} \to \textit{Sets}$ from
 $\Mor_\mathcal{D}(u(-), -)$ to $\Mor_\mathcal{C}(-, v(-))$. For any object
 $X$ of $\mathcal{C}$ we obtain a morphism $X \to v(u(X))$ corresponding to
-$\text{id}_{u(X)}$. Similarly, for any object $Y$ of $\mathcal{D}$ we obtain
-a morphism $u(v(Y)) \to Y$ corresponding to $\text{id}_{v(Y)}$.
+$\id_{u(X)}$. Similarly, for any object $Y$ of $\mathcal{D}$ we obtain
+a morphism $u(v(Y)) \to Y$ corresponding to $\id_{v(Y)}$.
 These maps are called the {\it adjunction maps}. The adjunction maps
 are functorial in $X$ and $Y$, hence we obtain morphisms of functors
 $$
-\text{id}_\mathcal{C} \to v \circ u\quad (\text{unit})
+\id_\mathcal{C} \to v \circ u\quad (\text{unit})
 \quad\text{and}\quad
-u \circ v \to \text{id}_\mathcal{D}\quad (\text{counit}).
+u \circ v \to \id_\mathcal{D}\quad (\text{counit}).
 $$
 Moreover, if $\alpha : u(X) \to Y$
 and $\beta : X \to v(Y)$ are morphisms, then the following are equivalent
@@ -3138,8 +3138,8 @@ it is right adjoint to $u$.
 Let $u$ be a left adjoint to $v$ as in Definition \ref{definition-adjoint}.
 Then
 \begin{enumerate}
-\item $u$ is fully faithful $\Leftrightarrow \text{id} \cong v \circ u$.
-\item $v$ is fully faithful $\Leftrightarrow u \circ v \cong \text{id}$.
+\item $u$ is fully faithful $\Leftrightarrow \id \cong v \circ u$.
+\item $v$ is fully faithful $\Leftrightarrow u \circ v \cong \id$.
 \end{enumerate}
 \end{lemma}
 
@@ -3150,7 +3150,7 @@ By adjointness this corresponds to a morphism $u(X') \to u(X)$. By fully
 faithfulness of $u$ this corresponds to a morphism $X' \to X$. Thus we
 see that $X \to v(u(X))$ defines a bijection
 $\Mor(X', X) \to \Mor(X', v(u(X)))$. Hence it is an isomorphism.
-Conversely, if $\text{id} \cong v \circ u$ then $u$ has to be fully
+Conversely, if $\id \cong v \circ u$ then $u$ has to be fully
 faithful, as $v$ defines an inverse on morphism sets.
 
 \medskip\noindent
@@ -3218,7 +3218,7 @@ $$
 \xymatrix{
 u_2 \circ v_1 \ar[r]_\beta \ar[d]_{\beta^\vee} &
 u_1 \circ v_1 \ar[d] \\
-u_2 \circ v_2 \ar[r] & \text{id}
+u_2 \circ v_2 \ar[r] & \id
 }
 $$
 is commutative where the unlabeled arrows are the counit transformations.
@@ -3544,8 +3544,8 @@ Y' \ar[r]^h & Z''
 $$
 which exists by assumption.
 \item The identity morphism $X \to X$ in $S^{-1} \mathcal{C}$ is the
-equivalence class of the pair $(\text{id} : X \to X,
-\text{id} : X \to X)$.
+equivalence class of the pair $(\id : X \to X,
+\id : X \to X)$.
 \end{enumerate}
 
 \begin{lemma}
@@ -3804,11 +3804,11 @@ Also, for any
 $f : X \to Y'$ and $g : Y' \to Z'$ in $\mathcal{C}$ and all
 $s : Z \to Z'$ in $S$, we have
 $s^{-1} \left(g \circ f\right) = \left(s^{-1} g\right) \circ
-\left(\text{id}_{Y'}^{-1} f\right)$.
+\left(\id_{Y'}^{-1} f\right)$.
 Finally, for any $f : X \to Y'$ in $\mathcal{C}$, all
 $s : Y \to Y'$ in $S$, and $t : Z \to Y$ in $S$, we have
 $\left(s \circ t\right)^{-1} f
-= \left(t^{-1} \text{id}_Y\right)
+= \left(t^{-1} \id_Y\right)
 \circ \left(s^{-1} f\right)$.
 This is all clear from the definition.
 We can ``write any finite collection of morphisms with the same target
@@ -3893,7 +3893,7 @@ $$
 where $a : Y' \to Y''$ is arbitrary. We claim that the category
 $Y/S$ is filtered (see
 Definition \ref{definition-directed}).
-Namely, LMS1 implies that $\text{id}_Y : Y \to Y$
+Namely, LMS1 implies that $\id_Y : Y \to Y$
 is in $Y/S$; hence $Y/S$ is nonempty. LMS2 implies that given
 $s_1 : Y \to Y_1$ and $s_2 : Y \to Y_2$ we can find a diagram
 $$
@@ -3927,7 +3927,7 @@ Let $\mathcal{C}$ be a category and let $S$ be a left multiplicative
 system of morphisms of $\mathcal{C}$.
 \begin{enumerate}
 \item The rules $X \mapsto X$ and
-$(f : X \to Y) \mapsto (f : X \to Y, \text{id}_Y : Y \to Y)$
+$(f : X \to Y) \mapsto (f : X \to Y, \id_Y : Y \to Y)$
 define a functor $Q : \mathcal{C} \to S^{-1}\mathcal{C}$.
 \item For any $s \in S$ the morphism $Q(s)$ is an isomorphism in
 $S^{-1}\mathcal{C}$.
@@ -3940,7 +3940,7 @@ such that $H \circ Q = G$.
 
 \begin{proof}
 Parts (1) and (2) are clear. (In (2), the inverse of $Q(s)$ is
-the equivalence class of the pair $(\text{id}_Y, s)$.)
+the equivalence class of the pair $(\id_Y, s)$.)
 To see (3) just set $H(X) = G(X)$
 and set $H((f : X \to Y', s : Y \to Y')) = G(s)^{-1} \circ G(f)$.
 Details omitted.
@@ -4035,12 +4035,12 @@ $b \circ Q\left(f\right)$ is the equivalence class of the pair
 $(h \circ f : X \to Y'', t : Y' \to Y'')$ (since $b$ is the
 equivalence class of the pair $(g : X \to X'', s : X' \to X'')$,
 while $Q\left(f\right)$ is the equivalence class of the pair
-$(f : X \to Y, \text{id} : Y \to Y)$), while
+$(f : X \to Y, \id : Y \to Y)$), while
 $Q\left(f'\right) \circ a$ is the equivalence class of the pair
 $(f'' \circ g : X \to Y'', t : Y' \to Y'')$ (since $a$ is the
 equivalence class of the pair $(h : Y \to Y'', t : Y' \to Y'')$,
 while $Q\left(f'\right)$ is the equivalence class of the pair
-$(f' : X' \to Y', \text{id} : Y' \to Y')$).
+$(f' : X' \to Y', \id : Y' \to Y')$).
 Since we know that
 $b \circ Q\left(f\right) = Q\left(f'\right) \circ a$, we thus
 conclude that the equivalence classes of the pairs
@@ -4093,8 +4093,8 @@ X' \ar[r]^f & Y
 $$
 which exists by assumption.
 \item The identity morphism $X \to X$ in $S^{-1} \mathcal{C}$ is the
-equivalence class of the pair $(\text{id} : X \to X,
-\text{id} : X \to X)$.
+equivalence class of the pair $(\id : X \to X,
+\id : X \to X)$.
 \end{enumerate}
 
 \begin{lemma}
@@ -4210,7 +4210,7 @@ Let $\mathcal{C}$ be a category and let $S$ be a right multiplicative
 system of morphisms of $\mathcal{C}$.
 \begin{enumerate}
 \item The rules $X \mapsto X$ and
-$(f : X \to Y) \mapsto (f : X \to Y, \text{id}_X : X \to X)$
+$(f : X \to Y) \mapsto (f : X \to Y, \id_X : X \to X)$
 define a functor $Q : \mathcal{C} \to S^{-1}\mathcal{C}$.
 \item For any $s \in S$ the morphism $Q(s)$ is an isomorphism in
 $S^{-1}\mathcal{C}$.
@@ -4336,19 +4336,19 @@ Let $f \in \hat S$. Let $s^{-1}g = ht^{-1}$ be the inverse morphism
 in $S^{-1}\mathcal{C}$. (We may use both left fractions and right
 fractions to describe morphisms in $S^{-1}\mathcal{C}$, see
 Lemma \ref{lemma-multiplicative-system}.)
-The relation $\text{id}_X = s^{-1}gf$ in $S^{-1}\mathcal{C}$ means
+The relation $\id_X = s^{-1}gf$ in $S^{-1}\mathcal{C}$ means
 there exists a commutative diagram
 $$
 \xymatrix{
  & X' \ar[d]^u & \\
-X \ar[ru]^{gf} \ar[r]^{f'} \ar[rd]_{\text{id}_X} &
+X \ar[ru]^{gf} \ar[r]^{f'} \ar[rd]_{\id_X} &
 X'' &
-X \ar[lu]_s \ar[l]_{s'} \ar[ld]^{\text{id}_X} \\
+X \ar[lu]_s \ar[l]_{s'} \ar[ld]^{\id_X} \\
 & X \ar[u]_v &
 }
 $$
 for some morphisms $f', u, v$ and $s' \in S$. Hence $ugf = s' \in S$.
-Similarly, using that $\text{id}_Y = fht^{-1}$ one proves that
+Similarly, using that $\id_Y = fht^{-1}$ one proves that
 $fhw \in S$ for some $w$. We conclude that $f \in S'$. Thus
 $S' = \hat S$. Provided we prove that $S' = \hat S$ is a
 multiplicative system it is now clear that this implies that $S' = \hat S$
@@ -4461,9 +4461,9 @@ $$
 \text{Fun}(\mathcal{A}, \mathcal{C}).
 $$
 To see this you just have to check that
-${}_G(\text{id}_F) = \text{id}_{G \circ F}$ and that
+${}_G(\id_F) = \text{id}_{G \circ F}$ and that
 ${}_G(t_1 \circ t_2) = {}_Gt_1 \circ {}_Gt_2$.
-Of course we also have that ${}_{\text{id}_\mathcal{A}}t = t$.
+Of course we also have that ${}_{\id_\mathcal{A}}t = t$.
 
 \medskip\noindent
 Similarly, given $s : G \to G'$ a transformation of
@@ -4480,9 +4480,9 @@ $$
 \text{Fun}(\mathcal{A}, \mathcal{C}).
 $$
 To see this you just have to check that
-$(\text{id}_G)_F = \text{id}_{G\circ F}$ and that
+$(\id_G)_F = \text{id}_{G\circ F}$ and that
 $(s_1 \circ s_2)_F = s_{1, F} \circ s_{2, F}$.
-Of course we also have that $s_{\text{id}_\mathcal{B}} = s$.
+Of course we also have that $s_{\id_\mathcal{B}} = s$.
 
 \medskip\noindent
 These constructions satisfy the additional properties
@@ -4551,7 +4551,7 @@ transformation of functors ${}_{G'}t \circ s_F =  s_{F'}\circ {}_Gt$.
 \noindent
 Now we see that we may recover our previously constructed
 transformations ${}_Gt$ and $s_F$ as
-$ {}_Gt = \text{id}_G \star t $ and $ s_F = s \star \text{id}_F $.
+$ {}_Gt = \id_G \star t $ and $ s_F = s \star \text{id}_F $.
 Furthermore, all of the rules we found above are consequences of
 the properties stated in the lemma that follows.
 
@@ -4561,10 +4561,10 @@ The horizontal and vertical compositions have the following
 properties
 \begin{enumerate}
 \item $\circ$ and $\star$ are associative,
-\item the identity transformations $\text{id}_F$
+\item the identity transformations $\id_F$
 are units for $\circ$,
 \item the identity transformations of the identity functors
-$\text{id}_{\text{id}_\mathcal{A}}$
+$\id_{\text{id}_\mathcal{A}}$
 are units for $\star$ and $\circ$, and
 \item given a diagram
 $$
@@ -4674,8 +4674,8 @@ These data are to satisfy the following rules:
 \item The set of objects together with the set of $1$-morphisms endowed
 with composition of $1$-morphisms forms a category.
 \item Horizontal composition of $2$-morphisms is associative.
-\item The identity $2$-morphism $\text{id}_{\text{id}_x}$
-of the identity $1$-morphism $\text{id}_x$ is a unit for
+\item The identity $2$-morphism $\id_{\text{id}_x}$
+of the identity $1$-morphism $\id_x$ is a unit for
 horizontal composition.
 \end{enumerate}
 \end{definition}
@@ -4736,8 +4736,8 @@ $2$-categories as follows.
 \label{definition-equivalence}
 Two objects $x, y$ of a $2$-category are {\it equivalent} if there exist
 $1$-morphisms $F : x \to y$ and $G : y \to x$ such that $F \circ G$ is
-$2$-isomorphic to $\text{id}_y$ and $G \circ F$ is $2$-isomorphic to
-$\text{id}_x$.
+$2$-isomorphic to $\id_y$ and $G \circ F$ is $2$-isomorphic to
+$\id_x$.
 \end{definition}
 
 \noindent
@@ -4761,7 +4761,7 @@ $\mathcal{C}$ is given by the following data
 \item for every pair $x, y\in \Ob(\mathcal{A})$, and every
 morphism $f : x \to y$ a $1$-morphism $\varphi(f) : \varphi(x) \to \varphi(y)$,
 \item for every $x\in \Ob(A)$ a $2$-morphism
-$\alpha_x : \text{id}_{\varphi(x)} \to \varphi(\text{id}_x)$, and
+$\alpha_x : \id_{\varphi(x)} \to \varphi(\text{id}_x)$, and
 \item for every pair of composable morphisms $f : x \to y$,
 $g : y \to z$ of $\mathcal{A}$ a $2$-morphism
 $\alpha_{g, f} : \varphi(g \circ f) \to \varphi(g) \circ \varphi(f)$.
@@ -4771,36 +4771,36 @@ These data are subject to the following conditions:
 \item the $2$-morphisms $\alpha_x$ and $\alpha_{g, f}$ are all
 isomorphisms,
 \item for any morphism $f : x \to y$ in $\mathcal{A}$ we have
-$\alpha_{\text{id}_y, f} = \alpha_y \star \text{id}_{\varphi(f)}$:
+$\alpha_{\id_y, f} = \alpha_y \star \text{id}_{\varphi(f)}$:
 $$
 \xymatrix{
 \varphi(x)
-\rrtwocell^{\varphi(f)}_{\varphi(f)}{\ \ \ \ \text{id}_{\varphi(f)}}
+\rrtwocell^{\varphi(f)}_{\varphi(f)}{\ \ \ \ \id_{\varphi(f)}}
 & &
 \varphi(y)
-\rrtwocell^{\text{id}_{\varphi(y)}}_{\varphi(\text{id}_y)}{\alpha_y}
+\rrtwocell^{\id_{\varphi(y)}}_{\varphi(\text{id}_y)}{\alpha_y}
 & &
 \varphi(y)
 }
 =
 \xymatrix{
 \varphi(x)
-\rrtwocell^{\varphi(f)}_{\varphi(\text{id}_y) \circ \varphi(f)}{\ \ \ \ \alpha_{\text{id}_y, f}}
+\rrtwocell^{\varphi(f)}_{\varphi(\id_y) \circ \varphi(f)}{\ \ \ \ \alpha_{\text{id}_y, f}}
 & &
 \varphi(y)
 }
 $$
 \item for any morphism $f : x \to y$ in $\mathcal{A}$ we have
-$\alpha_{f, \text{id}_x} = \text{id}_{\varphi(f)} \star \alpha_x$,
+$\alpha_{f, \id_x} = \text{id}_{\varphi(f)} \star \alpha_x$,
 \item for any triple of composable morphisms
 $f : w \to x$, $g : x \to y$, and $h : y \to z$ of $\mathcal{A}$
 we have
 $$
-(\text{id}_{\varphi(h)} \star \alpha_{g, f})
+(\id_{\varphi(h)} \star \alpha_{g, f})
 \circ
 \alpha_{h, g \circ f}
 =
-(\alpha_{h, g} \star \text{id}_{\varphi(f)})
+(\alpha_{h, g} \star \id_{\varphi(f)})
 \circ
 \alpha_{h \circ g, f}
 $$
@@ -4813,9 +4813,9 @@ $$
 \ar[rr]_{\alpha_{h \circ g, f}}
 & &
 \varphi(h \circ g) \circ \varphi(f)
-\ar[d]^{\alpha_{h, g} \star \text{id}_{\varphi(f)}} \\
+\ar[d]^{\alpha_{h, g} \star \id_{\varphi(f)}} \\
 \varphi(h) \circ \varphi(g \circ f)
-\ar[rr]^{\text{id}_{\varphi(h)} \star \alpha_{g, f}}
+\ar[rr]^{\id_{\varphi(h)} \star \alpha_{g, f}}
 & &
 \varphi(h) \circ \varphi(g) \circ \varphi(f)
 }
@@ -4923,14 +4923,14 @@ such that
 $$
 \xymatrix{
 f \circ a'
-\ar[rr]_{\text{id}_f \star \alpha}
+\ar[rr]_{\id_f \star \alpha}
 \ar[d]_{\phi'}
 & &
 f \circ a \circ k
-\ar[d]^{\phi \star \text{id}_k}
+\ar[d]^{\phi \star \id_k}
 \\
 g \circ b'
-\ar[rr]^{\text{id}_g \star \beta}
+\ar[rr]^{\id_g \star \beta}
 & &
 g \circ b \circ k
 }
@@ -4943,8 +4943,8 @@ is given by the rule
 $$
 (k, \alpha, \beta) \circ (k', \alpha', \beta') =
 (k \circ k',
-(\alpha \star \text{id}_{k'}) \circ \alpha',
-(\beta \star \text{id}_{k'}) \circ \beta'),
+(\alpha \star \id_{k'}) \circ \alpha',
+(\beta \star \id_{k'}) \circ \beta'),
 $$
 \item a 2-morphism between $1$-morphisms
 $(k_i, \alpha_i, \beta_i)$, $i = 1, 2$ with the same source and target
@@ -4955,10 +4955,10 @@ a'
 \ar[rd]_{\alpha_2}
 \ar[r]_{\alpha_1} &
 a \circ k_1
-\ar[d]^{\text{id}_a \star \delta} &
+\ar[d]^{\id_a \star \delta} &
 &
 b \circ k_1
-\ar[d]_{\text{id}_b \star \delta} &
+\ar[d]_{\id_b \star \delta} &
 b'
 \ar[l]^{\beta_1}
 \ar[ld]^{\beta_2}
@@ -4990,7 +4990,7 @@ is given by the diagram
 $$
 \xymatrix@C=12pc{
 (w'', a'', b'', \phi'')
-\rtwocell^{(k_1 \circ k'_1, (\alpha_1 \star \text{id}_{k'_1}) \circ \alpha'_1, (\beta_1 \star \text{id}_{k'_1}) \circ \beta'_1)}_{(k_2 \circ k'_2, (\alpha_2 \star \text{id}_{k'_2}) \circ \alpha'_2, (\beta_2 \star \text{id}_{k'_2}) \circ \beta'_2)}{\ \ \ \delta \star \delta'}
+\rtwocell^{(k_1 \circ k'_1, (\alpha_1 \star \id_{k'_1}) \circ \alpha'_1, (\beta_1 \star \text{id}_{k'_1}) \circ \beta'_1)}_{(k_2 \circ k'_2, (\alpha_2 \star \text{id}_{k'_2}) \circ \alpha'_2, (\beta_2 \star \text{id}_{k'_2}) \circ \beta'_2)}{\ \ \ \delta \star \delta'}
 &
 (w, a, b, \phi)
 }
@@ -5065,7 +5065,7 @@ $$
 \xymatrix{
 f \circ a \ar[r] \ar[d]_\phi &
 f \circ p \circ \gamma
-\ar[d]^{\psi \star \text{id}_\gamma}
+\ar[d]^{\psi \star \id_\gamma}
 \\
 g\circ b
 \ar[r]
@@ -5389,7 +5389,7 @@ $(X_1, X_2, \phi_2^{-1} \circ \phi_1)$.
 Conversely, if $(X_1, X_2, \psi)$ is an object of
 $\mathcal{C}_1 \times_{G_1, \mathcal{S}, G_2} \mathcal{C}_2$,
 then we can associate to this the triple
-$((X_1, X_2), G_2(X_2), (\psi, \text{id}_{G_2(X_2)}))$.
+$((X_1, X_2), G_2(X_2), (\psi, \id_{G_2(X_2)}))$.
 We claim these constructions given mutually inverse functors.
 We omit describing how to deal with morphisms
 and showing they are mutually inverse.
@@ -5519,7 +5519,7 @@ $p' \circ G = p$.
 \item Its $2$-morphisms $t : G \to H$ for
 $G, H : (\mathcal{S}, p) \to (\mathcal{S}', p')$
 will be morphisms of functors
-such that $p'(t_x) = \text{id}_{p(x)}$
+such that $p'(t_x) = \id_{p(x)}$
 for all $x \in \Ob(\mathcal{S})$.
 \end{enumerate}
 In this situation we will denote
@@ -5558,7 +5558,7 @@ $$
 and morphisms
 $$
 \Mor_{\mathcal{S}_U}(x, y) = \{ \phi \in \Mor_\mathcal{S}(x, y) :
-p(\phi) = \text{id}_U\}.
+p(\phi) = \id_U\}.
 $$
 \item A {\it lift} of an object $U \in \Ob(\mathcal{C})$
 is an object $x\in \Ob(\mathcal{S})$ such that $p(x) = U$, i.e.,
@@ -5776,7 +5776,7 @@ $y \to x$ is strongly cartesian.
 \medskip\noindent
 Proof of (3). Assume $\varphi : y \to x$ is strongly cartesian with
 $p(\varphi) : p(y) \to p(x)$ an isomorphism. Applying the definition with
-$z = x$ shows that $(\text{id}_x, p(\varphi)^{-1})$ comes from a unique
+$z = x$ shows that $(\id_x, p(\varphi)^{-1})$ comes from a unique
 morphism $\chi : x \to y$. We omit the verification that $\chi$ is the
 inverse of $\varphi$.
 \end{proof}
@@ -5897,7 +5897,7 @@ $f^*x \to x$ made above).
 
 \noindent
 Of course we may always assume our choice of pullbacks has the property that
-$\text{id}_U^*x = x$, although in practice this is a useless property
+$\id_U^*x = x$, although in practice this is a useless property
 without imposing further assumptions on the pullbacks.
 
 \begin{lemma}
@@ -5927,8 +5927,8 @@ f^\ast y \ar[d] \\
 y
 }
 $$
-\item If $f = \text{id}_U$, then there is a canonical isomorphism
-$\alpha_U : \text{id} \to (\text{id}_U)^*$ as functors
+\item If $f = \id_U$, then there is a canonical isomorphism
+$\alpha_U : \id \to (\text{id}_U)^*$ as functors
 $\mathcal{S}_U \to \mathcal{S}_U$.
 \item The quadruple
 $(U \mapsto \mathcal{S}_U, f \mapsto f^*, \alpha_{g, f}, \alpha_U)$
@@ -5948,9 +5948,9 @@ and the composition $g^*f^*y \to f^*y \to y$ are strongly
 cartesian morphisms lifting $f \circ g$ (see discussion
 following Definition \ref{definition-cartesian-over-C} and
 Lemma \ref{lemma-composition-cartesian}). In the same way,
-since $\text{id}_x : x \to x$ is clearly strongly cartesian
-over $\text{id}_U$ (with $U = p(x)$) we see that there exists
-an isomorphism $(\alpha_U)_x : x \to (\text{id}_U)^*x$.
+since $\id_x : x \to x$ is clearly strongly cartesian
+over $\id_U$ (with $U = p(x)$) we see that there exists
+an isomorphism $(\alpha_U)_x : x \to (\id_U)^*x$.
 (Of course we could have assumed beforehand that $f^*x = x$
 whenever $f$ is an identity morphism, but it is better for
 the sake of generality not to assume this.)
@@ -5973,8 +5973,8 @@ $\mathcal{S}_2$ is fibred over $\mathcal{C}$.
 Denote $p_i : \mathcal{S}_i \to \mathcal{C}$ the given functors.
 Let $F : \mathcal{S}_1 \to \mathcal{S}_2$,
 $G : \mathcal{S}_2 \to \mathcal{S}_1$ be functors over $\mathcal{C}$, and let
-$i : F \circ G \to \text{id}_{\mathcal{S}_2}$,
-$j : G \circ F \to \text{id}_{\mathcal{S}_1}$ be isomorphisms of
+$i : F \circ G \to \id_{\mathcal{S}_2}$,
+$j : G \circ F \to \id_{\mathcal{S}_1}$ be isomorphisms of
 functors over $\mathcal{C}$.
 We claim that in this case $F$ maps strongly cartesian morphisms
 to strongly cartesian morphisms. Namely, suppose that
@@ -6021,7 +6021,7 @@ morphisms to strongly cartesian morphisms.
 \item Its $2$-morphisms $t : G \to H$ for
 $G, H : (\mathcal{S}, p) \to (\mathcal{S}', p')$
 will be morphisms of functors
-such that $p'(t_x) = \text{id}_{p(x)}$
+such that $p'(t_x) = \id_{p(x)}$
 for all $x \in \Ob(\mathcal{S})$.
 \end{enumerate}
 In this situation we will denote
@@ -6202,7 +6202,7 @@ is fibred over $\mathcal{C}$.
 
 \medskip\noindent
 The functor $u : \mathcal{X} \to \mathcal{X}'$ is given by
-$x \mapsto (p(x), x, F(x), \text{id})$. This is fully faithful.
+$x \mapsto (p(x), x, F(x), \id)$. This is fully faithful.
 The functor $\mathcal{X}' \to \mathcal{Y}$ is given by
 $(U, x, y, f) \mapsto y$. The functor $w : \mathcal{X}' \to \mathcal{X}$
 is given by $(U, x, y, f) \mapsto x$. Each of these functors is
@@ -6211,7 +6211,7 @@ description of strongly cartesian morphisms of $\mathcal{X}'$ over
 $\mathcal{C}$. Adjointness of $w$ and $u$ means that
 $$
 \Mor_\mathcal{X}(x, x') =
-\Mor_{\mathcal{X}'}((U, x, y, f), (p(x'), x', F(x'), \text{id})),
+\Mor_{\mathcal{X}'}((U, x, y, f), (p(x'), x', F(x'), \id)),
 $$
 which follows immediately from the definitions.
 
@@ -6270,7 +6270,7 @@ fibred categories over $\mathcal{C}$. Consider the category
 $\mathcal{I}_{\mathcal{S}/\mathcal{S}'}$ over $\mathcal{C}$ whose
 \begin{enumerate}
 \item objects are pairs $(x, \alpha)$ where $x \in \Ob(\mathcal{S})$
-and $\alpha : x \to x$ is an automorphism with $F(\alpha) = \text{id}$,
+and $\alpha : x \to x$ is an automorphism with $F(\alpha) = \id$,
 \item morphisms $(x, \alpha) \to (y, \beta)$ are given by morphisms
 $\phi : x \to y$ such that
 $$
@@ -6313,7 +6313,7 @@ $\mathcal{S}
 \mathcal{S}$
 is a triple $(x, y, (\iota, \kappa))$ where $x$ and $y$ are objects of
 $\mathcal{S}$, and
-$(\iota, \kappa) : (x, x, \text{id}_{F(x)}) \to (y, y, \text{id}_{F(y)})$
+$(\iota, \kappa) : (x, x, \id_{F(x)}) \to (y, y, \text{id}_{F(y)})$
 is an isomorphism in $\mathcal{S} \times_{\mathcal{S}'} \mathcal{S}$.
 This just means that $\iota, \kappa : x \to y$ are isomorphisms and that
 $F(\iota) = F(\kappa)$. Consider the functor
@@ -6325,7 +6325,7 @@ I_{\mathcal{S}/\mathcal{S}'}
 \mathcal{S}
 $$
 which to an object $(x, \alpha)$ of the left hand side assigns the object
-$(x, x, (\alpha, \text{id}_x))$ of the right hand side
+$(x, x, (\alpha, \id_x))$ of the right hand side
 and to a morphism $\phi$ of the left hand side
 assigns the morphism $(\phi, \phi)$ of the right hand side.
 We claim that a quasi-inverse to that morphism is given by the
@@ -6351,8 +6351,8 @@ $\mathcal{S}
 is isomorphic to
 the identity via the natural isomorphism
 $$
-(\text{id}_x, \kappa) :
-(x, x, (\kappa^{-1} \circ \iota, \text{id}_x))
+(\id_x, \kappa) :
+(x, x, (\kappa^{-1} \circ \iota, \id_x))
 \longrightarrow
 (x, y, (\iota, \kappa)).
 $$
@@ -6393,7 +6393,7 @@ e : \mathcal{S} \to \mathcal{I}_{\mathcal{S}/\mathcal{S}'}
 \quad\text{and}\quad
 e : \mathcal{S} \to \mathcal{I}_\mathcal{S}
 \end{equation}
-defined by the rules $x \mapsto (x, \text{id}_x)$ and
+defined by the rules $x \mapsto (x, \id_x)$ and
 $(\phi : x \to y) \mapsto \phi$. This is a right inverse to
 (\ref{equation-inertia-structure-map}). Given a $2$-commutative
 square
@@ -6505,7 +6505,7 @@ W \ar[r]^g & V \ar[r]^f & U \\
 \end{equation}
 where the squiggly arrows represent not morphisms but the functor $p$.
 Applying the second condition to the arrows $\phi \circ \psi$, $\gamma$
-and $\text{id}_W$ we conclude that there is a unique morphism
+and $\id_W$ we conclude that there is a unique morphism
 $\chi : z \to z'$ in $\mathcal{S}_W$ such that
 $\gamma \circ \chi = \phi \circ \psi$. Similarly there is a unique morphism
 $z' \to z$. The uniqueness implies that the morphisms $z' \to z$ and
@@ -6544,15 +6544,15 @@ inverse morphism.  The diagram on the left (in $\mathcal{S}_U$) is mapped by
 $p$ to the diagram on the right:
 $$
 \xymatrix{
-y \ar[r]^f & x & U \ar[r]^{\text{id}_U} & U \\
-x \ar@{-->}[u] \ar[ru]_{\text{id}_x} & &
-U \ar@{-->}[u]\ar[ru]_{\text{id}_U} & \\
+y \ar[r]^f & x & U \ar[r]^{\id_U} & U \\
+x \ar@{-->}[u] \ar[ru]_{\id_x} & &
+U \ar@{-->}[u]\ar[ru]_{\id_U} & \\
 }
 $$
 Since only $\text{i}d_U$ makes the diagram on the right commute, there is a
 unique $g : x \to y$ making the diagram on the left commute, so
-$fg = \text{id}_x$. By a similar argument there is a unique $h : y \to x$ so
-that $gh = \text{id}_y$. Then $fgh = f : y \to x$.  We have $fg = \text{id}_x$,
+$fg = \id_x$. By a similar argument there is a unique $h : y \to x$ so
+that $gh = \id_y$. Then $fgh = f : y \to x$.  We have $fg = \text{id}_x$,
 so $h = f$. Condition (2) of Definition \ref{definition-fibred-groupoids} says
 exactly that every morphism of $\mathcal{S}$ is strongly cartesian. Hence
 condition (1) of Definition \ref{definition-fibred-groupoids} implies that
@@ -6699,7 +6699,7 @@ $G$ automatically preserves them).
 \item Its $2$-morphisms $t : G \to H$ for
 $G, H : (\mathcal{S}, p) \to (\mathcal{S}', p')$
 will be morphisms of functors
-such that $p'(t_x) = \text{id}_{p(x)}$
+such that $p'(t_x) = \id_{p(x)}$
 for all $x \in \Ob(\mathcal{S})$.
 \end{enumerate}
 \end{definition}
@@ -6767,12 +6767,12 @@ $f : U' \to U$ in $\mathcal{C}$, namely, $p'$ applied to the
 isomorphism $x' \to G(x)$. By the axioms of a category fibred
 in groupoids there exists an arrow $f^*x \to x$ of $\mathcal{S}$
 lying over $f$. Hence there exists an isomorphism
-$\alpha : x' \to G(f^*x)$ such that $p'(\alpha) = \text{id}_{U'}$
+$\alpha : x' \to G(f^*x)$ such that $p'(\alpha) = \id_{U'}$
 (this time by the axioms for $\mathcal{S}'$). All in all we conclude
 that for every object $x'$ of $\mathcal{S}'$ we can choose
 a pair $(o_{x'}, \alpha_{x'})$ consisting of an object
 $o_{x'}$ of $\mathcal{S}$ and an isomorphism $\alpha_{x'} : x' \to G(o_{x'})$
-with $p'(\alpha_{x'}) = \text{id}_{p'(x')}$.
+with $p'(\alpha_{x'}) = \id_{p'(x')}$.
 From this point on we proceed as usual (see proof of
 Lemma \ref{lemma-equivalence-categories}) to produce an inverse
 functor $F : \mathcal{S}' \to \mathcal{S}$, by taking
@@ -6802,11 +6802,11 @@ Now fix $f : U \to V$. Denote $f^*y \to y$ a pullback.
 Then also $G(f^*y) \to G(y)$ is a pullback.
 The set of morphisms from $x$ to $y$ lying over $f$
 is bijective to the set of morphisms between
-$x$ and $f^*y$ lying over $\text{id}_U$. (By the second axiom
+$x$ and $f^*y$ lying over $\id_U$. (By the second axiom
 of a category fibred in groupoids.) Similarly
 the set of morphisms from $G(x)$ to $G(y)$ lying over $f$
 is bijective to the set of morphisms between
-$G(x)$ and $G(f^*y)$ lying over $\text{id}_U$.
+$G(x)$ and $G(f^*y)$ lying over $\id_U$.
 Hence the fact that $G_U$ is faithful (resp.\ fully faithful)
 gives the desired result.
 
@@ -6845,7 +6845,7 @@ it suffices to look at fibre categories over an object $U$ of $\mathcal{C}$.
 An object of the right hand side is a triple $(x, x', \alpha)$ where
 $\alpha : G(x) \to G(x')$ is a morphism in $\mathcal{S}'_U$.
 The functor $\Delta_G$ maps the object $x$ of $\mathcal{S}_U$
-to the triple $(x, x, \text{id}_{G(x)})$. Note that $(x, x', \alpha)$
+to the triple $(x, x, \id_{G(x)})$. Note that $(x, x', \alpha)$
 is in the essential image of $\Delta_G$ if and only if $\alpha = G(\beta)$
 for some morphism $\beta : x \to x'$ in $\mathcal{S}_U$ (details omitted).
 Hence in order for $\Delta_G$ to be an equivalence, every $\alpha$ has to
@@ -6968,7 +6968,7 @@ and $f : F(x) \to y$ is an isomorphism in $\mathcal{Y}_U$.
 A morphism $(a, b) : (U, x, y, f) \to (U', x', y', f')$ is given
 by $a : x \to x'$ and $b : y \to y'$ with $p(a) = q(b)$ and
 such that $f' \circ F(a) = b \circ f$. In other words
-$\mathcal{X}' = \mathcal{X} \times_{F, \mathcal{Y}, \text{id}} \mathcal{Y}$
+$\mathcal{X}' = \mathcal{X} \times_{F, \mathcal{Y}, \id} \mathcal{Y}$
 with the construction of the $2$-fibre product from
 Lemma \ref{lemma-2-product-categories-over-C}.
 By
@@ -6976,7 +6976,7 @@ Lemma \ref{lemma-2-product-fibred-categories}
 we see that $\mathcal{X}'$ is a category fibred in groupoids over
 $\mathcal{C}$ and that $\mathcal{X}' \to \mathcal{Y}$ is a morphism of
 categories over $\mathcal{C}$. As functor $\mathcal{X} \to \mathcal{X}'$ we take
-$x \mapsto (p(x), x, F(x), \text{id}_{F(x)})$ on objects and
+$x \mapsto (p(x), x, F(x), \id_{F(x)})$ on objects and
 $(a : x \to x') \mapsto (a, F(a))$ on morphisms. It is clear that
 the composition $\mathcal{X} \to \mathcal{X}' \to \mathcal{Y}$
 equals $F$. We omit the verification that
@@ -6991,7 +6991,7 @@ Because $\mathcal{X}$ is fibred in groupoids over $\mathcal{C}$ we
 can find a morphism $a : x' \to x$ lying over $U' = q(y') \to q(y) = U$.
 Since $\mathcal{Y}$ is fibred in groupoids over $\mathcal{C}$ and since
 both $F(x') \to F(x)$ and $y' \to y$ lie over the same morphism $U' \to U$
-we can find $f' : F(x') \to y'$ lying over $\text{id}_{U'}$ such that
+we can find $f' : F(x') \to y'$ lying over $\id_{U'}$ such that
 $f \circ F(a) = b \circ f'$. Hence we obtain
 $(a, b) : (U', x', y', f') \to (U, x, y, f)$.
 This verifies the first condition (1) of
@@ -7038,7 +7038,7 @@ $1$-morphisms of categories over $\mathcal{Y}$.
 \begin{proof}
 We will show that both $\mathcal{X}'$ and $\mathcal{X}''$ over $\mathcal{Y}$
 are equivalent to the category fibred in groupoids
-$\mathcal{X} \times_{F, \mathcal{Y}, \text{id}} \mathcal{Y}$
+$\mathcal{X} \times_{F, \mathcal{Y}, \id} \mathcal{Y}$
 over $\mathcal{Y}$, see proof of
 Lemma \ref{lemma-ameliorate-morphism-categories-fibred-groupoids}.
 Choose a quasi-inverse $b^{-1} : \mathcal{X}'' \to \mathcal{X}$ in the
@@ -7052,7 +7052,7 @@ $$
 $$
 is $2$-commutative. Hence we obtain a $1$-morphism
 $c : \mathcal{X}'' \to
-\mathcal{X} \times_{F, \mathcal{Y}, \text{id}} \mathcal{Y}$
+\mathcal{X} \times_{F, \mathcal{Y}, \id} \mathcal{Y}$
 by the universal property of the $2$-fibre product. Moreover $c$
 is a morphism of categories over $\mathcal{Y}$ (!) and an equivalence
 (by the assumption that $b$ is an equivalence, see
@@ -7064,11 +7064,11 @@ Lemma \ref{lemma-equivalence-fibred-categories}.
 \medskip\noindent
 We still have to construct a $2$-isomorphism between $c \circ b$ and
 the functor $d : \mathcal{X} \to
-\mathcal{X} \times_{F, \mathcal{Y}, \text{id}} \mathcal{Y}$,
-$x \mapsto (p(x), x, F(x), \text{id}_{F(x)})$
+\mathcal{X} \times_{F, \mathcal{Y}, \id} \mathcal{Y}$,
+$x \mapsto (p(x), x, F(x), \id_{F(x)})$
 constructed in the proof of
 Lemma \ref{lemma-ameliorate-morphism-categories-fibred-groupoids}.
-Let $\alpha : F \to g \circ b$ and $\beta : b^{-1} \circ b \to \text{id}$
+Let $\alpha : F \to g \circ b$ and $\beta : b^{-1} \circ b \to \id$
 be $2$-isomorphisms between $1$-morphisms of categories over $\mathcal{C}$.
 Note that $c \circ b$ is given by the rule
 $$
@@ -7077,7 +7077,7 @@ $$
 on objects. Then we see that
 $$
 (\beta_x, \alpha_x) :
-(p(x), x, F(x), \text{id}_{F(x)})
+(p(x), x, F(x), \id_{F(x)})
 \longrightarrow
 (p(x), b^{-1}(b(x)), g(b(x)), \alpha_x \circ F(\beta_x))
 $$
@@ -7160,7 +7160,7 @@ $p_F : \mathcal{S}_F \to \mathcal{C}$ is given by the rule
 $(U, x) \mapsto U$.
 Let us check that this is indeed a fibred category.
 Given $f: V \to U$ in $\mathcal{C}$ and $(U, x)$ a lift of $U$, then
-we claim $(f, \text{id}_{f^\ast x}): (V, {f^\ast x}) \to (U, x)$ is a
+we claim $(f, \id_{f^\ast x}): (V, {f^\ast x}) \to (U, x)$ is a
 strongly cartesian lift of $f$.
 We have to show a $h$ in the diagram on the left
 determines $(h, \nu)$ on the right:
@@ -7168,7 +7168,7 @@ $$
 \xymatrix{
 V \ar[r]^f &
 U &
-(V, f^*x) \ar[r]^{(f, \text{id}_{f^*x})} &
+(V, f^*x) \ar[r]^{(f, \id_{f^*x})} &
 (U, x) \\
 W \ar@{-->}[u]^h \ar[ru]_g & &
 (W, z) \ar@{-->}[u]^{(h, \nu)} \ar[ru]_{(g, \psi)} &
@@ -7234,7 +7234,7 @@ $\varphi : f_1^\ast x_1 \to f_2^\ast x_2$ with $p(\varphi) = g$. It is no
 problem to define the composition law: $(\varphi, g) \circ (\psi, h) =
 (\varphi \circ \psi, g\circ h)$ for any pair of composable morphisms.
 There is a natural functor $\mathcal{S} \to \mathcal{S}'$ which simply maps
-$x$ over $U$ to the pair $(x, \text{id}_U)$.
+$x$ over $U$ to the pair $(x, \id_U)$.
 
 \medskip\noindent
 At this point we need to check that $p'$ makes $\mathcal{S}'$ into a
@@ -7247,9 +7247,9 @@ cartesian morphisms. We omit the verifications.
 Finally, we can define pullback functors on $\mathcal{S}'$
 by setting $g^\ast(x, f) = (x, f \circ g)$ on objects if
 $g : V' \to V$ and $f : V \to U$. On morphisms
-$(\varphi, \text{id}_V) : (x_1, f_1) \to (x_2, f_2)$
-between morphisms in $\mathcal{S}'_V$ we set $g^\ast(\varphi, \text{id}_V) =
-(g^\ast\varphi, \text{id}_{V'})$ where we use the unique identifications
+$(\varphi, \id_V) : (x_1, f_1) \to (x_2, f_2)$
+between morphisms in $\mathcal{S}'_V$ we set $g^\ast(\varphi, \id_V) =
+(g^\ast\varphi, \id_{V'})$ where we use the unique identifications
 $g^\ast f_i^\ast x_i = (f_i \circ g)^\ast x_i$ from Lemma
 \ref{lemma-fibred} to think of $g^\ast\varphi$ as a morphism from
 $(f_1 \circ g)^\ast x_1$ to $(f_2 \circ g)^\ast x_2$. Clearly, these pullback
@@ -7327,7 +7327,7 @@ Definition \ref{definition-fibred-groupoids}
 directly as follows: (1) Lifts of
 morphisms exist since given $f: V \to U$ in $\mathcal{C}$ and $(U, x)$
 an object of $\mathcal{S}_F$ over $U$, then
-$(f, \text{id}_{f^\ast x}): (V, {f^\ast x}) \to (U, x)$ is a lift of $f$.
+$(f, \id_{f^\ast x}): (V, {f^\ast x}) \to (U, x)$ is a lift of $f$.
 (2) Suppose given solid diagrams as follows
 $$
 \xymatrix{
@@ -7382,7 +7382,7 @@ $\varphi : f_1^\ast x_1 \to f_2^\ast x_2$ with $p(\varphi) = g$. It is no
 problem to define the composition law: $(\varphi, g) \circ (\psi, h) =
 (\varphi \circ \psi, g\circ h)$ for any pair of composable morphisms.
 There is a natural functor $\mathcal{S} \to \mathcal{S}'$ which simply maps
-$x$ over $U$ to the pair $(x, \text{id}_U)$.
+$x$ over $U$ to the pair $(x, \id_U)$.
 
 \medskip\noindent
 At this point we need to check that $p'$ makes $\mathcal{S}'$ into a category
@@ -7394,9 +7394,9 @@ $\mathcal{C}$. We omit the verifications.
 Finally, we can define pullback functors on $\mathcal{S}'$
 by setting $g^\ast(x, f) = (x, f \circ g)$ on objects if
 $g : V' \to V$ and $f : V \to U$. On morphisms
-$(\varphi, \text{id}_V) : (x_1, f_1) \to (x_2, f_2)$
-between morphisms in $\mathcal{S}'_V$ we set $g^\ast(\varphi, \text{id}_V) =
-(g^\ast\varphi, \text{id}_{V'})$ where we use the unique identifications
+$(\varphi, \id_V) : (x_1, f_1) \to (x_2, f_2)$
+between morphisms in $\mathcal{S}'_V$ we set $g^\ast(\varphi, \id_V) =
+(g^\ast\varphi, \id_{V'})$ where we use the unique identifications
 $g^\ast f_i^\ast x_i = (f_i \circ g)^\ast x_i$ from Lemma
 \ref{lemma-fibred-groupoids} to think of $g^\ast\varphi$ as a morphism from
 $(f_1 \circ g)^\ast x_1$ to $(f_2 \circ g)^\ast x_2$. Clearly, these pullback
@@ -7461,7 +7461,7 @@ $G$ automatically preserves them).
 \item Its $2$-morphisms $t : G \to H$ for
 $G, H : (\mathcal{S}, p) \to (\mathcal{S}', p')$
 will be morphisms of functors
-such that $p'(t_x) = \text{id}_{p(x)}$
+such that $p'(t_x) = \id_{p(x)}$
 for all $x \in \Ob(\mathcal{S})$.
 \end{enumerate}
 \end{definition}
@@ -7662,7 +7662,7 @@ $G$ automatically preserves them).
 \item Its $2$-morphisms $t : G \to H$ for
 $G, H : (\mathcal{S}, p) \to (\mathcal{S}', p')$
 will be morphisms of functors
-such that $p'(t_x) = \text{id}_{p(x)}$
+such that $p'(t_x) = \id_{p(x)}$
 for all $x \in \Ob(\mathcal{S})$.
 \end{enumerate}
 \end{definition}
@@ -7826,7 +7826,7 @@ then every pair of objects $(x, \alpha)$, $(x, \alpha')$ are isomorphic
 in the fibre category of $\mathcal{I}_\mathcal{S}$ over $U$.
 Looking at the definition of morphisms in $\mathcal{I}_\mathcal{S}$
 we conclude that $\alpha$, $\alpha'$ are conjugate in the group
-of automorphisms of $x$. Hence taking $\alpha' = \text{id}_x$ we conclude
+of automorphisms of $x$. Hence taking $\alpha' = \id_x$ we conclude
 that every automorphism of $x$ is equal to the identity.
 Since $\mathcal{S} \to \mathcal{C}$ is fibred in groupoids this
 implies that $\mathcal{S} \to \mathcal{C}$ is fibred in setoids.
@@ -7911,8 +7911,8 @@ Lemma \ref{lemma-setoid-fibres}.
 For the second, suppose that $j' : \mathcal{S} \to \mathcal{C}/X'$ is
 a second such pair. Choose a $1$-morphism
 $t' : \mathcal{C}/X' \to \mathcal{S}$ such that
-$j' \circ t' \cong \text{id}_{\mathcal{C}/X'}$ and
-$t' \circ j' \cong \text{id}_\mathcal{S}$. Then
+$j' \circ t' \cong \id_{\mathcal{C}/X'}$ and
+$t' \circ j' \cong \id_\mathcal{S}$. Then
 $j \circ t' : \mathcal{C}/X' \to \mathcal{C}/X$ is an equivalence.
 Hence it is an isomorphism, see Lemma \ref{lemma-2-category-fibred-sets}.
 Hence by the Yoneda Lemma \ref{lemma-yoneda} (via
@@ -7999,7 +7999,7 @@ $$
 \longrightarrow
 \mathcal{S}_U
 $$
-given by $G \mapsto G(\text{id}_U)$ is an equivalence.
+given by $G \mapsto G(\id_U)$ is an equivalence.
 \end{lemma}
 
 \begin{proof}
@@ -8045,7 +8045,7 @@ Example \ref{example-functor-groupoids}.
 There is an obvious functor $G : \mathcal{S}' \to \mathcal{S}$
 over $\mathcal{C}$ given by taking the pair $(U, x)$, where
 $U \in \Ob(\mathcal{C})$ and $x \in F(U)$, to
-$x(\text{id}_U) \in \mathcal{S}$.  Now
+$x(\id_U) \in \mathcal{S}$.  Now
 Lemma \ref{lemma-yoneda-2category}
 implies that for each $U$,
 $$
@@ -8076,7 +8076,7 @@ $$
 \mathcal{Y}
 }
 $$
-Let $y = G(\text{id}_U) \in \mathcal{Y}_U$.
+Let $y = G(\id_U) \in \mathcal{Y}_U$.
 Make a choice of pullbacks for $\mathcal{Y}$
 (see Definition \ref{definition-pullback-functor-fibred-category}).
 Then $G$ is isomorphic to the functor $(f : V \to U) \mapsto f^*y$,
@@ -8211,7 +8211,7 @@ Before we state the next lemma we point out that the $2$-category
 of categories fibred in groupoids is a $(2, 1)$-category, and hence
 we know what it means to say that it has a final object (see
 Definition \ref{definition-final-object-2-category}). And it has
-a final object namely $\text{id} : \mathcal{C} \to \mathcal{C}$.
+a final object namely $\id : \mathcal{C} \to \mathcal{C}$.
 Thus we define {\it $2$-products} of categories fibred in groupoids
 over $\mathcal{C}$ as the $2$-fibred products
 $$
