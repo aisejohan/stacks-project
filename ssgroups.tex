@@ -744,7 +744,7 @@ and satisfying some combinatorial properties.
 data will turn out determine $G$ up to isomorphism.  This is a {\em huge} theorem;
 it will be the topic of the final section of the course. 
 \end{theorem}
-\subsubsection{Construction of $\Phi$}
+\subsubsection{Construction of root datum}
 Fix a connected reductive $G$ as above.
 Consider the set of all \textbf{unipotent 1-parameter subgroups} of $G$; 
 i.e., closed subgroups $u:\mathbf{G}_a \hookrightarrow G$ that are \textit{normalized by $T$}.
@@ -780,7 +780,7 @@ The structure of this open cell underlies why it is reasonable to believe
 that $G$ can be reconstructed completely from $T$ and the root system. 
 We will make this more concrete at the beginning of the next lecture. 
 \section{January 13}
-\subsection{Mapping $\mathbf{G}_a$ and $\mathbf{G}_m$ into a reductive group}
+\subsection{Mapping additive and multiplicative groups into a reductive group}
 As a  consequence of the theory of maximal tori, roots and coroots, there is an abundance of $\mathbf{G}_a$'s and 
 $\mathbf{G}_m$'s sitting inside a so-called ``split connected reductive'' group such as $\SL_n$ or $\Sp_{2n}$.
 To illustrate the principles involves, if we consider the standard upper and lower triangular
@@ -853,7 +853,7 @@ The equivalent formulations of these facts -- i.e., the claims over perfect and 
 perfect/additive case from the proof of Theorem \ref{1dconnlinalg} and 
  in the separably-closed/multiplicative case from Homework 2.
 
-\subsection{Examples of non-split 1-dimensional linear algebraic $k$-groups}
+\subsection{Examples of non-split 1-dimensional linear algebraic groups}
 \begin{example}[Non-split multiplicative group]Let $k$ be a field, and $k'/k$ a quadratic Galois extension
 splitting an irreducible separable polynomial $f(t) = t^2 + at + b$. (If ${\rm{char}}(k) \ne 2$
 we can assume $a = 0$, but why would one want to do that?) 
@@ -1258,7 +1258,7 @@ it follows that $G$ is smooth if and only if $G(R)\to G(R/J)$
 maps $\ker(G(R)\to G(k))$ surjectively onto $\ker(G(R/J)\to G(k))$.
 \end{example}
 
-\subsection{How to show algebraic $k$-groups are smooth}
+\subsection{How to show algebraic groups are smooth}
 Now we apply the method of Example \ref{smoothnesscriterionex}
 to show how one might prove that a $k$-group $G$ is smooth
 and
@@ -1282,7 +1282,7 @@ and a $k$-action from scaling $\epsilon$.
 On Homework 4 it is shown that $T_e(G)=\g$ as vector spaces,
 not just sets.
 
-\subsubsection{Smoothness of $\GL_n,\SL_n$ in coordinates,  via matrices}
+\subsubsection{Smoothness of the general and special linear group in coordinates,  via matrices}
 In fact $\GL_n(R)\to \GL_n(R/J)$ is surjective, which we can see as follows.
 Take $\bar M\in \GL_n(R/J)$, and lift it entry-wise
 to $M\in {\rm{Mat}}_n(R)$.
@@ -1308,7 +1308,7 @@ and has determinant $1$.
 Finally we compute $T_{\id}(\SL_n)=\{\id+\epsilon M\mid M\in {\rm{Mat}}_n(k),\det(\id+\epsilon M)=1\}$.
 Since $\det(\id+\epsilon M)=1+\epsilon \tr(M)$,
 this shows that $\sl_n={\rm{Mat}}_n(k)^{\tr=0}$.
-\subsubsection{Smoothness of $\GL(V),\SL(V)$ without using coordinates (much)}
+\subsubsection{Smoothness of the general and special linear group without using coordinates}
 This ``functorial'' method will lead to an intrinsic description
 of $\gl(V),\sl(V)$, which is useful because it is obviously functorial in $V$.
 When we have representations floating around, this functoriality will
@@ -1399,7 +1399,7 @@ everything is OK in characteristic 0, by a theorem of Cartier
 which says \textit{all} $k$-group schemes locally of finite type are smooth
 when ${\rm{char}}(k)=0$.)
 \end{remark}
-\subsection{Connectedness of $\SL_n$}\label{slnconn}
+\subsection{Connectedness of the special linear group}\label{slnconn}
 Fix an $n$-dimensional vector space $V$ and let $G=\SL(V)\simeq \SL_n$.
 \subsubsection{Method 1 - Flag varieties}
 For $V$ a $k$-vector space of dimension $n> 0$, let $X$ be the functor on $k$-algebras given by
@@ -1439,7 +1439,7 @@ the $x$'s denote that the bottom right $(n-1)\times(n-1)$ block
 is given by $g\in \GL_{n-1}$.
 Hence $\Stab_{\SL_n}([1:0:\cdots:0])=\GL_{n-1}\times \AA^{n-1}$ as a variety.
 Again we get lucky and can see that it is connected, so we're done.
-\subsection{Smoothness of $\Sp_{2n}$}\label{spsmooth}
+\subsection{Smoothness of the symplectic group}\label{spsmooth}
 Let $G=\Sp_{2n}\simeq\Sp(V,B)$
 where $V$ is an $2n$-dimensional vector space
 over $k$
@@ -1539,7 +1539,7 @@ Thus its dimension is
 Explicitly, $\sp_{2n}$
 consists of $2n\times 2n$ block matrices $\(\begin{smallmatrix}a&b\\c&-a^t\end{smallmatrix}\)$ such that $b=b^t,c=c^t$.
 \section*{January 27}
-\subsection*{$\Sp_{2n}$ is connected}\label{spconn}
+\subsection*{The symplectic group is connected}\label{spconn}
 The goal for today is to prove the following result.
 \begin{theorem}Let $V$ be a vector space of dimension $2n\geq 0$
 equipped with a nondegenerate alternating bilinear form $B$.
@@ -1659,7 +1659,7 @@ So the conclusion is that $\ker\xi$ is fibered over a Zariski open subset of an 
 which completes the proof.
 \end{proof}
 \section{January 29}
-\subsection{A little more about $\Sp_{2n}$}
+\subsection{A little more about the symplectic group}
 We proved $G=\Sp(V,B)$ is connected. Here is a useful ``matrix description'' of the group, using our proof.
 Recall that we endowed $\PP(V)$ with the natural
 action of $G\subset\GL(V)$, chose a line $L\subset V$ spanned by $e\in V$, 
@@ -1961,7 +1961,7 @@ This completes the proof of the closed orbit lemma.
 and suppose we have a representation,
 i.e. a $k$-homomorphism $G\to \GL(V)$ for a finite dimensional $k$-vector space $V$. Then the image is a smooth closed $k$-subgroup of $\GL(V)$.
 \end{example}
-\subsection{Criterion for a $k$-homomorphism of $k$-groups to be a closed immersion}
+\subsection{Criterion for a homomorphism of groups to be a closed immersion}
 \begin{proposition}\label{khomclosed}
 Let $f:G\to G'$ be a homomorphism of finite type $k$-groups.
 Suppose $G$ is smooth.
@@ -2118,7 +2118,7 @@ This finishes the proof of Proposition \ref{khomclosed}.
 \begin{remark}\label{(smooth)}(i)$\Leftrightarrow$(iii) is actually true \textit{sans} smoothness hypotheses; see
 \cite[VI$_{\rm{A}}$, 1.4.2]{SGA3}. In the following when we parenthesize a hypothesis (smooth) we mean that the result is true without that hypothesis, but for our purposes we only need the smooth case, and that it rests upon Proposition \ref{khomclosed} (which we only proved in the smooth case, but is true more generally).
 \end{remark}
-\subsection{Embedding linear algebraic groups in $\GL_n$}
+\subsection{Embedding linear algebraic groups in the general linear group}
 Does a (smooth) affine $k$-group $G$ of finite type admit a closed immersion into $\GL_n$ 
 as a $k$-subgroup for some $n$?
 The answer is yes. The method will be to study ``$G$ acting on the coordinate
@@ -2161,7 +2161,7 @@ Then $g.f=f\circ\lambda_{g^{-1}}$
 for $g\in G(R),f\in R[G]$.
 \end{example}
 \section{February 5}
-\subsection{Actions of affine finite type $k$-groups on coordinate rings of affine $k$-schemes}
+\subsection{Actions of affine finite type groups on coordinate rings of affine schemes}
 Consider the following setup. 
 Let $G$ be an affine $k$-group of finite type,
 and $\alpha:G\times X\to X$ a left action on an affine $k$-scheme $X$.
@@ -2179,7 +2179,7 @@ a directed system under inclusion and exhaust $V$.
 is much stronger than saying that $W$ is $G(k)$-stable. It says
 rather that $W_R$ is $G(R)$-stable in $V_R$ for all $k$-algebras $R$.
 \end{remark}
-\subsubsection{Application to embedding a smooth linear algebraic group into $\GL_n$}
+\subsubsection{Application to embedding a smooth linear algebraic group into the general linear group}
 Take $X=G$ and $\alpha$ left multiplication,
 so that $f\in R[G],g\in g(R)$, we have $(g.f)(g')=f(g^{-1}g')$ for
 $g'\in G(R')$, $R'$ an $R$-algebra.
@@ -2482,8 +2482,7 @@ $f(g_{\rm{ss}}) = f(g)_{\rm{ss}}$ and $f(g_{\rm{u}}) = f(g)_{\rm{u}}$.
 \end{proof}
 
 \section{February 10}
-\subsection{All subgroups of a smooth finite type $k$-group
-are stabilizers of a line}
+\subsection{All subgroups of a smooth finite type group are stabilizers of a line}
 To tie up a loose end in the proof of Theorem \ref{jordan},
 and more specifically to fill in a key step used in Appendix \ref{jexist}, 
 we need the following result, somewhat remarkable for its extraordinary generality and usefulness.
@@ -2741,7 +2740,7 @@ and it will allow us to show that, in a suitable sense, we have
 \end{enumerate} 
 
 \section{February 17}
-\subsection{Some motivation: a key calculation on $\SL_2(k)$}
+\subsection{Some motivation: a key calculation}
 \begin{proposition}\label{sl2fact}
 If $k$ is a field other than $\FF_2$ or $\FF_3$ (which have
 the undesirable property that $(\FF_2^\times)^2=1,(\FF_3^\times)^2=1$)
@@ -3137,7 +3136,7 @@ all smooth closed $k$-subgroups,
 and $\sD G_i\subset G_{i+1}$ for all $i$,
 then $G$ is solvable. Just check on geometric points!
 \end{example}
-\subsection{Structure of smooth connected commutative affine $k$-groups}
+\subsection{Structure of smooth connected commutative affine groups}
 \begin{theorem}\label{structurecommutative}
 Let $k$ be a perfect field
 and $G$ a smooth connected commutative affine $k$-group.
@@ -3498,7 +3497,7 @@ If $G=\GL(V)$ then $\g=\gl(V)=\End(V)$
 and $[\cdot ,\cdot ]_{\GL(V)}$ is the commutator on $\End(V)$;
 cf. Homework 7.
 \end{example}
-\subsubsection{Functoriality of $\Lie(\cdot)$}
+\subsubsection{Functoriality of taking Lie algebras}
 \begin{proposition}
 The derivative
 \[\ad_G=T_e(\Ad_G):\g\to \gl(\g)=\End(\g)\]
@@ -3724,7 +3723,7 @@ If $T$ is a subtorus of a smooth $k$-group $G$ of
 finite type upon which $T$ acts upon by conjugation, then $Z_G(T) = G^T$ is smooth.
 \end{example}
 \section{February 26}
-\subsection{$k$-split solvable groups}
+\subsection{Split solvable groups}
 Recall from Homework 5 that the category of $k$-tori is equivalent
 to the category of finite free abelian groups equipped with a continuous
 discrete action by $\Gamma=\operatorname{Gal}(k_s/k)$.
@@ -4883,7 +4882,8 @@ is given by a cocharacter $\lambda:\mathbf{G}_m\hookrightarrow G$,
 which happens to be injective, but we don't care.
 So Lemma \ref{PGlambdaUGlambda} below completes the proof.
 \end{proof}
-\subsection{$P_G(\lambda),U_G(\lambda),Z_G(\lambda)$ for a 1-parameter subgroup $\lambda$}
+\subsection{Constructions for a 1-parameter subgroup}
+We will construct $P_G(\lambda),U_G(\lambda),Z_G(\lambda)$ for a 1-parameter subgroup $\lambda$.
 Now consider any \textbf{1-parameter subgroup} $\lambda:\mathbf{G}_m\rightarrow G$ for a smooth affine group $G$.
 Define an action of $\mathbf{G}_m\actson G$
 by $t.g=\lambda(t)g\lambda(t)^{-1}$.
@@ -4982,17 +4982,19 @@ and their importance impossible to overestimate.
 
 
 \section{March 10}
-\subsection{Proof of Lemma \ref{PGlambdaUGlambda} on $P_G,U_G,Z_G$}
+
+\noindent
+In this section we give the proof of Lemma \ref{PGlambdaUGlambda} on $P_G,U_G,Z_G$}
 We leave (0) as an exercise; use that $\mathbf{A}^1$ is a ring functor
 which lets us multiply the limits, if they exist.
 
-\subsubsection{Proof that (i)+(ii)\ensuremath{\Rightarrow}(iii) [except unipotence of $U_G(\lambda)$]}
+Next we prove that (i)+(ii)\ensuremath{\Rightarrow}(iii) [except unipotence of $U_G(\lambda)$]
 This is pretty easy.
 Since $U_G(\lambda^{-1})\times P_G(\lambda)$ is an open subscheme of the smooth scheme $G$, we see that $U_G$ and $P_G$ are always smooth.
 Since $P_G=Z_G\times U_G$ we see that $Z_G$ is also smooth.
 Connectedness is similar.
 
-\subsubsection{Proof of (i)}
+Next we prove (i).
 We begin by making some functorial observations.
 
 First, $Z_G(\lambda)=P_G(\lambda)\cap P_G(\lambda^{-1})$.
@@ -5043,7 +5045,7 @@ One can check that $P_G(\lambda)$ is the zero scheme of the ideal
 $\langle k[G]_n\rangle_{n<0}$.
 For details, see \cite[Lemma 2.1.4]{pred}. 
 
-\subsubsection{Proof of (ii) and unipotence of $U_G(\lambda)$}
+Finally, we prove of (ii) and unipotence of $U_G(\lambda)$.
 First consider an injective homomorphism (hence closed immersion)
 $j:G\hookrightarrow G'$;
 set $\lambda'=j\circ \lambda$ to be the induced 1-parameter subgroup.
@@ -7634,7 +7636,7 @@ tori to carry out a centralizer trick and apply dimension induction.
 There will be some extra complications in positive characteristic, and
 the case of finite fields needs a separate argument (as noted above).  
 
-\subsection{The case of infinite $k$}\label{infk}
+\subsection{The case of infinite fields}\label{infk}
 
 Now we assume $k$ is infinite, but otherwise arbitrary.  
 To flesh out the preceding basic idea, consider the following hypothesis:
@@ -7774,8 +7776,7 @@ the requirements in
 \eqref{hypstar}.
 
 
-\subsection{Hypothesis \eqref{hypstar} for $G$ implies the existence
-of a nontrivial $k$-torus}
+\subsection{Hypothesis \eqref{hypstar} implies the existence of a nontrivial torus}
 
 Now we assume there exists $X\in \mathfrak{g}$ that is noncentral and semisimple.
 We will show (for infinite $k$) that there exists a smooth $k$-subgroup
@@ -7950,7 +7951,8 @@ for $G$ that satisfy (\ref{hypstar})  when
 the conclusion of Theorem \ref{grthm} is known over $k$ in all lower dimensions
 (as we may always assume, since we argue by induction on $\dim G$). 
 
-\subsection{The case $\operatorname{char}(k)=p>0$ and \eqref{hypstar} fails}\label{fail}
+\subsection{The case of positive characteristic where \eqref{hypstar} fails}
+\label{fail}
 
 Now the idea is to find a central infinitesimal $k$-subgroup $M\subset G$
 such that $G/M$ satisfies \eqref{hypstar}.  We will then lift the result from $G/M$
@@ -12833,7 +12835,8 @@ of multiplicities the actual subspaces $V_i \subset V$ that arise are uniquely d
 For irreducible $(V, \Phi)$, the action of the Weyl group $W(\Phi)$ on $V$ is absolutely irreducible. 
 \end{proposition}
 
-\subsection{Euclidean structure on root systems} The absolute irreducibility of the $W(\Phi)$-action for irreducible $(V, \Phi)$
+\subsection{Euclidean structure on root systems}
+The absolute irreducibility of the $W(\Phi)$-action for irreducible $(V, \Phi)$
 explains the role of Euclidean geometry in the study of root systems over $\R$
 (even though there is no axiom concerning a preferred inner product in the definition
 of a root system or of irreducibility of root systems).  To explain this, first note that 
@@ -15247,7 +15250,7 @@ in the case of ${\rm{Sp}}_{2n}$
 and that the quadratic form vanishing on the subspace
 for $\SO(q)$. 
 
-\section{The $\ast$-action and Tits--Selbach classification}
+\section{The star-action and Tits--Selbach classification}
 
 \subsection{Link between absolute and relative roots}
 
@@ -15348,7 +15351,8 @@ explore the deeper significance of the $\ast$-action in the context
  of the Tits--Selbach classification for connected semisimple groups
  over general fields. 
 
-\subsection{The $*$-action}\label{saction}
+\subsection{The star-action}
+\label{saction}
 We define the $*$-action of $\Gamma = \Gal(k_s/k)$ on $\Delta$ (as a diagram, not just as
 a set of vertices) satisfying the following two key properties. 
 \begin{enumerate}
@@ -15455,7 +15459,7 @@ canonically to a finite \'etale $k$-scheme.  The finite set $\Delta$ equipped wi
 the $*$-action has associated finite \'etale $k$-scheme with an intrinsic meaning
 in terms of $G$ without reference to a preferred choice of tori or Borel $k_s$-subgroup or minimal parabolic
 $k$-subgroup:  it is the ``scheme of Dynkin diagrams'' 
-in the sense of \cite{SGA3} (see the end of Appendix \ref{*-action} for a reference).  This is a fancy
+in the sense of \cite{SGA3} (see the end of Appendix \ref{star-action} for a reference).  This is a fancy
 way of expressing an alternative and more widely-known Kottwitz method (described near
 the start of \S\ref{tsclass}) for removing 
 the apparent dependence on auxiliary choices.
@@ -15566,7 +15570,7 @@ so $Q$ is defined over $k$ if and only if $\Delta'$ is $\Gamma$-stable under the
 \end{proposition}
 
 \begin{proof}
-For the full proof see \S2 of Appendix \ref{*-action}. The key is to show that $\gamma*(\Delta') \subset \gamma(\Delta') + \Z \Delta_0$, which ultimately follows from Corollary \ref{wgr} due to 
+For the full proof see \S2 of Appendix \ref{star-action}. The key is to show that $\gamma*(\Delta') \subset \gamma(\Delta') + \Z \Delta_0$, which ultimately follows from Corollary \ref{wgr} due to 
 the general reflection formula $r_a(b) = b - \langle b, a^{\vee} \rangle a \in b + \Z a$
 for $a, b \in \Phi$.
 \end{proof}
@@ -18251,7 +18255,8 @@ Normality in the connected $G_{\overline{k}}$ then forces this torus to be centr
 But (3) is equivalent to (2), so this central torus is trivial.  Thus, (1) holds. 
 \end{proof}
 
-\subsection{Relations between subgroups of $G$ and $\mathscr{D}(G)$}
+\subsection{Relations between subgroups of a group and its derived group}
+In other words, between subgroups of $G$ and of $\mathscr{D}(G)$}
 
 Let $G$ be a connected reductive group over a field $k$, and $Z$ its maximal central
 $k$-torus, so we have a central isogeny $Z \times \mathscr{D}(G) \rightarrow G$.
@@ -20635,7 +20640,7 @@ so it yields the desired $k$-group by base change.
 
 
 
-\subsection{The cc$kp$-kernel}
+\subsection{The cckp-kernel}
 
 In a smooth connected unipotent $k$-group $U$,
 any two smooth connected $p$-torsion central $k$-subgroups generate
@@ -26179,7 +26184,8 @@ that is a special case of Example \ref{split}
 Step (II) rests on some input from \cite{bourbaki} that we will review when needed, and step (III)
 involves some clever group-theoretic considerations (due to Borel and Tits).
 
-\subsection{Control of $\pi_0(G(\R))$ by $S(\R)$}
+\subsection{Control of connected components via tori}
+We will study $\pi_0(G(\R))$ by $S(\R)$.
 
 Let $G$ be a connected reductive $\R$-group, and $S$ a maximal split $\R$-torus. 
 We shall show that $S(\R)$ meets every connected component of $G(\R)$, which is to say
@@ -28093,7 +28099,7 @@ become very large as $n-2r$ grows.
 
 
 
-\section{The $\ast$-action}\label{*-action}
+\section{The star-action}\label{star-action}
 
 
 \subsection{Motivation}
