@@ -51,7 +51,7 @@ G\times G\ar[r]_m&G}\]
 can be regarded as a section of the structure map $G\to \Spec k$.
 In the third diagram, the morphisms $e:G\to G$
 are the ``constant maps to the identity'', i.e.
-the compositions $G\to \Spec k\stackrel{e}{\to}G$.
+the compositions $G \to \Spec k \xrightarrow{e} G$.
 \end{remark}
 \begin{remark}
 By HW1 Exercise 4(i), a connected group variety $G$ over $k$
@@ -78,8 +78,8 @@ with corresponding multiplication map  $m_G$, inversion map $i_G$,
 and identity section $e_G$. A \textit{$k$-subgroup} $H\subset G$
 is a closed subscheme such that there exist factorizations
 \[\xymatrix{\Spec k\ar@{-->}[d]_{e_H}\ar[rd]^{e_G}\\
-H\xycof[r]& G}\qquad \xymatrix{H\times H\xycof[d]\ar@{-->}[r]^{m_H}&H\xycof[d]\\
-G\times G \ar[r]_{m_G}&G}\qquad \xymatrix{H\ar@{-->}[r]^{i_H}\xycof[d]&H\xycof[d]\\
+H\ar[r]& G}\qquad \xymatrix{H\times H\ar[d]\ar@{-->}[r]^{m_H}&H\ar[d]\\
+G\times G \ar[r]_{m_G}&G}\qquad \xymatrix{H\ar@{-->}[r]^{i_H}\ar[d]&H\ar[d]\\
 G\ar[r]_{i_G}&G}\]
 \end{definition}
 By Yoneda's lemma, a $k$-group scheme is the same as a $k$-scheme $G$
@@ -108,8 +108,8 @@ which can be checked via the Jacobian criterion.
 \begin{remark}
 For the purpose of checking the Jacobian criterion, one may freely go up and down between 
 algebraically closed fields containing $k$.
-For example, one might care about both $X_{\bar \QQ}$ and $X_\CC$ in the case
-$k=\QQ$.
+For example, one might care about both $X_{\overline{\mathbf{Q}}}$ and $X_\mathbf{C}$ in the case
+$k=\mathbf{Q}$.
 \end{remark}
 \begin{remark}
 If $k$ happens to be perfect, then smoothness is the same as regularity.
@@ -122,12 +122,12 @@ and over an algebraically closed field it is enough to check smoothness
 at the classical points $G_{\bar k}(\bar k)=G(\bar k)$.
 But by commutative algebra plus the aforementioned ``homogeneity'', 
 it is thus enough to check that the completed local ring
-$\hat \cO_{G_{\bar k},e}$ is regular.
+$\mathcal{O}^\wedge_{G_{\bar k},e}$ is regular.
 On Homework 1, it is shown that it is equivalent to check
-that $\hat \cO_{G_{\bar k},e}\simeq \bar k [\![x_1,\ldots, x_n]\!]$
+that $\mathcal{O}^\wedge_{G_{\bar k},e}\simeq \bar k [\![x_1,\ldots, x_n]\!]$
 is a power series ring.
 In fact it is also shown there that it is equivalent to do this on the rational level;
-i.e. $G$ is smooth if and only if $\hat\cO_{G,e}\simeq k[\![x_1,\ldots, x_n]\!]$
+i.e. $G$ is smooth if and only if $\mathcal{O}^\wedge_{G,e}\simeq k[\![x_1,\ldots, x_n]\!]$
 is a power series ring over $k$;
 and also that the latter has a functorial characterization due to Grothendieck.
 This is very useful for proving smoothness.
@@ -149,7 +149,7 @@ $G$ of finite type.
 \begin{proposition}The open and closed subscheme $G^0$ is a $k$-subgroup of $G$.
 \end{proposition}
 \begin{proof}
-To see that $G^0\times G^0\into G\times G\stackrel{m}{\to} G$
+To see that $G^0\times G^0\to G\times G \xrightarrow{m} G$
 factors through $G^0$, it suffices by topology to check that $G^0\times G^0$
 is connected. While it's not true \textit{a priori} that a fiber product
 of connected schemes is connected, this \textit{is} the case for a fiber product (over $k$)
@@ -173,8 +173,8 @@ connected components turn out to be defined over the ground field, is atypical.
 It is easy to write down examples of smooth affine $k$-group schemes whose non-identity connected 
 components over $k$ are not geometrically connected over $k$
 (and so there are more connected components over $\bar k$ than there are over $k$).
-An example is the group scheme $\mu_5$ of $5$th roots of unity over $k=\QQ$
-(which has 5 geometric components, but only two connected components as a $\QQ$-scheme).
+An example is the group scheme $\mu_5$ of $5$th roots of unity over $k=\mathbf{Q}$
+(which has 5 geometric components, but only two connected components as a $\mathbf{Q}$-scheme).
 
 This is an aspect of a more general phenomenon, whereby $G$ might contain a lot more information than the group of rational points $G(k)$. Indeed, if $k$ is finite then this is certainly the case (except when $G$ is a finite constant 
 $k$-group). Later, however, we'll see that \textit{over infinite fields}, the set of rational points is often Zariski-dense
@@ -185,35 +185,35 @@ so for some proofs it will suffice to study the group of rational points!
 \end{remark}
 
 \subsection{Examples}
-\begin{example}\label{GL} $\GL_n=\{\det\neq 0\}\subset {\rm{Mat}}_n=\AA^{n\times n}_k$,
+\begin{example}\label{GL} $\GL_n=\{\det\neq 0\}\subset {\rm{Mat}}_n=\mathbf{A}^{n\times n}_k$,
 is an open subset of an affine space, hence obviously smooth and connected.
 \end{example}
 
 \begin{remark}
-For $k = \RR$, the connectedness of $\GL_n$ as an algebraic group
-has nothing to do with the fact that in the classical topology $\GL_n(\RR)$ is disconnected.
+For $k = \mathbf{R}$, the connectedness of $\GL_n$ as an algebraic group
+has nothing to do with the fact that in the classical topology $\GL_n(\mathbf{R})$ is disconnected.
 \end{remark}
 
 \begin{remark}\label{foobarrem}
-We'll develop a Lie algebra theory, so that for a $k$-group scheme [of finite type] $G$ we get a Lie algebra $\Lie(G)$, and it will be compatible with the analytic theory
-in the sense that when $k=\RR$ we have $\Lie(G)=\Lie(G(\RR))$ (and likewise when $k = \CC$).
+We'll develop a Lie algebra theory, so that for a $k$-group scheme [of finite type] $G$ we get a Lie algebra $\text{Lie}(G)$, and it will be compatible with the analytic theory
+in the sense that when $k=\mathbf{R}$ we have $\text{Lie}(G)=\text{Lie}(G(\mathbf{R}))$ (and likewise when $k = \mathbf{C}$).
 This is actually very useful for studying disconnected Lie groups, when they happen to come from connected algebraic groups!
 \end{remark}
-As a functor on $k$-algebras, $\GL_n$ is given by $\GL_n(R)=\Aut_R(R^n)$.
+As a functor on $k$-algebras, $\GL_n$ is given by $\GL_n(R)=\text{Aut}_R(R^n)$.
 It is, of course, an affine scheme: $\GL_n=\Spec k[x_{ij}][\frac{1}{\det}]$.
 
 \begin{example}\label{circlegroup}
 A special case of Example \ref{GL} is
 $\GL_1$, which gets a special name, $\mathbf{G}_m$, the multiplicative group scheme.
 
-Consider, by contrast, the circle group scheme, $\SS^1=\{x^2+y^2=1\}\subset \AA^2$
+Consider, by contrast, the circle group scheme, $\SS^1=\{x^2+y^2=1\}\subset \mathbf{A}^2$
 over an arbitrary field $k$. The group structure is given by $e=(1,0)$, the composition law
 $$(x,y)(x',y')=(xx'-yy',xy'+yx'),$$
 and the inversion $(x,y)^{-1}=(x,-y)$.
-Note that when $k = \RR$, the group  $\SS^1(\RR)$ is compact (in the classical topology),
-unlike $\mathbf{G}_m(\RR)$. Hence, $\SS^1_\RR\not\simeq \mathbf{G}_m$
-as $\RR$-groups. However, $\SS^1_\CC\simeq \mathbf{G}_m$ via the maps of group functors
- $(x,y)\mapsto x+iy$ [note that $x$ and $y$ lie in $\CC$-algebras, not just in $\RR$-algebras!]
+Note that when $k = \mathbf{R}$, the group  $\SS^1(\mathbf{R})$ is compact (in the classical topology),
+unlike $\mathbf{G}_m(\mathbf{R})$. Hence, $\SS^1_\mathbf{R}\not\simeq \mathbf{G}_m$
+as $\mathbf{R}$-groups. However, $\SS^1_\mathbf{C}\simeq \mathbf{G}_m$ via the maps of group functors
+ $(x,y)\mapsto x+iy$ [note that $x$ and $y$ lie in $\mathbf{C}$-algebras, not just in $\mathbf{R}$-algebras!]
 and in the other direction $t\mapsto (\frac{1}{2}(t+t^{-1}),\frac{1}{2i}(t-t^{-1}))$.
 \end{example}
 
@@ -231,15 +231,15 @@ that each variable $x_{ij}$ occurs only once in the formula for the determinant;
 try to conclude (with some care) that $\det - 1$ is irreducible.
 But that's not a good proof.
 A more robust geometric approach is to use actions and fibrations:
-$\SL_n$ acts transitively on the connected $\PP^{n-1}$
+$\SL_n$ acts transitively on the connected $\mathbf{P}^{n-1}$
 with stabilizer that maps onto $\GL_{n-1}$ with kernel an affine space;
 this method will be discussed more generally (and the example of $\SL_n$ addressed
 more fully) in \S\ref{slnconn}.
 
 For smoothness, we can check the Jacobi criterion at the identity explicitly as follows. 
-We have that $\det(1+X)-1=\tr(X)+({\rm{higher\, order\, terms}})$.
+We have that $\det(1+X)-1=\text{Tr}(X)+({\rm{higher\, order\, terms}})$.
 The Jacobi criterion (for a hypersurface like $\SL_n\subset \GL_n$)
-says that $\SL_n$ is smooth, since the linear part $\tr(X)$
+says that $\SL_n$ is smooth, since the linear part $\text{Tr}(X)$
 of this expansion is nonzero.
 \end{example}
 \begin{example}\label{exampleC}[``Example C'']
@@ -247,7 +247,7 @@ Let $V$ be a $k$-vector space of dimension $2n$, and $\langle \cdot , \cdot \ran
 a symplectic [= nondegenerate alternating bilinear] form on $V$.
 For $k$-algebras $R$, define 
 $$G(R)=\{g\in \GL(V)(R)\mid \langle gv,gw\rangle=\langle v,w\rangle \mbox{ for all } v,w\in V\}\subset \GL(V)(R).$$
-By Yoneda this defines a $k$-group scheme $\Sp(\langle \cdot , \cdot \rangle)$, usually denoted $\Sp_{2n}$
+By Yoneda this defines a $k$-group scheme $\text{Sp}(\langle \cdot , \cdot \rangle)$, usually denoted $\text{Sp}_{2n}$
 since all pairs $(V, \langle \cdot, \cdot \rangle)$ with a given dimension $2n$ are isomorphic.
 \end{example} 
 
@@ -255,19 +255,25 @@ since all pairs $(V, \langle \cdot, \cdot \rangle)$ with a given dimension $2n$ 
 \subsection{Translations}
 If $G$ is a group variety over $k$ then for any extension field $k'/k$
 the group $G(k')$ acts by translations on $G_{k'}$ -- that is, \textit{not} on $G$ itself, only after extending scalars to $k'$. Concretely, this comes from defining for $g\in G(k')=G_{k'}(k')$ the left-translation-by-$g$ map
-\[\ell_g:G_{k'}\stackrel{x\mapsto(g,x)}{\to} G_{k'}\times G_{k'}\stackrel{m_{k'}}{\to} G_{k'}.\]
+\[
+\ell_g : G_{k'} \xrightarrow{x\mapsto(g,x)}
+G_{k'}\times G_{k'} \xrightarrow{m_{k'}} G_{k'}.
+\]
 But of course there's no reason this only works for extension \textit{fields}.
 Rather, for any $k$-algebra $R$, we obtain an action of the group $G(R)$ on 
 the $R$-scheme $G_R$ in a similar fashion. There are a few entirely equivalent ways to think about this,
 as we now explain.
 
-First, an $R$-point $g\in G(R)$ is the same as a $k$-map $\Spec R\stackrel{g}{\to} G$, which is the same as an $R$-map $\tilde g: \Spec R\to G_R$.
-Then $\ell_g$ is $G_R\stackrel{(\tilde g,\id_{G_R})}{\to}G_R\times G_R\stackrel{m_R}{\to}G_R$, where the $\tilde g$ in the first factor means
+First, an $R$-point $g\in G(R)$ is the same as a $k$-map $\Spec R \xrightarrow{g} G$, which is the same as an $R$-map $\tilde g: \Spec R\to G_R$.
+Then $\ell_g$ is $G_R \xrightarrow{(\tilde g,\id_{G_R})} G_R\times G_R \xrightarrow{m_R} G_R$, where the $\tilde g$ in the first factor means
 the ``constant map'' at $\tilde g$, i.e. the composition
-$G_R\to \Spec R\stackrel{\tilde g}{\to} G_R$.
+$G_R\to \Spec R \xrightarrow{\tilde g} G_R$.
 
 Equivalently, we can think of this as the $R$-map obtained by base-change
-from the $k$-map $$G_R=\Spec R\dtimes_{\Spec k} G\stackrel{(g,\id_G)}{\to}G\times G\stackrel{m}{\to} G.$$
+from the $k$-map
+$$
+G_R = \Spec R \times_{\Spec k} G \xrightarrow{(g,\id_G)} G\times G \xrightarrow{m} G.
+$$
 
 Equivalently, and perhaps most elegantly, we can think about this functorially (via Yoneda)
 as the $R$-map corresponding to the map of functors on $R$-algebras
@@ -310,17 +316,21 @@ it is sufficient to check on geometric points.
 \begin{definition}
 A (closed) $k$-subgroup $H\subset G$ is called \textit{normal}
 if the conjugation map $(h,g)\mapsto ghg^{-1}:H\times G\to G$
-factors through the closed immersion $H\into G$:
-\[\xymatrix{H\times G\ar[r]\ar@{-->}[rd]_{\exists}&G\\
-&H\xycof[u]}\]
-Since $H\into G$ is a closed immersion, if this factorization exists it is
+factors through the closed immersion $H\to G$:
+\[
+\xymatrix{
+H \times G \ar[r]\ar@{-->}[rd]_{\exists} & G \\
+& H \ar[u]
+}
+\]
+Since $H\to G$ is a closed immersion, if this factorization exists it is
 automatically unique.
 \end{definition}
 Equivalent reformulations of this definition include
-(1) that $H(R)\nsg G(R)$ for all $k$-algebras $R$;
-and (2) in the smooth situation (cf. Remark \ref{checkgeompts} above), that $H(\bar k)\nsg G(\bar k)$.
+(1) that $H(R)\vartriangleleft G(R)$ for all $k$-algebras $R$;
+and (2) in the smooth situation (cf. Remark \ref{checkgeompts} above), that $H(\bar k)\vartriangleleft G(\bar k)$.
 \begin{example}
-$\SL_n\nsg \GL_n$.
+$\SL_n\vartriangleleft \GL_n$.
 \end{example}
 \subsection{Further discussion of examples}
 \begin{example}[$C_n$]\label{exampleCn}
@@ -333,18 +343,18 @@ This forces $\dim V=2n$ to be even,
 and with appropriately chosen coordinates the matrix
 of the bilinear form $B$ is given in $n\times n$ blocks
 by $\left[\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right]$.
-The \textbf{symplectic group} $\Sp_{2n}$ is defined (using coordinates) the functor of points
+The \textbf{symplectic group} $\text{Sp}_{2n}$ is defined (using coordinates) the functor of points
 $g\in {\rm{Mat}}_{2n}$ such that 
 $$g^t\left[\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right]g=\left[\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right].$$
 If we write such $g$ in the block form 
 $g = \left[\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right]$ for $a,b,c,d\in {\rm{Mat}}_n$ then it is the same to impose the conditions:
 $$a^tc=c^ta, \,\, b^td=d^tb, \,\, a^td-c^tb= {\rm{id}}_n.$$
-Since the condition on $g\in \GL_{2n}\subset {\rm{Mat}}_{2n}$ is obviously Zariski-closed, and since the functorial description (as the subfunctor of $\GL_{2n}$ preserving $B$) makes it clear that $\Sp_{2n}$ is a subgroup,
-it is clear that $\Sp_{2n}\subset \GL_{2n}$ is a (closed) $k$-subgroup.
+Since the condition on $g\in \GL_{2n}\subset {\rm{Mat}}_{2n}$ is obviously Zariski-closed, and since the functorial description (as the subfunctor of $\GL_{2n}$ preserving $B$) makes it clear that $\text{Sp}_{2n}$ is a subgroup,
+it is clear that $\text{Sp}_{2n}\subset \GL_{2n}$ is a (closed) $k$-subgroup.
 
 The natural questions about this group are not necessarily easy to answer.
-Is $\Sp_{2n}$ smooth? Yes, but the Jacobian criterion is difficult, or at least prohibitively laborious and inelegant, to verify directly. In \S\ref{spsmooth} an elegant functorial method will be used to address it.
-Is $\Sp_{2n}$ connected? In 
+Is $\text{Sp}_{2n}$ smooth? Yes, but the Jacobian criterion is difficult, or at least prohibitively laborious and inelegant, to verify directly. In \S\ref{spsmooth} an elegant functorial method will be used to address it.
+Is $\text{Sp}_{2n}$ connected? In 
 \S\ref{spconn} we will see that it is. The classical approach to this involved constructing explicit curves (families of symplectomorphisms) connecting an arbitrary group element to the identity, using the theory of so-called ``transvections''.
 \end{example}
 \begin{example}[$B_n$ and $D_n$]\label{exampleBD}
@@ -358,16 +368,16 @@ which means (because ${\rm{char}}(k) \ne 2$)
 that the corresponding bilinear form $B_q$ gives a perfect pairing $V\times V\to k$.
 When we later address a characteristic-free notion of non-degeneracy for quadratic spaces
 that works uniformly even over any ring (including
-$\ZZ/4\ZZ$ and $\ZZ$ in which 2 may be a nonzero nilpotent or a non-unit that is not a zero-divisor),
+$\mathbf{Z}/4\mathbf{Z}$ and $\mathbf{Z}$ in which 2 may be a nonzero nilpotent or a non-unit that is not a zero-divisor),
 the smoothness of the projective quadric $(q=0)$ will be the right perspective for defining non-degeneracy.
 
 The \textbf{orthogonal group} of $q$ is defined to be
 \[O(q)=\{g\in \GL(V)[\simeq \GL_n]:q(gv)=q(v) \mbox{ for all } v\in V\}.\]
 Functorially,
-\[O(q)(R)=\{g\in\Aut_R(V_R):q(gv)=q(v) \mbox{ for all } v\in V_R\}.\]
+\[O(q)(R)=\{g\in\text{Aut}_R(V_R):q(gv)=q(v) \mbox{ for all } v\in V_R\}.\]
 It is easy to see, for example using coordinates, that preserving the quadratic form is a Zariski-closed condition on $g$.
 An equivalent condition (since 2 is a unit in the base ring $k$) is
-\[O(q)(R)=\{g\in\Aut_R(V_R):B_q(gv,gw)=B_q(v,w) \mbox{ for all } v,w\in V_R\}.\]
+\[O(q)(R)=\{g\in\text{Aut}_R(V_R):B_q(gv,gw)=B_q(v,w) \mbox{ for all } v,w\in V_R\}.\]
 Or equivalently
 \[O(q)=\{g\in \GL_n:g^t[B_q]g=[B_q]\},\]
 where $[B_q]$ is your favorite matrix for the quadratic form $B_q$, after
@@ -381,31 +391,30 @@ over the reals indicates, the answer is No.
 What may be more surprising is that $O(q)$ always has exactly two connected components, for any $q$ over any field $k$. 
 (And in fact everything we have said works fine even in characteristic 2, provided one works to define the notion of nondegeneracy appropriately, which is not so obvious in this case.)
 We define the \textbf{special orthogonal group}
-to be $\SO(q)=O(q)^0$. (This is the ``wrong'' definition in characteristic 2 when $n$ is odd,
-as in such cases it turns out that $O(q) = \SO(q) \times \mu_2$ as group schemes,
-with $\SO(q) = O(q)_{\rm{red}}$ a smooth closed subgroup.  In particular, 
+to be $\text{SO}(q)=O(q)^0$. (This is the ``wrong'' definition in characteristic 2 when $n$ is odd,
+as in such cases it turns out that $O(q) = \text{SO}(q) \times \mu_2$ as group schemes,
+with $\text{SO}(q) = O(q)_{\rm{red}}$ a smooth closed subgroup.  In particular, 
 $O(q)$ is {\em connected} in such cases!) 
 
 \begin{remark}
 This affords a good example of the phenomenon alluded to in Remark \ref{foobarrem}.
-Algebraically, $\SO(q)$ is of course connected; but
-the Lie group $\SO(q)(\RR)$ is disconnected whenever the quadratic form $q$ 
-has mixed signature [$\#\pi_0(\SO(q)(\RR))$ in fact depends only on the signature of $q$, since the
+Algebraically, $\text{SO}(q)$ is of course connected; but
+the Lie group $\text{SO}(q)(\mathbf{R})$ is disconnected whenever the quadratic form $q$ 
+has mixed signature [$\#\pi_0(\text{SO}(q)(\mathbf{R}))$ in fact depends only on the signature of $q$, since the
 signature classifies quadratic forms uniquely over the reals].
-Hence, Lie-algebra methods {\em can} be used to answer {\em algebraic} questions about $\SO(q)$
- which would have seemed to give information only about $\SO(q)(\RR)^0$
+Hence, Lie-algebra methods {\em can} be used to answer {\em algebraic} questions about $\text{SO}(q)$
+ which would have seemed to give information only about $\text{SO}(q)(\mathbf{R})^0$
 in the classical Lie group setting.
 \end{remark}
 \begin{remark}
-The behavior of $\SO_n$ turns out to be qualitatively different
+The behavior of $\text{SO}_n$ turns out to be qualitatively different
 depending on the parity of $n$, as we shall see.
-In the $ABCDEFG$ classification, the examples $\SO_{2n+1}$ and $\SO_{2n}$
+In the $ABCDEFG$ classification, the examples $\text{SO}_{2n+1}$ and $\text{SO}_{2n}$
 correspond to $B_n$ and $D_n$ respectively (with $n \ge 2$, say). 
 \end{remark}
 \end{example}
 
-\subsection{How far is a general smooth connected 
-algebraic group from being either affine (i.e. linear algebraic) or projective (i.e. an abelian  variety)?}
+\subsection{How far is a general smooth connected algebraic group from being either affine (i.e. linear algebraic) or projective (i.e. an abelian  variety)?}
 
 Although we'll never need it in this course,
 for cultural awareness we wish to mention two important theorems towards answering the question in the heading of this section.
@@ -415,11 +424,11 @@ where $H$ is linear algebraic and $A$ is an abelian variety.
 \end{theorem}
 
 Define, for a smooth connected $k$-group $G$ of finite type,
-the affinization to be $G^{\rm{aff}}=\Spec\cO(G)$,
+the affinization to be $G^{\rm{aff}}=\Spec\mathcal{O}(G)$,
 
 \begin{theorem}[Anti-Chevalley]
 For a smooth connected $k$-group $G$ of finite type,
-$G^{\rm{aff}}=\Spec\cO(G)$ is smooth (in particular, finite type!) and admits a unique $k$-group structure such that
+$G^{\rm{aff}}=\Spec\mathcal{O}(G)$ is smooth (in particular, finite type!) and admits a unique $k$-group structure such that
 the natural map $G \rightarrow G^{\rm{aff}}$ is a surjective homomorphism. Moreover, there is an exact sequence
 \[1\to Z\to G\to G^{\rm{aff}}\to 1\]
 where $Z$ is smooth, connected, and central in $G$.
@@ -438,13 +447,13 @@ degree-2 cohomology is most convenient with commutative coefficients).
 
 \section{January 8}
 
-Here's an important example of a linear algebraic group: $\mathbf{G}_a=\AA^1$,
+Here's an important example of a linear algebraic group: $\mathbf{G}_a=\mathbf{A}^1$,
 the additive group scheme, where ``multiplication''
 is ordinary addition. It represents the forgetful functor from rings
 (or $k$-algebras, if we are working over a field) to abelian groups.
 
 An important note is that $\mathbf{G}_a\not\simeq \mathbf{G}_m$ as $k$-schemes, let alone $k$-groups. This is in contrast to the fact that in the classical topology,
-$(\RR^\times)^0\simeq \RR$ 
+$(\mathbf{R}^\times)^0\simeq \mathbf{R}$ 
 as Lie groups, via logarithm and exponential; that isomorphism is actually more of a nuisance than useful in
  Lie theory.
 
@@ -465,9 +474,9 @@ group or of the \'etale fundamental group of a connected noetherian scheme.)
 Inside the group variety $\GL_n$ there is a group of rational points
 $\GL_n(k)$; inside \textit{this} lies the image $\rho(\Gamma)$ of
 our representation.
-Let $\cG\subset\GL_n$ be the Zariski-closure of $\rho(\Gamma)$;
+Let $\mathcal{G}\subset\GL_n$ be the Zariski-closure of $\rho(\Gamma)$;
 it is some closed $k$-subscheme of $\GL_n$.
-It turns out that $\cG$ is a smooth closed $k$-subgroup of $\GL_n$, as we will discuss below. 
+It turns out that $\mathcal{G}$ is a smooth closed $k$-subgroup of $\GL_n$, as we will discuss below. 
 \end{example}
 
 \subsection{Zariski closures of subgroups}
@@ -481,12 +490,12 @@ and for any field extension $k'/k$,
 in fact the closed subscheme $(Z_\Sigma)_{k'}\subset G_{k'}$ is the Zariski closure
 of $\Sigma\subset G(k')= G_{k'}(k')\subset G_{k'}$.
 \end{theorem}
-\begin{remark} Returning to Example \ref{repns}, $\cG$ contains $\rho(\Gamma)$
-as a Zariski-dense subset, so in fact $\cG$ is ``controlled'' by $\Gamma$.
+\begin{remark} Returning to Example \ref{repns}, $\mathcal{G}$ contains $\rho(\Gamma)$
+as a Zariski-dense subset, so in fact $\mathcal{G}$ is ``controlled'' by $\Gamma$.
 For example, this will imply that the irreducibility or
 complete reducibility of the representation $\rho$
-can be studied in the algebraic category by looking at the group variety $\cG$.
-Note that $\cG$ might be highly disconnected, but at least the (geometric) 
+can be studied in the algebraic category by looking at the group variety $\mathcal{G}$.
+Note that $\mathcal{G}$ might be highly disconnected, but at least the (geometric) 
 component group will be finite. So representation theory questions over infinite fields can, in principle, 
 be reduced to questions about connected algebraic groups
 and finite (\'etale) component groups, which might be more tractable. 
@@ -508,7 +517,7 @@ Choose a point $g\in G(k)$ and $u\in U(k)$ [there are plenty of points, because
 $k$ is algebraically closed]. Look at the translation
 map $\ell_{gu^{-1}}:G\to G$, which is an isomorphism
 sending $u\mapsto g$.
-Hence $\hat\cO_{\rm{u}}\simeq \hat\cO_g$;
+Hence $\mathcal{O}^\wedge_{\rm{u}}\simeq \mathcal{O}^\wedge_g$;
 the left side is a power series ring, since $U$ is smooth, so
 the right side is one too.
 This was one of our criteria for showing that $G$ is smooth at $g$.
@@ -558,9 +567,9 @@ The proof will be in a different order than the formulation of the result.
 \item[(iv)] Consider a map $f:X_1\to X_2$ such that on $k$-points,
 $f$ sends $\Sigma_1\subset X_1(k)$
 to $\Sigma_2\subset X_2(k)$.
-We would like to show that $Z_{\Sigma_1}\into X_1\to X_2$
-factors through $Z_{\Sigma_2}\into X_2$.
-Form the fiber product $f^{-1}(Z_{\Sigma_2})=X_1\dtimes_{X_2} Z_{\Sigma_2}$;
+We would like to show that $Z_{\Sigma_1}\to X_1\to X_2$
+factors through $Z_{\Sigma_2}\to X_2$.
+Form the fiber product $f^{-1}(Z_{\Sigma_2})=X_1\times_{X_2} Z_{\Sigma_2}$;
 it is a closed subscheme of $X_1$, and by hypothesis it contains $\Sigma_1$.
 Hence the scheme-theoretic closure
 $Z_{\Sigma_1}$ must be contained in this preimage, which is equivalent to what we wanted.
@@ -571,12 +580,12 @@ Denote the kernel of $\sigma$ by $I_\sigma$, which is a maximal -- and in partic
 The subscheme $Z_\Sigma$ corresponds to the ideal $\bigcap_{\sigma\in\Sigma}I_\sigma$, the smallest ideal of $A$ whose zero locus contains $\Sigma$. This is an intersection of radical ideals, so it is radical. Hence $Z_\Sigma$ is reduced.
 
 Geometric reducedness (i.e., assertion (i)) will follow immediately one we know compatibility with base change
-(i.e., assertion (ii)). For this, note that in $A_{k'}=A\dotimes_k k'$,
-the ideal $I'_\sigma$ of the point $\sigma$ viewed as a point of $X_{k'}=\Spec A_{k'}$ is simply $I_\sigma\dotimes_k k'$. This is because $I'_\sigma=\ker(\sigma_{k'}:A_{k'}\to k') = I_\sigma\dotimes_k k'$ 
+(i.e., assertion (ii)). For this, note that in $A_{k'}=A\otimes_k k'$,
+the ideal $I'_\sigma$ of the point $\sigma$ viewed as a point of $X_{k'}=\Spec A_{k'}$ is simply $I_\sigma\otimes_k k'$. This is because $I'_\sigma=\ker(\sigma_{k'}:A_{k'}\to k') = I_\sigma\otimes_k k'$ 
 (the latter equality because change of field is a flat base extension).
 So we are reduced to a problem in linear algebra: let $V$ be a $k$-vector space (e.g., $A$)
 and $\{V_i\}$ a collection of $k$-subspaces of $V$ (e.g. $\{I_\sigma:\sigma\in \Sigma\}$);
-then we want $(\bigcap V_i)\dotimes_k k'=\bigcap(V_i\dotimes k')$ inside $V\dotimes_k k'$. 
+then we want $(\bigcap V_i)\otimes_k k'=\bigcap(V_i\otimes k')$ inside $V\otimes_k k'$. 
 To see why this equality holds, forget the multiplicative structure of $k'$
 and instead consider any $k$-vector space $W$ in place of $k'$.  We claim that 
 $(\bigcap V_i)\otimes W = \bigcap(V_i\otimes W)$ inside $V \otimes W$. Any element of $V \otimes W$ lies in
@@ -623,9 +632,20 @@ original claim follows.
 \end{definition}
 Recall that a torus is a $k$-group such that $T_{\bar k}$ is $\bar k$-split.
 (Definition \ref{torus}.)
-\begin{example}\label{standardSO2}The special orthogonal
-group $\SO(x^2+y^2)=\{\(\begin{smallmatrix}a&b\\-b&a\end{smallmatrix}\)\mid a^2+b^2=1\}$ is an $\RR$-torus under the isomorphism
-$\SO(x^2+y^2)_\CC\to \mathbf{G}_m$ given by $\(\begin{smallmatrix}a&b\\-b&a\end{smallmatrix}\)\mapsto a+ib$. But it is not $\RR$-split (cf. Example \ref{circlegroup}).
+\begin{example}
+\label{standardSO2}
+The special orthogonal group
+$$
+\text{SO}(x^2+y^2)=
+\{\left(
+\begin{smallmatrix}
+a & b \\
+-b & a
+\end{smallmatrix}
+\right) \mid a^2 + b^2 = 1\}
+$$
+is an $\mathbf{R}$-torus under the isomorphism
+$\text{SO}(x^2+y^2)_\mathbf{C}\to \mathbf{G}_m$ given by $\(\begin{smallmatrix}a&b\\-b&a\end{smallmatrix}\)\mapsto a+ib$. But it is not $\mathbf{R}$-split (cf. Example \ref{circlegroup}).
 \end{example}
 \begin{definition}The \textit{character group} $X(T)$ or $X^*(T)$ of a $k$-split torus
 $T$ is $\Hom_k(T,\mathbf{G}_m)$.
@@ -633,27 +653,27 @@ The \textit{cocharacter group} $X_*(T)$ is $\Hom_k(\mathbf{G}_m,T)$.
 \end{definition}
 (If $T$ is not $k$-split then the ``right'' notions are not the group homomorphisms over $k$, but
 rather over $\bar k$, or as we shall see, over $k_s$.) 
-Since (by Homework 1) $\End_k(\mathbf{G}_m)=\ZZ$ under
+Since (by Homework 1) $\End_k(\mathbf{G}_m)=\mathbf{Z}$ under
 the identification $(t\mapsto t^n)\leftrightarrow n$, we get several facts,
 assuming $T$ is $k$-split:
 \begin{enumerate}
-\item[1. ]The groups of characters and cocharacters $X^*(T)$ and $X_*(T)$ are both finite free $\ZZ$-modules, isomorphic to $\ZZ^r$ if $T\simeq \mathbf{G}_m^r$.
-\item[2. ]We have a perfect pairing $X_*(T)\times X^*(T)\to\Hom_k(\mathbf{G}_m,\mathbf{G}_m)=\ZZ$
+\item[1. ]The groups of characters and cocharacters $X^*(T)$ and $X_*(T)$ are both finite free $\mathbf{Z}$-modules, isomorphic to $\mathbf{Z}^r$ if $T\simeq \mathbf{G}_m^r$.
+\item[2. ]We have a perfect pairing $X_*(T)\times X^*(T)\to\Hom_k(\mathbf{G}_m,\mathbf{G}_m)=\mathbf{Z}$
 via composition. Explicitly, if $T=\mathbf{G}_m^r$ we identify
-$X^*(T)$ with $\ZZ^r$ via $(n_1,\ldots, n_r)\mapsto [(t_1,\ldots, t_r)\mapsto \prod t_i^{n_i}]$,
-and $X_*(T)$ with $\ZZ^r$ via $(m_1,\ldots, m_r)\mapsto [t\mapsto(t^{m_1},\ldots, t^{m_r})]$.
+$X^*(T)$ with $\mathbf{Z}^r$ via $(n_1,\ldots, n_r)\mapsto [(t_1,\ldots, t_r)\mapsto \prod t_i^{n_i}]$,
+and $X_*(T)$ with $\mathbf{Z}^r$ via $(m_1,\ldots, m_r)\mapsto [t\mapsto(t^{m_1},\ldots, t^{m_r})]$.
 Under these identifications, the pairing is defined by
-\[\langle(m_1,\ldots,m_r),(n_1,\ldots, n_r)\rangle=[t\mapsto t^{\sum m_i n_i}]\leftrightarrow \sum m_in_i\in \ZZ\simeq \End_k(\mathbf{G}_m).\]
+\[\langle(m_1,\ldots,m_r),(n_1,\ldots, n_r)\rangle=[t\mapsto t^{\sum m_i n_i}]\leftrightarrow \sum m_in_i\in \mathbf{Z}\simeq \End_k(\mathbf{G}_m).\]
 \end{enumerate}
 \begin{remark}In the non-split case we have a functor $T\mapsto X^*(T_{k_s})$
-from algebraic $k$-tori to finite free $\ZZ$-modules equipped 
+from algebraic $k$-tori to finite free $\mathbf{Z}$-modules equipped 
 with a discrete action by ${\rm{Gal}}(k_s/k)$  (where $\gamma \in {\rm{Gal}}(k_s/k)$ acts
 via scalar extension throughout by $\gamma: k_s \simeq k_s$).  The theorem 
 will be that this is an equivalence of categories.\end{remark}
 \begin{example}
-Returning to Example \ref{standardSO2}, i.e. $\SO(x^2+y^2)$ over $k=\RR$,
-the corresponding abelian group is just $\ZZ$ with the unique nontrivial action of
-${\rm{Gal}}(\CC/\RR)=\ZZ/(2)$.
+Returning to Example \ref{standardSO2}, i.e. $\text{SO}(x^2+y^2)$ over $k=\mathbf{R}$,
+the corresponding abelian group is just $\mathbf{Z}$ with the unique nontrivial action of
+${\rm{Gal}}(\mathbf{C}/\mathbf{R})=\mathbf{Z}/(2)$.
 \end{example}
 \begin{remark} Once the right definitions of character and cocharacter groups are given for a general
 $k$-torus $T$, it will be the case that all elements of these groups are 
@@ -670,14 +690,14 @@ are $G(k)$-conjugate.
 \end{theorem}
 \begin{remark}
 \begin{itemize}\item[(1)]It might well be the case that any $k$-split torus $T\subset G$
-is trivial; for example, this is true for $G=\SO(x^2+y^2+z^2)$ over $\RR$.
+is trivial; for example, this is true for $G=\text{SO}(x^2+y^2+z^2)$ over $\mathbf{R}$.
 \item[(2)]The theorem is false if ``maximal $k$-tori'' were to replace ``maximal $k$-split tori''.
 And note that it is trivial (by dimension reasons) that maximal $k$-split tori always
 exist; in contrast, there may be no $k$-split maximal $k$-tori (once again,
-$\SO(x^2+y^2+z^2)$ over $\RR$). 
+$\text{SO}(x^2+y^2+z^2)$ over $\mathbf{R}$). 
 \end{itemize}\end{remark}
-\begin{example} Over $k=\RR$, both $\SO(x^2+y^2)$ and the standard diagonal torus $\{\(\begin{smallmatrix}t&0\\0&t^{-1}\end{smallmatrix}\)\}$ are maximal $\RR$-tori
-inside $\SL_2$. But they're not $\SL_2(\RR)$-conjugate, or even $\RR$-isomorphic.
+\begin{example} Over $k=\mathbf{R}$, both $\text{SO}(x^2+y^2)$ and the standard diagonal torus $\{\(\begin{smallmatrix}t&0\\0&t^{-1}\end{smallmatrix}\)\}$ are maximal $\mathbf{R}$-tori
+inside $\SL_2$. But they're not $\SL_2(\mathbf{R})$-conjugate, or even $\mathbf{R}$-isomorphic.
 \end{example}
 \begin{example}Let $G=\GL_n$ over a field $k$.
 Then any separable extension $E/k$ of degree $n$
@@ -715,16 +735,16 @@ smooth commutative $k$-subgroup. Note that this is ``as far as possible from bei
 For present purposes with this example, just think in terms of matrices.)
 \end{remark}
 
-\begin{example}Let $G=\Sp_{2n}$. Let $U$ be an $n$-dimensional $k$-vector space,
+\begin{example}Let $G=\text{Sp}_{2n}$. Let $U$ be an $n$-dimensional $k$-vector space,
 and $U^*$ its dual. Denote the pairing $U\times U^*\to k$ by $[\cdot , \cdot ]$.
 Define $W=U\oplus U^*$. It has a standard symplectic form $\omega$ defined by
 \[\omega((x,x^*),(y,y^*))=[x,y^*]-[y,x^*].\]
-Thus we can realize $G$ as $\Aut(W,\omega)=\Sp(W)$.
-There's a map $\phi:\GL(U)\to \Sp(W)$ given by $g\mapsto g\oplus (g^t)^{-1}$.
+Thus we can realize $G$ as $\text{Aut}(W,\omega)=\text{Sp}(W)$.
+There's a map $\phi:\GL(U)\to \text{Sp}(W)$ given by $g\mapsto g\oplus (g^t)^{-1}$.
 This is easily seen to be a closed immersion.
 The claim about maximal tori in $G$ is that for $T'\subset \GL(U)$
-a maximal $k$-split torus, the image $\phi(T')\subset\Sp(W)$ is maximal $k$-split, and any such is 
-$G(k)$-conjugate to $\phi(T)$, where $T$ is the standard maximal $k$-split torus in $\GL(U)$. In particular, the dimension of the maximal $k$-split tori in $G=\Sp_{2n}$ is $n$.
+a maximal $k$-split torus, the image $\phi(T')\subset\text{Sp}(W)$ is maximal $k$-split, and any such is 
+$G(k)$-conjugate to $\phi(T)$, where $T$ is the standard maximal $k$-split torus in $\GL(U)$. In particular, the dimension of the maximal $k$-split tori in $G=\text{Sp}_{2n}$ is $n$.
 
 The proof of maximality is as before: show that $Z_{G(R)}(\phi(T)_R)=\phi(T)(R)$. The proof that all maximal $k$-split tori are 
 $G(k)$-conjugate to $\phi(T)$ can in fact be reduced to the corresponding claim for $\GL(U)$.
@@ -763,10 +783,10 @@ For $t=\diag(t_1,\ldots, t_n)\in T$, one computes $t\cdot u_{ij}(x)\cdot t^{-1}=
 so the roots of $T\subset G$
 are of the form $\chi_{ij}:t\mapsto t_it_j^{-1}$ for $1 \le i\neq j \le n$. 
 \end{example}
-\begin{example}Let $G=\Sp_{2n}=\Sp(W)$,
+\begin{example}Let $G=\text{Sp}_{2n}=\text{Sp}(W)$,
 let $T$ be the standard diagonal split torus in $\GL(U)$,
 which we identify with its image in $G$ via the map $\phi$.
-The roots of $T\subset \GL(U)\into G$
+The roots of $T\subset \GL(U)\to G$
 are \[\diag(t_1,\ldots, t_n)\mapsto\begin{cases}t_it_j^{-1}&i\neq j, 1\leq i,j\leq n,\text{ or }\\
 t_it_j&\text{ and }1\leq i,j\leq n\text{ (including $i=j$)}.\end{cases}\]
 Thus they are $\chi_{ij}$ for $i\neq j$ as above,
@@ -782,14 +802,14 @@ We will make this more concrete at the beginning of the next lecture.
 \section{January 13}
 \subsection{Mapping additive and multiplicative groups into a reductive group}
 As a  consequence of the theory of maximal tori, roots and coroots, there is an abundance of $\mathbf{G}_a$'s and 
-$\mathbf{G}_m$'s sitting inside a so-called ``split connected reductive'' group such as $\SL_n$ or $\Sp_{2n}$.
+$\mathbf{G}_m$'s sitting inside a so-called ``split connected reductive'' group such as $\SL_n$ or $\text{Sp}_{2n}$.
 To illustrate the principles involves, if we consider the standard upper and lower triangular
 unipotent 1-parameter subgroups in $\SL_2$ then we get a map
 \begin{eqnarray*}\mathbf{G}_a\times\mathbf{G}_m\times \mathbf{G}_a&\to&\SL_2\\
 (u,t,u')&\mapsto&\(\begin{smallmatrix}1&u\\0&1\end{smallmatrix}\)\(\begin{smallmatrix}t&0\\0&t^{-1}\end{smallmatrix}\)\(\begin{smallmatrix}1&0\\u'&1\end{smallmatrix}\)\end{eqnarray*}
 This is easily check to be an open immersion.
 More generally, we'll have an open immersion of the form
-\[(\prod_i\mathbf{G}_a)\times(\prod_j \mathbf{G}_m)\times(\prod_k \mathbf{G}_a)\to G=\SL_n,\Sp_{2n},\ldots.\]
+\[(\prod_i\mathbf{G}_a)\times(\prod_j \mathbf{G}_m)\times(\prod_k \mathbf{G}_a)\to G=\SL_n,\text{Sp}_{2n},\ldots.\]
 The torus $T$ in the middle is maximal in $G$;
 the $\mathbf{G}_a$'s are normalized by $T$; and the maps are determined by the corresponding ``root data''.
 
@@ -857,24 +877,24 @@ perfect/additive case from the proof of Theorem \ref{1dconnlinalg} and
 \begin{example}[Non-split multiplicative group]Let $k$ be a field, and $k'/k$ a quadratic Galois extension
 splitting an irreducible separable polynomial $f(t) = t^2 + at + b$. (If ${\rm{char}}(k) \ne 2$
 we can assume $a = 0$, but why would one want to do that?) 
-Consider the curve $G\subset \AA^2_k$ defined by $x^2 + axy + by^2 = 1$. 
+Consider the curve $G\subset \mathbf{A}^2_k$ defined by $x^2 + axy + by^2 = 1$. 
 Secretly this is the norm-1 subgroup of the Weil restriction
 ${\rm{R}}_{k'/k}\mathbf{G}_m$, which is ``$k'^\times$ regarded as a $k$-group'' (although
 that's a sloppy, imprecise way of defining the group).
 This has a natural $k$-group structure, defined in analogy
-to $\SS^1$ over $\RR$; cf. Example \ref{circlegroup}.
+to $\SS^1$ over $\mathbf{R}$; cf. Example \ref{circlegroup}.
 
 We have $G_{k'} \simeq \mathbf{G}_m$.
 But $G$ is not $k$-isomorphic to $\mathbf{G}_m$ even as mere $k$-schemes.
 One way to see this is that the unique regular compactification
-$\{x^2+axy + by^2=z^2\}\subset\PP^2_k$ has only 1 point complementary to $G$ and its residue field is 
-$k'$, while the unique regular compactification $\PP^1_k$ 
+$\{x^2+axy + by^2=z^2\}\subset\mathbf{P}^2_k$ has only 1 point complementary to $G$ and its residue field is 
+$k'$, while the unique regular compactification $\mathbf{P}^1_k$ 
 of $\mathbf{G}_m$ has two points complementary to $\mathbf{G}_m$ and they are both $k$-rational.
 \end{example}
 \begin{example}[Non-split additive group]
 Let $k$ be an imperfect field of characteristic $p>0$
 and choose $a\in k-k^p$.
-Let $G\subset\AA^2$ be the curve
+Let $G\subset\mathbf{A}^2$ be the curve
 defined by $y^p=x+ax^p$.
 This equation is easily seen to be additive,
 so $G$ is a subgroup.
@@ -883,12 +903,12 @@ the curve $G_{k'}$ is the same as $x=(y-\alpha x)^p$,
 on which the coordinate $y-\alpha x$ gives
 a $k'$-group isomorphism $G_{k'}\simeq \mathbf{G}_a$.
 Over $k$ itself, the compactification of $G$
-in $\PP^2$ is $y^p=xz^{p-1}+ax^p$.
+in $\mathbf{P}^2$ is $y^p=xz^{p-1}+ax^p$.
 This is actually regular, as we'll see in a moment. At infinity,
 $y^p=ax^p$ is the only point, with residue field $k'$.
 Since this is not $k$-rational, as long as we know it is regular then 
 we know that $G\not\simeq \mathbf{G}_a$ as $k$-schemes, since the unique point complementary
-to $\mathbf{G}_a$ in its regular compactification $\PP^1_k$ is $k$-rational.
+to $\mathbf{G}_a$ in its regular compactification $\mathbf{P}^1_k$ is $k$-rational.
 
 To see the asserted regularity, note that when $x=1$ the equation $y^p=xz^{p-1}+ax^p$
 becomes $y^p=a+z^{p-1}$. This actually defines a Dedekind ring (exercise), which proves regularity.
@@ -896,9 +916,9 @@ becomes $y^p=a+z^{p-1}$. This actually defines a Dedekind ring (exercise), which
 \subsection{Start of proof of the classification theorem}
 Given a connected 1-dimensional linear algebraic $k$-group $G$
 (recall that $k=\bar k$), choose an open immersion
-$G\into X$ where $X$ is a smooth projective curve over $k$.
+$G\to X$ where $X$ is a smooth projective curve over $k$.
 Then $X-G$ is a finite nonempty set of $k$-points.
-We claim that $X\simeq \PP^1_k$.
+We claim that $X\simeq \mathbf{P}^1_k$.
 
 \begin{proof}[Proof of claim]
 Since $k=\bar k$, it suffices to prove that the genus $g$ of $X$ vanishes. 
@@ -932,38 +952,38 @@ Then $(X,O)$ is an elliptic curve $E$.
 But then $E$ has an infinite group of automorphisms,
 which contradicts the theory of elliptic curves \cite[Thm.\,III.10.1]{SilvermanEllipticCurves}. 
 \end{proof}
-So we know $X=\PP^1$.
-We have an infinite group $\Gamma$ acting on $\PP^1$ fixing
-a finite set of points $\PP^1-G$.
-If an automorphism of $\PP^1$ fixes 3 points, it is trivial.
-Thus $\PP^1-G$ consists of either 1 or 2 points.
+So we know $X=\mathbf{P}^1$.
+We have an infinite group $\Gamma$ acting on $\mathbf{P}^1$ fixing
+a finite set of points $\mathbf{P}^1-G$.
+If an automorphism of $\mathbf{P}^1$ fixes 3 points, it is trivial.
+Thus $\mathbf{P}^1-G$ consists of either 1 or 2 points.
 Therefore we obtain, after a change of coordinates, an isomorphism
 of pointed curves
-$(G,e)\simeq (\AA^1,0)$ or $(\mathbf{G}_m,1)$.
+$(G,e)\simeq (\mathbf{A}^1,0)$ or $(\mathbf{G}_m,1)$.
 
 Now we are almost done. It suffices to check that $\mathbf{G}_a$ and $\mathbf{G}_m$ each admit a unique group structure.
 
 \section{January 20 (Substitute lecture by A.\,Venkatesh)}
 \subsection{End of proof of classification of 1-dimensional connected linear algebraic groups}
 To finish the proof of Theorem \ref{1dconnlinalg}, we just need to show the following.
-\begin{theorem}The only $k$-group structures on $\AA^1$ and $\mathbf{G}_m$ 
+\begin{theorem}The only $k$-group structures on $\mathbf{A}^1$ and $\mathbf{G}_m$ 
 are the usual ones, up to a curve automorphism moving the identity point.
 In particular, for the usual identity point the group structure is uniquely determined.
 \end{theorem}
 \begin{proof}
 We can assume $k=\bar k$.
 
-First let's do the case of $\AA^1$. Since $\Aut(\AA^1)$ acts transitively on
-$\AA^1(k)$, we can assume that the identity is $0\in \AA^1(k)$.
-Say we have a group law on $\AA^1$.
-For $x\in \AA^1(k)$, translation by $x$ is a $k$-automorphism $t_x$ of
-$\AA^1$. If $x\neq 0$, there are no fixed $k$-points (this is a fact about groups). Now we know what $\Aut(\AA^1)$ is: it consists of affine transformations
+First let's do the case of $\mathbf{A}^1$. Since $\text{Aut}(\mathbf{A}^1)$ acts transitively on
+$\mathbf{A}^1(k)$, we can assume that the identity is $0\in \mathbf{A}^1(k)$.
+Say we have a group law on $\mathbf{A}^1$.
+For $x\in \mathbf{A}^1(k)$, translation by $x$ is a $k$-automorphism $t_x$ of
+$\mathbf{A}^1$. If $x\neq 0$, there are no fixed $k$-points (this is a fact about groups). Now we know what $\text{Aut}(\mathbf{A}^1)$ is: it consists of affine transformations
 $y\mapsto ay+b$. To be fixed-point free on $k$-points, it must be of the form
 $y\mapsto y+c$. Since it takes $0$ to $x$, $c=x$. So the group is the usual $\mathbf{G}_a$.
 
 The argument for $\mathbf{G}_m$ is much the same.
 In this case, automorphisms of $\mathbf{G}_m$ extend to automorphisms
-of $\PP^1$ which either fix or swap zero and infinity. That is, they
+of $\mathbf{P}^1$ which either fix or swap zero and infinity. That is, they
 are of the form $y\mapsto y\alpha$ or $y\mapsto \alpha/y$.
 Since $k=\bar k$, $\sqrt\alpha\in k$, so $y\mapsto \alpha/y$ has fixed points.
 Hence $t_x$ is $y\mapsto y\alpha$ for some $\alpha$,
@@ -977,13 +997,13 @@ smooth connected linear algebraic groups, they all become isomorphic to $\mathbf
 We say that they are \textbf{forms} of $\mathbf{G}_m$ or $\mathbf{G}_a$.
 \begin{example}If $q$ is a non-degenerate quadratic form on a 2-dimensional vector space $V$ over a field $k$
 (say with ${\rm{char}}(k) \ne 2$ for now, since we haven't defined non-degeneracy
-more generally yet), then $\SO(q)$ is a form of $\mathbf{G}_m$. (This is also valid
+more generally yet), then $\text{SO}(q)$ is a form of $\mathbf{G}_m$. (This is also valid
 in characteristic 2 for the right notion of ``non-degenerate''.)
 \end{example}
 \begin{example}$\mathbf{G}_a$ can actually have forms $U$ over an imperfect field $k$
 which have no nontrivial $k$-points; i.e. $U(k)=\{0\}$.
 For an example, let $k=k_0(t)$ for $k_0$ a field of characteristic $p$.
-Let $q=p^r>2$. Then $U\subset \AA^2$ defined by $y^q=x-tx^p$ is such a form.
+Let $q=p^r>2$. Then $U\subset \mathbf{A}^2$ defined by $y^q=x-tx^p$ is such a form.
 \end{example}
 
 \subsection{Smoothness criteria}
@@ -994,14 +1014,14 @@ with maximal ideal $\m_A$ and residue field $A/\m_A=k$. Then the following are e
 \item[(i)]$A$ is regular; i.e. $\dim_k \m_A/\m_A^2=\dim A$.
 \item[(ii)]$A\simeq k[\![x_1,\ldots, x_d]\!]$ for some $d$.
 \item[(iii)]$A$ satisfies Grothendieck's ``infinitesimal criterion for smoothness'': for an Artin local $k$-algebra $R$
-and an ideal $J\nsg R$ satisfying $J^2=0$,
+and an ideal $J\vartriangleleft R$ satisfying $J^2=0$,
 any $k$-homomorphism $A\to R/J$ lifts to a $k$-map $A\to R$.
 \end{itemize}
 \end{theorem}
 Before giving the proof, let's see a non-example.
 \begin{example}
-Let $X=\Spec k[x,y]/xy$ be the axes in $\AA^2$.
-Let $A=\hat\cO_{X,0}$ be the completed local ring at the origin.
+Let $X=\Spec k[x,y]/xy$ be the axes in $\mathbf{A}^2$.
+Let $A=\hat\mathcal{O}_{X,0}$ be the completed local ring at the origin.
 Let $R=k[\epsilon]/(\epsilon^3)$
 and $R/J=k[\epsilon]/(\epsilon^2)$.
 Then $x\mapsto \epsilon, y\mapsto \epsilon: A\to R/J$
@@ -1049,10 +1069,10 @@ Choose a $k$-basis $\bar x_1,\ldots, \bar x_d$ for $\m_A/\m_A^2$.
 Lift $\bar x_i$ to $x_i\in \m_A$.
 We get a map $\phi:R=k[\![t_1,\ldots, t_d]\!]\to A$
 as before.
-By construction $\phi$ induces an isomorphism $\bar\phi:R/\m_R^2\stackrel{\sim}{\to}A/\m_A^2$. 
-So we have a map $\theta^{(2)}:A\to A/\m_A^2\stackrel{\bar\phi^{-1}}{\to}R/\m_R^2$.
+By construction $\phi$ induces an isomorphism $\bar\phi:R/\m_R^2 \xrightarrow{\sim} A/\m_A^2$. 
+So we have a map $\theta^{(2)}:A\to A/\m_A^2 \xrightarrow{\bar\phi^{-1}} R/\m_R^2$.
 Apply the lifting property
-for $J=\m_R^2/\m_R^3\nsg R/\m_R^3$.
+for $J=\m_R^2/\m_R^3\vartriangleleft R/\m_R^3$.
 So we can lift $\theta^{(2)}$ to $\theta^{(3)}:A\to R/\m_R^3$.
 We can then continue in this manner getting $\theta^{(i)}:A\to R/\m_R^i$
 for all $i$.
@@ -1060,7 +1080,7 @@ By completeness of $R$, there is thus a map $\theta:A\to R$.
 The claim is that $\theta$ is an isomorphism.
 
 For surjectivity, argue by successive approximation as in (i)$\Rightarrow$(ii).
-This works because $\theta$ induces the isomorphism $\theta_2=\bar\phi^{-1}:A/\m_A^2\stackrel{\sim}{\to}R/\m_R^2$, which lets the inductive proof get started.
+This works because $\theta$ induces the isomorphism $\theta_2=\bar\phi^{-1}:A/\m_A^2 \xrightarrow{\sim} R/\m_R^2$, which lets the inductive proof get started.
 
 For injectivity, one could argue by dimension as in (i)$\Rightarrow$(ii), but
 here is a rephrasing of the same idea.
@@ -1098,13 +1118,13 @@ As an example of the usefulness of the infinitesimal criterion, we will rederive
  for an affine hypersurface.
 Choose a nonzero $f\in k[x_1,\ldots, x_n]$ and suppose $f(0,\ldots,0)=0$.
 Note that $X=V(f)$ is smooth at $0$
-if and only if $\hat \cO_{X,0}$ is regular.
+if and only if $\hat \mathcal{O}_{X,0}$ is regular.
 
 \Claim A sufficient condition for such regularity to hold
 is that $(\partial x_1 f,\ldots, \partial x_nf)(0)\neq \vec 0$.
 
 We will show this by verifying the infinitesimal criterion.
-A map $\hat\cO_{X,0}\to R/J$,
+A map $\hat\mathcal{O}_{X,0}\to R/J$,
 or the corresponding map $\phi:A=k[x_1,\ldots, x_n]/(f)\to R/J$,
 is specified by choosing $t_i=\phi(x_i)\in \m_R+J$
 satisfying $f(t_1,\ldots, t_n)=0\mod J$.
@@ -1134,7 +1154,7 @@ such that $X'_{\bar k}\simeq X_{\bar k}$.
 Equivalently (but not tautologically so),
 the condition is $X'_K\simeq X_K$ for some
 algebraically closed extension field $K/k$
-(so we can consider $\CC/\QQ$ for example).
+(so we can consider $\mathbf{C}/\mathbf{Q}$ for example).
 Equivalently (but not tautologically so), the condition is that
 $X'_K\simeq X_K$ for some finite extension $K/k$.
 \end{definition}
@@ -1165,32 +1185,32 @@ Here is a lemma to clear this up.
 \begin{lemma}\label{smoothnesslem}
 Let $A$ be a local Noetherian $k$-algebra with residue field $k$.
 Let $k'/k$ be a field extension.
-Let $\m'=\ker(A\dotimes_k k'\onto k')$.
+Let $\m'=\ker(A\otimes_k k'\onto k')$.
 Assume $A'=(A_{k'})_{\m'}$ is Noetherian.
 Then $A$ is regular if and only if $A'$ is regular.
 \end{lemma}
 \begin{example}
 A ring which does \textit{not} satisfy the hypotheses
 of Lemma \ref{smoothnesslem} is
-$A = \QQ[\![x]\!]$ and $k' = \CC$; i.e., 
-$\QQ[\![x]\!]\dotimes_\QQ \CC$ has non-noetherian local ring at the ``origin''. 
-This localization injects into $\CC[\![x]\!]$,
+$A = \mathbf{Q}[\![x]\!]$ and $k' = \mathbf{C}$; i.e., 
+$\mathbf{Q}[\![x]\!]\otimes_\mathbf{Q} \mathbf{C}$ has non-noetherian local ring at the ``origin''. 
+This localization injects into $\mathbf{C}[\![x]\!]$,
 but it is far from the whole thing. You only get power series whose coefficients
-all live in a finite dimensional $\QQ$-subspace of $\CC$.
+all live in a finite dimensional $\mathbf{Q}$-subspace of $\mathbf{C}$.
 \end{example}
 \begin{example}A ring which does satisfy the hypotheses of lemma \ref{smoothnesslem}
-is $A=\cO_{X,x}=B_\m$ where $x\in X(k)$ is a rational point of a finite type $k$-scheme $X$, and $x$ sits inside an open affine $\Spec B\subset X$.
-\textbf{Exercise.} Show that $A'=(A_{k'})_{\m'}=\cO_{X_{k'},x'}$
-where $x'=x\in X(k)\into X_{k'}(k')$.
+is $A=\mathcal{O}_{X,x}=B_\m$ where $x\in X(k)$ is a rational point of a finite type $k$-scheme $X$, and $x$ sits inside an open affine $\Spec B\subset X$.
+\textbf{Exercise.} Show that $A'=(A_{k'})_{\m'}=\mathcal{O}_{X_{k'},x'}$
+where $x'=x\in X(k)\to X_{k'}(k')$.
 
-An example of this situation is $A=\cO_{G,e}$ and $A'=\cO_{G_{k'},e'}$ for an algebraic $k$-group $G$.
+An example of this situation is $A=\mathcal{O}_{G,e}$ and $A'=\mathcal{O}_{G_{k'},e'}$ for an algebraic $k$-group $G$.
 \end{example}
 \begin{proof}[Proof of Lemma $\ref{smoothnesslem}$]
 $A\to A'$ is a local map of local Noetherian rings, and it is flat
 since $A\to A_{k'}$ is, as it is a localization.
 So by the dimension formula (e.g. [CRT, \S15]) we have $\dim A'=\dim A + \dim(A'/\m A')$.
 But $\m A'=\m'$ so $\dim(A'/\m A')=\dim(k')=0$.
-Check that $k'\dotimes_k \m/\m^2\stackrel{\sim}{\to}\m'/\m'^2$ canonically.
+Check that $k'\otimes_k \m/\m^2 \xrightarrow{\sim} \m'/\m'^2$ canonically.
 Hence by comparing the definitions of regularity, the lemma follows.
 \end{proof}
 \begin{lemma}Let
@@ -1199,10 +1219,10 @@ Then the following are equivalent.
 \begin{itemize}
 \item[(i)]$G$ is smooth.
 \item[(ii)]$G_{\bar k}$ is regular.
-\item[(iii)]$\cO_{G_{\bar k},e_{\bar k}}$ is regular.
-\item[(iv)]$\cO_{G,e}$ is regular.
-\item[(v)]$\hat \cO_{G,e}=k[\![x_1,\ldots, x_n]\!]$.
-\item[(vi)]$\hat\cO_{G,e}$ satisfies the infinitesimal lifting criterion.
+\item[(iii)]$\mathcal{O}_{G_{\bar k},e_{\bar k}}$ is regular.
+\item[(iv)]$\mathcal{O}_{G,e}$ is regular.
+\item[(v)]$\hat \mathcal{O}_{G,e}=k[\![x_1,\ldots, x_n]\!]$.
+\item[(vi)]$\hat\mathcal{O}_{G,e}$ satisfies the infinitesimal lifting criterion.
 \end{itemize}
 \end{lemma}
 \begin{proof}
@@ -1217,7 +1237,7 @@ Recall the infinitesimal lifting criterion
 for the smoothness
 of a complete local Noetherian $k$-algebra $A$ with residue field $k$, from Theorem \ref{smoothnesscriteria}:
 it says that for all local Artin $k$-algebras $(R,\m)$ and all
-square zero ideals $J\nsg \m$,
+square zero ideals $J\vartriangleleft \m$,
 and local $k$-map $f:A\to R/J$ can be lifted
 along $\pi:R\to R/J$
 to a map $\tilde f:A\to R$ so that $f=\pi \tilde f$.
@@ -1238,15 +1258,15 @@ which says that the class of lifting problems we need to consider is actually qu
 The following special case will be the most important one for us.
 \begin{example}\label{smoothnesscriterionex}
 Let $X$ be a finite type $k$-scheme, $x\in X(k)$ a rational point,
-and $A=\hat\cO_{X,x}$.
+and $A=\hat\mathcal{O}_{X,x}$.
 Consider $R$ as in the criterion.
 Since $R$ is artinian, and in particular complete,
 by the universal property of completion,
 to give a local $k$-map $A\to R$ is the same
-as to give a local $k$-map $\cO_{X,x}\to R$.
-By the universal property of the local ring $\cO_{X,x}$,
-to give a local $k$-map $\cO_{X,x}\to R$,
-or equivalently a map $\Spec R\to \Spec \cO_{X,x}$,
+as to give a local $k$-map $\mathcal{O}_{X,x}\to R$.
+By the universal property of the local ring $\mathcal{O}_{X,x}$,
+to give a local $k$-map $\mathcal{O}_{X,x}\to R$,
+or equivalently a map $\Spec R\to \Spec \mathcal{O}_{X,x}$,
 is the same as to give a map $\Spec R\to X$ sending the closed point to $x$.
 
 Thus we actually have a fairly ``global'' interpretation of the infinitesimal criterion in this situation, or at least one that can be viewed in terms of the functor of points of $X$:
@@ -1268,7 +1288,7 @@ It should be remarked that proving connectedness is an entirely separate issue!
 
 The idea follows Example \ref{smoothnesscriterionex} closely.
 Take a $k$-finite Artin local ring $R$,
-and $J\nsg \m$ a square zero ideal.
+and $J\vartriangleleft \m$ a square zero ideal.
 Sometimes it will be computationally convenient to restrict to \textbf{small extensions} $R\onto R/\epsilon$, i.e. we take $J=(\epsilon)$ with $\epsilon\m=0$.
 It might also be helpful to assume $R/\m=k$.
 Then we will show that $G(R)\to G(R/J)$ is surjective, at least when we restrict
@@ -1306,7 +1326,7 @@ Adjust $M$ to $\(\begin{smallmatrix}a^{-1}&&&\\&1&&\\&&\ddots&\\&&&1\end{smallma
 and has determinant $1$.
 
 Finally we compute $T_{\id}(\SL_n)=\{\id+\epsilon M\mid M\in {\rm{Mat}}_n(k),\det(\id+\epsilon M)=1\}$.
-Since $\det(\id+\epsilon M)=1+\epsilon \tr(M)$,
+Since $\det(\id+\epsilon M)=1+\epsilon \text{Tr}(M)$,
 this shows that $\sl_n={\rm{Mat}}_n(k)^{\tr=0}$.
 \subsubsection{Smoothness of the general and special linear group without using coordinates}
 This ``functorial'' method will lead to an intrinsic description
@@ -1314,24 +1334,24 @@ of $\gl(V),\sl(V)$, which is useful because it is obviously functorial in $V$.
 When we have representations floating around, this functoriality will
 be a convenient way to avoid having to think too much.
 
-For $\GL(V)$, we ask whether $\Aut_R(V_R)\to \Aut_{R/J}(V_{R/J})$ is surjective.
-If $\bar T:V_{R/J}\stackrel{\sim}{\to}V_{R/J}$,
+For $\GL(V)$, we ask whether $\text{Aut}_R(V_R)\to \text{Aut}_{R/J}(V_{R/J})$ is surjective.
+If $\bar T:V_{R/J} \xrightarrow{\sim} V_{R/J}$,
 observe that since these are free modules
 we can lift $\bar T$ to an $R$-endomorphism $T:V_R\to V_R$.
 It's an automorphism because its determinant is a unit mod $J$,
 and so it is itself a unit.
 
 For $\SL(V)$ we do similarly, and exhibit an explicit element
-of $\Aut_R(V_R)$ with any determinant in $1+J$ which is congruent to $\id\mod J$. Just use the same matrix as in the previous example.
+of $\text{Aut}_R(V_R)$ with any determinant in $1+J$ which is congruent to $\id\mod J$. Just use the same matrix as in the previous example.
 
 To do the tangent spaces,
-we compute $T_{\id}(\GL(V))=\ker(\Aut_{k[\epsilon]}(V_{k[\epsilon]})\to \Aut_k(V))$.
-Since $$\Aut_{k[\epsilon]}(V_{k[\epsilon]})\subset\End_{k[\epsilon]}(V_{k[\epsilon]})
-=k[\epsilon]\dotimes_k\End_kV,$$ we have a natural ambient vector space.
+we compute $T_{\id}(\GL(V))=\ker(\text{Aut}_{k[\epsilon]}(V_{k[\epsilon]})\to \text{Aut}_k(V))$.
+Since $$\text{Aut}_{k[\epsilon]}(V_{k[\epsilon]})\subset\End_{k[\epsilon]}(V_{k[\epsilon]})
+=k[\epsilon]\otimes_k\End_kV,$$ we have a natural ambient vector space.
 Observe that the kernel
 $$\{\id +\epsilon T\mid T\in \End_k(V)\}
-=\id+\epsilon k[\epsilon]\dotimes_k\End_k(V)$$ is naturally a $k$-affine linear
-subspace of $k[\epsilon]\dotimes_k\End_k(V)$, so
+=\id+\epsilon k[\epsilon]\otimes_k\End_k(V)$$ is naturally a $k$-affine linear
+subspace of $k[\epsilon]\otimes_k\End_k(V)$, so
 by subtracting off $\id$ it gets a canonical vector space structure itself. 
 Hence we can identify $\gl(V)=\epsilon\End_k(V)$.
 Similarly, since $\det(\id+\epsilon T)=1+\epsilon \tr T$
@@ -1344,7 +1364,7 @@ to be $\sl(V)=\epsilon \End_k^0(V)$.
 \section{January 25}
 Our next goal will be to establish smoothness for other classical groups,
 the series $C_n$, $B_n$ and $D_n$ corresponding to symplectic groups
-$\Sp(V,B)$ and orthogonal groups $\O(q)$. Actually, we'll do $\Sp$ and defer
+$\text{Sp}(V,B)$ and orthogonal groups $\O(q)$. Actually, we'll do $\Sp$ and defer
 the orthogonal case to Appendix \ref{O(q)} (where we systematically incorporate
 characteristic 2). Before doing so, let us consider connectedness.
 \subsection{How to Show Connectedness}
@@ -1356,7 +1376,7 @@ Over any local ring one can track units and show that
 $a=d=0,bc=1$ or $b=c=0,ad=1$.
 In generally these equations will define $\O(q)$, Zariski-locally on $\Spec R$
 over any ring $R$.
-Thus $\O(q)=\SO(q)\sqcup \SO(q)\cdot\(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\)$,
+Thus $\O(q)=\text{SO}(q)\sqcup \text{SO}(q)\cdot\(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\)$,
 i.e. $\{\(\begin{smallmatrix}a&0\\0&a^{-1}\end{smallmatrix}\)\}\sqcup
 \{\(\begin{smallmatrix}0&b\\b^{-1}&0\end{smallmatrix}\)\}$.
 \end{example}
@@ -1420,14 +1440,14 @@ Compute the stabilizer $\Stab$ in $\SL(k^n)$ of the standard flag in $k^n$ expli
 \vdots&\vdots&\ddots&\ddots&\ddots&\vdots\\
 0&0&\cdots&0&a_{n-1}&*\\
 0&0&\cdots&0&0&a_n\end{smallmatrix}\):\prod a_i=1\right\}\]
-This is visibly isomorphic to $\mathbf{G}_m^{n-1}\times \AA^{\binom{n}{2}}$ as a variety,
+This is visibly isomorphic to $\mathbf{G}_m^{n-1}\times \mathbf{A}^{\binom{n}{2}}$ as a variety,
 and is thus irreducible and geometrically connected by inspection.
 So the method of the previous section will go through.
 \subsubsection{Method 2 - Projective Space}
 More naively, if you cannot guess what the right homogeneous space is,
-one can try to use a more obvious action of the linear group one is trying to prove connected, namely the action on $\PP^{n-1}$ if $G\subset \GL_n$.
+one can try to use a more obvious action of the linear group one is trying to prove connected, namely the action on $\mathbf{P}^{n-1}$ if $G\subset \GL_n$.
 
-So give the geometrically connected, etc., variety $\PP^{n-1}$ the standard
+So give the geometrically connected, etc., variety $\mathbf{P}^{n-1}$ the standard
 (transitive) action of $\SL_n$.
 The stabilizer in this case is
 \[\Stab_{\SL_n}([1:0:\cdots:0])=\left\{\(\begin{smallmatrix}a&*&\cdots&*\\
@@ -1437,10 +1457,10 @@ The stabilizer in this case is
 Here the top row is arbitrary after the first entry;
 the $x$'s denote that the bottom right $(n-1)\times(n-1)$ block
 is given by $g\in \GL_{n-1}$.
-Hence $\Stab_{\SL_n}([1:0:\cdots:0])=\GL_{n-1}\times \AA^{n-1}$ as a variety.
+Hence $\Stab_{\SL_n}([1:0:\cdots:0])=\GL_{n-1}\times \mathbf{A}^{n-1}$ as a variety.
 Again we get lucky and can see that it is connected, so we're done.
 \subsection{Smoothness of the symplectic group}\label{spsmooth}
-Let $G=\Sp_{2n}\simeq\Sp(V,B)$
+Let $G=\text{Sp}_{2n}\simeq\text{Sp}(V,B)$
 where $V$ is an $2n$-dimensional vector space
 over $k$
 and $B:V\times V\to k$ is a symplectic form.
@@ -1453,8 +1473,8 @@ $\epsilon\m_R=0$,
 and $J=\epsilon R$;
 we must prove $G(R)\onto G(R/J)$.
 
-Choose $\bar T\in \Aut_{R/J}(V_{R/J})$ preserving $B_{R/J}$.
-We want to lift it to an element of $\Aut_R(V_R)$ preserving $V_R$.
+Choose $\bar T\in \text{Aut}_{R/J}(V_{R/J})$ preserving $B_{R/J}$.
+We want to lift it to an element of $\text{Aut}_R(V_R)$ preserving $V_R$.
 In other words, $\bar T$ satisfies
 $B_{R/J}(\bar T v,\bar T v')=B_{R/J}(v,v')$ for all $v,v'\in V_{R/J}$.
 But note that by $R/J$-bilinearity, this condition is completely
@@ -1469,11 +1489,11 @@ Probably this is not the case.
 But since $T$ lifts $\bar T$,
 we know, at least, that $B_R(Tv, T v')=B_R(v,v')\mod J$.
 We shall contemplate
-the automorphism $T+S$ for $S\in \Hom_R(V_R,V\dotimes_k J)$.
+the automorphism $T+S$ for $S\in \Hom_R(V_R,V\otimes_k J)$.
 These are precisely the lifts of $\bar T$.
-A choice of $S\in \Hom_R(V_R,V\dotimes_k J)$ is equivalent to a choice
-of $\epsilon S_0\in \Hom_k(V, V\dotimes_k J)$ where $S_0\in \End_k(V)$.
-Note that $S_1\in\Hom_k(V,V\dotimes_kJ)$ is automatically of the form $\epsilon S_0$ since $\dim_k J/\m_R = \dim_k (\epsilon R/\m_R)=1$ since $\epsilon \m_R=0$;
+A choice of $S\in \Hom_R(V_R,V\otimes_k J)$ is equivalent to a choice
+of $\epsilon S_0\in \Hom_k(V, V\otimes_k J)$ where $S_0\in \End_k(V)$.
+Note that $S_1\in\Hom_k(V,V\otimes_kJ)$ is automatically of the form $\epsilon S_0$ since $\dim_k J/\m_R = \dim_k (\epsilon R/\m_R)=1$ since $\epsilon \m_R=0$;
 so we're really using the fact that small extensions are small
 to make our life easier.
 
@@ -1510,7 +1530,7 @@ It is
 \[\{S_0\in \End(V)\mid B(T_0v,S_0v')=-B(S_0v,T_0v')=B(T_0v',S_0v) \mbox{ for all } v,v'\in V\}.\]
 In other words, it is
 \[\{S_0\in\End(V)\mid [(v,v')\mapsto B(T_0v,S_0v')]\in (\Sym^2V)^*\}.\]
-Since $T_0\in \Sp(V,B)$ is invertible, we can set $S_1=T_0^{-1}S_0$;
+Since $T_0\in \text{Sp}(V,B)$ is invertible, we can set $S_1=T_0^{-1}S_0$;
 then the space above is the same as
 \[\{S_1\in \End(V)\mid B((\cdot),S_1(\cdot))\in(\Sym^2V)^*\}.\]
 But $S_1\leftrightarrow B((\cdot),S_1(\cdot))$
@@ -1522,10 +1542,10 @@ $(\Sym^2 V)^*\subset V^*\otimes V^*$
 which has the correct dimension. QED
 
 Finally, we can compute the Lie algebra $\sp_{2n}$
-and determine $\dim\Sp_{2n}$.
-As usual, we regard $T_{\id}(\Sp(V,B))\subset T_{\id}(\GL(V))=\gl(V)=\End(V)$.
+and determine $\dim\text{Sp}_{2n}$.
+As usual, we regard $T_{\id}(\text{Sp}(V,B))\subset T_{\id}(\GL(V))=\gl(V)=\End(V)$.
 Then
-\[\sp_{2n}=\{\id +\epsilon T\in \Aut_{k[\epsilon]}(V_{k[\epsilon]})\mid
+\[\sp_{2n}=\{\id +\epsilon T\in \text{Aut}_{k[\epsilon]}(V_{k[\epsilon]})\mid
 T\in \End(V), B((\id+\epsilon T)v,(\id+\epsilon T)v')=B(v,v') \mbox{ for all } v,v'\in V\subset V_{k[\epsilon]}\}.\]
 We compute
 that the condition on $T$
@@ -1535,7 +1555,7 @@ since $B$ is alternating.
 Hence $\sp_{2n}=\sp(B,V)=(\wedge^2V)^*$
 identified as a subspace of $\End(V)$ via $B$.
 Thus its dimension is
-\[\dim \Sp_{2n}=\frac{(2n)(2n+1)}{2}=n(2n+1).\]
+\[\dim \text{Sp}_{2n}=\frac{(2n)(2n+1)}{2}=n(2n+1).\]
 Explicitly, $\sp_{2n}$
 consists of $2n\times 2n$ block matrices $\(\begin{smallmatrix}a&b\\c&-a^t\end{smallmatrix}\)$ such that $b=b^t,c=c^t$.
 \section*{January 27}
@@ -1543,14 +1563,14 @@ consists of $2n\times 2n$ block matrices $\(\begin{smallmatrix}a&b\\c&-a^t\end{s
 The goal for today is to prove the following result.
 \begin{theorem}Let $V$ be a vector space of dimension $2n\geq 0$
 equipped with a nondegenerate alternating bilinear form $B$.
-Then the symplectic group $\Sp(V,B)$ is connected.
+Then the symplectic group $\text{Sp}(V,B)$ is connected.
 \end{theorem}
 The proof is by induction following the general strategy outlined earlier;
 the inductive step comes down to an exercise in (fairly delicate) linear algebra. If anything, it is an indication that \textbf{connectedness results for algebraic groups should be treated with respect}!
 \begin{proof}
 We induct on $n$.
 The case $n=0$ is OK (alternatively, $n=1$ is $\SL_2$, which we know is connected).
-Let $G=\Sp(V,B)$ act on $\PP^{2n-1}$ in the obvious way.
+Let $G=\text{Sp}(V,B)$ act on $\mathbf{P}^{2n-1}$ in the obvious way.
 After renaming $\bar k$ as $k$, what we need to check is that
 (i) the action is transitive, and (ii) one stabilizer is connected.
 
@@ -1560,14 +1580,14 @@ There are two cases.
 
 Case 1: $B(e,e')\neq 0$. After rescaling $e'$ we can take $B(e,e')=1$.
 So $H=ke\oplus ke'$ is a \textbf{hyperbolic plane}; i.e. the restriction
-$B|_H$ is nondegenerate, or equivalently $B=H\stackrel{\perp}{\oplus}H^\perp$.
+$B|_H$ is nondegenerate, or equivalently $B = H \oplus^\perp H^\perp$.
 So we can just take $g$ to be the automorphism of $V$
 given by $\(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\)$
 on $H$ and the identity on $H^\perp$.
 This swaps the lines and is easily seen to be symplectic.
 
 Case 2: $B(e,e')=0$. Since $e$ and $e'$ are (without loss of generality)
-linearly independent and $B$ is nondegenerate, there exists a pair of hyperbolic planes $H,H'$ containing $e$ and $e'$ respectively, which are orthogonal to one another; i.e. $V=W\stackrel{\perp}{\oplus}H\stackrel{\perp}{\oplus}H'$.
+linearly independent and $B$ is nondegenerate, there exists a pair of hyperbolic planes $H,H'$ containing $e$ and $e'$ respectively, which are orthogonal to one another; i.e. $V=W \oplus^\perp H \oplus^\perp H'$.
 Take $g$ to be the automorphism of $V$ which swaps $H$ and $H'$,
 taking $e$ and $e'$ to one another, and fixes $W$. Thus transitivity is established.
 
@@ -1578,12 +1598,12 @@ Let $\bar V = L^\perp/L$, which
 is a vector space of dimension $2(n-1)$.
 The form $B|_{L^\perp}$ descends (check!) to an alternating (check!)
 nondegenerate (check!) form on $\bar V$.
-Hence we get a $k$-group homomorphism $\xi:G_L\to \Sp(\bar V, \bar B)$
+Hence we get a $k$-group homomorphism $\xi:G_L\to \text{Sp}(\bar V, \bar B)$
 sending $g\mapsto \bar g =g |_{L^\perp}\mod L$.
 \begin{remark}
-If $\dim V = 2$ then $G_L=\{\(\begin{smallmatrix}a&*\\0&a^{-2}\end{smallmatrix}\)\}\simeq \mathbf{G}_m\times \AA^1$ is connected.
+If $\dim V = 2$ then $G_L=\{\(\begin{smallmatrix}a&*\\0&a^{-2}\end{smallmatrix}\)\}\simeq \mathbf{G}_m\times \mathbf{A}^1$ is connected.
 \end{remark}
-By induction $\Sp(\bar V, \bar B)$ is connected.
+By induction $\text{Sp}(\bar V, \bar B)$ is connected.
 If  we knew that $\xi$ were surjective with connected kernel then 
 connectedness of $G_L$ follows, completing the proof. Thus it remains only
 to show the claim: $\xi$ is surjective with connected kernel.
@@ -1591,13 +1611,13 @@ to show the claim: $\xi$ is surjective with connected kernel.
 For surjectivity, choose $L=ke\subset V$,
 and $e'$ such that $B(e,e')=1$ (by nondegeneracy)
 so that $H=ke\oplus ke'$ is hyperbolic
-and $V=H\stackrel{\perp}{\oplus}H^\perp$.
+and $V = H \oplus^\perp H^\perp$.
 Since $L^\perp\subset H^\perp$
 surjects onto $\bar V$ with kernel $L\subset H$,
 we get an injection $H^\perp\to \bar V$, which by dimension considerations is
 a symplectic isomorphism.
-So take any $\bar g\in \Sp(\bar V, \bar B)$
-and view it in $\Sp(H^\perp,B|_{H^\perp})$;
+So take any $\bar g\in \text{Sp}(\bar V, \bar B)$
+and view it in $\text{Sp}(H^\perp,B|_{H^\perp})$;
 extend it by the identity on $H$ to get $g\in G_L$
 which induced $\bar g$, i.e. such that $\xi(g)=\bar g$.
 
@@ -1611,7 +1631,7 @@ since while (i)--(-iii) are Zariski-open or linear conditions,
 But in fact, it will work out quite nicely.
 As motivation, consider a special case.
 \begin{example}
-Let $G=\Sp(k^2,B)=\SL_2$
+Let $G=\text{Sp}(k^2,B)=\SL_2$
 and let $L= ke=L^\perp$.
 Then $G_L$ is the Borel subgroup,
 which is of the form $\{\id+\(\begin{smallmatrix}\lambda&b\\0&\frac{-\lambda}{1+\lambda}\end{smallmatrix}\)\mid \lambda\neq -1\}$, which is quite tractable.
@@ -1660,12 +1680,12 @@ which completes the proof.
 \end{proof}
 \section{January 29}
 \subsection{A little more about the symplectic group}
-We proved $G=\Sp(V,B)$ is connected. Here is a useful ``matrix description'' of the group, using our proof.
-Recall that we endowed $\PP(V)$ with the natural
+We proved $G=\text{Sp}(V,B)$ is connected. Here is a useful ``matrix description'' of the group, using our proof.
+Recall that we endowed $\mathbf{P}(V)$ with the natural
 action of $G\subset\GL(V)$, chose a line $L\subset V$ spanned by $e\in V$, 
 and took a complementary line $ke'\subset V$
-so that $H=ke\stackrel{\perp}{\oplus} ke'$ is a hyperbolic plane; i.e. $B(e,e')=1$. Then $L\subset L^\perp$,
-$V=L^\perp\stackrel{\perp}{\oplus} ke'= H\oplus H^\perp \simeq H\oplus L^\perp/L
+so that $H=ke \oplus^\perp ke'$ is a hyperbolic plane; i.e. $B(e,e')=1$. Then $L\subset L^\perp$,
+$V=L^\perp \oplus^\perp ke'= H\oplus H^\perp \simeq H\oplus L^\perp/L
 \simeq H\oplus \bar V$.
 The stabilizer $G_L$ had the following structure, where the first two basis
 vectors are $e,e'$ and the remainder parametrize $\bar V=H^\perp=L^\perp/L$:
@@ -1674,22 +1694,22 @@ a&*&[&&S\in \Hom(L^\perp/L,L)&&]\\
 0&a^{-1}&0&0&\cdots&0&0\\
 \vdots&[]&[&[&[\cdots]&]&]\\
 \vdots&\vdots&[&[&\vdots&]&]\\
-\vdots&\vec x_S\in \bar V&[&[&[\bar g \in \Sp(\bar V, \bar B)]&]&]\\
+\vdots&\vec x_S\in \bar V&[&[&[\bar g \in \text{Sp}(\bar V, \bar B)]&]&]\\
 \vdots&\vdots&[&[&\vdots&]&]\\
 0&[]&[&[&[\cdots]&]&]\\
 \end{array}\):a=1+\lambda,\lambda\neq0,-1\right\}\]
 This description makes connectedness obvious, since visibly
-$\Sp_{2n}=(\AA^1-\{0,-1\})\times \AA^1\times \AA^{2n-2}\times\Sp_{2n-2}$
-and $\Sp_2=\SL_2$.
+$\text{Sp}_{2n}=(\mathbf{A}^1-\{0,-1\})\times \mathbf{A}^1\times \mathbf{A}^{2n-2}\times\text{Sp}_{2n-2}$
+and $\text{Sp}_2=\SL_2$.
 \begin{lemma}[of connectedness, or the matrix description]
-$\Sp(V,B)\subset \SL(V)$.
+$\text{Sp}(V,B)\subset \SL(V)$.
 \end{lemma}
 \begin{proof}
-Recall that we know  $\Sp(V,B)$ is smooth and connected,
-For any geometric point $T\in \Sp(V,B)$ we have $(\det T)^2=1$ from the equation which says $T$ is symplectic.
-Hence $\det:\Sp(V,B)\to \mathbf{G}_m$ factors through the finite group scheme
+Recall that we know  $\text{Sp}(V,B)$ is smooth and connected,
+For any geometric point $T\in \text{Sp}(V,B)$ we have $(\det T)^2=1$ from the equation which says $T$ is symplectic.
+Hence $\det:\text{Sp}(V,B)\to \mathbf{G}_m$ factors through the finite group scheme
 $\mu_2\subset \mathbf{G}_m$ on geometric points (even in characteristic 2).
-Thus, since $\Sp(V,B)$ is smooth and connected, it follows that $\det$ is trivial on $\Sp(V,B)$.
+Thus, since $\text{Sp}(V,B)$ is smooth and connected, it follows that $\det$ is trivial on $\text{Sp}(V,B)$.
 
 Alternately, use the matrix description and argue by induction,
 row expanding along the second row.
@@ -1762,7 +1782,7 @@ we have $Z_G(W)(\bar k)=\{g\in G(\bar k)\mid g\text{ centralizes }W_{\bar k}\sub
 \end{example}
 \subsection{Closed orbit lemma} 
 \begin{example}
-Let $G=\mathbf{G}_m$ act on $X=\AA^2$
+Let $G=\mathbf{G}_m$ act on $X=\mathbf{A}^2$
 by $t(x,y)=(tx, t^2y)$.
 We ask what the $G$-\textbf{orbits}
 of $X(k)$ are;
@@ -1867,7 +1887,7 @@ Because $G$ is smooth, so reduced,
 the formation of $\bar{\alpha_x(G)}$ with the reduced induced scheme structure
 (i.e. the formation of the ``schematic'' or ``scheme theoretic'' image)
 is the same as the formation of the kernel of the map of sheaves
-$\cO_X\to (\alpha_x)_*\cO_G$. Since pushforward of quasicoherent sheaves
+$\mathcal{O}_X\to (\alpha_x)_*\mathcal{O}_G$. Since pushforward of quasicoherent sheaves
 commutes with flat base change, it commutes with extension of scalars.
 So the formation of the closure of the orbit of $x\in X(k)$
 commutes with scalar extension.
@@ -1900,8 +1920,8 @@ restricts to a group action $G(k)\actson Y$.
 To reduce to the case $X=Y$ we need to show that the action $\alpha:G\times X\to X$ also restricts to an action $G\times Y\to Y$, which is a much stronger statement:
 \[\xymatrix{G\times Y\ar@{-->}[r]^{\exists?}\ar[rd]^\phi\ar[d]&Y\ar[d]\\
 G\times X\ar[r]_\alpha&X}\]
-The existence of such a dotted map can be checked by showing that $\phi^\sharp:\cO_X\to \phi_*\cO_{G\times Y}$
-kills the quasicoherent ideal sheaf $\cI_Y\subset\cO_X$.
+The existence of such a dotted map can be checked by showing that $\phi^\sharp:\mathcal{O}_X\to \phi_*\mathcal{O}_{G\times Y}$
+kills the quasicoherent ideal sheaf $\cI_Y\subset\mathcal{O}_X$.
 To check this factorization we can extend scalars to $\bar k$.
 Since $Y_{\bar k}$ is reduced, as is $G_{\bar k}\times Y_{\bar k}$,
 it's enough to check on $\bar k$-points.
@@ -2013,8 +2033,12 @@ so $H=\Spec k$ is just the identity with no fuzz.
 
 (i)$\Rightarrow$(iii): This is the interesting part.
 We have a diagram
-\[\xymatrix{G\ar[r]^f\xyfib[rd]&G'\\
-&f(G)\xycof[u]_{cl.imm}}\]
+\[
+\xymatrix{
+G \ar[r]^f \ar[rd] & G' \\
+& f(G) \ar[u]_{cl.imm}
+}
+\]
 The image $f(G)$ [set theoretic!]
 is a closed $k$-subgroup of $G'$ (smooth, with the reduced structure)
 by the Closed Orbit Lemma \ref{closedorbit},
@@ -2065,15 +2089,15 @@ such that $f^{-1}U'\onto U'$ is finite flat.
 
 \begin{proof}[Proof of claim]
 We use the method of ``spreading out'' from generic points.
-Pass to the local ring $\cO_{G',\eta'}=k(\eta')$ for a generic point $\eta'\in G'$. Then $\varnothing\neq\coprod_{\eta\in f^{-1}\{\eta'\}}\Spec k(\eta)
+Pass to the local ring $\mathcal{O}_{G',\eta'}=k(\eta')$ for a generic point $\eta'\in G'$. Then $\varnothing\neq\coprod_{\eta\in f^{-1}\{\eta'\}}\Spec k(\eta)
 =f^{-1}(\eta')\to \{\eta'\}$ is finite,
 because is it quasifinite
 and quasifinite implies finite over a field.
-(i.e., the fiber $f^{-1}\eta'$ is a localization of $\cO_G$,
+(i.e., the fiber $f^{-1}\eta'$ is a localization of $\mathcal{O}_G$,
 so it is just the reduced product of the function fields of the generic points
 of $G$ over $\eta'$.)
 Finite implies finite flat, over a field.
-By general nonsense, viewing $\cO_{G',\eta'}=\varinjlim_{{\rm{affine}}\,\,U'\ni \eta'}\cO_{G'}(U')$, the property of finite flatness thus spreads out to an actual open set
+By general nonsense, viewing $\mathcal{O}_{G',\eta'}=\varinjlim_{{\rm{affine}}\,\,U'\ni \eta'}\mathcal{O}_{G'}(U')$, the property of finite flatness thus spreads out to an actual open set
 containing $\eta'$.
 Doing this for all the generic points $\eta'$ of $G'$ gives the claim.
 (Actually all we'll need is any nonempty open set, but we might as well get a dense one.)
@@ -2091,7 +2115,7 @@ So these translations by points of $f(G(k))$
 give that $f:G\onto G'$ is actually finite flat of constant rank $r$.
 Since we know $f^{-1}(e')=\ker f = \Spec k$ by hypothesis (i),
 in fact the rank $r=1$.
-In other words, $f_*\cO_G$ is an invertible sheaf on $G'$.
+In other words, $f_*\mathcal{O}_G$ is an invertible sheaf on $G'$.
 
 Since finite morphisms are affine, we are now reduced to the following algebra problem:
 Claim: If $A\to B$ is a ring map making $B$ an invertible $A$-module,
@@ -2127,7 +2151,7 @@ ring $k[G]$''.
 We have the following.
 \begin{lemma}[of Proposition \ref{khomclosed}]
 Let $G$ be a (smooth) $k$-group of finite type.
-Then the data of closed immersion $\rho:G\into \GL(V)$
+Then the data of closed immersion $\rho:G\to \GL(V)$
 which is a $k$-homomorphism
 is equivalent to the data
 of a \textit{faithful}\footnote{Meaning $(\ker\rho)(R)=1$ for all $k$-algebras $R$.} $R$-linear action of $G(R)$ on $V_R$, functorial in $R$.\qed
@@ -2142,14 +2166,14 @@ A \textit{functorial linear representation} of a $k$-group $G$
 on a (possibly infinite dimensional) $k$-vector space $V$
 is an $R$-linear action of $G(R)$ on $V_R$, which is
 functorial in the $k$-algebra $R$.
-That is, it is a map of group functors ${\underline G}\to{\underline\Aut}(V)$.
+That is, it is a map of group functors ${\underline G}\to{\underline\text{Aut}}(V)$.
 We say a subspace $W\subset V$ of a functorial linear representation
 $V$ of $G$, is \textit{$G$-stable} if the action of $G(R)$ on $V_R$
 restricts to a functorial action of $G(R)$ on $W_R$ for all $R$.
 \end{definition}
 \begin{example}If $X$ is affine and $G\times X\to X$ is a left action,
 we have a group action of $G(R)\actson X_R$ for all $R$,
-and hence a \textit{right} action $G(R)\actson \cO(X_R)=\cO(X)\dotimes_k R$.
+and hence a \textit{right} action $G(R)\actson \mathcal{O}(X_R)=\mathcal{O}(X)\otimes_k R$.
 We turn this into a functorial linear representation
 (i.e. a left action)
 by setting $g.f=f\circ ({\rm{act}}_{g^{-1}})$.
@@ -2167,7 +2191,7 @@ Let $G$ be an affine $k$-group of finite type,
 and $\alpha:G\times X\to X$ a left action on an affine $k$-scheme $X$.
 
 This implies that $V=k[X]$ is a functorial linear representation of $G$ in the sense of Definition \ref{functlinrep};
-explicitly, $g\in G(R)$ acts on $f\in R[X]=R\dotimes_k\cO_X(X)$
+explicitly, $g\in G(R)$ acts on $f\in R[X]=R\otimes_k\mathcal{O}_X(X)$
 by $(g.f)(x)=f(g^{-1}x)=f(\alpha(g^{-1},x))$ for $x$ any point of $X_R(A)$ and $A$
 any $R$-algebra.
 
@@ -2209,7 +2233,7 @@ Therefore $g^{-1}=e$ so $g=e$.
 The previous claim immediately yields the following, via Proposition \ref{khomclosed}.
 \begin{lemma}\label{GLnembedding}
   If $G$ is a (smooth)\footnote{cf. Remark \ref{(smooth)}} finite type affine $k$-group,
-then there exists a $k$-homomorphism $\rho:G\into \GL(W)$ 
+then there exists a $k$-homomorphism $\rho:G\to \GL(W)$ 
 that is a closed immersion, with $W$ some finite-dimensional $k$-vector space.\qed
 \end{lemma}
 \subsection{Proof of Theorem \ref{affineaction}}
@@ -2218,7 +2242,7 @@ so is their sum $\sum W_i\subset V$.
 So it's enough to pick any $w\in V$ and show that there exists a finite dimensional $G$-stable subspace $W\subset V$ such that $w\in W$.
 
 The action $\alpha:G\times X\to X$ corresponds
-to a map $\alpha^*:k[X]\to k[G]\dotimes_k k[X]$.
+to a map $\alpha^*:k[X]\to k[G]\otimes_k k[X]$.
 Let $\alpha^*(w)=\sum f_i\otimes h_i$;
 we can arrange so that the set $\{f_i\}\subset k[G]$ is $k$-linearly independent.
 Concretely, if $R$ is a $k$-algebra, $R'$ is an $R$-algebra,
@@ -2231,8 +2255,8 @@ since they have the same values at all $R$-algebra valued points $x$.
 By the previous calculation, for example, we have $w=1.w=\sum f_i(1)h_i\in W$.
 We claim that $W=\Span\{h_i\}\subset V$ is $G$-stable.
 Consider the following diagram.
-\[\xymatrix{k[X]\ar[r]^{\alpha^*}&k[G]\dotimes_k k[X]\\
-W\xycof[u]\ar@{-->}[r]_{\exists?}&k[G]\dotimes_k W\xycof[u]}\]
+\[\xymatrix{k[X]\ar[r]^{\alpha^*}&k[G]\otimes_k k[X]\\
+W \ar[u] \ar@{-->}[r]_{\exists?}&k[G]\otimes_k W \ar[u]}\]
 Suppose the dotted map exists. Then for all $w'\in W$
 and $g\in G(R)$,
 $g.w'=\sum(R-coeff.s)\cdot w_i$ for $w_i\in W$;
@@ -2241,15 +2265,16 @@ so $G(R)\cdot W_R\subset W_R$, which proves $G$-stability as claimed.\footnote{T
 To prove the existence of such a map, we will use the associativity of the left action $\alpha$:
 \begin{equation*}\tag{$\dagger$}\label{foobar}\xymatrix{G\times G\times G\ar[r]^{\id\times\alpha}\ar[d]_{m\times\id}&G\times X\ar[d]^\alpha\\
 G\times X\ar[r]_\alpha&X}\end{equation*}
-We need to compute $\alpha^*(h_i)\in k[G]\dotimes_k k[X]$;
+We need to compute $\alpha^*(h_i)\in k[G]\otimes_k k[X]$;
 we hope $\alpha^*(h_i)=\sum_j\phi_{ij}\otimes h_i$. We will instead
-work inside $k[G]\dotimes_k k[G]\dotimes_k k[X]$. We compute:
+work inside $k[G]\otimes_k k[G]\otimes_k k[X]$. We compute:
 \begin{align*}
-\sum f_i\otimes \alpha^*h_i&=(\id\otimes \alpha^*)\(\sum f_i\otimes h_i\)\\
-&=(\id\otimes\alpha^*)(\alpha^*w)\\
-&\stackrel{\eqref{foobar}}{=}(m^*\otimes\id)(\alpha^*w)\\
-&=(m^*\otimes \id)\(\sum f_i\otimes h_i\)\\
-&=\sum(m^*f_i)\otimes h_i.
+\sum f_i\otimes \alpha^*h_i
+&= (\id\otimes \alpha^*)\(\sum f_i\otimes h_i\)\\
+&= (\id\otimes\alpha^*)(\alpha^*w)\\
+&= (m^*\otimes\id)(\alpha^*w)\quad \eqref{foobar} \\
+&= (m^*\otimes \id)\(\sum f_i\otimes h_i\)\\
+&= \sum(m^*f_i)\otimes h_i.
 \end{align*}
 Now $k[G]$ has a $k$-basis $\{f_j\}\sqcup \{b\}_{b\in B}$,
 since we chose the $\{f_j\}$ to be linearly independent.
@@ -2266,7 +2291,10 @@ and hence of Theorem \ref{affineaction}.\qed
 \section{February 8}
 \subsection{Jordan decomposition}
 For $g\in \GL_n(\bar k)$ we have a \textbf{multiplicative Jordan decomposition}:
-\[g\stackrel{!}{=}g_{\rm{ss}}g_{\rm{u}}\stackrel{\star}{=}g_{\rm{u}}g_{\rm{ss}}\]
+\[
+g = g_{\rm{ss}}g_{\rm{u}}
+  = g_{\rm{u}}g_{\rm{ss}}
+\]
 where $g_{\rm{ss}}$ is semisimple as
 an operator on $\bar k^n$ (which is the same as diagonalizable, since we are over
 an algebraically closed field)
@@ -2292,7 +2320,7 @@ may no longer be semisimple after making an inseparable field extension; see App
 Thus in the imperfect case, the Jordan decomposition is not compatible with scalar extension and hence works poorly.
 \end{remark}
 The idea for how to obtain our generalization is to make use of
-a closed embedding $i:G\into \GL_n$, which we know exists by our previous results. Take $g\in G(\bar k)$, which gives
+a closed embedding $i:G\to \GL_n$, which we know exists by our previous results. Take $g\in G(\bar k)$, which gives
 $i(g)\in \GL_n(\bar k)$,
 and hence $i(g)_{\rm{ss}},i(g)_{\rm{u}}\in \GL_n(\bar k)$ which are semisimple and unipotent, respectively.
 
@@ -2310,7 +2338,7 @@ the following that $k=\bar k$.  (At the end we will make definitions over
 $k$ by passage to $\bar k$.) 
 For $g\in G(k)$, $g\actson G$ by \textit{right} translation $\rho_g$;
 this gives rise to the \textbf{right regular representation}
-$\rho_g:k[G]\stackrel{\sim}{\to}k[G]$
+$\rho_g : k[G] \to k[G]$
 which sends a function $f$ to $\rho_gf$
 where $(\rho_gf)(x)=f(xg)=f\circ\rho_g(x)$
 for $x\in G(R)$ for any $k$-algebra $R$;
@@ -2382,7 +2410,7 @@ Then $g\in \GL_n(\bar k)$ is semisimple (resp. unipotent)
 if and only if $g$ is right semisimple (resp. right unipotent).
 \end{proposition}
 \begin{proof}[Sketch]
-We have $k[G]=k[\End(V)][\frac{1}{\det}]=\sum_{n\in \ZZ}k[\End V]\cdot \det^n$
+We have $k[G]=k[\End(V)][\frac{1}{\det}]=\sum_{n\in \mathbf{Z}}k[\End V]\cdot \det^n$
 as a ``$g$-module'';
 that is, $\GL(V)\subset \intEnd(V)$ is an open subfunctor 
 and the action of $\rho_g$ is the restriction
@@ -2393,17 +2421,17 @@ if and only if $\rho_g$ acting on $k[\End(V)]$ is semisimple
 of $k[\End(V)]$. The crucial idea here is the eigenvector property of the $\det^n$'s. 
 See \cite[Ch.\,I, \S4.3]{Borel} for details.
 
-Now $\End(V)=V\dotimes_k V^*$.
+Now $\End(V)=V\otimes_k V^*$.
 Thus $k[\End(V)]=\Sym^\cdot(V\otimes V^*)$.
 We wish to describe the right regular action
 $\rho_g$
-of $g$ on $\End(V)\stackrel{\sim}{\leftarrow}V\dotimes_k V^*$.
+of $g$ on $\End(V) \leftarrow V\otimes_k V^*$.
 First, some generalities.  If $W$ is a finite dimensional $k$-vector space
-and $\AA(W)$ is the associated affine space $R\mapsto W_R$,
+and $\mathbf{A}(W)$ is the associated affine space $R\mapsto W_R$,
 then $A=\Spec \Sym W^*$; note the duality, which is essential 
 for the variance to be correct.
 If $W=\End(V)$ the coordinate ring
-$\AA(W)$ is thus $k[\End(V)^*]$;
+$\mathbf{A}(W)$ is thus $k[\End(V)^*]$;
 the right-translation action by $\GL(V)$
 is given by $(g^*.\phi)(T)=\phi(Tg)$
 for $g\in \GL(V)(k),\phi\in \End(V)^*$.
@@ -2429,7 +2457,7 @@ if and only if $g$ is such on $V$.
 The previous proposition is by way of motivation for the main theorem of today.
 \begin{theorem}\label{jordan}
 Let $G$ be a smooth affine $k$-group, $k=\bar k$, $g\in G(k)$,
-$j:G\into \GL_n$ a closed immersion which is a $k$-homomorphism.
+$j:G\to \GL_n$ a closed immersion which is a $k$-homomorphism.
 Consider $\rho_g$ acting on $k[G]$
 and the Jordan decomposition
 $j(g)=j(g)_{\rm{ss}}j(g)_{\rm{u}}\in \GL_n(k)$.
@@ -2488,7 +2516,7 @@ and more specifically to fill in a key step used in Appendix \ref{jexist},
 we need the following result, somewhat remarkable for its extraordinary generality and usefulness.
 
 \begin{theorem}\label{subgroupfixline}
- Let $j:G\into G'$ be a closed $k$-subgroup scheme
+ Let $j:G\to G'$ be a closed $k$-subgroup scheme
 of a (smooth) affine $k$-group $G'$ of finite type.
 Then there exists a $k$-linear representation $\pi:G'\to \GL(V)$
 and a line $L\subset V$ such 
@@ -2582,7 +2610,7 @@ of the unipotent and semisimple factors of $u$.
 But $u_{\rm{ss}}=1$, so $u''_{\rm{ss}}=1$, so $u''=u''_{\rm{u}}$.
 \end{example}
 \begin{example}If ${\rm{char}}(k)=p>0$
-then the constant subgroup $\ZZ/p\ZZ\subset \mathbf{G}_a$
+then the constant subgroup $\mathbf{Z}/p\mathbf{Z}\subset \mathbf{G}_a$
 given as $\Spec k[t]/(t^p-t)$
 is unipotent. 
 \end{example}
@@ -2679,8 +2707,8 @@ on $V/W$ -- i.e. at $?_2$ -- and induct on dimension.
 Note that we set up Theorem \ref{unipotenttheorem} for all representations, not just faithful ones. This is good, because probably we lose faithfulness when passing to $V/W$.
 
 By Homework \#5, problem 2, for any linear representation of a smooth finite type $k$-group $G$ on a vector space $V$,
-the functorially $G$-fixed vectors $\underline V^G\subset \underline V = \AA(V)$ [the affine space corresponding to $V$, equipped with its natural $G$-action
-through $\rho$] constitute the points of a scheme of the form $\underline W = \AA(W)$ for a unique
+the functorially $G$-fixed vectors $\underline V^G\subset \underline V = \mathbf{A}(V)$ [the affine space corresponding to $V$, equipped with its natural $G$-action
+through $\rho$] constitute the points of a scheme of the form $\underline W = \mathbf{A}(W)$ for a unique
 linear subspace $W\subset V$, which we denote by $V^G$.
 So we just need to prove that $V^G\neq 0$
 if $G$ is unipotent and $V$ is nonzero.
@@ -2712,11 +2740,11 @@ Note that by functoriality of Jordan decomposition, $\rho(g)$ is unipotent.
 hence $g$ acts unipotently on the subrepresentation $V$.]
 So write $\rho(g)=\id+x$ for some $x\in \End_k(V)$, which in fact is nilpotent.
 Then for all $g'\in G(k)$ we have
-\[\tr(x\rho(g'))=\tr((\rho(g)-\id)\rho(g'))
-=\tr(\rho(gg'))-\tr(\rho(g))=\dim V- \dim V =0\]
+\[\text{Tr}(x\rho(g'))=\text{Tr}((\rho(g)-\id)\rho(g'))
+=\text{Tr}(\rho(gg'))-\text{Tr}(\rho(g))=\dim V- \dim V =0\]
 since both $\rho(gg'),\rho(g)$ are unipotent on $V$.
 Since $\Gamma=\rho(G(k))$ spans $\End_k(V)$,
-it follows that $\tr(xy)=0$ for all $y\in \End_k(V)$.
+it follows that $\text{Tr}(xy)=0$ for all $y\in \End_k(V)$.
 But the trace pairing on $\End_k(V)$ is non-degenerate,
 so $x=0$. Hence $\rho$ is trivial,
 so by irreducibility $V=k$,
@@ -2736,7 +2764,7 @@ not-necessarily connected
 closed subgroups $H\subset G$.
 This will use the closed orbit lemma, 
 and it will allow us to show that, in a suitable sense, we have
-\[\PGL_n=\GL_n/\mathbf{G}_m=\SL_n/\mu_n, \GL_2/B=\PP^1,\ldots.\]
+\[\PGL_n=\GL_n/\mathbf{G}_m=\SL_n/\mu_n, \GL_2/B=\mathbf{P}^1,\ldots.\]
 \end{enumerate} 
 
 \section{February 17}
@@ -2748,13 +2776,43 @@ then $\SL_2(k)$ is its own commutator subgroup.
 \end{proposition}
 To prove this, we need the following fact.
 \begin{lemma}\cite[Ch.\,XIII, Lemma 8.1]{Lang}
-For any field $k$, $\SL_2(k)$ is generated by the upper and lower triangle unipotent subgroups
-\[U^+(k)=\{\(\begin{smallmatrix}1&a\\0&1\end{smallmatrix}\)\stackrel{def}{=}x^+(a):a\in k\},\qquad U^-(k)=\{\(\begin{smallmatrix}1&0\\a&1\end{smallmatrix}\)\stackrel{def}{=}x^-(a):a\in k\}.\qed\]
+For any field $k$ and $a \in k$ set
+$$
+x^+(a) = \left(
+\begin{matrix}
+1 & a \\
+0 & 1
+\end{matrix}
+\right)
+\quad\text{and}\quad
+x^-(a) = 
+\left(
+\begin{matrix}
+1 & 0 \\
+a & 1
+\end{matrix}
+\right)
+$$
+Then $\SL_2(k)$ is generated by the upper and lower triangle unipotent subgroups
+$U^+(k) = \{x^+(a):a\in k\}$ and
+$U^-(k) = \{x^-(a) : a\in k\}$.
 \end{lemma}
-Note that $x^\pm:\mathbf{G}_a\stackrel{\sim}{\to}U^\pm$ is an isomorphism of algebraic groups.
+
+\noindent
+Note that $x^\pm:\mathbf{G}_a \to U^\pm$ is an isomorphism of algebraic groups.
+
 \begin{proof}[Proof of Proposition $\ref{sl2fact}$]
-Let $D=\{\(\begin{smallmatrix}t&0\\0&t^{-1}\end{smallmatrix}\)\stackrel{def}{=}\lambda(t)\}$ be the diagonal torus in $\SL_2$.
-(So $\lambda:\mathbf{G}_m\to D$ is an isomorphism.)
+For $t \in k^*$ set
+$$
+\lambda(t) =  \left(
+\begin{matrix}
+t & 0 \\
+0 & t^{-1}
+\end{matrix}
+\right)
+$$
+and let $D = \{\lambda(t) : t \in k^*\}$ be the diagonal torus in $\SL_2$,
+so $\lambda : \mathbf{G}_m \to D$ is an isomorphism of algebraic groups.
 
 The first claim is that $D$ normalizes $U^\pm$, i.e. $D\subset N_{\SL_2}(U^\pm)$
 as algebraic groups.
@@ -2826,7 +2884,7 @@ below. Here are some others.
 \begin{example}\label{subgroupgeneratedbysubgroups}
 Let $H,H'\subset G$ be smooth connected closed $k$-subgroups
 of a smooth $k$-group $G$ of finite type.
-Using the inclusions $H\into G, H'\into G$,
+Using the inclusions $H\to G, H'\to G$,
 Proposition \ref{subgroupgeneratedbyvarieties}
 we obtain a smooth, connected closed $k$-subgroup
 $H\cdot H'\subset G$
@@ -2838,11 +2896,11 @@ we have $(H\cdot H')(K)=H(K)\cdot H'(K)\subset G(K)$.
 \begin{remark}\label{sl2Zremark}
 In Example \ref{subgroupgeneratedbysubgroups},
 $H$ and $H'$ must be connected. Otherwise the conclusion is false.
-Take $G=\SL_{2/\QQ}$ and $H,H'\subset \SL_2(\ZZ)\subset \SL_{2/\QQ}$
+Take $G=\SL_{2/\mathbf{Q}}$ and $H,H'\subset \SL_2(\mathbf{Z})\subset \SL_{2/\mathbf{Q}}$
 finite (disconnected) subgroups of orders $3$ and $4$ which generate
-$\SL_2(\ZZ)$.
-Thus the subgroup of $\SL_{2/\QQ}(\CC)$ generated
-by $H$ and $H'$ is $\SL_2(\ZZ)$ which is not algebraic.
+$\SL_2(\mathbf{Z})$.
+Thus the subgroup of $\SL_{2/\mathbf{Q}}(\mathbf{C})$ generated
+by $H$ and $H'$ is $\SL_2(\mathbf{Z})$ which is not algebraic.
 (It is an infinite disjoint union of points.)
 \end{remark}
 \begin{example}\label{derivedsubgroup}Assume $G$ is smooth, and for now assume $G$ is connected (but see
@@ -2857,12 +2915,12 @@ over $k$ we have
 \begin{example}
 Let $G=\GL_n$.
 We have
-\[\SL_n=\ker(\GL_n\stackrel{\det}{\to}\mathbf{G}_m).\]
+\[\SL_n=\ker(\GL_n \xrightarrow{\det} \mathbf{G}_m).\]
 Now $\sD \GL_n$ must map trivially to $\mathbf{G}_m$ under
 $\det$,
 because everything is smooth, so we can compute on geometric points,
 and we know that commutators die when mapped to an abelian group.
-So $\sD\GL_n$ factors through $\SL_n\into \GL_n$.
+So $\sD\GL_n$ factors through $\SL_n\to \GL_n$.
 
 Later we will see that $\SL_n=\sD \GL_n = \sD \SL_n$;
 we'll deduce the outer equality from the case $n=2$.
@@ -2889,7 +2947,12 @@ where $g_i(x)=f_i(x)^{-1}$.
 Now we don't need to mention inverses, and can restrict our attention to taking products of the $f_i(X_i)$'s.
 
 Now for $I=\{i_1,\ldots, i_n\}$ a multiset of indices, define
-\[m_I:X_I\stackrel{def}{=}X_{i_1}\times\cdots\times X_{i_n}\stackrel{\prod f_{i_j}}{\to} G\times\cdots\times G\stackrel{\cdot}{\to} G.\]
+\[
+m_I :
+X_I = X_{i_1}\times\cdots\times X_{i_n}
+\xrightarrow{\prod f_{i_j}}
+G \times\cdots\times G \to G.
+\]
 The set theoretic image $W_I=m_I(X_I)$ is constructible by Chevalley's theorem.
 By hypothesis, $W_I$ contains the identity $e$.
 Therefore $W_I$ contains a dense open $U$
@@ -2899,11 +2962,11 @@ which is a geometrically integral closed subscheme of $G$
 passing through $e$.
 [Note that $\bar W_I$ is geometrically integral
 because $X_I\to \bar W_I$ is dominant,
-so locally $\cO_{\bar W_I}\subset \cO_{X_I}$,
-and the sections of $(\cO_{X_I})_{\bar k}$ are domains (as $X_I$ is geometrically integral) so the same is true for $(\cO_{\bar W_I})_{\bar k}$.]
+so locally $\mathcal{O}_{\bar W_I}\subset \mathcal{O}_{X_I}$,
+and the sections of $(\mathcal{O}_{X_I})_{\bar k}$ are domains (as $X_I$ is geometrically integral) so the same is true for $(\mathcal{O}_{\bar W_I})_{\bar k}$.]
 
 Next choose $I$ such that $\dim \bar W_I$ is maximal.
-We will show that $H\stackrel{def}{=}\bar W_I$  satisfies the conclusions of the proposition.
+We will show that $H = \bar W_I$  satisfies the conclusions of the proposition.
 
 We claim the map $\bar W_J\times \bar W_{J'}\to \bar W_{J\sqcup J'}$ 
 given by multiplication is dominant,
@@ -2929,12 +2992,12 @@ Therefore $H$ is a smooth connected closed $k$-subgroup of $G$,
 and moreover it contains $f_j(X_j)$ for all $j$ by construction.
 
 Now we have $U\subset W_I\subset H$
-and $U\into H$ is open and dense
+and $U\to H$ is open and dense
 On $K$-points, $W_I(K)$ comes from $X_i(K)$'s for $i\in I$
 multiplied in order.
 Therefore to show the last bit of (i)
 as well as (ii),
-it's enough to show that $U\times U^{-1}\stackrel{\cdot}{\to} H$ is surjective,
+it's enough to show that $U\times U^{-1} \to H$ is surjective,
 or equivalently, surjective on $K$-points.
 
 We can extend scalars to $K$, rename $K$ as $k$.
@@ -3012,9 +3075,9 @@ the image is a smooth closed $k$-subgroup of $G$.
 Since smooth closed subgroups of $H\ltimes H'$
 thus map to smooth closed subgroup of $G$,
 it is enough to treat the case $G= H\ltimes H'$.
-In particular we can assume $H'\nsg G$.
+In particular we can assume $H'\vartriangleleft G$.
 
-\textbf{Exercise:} If $H'\nsg G$ then $(H')^0\nsg G$.
+\textbf{Exercise:} If $H'\vartriangleleft G$ then $(H')^0\vartriangleleft G$.
 
 By Corollary \ref{derivedsubgroupcor},
 we have smooth connected closed $k$-subgroups
@@ -3029,7 +3092,7 @@ generated by all of them,
 again using Proposition \ref{subgroupgeneratedbyvarieties}.
 Since $G=H\ltimes H'$, $N\subset \sD G$.
 Since $G(k)\subset G$ is Zariski-dense (as $k=k_s$)
-$N\nsg G$.
+$N\vartriangleleft G$.
 
 Now we are almost done; we'll finish the proof next time.
 \end{proof}
@@ -3038,7 +3101,7 @@ Now we are almost done; we'll finish the proof next time.
 Last time we reduced to the case $H,H'\subset H\ltimes H'=G$
 all smooth $k$-groups of finite type
 over $k=k_s$,
-and we constructed a smooth connected normal closed $k$-subgroup $N\nsg G$
+and we constructed a smooth connected normal closed $k$-subgroup $N\vartriangleleft G$
 such that
 \[[H,H'^0]\cdot[H^0,H']\subset N,\qquad N(K)\subset [H(K),H'(K)] \mbox{ for all } K=\bar K/k.\]
 Since $k=k_s$ we can choose representatives $h_i\in H(k)$
@@ -3090,8 +3153,8 @@ Then $G(K)$ is a solvable group if and only if $\sD^nG=1$ for all $n\gg 0$.
 \end{remark}
 \begin{proof}
 We have $\sD^n G=\sD^{n+1}G$ for $n\gg 0$.
-So $(\sD^nG)(K)=\sD^n(G(K))\stackrel{?}{=}1$
-if and only if $\sD^nG=1$ because $K=\bar K$.
+So $(\sD^nG)(K)=\sD^n(G(K))$ is $1$
+if and only if $\sD^nG$ is $1$ because $K=\bar K$.
 In other words, the triviality of $\sD^nG$ for large $n$
 can be checked on geometric points.
 \end{proof}
@@ -3105,7 +3168,7 @@ If $G$ is commutative then $\sD G$ is trivial,
 so $G$ is solvable.
 \end{example}
 \begin{example}
-Given maps $G'\into G \onto G''$,
+Given maps $G'\to G \onto G''$,
 if $G$ is solvable then so are $G'$ and $G''$.
 This follows from the analogous fact from group theory,
 since it can be checked on geometric points.
@@ -3119,7 +3182,7 @@ and $G(\bar k)/G^0(\bar k)$ is solvable in the usual group theoretic sense.
 \begin{example}
 If $G$ is unipotent, then $G$ is solvable.
 This is because by Theorem \ref{unipotenttheorem}
-we can find an embedding $G\into U_n$.
+we can find an embedding $G\to U_n$.
 And $U_n$ is solvable because this can be checked on geometric points,
 and $U_n(\bar k)$ has an obvious composition
 series
@@ -3131,7 +3194,7 @@ hence abelian.
 If $G$ has a composition series in the sense
 of algebraic groups,
 i.e. a chain
-$1=G_n\nsg G_{n-1}\nsg \cdots\nsg G_1\nsg G_0=G$
+$1=G_n\vartriangleleft G_{n-1}\vartriangleleft \cdots\vartriangleleft G_1\vartriangleleft G_0=G$
 all smooth closed $k$-subgroups,
 and $\sD G_i\subset G_{i+1}$ for all $i$,
 then $G$ is solvable. Just check on geometric points!
@@ -3182,7 +3245,7 @@ which is a smooth closed $k$-subgroup by previous results.
 \begin{lemma}
 $U$ is unipotent, which is equivalent to $U(k)=G(k)_{\rm{u}}$.
 \end{lemma}
-To prove the lemma, choose a faithful representation $G\into \GL(V)$
+To prove the lemma, choose a faithful representation $G\to \GL(V)$
 and consider the condition that the characteristic polynomial of
 $g\in G(k)$ is $(T-1)^{\dim V}$. This is manifestly Zariski closed
 on $\GL(V)$, and hence on $G$.
@@ -3192,7 +3255,7 @@ which implies $U(k)=G(k)_{\rm{u}}$ as desired.
 Next define $M$ to be the Zariski closure of $G(k)_{\rm{ss}}$.
 The analogous lemma is
 \begin{lemma}
-There exists a faithful representation $G\into \GL(V)$ such 
+There exists a faithful representation $G\to \GL(V)$ such 
 that $M$ maps to a torus.
 \end{lemma}
 In particular, by Homework 5, this implies that all elements of $M(k)$ are semisimple in $G$, 
@@ -3242,7 +3305,7 @@ A \textit{quotient} $G/H$ is a map
 $\pi:G\to X$ for a finite type $k$-scheme $X$,
 which is flat, surjective, and invariant under the right translation action of $H$ on $G$,
 such that the map
-\[G\times H\to G\dtimes_X G\]
+\[G\times H\to G\times_X G\]
 given by
 \[(g,h)\mapsto (g,gh)\]
 is an isomorphism.
@@ -3260,7 +3323,7 @@ Moreover that $\pi$ is a quotient $G/H$ can be \textit{checked}
 after scalar extension.
 \end{remark}
 \begin{remark}
-By passing to $pr_1^{-1}(e)$ in the isomorphism $G\times H\simeq G\dtimes_X G$,
+By passing to $pr_1^{-1}(e)$ in the isomorphism $G\times H\simeq G\times_X G$,
 one can easily check
 that $\pi^{-1}(\pi(e))=H$.
 \end{remark}
@@ -3270,14 +3333,14 @@ of smooth finite type $k$-groups
 is a quotient $G/\ker \pi$.
 To prove this, note that $\pi$ is surjective by assumption,
 flat by the Miracle Flatness Theorem \cite[23.1]{Ma} 
-and that $G\times \ker\pi\simeq G\dtimes_{G'} G$
+and that $G\times \ker\pi\simeq G\times_{G'} G$
 via the specified map can be checked group-theoretically
 on $R$-points for any $k$-algebra $R$.
 \end{example}
 The definition of quotients leaves open three crucial questions, which we will address in the sequel.
 \begin{enumerate}
 \item Under what circumstances does $G/H$ exist?
-\item If $H\nsg G$ is normal, does
+\item If $H\vartriangleleft G$ is normal, does
 $G/H$ necessarily have a unique $k$-group structure
 making the projection $G\to G/H$ a $k$-homomorphism?
 \item Does the projection $\pi:G\to G/H$ (for any closed subgroup $H$)
@@ -3296,7 +3359,7 @@ up to unique isomorphism.)
 \begin{proof}
 Consider the diagram
 \[\xymatrix{G\times G\ar@<+.3em>[r]^{mult}\ar@<-.3em>[r]_{pr_1}\ar[d]^\sim_{(g,h)\mapsto (g,gh)}&G\ar@{=}[d]\ar[r]^f&Y\ar@{=}[d]\\
-G\dtimes_{G/H} G\ar@<+.3em>[r]^{pr_2}\ar@<-.3em>[r]_{pr_1}&G\ar[r]^f\ar[d]^\pi&Y\\
+G\times_{G/H} G\ar@<+.3em>[r]^{pr_2}\ar@<-.3em>[r]_{pr_1}&G\ar[r]^f\ar[d]^\pi&Y\\
 &G/H\ar@{-->}[ru]_{\exists?!}}\]
 In both rows, both compositions agree. But by using the isomorphism in the first column
 from the definition of a quotient,
@@ -3305,9 +3368,9 @@ Since $\pi$ is flat and surjective and finite type (hence quasicompact)
 the existence of the dotted map
 is thus reduced to the following, which is essentially the content of faithfully flat descent.
 \begin{theorem}[Grothendieck]
-Let $S'\stackrel{\pi}{\to} S$ be a flat surjective quasicompact map.
+Let $S' \xrightarrow{\pi} S$ be a flat surjective quasicompact map.
 Given a diagram with both compositions in the top row agreeing,
-\[\xymatrix{S'\dtimes_S S'\ar@<+.3em>[r]^{pr_1}\ar@<-.3em>[r]_{pr_2}&S'\ar[r]^f\ar[d]_\pi&Y\\
+\[\xymatrix{S'\times_S S'\ar@<+.3em>[r]^{pr_1}\ar@<-.3em>[r]_{pr_2}&S'\ar[r]^f\ar[d]_\pi&Y\\
 &S\ar@{-->}[ru]_{\exists!}}\]
 there exists a unique dotted map making the diagram commute.
 \end{theorem}
@@ -3318,23 +3381,23 @@ The proof of faithfully flat descent essentially reduces to the affine case,
 where one must actually do something.
 The setup is that $A\to A'$ is a faithfully flat algebra
 and we have a diagram
-\[\xymatrix{B\ar[r]\ar@{-->}[rd]_{\exists!}&A'\ar@<+.3em>[r]^{j_1}\ar@<-.3em>[r]_{j_2}&A'\dotimes_A A'\\
+\[\xymatrix{B\ar[r]\ar@{-->}[rd]_{\exists!}&A'\ar@<+.3em>[r]^{j_1}\ar@<-.3em>[r]_{j_2}&A'\otimes_A A'\\
 &A\ar[u]}\]
 such that both composition in the row agree.
 Then there exists a unique dotted map making the diagram commute.
-The real content of this is that $A\into A'\rightrightarrows A'\dotimes_A A'$
+The real content of this is that $A\to A'\rightrightarrows A'\otimes_A A'$
 is exact, which one must prove.
 \end{example}
 \begin{example}
 The toy example is the case of $S$ quasicompact and separated,
 $S'=\coprod U_i'$ a disjoint union
 of $U_i'$'s giving a finite open affine cover of $S$.
-Then $S'\dtimes_S S'=\coprod U_i'\cap U_j'$,
+Then $S'\times_S S'=\coprod U_i'\cap U_j'$,
 and the content of faithfully flat descent in this case is that morphisms glue.
 \end{example}
 Now we address question 2 above.
 \begin{lemma}
-If $H\nsg G$ is normal and the quotient $G/H$ exists,
+If $H\vartriangleleft G$ is normal and the quotient $G/H$ exists,
 then there exists a unique $k$-group structure on $G/H$ such that $\pi:G\to G/H$
 is a $k$-homomorphism.
 \end{lemma}
@@ -3354,7 +3417,7 @@ Here this says that $\pi(ghg'h')=\pi(gg')$.
 This follows from the usual group theoretic
 computation
 that $ghg'h'=gg'g'^{-1}hg'h\in gg'H(R)$
-because $H(R)\nsg G(R)$ is normal. 
+because $H(R)\vartriangleleft G(R)$ is normal. 
 \end{proof}
 \begin{example}
 $\SL_n/\mu_n\simeq \PGL_n$,
@@ -3378,7 +3441,7 @@ If $G=\GL_n$ and $H$ is the subgroup $\{\(\begin{smallmatrix}*&\star&\star&\star
 0&\star&\star&\star&\star\\
 \vdots&\star&\star&\star&\star\\
 0&\star&\star&\star&\star\end{smallmatrix}\)\}$ (where anything can go in the $\star$'s),
-then $G/H\simeq\PP^n$.
+then $G/H\simeq\mathbf{P}^n$.
 The method of proof will in fact show that if $G\actson X$, a finite type $k$-scheme,
 and $H=\Stab_G(x)$ for a rational point $x\in X(k)$,
 then $G/H$ sits as a locally closed subscheme of $X$
@@ -3389,11 +3452,11 @@ Using that $G$ is smooth and affine
 and $H$ is closed, by Theorem \ref{subgroupfixline}
 there is a representation $\rho:G\to \GL(V)$
 such that $H=N_G(L)$ for a line $L\subset V$.
-Consider the projective representation $G\actson \PP(V)$,
-and let $x_0\in \PP(V)$ be the point corresponding to $L\subset V$.
+Consider the projective representation $G\actson \mathbf{P}(V)$,
+and let $x_0\in \mathbf{P}(V)$ be the point corresponding to $L\subset V$.
 Then $H=Z_G(x_0)$ is the scheme theoretic centralizer
 of $x_0$ for this action.
-Let $X\subset\PP(V)$ be the locally-closed $G$-orbit of $x_0$,
+Let $X\subset\mathbf{P}(V)$ be the locally-closed $G$-orbit of $x_0$,
 with the reduced structure, so that $X$ is smooth. (We are here invoking
 the closed orbit lemma \ref{closedorbit}.)
 
@@ -3411,11 +3474,11 @@ is equal to $\dim G$, this equation must therefore hold everywhere.
 So by the Miracle Flatness theorem \cite[23.1]{Ma}
 $\pi$ is flat.
 Finally, by definition $\pi$ is right $H$-invariant.
-So we just need to show $G\times H\to G\dtimes_X G$
+So we just need to show $G\times H\to G\times_X G$
 sending $(g,h)\mapsto (g,gh)$ is an isomorphism.
 But on $R$-points we have
-\[G\dtimes_X G(R)=G\dtimes_{\PP(V)}G(R)
-=\{(g,g')\in G(R)^2:gx_0=g'x_0\in \PP V(R)\}\]
+\[G\times_X G(R)=G\times_{\mathbf{P}(V)}G(R)
+=\{(g,g')\in G(R)^2:gx_0=g'x_0\in \mathbf{P} V(R)\}\]
 \[=\{(g,g'):g^{-1}g'\in Z_G(x_0)(R)=H(R)\}
 =\{(g,g'):g'=gh, \text{for a unique }h\in H(R)\}
 =(G\times H)(R).\]
@@ -3426,14 +3489,14 @@ for even more general settings on must use the theory of algebraic spaces.
 \end{remark}
 \begin{example}
 The important example of the above theorem
-is when $H\nsg G$ is normal. In this case $G/H$ is actually affine.
+is when $H\vartriangleleft G$ is normal. In this case $G/H$ is actually affine.
 For a proof, see Appendix \ref{affineqt}.
 The idea is to go back to the construction
 and rig the representation $V$
 so that $H$ acts on all of $V$
 by the same character $\chi\in\Hom(H,\mathbf{G}_m)=\Hom(H,\GL(L))$ it acts
 by on $L$.
-Then one finds that $G/H\into\PGL(V)$ is a closed (by the closed orbit lemma) subscheme
+Then one finds that $G/H\to\PGL(V)$ is a closed (by the closed orbit lemma) subscheme
 of $\PGL(V)$, and is thus affine.
 \end{example}
 \begin{remark} See Homework 7 for a discussion of exact sequences of $k$-groups,
@@ -3445,8 +3508,9 @@ Let $\g=T_eG$.
 For $v\in \g\subset G(k[\epsilon])$,
 consider right multiplication over $k[\epsilon]$
 as a map
-\[G_{k[\epsilon]}\stackrel{\sim}{\to}G_{k[\epsilon]}\]
-\[g\mapsto gv.\]
+\[
+G_{k[\epsilon]} \to G_{k[\epsilon]},\quad
+g\mapsto gv.\]
 This is the identity on the special fiber,
 since $v$ is a tangent vector at the identity.
 In particular, on the underlying topological space
@@ -3454,16 +3518,16 @@ $|G_{k[\epsilon]}|=|G|$ this map is the identity.
 On structure sheaves, regarded as sheaves on $|G|$,
 the map
 is an isomorphism
-\[\cO_{G_{k[\epsilon]}}=\cO_G\oplus \cO_G\epsilon\simeq \cO_G\oplus \cO_G\epsilon.\]
+\[\mathcal{O}_{G_{k[\epsilon]}}=\mathcal{O}_G\oplus \mathcal{O}_G\epsilon\simeq \mathcal{O}_G\oplus \mathcal{O}_G\epsilon.\]
 More particularly, it is a $k[\epsilon]$-algebra automorphism deforming the identity
-on $\cO_G$.
+on $\mathcal{O}_G$.
 By an easy computation, it is uniquely of the form
 \[f_1+f_2\epsilon\mapsto f_1+f_2\epsilon+D_v(f_1)\epsilon\]
-for $D_v\in \Der_k(\cO_G,\cO_G)$.
+for $D_v\in \Der_k(\mathcal{O}_G,\mathcal{O}_G)$.
 \begin{remark}
-The data of $D_v$ is equivalent to that of a map $\Omega^1_{G/k}\to \cO_G$,
+The data of $D_v$ is equivalent to that of a map $\Omega^1_{G/k}\to \mathcal{O}_G$,
 and hence in the smooth case (by duality)
-to a global vector field $\cO_G\to T_{G/k}$.
+to a global vector field $\mathcal{O}_G\to T_{G/k}$.
 It is easy to see that this vector field is left-$G$-invariant,
 relating $\g$ to the interpretation of Lie algebras
 in terms of left invariant vector fields
@@ -3472,11 +3536,11 @@ on Lie groups in the classical, analytic setting.
 As in the remark, $D_v$ (as a derivation)
 is left-invariant, in the sense
 that 
-\[D_v(f\circ \ell_g)=D_vf\circ \ell_g \mbox{ for all } g\in G(R),f\in \cO_{G_R},\]
+\[D_v(f\circ \ell_g)=D_vf\circ \ell_g \mbox{ for all } g\in G(R),f\in \mathcal{O}_{G_R},\]
 as is easy to check by hand.
 \begin{lemma}
 The map we just produced
-\[\g\to \{\text{left-invariant $k$-algebra derivations $D:\cO_G\to\cO_G$}\}\]
+\[\g\to \{\text{left-invariant $k$-algebra derivations $D:\mathcal{O}_G\to\mathcal{O}_G$}\}\]
 is a $k$-linear isomorphism of vector spaces.
 \end{lemma}
 \begin{proof} See \cite[A.7.1, A.7.2]{pred}.
@@ -3485,9 +3549,9 @@ is a $k$-linear isomorphism of vector spaces.
 It is this lemma which underlies Cartier's theorem on the smoothness of algebraic groups in characteristic zero.
 \end{remark}
 \begin{definition}
-Let $\Lie(G)=(\g,[\cdot ,\cdot ]_G)$
+Let $\text{Lie}(G)=(\g,[\cdot ,\cdot ]_G)$
 where $[\cdot , \cdot]_G$ is the commutator of (left-invariant) $k$-derivations
-$\cO_G\to\cO_G$, pulled back to a Lie bracket on $\g$ along the isomorphism
+$\mathcal{O}_G\to\mathcal{O}_G$, pulled back to a Lie bracket on $\g$ along the isomorphism
 of the previous lemma.
 \end{definition}
 (Note that one must check that the commutator of left-invariant derivations
@@ -3529,14 +3593,14 @@ functorial in $G$.
 \subsection{Linear representations of split tori, over general rings}
 Let $k$ be any commutative ring, not equal to the zero ring.
 Let $T\simeq \mathbf{G}_m^r$ be a split torus over $k$.
-Set $\Lambda=\ZZ^r$
+Set $\Lambda=\mathbf{Z}^r$
 We have an injection
 \begin{equation*}\label{lambdaX}
-\tag{$\star$}\Lambda\into \Hom_{k\mbox{-}{\rm{gp}}}(T,\mathbf{G}_m)=:X(T) 
+\tag{$\star$}\Lambda\to \Hom_{k\mbox{-}{\rm{gp}}}(T,\mathbf{G}_m)=:X(T) 
 \end{equation*}
 given by $\lambda=\vec n\mapsto [\lambda:(t_1,\ldots, t_r)\mapsto \prod t_i^{n_i}]$.
 \begin{remark}
-On Homework 1, it was shown that $\End_k(\mathbf{G}_m)=\ZZ$ if $\Spec k$ is connected;
+On Homework 1, it was shown that $\End_k(\mathbf{G}_m)=\mathbf{Z}$ if $\Spec k$ is connected;
 so under this hypothesis \eqref{lambdaX} is an isomorphism.
 \end{remark}
 The main theorem about linear representations of split tori is the following.
@@ -3549,9 +3613,14 @@ where the \textbf{$\lambda$ weight space}
 $V_\lambda$ is $T$-stable
 and has action via the character $\lambda$;
 in other words, for all $v \in V_R$ we have 
-\[v\stackrel{!}{=}\sum_{\rm{finite}}v_\lambda\text{ for some }v_\lambda\in (V_\lambda)_R\]
+\[
+v = \sum_{\rm{finite}}v_\lambda\text{ for some }v_\lambda\in (V_\lambda)_R
+\]
 and for all $t \in T(R)$ we have 
-\[t.v=\sum \lambda(t)v_\lambda\in V_R,\]
+\[
+t.v =
+\sum \lambda(t)v_\lambda\in V_R,
+\]
 where $\lambda(t)\in R^\times$ is given as above via \eqref{lambdaX}.
 \end{theorem}
 \begin{remark}
@@ -3591,9 +3660,10 @@ As $W_\lambda$ has a similar description, the claim follows.
 \end{example}
 \begin{example}
 Let $T$ be the diagonal torus in $\GL_r$.
-Then $X(T)=\bigoplus \ZZ_{\lambda_i}$
-where $\lambda_i:T\stackrel{pr_i}{\to}\mathbf{G}_m$ is the projection onto the $i$th diagonal entry.
-Consider $T\in \GL_n\stackrel{\Ad}{\to}\GL(\gl_r)=\Aut({\rm{Mat}}_r(k))$.
+Then $X(T)=\bigoplus \mathbf{Z}_{\lambda_i}$
+where $\lambda_i : T\xrightarrow{pr_i} \mathbf{G}_m$
+is the projection onto the $i$th diagonal entry.
+Consider $T\in \GL_n\xrightarrow{\Ad} \GL(\gl_r) = \text{Aut}({\rm{Mat}}_r(k))$.
 [Recall that the adjoint representation
 is given by $\Ad(g)(X)=gXg^{-1}$ because
 $g(1+\epsilon X)g^{-1}=1+\epsilon gXg^{-1}$,
@@ -3604,7 +3674,7 @@ in $\GL_r(k[\epsilon])$.]
 We would like to describe explicitly the weight space decomposition
 of $\gl_n$ into $T$-stable lines.
 One obvious $T$-stable piece is the diagonal
-\[\Lie(T)=\mathfrak t = \left\{\(\begin{smallmatrix}*&&\\ &\ddots&\\ &&*\end{smallmatrix}\)\right\}\subset \gl_r.\]
+\[\text{Lie}(T)=\mathfrak t = \left\{\(\begin{smallmatrix}*&&\\ &\ddots&\\ &&*\end{smallmatrix}\)\right\}\subset \gl_r.\]
 Since $T$ conjugates the diagonal trivially, this has trivial $T$-action,
 so $\mathfrak t$ is an $r$-dimensional part of the $\lambda=0$
 weight space. As we will see in a moment, it is the whole $0$-weight space.
@@ -3659,7 +3729,7 @@ of $\rho(g_0)\in \End_{k[G]}(V_{k[G]})$
 coming from $g_0=\id_{k[G]}:k[G]\to k[G]$
 viewed as a point of $G(k[G])$, satisfying certain properties corresponding to the multiplicativity and identity axioms.
 This again is equivalent to the data of
- $\alpha_\rho=[g_0]:V\to V\dotimes_k k[G]$,
+ $\alpha_\rho=[g_0]:V\to V\otimes_k k[G]$,
 a $k$-linear map satisfying certain properties, which we will make specific
 in the case $G=T$ in a moment.
 
@@ -3671,7 +3741,7 @@ where $e_{\vec n}=\prod X_i^{n_i}$ when viewed as an element of the Laurent poly
 Thus the map $\alpha_\rho$ coming from our given
 $k$-linear representation $\rho$ of $T$ on $V$
 is a map
-\[\alpha_\rho:V\to V\dotimes_k k[\Lambda]\]
+\[\alpha_\rho:V\to V\otimes_k k[\Lambda]\]
 \[v\mapsto\sum_{\rm{finite}}f_\lambda(v)\otimes e_\lambda\]
 and its properties are encoded by properties of the coefficient functions
 $f_\lambda:V\to V$.
@@ -3837,7 +3907,7 @@ isogenously onto $H$
 then $H$ is accordingly isomorphic to $\mathbf{G}_a$ or $\mathbf{G}_m$ over $k$.
 By much the same method as in (i), the $\mathbf{G}_m$ case is fine.
 For the $\mathbf{G}_a$ case, consider the diagram
-\[\xymatrix{\mathbf{G}_a\xyfib[r]^f\xycof[d]&H\xycof[d]\\
+\[\xymatrix{\mathbf{G}_a\ar[r]^f\ar[d]&H\ar[d]\\
 \mathbf{P}^1_k\ar[r]_{\exists \overline{f}}&\overline{H}}\]
 where $\overline{H}$ is the regular compactification of the curve
 $H$.
@@ -3952,17 +4022,22 @@ We will prove this final corollary next time.
 See Appendix \ref{qtformalism} 
 to resolve the following outstanding issue concerning quotients.
 To really work effectively with quotients, and in particular
-to make induction arguments go through, e.g. for proving facts about solvable groups, it is essential to know that quotients respect certain basic properties. We also would really like some basic facts the like ``second isomorphism theorem'' $H'/H''\stackrel{\sim}{\rightarrow} \overline{H}'/\overline{H''}$
+to make induction arguments go through, e.g. for proving facts about solvable groups, it is essential to know that quotients respect certain basic properties. We also would really like some basic facts the like ``second isomorphism theorem''
+$H'/H'' \rightarrow \overline{H}'/\overline{H''}$
 where $\overline{K}$ denotes the reduction of a subgroup $H\subset K\subset G$
 to $G/H$ for $H\vartriangleleft G$, say.
 
 What is shown in Appendix \ref{qtformalism} is that 
-\[\xymatrix{G\xyfib[r]^\pi&G/H\\
-Z=\pi^{-1}\overline{Z}\ar[r]_(.6){\pi|_Z}\xycof[u]&\overline{Z}\xycof[u]}\]
+\[\xymatrix{G\ar[r]^\pi&G/H\\
+Z=\pi^{-1}\overline{Z}\ar[r]_(.6){\pi|_Z}\ar[u]&\overline{Z}\ar[u]}\]
 sets up a bijection
-\[\xymatrix{\{\text{$H$-stable closed subschemes $Z\subset G$}\}\ar@{=}[r]&\{\text{closed subschemes $\overline{Z}\subset G/H$}\}\\
-\{\text{closed subgroups $H\subset H'\subset G$}\}\ar@{=}[r]\xycof[u]&\{\text{closed subgroups $\overline{H'}\subset G/H$}\}\xycof[u]\\
-\{\text{normal ones}\}\xycof[u]\ar@{=}[r]&\{\text{normal ones}\}\xycof[u]}\]
+\[
+\xymatrix{
+\{\text{$H$-stable closed subschemes $Z\subset G$}\}\ar@{=}[r]&\{\text{closed subschemes $\overline{Z}\subset G/H$}\}\\
+\{\text{closed subgroups $H\subset H'\subset G$}\}\ar@{=}[r]\ar[u]&\{\text{closed subgroups $\overline{H'}\subset G/H$}\}\ar[u]\\
+\{\text{normal ones}\}\ar[u]\ar@{=}[r]&\{\text{normal ones}\}\ar[u]
+}
+\]
 etc,
 and everything behaves well with respect to smoothness.
 
@@ -4615,7 +4690,7 @@ Here is another result that we mention now for general awareness only:
 
 \begin{proposition}\label{}
 Let $G$ be a connected reductive group.
-If $k$ is a local field (allowing $\RR$) then $G$ is $k$-anisotropic if and only if $G(k)$
+If $k$ is a local field (allowing $\mathbf{R}$) then $G$ is $k$-anisotropic if and only if $G(k)$
 is compact in the analytic topology.
 If $k$ is a global field then $G$ is $k$-anisotropic if
 and only if $G(\mathbf{A}_k)/G(k)$ is compact in its analytic topology.\qed
@@ -4722,7 +4797,8 @@ Now $\mathscr{R}_{\rm{u}}$ is functorial with respect to surjections
 which fails for not-necessarily-surjective maps in general).
 Thus $f(U)\subset \overline{U}$.
 And since $U\vartriangleleft G$, we have $f(U)\vartriangleleft\overline{G}$.
-So we get a map $T=G/U\stackrel{f}{\twoheadrightarrow}\overline{G}/f(U)
+So we get a map
+$T=G/U \xrightarrow{f} \overline{G}/f(U)
 =\overline{T}\ltimes (\overline{U}/f(U))$.
 Since the image of a torus is a torus, we conclude
 that $\overline{T}\ltimes (\overline{U}/f(U))$ is a torus.
@@ -5097,15 +5173,17 @@ On Homework 10 it is shown that this implies the map is an open immersion as wel
 Next we record another nice fact about $P_G,U_G, Z_G$.
 \begin{proposition}\label{}
 Consider a diagram
-\[\mathbf{G}_m\stackrel{\lambda}{\rightarrow} G \stackrel{f}{\twoheadrightarrow} \overline{G}\]
+\[
+\mathbf{G}_m \xrightarrow{\lambda} G \xrightarrow{f} \overline{G}
+\]
 and assume $G$ is connected, and set $\overline{\lambda}=f\lambda$.
 Then $P_G(\lambda)$ maps onto $P_{\overline{G}}(\overline{\lambda})$
 and similarly for $U$ and $Z$.
 \end{proposition}
 \begin{proof}
 We certainly have a commutative diagram
-\[\xymatrix{U_G(\lambda^{-1})\times P_G(\lambda)\xycof[r]^(.7){\rm{open}}\ar@<-2em>[d]\ar@<+2em>[d]&G\xyfib[d]^f\\
-U_{\overline{G}}(\overline{\lambda}^{-1})\times P_{\overline{G}}(\overline{\lambda})\xycof[r]_(.7){\rm{open}}&\overline{G}}\] 
+\[\xymatrix{U_G(\lambda^{-1})\times P_G(\lambda)\ar[r]^(.7){\rm{open}}\ar@<-2em>[d]\ar@<+2em>[d]&G\ar[d]^f\\
+U_{\overline{G}}(\overline{\lambda}^{-1})\times P_{\overline{G}}(\overline{\lambda})\ar[r]_(.7){\rm{open}}&\overline{G}}\] 
 The problem is to show that the two left maps are surjective.
 But if either is not, then its image has strictly smaller dimension than the dimension of the guy upstairs.
 Hence the image of the total map on the left side and then across on the bottom cannot be dense, giving a contradiction (to the openness of the bottom map) since $\overline{G}$ is irreducible.
@@ -5314,10 +5392,13 @@ If $e=1$ obviously $\phi$ is an isomorphism $G\simeq \operatorname{PGL}_2$.
 If $e=2$, observe that since $\operatorname{ker}\phi\subset T$
 and $\phi$ maps $U_G(\lambda^{\pm1})$ isomorphically onto $U^\pm$, we obtain
 a diagram
-\[\xymatrix{
-\mathbf{G}_a\times \mathbf{G}_m \times \mathbf{G}_a\ar@{=}[dd]\xycof[r]^(.7){\rm{open}}&G\ar@{-->}[dd]\ar[rd]^{\phi={\rm{homom.}}}&\\
+\[
+\xymatrix{
+\mathbf{G}_a\times \mathbf{G}_m \times \mathbf{G}_a\ar@{=}[dd]\ar[r]^(.7){\rm{open}}&G\ar@{-->}[dd]\ar[rd]^{\phi={\rm{homom.}}}&\\
 &&\operatorname{PGL}_2\\
-\mathbf{G}_a\times \mathbf{G}_m\times \mathbf{G}_a\xycof[r]_(.7){\rm{open}}&\operatorname{SL}_2\ar[ru]_{{\rm{can.}}}&}\]
+\mathbf{G}_a\times \mathbf{G}_m\times \mathbf{G}_a\ar[r]_(.7){\rm{open}}&\operatorname{SL}_2\ar[ru]_{{\rm{can.}}}
+}
+\]
 There are actions of $\mathbf{G}_m$ on both copies of $\mathbf{G}_a$ on both the top and the bottom
 (the identification of $\mathbf{G}_a$'s expressing exactly that
 $U_G(\lambda^{\pm 1}) \rightarrow U^{\pm}$ are isomorphisms). 
@@ -5341,9 +5422,6 @@ The first step towards this is
 to use this rank-1 classification to build the root datum associated to a split connected reductive group over a general field
 as part of the structure theory of connected reductive groups in the sequel course.
 
-\newpage
-
-\appendix
 
 \section{Properties of Orthogonal Groups}\label{O(q)}
 
@@ -7651,7 +7729,7 @@ case we want to declare all elements of the Lie algebra to be nilpotent
 (since unipotent subgroups of ${\rm{GL}}_N$ have all elements in their Lie algebra nilpotent inside
 $\mathfrak{gl}_N$, by  the Lie-Kolchin theorem) and in the latter case we want to declare all 
 elements of the Lie algebra to be semisimple!  (Observe that the same issue is relevant in the study of 
-ordinary connected Lie groups over $\RR$ and $\CC$:  the case of commutative or solvable Lie groups is
+ordinary connected Lie groups over $\mathbf{R}$ and $\mathbf{C}$:  the case of commutative or solvable Lie groups is
 a source of confusion because the exponential map relates additive and multiplicative groups,
 and it is very far from an isomorphism in the complex-analytic case.) 
 
@@ -8021,7 +8099,7 @@ We now need to use Cartier duality $H \rightsquigarrow \mathbf{D}(H)$ for finite
 is nicely explained in \cite[\S14]{AVar} (he works over an algebraically closed
 field, but his method applies over any ring at all, say working Zariski-locally so that a finite locally free
 coordinate ring becomes a free module).   This duality operation is contravariant and self-inverse, and 
-$\mu_p$ is dual to $\ZZ/p\ZZ$, so 
+$\mu_p$ is dual to $\mathbf{Z}/p\mathbf{Z}$, so 
 $$\underline{\operatorname{Aut}}(M_{\overline{k}})
 \simeq \underline{\rm{Aut}}(\mathbf{D}(M_{\overline{k}}))^{\rm{opp}} = \underline{\operatorname{Aut}}((\mathbf{Z}/p\mathbf{Z})^N)^{\rm{opp}},$$
 which is the constant group ${\rm{GL}}_N(\mathbf{Z}/p\mathbf{Z})^{\rm{opp}}$, so it is \'etale.  
@@ -8053,7 +8131,7 @@ $M_{\overline{k}} \simeq \prod \mu_{p^{n_i}}$ for some integers $n_i \ge 1$.
 
 Under the Cartier duality operation on finite commutative $k$-group schemes
 (whose formation commutes with direct products and extension of the ground field), 
-$\mu_{p^n}$ is Cartier dual to $\ZZ/p^n\ZZ$.  Hence,
+$\mu_{p^n}$ is Cartier dual to $\mathbf{Z}/p^n\mathbf{Z}$.  Hence,
 over $k$ we can say that the multiplicative infinitesimal $k$-groups are Cartier dual
 to the finite \'etale $k$-groups of $p$-power order.   The multiplicative infinitesimal
 $k$-groups exhibit many properties of tori (and in fact they are precisely
@@ -8237,7 +8315,7 @@ If $\chi = 1$ then $G$ is commutative and $g \in T(k)$. Hence,
 we can assume $\chi \ne 1$, so $S = (\ker \chi)_{\rm{red}}^0$ is a torus of codimension 1 in $T$
 and it is central in $G$.   We can therefore pass to $G/S$ to reduce
 to the case $G = \mathbf{G}_a \rtimes \mathbf{G}_m$
-using an action $t.x = t^n x$ for some $n \in \ZZ$.  Then
+using an action $t.x = t^n x$ for some $n \in \mathbf{Z}$.  Then
 $g = (x,t)$ with $t \ne 1$.  If $t^n \ne 1$ then for $x' =  x/(t^n-1)$ we have $(x',0)g(x',0)^{-1} = (1,t) \in T(k)$. 
 If $g = (x,t)$ with $t^n = 1$ then the unipotent $(x,1)$ and semisimple $(0,t)$ commute,
 so they are the Jordan constituents of $g$.  We assumed $g$ is semisimple, so
@@ -8437,7 +8515,7 @@ In the March 10 lecture  it was proved that these are all represented by closed 
 with $P_G(\lambda) = Z_G(\lambda) \ltimes U_G(\lambda)$.  
 
 By a direct calculation with graded modules over the dual numbers, it is shown in \cite[Prop.\,2.1.8(1)]{pred}
-that when using the $\ZZ$-grading $\oplus_{n \in \ZZ} \mathfrak{g}_n$ of $\mathfrak{g} = {\rm{Lie}}(G)$
+that when using the $\mathbf{Z}$-grading $\oplus_{n \in \mathbf{Z}} \mathfrak{g}_n$ of $\mathfrak{g} = {\rm{Lie}}(G)$
 defined by the $\mathbf{G}_m$-action induced by conjugation through $\lambda$ (i.e., $\mathfrak{g}_n$ is
 the space of $v \in \mathfrak{g}_n$ such that ${\rm{Ad}}_G(\lambda(t))(v) = t^n v$ for all $t \in \mathbf{G}_m$), we have
 $${\rm{Lie}}(Z_G(\lambda)) = \mathfrak{g}_0,\,\,\,
@@ -8445,7 +8523,7 @@ $${\rm{Lie}}(Z_G(\lambda)) = \mathfrak{g}_0,\,\,\,
 For example, if $T \subset G$ is a split $k$-torus and $\lambda$ is valued in $T$, then using the resulting
 $T$-weight space decomposition $\mathfrak{g} = {\rm{Lie}}(Z_G(T)) \oplus (\oplus_{a \in \Phi} \mathfrak{g}_a)$
 (with $\Phi$ the set of nontrivial $T$-weights on $\mathfrak{g}$) we see that for any
-$n \in \ZZ - \{0\}$,
+$n \in \mathbf{Z} - \{0\}$,
 $$\mathfrak{g}_n = \bigoplus_{\langle a, \lambda \rangle = n} \mathfrak{g}_a$$
 since the adjoint action of $\lambda(t)$ on $\mathfrak{g}_a$ is multiplication by
 $a(\lambda(t)) = t^{\langle a, \lambda \rangle}$.  Hence, 
@@ -8891,11 +8969,11 @@ A \emph{reductive $k$-group} is a linear algebraic group $G$ over $k$ whose geom
 Many classical groups are reductive (verified in lecture or homework of the previous course, but some 
 to be revisited from scratch in this course): 
 \begin{itemize}
-\item $\SO(q)$ for finite-dimensional quadratic spaces $(V,q)$ with $q \ne 0$ that are non-degenerate.
+\item $\text{SO}(q)$ for finite-dimensional quadratic spaces $(V,q)$ with $q \ne 0$ that are non-degenerate.
 (Non-degeneracy is defined by smoothness
 of the zero-scheme of the projective quadric $(q=0)$. This works uniformly in all characteristics.) 
 \item $\U(h)$ and $\SU(h)$ for non-degenerate finite-dimensional hermitian spaces $(V', h)$ with respect to quadratic Galois extensions $k'/k$. 
-\item $\Sp(\psi)$ for a non-degenerate finite-dimensional symplectic space $(V, \psi)$. 
+\item $\text{Sp}(\psi)$ for a non-degenerate finite-dimensional symplectic space $(V, \psi)$. 
 \item $\underline{A}^{\times}$ for $A$ a finite-dimensional central simple algebra over $k$, representing the functor 
 $R \rightsquigarrow (A \otimes_k R)^{\times}$ on (commutative) $k$-algebras.
 \end{itemize}
@@ -9134,10 +9212,10 @@ $R$ has the property that $\lambda(t)  g \lambda(t)^{-1}$ has limits as $t $ goe
  \]
  is monic. On the other hand, it is an isomorphism on tangent spaces at the identity: this was worked out in the previous course. The point is that the Lie algebra decomposes as 
  \[
- \Lie(G) = \Lie(G)_{<0} \oplus \Lie(G)_{\geq 0} \text{ for $\G_m$-weights}.
+ \text{Lie}(G) = \text{Lie}(G)_{<0} \oplus \text{Lie}(G)_{\geq 0} \text{ for $\G_m$-weights}.
  \]
  (A $\G_m$-action on a vector space corresponds to a grading, and in the previous course
- we saw that the Lie algebra of $U_G(-\lambda)$ is $\Lie(G)_{<0}$ and the Lie algebra of $P_G(\lambda)$ is $\Lie(G)_{\geq 0}$.) \emph{If} we knew that $U_G(-\lambda)$ and $P_G(\lambda)$ were smooth, then it would follow that this map is \'{e}tale at the identity, hence \'etale everywhere by the homogeneity coming from the 
+ we saw that the Lie algebra of $U_G(-\lambda)$ is $\text{Lie}(G)_{<0}$ and the Lie algebra of $P_G(\lambda)$ is $\text{Lie}(G)_{\geq 0}$.) \emph{If} we knew that $U_G(-\lambda)$ and $P_G(\lambda)$ were smooth, then it would follow that this map is \'{e}tale at the identity, hence \'etale everywhere by the homogeneity coming from the 
  left and right translations by group actions on the source. An \'{e}tale monomorphism is automatically an open immersion 
  (see \cite[IV$_4$, 17.9.1]{ega}, but it is
 an instructive exercise to prove this directly for schemes or finite type
@@ -9332,9 +9410,9 @@ with $\mf{g}^T = {\text{Lie}}(Z_G(T))$.
 
 Choose $a \in \Phi$, and view it as a (non-trivial) map $a \colon T \rightarrow \G_m$. Let $T_a = (\ker a)_{\red}^0 \subset T$ be the codimension-1 subtorus killed by $a$. Let $G_a = Z_G(T_a)$, a connected linear subgroup of $G$. Then 
 \[
-\Lie(G_a) = \mf{g}^{T_a} \oplus \left( \bigoplus_{b \in \Phi \cap \Q^{\times} a} \mf{g}_b \right)
+\text{Lie}(G_a) = \mf{g}^{T_a} \oplus \left( \bigoplus_{b \in \Phi \cap \Q^{\times} a} \mf{g}_b \right)
 \]
-because the roots that appear in $\Lie(G_a)$ are the roots
+because the roots that appear in $\text{Lie}(G_a)$ are the roots
 which are non-zero rational multiples of $a$ (because if $\chi$ and $\chi'$ are two nontrivial 
 homomorphism $T \rightarrow \G_m$ then there is a containment $(\ker \chi)^0 \supset (\ker \chi')^0$ if and only if $\chi, \chi'$ are $\Q$-linearly dependent; the presence of $\Q$ ultimately comes from 
 the equality $\End(\G_m) = \Z$). 
@@ -9376,7 +9454,7 @@ Let $G$ be connected and reductive over $k = \ol{k}$ and $T \subset G$ be a maxi
 \begin{proof}
 By Theorem \ref{unip2} (a consequence of Theorem \ref{unip1}), we know that $G_a$ is connected reductive. Therefore, $\mathscr{R}_u(G_a)=1$, so by the argument in the proof of Theorem \ref{unip1} we have that $G_a/T_a \simeq \SL_2$ or $\PGL_2$ or $\G_m$. 
 
-Actually, we claim that $G_a$ is not solvable, which rules out the possibility $G_a/T_a \simeq \G_m$. Indeed, otherwise  the connected reductive $G_a$ would be a torus. But $G_a \supset T$ and the $T$-action on $\Lie(G_a)$ has a non-trivial weight (namely $a$), so $G_a$ is not commutative and hence not a torus.
+Actually, we claim that $G_a$ is not solvable, which rules out the possibility $G_a/T_a \simeq \G_m$. Indeed, otherwise  the connected reductive $G_a$ would be a torus. But $G_a \supset T$ and the $T$-action on $\text{Lie}(G_a)$ has a non-trivial weight (namely $a$), so $G_a$ is not commutative and hence not a torus.
 So now we know that $G_a/T_a$ is isomorphic to SL$_2$ or PGL$_2$.
 
 Choose $\lambda \colon \G_m \rightarrow T$ which is
@@ -9402,7 +9480,7 @@ G_a \ar[d] & & & & & & \ar@{_{(}->}[llllll] U_{G_a}(-\lambda) \ar[d] & \times  &
 The kernel $T_a$ of the quotient map $G_a \rightarrow \ol{G_a}$ is already eaten up in the middle factor, so the outer maps must be isomorphisms because the middle factor at each level and either of the two flanking factors combined
 to give a semi-direct product {\em subgroup} of the ambient group at each level. 
 
-The Lie algebras $\Lie(U({\pm \lambda}))$ account for all nontrivial weights since we have seen that 
+The Lie algebras $\text{Lie}(U({\pm \lambda}))$ account for all nontrivial weights since we have seen that 
 each torus is its own centralizer. Aha! We understand those weight spaces well
 on the bottom level because $\ol{G_a} = \SL_2$ or $\PGL_2$ with $T/T_a$ the diagonal torus. So we can conclude that $U_{\ol{G_a}}(\pm \lambda)$ are one-dimensional with {\em opposite} $T/T_a$ weights. We conclude the same upstairs. But we know that upstairs one of the $T$-roots is $a$ by design, so the other one must be $-a$ (with multiplicity one).
 
@@ -9432,7 +9510,7 @@ We will see later that if we drop the adjective ``generic'' in Corollary \ref{ge
 
 Choose a generic $\lambda$. Then the decomposition of the Lie algebra under the adjoint action can be grouped as 
 \[
-\mf{g} = \underbrace{\mf{g}^T}_{\Lie(T)} \oplus \bigoplus_{\substack{a \in \Phi \\ \langle a, \lambda \rangle > 0 }} \mf{g}_a \oplus \bigoplus_{\substack{a \in \Phi \\ \langle a, \lambda  \rangle  < 0 }} \mf{g}_a
+\mf{g} = \underbrace{\mf{g}^T}_{\text{Lie}(T)} \oplus \bigoplus_{\substack{a \in \Phi \\ \langle a, \lambda \rangle > 0 }} \mf{g}_a \oplus \bigoplus_{\substack{a \in \Phi \\ \langle a, \lambda  \rangle  < 0 }} \mf{g}_a
 \]
 Using that $-\Phi = \Phi$, it is easy to thereby deduce that 
 \[
@@ -9581,7 +9659,7 @@ closed $k$-subgroup scheme representing the functor on $k$-algebras
 \[
 R \rightsquigarrow \{ h \in H(R) \mid \text{conjugation by $h$ is trivial on $H_R$}\}.
 \]
-From this definition it is clear that $(Z_H)_K = Z_{(H_K)}$ for any $K/k$, but $\Lie(Z_H) \subset \mf{h}$ is a mystery. For instance, $\Lie(Z_{\SL_p}) = \Lie(\mu_p) \neq 0$ inside $\mf{sl}_p$ if $p = \ch k > 0$. 
+From this definition it is clear that $(Z_H)_K = Z_{(H_K)}$ for any $K/k$, but $\text{Lie}(Z_H) \subset \mf{h}$ is a mystery. For instance, $\text{Lie}(Z_{\SL_p}) = \text{Lie}(\mu_p) \neq 0$ inside $\mf{sl}_p$ if $p = \ch k > 0$. 
 \end{remark}
 
 \begin{theorem}
@@ -9613,7 +9691,7 @@ because a finite group scheme in characteristic 0 is \'etale
 and if $H$ is a {\em connected} linear algebraic group over $k$ with any characteristic
 then every finite normal {\em \'etale} $k$-subgroup $N$ in $H$ is central 
 (much as a discrete normal subgroup of a connected Lie group is central):
-conjugation of $H$ on $N$ is classified by a map $H \rightarrow \Aut_{N/k}$,
+conjugation of $H$ on $N$ is classified by a map $H \rightarrow \text{Aut}_{N/k}$,
  and the latter group is finite \'{e}tale, so this classifying map must be trivial. 
  
 By contrast, isogenies in characteristic $p$ can have non-central
@@ -9653,7 +9731,7 @@ $n \ge 1$.
 \end{proof}
 
 Finally, we show the surjectivity of $m \colon Z \times \Cal{D} G \rightarrow G$. It is the same to show that $G/Z$ is perfect. But $G/Z$ is connected reductive with trivial maximal central torus, since a \emph{normal} torus $S$ inside a connected linear algebraic group $H$ is always central (by Exercise 3 of HW6 of the previous course:
-conjugation on $S$ is classified by a  homomorphism $H \rightarrow \Aut_{S/k}$  whose target is
+conjugation on $S$ is classified by a  homomorphism $H \rightarrow \text{Aut}_{S/k}$  whose target is
  \'{e}tale; e.g. if $S$ is split, then this
 automorphism scheme is the constant group $\GL_n(\Z)$). The upshot is that by replacing $G$ with $G/Z$, we can reduce to the case where $Z$ is trivial, and then we want to show that $G$ is perfect. 
 
@@ -9740,9 +9818,9 @@ and note that ${\rm{X}}(S)$ is torsion-free (since $S \xrightarrow{t^n} S$ is su
 \begin{align*}
 n_a \cdot a|_S =1 & \iff a|_S = 1 \\
 & \iff \mf{g}^S \supset \mf{g}_a \\
-&\iff \Lie(Z_G(S)) \supset \mf{g}_a.
+&\iff \text{Lie}(Z_G(S)) \supset \mf{g}_a.
 \end{align*}
-Certainly $Z_G(S) \supset Z_G(T)$, so $\Lie(Z_G(S)) \supset \Lie(Z_G(T)) \supset \mf{g}^T$. But then $\Lie(Z_G(S))$ contains $\mf{g}^T$ \emph{and} all the root lines, so $\Lie( Z_G(S)) \supset \mf{g}^T \oplus \left( \bigoplus_{a \in \Phi} \mf{g}_a \right) = \mf{g}$, so $Z_G(S) \subset G$ as a connected smooth subgroup is full, i.e. $S \subset Z_G$. The assumption $Z=1$ obviously finishes off the proof, but notice that none of the preceding argument required that hypothesis. 
+Certainly $Z_G(S) \supset Z_G(T)$, so $\text{Lie}(Z_G(S)) \supset \text{Lie}(Z_G(T)) \supset \mf{g}^T$. But then $\text{Lie}(Z_G(S))$ contains $\mf{g}^T$ \emph{and} all the root lines, so $\text{Lie}( Z_G(S)) \supset \mf{g}^T \oplus \left( \bigoplus_{a \in \Phi} \mf{g}_a \right) = \mf{g}$, so $Z_G(S) \subset G$ as a connected smooth subgroup is full, i.e. $S \subset Z_G$. The assumption $Z=1$ obviously finishes off the proof, but notice that none of the preceding argument required that hypothesis. 
 \end{proof}
 
 Now the proof is (finally!) completed by the following general Lemma (which requires no hypotheses on $Z$). \end{proof}
@@ -9764,7 +9842,7 @@ is a central isogeny, because $G_a/T_a$ is perfect (since it's $\SL_2$ or $\PGL_
 \begin{remark}
 It is shown in Example \ref{redssex} that 
 for $\PGL_n$, $n \geq 3$ we always have $\Cal{D}(G_a) = \SL_2$
-whereas for $\SO_5$ we sometimes gets $\SL_2$ and sometimes get $\PGL_2$ (depending on $a$). 
+whereas for $\text{SO}_5$ we sometimes gets $\SL_2$ and sometimes get $\PGL_2$ (depending on $a$). 
 \end{remark}
 
 We want to reduce to the rank-1 case. Note that for any \emph{central} quotient map $f \colon H \twoheadrightarrow H'$ (i.e. a quotient by central subgroup scheme) between
@@ -9954,7 +10032,7 @@ multiplication by $p$).
 
 \begin{example}
 There are even more bizarre examples, coming from exceptional isogenies in low
-characteristic such as $\SO_{2n+1} \rightarrow \Sp_{2n}$ in characteristic $2$. 
+characteristic such as $\text{SO}_{2n+1} \rightarrow \text{Sp}_{2n}$ in characteristic $2$. 
 This has commutative non-central kernel $\alpha_2^{2n}$. When $n=1$, this is $\PGL_2 \rightarrow \SL_2$, which is an instance of the more general disorienting map $\PGL_p
 = \SL_p\mu_p \rightarrow \SL_p$ (induced by $F_{\SL_p/k}$) 
 from the adjoint type to the simply connected type.
@@ -10223,8 +10301,8 @@ $k$-subgroup. These work out well in the geometric case, as follows.\\
 
 \textbf{(iv)}  If $k = \ol{k}$ and $X \in \mf{g}$ then 
 \begin{itemize}
-\item $X$ semisimple $\implies X \in \Lie(T)$ for some maximal torus $T \subset G$, 
-\item $X$ nilpotent $\implies X \in \Lie(U)$ for some unipotent connected linear algebraic subgroup $U \subset G$. 
+\item $X$ semisimple $\implies X \in \text{Lie}(T)$ for some maximal torus $T \subset G$, 
+\item $X$ nilpotent $\implies X \in \text{Lie}(U)$ for some unipotent connected linear algebraic subgroup $U \subset G$. 
 \end{itemize}
 For the semisimple case, the proof uses the smoothness of 
 the scheme-theoretic centralizer $Z_G(X)$ for $X$ under ${\text{Ad}}_G$. 
@@ -10248,7 +10326,7 @@ $T$ (which it may not), then
 \end{itemize}
 
 We want to ``exponentiate'' $\mf{g}_a$ to a canonical $k$-subgroup $U_a \subset G$ (the uniqueness is obvious in characteristic $0$, but can fail characteristic $p>0$ without further requirements on $U_a$, as we shall
-see below!). More generally, for suitable spans $\mf{h} \subset \mf{g}$ of root lines, we seek a canonical connected unipotent linear algebraic subgroup $U \subset G$ with $\Lie(U) = \mf{h}$ \emph{and} such that $U$ is normalized by $T$. (The second property is automatic in characteristic $0$, but not so in characteristic $p>0$.) 
+see below!). More generally, for suitable spans $\mf{h} \subset \mf{g}$ of root lines, we seek a canonical connected unipotent linear algebraic subgroup $U \subset G$ with $\text{Lie}(U) = \mf{h}$ \emph{and} such that $U$ is normalized by $T$. (The second property is automatic in characteristic $0$, but not so in characteristic $p>0$.) 
 
 \begin{example}
 Let $G = \SL_4$ and $T$ the diagonal subgroup 
@@ -10270,7 +10348,7 @@ and $tu(x,y)t^{-1} = u(t_1 t_2^{-1} x, t_3 t_4^{-1} y)$ for $t \in T$.  If $\ch 
 \[
 U = \G_a \hookrightarrow \G_a \times \G_a = U_{a_{12}} \times U_{a_{34}}
 \]
-embedded by $z \mapsto (z, z^p)$.  Then $\Lie(U) = \mathfrak{g}_{a_{12}}$ is
+embedded by $z \mapsto (z, z^p)$.  Then $\text{Lie}(U) = \mathfrak{g}_{a_{12}}$ is
 a $T$-root line, but $U$ is not $T$-stable because conjugation by $t$ scales the first coordinate scales by $a_{12}(t)$ and the second by $a_{34}(t)$, and $a_{34}(t)\neq a_{12}(t)^p$.
 \end{example}
 
@@ -10358,7 +10436,7 @@ maximal torus).
 Let $A \subset {\rm{X}}(S)$ be a subsemigroup $($i.e., a subset set,
 possibly empty, stable under addition$)$. There is a unique $S$-stable connected linear algebraic $k$-subgroup $H_A(G) \subset G$ with the property that 
 \[
-\Lie(H_A(G)) = \bigoplus_{a \in A \cap \text{wt}_S(G)} \mf{g}_a.
+\text{Lie}(H_A(G)) = \bigoplus_{a \in A \cap \text{wt}_S(G)} \mf{g}_a.
 \]
 Moreover, $H_A(G)$ enjoys the following properties. 
 \begin{enumerate}
@@ -10399,7 +10477,7 @@ point to the identity point.).
 This construction extracts the part of the Lie algebra with weights which are \emph{positive} with respect to $\lambda_a$. That is, the Lie algebra of $U_{Z_G(\ker a)} (\lambda_a)$ 
 consists of the \emph{positive} integral multiples of $a$ that are $S$-weights on $\mathfrak{g}$: 
 \[
-\Lie U_{Z_G(\ker a)} (\lambda_a) = \bigoplus_{b \in \text{wt}_S(G) \cap \Z_{\geq 1} a} \mf{g}_b.
+\text{Lie} U_{Z_G(\ker a)} (\lambda_a) = \bigoplus_{b \in \text{wt}_S(G) \cap \Z_{\geq 1} a} \mf{g}_b.
 \]
 
  Define the $S$-stable connected linear algebraic subgroup
@@ -10413,7 +10491,7 @@ $k$-subalgebra of a tensor product of finitely many copies of the $U_{Z_G(\ker a
 So the fact that this has the expected Lie algebra is ultimately due to Lemma \ref{lemwt}. 
 
 How do we show unipotence of $H_A(G)$ when $0 \notin A$? Let $H := S \ltimes H_A(G)$. Then $Z_H(S)$ 
-has Lie algebra $\mf{h}^S = \Lie(S)$ since $0 \notin A$, so the inclusion $S \subset Z_H(S)$ is equality. Hence $S$ is a \emph{maximal} $k$-torus in $H$, so in particular the dimension of the maximal tori of $H$
+has Lie algebra $\mf{h}^S = \text{Lie}(S)$ since $0 \notin A$, so the inclusion $S \subset Z_H(S)$ is equality. Hence $S$ is a \emph{maximal} $k$-torus in $H$, so in particular the dimension of the maximal tori of $H$
 (i.e., its {\em rank}) is $\dim S$. This implies that $H_A(G)$ has trivial maximal torus - for instance, 
 by working over $\ol{k}$ we see that 
 $$\dim S = \rank H = \dim S + \rank H_A(G) ,$$
@@ -10426,13 +10504,13 @@ so $\rank H_A(G) = 0$, implying that $H_A(G)$ is unipotent.
 \begin{example}\label{rootgpdef}
 Let $G$ be a connected reductive group with \emph{split} maximal $k$-torus $T$. 
 By Proposition \ref{3.3.6},
-for $a \in \Phi(G, T)$ there is a unique connected linear algebraic group $U_a \subset G$ that is $T$-stable with $\Lie(U_a)$ having as its set
+for $a \in \Phi(G, T)$ there is a unique connected linear algebraic group $U_a \subset G$ that is $T$-stable with $\text{Lie}(U_a)$ having as its set
 of $T$-weight $\text{wt}_T(G) \cap \langle a \rangle = \{ a\}$, where $\langle a \rangle$ denotes
-the subsemigroup $\{ na \}_{n \geq 1}$. So we know that $U_a$ is unipotent with $\Lie(U_a) = \mf{g}_a$ a \emph{line}. Therefore, $\dim U_a = 1$. We call this the {\em $a$-root group}. 
+the subsemigroup $\{ na \}_{n \geq 1}$. So we know that $U_a$ is unipotent with $\text{Lie}(U_a) = \mf{g}_a$ a \emph{line}. Therefore, $\dim U_a = 1$. We call this the {\em $a$-root group}. 
 
 We would like to show that $U_a \simeq \G_a$; this is a special case of
 Proposition \ref{uagsplit} below. Once this is proved, 
-since $\Aut_{k_s}(\G_a) = k_s^{\times}$ (true over \emph{fields} but not arbitrary bases!) it would follows that transporting
+since $\text{Aut}_{k_s}(\G_a) = k_s^{\times}$ (true over \emph{fields} but not arbitrary bases!) it would follows that transporting
 the $T$-action on $U_a$ over to $\G_a$ becomes 
 $$t \cdot x = a(t) x$$
 (as the action of each $t \in T(k_s)$ is scaling by some element of $k_s^{\times}$, and the actual
@@ -10709,7 +10787,7 @@ $k$-torus $S$.
 Clearly (1) implies (2), by the maximality of $H_{A+A'}$ with respect to containing weights within $A+A'$. For (1), 
 we get intuition from characteristic 0, since in such cases 
 \[
-\Lie((H,H')) = [\mf{h}, \mf{h}']
+\text{Lie}((H,H')) = [\mf{h}, \mf{h}']
 \]
 and we have functoriality of the Lie bracket, so 
 \[
@@ -10823,7 +10901,7 @@ It turns out that such integers lie in  $\{\pm 1, \pm 2, \pm 3\}$;
 see \cite[Prop.\,6.3.5, Rem.\,6.3.5]{luminy} and references therein.
 
 \begin{example}\label{sp4ex}
-Let $G= \Sp_4$ (root system $\Phi$ of type $B_2=C_2$) with the symplectic form 
+Let $G= \text{Sp}_4$ (root system $\Phi$ of type $B_2=C_2$) with the symplectic form 
 \[
 \psi(v,v') = v^T \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} v'
 \]
@@ -10835,7 +10913,7 @@ T = \begin{pmatrix} t_1 \\ & t_2 \\ & & t_1^{-1} \\ & & & t_2^{-1} \end{pmatrix}
 \begin{figure}
 \centering
 \includegraphics[scale=.25]{249-3.png}
-\caption{Positive roots for the $B_2=C_2$ root system corresponding to $\Sp_4$.}
+\caption{Positive roots for the $B_2=C_2$ root system corresponding to $\text{Sp}_4$.}
 \end{figure}
 
 We have parameterizations of corresponding root groups:
@@ -11637,7 +11715,7 @@ The inclusion-preserving nature follows from the explicit descriptions.
 \begin{remark}
 The preceding proof
 shows that parabolic $k$-subgroups $P,P' \supset T$ we have $P \supset P'$
-if and only if $\Lie(P) \supset \Lie(P')$.
+if and only if $\text{Lie}(P) \supset \text{Lie}(P')$.
  The conditions on both sides of this equivalence do not refer to $T$, so one might wonder if it is true even 
  without the assumption $P,P' \supset T$ or more generally without
  assuming $G$ contains a split maximal $k$-torus at all. 
@@ -11646,7 +11724,7 @@ if and only if $\Lie(P) \supset \Lie(P')$.
  $k$-subgroups $P,P'$ in a connected reductive group $G$ over any field $k$, 
  $P \cap P'$ is smooth and contains a maximal $k$-torus of $G$. (Note that to prove this
  assertion it suffices to work over $\ol{k}$.) 
- Therefore, $P \subset P'$ if and only if $\Lie(P) \subset \Lie(P')$ because it is enough to 
+ Therefore, $P \subset P'$ if and only if $\text{Lie}(P) \subset \text{Lie}(P')$ because it is enough to 
  check over $\ol{k}$, where a choice of common maximal torus in $P$ and $P'$ becomes split.
 \end{remark}
 
@@ -11746,7 +11824,7 @@ for a regular cocharacter $\lambda \in {\rm{X}}_{\ast}(T)$. Since Theorem \ref{c
 Later we'll see that for a non-degenerate 
 finite-dimensional quadratic space $(V,q)$ and a non-degenerate finite-dimensional
 hermitian space $(W,h)$
-(relative to separable quadratic extensions $k'/k$), usually $\SO(q)$ and $\SU(h)$ are \emph{not} quasi-split (the minimal parabolic $k$-subgroups and maximal split
+(relative to separable quadratic extensions $k'/k$), usually $\text{SO}(q)$ and $\SU(h)$ are \emph{not} quasi-split (the minimal parabolic $k$-subgroups and maximal split
 $k$-tori will be related to maximal isotropic subspaces for the bilinear form $B_q$ and sesquilinear form $B_h$
 respectively). 
 \end{example}
@@ -11977,7 +12055,7 @@ has trivial kernel.  Hence, we aim to prove $H_0(k)$-conjugacy of all maximal $k
 
 \begin{remark}[Warning]
 If ${\rm{char}}(k) = p>0$ and  the split connected unipotent $U_0$ is commutative
-and $p$-torsion then $U_0 \simeq \G_a^n$ (see Exercise G.1 in Appendix \ref{solvgp}) but $\Aut(\G_a^n)$ is much bigger than $\GL_n$ for $n > 1$. The standard example of a non-linear automorphism is 
+and $p$-torsion then $U_0 \simeq \G_a^n$ (see Exercise G.1 in Appendix \ref{solvgp}) but $\text{Aut}(\G_a^n)$ is much bigger than $\GL_n$ for $n > 1$. The standard example of a non-linear automorphism is 
 \begin{align*}
 \G_a \times \G_a & \simeq \G_a \times \G_a \\
 (x,y) & \mapsto (x+y^p, y)
@@ -12287,10 +12365,10 @@ that is symplectic (as ${\rm{char}}(k)=2$).
 
 Consider the natural map 
 \[
-\SO(q) = \SO_{2n+1} \rightarrow \Sp_{2n} = \Sp(V/V^{\perp}, \overline{B}_q)
+\text{SO}(q) = \text{SO}_{2n+1} \rightarrow \text{Sp}_{2n} = \text{Sp}(V/V^{\perp}, \overline{B}_q)
 \]
 induced by passage to the quotient by $V^{\perp}$
-(preserved by the smooth $\SO(q)$ via consideration of $k_s$-points). 
+(preserved by the smooth $\text{SO}(q)$ via consideration of $k_s$-points). 
 The kernel group scheme is 
 \[
 \begin{pmatrix} 
@@ -12337,7 +12415,7 @@ What can we say about this intersection?
 
 Note that $N_G(S) \cap U \hookrightarrow N_G(S)/Z_G(S)$
 since we know that $Z_G(S) \cap U = U^S = 1$, and the target is finite \'{e}tale because it embeds as a 
-finite type $k$-subgroup of the \'etale automorphism scheme $\Aut_{S/k}$ (as discussed
+finite type $k$-subgroup of the \'etale automorphism scheme $\text{Aut}_{S/k}$ (as discussed
 in the first course). That forces the intersection $N_G(S) \cap U$ to be finite \'{e}tale. But it is also stable under $S$ (it is straightforward to check that conjugation by $S$ stabilizes $N_G(S)$), and $S$ is \emph{connected}. 
 
 A smooth connected group can only act trivially on a finite \'{e}tale group (by contrast, $\G_m$-scaling on $\G_a$
@@ -12529,7 +12607,7 @@ making exhaustive lists of possibilities.
 
 To illustrate, for $n \ge 2$ and $G_{k_s}$ of type $B_n$
 with trivial center, the absence of nontrivial diagram automorphisms will
-underlie the proof that the possibilities are exactly $\SO(q)$ for non-degenerate $(V,q)$ of dimension $n$, with $\SO(q) \simeq \SO(q')$ if and only if $(V,q)$ is conformally equivalent to $(V', q')$. 
+underlie the proof that the possibilities are exactly $\text{SO}(q)$ for non-degenerate $(V,q)$ of dimension $n$, with $\text{SO}(q) \simeq \text{SO}(q')$ if and only if $(V,q)$ is conformally equivalent to $(V', q')$. 
 On the other hand, for type $D_n$ (informally, twisted forms of SO$_{2n}$) with $n \geq 3$, the possibilities are more complicated because the Dynkin diagram admits a nontrivial diagram automorphism. 
 
 \medskip
@@ -12565,7 +12643,7 @@ over general fields from the case of algebraically closed fields (see the proof 
 
 But all proofs of the Existence Theorem are very hard (especially to handle the exceptional groups
 in all characteristics, which is the crux of the problem).  In \cite[App.\,D]{luminy}, 
-the Existence Theorem is proved over $\CC$ by an analytic method (building on results
+the Existence Theorem is proved over $\mathbf{C}$ by an analytic method (building on results
 for Lie algebras in characteristic 0 and on the theory of compact Lie groups), and in
 \cite[\S6.3]{luminy} this is used to deduce a version of the Existence Theorem
 over $\Z$ following the method of Demazure in \cite[Exp.\,XXV]{SGA3} (based on birational group
@@ -12705,7 +12783,7 @@ shows that the $k$-subgroup scheme $\alpha_p \times \alpha_p \subset G/\alpha_p$
 \end{remark}
 
 
-\textbf{Discussion of semisimplicity.} Recall that for $\CC$-linear representations of a finite group, we have a decomposition 
+\textbf{Discussion of semisimplicity.} Recall that for $\mathbf{C}$-linear representations of a finite group, we have a decomposition 
 \[
 V = \bigoplus V_i^{e_i}
 \]
@@ -12722,7 +12800,7 @@ for pairwise non-isogenous $k$-simple $A_i$ (with $e_i>0$), but only the isotypi
 {\rm{im}}(A_i^{e_i} \rightarrow A)$ and their associated multiplicities $e_i>0$ 
 are intrinsic; there is no intrinsic choice of a $k$-isogenous quotient of $A_i$ inside $A$ when $e_i>1$. 
 
-In these cases, for $e>1$ we have $\GL_{e_i}(\CC)$ acts on $V_i^{e_i}$ 
+In these cases, for $e>1$ we have $\GL_{e_i}(\mathbf{C})$ acts on $V_i^{e_i}$ 
 creating many interactions among the factors $V_i$ when $e_i > 1$,
 and likewise $\GL_{e_i}(\Z) $ acts on $A_i^{e_i}$ creating many interactions among the factors
 $A_i$ when $e_i>1$.  In particular, 
@@ -12740,7 +12818,7 @@ In contrast with the preceding examples, over any field $k$ connected semisimple
 central isogeny decomposition.  Let's first illustrate the result:
 
 \begin{example}
-For $G = \SL_n \times^{\mu_n} \SL_n$ or $\SO_{10} \times^{\mu_2} \Sp_6$
+For $G = \SL_n \times^{\mu_n} \SL_n$ or $\text{SO}_{10} \times^{\mu_2} \text{Sp}_6$
 (gluing factors along the evident  anti-diagonal central inclusions of $\mu_n$ and $\mu_2$ respectively), 
 the \emph{only} non-trivial proper normal connected linear algebraic $k$-subgroups 
 of $G$ are the evident  ``factors''. 
@@ -12952,7 +13030,7 @@ when the Euclidean structure is normalized to make all roots unit vectors.
 
 \begin{example}
 For the root system ${\rm{B}}_2 = {\rm{C}}_2$ 
-arising from $\SO_5$ and ${\rm{Sp}}_4$
+arising from $\text{SO}_5$ and ${\rm{Sp}}_4$
  we have$c^{\vee}=2c$ for $c$ short and $c^{\vee} = c$ for $c$ long (with length $\sqrt{2}$)
  when shortest roots are given length 1; see Figure \ref{fig16}.
 
@@ -13036,14 +13114,14 @@ a connected semisimple $k$-group is {\em simply connected} when $G_{k_s}$ is so.
 \end{definition}
 
 There are a few reasons that these are appropriate definitions.  Firstly,
-if $k = \CC$ then $\pi_1(G(\CC)) = {\rm{Hom}}(P/X, \CC^{\times})$ (the essential case is $X=P$). This can
+if $k = \mathbf{C}$ then $\pi_1(G(\mathbf{C})) = {\rm{Hom}}(P/X, \mathbf{C}^{\times})$ (the essential case is $X=P$). This can
 be proved in at least two ways:  using maximal compact subgroups and Lie theory
 (see \cite[Prop.\,D.4.1]{luminy})
 or using the Riemann Existence Theorem that finite-degree covering spaces of the analytification
-of a finite type $\CC$-scheme have a unique compatible finite \'etale algebraizations
+of a finite type $\mathbf{C}$-scheme have a unique compatible finite \'etale algebraizations
 \cite[Exp.\,XII, Thm.\,5.1]{SGA1}
 Beware however that this algebraic definition is not compatible with the usual one for real Lie groups. 
-For instance, $\SL_2(\R) = \SO_2(\R) \times \R^2$ as manifolds, so $\pi_1(\SL_2(\R)) = \Z$, but $\SL_2$ is 
+For instance, $\SL_2(\R) = \text{SO}_2(\R) \times \R^2$ as manifolds, so $\pi_1(\SL_2(\R)) = \Z$, but $\SL_2$ is 
 ``simply connected'' as a
 connected semisimple $\R$-group. 
 
@@ -13600,7 +13678,7 @@ arise from specific split classical groups:  SL$_{n+1}$ is type A$_n$ ($n \ge 1$
 SO$_{2n+1}$ is type B$_n$ ($n \ge 2$), Sp$_{2n}$ is type C$_n$ ($n \ge 2$),
 and SO$_{2n}$ is type D$_n$ ($n \ge 3$).
 The equality of root systems ${\rm{B}}_2 = {\rm{C}}_2$ corresponds to a low-rank isomorphism
-$\Sp_4/\mu_2 \simeq \SO_5$ explained in linear algebraic terms in \cite[Ex.\,C.6.5]{luminy}. 
+$\text{Sp}_4/\mu_2 \simeq \text{SO}_5$ explained in linear algebraic terms in \cite[Ex.\,C.6.5]{luminy}. 
 
 Convenient low-rank conventions for some special diagram names
 are inspired by isomorphisms or {\em central} isogenies
@@ -13609,24 +13687,24 @@ See \cite[Ex.\,C.6.2, C.6.3, C.6.5]{luminy} for justification of the following i
 or central isogeny claims via calculations with $\Z$-groups  (to make characteristic-free arguments,, 
 especially to avoid special treatment of characteristic 2): 
 \begin{itemize}
-\item define B$_1$ to be A$_1$ because $\PGL_2 \simeq \SO_3$ through ``$\PGL_2$-conjugation'' on 
+\item define B$_1$ to be A$_1$ because $\PGL_2 \simeq \text{SO}_3$ through ``$\PGL_2$-conjugation'' on 
 the 3-dimensional space
 $\mathfrak{sl}_2 = \mathfrak{gl}_2^{{\rm{Tr}}=0}$ 
 leaving invariant the determinant as a non-degenerate split quadratic form in 3 variables;
-\item define C$_1$ to be A$_1$ because $\Sp_2 = \SL_2$ (determinant on the space ${\rm{Mat}}_2$
+\item define C$_1$ to be A$_1$ because $\text{Sp}_2 = \SL_2$ (determinant on the space ${\rm{Mat}}_2$
 is a symplectic form in the ordered pair of columns in $k^2$);
 \item define D$_2$ to be ${\rm{A}}_1 \times {\rm{A}}_1$ because
 the action of $\SL_2 \times \SL_2$ on the 4-dimensional space ${\rm{Mat}}_2$
 through left and right multiplication (i.e., $(g,g')M = gM{g'}^{-1}$) visibly leaves invariant 
 the non-degenerate split quadratic form $\det: {\rm{Mat}}_2 \rightarrow k$ in 4 variables, 
 thereby defining a homomorphism
-$\SL_2 \times \SL_2 \rightarrow \SO({\rm{Mat}}_2, \det) = \SO_4$ that is
+$\SL_2 \times \SL_2 \rightarrow \text{SO}({\rm{Mat}}_2, \det) = \text{SO}_4$ that is
 the quotient by the central diagonally embedded $\mu_2$;
 \item define D$_3$ to be A$_3$ because  by definition of the determinant
 in terms of top exterior powers, the natural action of $\SL_4$ on 
 the 6-dimensional $V = \wedge^2(k^4)$ leaves {\em invariant} the natural non-degenerate
 split quadratic form $V \rightarrow \wedge^4(k^4)$ defined by $q(v) = v \wedge v$,
-yielding a homomorphism $\SL_4 \rightarrow {\rm{O}}_6^0 = \SO_6$ that is the quotient by the central 
+yielding a homomorphism $\SL_4 \rightarrow {\rm{O}}_6^0 = \text{SO}_6$ that is the quotient by the central 
 $\mu_2$. 
 \end{itemize}
 
@@ -14341,7 +14419,7 @@ connected semisimple $k$-groups $G$ used tedious case-by-case analysis, and Tits
 results into a common formalism. The proof that $G(k)/Z_G(k)$ is a simple abstract group
 for split simply connected and $k$-simple connected semisimple groups $G$ is given in \S2 of Appendix \ref{titssystem},
 with the \emph{exceptions} that such simplicity fails
-for $\SL_2(\F_2)$, $\SL_2(\F_3)/\F_3^{\times}$, and $\Sp_4(\F_2) \simeq S_6$ (so the proofs
+for $\SL_2(\F_2)$, $\SL_2(\F_3)/\F_3^{\times}$, and $\text{Sp}_4(\F_2) \simeq S_6$ (so the proofs
 require extra care over fields of sizes 2 and 3 to navigate around the counterexamples).  
 The method of proof involves knowledge of the full classification of connected Dynkin diagrams
 (especially the nature of the diagrams that are not simply laced). \\
@@ -14662,7 +14740,7 @@ $$G_a = Z_G(S_a)\supset S$$
 where $S_a := (\ker a)^0_{\red} \subset S$ is the codimension-1 subtorus of $S$ killed by 
 the nontrivial character $a$.  Note that 
 \[
-\Lie(G_a) = \mf{g}^{S_a} = \mf{g}^S \oplus \left(\bigoplus_{b \in {}_k \Phi \cap \Q a} \mf{g}_b \right).
+\text{Lie}(G_a) = \mf{g}^{S_a} = \mf{g}^S \oplus \left(\bigoplus_{b \in {}_k \Phi \cap \Q a} \mf{g}_b \right).
 \]
 Where is the reflection of ${\rm{X}}(S)$ negating
 $a$ going to come from? Another way of describing the reflection 
@@ -14676,7 +14754,7 @@ general fact to the pair $(G_a, S)$ using:
 \begin{lemma}\label{2par}
 There exist exactly two proper parabolic $k$-subgroups $P_{\pm a} \subset G_a$ containing $S$, with 
 \[
-\Lie(P_{\pm a}) = \mf{g}^S \oplus \left( \bigoplus_{b \in {}_k \Phi \cap \Q_{>0} (\pm a) } \mf{g}_b \right).
+\text{Lie}(P_{\pm a}) = \mf{g}^S \oplus \left( \bigoplus_{b \in {}_k \Phi \cap \Q_{>0} (\pm a) } \mf{g}_b \right).
 \]
 \end{lemma}
 
@@ -14894,7 +14972,7 @@ Appendix \ref{Zmucent} gives several non-trivial results concerning this functor
 \begin{enumerate}
 \item The construction of a representing closed $k$-subgroup scheme $Z_G(H) \subset G$ with 
 \[
-\Lie(Z_G(H)) = \mf{g}^{H}
+\text{Lie}(Z_G(H)) = \mf{g}^{H}
 \]
 is provided by Proposition 1.1. 
 The idea of the construction is to consider the conjugation-action map 
@@ -14938,7 +15016,7 @@ The upshot is that $\Cal{G}_a = Z_G(\ker a)^0$ makes sense and is reductive (and
 \]
 since 
 \[
-\Lie(\Cal{G}_a) = \mf{g}^{\ker a} = \mf{g}^S \oplus \left( \bigoplus_{b \in {}_k \Phi \cap\Z a} \mf{g}_b \right),
+\text{Lie}(\Cal{G}_a) = \mf{g}^{\ker a} = \mf{g}^S \oplus \left( \bigoplus_{b \in {}_k \Phi \cap\Z a} \mf{g}_b \right),
 \]
 the point being that a character of $S$ lies in $\Z a$ if and only if it kills the group scheme $\ker a$;
 note that in contrast, ${\rm{Lie}}(G_a)$ involves
@@ -15239,16 +15317,16 @@ nonzero proper subspaces.
 
 Appendix \ref{stdpar} 
 gives a thorough description (building on Appendix \ref{classicalgps}) 
- of parabolic $k$-subgroups of $\SO(q)$ for non-degenerate
+ of parabolic $k$-subgroups of $\text{SO}(q)$ for non-degenerate
 quadratic spaces $(V, q)$ of dimension $\ge 3$
-and of the symplectic group $\Sp_{2n}$ for $n \ge 1$. 
+and of the symplectic group $\text{Sp}_{2n}$ for $n \ge 1$. 
 These are the stabilizers of flags 
 of {\em isotropic} nonzero subspaces
 (and maximal parabolic $k$-subgroups are related to stabilizers of nonzero isotropic subspaces)
 Here, ``isotropic'' means that the symplectic form vanishes on the subspace
 in the case of ${\rm{Sp}}_{2n}$
 and that the quadratic form vanishing on the subspace
-for $\SO(q)$. 
+for $\text{SO}(q)$. 
 
 \section{The star-action and Tits--Selbach classification}
 
@@ -15603,28 +15681,28 @@ ${\rm{Aut}}_{G/k}$ has identity component $G/Z_G$ and component group that is
 a $k_s/k$-form of ${\rm{Aut}}(R, \Delta)$.)
 
 Now suppose $k$ is a local or global field, and let $W_k$ be the Weil group of $k$.
-Let ${}^LG^0$ be the unique pinned connected reductive $\CC$-group whose root datum is
+Let ${}^LG^0$ be the unique pinned connected reductive $\mathbf{C}$-group whose root datum is
 equipped with an identification with the dual root datum $R^{\vee} = ({\rm{X}}_{\ast}(T_{k_s}), \Phi^{\vee}, {\rm{X}}(T_{k_s}), \Phi)$.  
 The $\ast$-action defines a composite homomorphism
 $$\rho:\Gamma \rightarrow {\rm{Aut}}(R^{\vee}, \Delta^{\vee}) \hookrightarrow
 {\rm{Aut}}({}^LG^0)$$
-whose second step rests on the choice of pinning of ${}^LG^0$ (applying the preceding discussion with $k = \CC$), 
-so the {\em ${}^LG^0(\CC)$-conjugacy class} of this
+whose second step rests on the choice of pinning of ${}^LG^0$ (applying the preceding discussion with $k = \mathbf{C}$), 
+so the {\em ${}^LG^0(\mathbf{C})$-conjugacy class} of this
 homomorphism is independent of all choices.  If $k'/k$ is a finite Galois subextension of
 $k_s$ such that $G_{k'}$ is split then ${\rm{Gal}}(k_s/k')$ acts trivially on $\Delta$ under
 the $\ast$-action as defined above, so $\rho$ factors through ${\rm{Gal}}(k'/k)$.  The {\em Langlands dual}
 is the disconnected locally algebraic group
 $${}^LG := \Gamma \ltimes {}^LG^0;$$
-this group is only well-defined up to ${}^LG^0(\CC)$-conjugation.
-(The main content occurs ``at finite level'', using the typically disconnected linear algebraic $\CC$-group
+this group is only well-defined up to ${}^LG^0(\mathbf{C})$-conjugation.
+(The main content occurs ``at finite level'', using the typically disconnected linear algebraic $\mathbf{C}$-group
 ${\rm{Gal}}(k'/k) \ltimes {}^LG^0$.) 
-Hence, the notion of {\em ${}^LG^0(\CC)$-conjugacy class} of  continuous homomorphism
-$$\phi:W_k \rightarrow {}^LG(\CC)$$
+Hence, the notion of {\em ${}^LG^0(\mathbf{C})$-conjugacy class} of  continuous homomorphism
+$$\phi:W_k \rightarrow {}^LG(\mathbf{C})$$
 over the natural map $W_k \rightarrow \Gamma$
 is intrinsic to the $k$-group $G$.  Such conjugacy classes, or variants  with $W_k$ replaced by
 the Weil--Deligne group, are of central importance in the Langlands Program.
 (If $G$ is a split group then ${}^LG = \Gamma \times {}^LG^0$ and such $\phi$
-are exactly conjugacy classes of continuous homomorphisms $W_k \rightarrow {}^LG^0(\CC)$.)
+are exactly conjugacy classes of continuous homomorphisms $W_k \rightarrow {}^LG^0(\mathbf{C})$.)
 
 \begin{example}
 In the special case that $G$ is a $k$-torus $T$, so there are no absolute roots
@@ -15632,9 +15710,9 @@ and the $\ast$-action is just the natural $\Gamma$-action on ${\rm{X}}(T_{k_s})$
 we have ${}^LT = \Gamma \ltimes \widehat{T}$
 where the {\em dual torus} $\widehat{T}$ is $\underline{{\rm{Hom}}}({\rm{X}}(T_{k_s}), \G_m)$
 on which $\Gamma$ acts via the natural action on the geometric character lattice.
-The homomorphisms $\phi: W_k \rightarrow {}^LT(\CC) = \Gamma \ltimes \widehat{T}(\CC)$
-have second component that is exactly a continuous 1-cocycle $f:W_k \rightarrow \widehat{T}(\CC)$,
-and the effect of composing $\phi$ with a $\widehat{T}(\CC)$-conjugation is exactly to change
+The homomorphisms $\phi: W_k \rightarrow {}^LT(\mathbf{C}) = \Gamma \ltimes \widehat{T}(\mathbf{C})$
+have second component that is exactly a continuous 1-cocycle $f:W_k \rightarrow \widehat{T}(\mathbf{C})$,
+and the effect of composing $\phi$ with a $\widehat{T}(\mathbf{C})$-conjugation is exactly to change
 $f$ by a 1-coboundary.  
 
 Note that if $T$ splits over a finite Galois extension
@@ -15648,15 +15726,15 @@ is the group $W_{k'/k}$ that is naturally a topological extension of ${\rm{Gal}}
 $A(k)$, where $A(k) = 
 \mathbf{A}_k^{\times}/k^{\times}$ in the global case and  $A(k) = k^{\times}$ in the local case
 (this extension representing the fundamental class associated to $k'/k$).  That is,
-such 1-cocycles $f$ arise from 1-cocycles $W_{k'/k} \rightarrow \widehat{T}(\CC)$. 
+such 1-cocycles $f$ arise from 1-cocycles $W_{k'/k} \rightarrow \widehat{T}(\mathbf{C})$. 
 
 An early verification of Langlands \cite[Thm.\,2]{tori} was that for any local field $k$ there is a ``natural''
-isomorphism from ${\rm{H}}^1_{\rm{cont}}(W_k, \widehat{T}(\CC))$ onto the group 
-continuous homomorphisms $T(k) \rightarrow \CC^{\times}$, and that for any global field $k$
+isomorphism from ${\rm{H}}^1_{\rm{cont}}(W_k, \widehat{T}(\mathbf{C}))$ onto the group 
+continuous homomorphisms $T(k) \rightarrow \mathbf{C}^{\times}$, and that for any global field $k$
 there is a ``natural'' surjection with finite (explicitly
-described) kernel from ${\rm{H}}^1_{\rm{cont}}(W_k, \widehat{T}(\CC))$
+described) kernel from ${\rm{H}}^1_{\rm{cont}}(W_k, \widehat{T}(\mathbf{C}))$
 onto the group of continuous homomorphisms
-$T(\mathbf{A}_k)/T(k) \rightarrow \CC^{\times}$. 
+$T(\mathbf{A}_k)/T(k) \rightarrow \mathbf{C}^{\times}$. 
 These ``natural'' maps are specific
 constructions (satisfying good properties), 
 called {\em Langlands duality for tori}, and for $T = \G_m$ by design this recovers
@@ -16071,8 +16149,11 @@ by assigning to any right $\mathscr{G}$-torsor $X$ the class of the 1-cocycle $c
 base point $x_0 \in X(k_s)$: the $k_s$-isomorphism of right torsors
 $f: \mathscr{G}_{k_s} \simeq X_{k_s}$ via $f(g) = x_0.g$
 yields an automorphism of right torsors
-$$\mathscr{G}_{k_s} \simeq \gamma^{\ast}(\mathscr{G}_{k_s}) \stackrel{\gamma^{\ast}(f)}{\simeq} \gamma^{\ast}(X_{k_s})
-\simeq X_{k_s} \stackrel{f^{-1}}{\simeq} \mathscr{G}_{k_s}$$
+$$
+\mathscr{G}_{k_s} \simeq \gamma^{\ast}(\mathscr{G}_{k_s})
+\xrightarrow{\gamma^{\ast}(f)} \gamma^{\ast}(X_{k_s})
+\simeq X_{k_s} \xrightarrow{f^{-1}} \mathscr{G}_{k_s}
+$$
 that must be {\em left} multiplication by some unique $c(\gamma) \in \mathscr{G}(k_s)$
 for each $\gamma \in {\rm{Gal}}(k_s/k)$.  
 One checks
@@ -16101,7 +16182,7 @@ assigned to $H$.
 
 Coming back to our situation of interest, here is how we use
 the assumption of isomorphic 4-tuples.  The hypothesis of isomorphic absolute root data
-for $G'$ and $G$ yields a class $[G'] \in {\rm{H}}^1(k, \Aut_{G/k})$ whose triviality is
+for $G'$ and $G$ yields a class $[G'] \in {\rm{H}}^1(k, \text{Aut}_{G/k})$ whose triviality is
 equivalent to $G'$ being $k$-isomorphic to $G$.  That is, this puts
 our task into a cohomological framework. 
 The hypothesis that the isomorphism
@@ -16220,7 +16301,7 @@ the derived group of any torus centralizer
 is always simply connected by Corollary \ref{levisc}!   Since G$_2$ is simply connected, that rules out PGL$_2$
 and so $\mathscr{D}(L_c) = {\rm{SL}}_2$.  But
 ${\rm{H}}^1(k, \SL_n) = 1$ for any $n \ge 2$ due to the exact sequence of pointed sets
-$${\rm{GL}}_n(k) \stackrel{\det}{\rightarrow} k^{\times} \stackrel{\delta}{\rightarrow}
+$${\rm{GL}}_n(k) \xrightarrow{\det} k^{\times} \xrightarrow{\delta}
 {\rm{H}}^1(k, \SL_n) \rightarrow {\rm{H}}^1(k, \GL_n)$$
 along with the surjectivity of the determinant and the vanishing of ${\rm{H}}^1(k, \GL_n)$
 (as all vector bundles on ${\rm{Spec}}(k)$ are free!).  Thus,
@@ -16229,9 +16310,6 @@ ${\rm{H}}^1(k, \SL_2) = 1$, so we are done.
 
 The moral is that the classification of forms involves systematic reduction of the structure group. 
 
-\newpage
-
-\appendix
 
 \section{Lang's theorem and dynamic methods}\label{langdyn}
 
@@ -19760,7 +19838,7 @@ Since $U$ is nilpotent (Proposition \ref{unilalg}), the final nontrivial term $U
 of $U$ is a {\em central} connected linear algebraic subgroup $U'$ of $U$
 with $U'  \subset \mathscr{C}^1(U) = \mathscr{D}(U) \ne U$. 
 The resulting short exact sequence
-$$1 \rightarrow U' \rightarrow U \stackrel{q}{\rightarrow} U'' \rightarrow 1,$$
+$$1 \rightarrow U' \rightarrow U \xrightarrow{q} U'' \rightarrow 1,$$
 in which $U'$ and $U''$ each have strictly smaller dimension than $U$,
 is $T$-equivariant due to the ``characteristic'' property of $U'$ in $U$
 ($U'$ is stable under all $k$-automorphisms of $U$, and
@@ -20348,22 +20426,22 @@ by Corollary \ref{III.3.3.5},
 so we assume $m>1$. We will show that $U$ can be embedded in a $k$-vector group $W$ with $\dim W = \dim V -1$,
 which will complete the argument via induction on $m$.   The vector group $W$ will arise as a quotient of $V$. 
 
-The $k$-linear subspace $\Lie(U)$ in ${\rm{Lie}}(V)$ has codimension $m$. Fix a choice
+The $k$-linear subspace $\text{Lie}(U)$ in ${\rm{Lie}}(V)$ has codimension $m$. Fix a choice
 of linear structure on $V$ (in the sense of Definition \ref{linstr}).  Since $m \ge 2$, 
 the Zariski closure ${\mathbf{G}}_{\rm{a}}.U \,(\subset V)$ of the image of the multiplication map
 ${\mathbf{G}}_{\rm{a}} \times U \rightarrow V$ is a closed subscheme of $V$ with nonzero codimension.
-By irreducibility of $V$, the union $\Lie(U) \cup ({\mathbf{G}}_{\rm{a}}.U)$ inside $V$ is a proper closed subscheme of $V$.
+By irreducibility of $V$, the union $\text{Lie}(U) \cup ({\mathbf{G}}_{\rm{a}}.U)$ inside $V$ is a proper closed subscheme of $V$.
 
 Since $V(k)$ is Zariski-dense in $V$ (as $k$ is infinite),
-there exists $v\in V(k)$ with $$v\notin \Lie(U) \cup ({\mathbf{G}}_{\rm{a}}.U).$$ Let $L \subset V$ be the $k$-subgroup
+there exists $v\in V(k)$ with $$v\notin \text{Lie}(U) \cup ({\mathbf{G}}_{\rm{a}}.U).$$ Let $L \subset V$ be the $k$-subgroup
 corresponding to the line $kv \subset V(k)$. 
 Consider the canonical $k$-homomorphism $\phi: V\rightarrow W := V/L$, and let $\psi = \phi|_{U}$.
 We shall prove $\ker \psi = 1$, from which it follows that $\psi$ identifies $U$ with a $k$-subgroup of
 $W$.   
 
-It suffices to show that $\Lie(\psi)$ is injective (so $\ker \psi$ is \'etale) and that $\psi|_{U(\overline{k})}$
-is injective. The map $\Lie(\psi)$
-has kernel $L \cap \Lie(U) =\{0\}$, so it is indeed injective.
+It suffices to show that $\text{Lie}(\psi)$ is injective (so $\ker \psi$ is \'etale) and that $\psi|_{U(\overline{k})}$
+is injective. The map $\text{Lie}(\psi)$
+has kernel $L \cap \text{Lie}(U) =\{0\}$, so it is indeed injective.
 If $\psi|_{U(\overline{k})}$ is not injective
 then the line $L$ would lie in ${\mathbf{G}}_{\rm{a}}.U$ since ${\mathbf{G}}_{\rm{a}}.U$ is stable under the ${\mathbf{G}}_{\rm{a}}$-multiplication on
 $V$.  But the point $v \in L(k)$ does not lie in $({\mathbf{G}}_{\rm{a}}.U)(\overline{k})$, due to how we chose $v$, so
@@ -21049,22 +21127,22 @@ This
 
 Consider a $k$-torus $T$ acting on a smooth connected
 unipotent $k$-group $U$.  This induces a linear representation of $T$ on
-$\Lie(U)$, so if $T$ is $k$-split then we get a weight space decomposition of $\Lie(U)$.  
+$\text{Lie}(U)$, so if $T$ is $k$-split then we get a weight space decomposition of $\text{Lie}(U)$.  
 If $U$ is a vector group then it is natural to wonder if this
-decomposition of $\Lie(U)$ can be lifted to the group $U$.  When $\dim U > 1$, the $T$-action may not
+decomposition of $\text{Lie}(U)$ can be lifted to the group $U$.  When $\dim U > 1$, the $T$-action may not
 respect an initial choice of linear structure on $U$ (in the sense of Definition \ref{linstr}) 
 since ${\rm{char}}(k) = p > 0$, 
 so we first seek a $T$-equivariant linear structure. 
 
 For example, if $U = {\mathbf{G}}_{\rm{a}}^2$ with its usual linear structure 
 and $T = {\mathbf{G}}_{\rm{m}}$ with the action $t.(x,y) = (tx, (t^p-t) x^p + t y)$ then the $T$-action is not
-linear and the action on $\Lie(U) = k^2$ has
+linear and the action on $\text{Lie}(U) = k^2$ has
 the single weight given by the identity character of $T$.  
 But note that if we transport the $T$-action by the additive automorphism
 $(x,y) \mapsto (x, y + x^p)$ of $U$ then the action becomes $t.(x,y) = (tx, ty)$, which is linear.
 
 Tits proved rather generally that if a $k$-split $T$ acts on $U$ with only nontrivial 
-weights on $\Lie(U)$, then there are nontrivial constraints on the possibilities for $U$ as a $k$-group 
+weights on $\text{Lie}(U)$, then there are nontrivial constraints on the possibilities for $U$ as a $k$-group 
 and that (after passing to a suitable characteristic composition series
 for $U$) the action can always be described in terms of linear representations of $T$. 
 To explain his results in this direction, we begin with the following 
@@ -21214,9 +21292,9 @@ $Z_U(T)$ is equal to $U$.  For the $k$-group $G = U \rtimes T$,
 we have that the torus centralizer $Z_G(T)$ is equal
 to $Z_U(T) \rtimes T$.  But $Z_G(T)$ is smooth and connected, so
 the same holds for $Z_U(T)$.  Since $Z_U(T)$ is a scheme-theoretic centralizer,
-$\Lie(Z_U(T))$ is the $T$-centralizer in $\Lie(U)$.  Hence, to prove
+$\text{Lie}(Z_U(T))$ is the $T$-centralizer in $\text{Lie}(U)$.  Hence, to prove
 that $Z_U(T) = U$ it suffices (by smoothness and connectedness
-of $U$) to prove that $T$ acts trivially on $\Lie(U)$.  
+of $U$) to prove that $T$ acts trivially on $\text{Lie}(U)$.  
 
 By Proposition \ref{IV.4.1.4}, we may extend scalars to $k_s$, so $T$ is $k$-split. 
 Consider the composition series $\{U_i\}$ from Corollary \ref{cancckp}. 
@@ -22624,8 +22702,11 @@ By definition,
 $$s_{a^{\vee},a}(b^{\vee}) = b^{\vee} - \langle a, b^{\vee} \rangle a^{\vee} \mapsto
 \frac{2b}{(b,b)} - \langle a, b^{\vee} \rangle \cdot \frac{2a}{(a,a)} \in V,$$
 and $s_{a,a^{\vee}}(2b/(b,b)) = 2b/(b,b) - \langle 2b/(b,b), a^{\vee} \rangle a$, 
-so we are reduced to checking that 
-$$\frac{\langle a, b^{\vee} \rangle}{(a,a)} \stackrel{?}{=} \frac{\langle b, a^{\vee} \rangle}{(b,b)}.$$
+so we are reduced to checking the equality
+$$
+\frac{\langle a, b^{\vee} \rangle}{(a,a)} =
+\frac{\langle b, a^{\vee} \rangle}{(b,b)}
+$$
 But we have already seen that $\langle x, c^{\vee} \rangle = (x, 2c/(c,c))$ for all $c \in R$ and $x \in V$,
 so the desired identity is clear. 
 \end{proof}
@@ -24666,8 +24747,10 @@ and hence $G_a B n_w B \subset B n_w B \cup B n_a n_w B$ as desired for (\ref{ti
 To prove (\ref{gnb}) it is harmless to replace the Borel subgroup $n_w B n_w^{-1}$ of $G$
 containing $T$ with its intersection $G_a \bigcap (n_w B n_w^{-1})$.  This intersection
 is a Borel subgroup of $G_a = Z_G(T_a)$ containing $T$,  so it is equal to one of the groups
-$B_{\pm a} = T \cdot U_{\pm a}$.  Hence, (\ref{gnb}) is equivalent to 
-$$G_a \stackrel{?}{=}  U_a B_{\pm a} \cup U_a n_a B_{\pm a}$$
+$B_{\pm a} = T \cdot U_{\pm a}$.  Hence, (\ref{gnb}) is equivalent to the equality
+$$
+G_a =  U_a B_{\pm a} \cup U_a n_a B_{\pm a}
+$$
 for each of the roots $\pm a$. For the case of $B_a$ this is the Bruhat decomposition (\ref{gaba}) of 
 the semisimple-rank 1 group $G_a$ relative
 to $(B_a, T)$, and for the case of $B_{-a}$ this is the left $n_a$-translate of the Bruhat decomposition
@@ -25961,18 +26044,25 @@ it is fixed by the $H_{k[\varepsilon]}$-action.
 
 From the construction of $Y^H$, we have
 $v \in {\rm{T}}_y(Y^H)$ if and only if the composite $k$-algebra map
-$$k[Y \times Y] \stackrel{\alpha^{\ast}}{\rightarrow} k[H \times Y]
- \stackrel{{\rm{id}}_H \otimes v^{\ast}}{\longrightarrow}
+$$k[Y \times Y] \xrightarrow{\alpha^{\ast}} k[H \times Y]
+ \xrightarrow{{\rm{id}}_H \otimes v^{\ast}}
 k[H][\varepsilon]$$
 factors through $\Delta^{\ast}_{Y/k}: k[Y \times Y] \twoheadrightarrow k[Y]$ (i.e., the restrictions to
 the two tensor factors of $k[Y \times Y] = k[Y] \otimes_k k[Y]$ coincide).  On the other hand,
 $v$ is $H$-invariant in ${\rm{T}}_{y}(Y)$ if and only if for every $k$-algebra $R$ and $h \in H(R)$
 the composite map of $R$-algebras
-$$R[Y] \stackrel{h^{\ast}}{\simeq} R[Y] \stackrel{v_R^{\ast}}{\rightarrow} R[\varepsilon]$$
+$$
+R[Y] \xrightarrow{h^{\ast}}
+R[Y] \xrightarrow{v_R^{\ast}}
+R[\varepsilon]
+$$
 (using the effect of the $h$-action on $Y_R$)
 coincides with $v_R$.  Taking the universal case $R = k[H]$ and $h = {\rm{id}}_{H}$, 
 this is the condition that the composite map of $k[H]$-algebras
-$$k[H \times Y] \simeq k[H \times Y] \stackrel{{\rm{id}}_H \otimes v^{\ast}}{\rightarrow} k[H][\varepsilon]$$
+$$
+k[H \times Y] \simeq k[H \times Y]
+\xrightarrow{{\rm{id}}_H \otimes v^{\ast}} k[H][\varepsilon]
+$$
 (where the first step corresponds to $(h, y) \mapsto (h, h.y)$) coincides with ${\rm{id}}_H \otimes v_H^{\ast}$.
 But this latter equality of
 $k[H]$-algebra maps can be checked on the second tensor factor of $k[H \times Y] = k[H] \otimes k[Y]$,
@@ -26382,7 +26472,8 @@ $\Z$-dual $r(L)^{\ast} \subset V_0^{\ast}$ coincides
 with $L^{\ast} \cap V_0^{\ast}$ (as we verify immediately from the definitions).
 Taking $L = P(\Phi)$, our problem is equivalent to proving
 \begin{equation}\label{pqeqn}
-Q(\Phi^{\vee}) \cap V_0^{\ast}  \stackrel{?}{\subset} Q({}_k\Phi^{\vee})
+Q(\Phi^{\vee}) \cap V_0^{\ast}
+\subset Q({}_k\Phi^{\vee})
 \end{equation}
 and we know the reverse containment holds.
 
@@ -26795,8 +26886,10 @@ $$(\ker f)({\mathbf{C}}) = {\rm{Hom}}({\rm{X}}(T)/P(\Phi), {\mathbf{C}}^{\times}
 as modules over $\Gamma = {\rm{Gal}}({\mathbf{C}}/\R)$, so 
 $$((\ker f)/(\widetilde{S} \cap \ker f))({\mathbf{C}}) = {\rm{Hom}}({\rm{X}}(T)/({\rm{X}}(S) + P(\Phi)), {\mathbf{C}}^{\times}).$$
 Thus, an equivalent formulation of (\ref{mainpi0}) in more combinatorial terms is
-$$\#\pi_0(G(\R)) \stackrel{?}{=} \#{\rm{Hom}}_{\Gamma}({\rm{X}}(T)/P(\Phi), {\mathbf{C}}^{\times})/
-\#{\rm{Hom}}_{\Gamma}({\rm{X}}(T)/({\rm{X}}(S) + P(\Phi)), {\mathbf{C}}^{\times})$$
+$$
+\#\pi_0(G(\R)) = \#{\rm{Hom}}_{\Gamma}({\rm{X}}(T)/P(\Phi), {\mathbf{C}}^{\times})/
+\#{\rm{Hom}}_{\Gamma}({\rm{X}}(T)/({\rm{X}}(S) + P(\Phi)), {\mathbf{C}}^{\times})
+$$
 where ${\rm{X}}(S)$ is the maximal torsion-free quotient of ${\rm{X}}(T)_{\Gamma}$.
 
 Proposition \ref{sconn} gives that $G(\R)/G(\R)^0 = S(\R)/(S(\R) \cap G(\R)^0)$.
@@ -29532,7 +29625,7 @@ $$X(k[\epsilon, \epsilon']) \rightarrow
 X(k[\epsilon]) \times_{X(k)} X(k[\epsilon])$$
 and prove it is bijective.  Using the natural quotient map $k[\epsilon, \epsilon'] \twoheadrightarrow
 k[\epsilon]$, show that the resulting map
-$$X(k[\epsilon]) \times_{X(k)} X(k[\epsilon]) \stackrel{\simeq}{\leftarrow} 
+$$X(k[\epsilon]) \times_{X(k)} X(k[\epsilon]) \xleftarrow{\simeq}
 X(k[\epsilon, \epsilon']) \rightarrow X(k[\epsilon])$$
 induces addition on ${\rm{Tan}}_x(X)$: 
 the $k$-linear structure on ${\rm{Tan}}_x(X)$ is encoded by the functor of $X$!
@@ -29923,7 +30016,7 @@ Prove ${\rm{Tan}}_e(Z_G(H)) = \mathfrak{g}^H$ via adjoint action.  Also prove
 ${\rm{Tan}}_e(N_G(H)) = \cap_{h \in H(k)} ({\rm{Ad}}_G(h) - 1)^{-1}(\mathfrak{h})$ when $k = k_s$.
 
 \medskip\noindent
-5. A diagram $1 \rightarrow G' \stackrel{j}{\rightarrow} G \stackrel{\pi}{\rightarrow} G'' \rightarrow 1$ of
+5. A diagram $1 \rightarrow G' \xrightarrow{j} G \xrightarrow{\pi} G'' \rightarrow 1$ of
 finite type $k$-groups is {\em exact} if $\pi$ is faithfully flat and $G' = \ker \pi$.
 
 (i)  For any such diagram, 
