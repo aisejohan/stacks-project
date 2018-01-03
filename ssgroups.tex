@@ -207,13 +207,17 @@ However, in our special case we can give a direct proof as follows.
 Direct proof of subgroup property of $G^0$.
 To see that $G^0\times G^0\to G\times G \xrightarrow{m} G$
 factors through $G^0$, it suffices by topology to check that $G^0\times G^0$
-is connected. While it's not true \textit{a priori} that a fiber product
-of connected schemes is connected, this \textit{is} the case for a fiber product (over $k$)
-of \textit{geometrically} connected $k$-schemes, and this is the situation we are in.
-In the finite type case (which is what we need) this is easily seen by extending scalars to
-$\bar k$ and using linked chains of irreducible components to reduce to the more
-familiar fact that over an algebraically closed field a direct product of irreducible schemes of finite type
-is irreducible.
+is connected. While it's not true a priori that a fiber product
+of connected schemes is connected, this is
+the case for a fiber product (over $k$)
+of geometrically connected schemes over $k$, and
+this is the situation we are in.
+In the finite type case (which is what we need)
+this is easily seen by extending scalars to
+$\bar k$ and using linked chains of irreducible components to
+reduce to the more
+familiar fact that over an algebraically closed field a direct
+product of irreducible schemes of finite type is irreducible.
 The case of inversion is handled similarly (in fact, it is much easier),
 and by construction the rational point $e$ lies in $G^0$. So we're done.
 
@@ -227,12 +231,16 @@ components over $k$ are not geometrically connected over $k$
 than there are over $k$).
 An example is the group scheme $\mu_5$ of $5$th roots
 of unity over $k=\mathbf{Q}$
-(which has 5 geometric components, but only two connected components as a $\mathbf{Q}$-scheme).
+(which has 5 geometric components, but only two connected components
+as a $\mathbf{Q}$-scheme).
 
 \medskip\noindent
-This is an aspect of a more general phenomenon, whereby $G$ might contain a lot more information than the group of rational points $G(k)$. Indeed, if $k$ is finite then this is certainly the case (except when $G$ is a finite constant
-$k$-group). Later, however, we'll see that \textit{over infinite fields}, the set of rational points is often Zariski-dense
-in smooth connected affine groups
+This is an aspect of a more general phenomenon, whereby $G$ might contain
+a lot more information than the group of rational points $G(k)$.
+Indeed, if $k$ is finite then this is certainly the case (except
+when $G$ is a finite constant $k$-group). Later, however, we'll
+see that over infinite fields, the set of rational points is often
+Zariski-dense in smooth connected affine groups
 (away from certain exceptional situations related to unipotent groups over
 imperfect fields),
 so for some proofs it will suffice to study the group of rational points!
@@ -257,7 +265,7 @@ hence obviously smooth and connected.
 \end{example}
 
 \begin{remark}
-\label{foobarrem}
+\label{remark-foobarrem}
 For $k = \mathbf{R}$, the connectedness of $\GL_n$ as an algebraic group
 has nothing to do with the fact that in the classical topology
 $\GL_n(\mathbf{R})$ is disconnected.
@@ -376,95 +384,146 @@ with a given dimension $2n$ are isomorphic.
 
 
 
-\section{January 6}
-\subsection{Translations}
-If $G$ is a group variety over $k$ then for any extension field $k'/k$
-the group $G(k')$ acts by translations on $G_{k'}$ -- that is, \textit{not} on $G$ itself, only after extending scalars to $k'$. Concretely, this comes from defining for $g\in G(k')=G_{k'}(k')$ the left-translation-by-$g$ map
-\[
+\section{Translations, homorphisms, and normal subgroups}
+\label{section-trans-hom-normal}
+
+\noindent
+Let $k$ be a field.
+If $G$ is an algebraic $k$-group then for any extension field $k'/k$
+the group $G(k')$ acts by translations on $G_{k'}$.
+Thus points of $G$ over $k'$ do not act on $G$ itself,
+but only after extending scalars to $k'$.
+Concretely, this comes from defining for
+$g \in G(k') = G_{k'}(k')$ the left-translation-by-$g$ map
+$$
 \ell_g : G_{k'} \xrightarrow{x\mapsto(g,x)}
 G_{k'}\times G_{k'} \xrightarrow{m_{k'}} G_{k'}.
-\]
-But of course there's no reason this only works for extension \textit{fields}.
-Rather, for any $k$-algebra $R$, we obtain an action of the group $G(R)$ on
-the $R$-scheme $G_R$ in a similar fashion. There are a few entirely equivalent ways to think about this,
+$$
+But of course there's no reason this only works for extension fields.
+Rather, for any $k$-algebra $R$, we obtain an action of the group
+$G(R)$ on the $R$-scheme $G_R$ in a similar fashion.
+There are a few entirely equivalent ways to think about this,
 as we now explain.
 
-First, an $R$-point $g\in G(R)$ is the same as a $k$-map $\Spec R \xrightarrow{g} G$, which is the same as an $R$-map $\tilde g: \Spec R\to G_R$.
-Then $\ell_g$ is $G_R \xrightarrow{(\tilde g,\id_{G_R})} G_R\times G_R \xrightarrow{m_R} G_R$, where the $\tilde g$ in the first factor means
+\medskip\noindent
+First, an $R$-point $g\in G(R)$ is the same as a morphism
+$g : \Spec(R) \to G$ over $k$, which is the same as an $R$-map
+$\tilde g : \Spec(R) \to G_R$.
+Then $\ell_g$ is
+$$
+G_R \xrightarrow{(\tilde g,\id_{G_R})} G_R\times G_R \xrightarrow{m_R} G_R,
+$$
+where the $\tilde g$ in the first factor means
 the ``constant map'' at $\tilde g$, i.e. the composition
 $G_R\to \Spec R \xrightarrow{\tilde g} G_R$.
-
-Equivalently, we can think of this as the $R$-map obtained by base-change
-from the $k$-map
+Equivalently, we can think of this as the $R$-map
+obtained by base-change from the morphism
 $$
 G_R = \Spec R \times_{\Spec k} G \xrightarrow{(g,\id_G)} G\times G \xrightarrow{m} G.
 $$
-
-Equivalently, and perhaps most elegantly, we can think about this functorially (via Yoneda)
-as the $R$-map corresponding to the map of functors on $R$-algebras
+over $k$.
+Equivalently, and perhaps most elegantly, we can think about this
+functorially (via Yoneda)
+as the morphism over $R$ corresponding to the map of functors on $R$-algebras
 defined by left-translation-by-$g_B$ in the group $G(B)$
 for any $R$-algebra $B$, where $g_B$ is the base change of the $R$-point
-$g$ to $B$. (Note that we are not requiring $G$ to be affine, so
-we are implicitly using the elementary fact that to define a map of schemes it is enough to know the
-corresponding map between the functors they define on affine schemes.  Often the restriction to
-evaluation
-on affines is just a notational or psychological convenience, but sometimes it is genuinely useful.)
-\subsection{Homomorphisms}
+$g$ to $B$. Note that we are not requiring $G$ to be affine, so
+we are implicitly using the elementary fact that to define a map
+of schemes it is enough to know the corresponding map between the
+functors they define on affine schemes.  Often the restriction to
+evaluation on affines is just a notational or
+psychological convenience, but sometimes it is genuinely useful.
+
 \begin{definition}
-A $k$-\textit{homomorphism} $G'\to G$ of $k$-group schemes
-is a $k$-morphism such that the following diagrams commute:
-\[\xymatrix{G'\times G'\ar[r]^{m'}\ar[d]_{f\times f}&G'\ar[d]_f\\
-G\times G\ar[r]_m&G}\quad \xymatrix{G'\ar[r]^{\iota'}\ar[d]_f&G'\ar[d]^f\\
-G\ar[r]_\iota&G}\quad \xymatrix{\Spec k\ar[r]^{e'}\ar[rd]_{e}&G'\ar[d]_f\\
-&G}\]
-Equivalently, by Yoneda's lemma, it is a $k$-map such that for all $k$-algebras $R$, the corresponding map of sets $f_R:G'(R)\to G(R)$ is a group homomorphism.
+\label{definition-homomorphism}
+Let $k$ be a field. Let $G$, $G'$ be $k$-group schemes.
+A {\it $k$-homomorphism} $G'\to G$ is a morphism of
+group schemes over $k$
+(see Groupoids, Definition \ref{groupoids-definition-group-scheme}).
 \end{definition}
-\begin{example}The
-determinant is a $k$-homomorphism $\det:\GL_n\to \mathbf{G}_m$ for any $n$.
+
+\noindent
+In other words, this is the same as a morphism $G \to G'$ of schemes
+over $k$ such that the following diagrams commute:
+$$
+\xymatrix{
+G'\times G'\ar[r]^{m'}\ar[d]_{f\times f}&G'\ar[d]_f\\
+G\times G\ar[r]_m&G
+}
+\quad
+\xymatrix{
+G'\ar[r]^{\iota'}\ar[d]_f&G'\ar[d]^f\\
+G\ar[r]_\iota&G
+}
+\quad
+\xymatrix{
+\Spec k\ar[r]^{e'}\ar[rd]_{e}&G'\ar[d]_f\\
+&G
+}
+$$
+Equivalently, by Yoneda's lemma, it is a morphism over $k$
+such that for all $k$-algebras $R$, the corresponding map
+of sets $f_R:G'(R)\to G(R)$ is a group homomorphism.
+
+\medskip\noindent
+The determinant is a $k$-homomorphism $\det:\GL_n\to \mathbf{G}_m$
+for any $n$, see Groupoids, Example \ref{groupoids-example-determinant}.
 This is easiest to see via the functorial characterization.
 The corresponding map of affine coordinate rings
-is $k[t,t^{-1}]\to k[x_{ij}][\frac{1}{\det}]$ given by
-$t\mapsto \det$.
-\end{example}
-\begin{remark}\label{checkgeompts}
-For $k$-group \textit{varieties} (i.e. smoothness is crucial, connectedness is not)
-a $k$-homomorphism $f:G'\to G$ is the same  as a $k$-map
-such that the induced map on geometric points $G'(\bar k)\to G(\bar k)$ is
-a group homomorphism.
-This is because to check that two maps of smooth varieties agree (or
-for that matter, that a map of smooth varieties factors through a smooth locally
-closed subvariety of the target)
-it is sufficient to check on geometric points.
+is $k[t,t^{-1}]\to k[x_{ij}, \frac{1}{\det}]$ given by
+$t \mapsto \det$.
+
+\begin{remark}
+\label{remark-checkgeompts}
+For smooth $k$-groups $G$ and $G'$ a $k$-homomorphism $f : G' \to G$
+is the same as a morphism $G \to G'$ over $k$ such that the induced map on
+geometric points $G'(\bar k)\to G(\bar k)$ is a group homomorphism.
+This is because to check that two maps of smooth schemes over $k$
+agree (or for that matter, that a map of smooth varieties factors
+through a smooth locally closed subvariety of the target)
+it is sufficient to check on geometric points. It is even
+enough to check on points over a separable algebraic closure
+as these points are dense by
+Varieties, Lemma \ref{varieties-lemma-smooth-separable-closed-points-dense}.
 \end{remark}
 
-\subsection{Normal subgroups}
 \begin{definition}
-A (closed) $k$-subgroup $H\subset G$ is called \textit{normal}
-if the conjugation map $(h,g)\mapsto ghg^{-1}:H\times G\to G$
-factors through the closed immersion $H\to G$:
-\[
+\label{definition-normal}
+Let $k$ be a field. Let $G$ be a $k$-group scheme.
+A $k$-subgroup $H \subset G$ is called {\it normal}
+if the conjugation map $(h, g) \mapsto ghg^{-1} : H\times G \to G$
+factors through the closed immersion $H \to G$:
+$$
 \xymatrix{
 H \times G \ar[r]\ar@{-->}[rd]_{\exists} & G \\
 & H \ar[u]
 }
-\]
-Since $H\to G$ is a closed immersion, if this factorization exists it is
-automatically unique.
+$$
+We will use the notation $H \vartriangleleft G$ to indicate that $H$
+is a normal $k$-subgroup of $G$.
 \end{definition}
-Equivalent reformulations of this definition include
-(1) that $H(R)\vartriangleleft G(R)$ for all $k$-algebras $R$;
-and (2) in the smooth situation (cf. Remark \ref{checkgeompts} above), that $H(\bar k)\vartriangleleft G(\bar k)$.
-\begin{example}
-$\SL_n\vartriangleleft \GL_n$.
-\end{example}
-\subsection{Further discussion of examples}
-\begin{example}[$C_n$]\label{exampleCn}
-We return to the consideration of symplectic groups,
-Example ``C'', or more properly $C_n$,  from Example \ref{exampleC} above.
 
-Let $(V,B)$ be a symplectic space, so $V$ is a finite-dimensional nonzero vector space
-over $k$, and $B:V\times V\to k$ is a nondegenerate alternating bilinear form.
-This forces $\dim V=2n$ to be even,
+\noindent
+Since $H \to G$ is a closed immersion (and hence a monomorphism),
+if the factorization in the definition exists it is automatically unique.
+Given $k$, $G$, $H$ as in Definition \ref{definition-normal}
+then $H$ is normal in $G$ if and only if
+$H(R) \vartriangleleft G(R)$ for all $k$-algebras $R$.
+If $G$ and $H$ are smooth over $k$ then it suffices to check that
+$H(\bar k)\vartriangleleft G(\bar k)$.
+(compare with Remark \ref{remark-checkgeompts}).
+
+\medskip\noindent
+An example of a normal $k$-subgroup is
+$\SL_n \vartriangleleft \GL_n$.
+
+\begin{example}[$C_n$]
+\label{example-Cn}
+We return to the consideration of symplectic groups from
+Example \ref{example-C} above. Let $(V, B)$ be a symplectic space,
+so $V$ is a finite-dimensional nonzero vector space
+over $k$, and $B : V \times V \to k$ is a nondegenerate alternating bilinear
+form. This forces $\dim V = 2n$ to be even,
 and with appropriately chosen coordinates the matrix
 of the bilinear form $B$ is given in $n\times n$ blocks
 by $\left[\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right]$.
@@ -477,100 +536,171 @@ $$
 a^tc = c^ta, \quad b^td = d^tb, \quad a^td-c^tb = \id_n.
 $$
 Since the condition on $g\in \GL_{2n}\subset {\text{Mat}}_{2n}$ is obviously Zariski-closed, and since the functorial description (as the subfunctor of $\GL_{2n}$ preserving $B$) makes it clear that $\text{Sp}_{2n}$ is a subgroup,
-it is clear that $\text{Sp}_{2n}\subset \GL_{2n}$ is a (closed) $k$-subgroup.
+it is clear that $\text{Sp}_{2n}\subset \GL_{2n}$ is a $k$-subgroup.
 
+\medskip\noindent
 The natural questions about this group are not necessarily easy to answer.
-Is $\text{Sp}_{2n}$ smooth? Yes, but the Jacobian criterion is difficult, or at least prohibitively laborious and inelegant, to verify directly. In \S\ref{spsmooth} an elegant functorial method will be used to address it.
-Is $\text{Sp}_{2n}$ connected? In
-\S\ref{spconn} we will see that it is. The classical approach to this involved constructing explicit curves (families of symplectomorphisms) connecting an arbitrary group element to the identity, using the theory of so-called ``transvections''.
+Is $\text{Sp}_{2n}$ smooth? Yes, but the Jacobian criterion is difficult,
+or at least prohibitively laborious and inelegant, to verify directly.
+In \ref{spsmooth} an elegant functorial method will be used to address it.
+Is $\text{Sp}_{2n}$ connected? In \ref{spconn} we will see that it is.
+The classical approach to this involved constructing explicit curves
+(families of symplectomorphisms) connecting an arbitrary group element
+to the identity, using the theory of so-called ``transvections''.
 \end{example}
-\begin{example}[$B_n$ and $D_n$]\label{exampleBD}
-Suppose that the characteristic of $k$ is different from $2$.
-(Fear not, we will revisit this with a better characteristic-free approach later. Characteristic 2 should never be ignored,
-as otherwise one cannot have a truly adequate version over rings.)
-Consider a \textit{nondegenerate} quadratic space $(V,q)$ over $k$.
-Here $V$ is a nonzero finite-dimensional vector space over $k$, and $q$ is
-a nondegenerate quadratic form on $V$,
-which means (because ${\text{char}}(k) \ne 2$)
-that the corresponding bilinear form $B_q$ gives a perfect pairing $V\times V\to k$.
-When we later address a characteristic-free notion of non-degeneracy for quadratic spaces
-that works uniformly even over any ring (including
-$\mathbf{Z}/4\mathbf{Z}$ and $\mathbf{Z}$ in which 2 may be a nonzero nilpotent or a non-unit that is not a zero-divisor),
-the smoothness of the projective quadric $(q=0)$ will be the right perspective for defining non-degeneracy.
 
+\begin{example}[$B_n$ and $D_n$]
+\label{example-BD}
+Suppose that the characteristic of $k$ is different from $2$.
+Consider a nondegenerate quadratic space $(V, q)$ over $k$.
+Here $V$ is a nonzero finite-dimensional vector space over $k$,
+and $q$ is a nondegenerate quadratic form on $V$,
+which means (because ${\text{char}}(k) \ne 2$)
+that the corresponding bilinear form $B_q$
+gives a perfect pairing $V \times V \to k$\footnote{
+Fear not, we will revisit this with a better characteristic-free
+approach later. Characteristic 2 should never be ignored,
+as otherwise one cannot have a truly adequate version over rings.
+When we later address a characteristic-free
+notion of non-degeneracy for quadratic spaces
+that works uniformly even over any ring (including
+$\mathbf{Z}/4\mathbf{Z}$ and $\mathbf{Z}$ in which 2 may be a nonzero nilpotent
+or a non-unit that is not a zero-divisor),
+the smoothness of the projective quadric $(q = 0)$ will be the right
+perspective for defining non-degeneracy.}.
 The \textbf{orthogonal group} of $q$ is defined to be
-\[O(q)=\{g\in \GL(V)[\simeq \GL_n]:q(gv)=q(v) \text{ for all } v\in V\}.\]
+$$
+O(q) =
+\{g \in \GL(V) : q(gv) = q(v) \text{ for all } v\in V\}.
+$$
 Functorially,
-\[O(q)(R)=\{g\in\text{Aut}_R(V_R):q(gv)=q(v) \text{ for all } v\in V_R\}.\]
+$$
+O(q)(R) = \{g \in \text{Aut}_R(V_R) :
+q(gv) = q(v) \text{ for all } v\in V_R
+\}.
+$$
 It is easy to see, for example using coordinates, that preserving the quadratic form is a Zariski-closed condition on $g$.
 An equivalent condition (since 2 is a unit in the base ring $k$) is
-\[O(q)(R)=\{g\in\text{Aut}_R(V_R):B_q(gv,gw)=B_q(v,w) \text{ for all } v,w\in V_R\}.\]
+$$
+O(q)(R) =
+\{g \in \text{Aut}_R(V_R) :
+B_q(gv,gw) = B_q(v,w) \text{ for all } v,w\in V_R\}.
+$$
 Or equivalently
-\[O(q)=\{g\in \GL_n:g^t[B_q]g=[B_q]\},\]
+$$
+O(q) =
+\{g \in \GL_n : g^t[B_q]g = [B_q]\},
+$$
 where $[B_q]$ is your favorite matrix for the quadratic form $B_q$, after
-identifying $V$ with $k^n$.
-The last description lets one write down a lot of explicit quadratic equations which cut out $O(q)$ from the affine space ${\text{Mat}}_n$.
+identifying $V$ with $k^n$. The last description lets one write down a lot
+of explicit quadratic equations which cut out $O(q)$
+from the affine space ${\text{Mat}}_n$.
 So, the moral is, $O(q)\subset \GL_n$ is a closed $k$-subgroup scheme.
 
-Is $O(q)$ smooth? Again, the answer is yes, and again checking the Jacobian criterion directly is probably not the way one wants to see this.
-Is $O(q)$ connected? As the case of $O_n=O(k^n,\sum x_i^2)$
+\medskip\noindent
+Is $O(q)$ smooth? Again, the answer is yes, and again checking
+the Jacobian criterion directly is probably not the way one wants to see this.
+Is $O(q)$ connected? As the case of $O_n = O(k^n,\sum x_i^2)$
 over the reals indicates, the answer is No.
-What may be more surprising is that $O(q)$ always has exactly two connected components, for any $q$ over any field $k$.
-(And in fact everything we have said works fine even in characteristic 2, provided one works to define the notion of nondegeneracy appropriately, which is not so obvious in this case.)
-We define the \textbf{special orthogonal group}
-to be $\text{SO}(q)=O(q)^0$. (This is the ``wrong'' definition in characteristic 2 when $n$ is odd,
-as in such cases it turns out that $O(q) = \text{SO}(q) \times \mu_2$ as group schemes,
-with $\text{SO}(q) = O(q)_{\text{red}}$ a smooth closed subgroup.  In particular,
-$O(q)$ is {\em connected} in such cases!)
-
-\begin{remark}
-This affords a good example of the phenomenon alluded to in Remark \ref{foobarrem}.
-Algebraically, $\text{SO}(q)$ is of course connected; but
-the Lie group $\text{SO}(q)(\mathbf{R})$ is disconnected whenever the quadratic form $q$
-has mixed signature [$\#\pi_0(\text{SO}(q)(\mathbf{R}))$ in fact depends only on the signature of $q$, since the
-signature classifies quadratic forms uniquely over the reals].
-Hence, Lie-algebra methods {\em can} be used to answer {\em algebraic} questions about $\text{SO}(q)$
-which would have seemed to give information only about $\text{SO}(q)(\mathbf{R})^0$
-in the classical Lie group setting.
-\end{remark}
-\begin{remark}
-The behavior of $\text{SO}_n$ turns out to be qualitatively different
-depending on the parity of $n$, as we shall see.
-In the $ABCDEFG$ classification, the examples $\text{SO}_{2n+1}$ and $\text{SO}_{2n}$
-correspond to $B_n$ and $D_n$ respectively (with $n \ge 2$, say).
-\end{remark}
+What may be more surprising is that $O(q)$ always has exactly
+two connected components, for any $q$ over any field $k$
+of characteristic not $2$. In this case, we
+define the \textbf{special orthogonal group} to be $\text{SO}(q) = O(q)^0$. 
 \end{example}
 
-\subsection{How far is a general smooth connected algebraic group from being either affine (i.e. linear algebraic) or projective (i.e. an abelian  variety)?}
+\noindent
+The orthogonal groups afford good examples of the phenomenon
+alluded to in Remark \ref{remark-foobarrem}.
+Algebraically, $\text{SO}(q)$ is of course connected; but
+the Lie group $\text{SO}(q)(\mathbf{R})$
+is disconnected whenever the quadratic form $q$
+has mixed signature [$\#\pi_0(\text{SO}(q)(\mathbf{R}))$
+in fact depends only on the signature of $q$, since the
+signature classifies quadratic forms uniquely over the reals].
+Hence, Lie-algebra methods can be used to answer
+algebraic questions about $\text{SO}(q)$
+which would have seemed to give information only about
+$\text{SO}(q)(\mathbf{R})^0$
+in the classical Lie group setting.
 
+\medskip\noindent
+The behavior of $\text{SO}_n$ turns out to be qualitatively different
+depending on the parity of $n$, as we shall see.
+In the $ABCDEFG$ classification, the examples
+$\text{SO}_{2n+1}$ and $\text{SO}_{2n}$
+correspond to $B_n$ and $D_n$ respectively (with $n \ge 2$, say).
+
+
+
+\section{Chevalley's theorem}
+\label{section-chevalley}
+
+\noindent
+How far is a general smooth connected algebraic group
+from being either affine (i.e. linear algebraic) or projective
+(i.e. an abelian  variety)?
 Although we'll never need it in this course,
-for cultural awareness we wish to mention two important theorems towards answering the question in the heading of this section.
-\begin{theorem}[Chevalley]If $k$ is perfect, then every connected $k$-group variety (N.B.: smooth!) fits into a unique short exact sequence (a notion to be defined later in the course)
-\[1\to H\to G\to A\to 1\]
+for cultural awareness we wish to mention two
+important theorems towards answering the question.
+The first answer to this question is due to Chevalley, see
+\cite{Chevalley}.
+
+\begin{theorem}[Chevalley]
+\begin{reference}
+\cite{Chevalley}
+\end{reference}
+If $k$ is perfect, then every connected smooth $k$-group fits into
+a unique short exact sequence
+$$
+1 \to H \to G \to A \to 1
+$$
 where $H$ is linear algebraic and $A$ is an abelian variety.
 \end{theorem}
 
-Define, for a smooth connected $k$-group $G$ of finite type,
-the affinization to be $G^{\text{aff}}=\Spec\mathcal{O}(G)$,
+\begin{proof}
+Omitted.
+\end{proof}
+
+\noindent
+Surprisingly, you can turn this theorem on its head, see
+\cite[Theorem A.3.9]{pred}.
 
 \begin{theorem}[Anti-Chevalley]
-For a smooth connected $k$-group $G$ of finite type,
-$G^{\text{aff}}=\Spec\mathcal{O}(G)$ is smooth (in particular, finite type!) and admits a unique $k$-group structure such that
-the natural map $G \rightarrow G^{\text{aff}}$ is a surjective homomorphism. Moreover, there is an exact sequence
-\[1\to Z\to G\to G^{\text{aff}}\to 1\]
+\begin{reference}
+\cite[Theorem A.3.9]{pred}
+\end{reference}
+For a smooth connected $k$-group $G$, the scheme
+$$
+G^{\text{aff}} = \Spec(\Gamma(G, \mathcal{O}_G))
+$$
+is smooth over $k$ and admits a unique structure of $k$-group scheme
+such that the natural map $G \rightarrow G^{\text{aff}}$
+is a $k$-homomorphism fitting into an exact sequence
+$$
+1 \to Z \to G \to G^{\text{aff}} \to 1
+$$
 where $Z$ is smooth, connected, and central in $G$.
 Moreover, if the characteristic of $k$ is positive,
 then $Z$ is semi-abelian: it fits into an exact sequence
-\[1\to T\to Z\to A\to 1\]
+$$
+1 \to T \to Z \to A \to 1
+$$
 where $T$ is a torus and $A$ is an abelian variety.
 \end{theorem}
-The Anti-Chevalley theorem is quite amazing, and deserves to be more widely known
-(though its proof {\em uses} the Chevalley  theorem over $\bar k$; see [CGP, Theorem A.3.9]
-and references therein).  It is
-actually more ``useful'' than the Chevalley theorem when ${\text{char}}(k) > 0$, even for perfect $k$,
-because the commutative (even central) term appears on the left, which is super-handy
-for studying degree-1 cohomology with coefficients in $G$ (since
-degree-2 cohomology is most convenient with commutative coefficients).
+
+\begin{proof}
+Omitted.
+\end{proof}
+
+\noindent
+The Anti-Chevalley theorem is quite amazing, and
+deserves to be more widely known
+(though its proof {\em uses} the Chevalley  theorem over $\bar k$; see
+reference given above).  It is actually more ``useful'' than the
+Chevalley theorem when ${\text{char}}(k) > 0$, even for perfect $k$,
+because the commutative (even central) term appears on the left, which
+is super-handy for studying degree-1 cohomology with coefficients in $G$
+(since degree-2 cohomology is most convenient with commutative coefficients).
 
 \section{January 8}
 
