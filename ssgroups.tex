@@ -374,12 +374,12 @@ $\mathbf{Z}/4\mathbf{Z}$ and $\mathbf{Z}$ in which 2 may be a nonzero nilpotent 
 the smoothness of the projective quadric $(q=0)$ will be the right perspective for defining non-degeneracy.
 
 The \textbf{orthogonal group} of $q$ is defined to be
-\[O(q)=\{g\in \GL(V)[\simeq \GL_n]:q(gv)=q(v) \\text{ for all } v\in V\}.\]
+\[O(q)=\{g\in \GL(V)[\simeq \GL_n]:q(gv)=q(v) \text{ for all } v\in V\}.\]
 Functorially,
-\[O(q)(R)=\{g\in\text{Aut}_R(V_R):q(gv)=q(v) \\text{ for all } v\in V_R\}.\]
+\[O(q)(R)=\{g\in\text{Aut}_R(V_R):q(gv)=q(v) \text{ for all } v\in V_R\}.\]
 It is easy to see, for example using coordinates, that preserving the quadratic form is a Zariski-closed condition on $g$.
 An equivalent condition (since 2 is a unit in the base ring $k$) is
-\[O(q)(R)=\{g\in\text{Aut}_R(V_R):B_q(gv,gw)=B_q(v,w) \\text{ for all } v,w\in V_R\}.\]
+\[O(q)(R)=\{g\in\text{Aut}_R(V_R):B_q(gv,gw)=B_q(v,w) \text{ for all } v,w\in V_R\}.\]
 Or equivalently
 \[O(q)=\{g\in \GL_n:g^t[B_q]g=[B_q]\},\]
 where $[B_q]$ is your favorite matrix for the quadratic form $B_q$, after
@@ -1707,7 +1707,10 @@ to be $n(2n+1)$.
 
 What is the kernel?
 It is
-\[\{S_0\in \text{End}(V)\mid B(T_0v,S_0v')=-B(S_0v,T_0v')=B(T_0v',S_0v) \\text{ for all } v,v'\in V\}.\]
+\[
+\{S_0\in \text{End}(V) \mid
+B(T_0v,S_0v') = -B(S_0v,T_0v') = B(T_0v',S_0v)
+\text{ for all } v,v'\in V\}.\]
 In other words, it is
 \[\{S_0\in\text{End}(V)\mid [(v,v')\mapsto B(T_0v,S_0v')]\in (\text{Sym}^2V)^*\}.\]
 Since $T_0\in \text{Sp}(V,B)$ is invertible, we can set $S_1=T_0^{-1}S_0$;
@@ -1726,7 +1729,7 @@ and determine $\dim\text{Sp}_{2n}$.
 As usual, we regard $T_{\id}(\text{Sp}(V,B))\subset T_{\id}(\GL(V))=\mathfrak{gl}(V)=\text{End}(V)$.
 Then
 \[\mathfrak{sp}_{2n}=\{\id +\epsilon T\in \text{Aut}_{k[\epsilon]}(V_{k[\epsilon]})\mid
-T\in \text{End}(V), B((\id+\epsilon T)v,(\id+\epsilon T)v')=B(v,v') \\text{ for all } v,v'\in V\subset V_{k[\epsilon]}\}.\]
+T\in \text{End}(V), B((\id+\epsilon T)v,(\id+\epsilon T)v')=B(v,v') \text{ for all } v,v'\in V\subset V_{k[\epsilon]}\}.\]
 We compute
 that the condition on $T$
 is that $B(Tv,v')+B(v,Tv')=0$;
@@ -1914,8 +1917,8 @@ The stabilizer $G_L$ had the following structure, where the first two basis
 vectors are $e,e'$ and the remainder parametrize $\bar V=H^\perp=L^\perp/L$:
 \[
 \left\{
-\right(
-\begin{array}{ccccccc}
+\left(
+\begin{matrix}
 a & * & [ & & S \in \Hom(L^\perp/L,L) & & ] \\
 0 & a^{-1} & 0 & 0 & \cdots & 0 & 0 \\
 \ldots & [] & [ & [ & [ \cdots ] & ] & ] \\
@@ -1924,8 +1927,9 @@ a & * & [ & & S \in \Hom(L^\perp/L,L) & & ] \\
 [\bar g \in \text{Sp}(\bar V, \bar B)] & ] & ] \\
 \ldots & \ldots & [ & [ & \ldots & ] & ] \\
 0 & [ ] & [ & [ & [ \cdots ] & ] & ] \\
-\end{array}
-\left) : a = 1 + \lambda, \lambda \neq 0, -1
+\end{matrix}
+\right)
+: a = 1 + \lambda, \lambda \neq 0, -1
 \right\}
 \]
 This description makes connectedness obvious, since visibly
@@ -1996,7 +2000,7 @@ by Galois descent. In the separably closed case, since $W$ is geometrically redu
 and $\alpha$ the conjugation action.
 Then $Z_G=Z_G(G)$ is the \textbf{scheme theoretic center} of $G$;
 its $R$-points are $$Z_G(R)=\{g\in G(R)\mid g\text{ conjugates trivially on }G_R\}=\{g\in G(R)\mid
-g \in Z(G(A)) \\text{ for all } A\in {\text{Alg}}/R\}.$$
+g \in Z(G(A)) \text{ for all } A\in {\text{Alg}}/R\}.$$
 \end{example}
 \begin{example}[Homework 3]$Z_{\GL_n}\simeq GL_1$ is the diagonal copy
 of $\mathbf{G}_m$. $Z_{\SL_n}\simeq \mu_n\subset\GL_1$ is the diagonal copy
@@ -3373,7 +3377,7 @@ all smooth $k$-groups of finite type
 over $k=k_s$,
 and we constructed a smooth connected normal closed $k$-subgroup $N\vartriangleleft G$
 such that
-\[[H,H'^0]\cdot[H^0,H']\subset N,\quad N(K)\subset [H(K),H'(K)] \\text{ for all } K=\bar K/k.\]
+\[[H,H'^0]\cdot[H^0,H']\subset N,\quad N(K)\subset [H(K),H'(K)] \text{ for all } K=\bar K/k.\]
 Since $k=k_s$ we can choose representatives $h_i\in H(k)$
 and $h_j'\in H'(k)$ for the component groups,
 so that
@@ -3817,7 +3821,7 @@ on Lie groups in the classical, analytic setting.
 As in the remark, $D_v$ (as a derivation)
 is left-invariant, in the sense
 that
-\[D_v(f\circ \ell_g)=D_vf\circ \ell_g \\text{ for all } g\in G(R),f\in \mathcal{O}_{G_R},\]
+\[D_v(f\circ \ell_g)=D_vf\circ \ell_g \text{ for all } g\in G(R),f\in \mathcal{O}_{G_R},\]
 as is easy to check by hand.
 \begin{lemma}
 The map we just produced
@@ -3878,7 +3882,7 @@ Set $\Lambda=\mathbf{Z}^r$
 We have an injection
 \begin{equation}
 \label{lambdaX}
-\Lambda\to \Hom_{k\\text{-}{\text{gp}}}(T,\mathbf{G}_m)=:X(T)
+\Lambda\to \Hom_{k\text{-}{\text{gp}}}(T,\mathbf{G}_m)=:X(T)
 \end{equation}
 given by $\lambda=\vec n\mapsto [\lambda:(t_1,\ldots, t_r)\mapsto \prod t_i^{n_i}]$.
 \begin{remark}
@@ -3936,7 +3940,7 @@ Theorem \ref{repsofsplittori},
 its formation commutes with scalar extension.
 The formation of intersection also commutes with scalar extension.
 So we may assume without loss of generality that $k=\bar k$.
-Now $V_\lambda=\{v\in V:t.v=\lambda(t)v \\text{ for all } v\in T(k)\}$
+Now $V_\lambda=\{v\in V:t.v=\lambda(t)v \text{ for all } v\in T(k)\}$
 because $T(k)\subset T$ is dense.
 As $W_\lambda$ has a similar description, the claim follows.
 \end{example}
@@ -5756,7 +5760,7 @@ Clearly the functor
 $$
 S' \mapsto
 \{g \in {\text{GL}}(V_{S'}) \mid
-q_{S'}(gx) = q_{S'}(x) \\text{ for all } x \in V_{S'}\}
+q_{S'}(gx) = q_{S'}(x) \text{ for all } x \in V_{S'}\}
 $$
 on $S$-schemes is represented by a
 finitely presented closed $S$-subgroup ${\text{O}}(q)$ of ${\text{GL}}(V)$, even without
@@ -6033,7 +6037,7 @@ $G'$ is $R$-smooth.
 
 \begin{lemma}\label{lieo} Inside ${\text{End}}(V) = {\text{Tan}}_e({\text{GL}}(V))$, we have
 $${\text{Tan}}_e({\text{O}}(q)) =
-\{T \in {\text{End}}(V) \mid B_q(v,Tw) \\text{\text{ is alternating}}\}.$$
+\{T \in {\text{End}}(V) \mid B_q(v,Tw) \text{\text{ is alternating}}\}.$$
 \end{lemma}
 
 This lemma makes no hypothesis on the parity of $n$.
@@ -6789,7 +6793,7 @@ class of a connected semisimple  group.
 
 \begin{example}\label{so2}
 Suppose $n = 2$.  In this case ${\text{O}}(q)$ is an \'etale form of
-$${\text{O}}_2 = T \coprod T \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \\text{ for }
+$${\text{O}}_2 = T \coprod T \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \text{ for }
 T = \left\{\begin{pmatrix} a & 0 \\ 0 & 1/a \end{pmatrix}\right\}.$$
 Hence, ${\text{O}}(q)$ is smooth and ${\text{SO}}(q)$  is a rank-1 torus,
 whereas ${\text{SO}}'(q_s) = {\text{O}}(q_s)$ is disconnected when ${\text{char}}(k(s)) = 2$.
@@ -8824,10 +8828,10 @@ defines a left action of $\mathbf{G}_m$ on $G$ via
 the functorial procedure $t.g = \lambda(t)g\lambda(t)^{-1}$ for
 $g \in G(R)$ and $t \in R^{\times}$ for any $k$-algebra $R$. In lecture we introduced the following
 associated subgroup functors of $G$:  for any $k$-algebra $R$,
-$$P_G(\lambda)(R) = \{g \in G(R)\mid \lim_{t \rightarrow 0} t.g \\text{ exists }\},\quad
+$$P_G(\lambda)(R) = \{g \in G(R)\mid \lim_{t \rightarrow 0} t.g \text{ exists }\},\quad
 U_G(\lambda)(R) = \{g \in G(R)\mid \lim_{t \rightarrow 0} t.g = 1\},$$
 and
-$$Z_G(\lambda)(R) = \{g \in G(R)\mid \lambda_R \\text{ centralizes } g\}.$$
+$$Z_G(\lambda)(R) = \{g \in G(R)\mid \lambda_R \text{ centralizes } g\}.$$
 In the March 10 lecture  it was proved that these are all represented by closed $k$-subgroup schemes of $G$,
 with $P_G(\lambda) = Z_G(\lambda) \ltimes U_G(\lambda)$.
 
@@ -16859,10 +16863,10 @@ defines a left action of $\mathbf{G}_m$ on $G$ via
 the functorial procedure $t.g = \lambda(t)g\lambda(t)^{-1}$ for
 $g \in G(R)$ and $t \in R^{\times}$ for any $k$-algebra $R$. In class (see \S\ref{ztorconn}) we introduced the following
 subgroup functors of $G$:  for any $k$-algebra $R$,
-$$P_G(\lambda)(R) = \{g \in G(R)\mid \lim_{t \rightarrow 0} t.g \\text{ exists }\},\quad
+$$P_G(\lambda)(R) = \{g \in G(R)\mid \lim_{t \rightarrow 0} t.g \text{ exists }\},\quad
 U_G(\lambda)(R) = \{g \in G(R)\mid \lim_{t \rightarrow 0} t.g = 1\},$$
 and
-$$Z_G(\lambda)(R) = \{g \in G(R)\mid \lambda_R \\text{ centralizes } g\}.$$
+$$Z_G(\lambda)(R) = \{g \in G(R)\mid \lambda_R \text{ centralizes } g\}.$$
 In the March 10 lecture of the previous course it was proved that these are all represented by closed $k$-subgroup schemes of $G$,
 with $P_G(\lambda) = Z_G(\lambda) \ltimes U_G(\lambda)$.
 
@@ -19131,7 +19135,7 @@ over $k_s$.  This is rather important in representation theory:
 \begin{lemma}\label{tw} Let $G$ be a connected linear algebraic group over a field $k$, and let
 $T \subset G$ be a maximal $k$-torus.  Let $W = N_G(T)/Z_G(T)$ be the associated
 finite \'etale Weyl group over $k$.  The natural map of sets
-$$T(k_s)/W(k_s) \rightarrow \{\\text{\text{semisimple} } g \in G(k_s)\}/G(k_s)\\text{-{\text{conjugacy}}}$$
+$$T(k_s)/W(k_s) \rightarrow \{\text{\text{semisimple} } g \in G(k_s)\}/G(k_s)\text{-{\text{conjugacy}}}$$
 is bijective.
 \end{lemma}
 
@@ -20386,7 +20390,7 @@ call this the {\em canonical} linear structure on $\underline{W}$.  (We can use 
 in this characterization when $k$ is infinite, as $W(k)$ is Zariski-dense in $\underline{W}$
 for infinite $k$.)
 For finite-dimensional $k$-vector spaces $W$ and $W'$, the subset ${\text{Hom}}_k(W,W') \subset
-{\text{Hom}}_{k{\\text{-}{\text{gp}}}}(\underline{W},\underline{W'})$ consists of
+{\text{Hom}}_{k{\text{-}{\text{gp}}}}(\underline{W},\underline{W'})$ consists of
 precisely the $k$-homomorphisms respecting the canonical linear structures.
 \end{example}
 
@@ -20770,7 +20774,7 @@ characterizes $F$-anisotropicity of $T$.
 
 Indeed, $F$-anisotropicity is
 equivalent to the vanishing of
-$\Hom_{F\\text{-}{\text{gp}}}({\mathbf{G}}_{\text{m}}, T)$, so we just need to check that  in general
+$\Hom_{F\text{-}{\text{gp}}}({\mathbf{G}}_{\text{m}}, T)$, so we just need to check that  in general
 a map of pointed $F$-schemes $({\mathbf{G}}_{\text{m}},1) \rightarrow (T,1)$ is a homomorphism.
 By extending scalars we may assume $F = \overline{F}$, so $T$ is a power
 of ${\mathbf{G}}_{\text{m}}$, and this reduces us to the case $T = {\mathbf{G}}_{\text{m}}$.  An endomorphism
@@ -21654,7 +21658,7 @@ the woundness (i.e., anisotropicity) property and separable ones can destroy it.
 For a $k$-wound solvable smooth connected affine $k$-group $G$, it is obvious
 that any smooth connected $k$-subgroup is $k$-wound
 and that if $G'$ is a $k$-split solvable smooth connected affine $k$-group
-then $\Hom_{k\\text{-}{\text{gp}}}(G',G) = 1$ (e.g., argue by induction
+then $\Hom_{k\text{-}{\text{gp}}}(G',G) = 1$ (e.g., argue by induction
 on $\dim G'$, using a composition series over $k$ whose successive
 quotients are ${\mathbf{G}}_{\text{a}}$ or ${\mathbf{G}}_{\text{m}}$).  In particular, if we drop the $k$-wound hypothesis on $G$
 then there is at most one $k$-split smooth connected
@@ -21712,9 +21716,9 @@ Although Definition \ref{ansolv} goes beyond the category of $k$-groups
 it can be expressed within the category of $k$-groups, as in the case of tori
 and unipotent groups.  That is,
 if $G$ is a solvable smooth connected affine $k$-group
-and $\Hom_{k\\text{-}{\text{gp}}}({\mathbf{G}}_{\text{a}},G) = 1$
-and $\Hom_{k\\text{-}{\text{gp}}}({\mathbf{G}}_{\text{m}},G) = 1$ (equivalently,
-$\Hom_{k\\text{-}{\text{gp}}}(G',G) = 1$ for all $k$-split
+and $\Hom_{k\text{-}{\text{gp}}}({\mathbf{G}}_{\text{a}},G) = 1$
+and $\Hom_{k\text{-}{\text{gp}}}({\mathbf{G}}_{\text{m}},G) = 1$ (equivalently,
+$\Hom_{k\text{-}{\text{gp}}}(G',G) = 1$ for all $k$-split
 solvable smooth connected affine $k$-groups $G'$)
 then is $G$ a $k$-wound group?  This will be immediate
 once we prove that $G/G_{\text{split}}$ is always $k$-wound.
@@ -21733,7 +21737,7 @@ is uniquely split: $G = M \times U$ as $k$-groups.
 By the uniqueness claim and Galois descent, we may assume
 $k = k_s$.  Hence, $M$ is Cartier dual to a finitely generated $\mathbf{Z}$-module
 (so $M$ is a $k$-subgroup of a split $k$-torus).
-The uniqueness of the splitting amounts to the assertion that $\Hom_{k\\text{-}{\text{gp}}}(U,M) = 1$,
+The uniqueness of the splitting amounts to the assertion that $\Hom_{k\text{-}{\text{gp}}}(U,M) = 1$,
 which is obvious (e.g., use an inclusion of $M$ into a $k$-torus).   For the existence,
 we first note that $G$ must be a central extension of $U$ by $M$, since
 the conjugation action of $G/M = U$ on the commutative normal subgroup $M$
@@ -21745,7 +21749,7 @@ ${\text{Ex}}_k(U,M)$ of central extensions of $U$ by $M$ (in the category of
 affine $k$-group schemes of finite type).
 
 By using a composition series of $U$ over $k$ with successive quotients isomorphic
-to ${\mathbf{G}}_{\text{a}}$, the low-degree $\delta$-functoriality involving $\Hom_{k\\text{-}{\text{gp}}}(\cdot,M)$
+to ${\mathbf{G}}_{\text{a}}$, the low-degree $\delta$-functoriality involving $\Hom_{k\text{-}{\text{gp}}}(\cdot,M)$
 and ${\text{Ex}}_k(\cdot,M)$ (or direct bare-hands arguments with
 exact sequences and splittings thereof) reduces the problem to the case $U = {\mathbf{G}}_{\text{a}}$.
 That is, we seek to prove the vanishing of ${\text{Ex}}_k({\mathbf{G}}_{\text{a}},M)$.
@@ -21758,7 +21762,7 @@ Since $M$ is a product of ${\mathbf{G}}_{\text{m}}$'s and $\mu_n$'s, by low-degr
 considerations in the second variable (rather than the first)
 it suffices to separately treat the cases $M = \mu_n$ and $M = {\mathbf{G}}_{\text{m}}$.
 The Kummer sequence $1 \rightarrow \mu_n \rightarrow {\mathbf{G}}_{\text{m}} \rightarrow {\mathbf{G}}_{\text{m}} \rightarrow 1$
-and the vanishing of $\Hom_{k\\text{-}{\text{gp}}}({\mathbf{G}}_{\text{a}},{\mathbf{G}}_{\text{m}})$ reduce us
+and the vanishing of $\Hom_{k\text{-}{\text{gp}}}({\mathbf{G}}_{\text{a}},{\mathbf{G}}_{\text{m}})$ reduce us
 to the special case $M = {\mathbf{G}}_{\text{m}}$.  That is, we want ${\text{Ex}}({\mathbf{G}}_{\text{a}},{\mathbf{G}}_{\text{m}}) = 1$.
 
 Consider a central extension $G$ of ${\mathbf{G}}_{\text{a}}$ by ${\mathbf{G}}_{\text{m}}$, so $G$ is commutative.
@@ -22420,7 +22424,7 @@ Let $D \subset {\text{SL}}_2$ and $\overline{D} \subset {\text{PGL}}_2$ denote t
 Note that ${\text{PGL}}_2 = {\text{GL}}_2/\mathbf{G}_{\text{m}}$ naturally acts on
 ${\text{SL}}_2$, and more specifically ${\text{PGL}}_2(k) = {\text{GL}}_2(k)/k^{\times}$
 acts on the $k$-group ${\text{SL}}_2$ via conjugation.  The resulting homomorphism
-$${\text{PGL}}_2(k) \rightarrow {\text{Aut}}_{k\\text{-}{\text{gp}}}({\text{SL}}_2)$$
+$${\text{PGL}}_2(k) \rightarrow {\text{Aut}}_{k\text{-}{\text{gp}}}({\text{SL}}_2)$$
 is injective.  Indeed, if $g \in {\text{GL}}_2(k)$ centralizes ${\text{SL}}_2$ then computation
 with its action on $D$ shows that $g$ is diagonal, so we may scale
 $g$ to be $(\begin{smallmatrix} c & 0 \\ 0 & 1 \end{smallmatrix})$.  The conjugation action of $g$ on
@@ -22483,7 +22487,7 @@ $U^+ \simeq \mathbf{G}_{\text{a}}$ and $U_a \simeq  \mathbf{G}_{\text{a}}$, $f:U
 is identified with an automorphism of the $k$-group $\mathbf{G}_{\text{a}}$.  Such an automorphism
 is a degree-1 additive polynomial, which is to say $x \mapsto bx$ for $b \in k^{\times}$.
 The induced map on Lie algebras is multiplication by $b$, so the natural map of sets
-$${\text{Isom}}_{k\\text{-}{\text{gp}}}(U^+, U_a) \rightarrow {\text{Isom}}_k({\text{Lie}}(U^+), {\text{Lie}}(U_a)) =
+$${\text{Isom}}_{k\text{-}{\text{gp}}}(U^+, U_a) \rightarrow {\text{Isom}}_k({\text{Lie}}(U^+), {\text{Lie}}(U_a)) =
 \mathfrak{g}_a - \{0\}$$
 is bijective (the last step being evaluation on $(\begin{smallmatrix}  0 & 1 \\ 0 & 0 \end{smallmatrix}) \in
 \mathfrak{sl}_2$).  Precomposition with conjugation by $(\begin{smallmatrix} c & 0 \\ 0 & 1 \end{smallmatrix}) \in \overline{D}(k)$
@@ -22504,8 +22508,8 @@ to $q(1) = 1$.  That is, $F = f$.
 An interesting consequence of the {\em method} of proof of Proposition \ref{sl2map} is:
 
 \begin{lemma} For any field $k$, the injective maps
-$${\text{PGL}}_2(k) \hookrightarrow {\text{Aut}}_{k\\text{-}{\text{gp}}}({\text{SL}}_2),\quad
-{\text{PGL}}_2(k) \hookrightarrow {\text{Aut}}_{k\\text{-}{\text{gp}}}({\text{PGL}}_2)$$
+$${\text{PGL}}_2(k) \hookrightarrow {\text{Aut}}_{k\text{-}{\text{gp}}}({\text{SL}}_2),\quad
+{\text{PGL}}_2(k) \hookrightarrow {\text{Aut}}_{k\text{-}{\text{gp}}}({\text{PGL}}_2)$$
 are bijective.  In particular, all $k$-automorphisms of ${\text{PGL}}_2$ are inner,
 and the same holds for ${\text{SL}}_2$ if and only if $k^{\times} = (k^{\times})^2$.
 \end{lemma}
@@ -23980,7 +23984,7 @@ G \ar[r]_-{{\text{Ad}}_G} & {{\text{GL}}(\mathfrak{g})}
 because we can verify the Cartesian property on $R$-valued points for any $k$-algebra $R$: this follows
 from the fact that the natural map
 $$
-\Hom_{R\\text{-}{\text{gp}}}(\mu_R, G_R) \rightarrow \Hom_{p\\text{-}{\text{Lie}}}({\text{Lie}}(\mu)_R, \mathfrak{g}_R)
+\Hom_{R\text{-}{\text{gp}}}(\mu_R, G_R) \rightarrow \Hom_{p\text{-}{\text{Lie}}}({\text{Lie}}(\mu)_R, \mathfrak{g}_R)
 $$
 is bijective. (Here we use in an essential way that $\mu \simeq \mu_p$.)
 Passing to the Cartesian square of Lie algebras, we conclude
@@ -24397,7 +24401,7 @@ $u \in {\text{GL}}_n$, $v \in k^n$, and $L \in {\text{Mat}}_n$ then
 $$
 B = T \ltimes \{M(u) \ltimes h(v, L) \mid
 {v'}^{\text{t}}(L^{\text{t}}J + vv^{\text{t}}) v' = 0
-\\text{ for all } v' \in k^n\}
+\text{ for all } v' \in k^n\}
 $$
 with $L^{\text{t}}J$ generally not symmetric.
 For instance, with $v = 0$ the condition on $L = (\ell_{ij}) \in {\text{Mat}}_n$ is that it is
