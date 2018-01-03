@@ -33,88 +33,131 @@ Please send any errata (typos, math errors, etc.) to
 
 
 
-\section{January 4}
-\subsection{Some Definitions}
-%Let $k$ be a field.
-\begin{definition}\label{groupvariety}A \textit{group variety} over a field $k$
-is a smooth $k$-scheme $G$ (possibly disconnected!)
-of finite type, equipped with $k$-morphisms $m:G\times G\to G,
-i:G\to G$, and a rational point $e\in G(k)$
-satisfying the group axioms, in the sense that the following diagrams commute:
-\[\xymatrix{G\times G\times G\ar[r]^{\id_G\times m}\ar[d]_{m\times \id_G}&G\times G\ar[d]_m\\
-G\times G\ar[r]_m&G}\quad \xymatrix{G\ar[rr]^{(\id_G,i)}\ar[rd]\ar[dd]_{(i,\id_G)}&&G\times G\ar[dd]_m\\
-&\Spec k\ar[rd]_e&\\
-G\times G\ar[rr]_m&&G}\quad \xymatrix{G\ar[r]^{(\id_G,e)}\ar@{=}[rd]\ar[d]_{(e,\id_G)}&G\times G\ar[d]_m\\
-G\times G\ar[r]_m&G}\]
+\section{Linear algebraic groups}
+\label{section-linear-algebraic-groups}
+
+\noindent
+We have already defined and studied group schemes in
+Groupoids, Sections \ref{groupoids-section-group-schemes},
+\ref{groupoids-section-examples-group-schemes}, and
+\ref{groupoids-section-properties-group-schemes}.
+Group schemes over fields where studied in Groupoids, Section
+\ref{groupoids-section-properties-group-schemes-field}.
+Algebraic group schemes (which are group schemes locally of finite
+type over fields) where studied in Groupoids, Section
+\ref{groupoids-section-algebraic-group-schemes}.
+
+\medskip\noindent
+Let $k$ be a field. In this chapter we will say
+{\it $G$ is a $k$-group scheme} if $G$ is a group scheme over $k$.
+An important role will be played by
+quasi-compact smooth $k$-group schemes $G$; these
+(possibly disconnected) group schemes are
+sometimes called {\it group varieties} but we will not
+use this terminology as by our conventions varieties
+are irreducible.
+
+\medskip\noindent
+Observe that a connected $k$-group scheme $G$ is irreducible by
+Groupoids, Lemma
+\ref{groupoids-lemma-connected-group-scheme-over-field-irreducible}.
+Since $G$ has a $k$-rational point, namely $e \in G(k)$, we see that
+$G$ is geometrically connected by
+Varieties, Lemma \ref{varieties-lemma-geometrically-connected-criterion}
+and hence geometrically irreducible. See also
+Exercise \ref{exercise-HW1-4} part (1).
+
+\medskip\noindent
+As in Groupoids, Section \ref{groupoids-section-algebraic-group-schemes}
+(and in accordance with the definitions in
+Varieties, Section \ref{varieties-section-algebraic-schemes})
+we say $G$ is an {\it algebraic $k$-group scheme}
+if $G$ is a group scheme of finite type over $k$.
+By Exercise \ref{exercise-HW1-4} part (3) over imperfect $k$ reducedness
+does not imply geometric reducedness even for connected
+algebraic $k$-group schemes.
+
+\begin{definition}
+\label{definition-linearalgebraicgroup}
+Let $k$ be a field. A $k$-group scheme $G$ is called
+\textit{linear algebraic} if it is smooth and affine.
 \end{definition}
-\begin{remark}The rational point $e$
-can be regarded as a section of the structure map $G\to \Spec k$.
-In the third diagram, the morphisms $e:G\to G$
-are the ``constant maps to the identity'', i.e.
-the compositions $G \to \Spec k \xrightarrow{e} G$.
-\end{remark}
+
+\noindent
+Thus a connected linear algebraic group over $k$ is a (smooth) variety.
+We will say ``let $G$ be a linear algebraic group over $k$'' to indicate
+that $G$ is a linear algebraic $k$-group scheme.
+
 \begin{remark}
-By HW1 Exercise 4(i), a connected group variety $G$ over $k$
-is [\textit{geometrically connected and}] geometrically irreducible.
-By some people's usage, this justifies the term ``variety''
-in the name.
-\end{remark}
-\begin{definition}\label{groupscheme}
-If we relaxe smoothness in Definition \ref{groupvariety} to ``finite type''
-but keep everything else, then $G$ is called an \textit{algebraic $k$-group scheme}. By HW1 Exercise 4(iii),
-over imperfect $k$ reducedness does not imply geometric reducedness even for {\em connected} algebraic $k$-group schemes.
-\end{definition}
-\begin{definition}\label{linearalgebraicgroup}A group variety $G$ over $k$ is called \textit{linear algebraic} if it is affine.
-\end{definition}
-\begin{remark}If $G$ is an algebraic $k$-group scheme, then one can show
-that $G$ is affine if and only if it is a $k$-subgroup scheme (cf. Definition \ref{subgroup})
-of $\GL_n$ for some $n$. (See Example \ref{GL} below for the definition of $\GL_n$.)
-This is special to the case of fields in the sense that it is {\em not known} over more general
-rings (e.g., not even over the dual numbers over a field), though it is also true (and useful) over
+\label{remark-when-linear}
+If $G$ is an algebraic $k$-group scheme, then one can show
+that $G$ is affine if and only if it is a $k$-subgroup
+(cf. Definition \ref{definition-subgroup}) of $\GL_n$ for some $n$.
+See Example \ref{GL} below for the definition of $\GL_n$.
+This is special to the case of fields in the sense that it is
+not known over more general rings (e.g., not even over the dual
+numbers over a field), though it is also true (and useful) over
 Dedekind domains by a variation on the argument used for fields.
 \end{remark}
-\begin{definition}\label{subgroup}Let $G$ be a group variety over $k$,
-with corresponding multiplication map  $m_G$, inversion map $i_G$,
-and identity section $e_G$. A \textit{$k$-subgroup} $H\subset G$
-is a closed subscheme such that there exist factorizations
-\[\xymatrix{\Spec k\ar@{-->}[d]_{e_H}\ar[rd]^{e_G}\\
-H\ar[r]& G}\quad \xymatrix{H\times H\ar[d]\ar@{-->}[r]^{m_H}&H\ar[d]\\
-G\times G \ar[r]_{m_G}&G}\quad \xymatrix{H\ar@{-->}[r]^{i_H}\ar[d]&H\ar[d]\\
-G\ar[r]_{i_G}&G}\]
+
+\begin{definition}
+\label{definition-subgroup}
+Let $k$ be a field. Let $G$ be a $k$-group scheme.
+A {\it $k$-subgroup} $H \subset G$ is a closed subgroup
+scheme in the sense of
+Groupoids, Definition \ref{groupoids-definition-closed-subgroup-scheme}.
 \end{definition}
-By Yoneda's lemma, a $k$-group scheme is the same as a $k$-scheme $G$
-such that the Yoneda functor $h^G=\Hom_{k-Sch}(-,G):Sch/k\to Sets$
-is equipped with a factorization through the forgetful functor $Groups\to Sets$.
-This is useful! Note that this is the same as the requirement that $G(R)$ is a group, functorially in $R$,
-for \textit{all} $k$-algebras $R$, not just fields $K/k$.
-By the same reasoning, a closed subscheme $H\subset G$ is a $k$-subgroup if and
-only if $H(R)\subset G(R)$ is a[n abstract] subgroup for all $k$-algebras $R$.
+
+\noindent
+A $k$-group scheme is a scheme $G$ over $k$
+such that the Yoneda functor
+$$
+h_G = \Mor(- , G) : (\Sch/k)^{opp} \longrightarrow \textit{Sets}
+$$
+is equipped with a factorization through the forgetful functor
+$\textit{Groups} \to \textit{Sets}$, see
+Groupoids, Section \ref{groupoids-section-group-schemes}.
+It is enough to require that $G(R)$ is a group, functorially in $R$,
+for all $k$-algebras $R$. By the same reasoning, a closed subscheme
+$H \subset G$ is a $k$-subgroup if and
+only if $H(R) \subset G(R)$ is a[n abstract] subgroup for all $k$-algebras $R$.
+
 \begin{remark}
+\label{remark-reduction}
+Let $G$ be a $k$-group scheme.
+Then the reduction $G_{red}$ is a $k$-subgroup
+if $k$ is a perfect field, see
+Groupoids, Lemma \ref{groupoids-lemma-reduced-subgroup-scheme-perfect}.
 Beware that over  every imperfect $k$ there exist connected
 non-reduced $G$ with $G_{\text{red}}$ {\em not} $k$-subgroup
 (see \cite[VI$_A$, 1.3.2(2)]{SGA3}).
 \end{remark}
 
-\subsection{Smoothness}
-Let $X$ be a $k$-scheme which is [locally] of finite type.
-Here is one definition of many for what it means for $X$ to be smooth.
-\begin{definition}\label{smooth}
-We say that $X$ is \textit{smooth} if and only if $X_{\bar k}$\footnote{Here
+\noindent
+Let $X$ be a scheme over $k$ whose structure morphism $X \to \Spec(k)$
+is locally of finite type, i.e., $X$ is a locally algebraic $k$-scheme.
+There are many different equivalent criteria for smoothness of $X$ over $k$.
+For example $X$ is smooth if and only if $X_{\bar k}$\footnote{Here
 and throughout we use the convention that for an $S$-scheme $X$
 and a map $T\to S$, $X_T$ denotes the base change $X\times_S T$.}
-is regular, meaning that all of the local rings are regular local rings,
-which can be checked via the Jacobian criterion.
-\end{definition}
-\begin{remark}
-For the purpose of checking the Jacobian criterion, one may freely go up and down between
-algebraically closed fields containing $k$.
-For example, one might care about both $X_{\overline{\mathbf{Q}}}$ and $X_\mathbf{C}$ in the case
-$k=\mathbf{Q}$.
-\end{remark}
-\begin{remark}
+is regular, meaning that all of the local rings are regular local rings.
+See Varieties, Lemma \ref{varieties-lemma-geometrically-regular-smooth}.
+The regularity of the local rings of $X_{\bar k}$
+can sometimes be checked via the Jacobian criterion.
+In fact, when checking smoothness we may freely go up and down between
+algebraically closed fields containing $k$ because
+smoothness satisfies a suitable descent property (see for example
+Morphisms, Lemma \ref{morphisms-lemma-set-points-where-fibres-smooth}).
+For example, one might care about both
+$X_{\overline{\mathbf{Q}}}$ and $X_\mathbf{C}$ in the case $k = \mathbf{Q}$.
+
+\medskip\noindent
 If $k$ happens to be perfect, then smoothness is the same as regularity.
-\end{remark}
-Let $G$ be a $k$-group scheme [of finite type].
+See for example Varieties, Lemma
+\ref{varieties-lemma-dense-smooth-open-variety-over-perfect-field}.
+
+\medskip\noindent
+Let $G$ be a locally algebraic $k$-group scheme.
 The group $G(\bar k)$ acts on $G_{\bar k}$ by translation.
 Now $G$ is smooth if and only if
 the local rings of $G_{\bar k}$ are regular,
@@ -126,29 +169,42 @@ $\mathcal{O}^\wedge_{G_{\bar k},e}$ is regular.
 On Homework 1, it is shown that it is equivalent to check
 that $\mathcal{O}^\wedge_{G_{\bar k},e}\simeq \bar k [\![x_1,\ldots, x_n]\!]$
 is a power series ring.
-In fact it is also shown there that it is equivalent to do this on the rational level;
-i.e. $G$ is smooth if and only if $\mathcal{O}^\wedge_{G,e}\simeq k[\![x_1,\ldots, x_n]\!]$
+In fact it is also shown there that it is equivalent to do this on the
+rational level; i.e. $G$ is smooth if and only if
+$$
+\mathcal{O}^\wedge_{G,e}\simeq k[[x_1,\ldots, x_n]]
+$$
 is a power series ring over $k$;
 and also that the latter has a functorial characterization due to Grothendieck.
 This is very useful for proving smoothness.
 
-\subsection{Connectedness}
+\medskip\noindent
 ``Connectedness is a crutch'': it is essential to keep
 all the complexity of finite group theory from invading the theory
 of algebraic groups, since any finite group is a (disconnected)
 algebraic group.  More specifically, a marvelous feature of the theory of
-smooth {\em connected} affine $k$-groups is that for a rather large class (the reductive ones)
-there is a rich classification and structure theory in terms of concrete combinatorial objects;
-nothing of the sort is available for a comparably broad class of finite groups, for example.
-(However, remarkably, the structure of most finite simple groups can be understood
+smooth {\em connected} affine $k$-groups is that for a rather large class
+(the reductive ones) there is a rich classification and structure theory
+in terms of concrete combinatorial objects;
+nothing of the sort is available for a comparably broad
+class of finite groups, for example.
+(However, remarkably, the structure of most finite simple groups
+can be understood
 via the theory of connected reductive groups over finite fields.)
 
+\medskip\noindent
+Let $G$ be an algebraic $k$-group scheme. Since the underlying topological
+space $G$ is Noetherian, the connected components of $G$ are open and closed.
 Let $G^0$ denote the connected component of the identity in a $k$-group scheme
-$G$ of finite type.
+$G$ of finite type. We view $G^0$ as an open and closed subscheme of $G$.
+In fact, $G^0$ is a $k$-subgroup of $G$.
+This follows from the more general
+Groupoids, Proposition \ref{groupoids-proposition-connected-component}
+or \cite[IV$_2$, 4.5.8]{EGA}.
+However, in our special case we can give a direct proof as follows.
 
-\begin{proposition}The open and closed subscheme $G^0$ is a $k$-subgroup of $G$.
-\end{proposition}
-\begin{proof}
+\medskip\noindent
+Direct proof of subgroup property of $G^0$.
 To see that $G^0\times G^0\to G\times G \xrightarrow{m} G$
 factors through $G^0$, it suffices by topology to check that $G^0\times G^0$
 is connected. While it's not true \textit{a priori} that a fiber product
@@ -157,99 +213,168 @@ of \textit{geometrically} connected $k$-schemes, and this is the situation we ar
 In the finite type case (which is what we need) this is easily seen by extending scalars to
 $\bar k$ and using linked chains of irreducible components to reduce to the more
 familiar fact that over an algebraically closed field a direct product of irreducible schemes of finite type
-is irreducible.  For those interested in the hyper-generality without finite type
-hypotheses, see \cite[IV$_2$, 4.5.8]{ega}.
-
+is irreducible.
 The case of inversion is handled similarly (in fact, it is much easier),
 and by construction the rational point $e$ lies in $G^0$. So we're done.
-\end{proof}
 
-On Homework 1, it is shown that $[G(K):G^0(K)]=[G(\bar k):G^0(\bar k)]$
-for any algebraically closed field $K/k$.
-
-
-\begin{remark}The case of orthogonal groups, all of whose geometric
+\medskip\noindent
+The case of orthogonal groups, all of whose geometric
 connected components turn out to be defined over the ground field, is atypical.
-It is easy to write down examples of smooth affine $k$-group schemes whose non-identity connected
+It is easy to write down examples of smooth affine
+$k$-group schemes whose non-identity connected
 components over $k$ are not geometrically connected over $k$
-(and so there are more connected components over $\bar k$ than there are over $k$).
-An example is the group scheme $\mu_5$ of $5$th roots of unity over $k=\mathbf{Q}$
+(and so there are more connected components over $\bar k$
+than there are over $k$).
+An example is the group scheme $\mu_5$ of $5$th roots
+of unity over $k=\mathbf{Q}$
 (which has 5 geometric components, but only two connected components as a $\mathbf{Q}$-scheme).
 
+\medskip\noindent
 This is an aspect of a more general phenomenon, whereby $G$ might contain a lot more information than the group of rational points $G(k)$. Indeed, if $k$ is finite then this is certainly the case (except when $G$ is a finite constant
 $k$-group). Later, however, we'll see that \textit{over infinite fields}, the set of rational points is often Zariski-dense
 in smooth connected affine groups
 (away from certain exceptional situations related to unipotent groups over
 imperfect fields),
 so for some proofs it will suffice to study the group of rational points!
-\end{remark}
 
-\subsection{Examples}
-\begin{example}\label{GL} $\GL_n=\{\det\neq 0\}\subset {\text{Mat}}_n=\mathbf{A}^{n\times n}_k$,
-is an open subset of an affine space, hence obviously smooth and connected.
+\begin{example}
+\label{example-GL}
+Let $k$ be a field. Let $n \geq 1$. The {\it general linear $k$-group scheme}
+is constructed in
+Groupoids, Example \ref{groupoids-example-general-linear-group} as a functor.
+Namely, as a functor on $k$-algebras, $\GL_n$
+is given by $\GL_n(R)=\text{Aut}_R(R^n)$.
+It is, of course, an affine scheme
+$$
+\GL_n = \Spec(k[x_{ij}, \frac{1}{\det(x_{ij})}]).
+$$
+Thus it is clear that
+$$
+\GL_n = \{\det \neq 0\} \subset {\text{Mat}}_n = \mathbf{A}^{n\times n}_k
+$$
+is a principal open subset of affine space,
+hence obviously smooth and connected.
 \end{example}
 
 \begin{remark}
+\label{foobarrem}
 For $k = \mathbf{R}$, the connectedness of $\GL_n$ as an algebraic group
-has nothing to do with the fact that in the classical topology $\GL_n(\mathbf{R})$ is disconnected.
+has nothing to do with the fact that in the classical topology
+$\GL_n(\mathbf{R})$ is disconnected.
+We'll develop a Lie algebra theory, so that for an
+algebraic $k$-group scheme $G$ we get a Lie algebra
+$\text{Lie}(G)$, and it will be compatible with the analytic theory
+in the sense that when $k = \mathbf{R}$ we have
+$\text{Lie}(G)=\text{Lie}(G(\mathbf{R}))$
+(and likewise when $k = \mathbf{C}$).
+This is actually very useful for studying
+disconnected Lie groups, when they happen
+to come from connected algebraic groups!
 \end{remark}
 
-\begin{remark}\label{foobarrem}
-We'll develop a Lie algebra theory, so that for a $k$-group scheme [of finite type] $G$ we get a Lie algebra $\text{Lie}(G)$, and it will be compatible with the analytic theory
-in the sense that when $k=\mathbf{R}$ we have $\text{Lie}(G)=\text{Lie}(G(\mathbf{R}))$ (and likewise when $k = \mathbf{C}$).
-This is actually very useful for studying disconnected Lie groups, when they happen to come from connected algebraic groups!
-\end{remark}
-As a functor on $k$-algebras, $\GL_n$ is given by $\GL_n(R)=\text{Aut}_R(R^n)$.
-It is, of course, an affine scheme: $\GL_n=\Spec k[x_{ij}][\frac{1}{\det}]$.
-
-\begin{example}\label{circlegroup}
-A special case of Example \ref{GL} is
-$\GL_1$, which gets a special name, $\mathbf{G}_m$, the multiplicative group scheme.
-
-Consider, by contrast, the circle group scheme, $\SS^1=\{x^2+y^2=1\}\subset \mathbf{A}^2$
-over an arbitrary field $k$. The group structure is given by $e=(1,0)$, the composition law
-$$(x,y)(x',y')=(xx'-yy',xy'+yx'),$$
-and the inversion $(x,y)^{-1}=(x,-y)$.
-Note that when $k = \mathbf{R}$, the group  $\SS^1(\mathbf{R})$ is compact (in the classical topology),
-unlike $\mathbf{G}_m(\mathbf{R})$. Hence, $\SS^1_\mathbf{R}\not\simeq \mathbf{G}_m$
-as $\mathbf{R}$-groups. However, $\SS^1_\mathbf{C}\simeq \mathbf{G}_m$ via the maps of group functors
-$(x,y)\mapsto x+iy$ [note that $x$ and $y$ lie in $\mathbf{C}$-algebras, not just in $\mathbf{R}$-algebras!]
-and in the other direction $t\mapsto (\frac{1}{2}(t+t^{-1}),\frac{1}{2i}(t-t^{-1}))$.
-\end{example}
-
+\noindent
+A special case of Example \ref{example-GL} is $\GL_1$,
+which gets a special name, $\mathbf{G}_m$, the multiplicative group scheme.
+It is formally introduced in
+Groupoids, Example \ref{groupoids-example-multiplicative-group}.
 This example is so important that it gets a special generalization.
-\begin{definition}\label{torus}
-A $k$-\textit{torus} is a group variety $T$ over $k$
-such that $T_{\bar k}\simeq \mathbf{G}_m^N$ for some $N\geq 0$.
-[So in particular, $T$ must be commutative, connected, smooth, etc.]
+
+\begin{definition}
+\label{definition-torus}
+Let $k$ be a field. A {\it $k$-torus} is a $k$-group scheme $T$
+such that $T_{\bar k} \simeq \mathbf{G}_m^N$ for some $N \geq 0$.
 \end{definition}
 
-\begin{example}\label{exampleA}[``Example A'']
+\noindent
+A torus $T$ is affine, smooth, and connected. See
+Descent, Lemmas
+\ref{descent-lemma-descending-property-affine} and
+\ref{descent-lemma-descending-property-smooth} for
+affineness and smoothness.
+Connectedness is immediate as $T_{\bar k} \to T$ is surjective.
+In particular a
+torus is linear algebraic. Moreover a torus is a commutative
+group scheme (small detail omitted).
+
+\begin{example}
+\label{example-circlegroup}
+Consider, by contrast, the circle group scheme,
+$\mathbf{S}^1 = \{x^2+y^2 = 1\} \subset \mathbf{A}^2$
+over an arbitrary field $k$. The group structure is given by
+$e=(1,0)$, the composition law
+$$
+(x,y)(x',y')=(xx'-yy',xy'+yx'),
+$$
+and the inversion $(x,y)^{-1}=(x,-y)$.
+Note that when $k = \mathbf{R}$, the group
+$\mathbf{S}^1(\mathbf{R})$ is compact (in the classical topology),
+unlike $\mathbf{G}_m(\mathbf{R})$.
+Hence, $\mathbf{S}^1 \not\simeq \mathbf{G}_m$
+as $\mathbf{R}$-groups. However, over the complex numbers we have
+$\mathbf{S}^1 \simeq \mathbf{G}_m$ via the maps of group functors
+$(x,y) \mapsto x+iy$; note that $x$ and $y$ lie in
+$\mathbf{C}$-algebras, not just in $\mathbf{R}$-algebras!
+In the other direction we use
+$t \mapsto (\frac{1}{2}(t+t^{-1}),\frac{1}{2i}(t-t^{-1}))$.
+\end{example}
+
+\begin{example}
+\label{example-A}
 Let $\SL_n\subset \GL_n$ be the closed $k$-subgroup scheme
-defined by $\det = 1$. There's an algebraic proof that  $\SL_n$ is connected using
-that each variable $x_{ij}$ occurs only once in the formula for the determinant; one can
-try to conclude (with some care) that $\det - 1$ is irreducible.
-But that's not a good proof.
+defined by $\det = 1$. The determinant $\det : \GL_n \to \mathbf{G}_m$
+is a map of algebraic groups
+(Groupoids, Example \ref{groupoids-example-determinant})
+hence $\SL_n$ is a $k$-subgroup of $\GL_n$.
+We claim that $\SL_n$ is smooth and connected.
+
+\medskip\noindent
+There's an algebraic proof that $\SL_n$ is connected using
+that each variable $x_{ij}$ occurs only once in the formula
+for the determinant; one can try to conclude (with some care)
+that $\det - 1$ is irreducible. But that's not a good proof.
 A more robust geometric approach is to use actions and fibrations:
 $\SL_n$ acts transitively on the connected $\mathbf{P}^{n-1}$
 with stabilizer that maps onto $\GL_{n-1}$ with kernel an affine space;
-this method will be discussed more generally (and the example of $\SL_n$ addressed
-more fully) in \S\ref{slnconn}.
+this method will be discussed more generally
+(and the example of $\SL_n$ addressed
+more fully) in \ref{slnconn}.
 
-For smoothness, we can check the Jacobi criterion at the identity explicitly as follows.
-We have that $\det(1+X)-1=\text{Tr}(X)+({\text{higher order terms}})$.
-The Jacobi criterion (for a hypersurface like $\SL_n\subset \GL_n$)
+\medskip\noindent
+For smoothness, we can check the Jacobi criterion at
+the identity explicitly as follows.
+We have that
+$$
+\det(1 + X) - 1 = \text{Tr}(X) + \text{higher order terms}.
+$$
+The Jacobi criterion (for a hypersurface like $\SL_n \subset \GL_n$)
 says that $\SL_n$ is smooth, since the linear part $\text{Tr}(X)$
 of this expansion is nonzero.
 \end{example}
-\begin{example}\label{exampleC}[``Example C'']
-Let $V$ be a $k$-vector space of dimension $2n$, and $\langle \cdot , \cdot \rangle$
-a symplectic [= nondegenerate alternating bilinear] form on $V$.
+
+\begin{example}
+\label{example-C}
+Let $k$ be a field.
+Let $V$ be a $k$-vector space of dimension $2n$, and
+$\langle \cdot , \cdot \rangle$ a symplectic form on $V$.
+A symplectic form is a nondegenerate alternating bilinear form.
 For $k$-algebras $R$, define
-$$G(R)=\{g\in \GL(V)(R)\mid \langle gv,gw\rangle=\langle v,w\rangle \text{ for all } v,w\in V\}\subset \GL(V)(R).$$
-By Yoneda this defines a $k$-group scheme $\text{Sp}(\langle \cdot , \cdot \rangle)$, usually denoted $\text{Sp}_{2n}$
-since all pairs $(V, \langle \cdot, \cdot \rangle)$ with a given dimension $2n$ are isomorphic.
+$$
+G(R) =
+\{g \in \GL(V)(R) \mid
+\langle gv, gw \rangle =
+\langle v, w \rangle
+\text{ for all } v,w\in V\}
+\subset \GL(V)(R).
+$$
+By Yoneda this defines a $k$-group scheme
+$\text{Sp}(\langle \cdot , \cdot \rangle)$,
+usually denoted $\text{Sp}_{2n}$ since all pairs
+$(V, \langle \cdot, \cdot \rangle)$
+with a given dimension $2n$ are isomorphic.
 \end{example}
+
+
+
 
 \section{January 6}
 \subsection{Translations}
@@ -944,7 +1069,7 @@ chase where the generators and relations in a finite presentation
 of $\Gamma(Y_{\bar k})$ go in $\Gamma(X_{\bar k})$,
 and observe that only finitely many elements of $\bar k$ are involved
 in specifying the map $f$. So just take the subfield generated by these elements. Since the affine case is all we need here, and will be most important for us in this course, we won't prove the general case.
-But it's proved in \cite[IV$_3$, \S8]{ega} in vast generality, and note that the affine case does not tautologically
+But it's proved in \cite[IV$_3$, \S8]{EGA} in vast generality, and note that the affine case does not tautologically
 imply the general case (i.e., some thought is required).
 \end{proof}
 \subsubsection*{Refinements of Corollary \ref{1dconnlinalgcor}(ii)}
@@ -973,7 +1098,7 @@ Secretly this is the norm-1 subgroup of the Weil restriction
 ${\text{R}}_{k'/k}\mathbf{G}_m$, which is ``$k'^\times$ regarded as a $k$-group'' (although
 that's a sloppy, imprecise way of defining the group).
 This has a natural $k$-group structure, defined in analogy
-to $\SS^1$ over $\mathbf{R}$; cf. Example \ref{circlegroup}.
+to $\mathbf{S}^1$ over $\mathbf{R}$; cf. Example \ref{circlegroup}.
 
 We have $G_{k'} \simeq \mathbf{G}_m$.
 But $G$ is not $k$-isomorphic to $\mathbf{G}_m$ even as mere $k$-schemes.
@@ -6300,7 +6425,7 @@ If $h_s$ is an isomorphism for all $s \in S$ then $h$ is an isomorphism.
 \end{lemma}
 
 \begin{proof}
-This is part of \cite[IV$_4$, 17.9.5]{ega}, but here is a sketch of
+This is part of \cite[IV$_4$, 17.9.5]{EGA}, but here is a sketch of
 an alternative proof.  By using that $\Delta_h:Y \rightarrow Y \times_{Y'} Y$ satisfies
 the given hypotheses and is separated, we can reduce to the case when
 $h$ is separated, and then that $Y$ and $Y'$ are $S$-separated.
@@ -6381,7 +6506,7 @@ group over any reduced noetherian scheme $S$ and if the fibers $G_s$ are smooth
 and connected of the same dimension then $G$ is smooth.
 Indeed, the problem is to verify flatness,
 and by the ``valuative criterion for flatness'' over a reduced noetherian base
-\cite[IV$_3$, 11.8.1]{ega} it suffices to check this after base change
+\cite[IV$_3$, 11.8.1]{EGA} it suffices to check this after base change
 to discrete valuation rings, to which Proposition \ref{gsmooth} applies.
 See \cite[VI$_{\text{B}}$, 4.4]{SGA3} for a further generalization.
 \end{remark}
@@ -6884,7 +7009,7 @@ We claim that the resulting map $h:{\text{Sp}}_4/\mu_2 \rightarrow {\text{SO}}_5
 an isomorphism.  A computation shows
 that $\Ker h$ has trivial intersection with the ``diagonal'' maximal torus, so $\Ker h$ is quasi-finite
 and hence $h$ is surjective for fibral dimension reasons.  This forces $h$
-to be fiberwise flat, hence flat \cite[IV$_3$, 11.3.10]{ega},
+to be fiberwise flat, hence flat \cite[IV$_3$, 11.3.10]{EGA},
 so $h$ has locally constant fiber rank that we claim is 1.
 By base change, it suffices to treat the standard symplectic space of rank 4 over
 ${\mathbf{Z}}$, for which we can
@@ -9537,7 +9662,7 @@ is monic. On the other hand, it is an isomorphism on tangent spaces at the ident
 (A $\mathbf{G}_m$-action on a vector space corresponds to a grading, and in the previous course
 we saw that the Lie algebra of $U_G(-\lambda)$ is $\text{Lie}(G)_{<0}$ and the Lie algebra of $P_G(\lambda)$ is $\text{Lie}(G)_{\geq 0}$.) \emph{If} we knew that $U_G(-\lambda)$ and $P_G(\lambda)$ were smooth, then it would follow that this map is \'{e}tale at the identity, hence \'etale everywhere by the homogeneity coming from the
 left and right translations by group actions on the source. An \'{e}tale monomorphism is automatically an open immersion
-(see \cite[IV$_4$, 17.9.1]{ega}, but it is
+(see \cite[IV$_4$, 17.9.1]{EGA}, but it is
 an instructive exercise to prove this directly for schemes or finite type
 over a field or for noetherian schemes).
 
@@ -11024,7 +11149,7 @@ So far we haven't used that $k$ has characteristic 0!
 
 The crucial fact is that $\mathfrak{g} := {\text{Lie}}(G)$ is a semisimple Lie algebra.
 In the theory of finite-dimensional Lie algebras in characteristic 0 as developed in
-\cite[I, \S6]{bourbaki1}, semisimplicity is defined as the vanishing of commutative
+\cite[I, \S6]{bourbaki123}, semisimplicity is defined as the vanishing of commutative
 Lie ideals and it is proved that the linear representation theory
 of such Lie algebras is completely reducible.  Hence, it suffices
 to prove two things:  $\mathfrak{g}$ has no nonzero commutative Lie ideal
@@ -11842,7 +11967,7 @@ Any parabolic subset of a root system $\Phi$ is of the form $\Phi_{\lambda \geq 
 \end{proposition}
 
 The proof (given in \cite{pred}) is an application of the early developments about root
-systems in  \cite[VI, \S1.7]{bourbaki}.
+systems in  \cite[VI, \S1.7]{bourbaki456}.
 Here we just  give an intuitive explanation for how to find $\lambda$, given a parabolic subset. First consider the case $\Psi \cap (-\Psi) = \emptyset$, so the parabolic set $\Psi$
 is a closed subset consisting of \emph{exactly} half of the roots. In this case we
 seek $\lambda$ that is regular (since $\Phi_{\lambda \ge 0}$ will need to be disjoint
@@ -13217,7 +13342,7 @@ of smooth connected normal subgroups) for split connected semisimple groups.
 
 Now it is time to record some facts
 concerning the decomposition of root systems.  These are
-all proved in \cite[VI, \S1.2]{bourbaki} (largely relying on \cite[IV, V]{bourbaki},
+all proved in \cite[VI, \S1.2]{bourbaki456} (largely relying on \cite[IV, V]{bourbaki456},
 where the main work of the proofs is often found).
 
 \begin{proposition} Every root system $(V, \Phi)$ is uniquely a direct sum of irreducible root systems
@@ -13251,7 +13376,7 @@ bilinear forms on $V$, so it is well-posed to speak of {\em ratios} of (squared)
 $q(a)/q(b)$ for $a, b \in \Phi$ and any $W(\Phi)$-invariant nonzero
 (necessarily definite) quadratic form $q: V \rightarrow \mathbf{Q}$.
 Irreducible root systems that are {\em reduced}
-have at most two root lengths (see \cite[VI, \S1.4, Proposition 12]{bourbaki}). Hence,
+have at most two root lengths (see \cite[VI, \S1.4, Proposition 12]{bourbaki456}). Hence,
 for reduced and irreducible root systems with at least two (and hence exactly two) root lengths
 it is always well-posed to speak of a root being ``long'' or ''short''.
 
@@ -13263,7 +13388,7 @@ Euclidean structure on its realification.  This explains why it is meaningful to
 of irreducible rank-2 root systems with specified Euclidean structure, and more generally to express
 the study of irreducible root systems in terms of the Euclidean language of reflection groups,
 even though there is {\em no Euclidean structure} specified in the initial definition of a root system
-as in \cite{bourbaki}.
+as in \cite{bourbaki456}.
 This makes contact with other references that use Euclidean structure right
 from the beginning of the study of root systems.
 Scaling the inner product has no effect on the angle between two roots, so that notion is the same regardless
@@ -13373,11 +13498,11 @@ This is the first of the following two important
 properties of irreducible root systems:
 
 
-\begin{proposition}\cite[VI, \S1.3, Proposition 11]{bourbaki}
+\begin{proposition}\cite[VI, \S1.3, Proposition 11]{bourbaki456}
 The group $W(\Phi)$ acts transitively on the set of roots of a common length.
 \end{proposition}
 
-\begin{proposition}\cite[VI, \S1.4, Proposition 12]{bourbaki} If an irreducible root system $\Phi$ is reduced, then there are at most two root lengths, and in such cases the ratio of square root-lengths $($long divided by short$)$ is $2$ or $3$.
+\begin{proposition}\cite[VI, \S1.4, Proposition 12]{bourbaki456} If an irreducible root system $\Phi$ is reduced, then there are at most two root lengths, and in such cases the ratio of square root-lengths $($long divided by short$)$ is $2$ or $3$.
 \end{proposition}
 
 \subsection{Simply connected groups}
@@ -13628,7 +13753,7 @@ of signs for each root (i.e., which collections of choices correspond to a conne
 so this is one reason that passing to $V_{\mathbf{R}}$ in place of $V$ is very helpful:  we can use topological conditions
 to define concepts that at the outset would be difficult to describe in explicit purely algebraic terms.
 
-\begin{theorem}\cite[VI, \S1.5, Theorem 2]{bourbaki} We have:
+\begin{theorem}\cite[VI, \S1.5, Theorem 2]{bourbaki456} We have:
 \begin{enumerate}
 \item $W(\Phi)$ acts simply transitively on the set of Weyl chambers $C$, and each $C$ has the form
 \[
@@ -13668,7 +13793,7 @@ and $(\mathbf{Z}/2\mathbf{Z})^2$ generated by the reflections $r_b, r_{2a+b}$ in
 
 \subsection{Root bases}
 
-\begin{theorem}\cite[VI, \S1.6, Theorem 3]{bourbaki} If $\Delta \subset \Phi$ is a base, then
+\begin{theorem}\cite[VI, \S1.6, Theorem 3]{bourbaki456} If $\Delta \subset \Phi$ is a base, then
 \[
 \Phi \subset \mathbf{Z}_{\geq 0} \Delta \amalg (- \mathbf{Z}_{\geq 0}) \Delta.
 \]
@@ -13687,7 +13812,7 @@ spans ${\text{X}}(T)$.
 The \emph{Coxeter matrix} of $\Phi$ is $(m_{ab})_{a,b \in \Delta}$. This is a symmetric matrix.
 \end{remark}
 
-\begin{lemma}\cite[VI, \S1.7, Corollary 1]{bourbaki}
+\begin{lemma}\cite[VI, \S1.7, Corollary 1]{bourbaki456}
 A subset $\Psi \subset \Phi$ is a positive system of roots in the above sense if and only if $\Psi$ is closed and
 $\{\Psi, -\Psi\}$ is a partition of $\Phi$. In such cases, the $C$ such that $\Psi = R_+(C)$ is unique.
 \end{lemma}
@@ -13737,7 +13862,7 @@ of $r_a(x)$ must {\em all} be positive.
 
 Also, we have the following:
 
-\begin{proposition}\cite[VI, \S1.6, Corollary ,1]{bourbaki}\label{sumroot}
+\begin{proposition}\cite[VI, \S1.6, Corollary ,1]{bourbaki456}\label{sumroot}
 For $a \in \Phi^+ - \Delta$, there exist $a', a'' \in \Phi^+$ such that $a = a' + a''$.
 \end{proposition}
 
@@ -13757,7 +13882,7 @@ that the $W$-action on $\Phi$ is transitive on the set of roots of a given lengt
 Here's an important result that encodes
 a root system in terms of the minimal possible amount of information:
 
-\begin{proposition}\cite[VI, \S1.5, Proposition 15 and Corollary]{bourbaki}\label{cartandet}
+\begin{proposition}\cite[VI, \S1.5, Proposition 15 and Corollary]{bourbaki456}\label{cartandet}
 For reduced $\Phi$, $W. \Delta = \Phi$ $($i.e. every root lies in a root basis$)$, and $\Phi$ is determined up to isomorphism by the Cartan matrix $(\langle a, b^{\vee} \rangle)_{a,b \in \Delta}$ in the following strong
 sense: if $(V', \Phi')$ is  a reduced root system with root basis $\Delta'$ then
 for any bijection of sets $f \colon \Delta \rightarrow \Delta'$ respecting the
@@ -13819,7 +13944,7 @@ Clearly the matrix
 of the inclusion $Q \hookrightarrow P$ with respect to these bases is the Cartan matrix.
 The group structure of $P/Q$ (hence of the center in the simply connected
 case, and of the fundamental group in the adjoint case) is given
-in the extensive Tables at the end of \cite{bourbaki}.
+in the extensive Tables at the end of \cite{bourbaki456}.
 
 \begin{definition}
 We call $(b^{\vee})^*$ the \emph{fundamental weights} (with respect to the choice of $\Delta$). These are the ``highest weights'' for the fundamental representations.
@@ -13963,7 +14088,7 @@ since $\{a, b\}$ is a root basis.
 
 By Euclidean plane geometry,
 the reduced and irreducible root systems of rank 2 are completely determined in
-\cite[VI, \S3]{bourbaki}.
+\cite[VI, \S3]{bourbaki456}.
 From inspection of the possibilities we see for non-orthogonal $a,b \in \Delta$ that
 \[
 \boxed{ \angle (a,b) = \pi - \frac{\pi}{m_{a,b}} = \begin{cases} 2\pi / 3 & \cdot - \cdot\\ 3 \pi /4 & \cdot \Rightarrow \cdot \\ 5 \pi / 6 & \cdot \Rrightarrow \cdot\end{cases} }
@@ -13972,14 +14097,14 @@ where $m_{a,b}$ is the order of $r_ar_b$. Thus, $\text{Dyn}(\Phi)$ encodes the C
 and Cartan matrices, so it determines $(V, \Phi)$ up to isomorphism by Proposition \ref{cartandet}.
 
 The Coxeter matrix determines the presentation for $W(\Phi)$ as a finite Coxeter group. These are classified
-in \cite[VI, \S4.1]{bourbaki} when $\text{Dyn}(\Phi)$ is \emph{connected} (permitting
+in \cite[VI, \S4.1]{bourbaki456} when $\text{Dyn}(\Phi)$ is \emph{connected} (permitting
 inductive arguments with subdiagrams for making a determination of all
-possibilities). By Euclidean geometry \cite[VI, \S4.2]{bourbaki}
+possibilities). By Euclidean geometry \cite[VI, \S4.2]{bourbaki456}
 finds a list containing all {\em possibilities} for connected $\text{Dyn}(\Phi)$.
 \[
 \includegraphics[scale=.75]{images/249-19}
 \]
-One can directly construct all of these root systems inside suitable $\mathbf{R}^n$'s \cite[VI, \S4.4-4.14]{bourbaki}
+One can directly construct all of these root systems inside suitable $\mathbf{R}^n$'s \cite[VI, \S4.4-4.14]{bourbaki456}
 (determining much related information along the way, such as the fundamental weights,
 the structure of $P/Q$, etc.),
 so all of these possibilities really occur.
@@ -14035,13 +14160,13 @@ lengths is equal to 2 and (ii) all roots of some length are pairwise orthogonal
 (ruling out F$_4$, whose diagram has a pair of adjacent short roots and a pair of adjacent long roots) must
 be either B$_n$ and C$_n$ for some $n \ge 1$, and these types do satisfy
 both conditions (using inspection of the construction to verify (ii)).
-Moreover, an inspection of the Plates at the end of \cite{bourbaki} shows the curious fact that
+Moreover, an inspection of the Plates at the end of \cite{bourbaki456} shows the curious fact that
 the root systems C$_n$ ($n \ge 1$, where C$_1$ means A$_1$)
 are precisely the reduced irreducible root systems for
 which there is a root that is non-trivially divisible inside $P$:
 its long roots are twice primitive vectors in the weight lattice $P$.
 
-Feeding this information into \cite[VI, \S1.4, Proposition 13, Proposition 14]{bourbaki}, which relates
+Feeding this information into \cite[VI, \S1.4, Proposition 13, Proposition 14]{bourbaki456}, which relates
 non-reduced root systems to
 reduced root systems (using the non-divisible roots,
 or the non-multipliable roots),  it follows that for each $n \ge 1$ up to isomorphism there is exactly one
@@ -14066,7 +14191,7 @@ associated to a root basis:
 How do we describe $Z_G \subset T$ in terms of such a cocharacter parameterization?
 Let's first work out the type-A case via matrices, and then turn to the
 unified approach through the structure of $P/Q = (\mathbf{Z} \Delta^{\vee})^{\ast}/(\mathbf{Z} \Delta)$
-(as tabulated in Plates I through IX at the end of \cite{bourbaki}).
+(as tabulated in Plates I through IX at the end of \cite{bourbaki456}).
 
 \begin{example}
 Consider $G=\SL_n$ ($n \ge 2$) with split diagonal torus $T$.
@@ -14681,7 +14806,7 @@ The Bruhat cells $C(w')$
 appearing in the closure of $C(w)$ are described by the ``Bruhat order'' on $W$ (with respect to
 $\{r_a\}_{a \in \Delta}$, where $\Delta$ is the root basis for $\Phi^+
 = \Phi(B,T)$).  Remark \ref{rembruhat} provides further discussion
-of this topic and relevant literature references (in \cite{bourbaki} and \cite{springer}).
+of this topic and relevant literature references (in \cite{bourbaki456} and \cite{springer}).
 
 \medskip
 
@@ -15377,7 +15502,7 @@ For the root system $({\text{X}}(S')_{\mathbf{Q}}, {}_k \Phi)$,
 the associated reflections $$r_a \in {\text{GL}}({\text{X}}(S')_{\mathbf{Q}}) \times
 {\text{GL}}({\text{X}}(S_0)_{\mathbf{Q}}) \subset {\text{GL}}({\text{X}}(S)_{\mathbf{Q}})$$ and coroots
 $a^{\vee} \in {\text{X}}_{\ast}(S') \subset {\text{X}}(S)$ are as above.
-By \cite[VI,  \S1.1, Lemma 2]{bourbaki} (a general lemma concerning root systems),
+By \cite[VI,  \S1.1, Lemma 2]{bourbaki456} (a general lemma concerning root systems),
 each $(a')^{\vee} \in {\text{X}}_{\ast}(S')_{\mathbf{Q}}$
 determines $a'$ hence also $a$ (since the triviality of $a|_{S_0}$ implies that $a$ is determined by
 $a|_{S'} = a'$). Hence we have an injection $_k \Phi \hookrightarrow {\text{X}}_*(S') \subset {\text{X}}_*(S)$ onto a subset of non-zero elements denoted $_k \Phi^{\vee}$.
@@ -15552,7 +15677,7 @@ Then $Q \mapsto \Phi(Q,S)$ is an inclusion-preserving bijection
 \[
 \{Q \supset P_0 \} \leftrightarrow \{\text{parabolic subsets $\Psi \subset{}_k \Phi$ containing ${}_k \Phi^+$}\}.
 \]
-By \cite[VI, \S1.7, Proposition 20, Lemma 3]{bourbaki},
+By \cite[VI, \S1.7, Proposition 20, Lemma 3]{bourbaki456},
 such $\Psi$ are \emph{exactly} the subsets
 ${}_k \Phi^+ \cup [I]$ for a subset $I \subset {}_k \Delta$ (that is moreover unique),
 where $[I] := (\mathbf{Z} \cdot I) \cap {}_k \Phi$. Informally, this says that
@@ -15714,7 +15839,7 @@ that $\Psi = [\Delta_0]$.
 But $\Delta_0$ is contained in the positive system of roots
 $\Psi \cap \Phi^+$, so clearly $\Psi \subset \mathbf{Z}_{\ge 0} \Delta_0 \cup \mathbf{Z}_{\le 0} \Delta_0$.
 Hence, since $\Delta_0$ is also linearly independent, it is a basis of $\Phi(Z_G(S)_{k_s}, T_{k_s})$ by
-\cite[VI,  \S1.7, Corollary 3]{bourbaki}.
+\cite[VI,  \S1.7, Corollary 3]{bourbaki456}.
 \end{remark}
 
 \begin{proposition}\label{dbasis}
@@ -15739,7 +15864,7 @@ and hence $_k \Delta$ spans ${\text{X}}(S)_{\mathbf{Q}}$.
 In particular, $\# {}_k \Delta \geq \dim S$ with equality if and only if ${}_k \Delta$ is
 $\mathbf{Q}$-linearly independent.
 
-By \cite[VI, \S1.7, Corollary 3]{bourbaki},
+By \cite[VI, \S1.7, Corollary 3]{bourbaki456},
 it follows from \eqref{basis_criterion} and the containment $_k \Delta \subset {}_k \Phi^+$
 that $_k \Delta$ is a basis if it is linearly independent.  Thus, if
 we can prove $\dim S \ge \#{}_k\Delta$ then we will be done. This reverse inequality will be establishing by using a remarkable construction,
@@ -20006,10 +20131,10 @@ has to be exploited in some other way (via its representation-theoretic conseque
 \begin{proof}
 This result is proved in \cite[4.10]{Borel}, but the proof there seems to have a small discrepancy that we clarify below.
 First, we recall two equivalent ways to define the notion of ``quasi-affine scheme'':
-by \cite[II, 5.1.2]{ega}, if $S$ is an arbitrary quasi-compact scheme then it is equivalent that
+by \cite[II, 5.1.2]{EGA}, if $S$ is an arbitrary quasi-compact scheme then it is equivalent that
 the natural map $S \rightarrow {\text{Spec}}(\mathcal{O}(S))$ is
 an open immersion and that $S$ is a quasi-compact open subscheme
-of an affine scheme.  Such schemes are called {\em quasi-affine}.  By \cite[II, 5.1.9]{ega}, if $S$ is finite type over a  ring $R$
+of an affine scheme.  Such schemes are called {\em quasi-affine}.  By \cite[II, 5.1.9]{EGA}, if $S$ is finite type over a  ring $R$
 then it is quasi-affine if and only if it is an open subscheme of an affine $R$-scheme of finite type
 (the ``classical'' definition of quasi-affineness).
 We will use the ``abstract'' criterion in terms of open subschemes of ${\text{Spec}}(\mathcal{O}(S))$
@@ -23016,7 +23141,7 @@ defined by $a \mapsto a^{\vee}$ is uniquely determined
 by the properties in the axioms $($so we may write $s_a$ rather than $s_{a,a^{\vee}}$$)$.
 \end{lemma}
 
-In \cite[VI]{bourbaki}, it is root systems
+In \cite[VI]{bourbaki456}, it is root systems
 and not root data which are studied.  This is akin to the dichotomy between central isogeny classes of
 split connected semisimple groups and isomorphism classes of split connected reductive groups: all of the real
 work is at the level of the root system, but the root datum is necessary to keep track of things at a level finer
@@ -23042,14 +23167,14 @@ if $a \in R$ and $c \in \mathbf{Q}$ satisfies $c a \in R$ then
 $c \in \{\pm 1/2, \pm 1, \pm 2\}$.  This fact is proved in virtually every exposition of the theory of root
 systems, generally via Euclidean geometry by extending
 scalars to $\mathbf{R}$ and using a $W$-invariant inner product; e.g.,
-see \cite[VI, \S1.3, Proposition 8(i)]{bourbaki}.
+see \cite[VI, \S1.3, Proposition 8(i)]{bourbaki456}.
 Many expositions of root systems {\em require} the specification of
 an inner product $(\cdot, \cdot)$ as part of the framework for
 the definitions (taking $V$ to be an $\mathbf{R}$-vector space)
 and work directly with orthogonal reflections relative
 to the inner product (so $a^{\vee}$ is {\em defined} to be $2a/(a,a)$,
 subject to integrality conditions in the axioms).  It seems more
-elegant (as in \cite{bourbaki}) to axiomatize these concepts without reference to a Euclidean structure,
+elegant (as in \cite{bourbaki456}) to axiomatize these concepts without reference to a Euclidean structure,
 even though the choice of such an auxiliary structure is certainly convenient in proofs
 (as we saw in the proof of Proposition \ref{rsrd}).
 
@@ -23067,7 +23192,7 @@ with $W(R) \times W(R')$.
 A root system $(V,R)$ {\em reducible} if
 it is isomorphic to a direct sum of
 two nonzero root systems, and is
-{\em irreducible} if $V \ne 0$ and it is not reducible.  In \cite[VI, \S1.2]{bourbaki}
+{\em irreducible} if $V \ne 0$ and it is not reducible.  In \cite[VI, \S1.2]{bourbaki456}
 the notion of irreducibility is studied, and it is proved
 there (allowing $V$ to be over any field of characteristic 0) that (i) $(V,R)$ is irreducible as a root system
 if and only if $V$ is absolutely irreducible as a representation
@@ -23091,8 +23216,8 @@ $$B_R(v,v') = \sum_{a \in R} \langle v, a^{\vee} \rangle \langle v', a^{\vee} \r
 This is visibly symmetric, it is $W(R)$-invariant due to the identity
 $s_b(a)^{\vee} = s_{b^{\vee}}(a^{\vee})$,
 and it is positive-definite because $R^{\vee}$ spans $V^{\ast}$
-in any root system. (See \cite[VI, \S1.1, Proposition 3]{bourbaki} for another argument.)
-See \cite[VI, \S1.12]{bourbaki} for further discussion of this bilinear form.
+in any root system. (See \cite[VI, \S1.1, Proposition 3]{bourbaki456} for another argument.)
+See \cite[VI, \S1.12]{bourbaki456} for further discussion of this bilinear form.
 \end{remark}
 
 \begin{example}
@@ -23159,7 +23284,7 @@ are ``simply connected'' type ${\text{C}}$, which correspond to symplectic group
 For example, ${\text{SL}}_2$ has its roots that are divisible by 2 in the
 character lattice, but for ${\text{PGL}}_2$ this does not happen.
 
-In the classification of irreducible root systems (as in \cite[VI]{bourbaki}),
+In the classification of irreducible root systems (as in \cite[VI]{bourbaki456}),
 for each $n \ge 1$ there is (up to isomorphism) a unique
 rank-$n$ irreducible root system that is non-reduced.
 It is called ${\text{BC}}_n$ because it is a union of
@@ -23207,13 +23332,13 @@ roots $a$ whose weight space is contained in ${\text{Lie}}(B(\lambda))$.
 \end{proof}
 
 Within the theory of root systems, there is the concept of a {\em positive system of roots}
-(see \cite[VI, \S1.6--\S1.7]{bourbaki}): these can be defined in several non-obviously equivalent
+(see \cite[VI, \S1.6--\S1.7]{bourbaki456}): these can be defined in several non-obviously equivalent
 ways, one of which is the sets of roots cut out by a condition
 $\langle a, \lambda \rangle > 0$ for a linear form $\lambda$ on $X_{\mathbf{Q}}$ that is
-non-vanishing on all roots (see \cite[VI, \S1.7, Corollary 1]{bourbaki}).
+non-vanishing on all roots (see \cite[VI, \S1.7, Corollary 1]{bourbaki456}).
 It is a general fact that the Weyl group of the root system
 simply transitively permutes the set of such positive systems
-(see \cite[VI, \S1.5, Theorem 2(i)]{bourbaki}).
+(see \cite[VI, \S1.5, Theorem 2(i)]{bourbaki456}).
 Such positive systems $\Phi^{+}$ in $\Phi(G,T)$ are exactly the sets of roots that occur
 in the Lie algebra of a Borel subgroup containing $T$.
 
@@ -23272,7 +23397,7 @@ This says that there exists a semisimple Lie subalgebra $\mathfrak{h} \subset \m
 such that $\mathfrak{h} \ltimes \mathfrak{r} = \mathfrak{g}$.  The theorem is more precise, showing
 (among other things) that all
 possibilities for $\mathfrak{h}$ are carried into each other by automorphisms of $\mathfrak{g}$.
-Details are given in \cite[I, \S6.8]{bourbaki1}.  Such an $\mathfrak{h}$ is usually called a
+Details are given in \cite[I, \S6.8]{bourbaki123}.  Such an $\mathfrak{h}$ is usually called a
 ``Levi factor'' of $\mathfrak{g}$.
 
 In the context of linear algebraic groups, we have a related notion using
@@ -24865,10 +24990,10 @@ a simple combinatorial interpretation: it is the {\em length} $\ell(w)$ relative
 $\{r_a\}_{a \in \Delta}$ of $W$.  (That is, this is the minimal length of a word
 in the $r_a$'s whose product is equal to $w$.)  In particular, $\ell(w) \le \#\Phi^+$
 with equality if and only if $C(w)$ is the unique open Bruhat cell.
-See \cite[VI, \S1.6, Corollary 2 to Proposition 17]{bourbaki} for a
+See \cite[VI, \S1.6, Corollary 2 to Proposition 17]{bourbaki456} for a
 proof.
 
-By \cite[VI, \S1.6, Corollary 3 to Proposition 17]{bourbaki} there is a unique longest element $w_0 \in W$
+By \cite[VI, \S1.6, Corollary 3 to Proposition 17]{bourbaki456} there is a unique longest element $w_0 \in W$
 relative to $\{r_a\}_{a \in \Delta}$, it is given by the product $\prod_{a \in \Phi^+} r_a$
 taken in {\em any} order, and $w_0(\Phi^+) = -\Phi^+$.  In particular, $w_0^2 = 1$
 since $w_0^2(\Phi^+) = \Phi^+$.   We call $w_0$ the {\em long Weyl elements}.
@@ -25143,14 +25268,14 @@ ${\text{GL}}({\text{X}}(T))$,
 since if $-1 \in W$ then it satisfies the property uniquely characterizing $w_0 \in W$ through its
 effect on $\Phi^+$.  But does $-1$ belong to $W$?
 
-Inspection of the Plates at the end of \cite{bourbaki} shows that $-1 \in W$ precisely for the root systems
+Inspection of the Plates at the end of \cite{bourbaki456} shows that $-1 \in W$ precisely for the root systems
 A$_1$, B$_n$ ($n \ge 2$), C$_n$ ($n \ge 3$), D$_{2m}$ ($m \ge 2$), E$_7$, E$_8$, F$_4$, and G$_2$.
 In the other cases (i.e., A$_n$ for $n \ge 2$, D$_{2m+1}$ for $m \ge 2$, and E$_6$), the Plates
 show that $w_0 = -\iota$ where $\iota$ on $\mathbf{Q}^{\Delta}$ arises from the unique diagram
 involution of $\Phi$.
 
 \begin{remark} Don't confuse $w_0 = \prod_{a \in \Phi^+} r_a$ (independent of the order of multiplication) with the {\em Coxeter element} $\prod_{a \in \Delta} r_a$ that does depend on the order of multiplication but has
-conjugacy class independent of all choices (see \cite[IV, \S1.11]{bourbaki}).  Whereas $w_0$ has order 2,
+conjugacy class independent of all choices (see \cite[IV, \S1.11]{bourbaki456}).  Whereas $w_0$ has order 2,
 the order of the Coxeter element is the {\em Coxeter number} $h$ that is generally larger than 2.
 \end{remark}
 
@@ -25202,7 +25327,7 @@ The generalization to $G$ that is not assumed to be split will be taken up in Ap
 \subsection{Tits systems and applications}
 
 Inspired by the structural properties of groups of the form $G(k)$ for a connected reductive group $G$
-over a field $k$, Tits discovered a remarkably useful concept (developed in \cite[IV, \S1.2ff]{bourbaki}):
+over a field $k$, Tits discovered a remarkably useful concept (developed in \cite[IV, \S1.2ff]{bourbaki456}):
 
 \begin{definition} Let $H$ be an abstract group.  A {\em Tits system} for $H$  is a triple
 $(B, N, S)$ consisting of subgroups $B, N \subset H$ and a subset $S \subset  N/(N \bigcap B)$ such that:
@@ -25219,8 +25344,8 @@ $n_s B n_s \not\subset B$).
 \end{definition}
 
 These axioms imply that $W \rightarrow B \backslash H/B$ is bijective
-and that $(W, S)$ is a Coxeter group (see \cite[IV, \S2.3, Theorem 1]{bourbaki}
-and \cite[IV, \S2.4, Theorem 2]{bourbaki} respectively),
+and that $(W, S)$ is a Coxeter group (see \cite[IV, \S2.3, Theorem 1]{bourbaki456}
+and \cite[IV, \S2.4, Theorem 2]{bourbaki456} respectively),
 but this implication will not be used
 in our work with split reductive groups.  For a connected
 reductive $k$-group $\mathcal{G}$ equipped with a split maximal $k$-torus $\mathcal{T}$
@@ -25259,7 +25384,7 @@ $\mathcal{B} \bigcap N_{\mathcal{G}}(\mathcal{T}) = \mathcal{T}$.
 \end{proof}
 
 It is a general fact that for any Tits system $(H, B, N, S)$, the set $S \subset W$ is uniquely determined by the pair of subgroups
-$(B, N)$  in $H$ (see \cite[IV, \S2.5, Corollary to Theorem 3]{bourbaki}).  For this reason, often
+$(B, N)$  in $H$ (see \cite[IV, \S2.5, Corollary to Theorem 3]{bourbaki456}).  For this reason, often
 one focuses attention on the pair $(B, N)$, and such a pair in $H$ for which the axioms of a Tits system
 are satisfied (for some, necessarily unique, subset $S \subset W$) is called a {\em {\text{BN}}-pair} in $H$.
 
@@ -25269,7 +25394,7 @@ There is a general parameterization of conjugacy classes of parabolic subgroups 
 (labeled by subsets of $S$), inspired by the case of parabolic subgroups of
 split connected reductive groups that we shall discuss (and recovering
 the result for algebraic groups when the ground field is separably closed).
-See \cite[IV, \S2.6, Proposition 4]{bourbaki} for a precise
+See \cite[IV, \S2.6, Proposition 4]{bourbaki456} for a precise
 formulation and proof of this result.
 \end{remark}
 
@@ -25290,14 +25415,14 @@ $H^{+}/(Z \bigcap H^{+})$ is either simple non-abelian or trivial.
 \end{theorem}
 
 \begin{remark}
-The notion of Coxeter graph mentioned in this theorem is defined in \cite[IV, \S1.9]{bourbaki},
+The notion of Coxeter graph mentioned in this theorem is defined in \cite[IV, \S1.9]{bourbaki456},
 and in the examples arising from split connected reductive groups $\mathcal{G}$ this is precisely the
 underlying graph of the Dynkin diagram (so it is connected if and only if
 $\mathcal{D}(\mathcal{G})$ is absolutely simple).   The hypothesis $Z \bigcap U = 1$ holds in such examples
 because $Z = Z_{\mathcal{G}}(k)$.
 \end{remark}
 
-Theorem \ref{simple} is a special case of \cite[IV, \S2.7, Corollary to Theorem 5]{bourbaki}
+Theorem \ref{simple} is a special case of \cite[IV, \S2.7, Corollary to Theorem 5]{bourbaki456}
 (in view of Remark 2 after that Corollary).
 To apply this theorem to $H = \mathcal{G}(k)$ for split connected semisimple $k$-groups
 $\mathcal{G}$ that are absolutely simple and simply connected (with $k$ any field), we have
@@ -26600,7 +26725,7 @@ that is a special case of Example \ref{split}
 (or more concretely, ${\text{SL}}_2(\mathbf{R})$ is generated by the $\mathbf{R}$-points of the standard root groups).
 \end{itemize}
 
-Step (II) rests on some input from \cite{bourbaki} that we will review when needed, and step (III)
+Step (II) rests on some input from \cite{bourbaki456} that we will review when needed, and step (III)
 involves some clever group-theoretic considerations (due to Borel and Tits).
 
 \subsection{Control of connected components via tori}
@@ -26731,12 +26856,12 @@ a basis ${}_{\mathbf{R}}\Delta$ given by the set of nontrivial restrictions to $
 of a choice of basis $\Delta$ of $\Phi$.
 This opens the door to applying two general properties of irreducible root systems, as follows.
 
-To state the first of these, we recall from \cite[VI, \S1.8]{bourbaki} that for any {\em irreducible} root system
+To state the first of these, we recall from \cite[VI, \S1.8]{bourbaki456} that for any {\em irreducible} root system
 equipped with a specified root basis, there is always a unique positive root each of whose
 coefficients relative to the chosen basis is at least as large as the corresponding
 coefficient occurring in all other roots (in particular, all coefficients are positive for this distinguished root);
 we call it the {\em highest root}.
-The following lemma concerning the highest root is \cite[VI, \S2.3, Cor.]{bourbaki}:
+The following lemma concerning the highest root is \cite[VI, \S2.3, Cor.]{bourbaki456}:
 
 \begin{lemma}
 \label{4.1}
@@ -26753,7 +26878,7 @@ $\varpi_a$ associated to those $a \in \Delta$ whose coefficient $m_a$ in the hig
 $b$ of $\Phi$ is equal to $1$.
 \end{lemma}
 
-This lemma could be proved by case-checking of the tables at the end of \cite{bourbaki},
+This lemma could be proved by case-checking of the tables at the end of \cite{bourbaki456},
 but Bourbaki gives a case-free proof. Here is a companion result in the non-reduced case.
 
 \begin{lemma}\label{4.2} For a non-reduced irreducible root system $(V, \Phi)$
@@ -27553,14 +27678,14 @@ parabolics with abelian unipotent radical?  For the case
 $n = 1$ (i.e., ${\text{SL}}_2$) the abelian property always holds (unipotent radical
 of a Borel subgroup of ${\text{SL}}_2$), so let's consider $n \ge 2$.
 
-Inspection of the table for type C$_n$ in \cite{bourbaki} for $n \ge 2$
+Inspection of the table for type C$_n$ in \cite{bourbaki456} for $n \ge 2$
 shows that for the unique long root $a_n \in \Delta$,
 the $a_n$-coefficient in every positive root $b$ is either 0 or 1.
 Thus, if $b$ and $b'$ are positive roots whose $\Delta$-expansions
 contain $a_n$ in their supports then $b+b'$ is not a root.
 Hence, by Example \ref{spardef}, the maximal (proper) parabolic subgroup corresponding to $\Delta - \{a_n\}$
 has abelian unipotent radical.  In contrast,
-inspection of the table for C$_n$ in \cite{bourbaki} with $n \ge 2$ shows that for each short root $a_i \in \Delta$ there
+inspection of the table for C$_n$ in \cite{bourbaki456} with $n \ge 2$ shows that for each short root $a_i \in \Delta$ there
 exist positive roots $b$ and $b'$ whose $\Delta$-expansions contain $a_i$ in their
 support and for which $b+b'$ is a root.
 
@@ -28937,8 +29062,8 @@ and generate $W$,
 \end{itemize}
 \end{definition}
 
-We refer the reader to \cite[IV, \S2]{bourbaki} for the basic properties of Tits systems.
-By \cite[IV, \S2.5, Remark (1)]{bourbaki}, $\Sigma$
+We refer the reader to \cite[IV, \S2]{bourbaki456} for the basic properties of Tits systems.
+By \cite[IV, \S2.5, Remark (1)]{bourbaki456}, $\Sigma$
 is uniquely determined by $(\mathcal{G}, B, N)$
 (thereby explaining why such data is often called a BN-pair for $\mathcal{G}$).
 
@@ -29029,7 +29154,7 @@ For $N := N_G(S)$ we have
 $Z(k) = P(k) \cap N(k)$ due to the minimality of $P$, so
 $$\bigcap_{n \in N(k)} n P(k) n^{-1} = P(k) \cap N(k).$$  This says that
 the Tits system in Theorem \ref{C.2.19} is {\em saturated} in the sense of
-\cite[IV, \S2, Exercise 5(a)]{bourbaki}.
+\cite[IV, \S2, Exercise 5(a)]{bourbaki456}.
 The established property that $P(k)$ is a semidirect product of its subgroup
 $Z(k) = P(k) \cap N(k)$ against a nilpotent subgroup $U_G(\lambda)(k)$ is
 expressed by saying that that the Tits system is {\em split}.
@@ -29060,13 +29185,13 @@ $k$-subgroups $Q$ and $Q'$ of $G$, $Q \subset Q'$ if and only if $Q(k) \subset Q
 \end{theorem}
 
 Informally, this theorem says that ``parabolic subgroups'' of $G(k)$ relative to its Tits system structure
-(see \cite[IV, \S2.6]{bourbaki} for this terminology)
+(see \cite[IV, \S2.6]{bourbaki456} for this terminology)
 are in inclusion-preserving bijective correspondence with the parabolic $k$-subgroups of $G$
 via the formation of rational points.  Note that we allow the case that $k$ is finite,
 and in (ii) we don't assume $Q$ and $Q'$ share a common split maximal $k$-torus.
 
 \begin{proof} Since $(G(k),P(k), N(k),R)$ is a Tits system (with Weyl group ${}_k W$),
-by  \cite[IV, \S2.5, Theorem 3(b)]{bourbaki}
+by  \cite[IV, \S2.5, Theorem 3(b)]{bourbaki456}
 there is a natural bijection $X \mapsto G(k)_X$ from
 the set of subsets $X \subset R$ to the set of subgroups of
 $G(k)$ containing $P(k)$, so there are exactly $2^{\#R}$ subgroups of $G(k)$ containing $P(k)$.
@@ -29170,7 +29295,7 @@ $k$-subgroups of $G$, there exists $g\in G(k)$ such that $gPg^{-1}\subset Q'$.
 Hence, $Q'(k)$ contains a $G(k)$-conjugate of $P(k)$, so it
 is a ``parabolic subgroup'' of $G(k)$ relative to the Tits system structure.
 But $P(k)$ and $gP(k)g^{-1}$ are contained in $Q'(k)$, so $g\in Q'(k)$ by
-\cite[IV, \S2.6, Theorem 4(i)]{bourbaki}. Thus, $P\subset Q'$, so $Q$ and $Q'$ are parabolic
+\cite[IV, \S2.6, Theorem 4(i)]{bourbaki456}. Thus, $P\subset Q'$, so $Q$ and $Q'$ are parabolic
 $k$-subgroups containing the common
 minimal parabolic $k$-subgroup $P$.  But
 then $Q \cap Q'$ is another such  $k$-subgroup
@@ -29632,106 +29757,119 @@ are constructed from the root groups for the roots in an irreducible component o
 
 
 \section{Algebraic Groups I. Homework 1}
+\label{section-HW1}
 
-\noindent
-1.  This exercise studies the endomorphism rings
-of the $k$-groups ${\mathbf{G}}_m$ and ${\mathbf{G}}_a$, with $k$ any commutative ring.
-
-(i)  Prove that ${\text{End}}_k({\mathbf{G}}_a)$ consists of $f \in k[t]$ such that
+\begin{exercise}
+\label{exercise-HW1-1}
+This exercise studies the endomorphism rings
+of the $k$-groups ${\mathbf{G}}_m$ and ${\mathbf{G}}_a$,
+with $k$ any commutative ring.
+\begin{enumerate}
+\item Prove that ${\text{End}}_k({\mathbf{G}}_a)$
+consists of $f \in k[t]$ such that
 $f(x+y) = f(x) + f(y)$ in $k[x,y]$, and that
-${\text{End}}_k({\mathbf{G}}_m)$ consists of $f \in k[t,t^{-1}]$ such that $f(xy) = f(x)f(y)$
+${\text{End}}_k({\mathbf{G}}_m)$ consists of $f \in k[t,t^{-1}]$ such that
+$f(xy) = f(x)f(y)$
 in $k[x,y,x^{-1},y^{-1}]$ and $f$ has no zeros on any geometric fibers over
 $\Spec k$.
-
-(ii) Deduce that if $k$ is a $\mathbf{Q}$-algebra then naturally ${\text{End}}_k({\mathbf{G}}_a) = k$,
+\item Deduce that if $k$ is a $\mathbf{Q}$-algebra then naturally
+${\text{End}}_k({\mathbf{G}}_a) = k$,
 and that if $k$ is a field with characteristic $p > 0$ then it consists of
 $f = \sum c_j t^{p^j}$ ($c_j \in k$).  What if $k = \mathbf{Z}/(p^2)$?
-
-(iii) Prove that ${\text{End}}_k({\mathbf{G}}_m) = \mathbf{Z}$ when $k$ is a field, and deduce
+\item Prove that ${\text{End}}_k({\mathbf{G}}_m) = \mathbf{Z}$
+when $k$ is a field, and deduce
 the same when $k$ is an artin local ring via induction on the length of $k$.
 (Hint: reduce to the case when $f$ vanishes on the special fiber.)
-
-(iv) Prove that ${\text{End}}_k({\mathbf{G}}_m) = \mathbf{Z}$ for $k$ {\em any} local ring by
-using (iii) to settle the case of a complete local noetherian ring, then any local noetherian
+\item Prove that ${\text{End}}_k({\mathbf{G}}_m) = \mathbf{Z}$
+for $k$ {\em any} local ring by
+using (iii) to settle the case of a complete local noetherian ring,
+then any local noetherian
 ring, and finally any local ring (by using local noetherian subrings of $k$).
 Deduce that if $k$ is any ring whatsoever, an endomorphism of the $k$-group
-${\mathbf{G}}_m$ is $t \mapsto t^n$  for a locally constant function $n:\Spec k \rightarrow \mathbf{Z}$.
+${\mathbf{G}}_m$ is $t \mapsto t^n$  for a locally constant function
+$n :\Spec k \rightarrow \mathbf{Z}$.
+\end{enumerate}
+\end{exercise}
 
-\medskip\noindent
-2. Let $V$ be a finite-dimensional vector space over a field $k$.  This exercise develops
+\begin{exercise}
+\label{exercise-HW1-2}
+Let $V$ be a finite-dimensional vector space over a field $k$.
+This exercise develops
 coordinate-free versions of ${\text{GL}}_n$, ${\text{SL}}_n$, and
 ${\text{Sp}}_{2n}$ attached to $V$.
-
-(i) Elements of the graded symmetric algebra
+\begin{enumerate}
+\item Elements of the graded symmetric algebra
 ${\text{Sym}}(V^{\ast})$ are called {\em polynomial functions on $V$}.  Justify the name
 (even for finite $k$!)  by identifying them with {\em functorial maps} of sets $V_R \rightarrow R$
 given by polynomial expressions relative to some (equivalently, any) basis of $V$,
 with $R$ a varying $k$-algebra.
 In particular, show that $\det$ is a polynomial function on ${\text{End}}(V)$.
-
-(ii) For any $k$-algebra $R$, define the functors
+\item For any $k$-algebra $R$, define the functors
 $\underline{\text{End}}(V)$ and $\underline{\text{Aut}}(V)$ on $k$-algebras $R$ by
 $R \mapsto {\text{End}}(V_R)$, $R \mapsto {\text{Aut}}_R(V_R)$.
 Using the  identification ${\text{End}}(V_R,V_R) = {\text{End}}(V)_R$,
 prove that $\underline{\text{End}}(V)$ is represented by
 ${\text{Sym}}({\text{End}}(V)^{\ast})$.
-
-(iii) Define $\det \in
+\item Define $\det \in
 {\text{Sym}}({\text{End}}(V)^{\ast})$ and prove its non-vanishing locus
 $${\text{GL}}(V) := \Spec({\text{Sym}}({\text{End}}(V)^{\ast})[1/\det])$$ represents $\underline{\text{Aut}}(V)$
 as subfunctor of $\underline{\text{End}}(V)$.
 Also discuss ${\text{SL}}(V)$ as a closed $k$-subgroup of
 ${\text{GL}}(V)$.
-
-(iv) Let $B:V \times V \rightarrow k$ be a bilinear form.
+\item Let $B:V \times V \rightarrow k$ be a bilinear form.
 Prove that the subfunctor $\underline{\text{Aut}}(V,B)$ of points of
 $\underline{\text{Aut}}(V)$ preserving $B$
 is represented by a closed $k$-subgroup of ${\text{GL}}(V)$.  (You can use coordinates
 in the proof!)  This is pretty bad unless $B$ is non-degenerate.
 (In the alternating non-degenerate case it is denoted ${\text{Sp}}(B)$.)
-
-Assuming non-degeneracy, a linear automorphism $T$ of $V_R$ is
+\item Assuming non-degeneracy, a linear automorphism $T$ of $V_R$ is
 a {\em $B$-similitude} if $B_R(Tv,Tw) = \mu(T)B(v,w)$ for all
 $v, w \in V_R$ and some $\mu(T) \in R^{\times}$.  Prove $\mu(T)$ is then unique,
 and show that the functor of $B$-similitudes is represented by a closed
 $k$-subgroup of ${\text{GL}}(V) \times {\mathbf{G}}_m$. (In the alternating case it is
 denoted
 ${\text{GSp}}(B)$.)
+\end{enumerate}
+\end{exercise}
 
-\medskip\noindent
-3. (i) Prove that if a connected scheme $X$ of finite type over a field $k$ has a $k$-rational point,
+\begin{exercise}
+\label{exercise-HW1-3}
+\begin{enumerate}
+\item Prove that if a connected scheme $X$ of finite type
+over a field $k$ has a $k$-rational point,
 then $X_{k'} = X \otimes_k k'$ is connected for every finite extension $k'/k$
 (hint: $X_{k'} \rightarrow X$ is open and closed; look at fiber over
 $X(k)$).  Deduce that $X_{k'}$ is connected
 for {\em every} extension $k'/k$ (i.e., $X$ is {\em geometrically connected} over $k$).
-
-(ii) Prove that if $X$ and $Y$ are geometrically connected of finite type over $k$, so
+\item Prove that if $X$ and $Y$ are geometrically connected
+of finite type over $k$, so
 is $X \times Y$; give a counterexample over $k = \mathbf{Q}$ if ``geometrically'' is removed.
 Deduce that if $G$ is a $k$-group then the identity component $G^0$
 is a $k$-subgroup whose formation commutes with any extension on $k$.
+\end{enumerate}
+\end{exercise}
 
-\medskip\noindent
-4.  Let $G$ be a group of finite type over a field $k$.
-
-(i) Prove that $(G_{\overline{k}})_{\text{red}}$ is a closed $\overline{k}$-subgroup of
+\begin{exercise}
+\label{exercise-HW1-4}
+Let $G$ be a group of finite type over a field $k$.
+\begin{enumerate}
+\item Prove that $(G_{\overline{k}})_{\text{red}}$ is a closed $\overline{k}$-subgroup of
 $G_{\overline{k}}$, and prove it is {\em smooth}.
 Deduce that $G^0$ is {\em geometrically irreducible}.
-
-(ii) Over any imperfect field $k$, one can make a non-reduced $k$-group $G$ such that
+\item Over any imperfect field $k$, one can make a non-reduced $k$-group $G$ such that
 $G_{\text{red}}$ is {\em not} a $k$-subgroup.  Where does an attempted proof to the contrary get stuck?
-
-(iii) Assume $k$ is imperfect, ${\text{char}}(k) = p > 0$, and choose
+\item Assume $k$ is imperfect, ${\text{char}}(k) = p > 0$, and choose
 $a \in k - k^p$.  Prove $x_0^p + a x_1^p + \ldots + a^{p-1} x_{p-1}^p = 1$
 defines a reduced $k$-group (think of ${\text{N}}_{k(a^{1/p})/k}$)
 that is non-reduced over $\overline{k}$ and hence not smooth!
-
-(iv) Prove that the condition $t^n = 1$ defines a finite closed $k$-subgroup
+\item Prove that the condition $t^n = 1$ defines a finite closed $k$-subgroup
 $\mu_n \subset {\mathbf{G}}_m$, and show its preimage $G$ under $\det:\GL_N \rightarrow {\mathbf{G}}_m$
 is a $k$-subgroup of $\GL_N$.  Accepting that
 ${\text{SL}}_N$ is connected, prove $G^0 = {\text{SL}}_N$ if
 ${\text{char}}(k) \not | n$.  For $k = \mathbf{Q}$ and $n = 5$,
 prove that $G - G^0$ is connected but over $\overline{k}$ has 4 connected components.
-
+\end{enumerate}
+\end{exercise}
 
 \section{Algebraic Groups I. Homework 2}
 
