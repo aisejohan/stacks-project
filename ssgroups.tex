@@ -327,6 +327,25 @@ $t \mapsto (\frac{1}{2}(t+t^{-1}),\frac{1}{2i}(t-t^{-1}))$.
 \end{example}
 
 \begin{example}
+\label{example-additive}
+The additive group $\mathbf{G}_a$
+is another important example of a linear algebraic group.
+It was constructed in Groupoids, Example \ref{groupoids-example-additive-group}
+as a functor. Observe that $\mathbf{G}_a \cong \mathbf{A}^1$
+as schemes over the base. Since $k[t]$ and $k[t, t^{-1}]$
+aren't isomorphic as $k$-algebras, we see that
+$\mathbf{G}_a \not\cong \mathbf{G}_m$ as schemes over $k$,
+let alone as $k$-groups. This is in contrast to the fact that
+in the classical topology, $(\mathbf{R}^\times)^0\simeq \mathbf{R}$
+as Lie groups, via logarithm and exponential; that isomorphism
+is actually more of a nuisance than useful in Lie theory.
+It is an important fact that $\mathbf{G}_a$ and $\mathbf{G}_m$
+are the only 1-dimensional connected (smooth) linear algebraic
+$k$-groups when $k$ is algebraically closed; we'll prove this later
+(insert future reference here).
+\end{example}
+
+\begin{example}
 \label{example-A}
 Let $\SL_n\subset \GL_n$ be the closed $k$-subgroup scheme
 defined by $\det = 1$. The determinant $\det : \GL_n \to \mathbf{G}_m$
@@ -440,6 +459,8 @@ Let $k$ be a field. Let $G$, $G'$ be $k$-group schemes.
 A {\it $k$-homomorphism} $G'\to G$ is a morphism of
 group schemes over $k$
 (see Groupoids, Definition \ref{groupoids-definition-group-scheme}).
+We will denote $\Hom_k(G, G')$ the set of all $k$-homorphisms
+and $\text{End}_k(G)$ the set of endomorphisms.
 \end{definition}
 
 \noindent
@@ -702,24 +723,23 @@ because the commutative (even central) term appears on the left, which
 is super-handy for studying degree-1 cohomology with coefficients in $G$
 (since degree-2 cohomology is most convenient with commutative coefficients).
 
-\section{January 8}
 
-Here's an important example of a linear algebraic group: $\mathbf{G}_a=\mathbf{A}^1$,
-the additive group scheme, where ``multiplication''
-is ordinary addition. It represents the forgetful functor from rings
-(or $k$-algebras, if we are working over a field) to abelian groups.
 
-An important note is that $\mathbf{G}_a\not\simeq \mathbf{G}_m$ as $k$-schemes, let alone $k$-groups. This is in contrast to the fact that in the classical topology,
-$(\mathbf{R}^\times)^0\simeq \mathbf{R}$
-as Lie groups, via logarithm and exponential; that isomorphism is actually more of a nuisance than useful in
-Lie theory.
 
-It is an important fact that $\mathbf{G}_a$ and $\mathbf{G}_m$ are the only 1-dimensional connected (smooth)
-linear algebraic $k$-groups when $k$ is algebraically closed; we'll prove this later (building on Homework exercises).
 
-\subsection{How do linear algebraic groups arise in nature?}
-Here is a nice motivating example.
-\begin{example}\label{repns}
+
+
+
+
+\section{Closures of subgroups of points}
+\label{section-closures}
+
+\noindent
+How do linear algebraic groups arise in nature?
+Here is a motivating example.
+
+\begin{example}
+\label{example-repns}
 Consider any abstract group $\Gamma$
 and a representation $\rho:\Gamma\to\GL_n(k)$ in
 a finite dimensional vector space over a field.
@@ -727,101 +747,49 @@ a finite dimensional vector space over a field.
 a fundamental group arising from a local system of finite-dimensional
 $k$-vector spaces, for instance. Or an $\ell$-adic representation of a Galois
 group or of the \'etale fundamental group of a connected noetherian scheme.)
-
 Inside the group variety $\GL_n$ there is a group of rational points
-$\GL_n(k)$; inside \textit{this} lies the image $\rho(\Gamma)$ of
+$\GL_n(k)$; inside this lies the image $\rho(\Gamma)$ of
 our representation.
-Let $\mathcal{G}\subset\GL_n$ be the Zariski-closure of $\rho(\Gamma)$;
+Let $\mathcal{G} \subset\GL_n$ be the Zariski-closure of $\rho(\Gamma)$;
 it is some closed $k$-subscheme of $\GL_n$.
 It turns out that $\mathcal{G}$ is a smooth closed $k$-subgroup of $\GL_n$, as we will discuss below.
 \end{example}
 
-\subsection{Zariski closures of subgroups}
-To prove the claim at the end of Example \ref{repns}, we will show something stronger:
-\begin{theorem}\label{zariskiclosureofsubgroup}
-Let $G$ be any $k$-group variety and $\Sigma\subset G(k)$
-any subgroup of the group of rational points.
-Then the Zariski closure $Z_\Sigma\subset G$
-of $\Sigma$ is a smooth closed $k$-subgroup,
-and for any field extension $k'/k$,
-in fact the closed subscheme $(Z_\Sigma)_{k'}\subset G_{k'}$ is the Zariski closure
-of $\Sigma\subset G(k')= G_{k'}(k')\subset G_{k'}$.
-\end{theorem}
-\begin{remark} Returning to Example \ref{repns}, $\mathcal{G}$ contains $\rho(\Gamma)$
-as a Zariski-dense subset, so in fact $\mathcal{G}$ is ``controlled'' by $\Gamma$.
-For example, this will imply that the irreducibility or
-complete reducibility of the representation $\rho$
-can be studied in the algebraic category by looking at the group variety $\mathcal{G}$.
-Note that $\mathcal{G}$ might be highly disconnected, but at least the (geometric)
-component group will be finite. So representation theory questions over infinite fields can, in principle,
-be reduced to questions about connected algebraic groups
-and finite (\'etale) component groups, which might be more tractable.
-\end{remark}
-\begin{lemma}\label{reducedimpliessmooth}
-If $k$ is algebraically closed, then a reduced $k$-group scheme $G$
-(of finite type) is smooth.
-\end{lemma}
-\begin{proof}
-Over a perfect field, such as the algebraically closed field $k$,
-any reduced scheme of finite type is smooth on a dense open set.
-The proof of this standard fact from algebraic geometry rests upon finding a ``separating transcendence basis'' $\{t_i\}$ for the function field $K$ of (each component of)
-the scheme, so that $K$ is separable over $k(t_1,\ldots,t_n)$;
-by the primitive element theorem, the smoothness situation is now amenable
-to study via the Jacobian criterion.
+\noindent
+Zariski closures of subgroups. To prove the claim at the end of
+Example \ref{example-repns}, we will show something stronger.
+First we need to formulate some facts about closures of
+sets of rational points.
 
-So let $U\subset G$ be a smooth, dense open subscheme.
-Choose a point $g\in G(k)$ and $u\in U(k)$ [there are plenty of points, because
-$k$ is algebraically closed]. Look at the translation
-map $\ell_{gu^{-1}}:G\to G$, which is an isomorphism
-sending $u\mapsto g$.
-Hence $\mathcal{O}^\wedge_{\text{u}}\simeq \mathcal{O}^\wedge_g$;
-the left side is a power series ring, since $U$ is smooth, so
-the right side is one too.
-This was one of our criteria for showing that $G$ is smooth at $g$.
-
-The point is that since $k = \bar k$, the $G(k)$-translates of $U$ cover $G$.
-Indeed, $\bigcup_{\gamma\in G(k)}\ell_\gamma(U)$ is open in $G$
-and by the above it contains all of $G(k)$.
-For any variety over an algebraically closed field, if an open set contains all
-the old-fashioned (rational) points $G(k)$, it must be the whole variety $G$.
-So we are done.
-\end{proof}
-\begin{proposition}\label{zariskiclosureprop}Let
-$X$ be a $k$-scheme (locally) of finite type,
-and $\Sigma\subset X(k)\subset X$ any collection of rational points.
+\begin{lemma}
+\label{lemma-zariskiclosureprop}
+Let $k$ be a field. Let $X$ be a locally algebraic $k$-scheme.
+Let $\Sigma \subset X(k)$ be a subset.
 Define $Z_{\Sigma,k}$ to be the Zariski closure of $\Sigma$ in $X$.
 Then the following hold:
-\begin{itemize}
-\item[(i)]The scheme $Z_{\Sigma,k}$ is geometrically reduced over $k$.
-\item[(ii)]The formation of $Z_{\Sigma,k}$ is compatible with base change,
+\begin{enumerate}
+\item The scheme $Z_{\Sigma,k}$ is geometrically reduced over $k$.
+\item The formation of $Z_{\Sigma,k}$ is compatible with base change,
 in the sense that $(Z_{\Sigma,k})_{k'}=Z_{\Sigma,k'}$ inside $X_{k'}$,
 where on the right side we view $\Sigma\subset X(k)\subset X_{k'}(k')$.
-\item[(iii)]The formation of $Z_{\Sigma,k}$ is compatible with products,
+\item The formation of $Z_{\Sigma,k}$ is compatible with products,
 in the sense that for any other pair $(X',\Sigma')$ over $k$,
 we have $Z_{\Sigma\times\Sigma',k}=Z_{\Sigma,k}\times Z_{\Sigma',k}$ as closed
 subschemes of $X\times X'$.
-\item[(iv)]The formation of $Z_{\Sigma,k}$ is functorial in the pair
+\item The formation of $Z_{\Sigma,k}$ is functorial in the pair
 $(X,\Sigma)$, in the sense
 that if $f:X_1\to X_2$
 takes $\Sigma_1$ to $\Sigma_2$,
 then it takes the subscheme $Z_{\Sigma_1}\subset X_1$
 to $Z_{\Sigma_2}\subset X_2$.
-\end{itemize}
-\end{proposition}
-\begin{proof}[Proof of Theorem  $\ref{zariskiclosureofsubgroup}$
-from Proposition $\ref{zariskiclosureprop}$ $($Sketch$)$]
-Apply the proposition to $X=G$, our $k$-group variety,
-and $\Sigma\subset G(k)$ our subgroup of rational points.
-Compatibility with base change is part (ii) of the proposition.
-We use the functoriality of the closure construction [part (iv)]
-and compatibility with products [part (iii)], with respect to the multiplication,
-inversion, and identity maps to see that we actually have a subgroup scheme.
-To get smoothness, we use part (i) of the proposition, along with Lemma \ref{reducedimpliessmooth}.
-\end{proof}
-\begin{proof}[Proof of Proposition $\ref{zariskiclosureprop}$]
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
 The proof will be in a different order than the formulation of the result.
-\begin{itemize}
-\item[(iv)] Consider a map $f:X_1\to X_2$ such that on $k$-points,
+
+\medskip\noindent
+Proof of (4). Consider a map $f:X_1\to X_2$ such that on $k$-points,
 $f$ sends $\Sigma_1\subset X_1(k)$
 to $\Sigma_2\subset X_2(k)$.
 We would like to show that $Z_{\Sigma_1}\to X_1\to X_2$
@@ -829,27 +797,47 @@ factors through $Z_{\Sigma_2}\to X_2$.
 Form the fiber product $f^{-1}(Z_{\Sigma_2})=X_1\times_{X_2} Z_{\Sigma_2}$;
 it is a closed subscheme of $X_1$, and by hypothesis it contains $\Sigma_1$.
 Hence the scheme-theoretic closure
-$Z_{\Sigma_1}$ must be contained in this preimage, which is equivalent to what we wanted.
-\item[(i) and (ii)] Note that the formation of Zariski-closures is Zariski-local, in the sense that it commutes with passage to open subsets. (This is just a fact from topology.) So we can assume without loss of generality that $X$ is affine, equal to $\Spec A$ for some $k$-algebra $A$,
-and thus the set of rational points $\Sigma$
-is a collection of maps $\{\sigma:A\to k\}$.
-Denote the kernel of $\sigma$ by $I_\sigma$, which is a maximal -- and in particular, a radical -- ideal of $A$.
-The subscheme $Z_\Sigma$ corresponds to the ideal $\bigcap_{\sigma\in\Sigma}I_\sigma$, the smallest ideal of $A$ whose zero locus contains $\Sigma$. This is an intersection of radical ideals, so it is radical. Hence $Z_\Sigma$ is reduced.
+$Z_{\Sigma_1}$ must be contained in this preimage, which
+is equivalent to what we wanted.
 
-Geometric reducedness (i.e., assertion (i)) will follow immediately one we know compatibility with base change
-(i.e., assertion (ii)). For this, note that in $A_{k'}=A\otimes_k k'$,
-the ideal $I'_\sigma$ of the point $\sigma$ viewed as a point of $X_{k'}=\Spec A_{k'}$ is simply $I_\sigma\otimes_k k'$. This is because $I'_\sigma=\Ker(\sigma_{k'}:A_{k'}\to k') = I_\sigma\otimes_k k'$
+\medskip\noindent
+Proof of (1) and (2). Note that the formation of Zariski-closures
+is Zariski-local, in the sense that it commutes with passage to
+open subsets. (This is just a fact from topology.) So we can assume
+without loss of generality that $X$ is affine, equal to $\Spec A$
+for some $k$-algebra $A$, and thus the set of rational points $\Sigma$
+is a collection of maps $\{\sigma:A\to k\}$.
+Denote the kernel of $\sigma$ by $I_\sigma$, which is a maximal --
+and in particular, a radical -- ideal of $A$.
+The subscheme $Z_\Sigma$ corresponds to the ideal
+$\bigcap_{\sigma\in\Sigma}I_\sigma$, the smallest ideal of
+$A$ whose zero locus contains $\Sigma$. This is an intersection
+of radical ideals, so it is radical. Hence $Z_\Sigma$ is reduced.
+
+\medskip\noindent
+Geometric reducedness, i.e., part (1), will follow immediately
+once we know compatibility with base change (i.e., part (2)).
+For this, note that in $A_{k'}=A\otimes_k k'$,
+the ideal $I'_\sigma$ of the point $\sigma$ viewed as a point of
+$X_{k'}=\Spec A_{k'}$ is simply $I_\sigma\otimes_k k'$.
+This is because
+$I'_\sigma=\Ker(\sigma_{k'}:A_{k'}\to k') = I_\sigma\otimes_k k'$
 (the latter equality because change of field is a flat base extension).
-So we are reduced to a problem in linear algebra: let $V$ be a $k$-vector space (e.g., $A$)
-and $\{V_i\}$ a collection of $k$-subspaces of $V$ (e.g. $\{I_\sigma:\sigma\in \Sigma\}$);
-then we want $(\bigcap V_i)\otimes_k k'=\bigcap(V_i\otimes k')$ inside $V\otimes_k k'$.
+So we are reduced to a problem in linear algebra: let
+$V$ be a $k$-vector space (e.g., $A$)
+and $\{V_i\}$ a collection of $k$-subspaces of $V$
+(e.g. $\{I_\sigma:\sigma\in \Sigma\}$);
+then we want
+$(\bigcap V_i)\otimes_k k'=\bigcap(V_i\otimes k')$ inside $V\otimes_k k'$.
 To see why this equality holds, forget the multiplicative structure of $k'$
 and instead consider any $k$-vector space $W$ in place of $k'$.  We claim that
 $(\bigcap V_i)\otimes W = \bigcap(V_i\otimes W)$ inside $V \otimes W$. Any element of $V \otimes W$ lies in
 $V \otimes W'$ for some $W' \subset W$ finite-dimensional, and $W'$ is a direct summand of $W$, so
 we are reduced to the easy case of finite-dimensional $W$.
 
-\item[(iii)] One inclusion of the desired equality $Z_{\Sigma\times \Sigma'}=Z_{\Sigma}\times Z_{\Sigma'}$ is easy. Since $\Sigma\times\Sigma'$ projects
+\medskip\noindent
+Proof of (3). One inclusion of the desired equality
+$Z_{\Sigma\times \Sigma'}=Z_{\Sigma}\times Z_{\Sigma'}$ is easy. Since $\Sigma\times\Sigma'$ projects
 down to $\Sigma$ (resp. $\Sigma'$) in the first (resp. second)
 factor,
 which is contained in $Z_{\Sigma}$ (resp. $Z_{\Sigma'}$), we automatically
@@ -858,7 +846,10 @@ A product of closed  subschemes is a closed subscheme of the product.
 Hence the Zariski closure $Z_{\Sigma\times \Sigma'}$ is certainly
 contained in $Z_\Sigma\times Z_{\Sigma'}$.
 
-For the other direction, we first apply (i) and extend scalars, so we can assume $k$ is algebraically closed, and $Z_{\Sigma},Z_{\Sigma'}$ are reduced.
+\medskip\noindent
+For the other direction, we first apply (1)
+and extend scalars, so we can assume $k$ is
+algebraically closed, and $Z_{\Sigma},Z_{\Sigma'}$ are reduced.
 Hence their product is reduced as well [since a product of reduced schemes of finite type
 over an {\em algebraically closed} field is reduced; e.g., this follows from consideration of
 separating transcendence bases of function fields of irreducible components].
@@ -868,29 +859,112 @@ This we do by a standard symmetry trick.
 First choose $\sigma\in \Sigma$.
 We claim that $\sigma\times Z_{\Sigma'}(k)\subset  Z_{\Sigma\times \Sigma'}(k)$.
 Why does this hold?
-Well,  $\sigma\times \Sigma'\subset \Sigma\times \Sigma'\subset Z_{\Sigma\times\Sigma'}$,
+Well, $\sigma\times \Sigma'\subset
+\Sigma\times \Sigma'\subset Z_{\Sigma\times\Sigma'}$,
 and the closure of $\sigma\times \Sigma'$
 in $\sigma\times X'\simeq X'$
 is $\sigma\times Z_{\Sigma'}$.
 But $\sigma\times X'$ is closed in $X\times X'$.
 Hence the closure of $\sigma\times \Sigma'$ in $X\times X'$
 is $\sigma\times Z_{\Sigma'}$,
-which is therefore contained in the closed subscheme $Z_{\Sigma\times \Sigma'}$, so the intermediate claim
+which is therefore contained in the closed subscheme
+$Z_{\Sigma\times \Sigma'}$, so the intermediate claim
 is proved.  Now choose $z\in Z_{\Sigma'}(k)$.
-By analogous reasoning, we see that $Z_\Sigma(k)\times z\subset Z_{\Sigma\times \Sigma'}(k)$. The
+By analogous reasoning, we see that
+$Z_\Sigma(k)\times z\subset Z_{\Sigma\times \Sigma'}(k)$. The
 original claim follows.
-\end{itemize}
 \end{proof}
 
-\section{January 11 (Substitute lecture by A.~Venkatesh)}
-\subsection{Tori}
-\begin{definition}A $k$-\textit{split torus} $T$ is a $k$-group isomorphic
+\noindent
+In the proof of the theorem below we will use that
+a locally algebraic reduced $k$-group scheme $G$
+is smooth if $k$ is perfect. The argument in the proof of
+Groupoids, Lemma
+\ref{groupoids-lemma-reduced-group-scheme-prefect-field-characteristic-p-smooth}
+uses the module of differentials.
+Here is a slightly different argument.
+Over a perfect field any reduced scheme of finite type
+is smooth on a dense open set.
+The proof of this standard fact from algebraic geometry rests upon
+finding a ``separating transcendence basis'' $\{t_i\}$ for the
+function field $K$ of (each component of)
+the scheme, so that $K$ is separable over $k(t_1,\ldots,t_n)$.
+Once this is done the primitive element theorem
+allows one to prove generic smoothness via the Jacobian criterion.
+So let $U \subset G$ be a smooth, dense open subscheme.
+Then since $G$ is ``homogeneous'' the translates of $U$
+cover $G$, hence $G$ is smooth everywhere.
+To make this work, you need to extend $k$ to the
+algebraic closure. We omit the details.
+
+\medskip\noindent
+This fact will help us to prove the main result of this section.
+
+\begin{theorem}
+\label{theorem-zariskiclosureofsubgroup}
+Let $G$ be any smooth $k$-group scheme and $\Sigma \subset G(k)$
+any subgroup. Then the Zariski closure $Z_\Sigma \subset G$
+of $\Sigma$ is a smooth closed $k$-subgroup,
+and for any field extension $k'/k$,
+the closed subscheme $(Z_\Sigma)_{k'}\subset G_{k'}$ is the Zariski closure
+of $\Sigma\subset G(k')= G_{k'}(k')\subset G_{k'}$.
+\end{theorem}
+
+\begin{proof}
+Apply Lemma \ref{lemma-zariskiclosureprop} to $X = G$, our
+$k$-group scheme and $\Sigma \subset G(k)$ our subgroup of rational points.
+Compatibility with base change is part (2) of the lemma.
+We use the functoriality of the closure construction of part (4)
+and compatibility with products of part (3), with respect to the
+multiplication, inversion, and identity maps to see that we actually
+have a subgroup scheme. To get smoothness, it suffices to check
+ofter replacing $k$ by its algebraic closure (for example).
+Then we use part (1) of the lemma, along with Groupoids, Lemma
+\ref{groupoids-lemma-reduced-group-scheme-prefect-field-characteristic-p-smooth}
+to conclude.
+\end{proof}
+
+\noindent
+Returning to Example \ref{example-repns}, we see that
+$\mathcal{G}$ contains $\rho(\Gamma)$ as a Zariski-dense subset,
+so in fact $\mathcal{G}$ is ``controlled'' by $\Gamma$.
+For example, this will imply that the irreducibility or
+complete reducibility of the representation $\rho$
+can be studied in the algebraic category by looking at
+the group variety $\mathcal{G}$.
+Note that $\mathcal{G}$ might be highly disconnected,
+but at least the (geometric)
+component group will be finite. So representation theory questions
+over infinite fields can, in principle,
+be reduced to questions about connected algebraic groups
+and finite (\'etale) component groups, which might be more tractable.
+
+
+
+
+
+
+\section{Maximal split tori}
+\label{section-tori}
+
+\noindent
+In this section we discuss maximal split tori and how
+these will be used later to study the classification problem
+for reductive algebraic groups over field.
+
+\begin{definition}
+\label{definition-split-torus}
+Let $k$ be a field.
+A {\it $k$-split torus} $T$ is a $k$-group scheme $T$ isomorphic
 (over $k$) to $\mathbf{G}_m^r$ for some $r$.
 \end{definition}
-Recall that a torus is a $k$-group such that $T_{\bar k}$ is $\bar k$-split.
-(Definition \ref{torus}.)
+
+\noindent
+Thus we can now say a torus is a $k$-group such that $T_{\bar k}$ is a
+$\bar k$-split torus, see Definition \ref{definition-torus}.
+
 \begin{example}
-\label{standardSO2}
+\label{example-standardSO2}
 The special orthogonal group
 $$
 \text{SO}(x^2+y^2)=
@@ -910,64 +984,94 @@ $$
 \right)
 \mapsto a+ib.
 $$
-But it is not $\mathbf{R}$-split (cf. Example \ref{circlegroup}).
+But it is not $\mathbf{R}$-split, see Example \ref{example-circlegroup}.
 \end{example}
 
 \begin{definition}
-The \textit{character group} $X(T)$ or $X^*(T)$ of a $k$-split torus
+\label{definition-character-group}
+Let $k$ be a field.
+The {\it character group} $X(T)$ or $X^*(T)$ of a $k$-split torus
 $T$ is $\Hom_k(T,\mathbf{G}_m)$.
-The \textit{cocharacter group} $X_*(T)$ is $\Hom_k(\mathbf{G}_m,T)$.
+The {\it cocharacter group} $X_*(T)$ is $\Hom_k(\mathbf{G}_m,T)$.
 \end{definition}
-(If $T$ is not $k$-split then the ``right'' notions are not the group homomorphisms over $k$, but
-rather over $\bar k$, or as we shall see, over $k_s$.)
-Since (by Homework 1) $\text{End}_k(\mathbf{G}_m)=\mathbf{Z}$ under
-the identification $(t\mapsto t^n)\leftrightarrow n$, we get several facts,
-assuming $T$ is $k$-split:
+
+\noindent
+By Exercise \ref{exercise-HW1-1} we have
+$\text{End}_k(\mathbf{G}_m) = \mathbf{Z}$ under
+the identification $(t\mapsto t^n) \leftrightarrow n$.
+This implies several facts. Namely, if $T$ is a $k$-split torus, then
 \begin{enumerate}
-\item[1. ]The groups of characters and cocharacters $X^*(T)$ and $X_*(T)$ are both finite free $\mathbf{Z}$-modules, isomorphic to $\mathbf{Z}^r$ if $T\simeq \mathbf{G}_m^r$.
-\item[2. ]We have a perfect pairing $X_*(T)\times X^*(T)\to\Hom_k(\mathbf{G}_m,\mathbf{G}_m)=\mathbf{Z}$
-via composition. Explicitly, if $T=\mathbf{G}_m^r$ we identify
-$X^*(T)$ with $\mathbf{Z}^r$ via $(n_1,\ldots, n_r)\mapsto [(t_1,\ldots, t_r)\mapsto \prod t_i^{n_i}]$,
-and $X_*(T)$ with $\mathbf{Z}^r$ via $(m_1,\ldots, m_r)\mapsto [t\mapsto(t^{m_1},\ldots, t^{m_r})]$.
-Under these identifications, the pairing is defined by
-\[\langle(m_1,\ldots,m_r),(n_1,\ldots, n_r)\rangle=[t\mapsto t^{\sum m_i n_i}]\leftrightarrow \sum m_in_i\in \mathbf{Z}\simeq \text{End}_k(\mathbf{G}_m).\]
-\end{enumerate}
-\begin{remark}In the non-split case we have a functor $T\mapsto X^*(T_{k_s})$
-from algebraic $k$-tori to finite free $\mathbf{Z}$-modules equipped
-with a discrete action by ${\text{Gal}}(k_s/k)$  (where $\gamma \in {\text{Gal}}(k_s/k)$ acts
-via scalar extension throughout by $\gamma: k_s \simeq k_s$).  The theorem
-will be that this is an equivalence of categories.\end{remark}
-\begin{example}
-Returning to Example \ref{standardSO2}, i.e. $\text{SO}(x^2+y^2)$ over $k=\mathbf{R}$,
-the corresponding abelian group is just $\mathbf{Z}$ with the unique nontrivial action of
-${\text{Gal}}(\mathbf{C}/\mathbf{R})=\mathbf{Z}/(2)$.
-\end{example}
-\begin{remark} Once the right definitions of character and cocharacter groups are given for a general
-$k$-torus $T$, it will be the case that all elements of these groups are
-defined (as homomorphisms to or from $\mathbf{G}_m$) over any extension of $k$ that splits $T$.
-\end{remark}
-
-\subsection{Maximal split tori}
-The big theorem about maximal split tori is the following (for which we will later discuss
-the proof in some important special cases that we need in developing the basic theory).
-\begin{theorem}\label{maxsplittori}
-If $G$ is any smooth connected linear algebraic $k$-group,
-all maximal $k$-split tori $T\subset G$
-are $G(k)$-conjugate.
-\end{theorem}
-\begin{remark}
-\begin{itemize}\item[(1)]It might well be the case that any $k$-split torus $T\subset G$
-is trivial; for example, this is true for $G=\text{SO}(x^2+y^2+z^2)$ over $\mathbf{R}$.
-\item[(2)]The theorem is false if ``maximal $k$-tori'' were to replace ``maximal $k$-split tori''.
-And note that it is trivial (by dimension reasons) that maximal $k$-split tori always
-exist; in contrast, there may be no $k$-split maximal $k$-tori (once again,
-$\text{SO}(x^2+y^2+z^2)$ over $\mathbf{R}$).
-\end{itemize}
-\end{remark}
-
-\begin{example}
-Over $k=\mathbf{R}$, both $\text{SO}(x^2+y^2)$ and the standard diagonal torus
+\item The groups of characters and cocharacters
+$X^*(T)$ and $X_*(T)$ are both finite free
+$\mathbf{Z}$-modules, isomorphic to $\mathbf{Z}^r$
+if $T\simeq \mathbf{G}_m^r$.
+\item We have a perfect pairing
 $$
+\langle , \rangle :
+X_*(T)\times X^*(T)
+\longrightarrow
+\Hom_k(\mathbf{G}_m,\mathbf{G}_m) = \mathbf{Z}
+$$
+via composition. Explicitly, if $T = \mathbf{G}_m^r$
+then we have a basis $\chi_1, \ldots, \chi_r$ for $X^*(T)$ given by
+$\chi_i(t_1, \ldots, t_r) = t_i$
+and a basis $\lambda_1, \ldots, \lambda_r$ given by
+$\lambda_i(t) = (1, \ldots, 1, t, 1, \ldots, 1)$.
+Under the pairing we have $\langle \lambda_i, \chi_j \rangle = \delta_{ij}$,
+in other words, these are dual bases.
+\end{enumerate}
+
+\begin{remark}
+\label{remark-non-split-character-group}
+If $T$ is not $k$-split then the ``right'' notions are
+not the group homomorphisms over $k$, but
+rather over $\bar k$, or as we shall see, over
+the separable algebraic closure $k_s$.
+Namely, we will have a functor $T\mapsto X^*(T_{k_s})$
+from algebraic $k$-tori to finite free $\mathbf{Z}$-modules equipped
+with a continuous action by ${\text{Gal}}(k_s/k)$
+where $\gamma \in {\text{Gal}}(k_s/k)$ acts
+via scalar extension throughout by $\gamma: k_s \simeq k_s$.
+The theorem (insert future reference here)
+will be that this is an equivalence of categories.
+Moreover, it will be the case that
+all elements of the character and cocharacter groups
+are defined (as homomorphisms to or
+from $\mathbf{G}_m$) over any extension of $k$ that splits $T$.
+With $T = \text{SO}(x^2 + y^2)$ over $k=\mathbf{R}$
+as in Example \ref{example-standardSO2}
+the corresponding abelian group is just $\mathbf{Z}$
+with the unique nontrivial action of
+${\text{Gal}}(\mathbf{C}/\mathbf{R})=\mathbf{Z}/(2)$.
+\end{remark}
+
+\begin{definition}
+\label{definition-max-split-torus}
+Let $k$ be a field. Let $G$ be an algebraic $k$-group scheme.
+A {\it maximal split torus} is a $k$-subgroup $T \subset G$
+which is a split torus such that there is no strict inclusion
+$T \subset T' \subset G$ of $k$-subsgroups of $G$
+with $T'$ a split torus.
+\end{definition}
+
+\noindent
+Looking at dimension, we see that every $G$ has at least one
+maximal split torus. An important theorem about maximal split tori is that
+maximal split tori are $G(k)$-conjugate (insert future reference here).
+Part of the development of basic theory is to prove this theorem
+some important special cases.
+
+\medskip\noindent
+It might well be the case that any $k$-split torus $T\subset G$
+is trivial, i.e., $\dim(T) = 0$. For example, this is true for
+$G=\text{SO}(x^2+y^2+z^2)$ over $\mathbf{R}$.
+
+\medskip\noindent
+The uniqueness up to conjugacy is false if
+``maximal $k$-tori'' were to replace ``maximal $k$-split tori''.
+For example if $k=\mathbf{R}$, both $\text{SO}(x^2+y^2)$ and
+the standard diagonal torus
+$
 \{
 \left(
 \begin{smallmatrix}
@@ -976,18 +1080,13 @@ t & 0 \\
 \end{smallmatrix}
 \right)
 \}
-$$
-are maximal $\mathbf{R}$-tori
-inside $\SL_2$. But they're not $\SL_2(\mathbf{R})$-conjugate, or even $\mathbf{R}$-isomorphic.
-\end{example}
-\begin{example}Let $G=\GL_n$ over a field $k$.
-Then any separable extension $E/k$ of degree $n$
-gives rise to a ``Weil restriction'' maximal torus ${\text{R}}_{E/k}\mathbf{G}_m$ inside $\GL_n$.
-(At the level of $k$-points, this consists of elements of $E^\times$ acting on a
-$k$-basis for $E$ by multiplication.)
-\end{example}
+$
+are maximal $\mathbf{R}$-tori inside $\SL_2$. But they're not
+$\SL_2(\mathbf{R})$-conjugate, or even $\mathbf{R}$-isomorphic.
+
 \begin{example}
-Let $G=\SL_n$. Let
+\label{example-standard-torus-SL}
+Let $G = \SL_n$ over a field $k$. Let
 $$
 T = \left\{
 \left(
@@ -1002,24 +1101,17 @@ t_1 & & \\
 \right\}
 \subset G
 $$
-be the standard torus. The claim is that
-$T$ is maximal as a $k$-torus in $G$ and that all maximal $k$-split tori in $G$ are $G(k)$-conjugate to $T$.
-
-We will not prove the conjugacy assertion now, but it will follow from the fact
-that any commuting set of diagonalizable matrices can be simultaneously diagonalized, plus the fact that if $T'\subset\SL_n$ is a torus then $T'(k)$ consists of semisimple elements.
-But let's at least now prove that this diagonal $T$ is maximal in $\SL_n$:
-\begin{proof}[Proof of maximality]
-Note that it suffices to check this after extending scalars to an infinite field.
-Under this assumption, the claim follows from the fact that for any $k$-algebra $R$, we have
+be the standard torus. We claim $T$ is maximal as a $k$-torus in $G$.
+The claim follows from the fact that for any $k$-algebra $R$, we have
 \begin{equation}
-\label{centralizereq}
-Z_{G(R)}(T_R)=T(R).
+\label{equation-centralizereq}
+Z_{G(R)}(T_R) = T(R).
 \end{equation}
-Granting \eqref{centralizereq}, in fact it follows that $T\subset G$ is a maximal commutative subgroup
-scheme, and hence \textit{a fortiori} a maximal torus.
-
-To see \eqref{centralizereq} simply compute
-\[
+Granting \eqref{equation-centralizereq}, it follows that
+$T \subset G$ is a maximal commutative $k$-subgroup, and hence
+a fortiori a maximal torus.
+To see \eqref{equation-centralizereq} simply compute
+$$
 \left(
 \begin{smallmatrix}
 t_1 & & \\
@@ -1037,60 +1129,68 @@ t_1^{-1} & & \\
 \right)
 =
 [t_it_j^{-1}g_{ij}].
-\]
-By the infinitude of $k$, we thus see that if $g\in Z_{G(R)}(T_R)$ then $g_{ij}=0$ for $i\neq j$.
-\end{proof}
+$$
+Thus we see that if $g\in Z_{G(R)}(T_R)$ then $g_{ij}=0$ for $i\neq j$
+because we can choose $t_i$ and $t_j$ such that $t_it_j^{-1}$ is
+not equal to $1$.
 \end{example}
 
-\begin{remark}There are plenty of other maximal commutative $k$-subgroups (not tori) non-conjugate to $T$.
-As an exercise, find a commutative $(n-1)$-dimensional
-smooth connected unipotent subgroup of $\SL_n$ that is a maximal
-smooth commutative $k$-subgroup. Note that this is ``as far as possible from being a torus'' since it is unipotent.
-(The abstract notion of ``unipotence'' and its contrast with tori will be developed later in the course.
-For present purposes with this example, just think in terms of matrices.)
-\end{remark}
-
-\begin{example}Let $G=\text{Sp}_{2n}$. Let $U$ be an $n$-dimensional $k$-vector space,
-and $U^*$ its dual. Denote the pairing $U\times U^*\to k$ by $[\cdot , \cdot ]$.
-Define $W=U\oplus U^*$. It has a standard symplectic form $\omega$ defined by
-\[\omega((x,x^*),(y,y^*))=[x,y^*]-[y,x^*].\]
-Thus we can realize $G$ as $\text{Aut}(W,\omega)=\text{Sp}(W)$.
-There's a map $\phi:\GL(U)\to \text{Sp}(W)$ given by $g\mapsto g\oplus (g^t)^{-1}$.
+\begin{example}
+\label{example-standard-torus-Sp}
+Let $G = \text{Sp}_{2n}$. Let $U$ be an $n$-dimensional $k$-vector space,
+and $U^*$ its dual. Denote the pairing $U \times U^*\to k$ by $[- , -]$.
+Define $W = U \oplus U^*$. It has a standard symplectic form
+$\omega$ defined by
+$$
+\omega((x,x^*),(y,y^*))=[x,y^*]-[y,x^*].
+$$
+Thus we can realize $G$ as $\text{Aut}(W, \omega) = \text{Sp}(W)$.
+There's a map $\phi:\GL(U)\to \text{Sp}(W)$ given by
+$g\mapsto g\oplus (g^t)^{-1}$.
 This is easily seen to be a closed immersion.
-The claim about maximal tori in $G$ is that for $T'\subset \GL(U)$
-a maximal $k$-split torus, the image $\phi(T')\subset\text{Sp}(W)$ is maximal $k$-split, and any such is
-$G(k)$-conjugate to $\phi(T)$, where $T$ is the standard maximal $k$-split torus in $\GL(U)$. In particular, the dimension of the maximal $k$-split tori in $G=\text{Sp}_{2n}$ is $n$.
-
-The proof of maximality is as before: show that $Z_{G(R)}(\phi(T)_R)=\phi(T)(R)$. The proof that all maximal $k$-split tori are
-$G(k)$-conjugate to $\phi(T)$ can in fact be reduced to the corresponding claim for $\GL(U)$.
-This is just an example, so we do not address rigorous details at the present time; we'll come back to this
-more broadly in the sequel course as well.
+We will see later that for $T' \subset \GL(U)$ a maximal $k$-split torus,
+the image $\phi(T')\subset\text{Sp}(W)$ is maximal $k$-split.
+In particular, we will find that
+the dimension of the maximal $k$-split tori in
+$G = \text{Sp}_{2n}$ is $n$.
 \end{example}
-\subsection{Building up groups from tori}
-Given any connected \textit{reductive}\footnote{This notion will be defined later.}
-$k$-group $G$, choose a maximal $k$-split torus $T$. One can construct the following data:
+
+\noindent
+We will see later how to build linear algebraic groups from tori.
+To do this, we will use a root datum $\Phi$.
+Given any connected reductive\footnote{This notion will be defined later.}
+$k$-group $G$, choose a maximal $k$-split torus $T$. One can construct
+the following data:
 \begin{itemize}
-\item A finite subset of \textit{roots} $\Phi\subset X^*(T)$,
-\item A finite subset of \textit{coroots} $\Phi^\vee\subset X_*(T)$,
+\item A finite subset of {\it roots} $\Phi\subset X^*(T)$,
+\item A finite subset of {\it coroots} $\Phi^\vee\subset X_*(T)$,
 \item A bijection $\alpha\mapsto \alpha^\vee$, mapping $\Phi\to\Phi^\vee$,
 and satisfying some combinatorial properties.
 \end{itemize}
-\begin{theorem}Over an algebraically closed field $k$, the torus $T$ together with the above
-data will turn out determine $G$ up to isomorphism.  This is a {\em huge} theorem;
+Over an algebraically closed field $k$, the torus $T$ together with the above
+data will turn out determine $G$ up to isomorphism.
+This is a {\em huge} theorem;
 it will be the topic of the final section of the course.
-\end{theorem}
-\subsubsection{Construction of root datum}
-Fix a connected reductive $G$ as above.
-Consider the set of all \textbf{unipotent 1-parameter subgroups} of $G$;
-i.e., closed subgroups $u:\mathbf{G}_a \hookrightarrow G$ that are \textit{normalized by $T$}.
-In view of the fact that the only automorphisms of $\mathbf{G}_a$ over an algebraically
-closed field are unit scalings on the coordinate, it follows that
-there exists a $k$-homomorphism $\chi:T\to \mathbf{G}_m$
-satisfying $t\cdot u(x)\cdot t^{-1}=u(\chi(t)x)$ at the level of functors.
-The set of these $u$ turns out to be finite, and the set of $\chi$'s
+
+\medskip\noindent
+We briefly discuss how the root datum will be constructed.
+Fix a connected reductive $G$ as above. Consider the set of all
+unipotent 1-parameter subgroups $U \subset G$ normalized by $T$.
+Unipotent here means that there is an isomorphism
+$u : \mathbf{G}_a \to U$.
+In view of the fact that the only automorphisms of $\mathbf{G}_a$
+over an algebraically closed field are unit scalings on the coordinate,
+it follows that there exists a $k$-homomorphism
+$\chi_U : T \to \mathbf{G}_m$ satisfying
+$t \cdot u(x) \cdot t^{-1} = u(\chi_U(t)x)$
+for $x \in \mathbf{G}_a$ and $t \in T$.
+The set of these $U$ turns out to be finite, and the set of $\chi_U$'s
 which arise in this fashion are the roots $\Phi$ of $T$ in $G$.
+
 \begin{example}
-Let $G=\SL_n$ and $T$ the standard split torus.
+\label{example-roots-SL}
+Let $G = \SL_n$ and $T$ the standard split torus
+(Example \ref{example-standard-torus-SL}).
 For $i\neq j$ there is a unipotent 1-parameter group $u_{ij}$
 given by
 $$
@@ -1103,27 +1203,47 @@ x \mapsto
 \end{smallmatrix}
 \right)
 $$
-where the off-diagonal entry in the $ij$-spot is $x$ and the other off-diagonal entries are zero.
-For $t=\text{diag}(t_1,\ldots, t_n)\in T$, one computes $t\cdot u_{ij}(x)\cdot t^{-1}=u_{ij}(t_it_j^{-1}x)$,
+where the off-diagonal entry in the $ij$-spot is $x$
+and the other off-diagonal entries are zero.
+For $t = \text{diag}(t_1,\ldots, t_n)\in T$, one computes
+$t\cdot u_{ij}(x)\cdot t^{-1}=u_{ij}(t_it_j^{-1}x)$,
 so the roots of $T\subset G$
 are of the form $\chi_{ij}:t\mapsto t_it_j^{-1}$ for $1 \le i\neq j \le n$.
 \end{example}
-\begin{example}Let $G=\text{Sp}_{2n}=\text{Sp}(W)$,
-let $T$ be the standard diagonal split torus in $\GL(U)$,
+
+\begin{example}
+\label{example-roots-Sp}
+Let $G=\text{Sp}_{2n}=\text{Sp}(W)$ with notation as in
+Example \ref{example-standard-torus-SL}.
+Let $T$ be the standard diagonal split torus in $\GL(U)$,
 which we identify with its image in $G$ via the map $\phi$.
-The roots of $T\subset \GL(U)\to G$
-are \[\text{diag}(t_1,\ldots, t_n)\mapsto\begin{cases}t_it_j^{-1}&i\neq j, 1\leq i,j\leq n,\text{ or }\\
-t_it_j&\text{ and }1\leq i,j\leq n\text{ (including $i=j$)}.\end{cases}\]
-Thus they are $\chi_{ij}$ for $i\neq j$ as above,
+The roots of $T \subset \GL(U)\to G$ are
+$$
+\text{diag}(t_1,\ldots, t_n)
+\mapsto
+\begin{cases}
+t_it_j^{-1} & i\neq j, 1\leq i,j\leq n, \text{ or } \\
+t_it_j & \text{ and } 1\leq i,j\leq n \text{ (including $i=j$)}.
+\end{cases}
+$$
+Thus they are $\chi_{ij}$ for $i\neq j$ as in Example \ref{example-roots-SL},
 plus new roots $\chi'_{ij}$ for all pairs $(i,j)$.
 \end{example}
-One can check that in both of these examples, multiplication
-into $G$ from a direct product of $T$ against the images of the roots in a suitable order
-is an isomorphism onto an open subset of the group $G$.  This is the so-called
-``open cell', and it exists in general (not just in the above examples).
+
+\noindent
+One can check that in both
+Example \ref{example-roots-SL} and Example \ref{example-roots-Sp},
+multiplication into $G$ from a direct product of $T$
+against the images of the roots in a suitable order
+is an isomorphism onto an open subset of the group $G$.
+This is the so-called ``open cell', and it exists in general
+(not just in the above examples).
 The structure of this open cell underlies why it is reasonable to believe
 that $G$ can be reconstructed completely from $T$ and the root system.
 We will make this more concrete at the beginning of the next lecture.
+
+
+
 \section{January 13}
 \subsection{Mapping additive and multiplicative groups into a reductive group}
 As a  consequence of the theory of maximal tori, roots and coroots, there is an abundance of $\mathbf{G}_a$'s and
