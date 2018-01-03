@@ -93,7 +93,7 @@ that $G$ is a linear algebraic $k$-group scheme.
 If $G$ is an algebraic $k$-group scheme, then one can show
 that $G$ is affine if and only if it is a $k$-subgroup
 (cf. Definition \ref{definition-subgroup}) of $\GL_n$ for some $n$.
-See Example \ref{GL} below for the definition of $\GL_n$.
+See Example \ref{example-GL} below for the definition of $\GL_n$.
 This is special to the case of fields in the sense that it is
 not known over more general rings (e.g., not even over the dual
 numbers over a field), though it is also true (and useful) over
@@ -1240,15 +1240,15 @@ This is the so-called ``open cell', and it exists in general
 (not just in the above examples).
 The structure of this open cell underlies why it is reasonable to believe
 that $G$ can be reconstructed completely from $T$ and the root system.
-We will make this more concrete at the beginning of the next lecture.
 
-
-
-\section{January 13}
-\subsection{Mapping additive and multiplicative groups into a reductive group}
-As a  consequence of the theory of maximal tori, roots and coroots, there is an abundance of $\mathbf{G}_a$'s and
-$\mathbf{G}_m$'s sitting inside a so-called ``split connected reductive'' group such as $\SL_n$ or $\text{Sp}_{2n}$.
-To illustrate the principles involves, if we consider the standard upper and lower triangular
+\medskip\noindent
+Here is a slightly more concrete statement.
+As a consequence of the theory of maximal tori, roots and coroots,
+there is an abundance of $\mathbf{G}_a$'s and
+$\mathbf{G}_m$'s sitting inside a so-called
+``split connected reductive'' group such as $\SL_n$ or $\text{Sp}_{2n}$.
+To illustrate the principles involves, if we consider the
+standard upper and lower triangular
 unipotent 1-parameter subgroups in $\SL_2$ then we get a map
 \begin{eqnarray*}
 \mathbf{G}_a \times \mathbf{G}_m \times \mathbf{G}_a &
@@ -1275,89 +1275,238 @@ u' & 1
 \end{eqnarray*}
 This is easily check to be an open immersion.
 More generally, we'll have an open immersion of the form
-\[(\prod_i\mathbf{G}_a)\times(\prod_j \mathbf{G}_m)\times(\prod_k \mathbf{G}_a)\to G=\SL_n,\text{Sp}_{2n},\ldots.\]
+$$
+(\prod\nolimits_i\mathbf{G}_a) \times
+(\prod\nolimits_j \mathbf{G}_m) \times
+(\prod\nolimits_k \mathbf{G}_a) \longrightarrow
+G = \SL_n,\text{Sp}_{2n},\ldots
+$$
 The torus $T$ in the middle is maximal in $G$;
-the $\mathbf{G}_a$'s are normalized by $T$; and the maps are determined by the corresponding ``root data''.
+the $\mathbf{G}_a$'s are normalized by $T$; and
+the maps are determined by the corresponding ``root data''.
 
-\subsection{Classification of 1-dimensional connected linear algebraic groups}
-Now we come back to a proper development
-of the subject, rather than a discussion of things to come much
-later. The goal for this lecture is to prove the following theorem.
-By convention, ``linear algebraic $k$-group'' will mean
-``smooth affine $k$-group''.
-\begin{theorem}\label{1dconnlinalg}If $k$ is algebraically closed, the only
-1-dimensional connected linear algebraic $k$-groups are $\mathbf{G}_m$ and $\mathbf{G}_a$.
-\end{theorem}
-\begin{lemma}\label{1dconnlinalgcor}
-For any field $k$, if $G$ is a 1-dimensional connected linear algebraic $k$-group,
-then the following hold.
-\begin{itemize}
-\item[(i)] $G$ is commutative.
-\item[(ii)] There exists a finite extension $k'/k$
-such that $G_{k'}$ is isomorphic to either $\mathbf{G}_a$ or $\mathbf{G}_m$.
-The first case is known as the \textbf{additive} or \textbf{unipotent}
-case; the second is called the \textbf{multiplicative case}.
-\end{itemize}
+
+
+\section{Classification of $1$-dimensional linear algebraic groups}
+\label{section-dim-1}
+
+\noindent
+In this section we classify algebraic groups of dimension $1$.
+
+\begin{lemma}
+\label{lemma-unique-group-sctructures}
+The only $k$-group structures on $\mathbf{A}^1$ and $\mathbf{G}_m$
+are the usual ones, up to a curve automorphism moving the identity point.
+In particular, for the usual identity point the group structure
+is uniquely determined.
 \end{lemma}
-\begin{remark}These two cases are in fact different. \textit{Exercise}: Show that
-$$\Hom_k(\mathbf{G}_a,\mathbf{G}_m)=\Hom_k(\mathbf{G}_m,\mathbf{G}_a)=1$$ over a field $k$,
-although non-trivial homomorphisms can exists over an artin local ring $k$.
-(Such non-trivial homomorphisms cannot be isomorphisms, however.)
-\end{remark}
-\begin{proof}[Proof of Corollary $\ref{1dconnlinalgcor}$ from Theorem
-$\ref{1dconnlinalg}$]
-(i) This is trivial, since by Homework 2, it suffices to prove that $G(\bar k)$ is commutative.
 
-(ii) Note that $\bar k =\varinjlim k'$, the direct limit
-of $k'\subset\bar k$ which are finite over $k$.
-Now in general, if $X$ and $Y$ are any finite type $k$-schemes
-(for example $G$ and $\mathbf{G}_a$ or $\mathbf{G}_m$),
-then a $\bar k$-map $f:X_{\bar k}\to Y_{\bar k}$ arises from
-a $k'$-map $f':X_{k'}\to Y_{k'}$ for some $k'$ in this direct system of
-intermediate fields. In the affine case this is more or less trivial:
-chase where the generators and relations in a finite presentation
-of $\Gamma(Y_{\bar k})$ go in $\Gamma(X_{\bar k})$,
-and observe that only finitely many elements of $\bar k$ are involved
-in specifying the map $f$. So just take the subfield generated by these elements. Since the affine case is all we need here, and will be most important for us in this course, we won't prove the general case.
-But it's proved in \cite[IV$_3$, \S8]{EGA} in vast generality, and note that the affine case does not tautologically
-imply the general case (i.e., some thought is required).
+\begin{proof}
+We can assume $k = \bar k$ (small detail omitted).
+
+\medskip\noindent
+First let's do the case of $\mathbf{A}^1$. Since
+$\text{Aut}(\mathbf{A}^1)$ acts transitively on
+$\mathbf{A}^1(k)$, we can assume that the identity is
+$0 \in \mathbf{A}^1(k)$.
+Say we have a group law on $\mathbf{A}^1$.
+For $x \in \mathbf{A}^1(k)$, translation by $x$ is a $k$-automorphism
+$t_x$ of $\mathbf{A}^1$. If $x \neq 0$, there are no fixed $k$-points
+(this is a fact about groups). Now we know what $\text{Aut}(\mathbf{A}^1)$
+consists of affine transformations $y \mapsto ay + b$. To be fixed-point free
+on $k$-points, it must be of the form $y\mapsto y + c$. Since it takes
+$0$ to $x$, $c = x$. So the group is the usual $\mathbf{G}_a$.
+
+\medskip\noindent
+The argument for $\mathbf{G}_m$ is much the same.
+In this case, automorphisms of $\mathbf{G}_m$ extend to automorphisms
+of $\mathbf{P}^1$ which either fix or swap zero and infinity.
+That is, they are of the form $y \mapsto y\alpha$ or $y \mapsto \alpha/y$.
+Since $k = \bar k$, $\sqrt\alpha\in k$, so $y\mapsto \alpha/y$
+has fixed points. Hence $t_x$ is $y \mapsto y\alpha$ for some $\alpha$,
+and if we pin down the identity in the group law to be
+$1 \in \mathbf{G}_m(k)$ (as we may) then we must have $\alpha = x$.
 \end{proof}
-\subsubsection*{Refinements of Corollary \ref{1dconnlinalgcor}(ii)}
-In the additive case, we can actually choose the finite extension $k'/k$ to be purely inseparable.
-By the direct limit argument from the proof of Corollary
-\ref{1dconnlinalgcor}, this is equivalent to the claim that over a perfect
-field $k$, a 1-dimensional connected linear algebraic $k$-group which is additive
-over $\bar k$, is actually $k$-isomorphic to $\mathbf{G}_a$
-(since the perfect closure of a field $k$ is the direct limit of the purely inseparable finite extensions of $k$).
-In the multiplicative case, we likewise claim that we can choose the finite extension $k'/k$
-to be separable. Again by the direct limit argument, this is equivalent to the claim
-that if $k$ is separably closed then a 1-dimensional connected linear algebraic $k$-group which is $\mathbf{G}_m$ over $\bar k$ is actually isomorphic to $\mathbf{G}_m$ over $k$
-(recall that the separable closure of $k$ is a direct limit of
-finite separable extensions).
 
-The equivalent formulations of these facts -- i.e., the claims over perfect and separably closed fields -- will follow in the
-perfect/additive case from the proof of Theorem \ref{1dconnlinalg} and
-in the separably-closed/multiplicative case from Homework 2.
+\begin{lemma}
+\label{lemma-geometric-genus-zero}
+Let $k$ be a field. Let $G$ be a connected affine group scheme over $k$
+of dimension $1$. Then the geometric genus of the curve $G_{red}$ is zero.
+\end{lemma}
 
-\subsection{Examples of non-split 1-dimensional linear algebraic groups}
-\begin{example}[Non-split multiplicative group]Let $k$ be a field, and $k'/k$ a quadratic Galois extension
-splitting an irreducible separable polynomial $f(t) = t^2 + at + b$. (If ${\text{char}}(k) \ne 2$
+\begin{proof}
+Recall that the geometric genus is defined by going to the algebraic closure
+and taking the genus of the smooth projective model, see
+Curves, Definition \ref{curves-definition-geometric-genus}.
+(The definition applies as $G_{red}$ is geometrically irreducible.)
+Thus we may base change to the algebraic closure of $k$.
+In this case $G_{red}$ is a $k$-subgroup
+(Groupoids, Lemma \ref{groupoids-lemma-reduced-subgroup-scheme-perfect}).
+Thus we may assume $k$ is algebraically closed and $G$ is
+affine and by Groupoids, Lemma
+\ref{groupoids-lemma-reduced-group-scheme-prefect-field-characteristic-p-smooth}
+smooth over $k$.
+
+\medskip\noindent
+Let $G \subset X$ be a nonsingular projective compactification, see
+Curves, Section \ref{curves-section-curves-function-fields}.
+The inverse $i : G \to G$ extends to an automorphism $i : X \to X$
+by the uniqueness of the nonsingular projective model.
+Thus if $m : G \times G \to G$ extends to $m : X \times X \to X$,
+then $X$ is a $k$-group scheme too and $G \to X$ is a $k$-homomorphism.
+Then by Groupoids, Lemma \ref{groupoids-lemma-open-subgroup-closed-over-field}
+we would get that $G = X$, which is a contradiction.
+Thus $m : G \times G \to G \to X$ does not extend to a morphism
+$X \times X \to X$. By Resolution of Surfaces, Lemma \ref{}
+there is a sequence of blowing ups
+$$
+W_n \to W_{n - 1} \to \ldots \to W_0 = X \times X
+$$
+such that $m$ extends to a morphism $f : W_n \to X$. Each of the morphisms
+$W_i \to W_{i - 1}$ is the contraction of an exceptional curve
+$E_i \subset W_i$, see
+Resolution of Surfaces, Section \ref{resolve-section-minus-one}.
+If each of these is contracted to a point in $X$ by $f$, then
+we would get an extension of $m$ to $X \times X$, see
+Resolution of Surfaces, Lemma \ref{resolve-lemma-factor-through-contraction}.
+Thus this is not the case and we obtain a nonconstant
+morphism $\mathbf{P}^1_k = E_i \to X$ for some $i$.
+Combined with the Riemann-Hurwitz formula and the behaviour
+of genus under inseparable maps (see
+Curves, Sections \ref{curves-section-riemann-hurewitz} and
+\ref{curves-section-inseparable}) this forces
+the genus of $X$ to be zero as desired.
+\end{proof}
+
+\begin{theorem}
+\label{theorem-1dconnlinalg}
+If $k$ is algebraically closed, the only 1-dimensional connected
+linear algebraic $k$-groups are $\mathbf{G}_m$ and $\mathbf{G}_a$.
+\end{theorem}
+
+\begin{proof}
+Let $G$ be a connected 1-dimensional linear algebraic $k$-group.
+Then $G$ is a smooth curve over $k$. We may choose
+an open immersion $G \to X$ where $X$ is a smooth projective
+curve over $k$. Namely, $X$ is the nonsingular projective model of $G$, see
+Curves, Section \ref{curves-section-introduction}.
+Since $k$ is algebraically closed $X \setminus G$
+is a finite nonempty set of $k$-points.
+By Lemma \ref{lemma-geometric-genus-zero} we have $X \cong \mathbf{P}^1$.
+
+\medskip\noindent
+We have an infinite group $\Gamma = G(k)$ acting on $\mathbf{P}^1$
+fixing a finite set of points $\mathbf{P}^1 - G$.
+If an automorphism of $\mathbf{P}^1$ fixes 3 points, it is trivial.
+Thus $\mathbf{P}^1-G$ consists of either 1 or 2 points.
+Therefore we obtain, after a change of coordinates, an isomorphism
+of pointed curves
+$(G,e)\simeq (\mathbf{A}^1,0)$ or $(\mathbf{G}_m,1)$.
+It suffices to check that $\mathbf{A}^1$ and $\mathbf{G}_m$
+each admit a unique group structure which we did in
+Lemma \ref{lemma-unique-group-sctructures}.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-1dconnlinalgcor}
+For any field $k$, if $G$ is a
+1-dimensional connected linear algebraic $k$-group,
+then the following hold:
+\begin{enumerate}
+\item $G$ is commutative, and
+\item there exists a finite extension $k'/k$
+such that $G_{k'} \cong \mathbf{G}_a$ or $G_{k'} \cong \mathbf{G}_m$.
+\end{enumerate}
+\end{lemma}
+
+\noindent
+The first case is known as the additive or unipotent
+case; the second is called the multiplicative case.
+These two cases are in fact different. Exercise: Show that
+$$
+\Hom_k(\mathbf{G}_a, \mathbf{G}_m) =
+\Hom_k(\mathbf{G}_m,\mathbf{G}_a) = 1
+$$
+over a field $k$. Warning: non-trivial homomorphisms can exists over
+an artin local ring $k$ but they are never isomorphisms.
+
+\begin{proof}
+Part (1) follows from Theorem \ref{theorem-1dconnlinalg},
+since by Exercise \ref{exercise-HW2-3},
+it suffices to prove that $G(\bar k)$ is commutative.
+
+\medskip\noindent
+Proof of (2). Note that $\bar k = \colim k'$, the colimit over
+$k' \subset \bar k$ which are finite over $k$. Thus
+$\Spec(\bar k) = \lim \Spec(k')$.
+Thus the category of schemes of finite type over $\bar k$
+is the colimit of the categories of schemes of finite type over $k'$.
+See Limits, Lemma \ref{limits-lemma-descend-finite-presentation} or
+use \cite[IV$_3$, \S8]{EGA}.
+Thus the isomorphism $G_{\bar k} \to \mathbf{G}_{a, \bar k}$
+or $G_{\bar k} \to \mathbf{G}_{a, \bar k}$ coming from
+Theorem \ref{theorem-1dconnlinalg} descends to some $k'$.
+\end{proof}
+
+\begin{remark}[Refinement]
+\label{remark-refine-1dconnlinalgcor}
+In the additive case of Lemma \ref{lemma-1dconnlinalgcor} we can actually
+choose the finite extension $k'/k$ to be purely inseparable.
+By the direct limit argument from the proof, this is equivalent to the
+claim that over a perfect field $k$, a 1-dimensional connected linear
+algebraic $k$-group which is additive over $\bar k$, is actually
+$k$-isomorphic to $\mathbf{G}_a$ (since the perfect closure of a
+field $k$ is the direct limit of the purely inseparable finite
+extensions of $k$). In the multiplicative case of
+Lemma \ref{lemma-1dconnlinalgcor}, we likewise claim
+that we can choose the finite extension $k'/k$ to be separable.
+Again by the direct limit argument, this is equivalent to the claim
+that if $k$ is separably closed then a 1-dimensional connected
+linear algebraic $k$-group which is $\mathbf{G}_m$ over $\bar k$
+is actually isomorphic to $\mathbf{G}_m$ over $k$ (recall that the
+separable closure of $k$ is a direct limit of finite separable extensions).
+If we ever need these facts we will turn this remark into a lemma
+and provide a carefull proof here.
+\end{remark}
+
+\noindent
+So now we know that over a field $k$,
+while there can be many isomorphism classes of 1-dimensional
+smooth connected linear algebraic groups, they all become isomorphic to
+$\mathbf{G}_m$ or $\mathbf{G}_a$ over $\bar k$.
+We say that they are {\it forms} of $\mathbf{G}_m$ or $\mathbf{G}_a$.
+We finish this section with some examples
+of non-split 1-dimensional linear algebraic groups, i.e., of
+nontrivial forms of $\mathbf{G}_m$ or $\mathbf{G}_a$.
+
+\begin{example}[Non-split multiplicative group]
+\label{example-non-split-multiplicative}
+Let $k$ be a field, and $k'/k$ a quadratic Galois extension
+splitting an irreducible separable polynomial $f(t) = t^2 + at + b$.
+(If ${\text{char}}(k) \ne 2$
 we can assume $a = 0$, but why would one want to do that?)
-Consider the curve $G\subset \mathbf{A}^2_k$ defined by $x^2 + axy + by^2 = 1$.
+Consider the curve $G\subset \mathbf{A}^2_k$ defined by
+$x^2 + axy + by^2 = 1$.
 Secretly this is the norm-1 subgroup of the Weil restriction
-${\text{R}}_{k'/k}\mathbf{G}_m$, which is ``$k'^\times$ regarded as a $k$-group'' (although
+${\text{R}}_{k'/k}\mathbf{G}_m$, which is ``$k'^\times$
+regarded as a $k$-group'' (although
 that's a sloppy, imprecise way of defining the group).
 This has a natural $k$-group structure, defined in analogy
-to $\mathbf{S}^1$ over $\mathbf{R}$; cf. Example \ref{circlegroup}.
+to $\mathbf{S}^1$ over $\mathbf{R}$; cf. Example \ref{example-circlegroup}.
 
+\medskip\noindent
 We have $G_{k'} \simeq \mathbf{G}_m$.
 But $G$ is not $k$-isomorphic to $\mathbf{G}_m$ even as mere $k$-schemes.
 One way to see this is that the unique regular compactification
-$\{x^2+axy + by^2=z^2\}\subset\mathbf{P}^2_k$ has only 1 point complementary to $G$ and its residue field is
+$\{x^2+axy + by^2=z^2\}\subset\mathbf{P}^2_k$ has only 1 point
+complementary to $G$ and its residue field is
 $k'$, while the unique regular compactification $\mathbf{P}^1_k$
-of $\mathbf{G}_m$ has two points complementary to $\mathbf{G}_m$ and they are both $k$-rational.
+of $\mathbf{G}_m$ has two points complementary to $\mathbf{G}_m$
+and they are both $k$-rational.
 \end{example}
+
 \begin{example}[Non-split additive group]
+\label{example-non-split-additive}
 Let $k$ be an imperfect field of characteristic $p>0$
 and choose $a\in k-k^p$.
 Let $G\subset\mathbf{A}^2$ be the curve
@@ -1373,104 +1522,37 @@ in $\mathbf{P}^2$ is $y^p=xz^{p-1}+ax^p$.
 This is actually regular, as we'll see in a moment. At infinity,
 $y^p=ax^p$ is the only point, with residue field $k'$.
 Since this is not $k$-rational, as long as we know it is regular then
-we know that $G\not\simeq \mathbf{G}_a$ as $k$-schemes, since the unique point complementary
-to $\mathbf{G}_a$ in its regular compactification $\mathbf{P}^1_k$ is $k$-rational.
+we know that $G\not\simeq \mathbf{G}_a$ as $k$-schemes,
+since the unique point complementary
+to $\mathbf{G}_a$ in its regular compactification $\mathbf{P}^1_k$
+is $k$-rational.
 
-To see the asserted regularity, note that when $x=1$ the equation $y^p=xz^{p-1}+ax^p$
-becomes $y^p=a+z^{p-1}$. This actually defines a Dedekind ring (exercise), which proves regularity.
+\medskip\noindent
+To see the asserted regularity, note that when $x=1$
+the equation $y^p=xz^{p-1}+ax^p$
+becomes $y^p=a+z^{p-1}$. This actually defines a Dedekind ring
+(exercise), which proves regularity.
 \end{example}
-\subsection{Start of proof of the classification theorem}
-Given a connected 1-dimensional linear algebraic $k$-group $G$
-(recall that $k=\bar k$), choose an open immersion
-$G\to X$ where $X$ is a smooth projective curve over $k$.
-Then $X-G$ is a finite nonempty set of $k$-points.
-We claim that $X\simeq \mathbf{P}^1_k$.
 
-\begin{proof}[Proof of claim]
-Since $k=\bar k$, it suffices to prove that the genus $g$ of $X$ vanishes.
-The finite set $G(k)-\{e\}$ acts on $G$ via fixed-point-free automorphisms.
-Since the smooth compactification process is functorial, these all extend to automorphisms of $X$.
-But it is a general fact that any smooth projective (connected)
-curve $C$ over an algebraically closed field with genus $g\geq 2$
-has finite automorphism group, so $g \leq 1$.
-
-[Here is one method is to show that $C$ has finite automorphism group: we'll show that the locally
-finite type automorphism scheme
-of $C$ is both \'etale and finite type.  The \'etaleness follows because
-the tangent space at the identity to the Aut-scheme is the space of global vector
-fields, which vanishes because the sheaf of vector fields (dual to $\Omega^1_{C/k}$) has
-degree $1-g < 0$.
-To prove the finite type property, the formation of graphs of automorphisms defines a map from
-the automorphism scheme to the Hilbert scheme of $C\times C$, and one shows
-this is a locally closed immersion by the same argument that already occurs
-in the construction of Hom-schemes as subschemes of Hilbert schemes via consideration of graphs.
-Although the Hilbert scheme is just locally of finite type, the locus with
-a given Hilbert polynomial relative to a specified ample line bundle is contained in a finite type
-part.  The graphs of automorphisms  of $C$ all have the same Hilbert polynomial
-on $C \times C$ relative to a fixed ample line bundle arising from one on $C$ and hence
-these graphs lie in a finite-type part of the Hilbert scheme.]
-
-Next observe that $G(k)$ acts on $X$ preserving the finite set $X-G$.
-Hence some finite index subgroup of $G(k)$ must fix $X-G$ pointwise.
-
-Suppose for contradiction that $g=1$. Choose any point $O\in X-G$.
-Then $(X,O)$ is an elliptic curve $E$.
-But then $E$ has an infinite group of automorphisms,
-which contradicts the theory of elliptic curves
-\cite[Theorem III.10.1]{SilvermanEllipticCurves}.
-\end{proof}
-So we know $X=\mathbf{P}^1$.
-We have an infinite group $\Gamma$ acting on $\mathbf{P}^1$ fixing
-a finite set of points $\mathbf{P}^1-G$.
-If an automorphism of $\mathbf{P}^1$ fixes 3 points, it is trivial.
-Thus $\mathbf{P}^1-G$ consists of either 1 or 2 points.
-Therefore we obtain, after a change of coordinates, an isomorphism
-of pointed curves
-$(G,e)\simeq (\mathbf{A}^1,0)$ or $(\mathbf{G}_m,1)$.
-
-Now we are almost done. It suffices to check that $\mathbf{G}_a$ and $\mathbf{G}_m$ each admit a unique group structure.
-
-\section{January 20 (Substitute lecture by A.~Venkatesh)}
-\subsection{End of proof of classification of 1-dimensional connected linear algebraic groups}
-To finish the proof of Theorem \ref{1dconnlinalg}, we just need to show the following.
-\begin{theorem}The only $k$-group structures on $\mathbf{A}^1$ and $\mathbf{G}_m$
-are the usual ones, up to a curve automorphism moving the identity point.
-In particular, for the usual identity point the group structure is uniquely determined.
-\end{theorem}
-\begin{proof}
-We can assume $k=\bar k$.
-
-First let's do the case of $\mathbf{A}^1$. Since $\text{Aut}(\mathbf{A}^1)$ acts transitively on
-$\mathbf{A}^1(k)$, we can assume that the identity is $0\in \mathbf{A}^1(k)$.
-Say we have a group law on $\mathbf{A}^1$.
-For $x\in \mathbf{A}^1(k)$, translation by $x$ is a $k$-automorphism $t_x$ of
-$\mathbf{A}^1$. If $x\neq 0$, there are no fixed $k$-points (this is a fact about groups). Now we know what $\text{Aut}(\mathbf{A}^1)$ is: it consists of affine transformations
-$y\mapsto ay+b$. To be fixed-point free on $k$-points, it must be of the form
-$y\mapsto y+c$. Since it takes $0$ to $x$, $c=x$. So the group is the usual $\mathbf{G}_a$.
-
-The argument for $\mathbf{G}_m$ is much the same.
-In this case, automorphisms of $\mathbf{G}_m$ extend to automorphisms
-of $\mathbf{P}^1$ which either fix or swap zero and infinity. That is, they
-are of the form $y\mapsto y\alpha$ or $y\mapsto \alpha/y$.
-Since $k=\bar k$, $\sqrt\alpha\in k$, so $y\mapsto \alpha/y$ has fixed points.
-Hence $t_x$ is $y\mapsto y\alpha$ for some $\alpha$,
-and if we pin down the identity
-in the group law to be $1\in \mathbf{G}_m(k)$ (as we may) then we must have $\alpha=x$.
-\end{proof}
-
-So know we know that over a field $k$,
-while there can be many isomorphism classes of 1-dimensional
-smooth connected linear algebraic groups, they all become isomorphic to $\mathbf{G}_m$ or $\mathbf{G}_a$ over $\bar k$.
-We say that they are \textbf{forms} of $\mathbf{G}_m$ or $\mathbf{G}_a$.
-\begin{example}If $q$ is a non-degenerate quadratic form on a 2-dimensional vector space $V$ over a field $k$
-(say with ${\text{char}}(k) \ne 2$ for now, since we haven't defined non-degeneracy
-more generally yet), then $\text{SO}(q)$ is a form of $\mathbf{G}_m$. (This is also valid
+\begin{example}
+\label{example-non-split-q}
+If $q$ is a non-degenerate quadratic form
+on a 2-dimensional vector space $V$ over a field $k$
+(say with ${\text{char}}(k) \ne 2$ for now, since we
+haven't defined non-degeneracy
+more generally yet), then $\text{SO}(q)$ is a form of
+$\mathbf{G}_m$. (This is also valid
 in characteristic 2 for the right notion of ``non-degenerate''.)
 \end{example}
-\begin{example}$\mathbf{G}_a$ can actually have forms $U$ over an imperfect field $k$
-which have no nontrivial $k$-points; i.e. $U(k)=\{0\}$.
+
+\begin{example}
+\label{example-pointless-form-Ga}
+The group scheme $\mathbf{G}_a$ can have forms $U$
+over an imperfect field $k$ which have no nontrivial $k$-points;
+i.e. $U(k)=\{0\}$.
 For an example, let $k=k_0(t)$ for $k_0$ a field of characteristic $p$.
-Let $q=p^r>2$. Then $U\subset \mathbf{A}^2$ defined by $y^q=x-tx^p$ is such a form.
+Let $q=p^r>2$. Then $U\subset \mathbf{A}^2$ defined by $y^q=x-tx^p$
+is such a form.
 \end{example}
 
 \subsection{Smoothness criteria}
@@ -30084,6 +30166,7 @@ ${\text{GSp}}(B)$.)
 
 \begin{exercise}
 \label{exercise-HW1-3}
+Connectedness and rational points.
 \begin{enumerate}
 \item Prove that if a connected scheme $X$ of finite type
 over a field $k$ has a $k$-rational point,
@@ -30121,114 +30204,125 @@ prove that $G - G^0$ is connected but over $\overline{k}$ has 4 connected compon
 \end{enumerate}
 \end{exercise}
 
-\section{Algebraic Groups I. Homework 2}
 
-\noindent
-1.  Let $k$ be a perfect
+
+\section{Algebraic Groups I. Homework 2}
+\label{section-HW2}
+
+\begin{exercise}
+\label{exercise-HW2-1}
+Let $k$ be a perfect
 field, and $G$ a 1-dimensional connected linear algebraic $k$-group (so $G$ is geometrically
 integral over $k$).   Assume $G$ is in the additive case.  This exercise proves
 $G$ is $k$-isomorphic to $\mathbf{G}_a$.
-
-(i)  Let $X$ denote its regular compactification over $k$.
+\begin{enumerate}
+\item Let $X$ denote its regular compactification over $k$.
 Prove that $X_{\overline{k}}$
 is regular, so $X$ is smooth (hint: $\overline{k}$ is a direct limit of finite separable
 extensions of $k$, and unit discriminant is a sufficient test for integral closures in the
 Dedekind setting).  Deduce that $X - G$ consists of a single physical point, say
 $\Spec k'$.
-
-(ii) Prove that $k' \otimes_k \overline{k}$ is reduced
+\item Prove that $k' \otimes_k \overline{k}$ is reduced
 and in fact equal to $\overline{k}$.  Deduce $k' = k$, and prove that $X \simeq
 {\mathbf{P}}^1_k$.  Show that $G \simeq \mathbf{G}_a$ as $k$-groups.
+\end{enumerate}
+\end{exercise}
 
-\medskip\noindent
-2. Let $T$ be a torus of dimension $r \ge 1$
+\begin{exercise}
+\label{exercise-HW2-2}
+Let $T$ be a torus of dimension $r \ge 1$
 over a field $k$ (e.g., a 1-dimensional connected linear algebraic group in
 the multiplicative case).  This exercise proves that $T_{k'} \simeq \mathbf{G}_m^r$
 for some finite separable extension $k'/k$.
-
-(i) Prove that it suffices to treat the case $k = k_s$.
-
-(ii) Assume $k = k_s$.  We constructed an isomorphism
+\begin{enumerate}
+\item Prove that it suffices to treat the case $k = k_s$.
+\item Assume $k = k_s$.  We constructed an isomorphism
 $f:T_{k'} \simeq {\mathbf{G}}_m^r$ as $k'$-groups for some finite extension $k'/k$.
 Let $k'' = k' \otimes_k k'$, and let $p_1, p_2:\Spec k'' \to \Spec k'$ be the
 projections.  Prove that $k''$ is an artin local ring {\em with residue field $k'$},
 and deduce that the $k''$-isomorphisms $p_i^{\ast}(f):T_{k''} \simeq {\mathbf{G}}_m^r$
 coincide by comparing them with $f$ on the special fiber!
-
-(iii) For any $k$-vector space $V$, prove that the only elements of
+\item For any $k$-vector space $V$, prove that the only elements of
 $k' \otimes_k V$ with equal images under both maps to $k'' \otimes_k V$ are the elements
 of $V$ (hint: reduce to the case $V = k$ and replace $k'$ with any $k$-vector space
 $W$, and $k''$ with $W \otimes_k W$).  Deduce that $f$
 uniquely descends to a $k$-isomorphism.
+\end{enumerate}
+\end{exercise}
 
-\medskip\noindent
-3.    Let $X$ and $Y$ be schemes over a field $k$, $K/k$ an extension field,
+\begin{exercise}
+\label{exercise-HW2-3}
+Let $X$ and $Y$ be schemes over a field $k$, $K/k$ an extension field,
 and $f, g:X \to Y$
 two $k$-morphisms.
-
-(i) Prove $f_K = g_K$ if and only if $f = g$.  (Use surjectivity of
+\begin{enumerate}
+\item Prove $f_K = g_K$ if and only if $f = g$.  (Use surjectivity of
 $X_K \rightarrow X$ to aid in reducing to the affine case.)  Likewise
 prove that if $Z, Z' \subset X$ are closed subschemes such that $Z_K = Z'_K$ inside
 of $X_K$ then $Z = Z'$,
-
-(ii) If $f_K$ is an isomorphism and $X$ and $Y$ are affine, prove $f$ is an isomorphism.
+\item If $f_K$ is an isomorphism and $X$ and $Y$ are affine, prove $f$ is an isomorphism.
 Then do the same without affineness (may be really hard without Serre's
 cohomological criterion for affineness).
-
-(iii) Assume $K/k$ is Galois, $\Gamma = {\text{Gal}}(K/k)$.  Prove that if
+\item Assume $K/k$ is Galois, $\Gamma = {\text{Gal}}(K/k)$.  Prove that if
 a map $F:X_K \rightarrow Y_K$ satisfies $\gamma^{\ast}(F) = F$ for all
 $\gamma \in \Gamma$, then $F = f_K$ for a unique $k$-map $f:X \rightarrow Y$.
 Likewise, if $Z' \subset X_K$ is a closed subscheme
 and $\gamma^{\ast}(Z') = Z'$ for all $\gamma \in \Gamma$ then prove
 $Z' = Z_K$ for a unique closed subscheme $Z \subset X$. Do the same for open subschemes.
+\end{enumerate}
+\end{exercise}
 
-\medskip\noindent
-4. Let $q:V \rightarrow k$ be a quadratic form on a finite-dimensional vector space
+\begin{exercise}
+\label{exercise-HW2-4}
+Let $q:V \rightarrow k$ be a quadratic form on a finite-dimensional vector space
 $V$ of dimension $d \ge 2$, and let
 $B_q:V \times V \rightarrow k$ be the corresponding symmetric bilinear form.
 Let $V^{\perp} = \{v \in V \mid B_q(v,\cdot)= 0\}$;
 we call $\delta_q := \dim V^{\perp}$ the {\em defect}
 of $q$.
-
-(i) Prove that $B_q$ uniquely factors through a non-degenerate symmetric bilinear form
+\begin{enumerate}
+\item Prove that $B_q$ uniquely factors through
+a non-degenerate symmetric bilinear form
 on $V/V^{\perp}$, and $B_q$ is non-degenerate precisely when the defect is 0.
 Prove that if ${\text{char}}(k) = 2$ then $B_q$ is alternating, and deduce
 that $\delta_q \equiv \dim V \bmod 2$ for such $k$ (so $\delta_q \ge 1$ if $\dim V$ is odd).
-
-(ii) Prove that if $\delta_q = 0$ then $q_{\overline{k}}$
+\item Prove that if $\delta_q = 0$ then $q_{\overline{k}}$
 admits one of the following ``standard forms'':
 $\sum_{i=1}^n x_i x_{i+n}$ if $\dim V = 2n$ ($n \ge 1$), and
 $x_0^2 + \sum_{i=1}^n x_i x_{i+n}$ if $\dim V = 2n+1$ ($n \ge 1$).
-Do the same if ${\text{char}}(k) = 2$ and $\delta_q = 1$. (Distinguish whether or
-not $q|_{V^{\perp}} \ne 0$.)
+Do the same if ${\text{char}}(k) = 2$ and $\delta_q = 1$.
+(Distinguish whether or not $q|_{V^{\perp}} \ne 0$.)
 How about the converse?
-
-(iii) If ${\text{char}}(k) \ne 2$, prove $\delta_q = 0$  if and only if  $q \ne 0$ and
+\item If ${\text{char}}(k) \ne 2$, prove
+$\delta_q = 0$  if and only if  $q \ne 0$ and
 $(q = 0) \subset {\mathbf{P}}^{d-1}$ is smooth.
 If ${\text{char}}(k) = 2$ then prove $\delta_q \le 1$ with $q|_{V^{\perp}} \ne 0$
 when $\delta_q = 1$ if and only if $q \ne 0$ and
 the $(q=0)$ is smooth.  (Hint: use (ii) to simplify calculations.)
 We say $q$ is {\em non-degenerate} when $q \ne 0$ and $(q = 0)$ is smooth in
 ${\mathbf{P}}^{d-1}$.
+\end{enumerate}
+\end{exercise}
 
-
-\medskip\noindent
-5.  Learn about separability and $\Omega^1$ by reading in Matsumura's CRT:
+\begin{exercise}
+\label{exercise-HW2-5}
+Learn about separability and $\Omega^1$ by reading in Matsumura's CRT:
 \S25 up to before 25.3 (this is better than AG15.1--15.8 in Borel's book), and read
 \S26 up through and including Theorem 26.3.
-
-(i) Do Exercises 25.3, 25.4 in Matsumura, and read AG17.1 in Borel's book (noting he
+\begin{enumerate}
+\item Do Exercises 25.3, 25.4 in Matsumura, and read
+AG17.1 in Borel's book (noting he
 requires $V$ to be geometrically reduced over $k$!).
-
-(ii) Use 26.2 in Matsumura to prove that
+\item Use 26.2 in Matsumura to prove that
 a finite type reduced $k$-scheme $X$ is smooth on
 a dense open if and only if all functions fields of $X$ (at its generic points)
 are {\em separable} over $k$.
-
-(iii) Using separating transcendence bases, the primitive element theorem,
+\item Using separating transcendence bases, the primitive element theorem,
 and ``denominator chasing'',
 prove that if $X$ is smooth on a dense open then $X(k_s)$ is Zariski-dense in
 $X_{k_s}$.  (Hint: it suffices to prove $X(k_s)$ is non-empty!)
+\end{enumerate}
+\end{exercise}
 
 
 \section{Algebraic Groups I. Homework 3}
