@@ -365,7 +365,7 @@ $\SL_n$ acts transitively on the connected $\mathbf{P}^{n-1}$
 with stabilizer that maps onto $\GL_{n-1}$ with kernel an affine space;
 this method will be discussed more generally
 (and the example of $\SL_n$ addressed
-more fully) in \ref{slnconn}.
+more fully) in \ref{example-connectednes-SL}.
 
 \medskip\noindent
 For smoothness, we can check the Jacobi criterion at
@@ -2003,15 +2003,168 @@ $\mathfrak{sl}(V) = \text{End}_k^0(V)$ where as usual
 $\text{End}^0$ denotes endomorphisms with trace zero.
 \end{example}
 
-
-
-
-
-Before doing so, let us consider connectedness.
-\subsection{How to Show Connectedness}
-\begin{example}$\text{O}(q)$ is actually always disconnected, scheme-theoretically.
-A prototypical example is $q=xy$ on $V=k^2$.
+\begin{example}
+\label{example-tangent-space-Sp}
+Let us apply Remark \ref{remark-tangent-space} to compute
+the tangent space for $G = \text{Sp}_{2n}$.
+We often abbreviate $\mathfrak{sp}_{2n} = T_e(\text{Sp}_{2n})$.
+If we have a pair $(V, B)$ consisting of a $2n$-dimensional
+vector space with a sympletic form $B$, then we write
+$\mathfrak{sp}(V, B)$. As usual, we regard
+$$
+\mathfrak{sp}_{2n} \subset \mathfrak{gl}_{2n} = \text{Mat}_{2n}(k)
+\quad\text{and}\quad
+\mathfrak{sp}(V,B)  \subset \mathfrak{gl}(V)=\text{End}(V)
+$$
 Then
+$$
+\mathfrak{sp}_{2n}(V, B) =
+\{T \in \text{End}(V) \mid
+B((\id+\epsilon T)v,(\id+\epsilon T)v')=B(v,v')
+\text{ for } v,v'\in V \}.
+$$
+We compute
+that the condition on $T$
+is that $B(Tv,v')+B(v,Tv')=0$;
+i.e. $B(T(\cdot),(\cdot))\in (\wedge ^2V)^*$,
+since $B$ is alternating.
+Hence $\mathfrak{sp}_{2n}=\mathfrak{sp}(B,V)=(\wedge^2V)^*$
+identified as a subspace of $\text{End}(V)$ via $B$.
+Thus its dimension is
+$$
+\dim \text{Sp}_{2n} = \dim_k \mathfrak{sp}_{2n} =
+\frac{(2n)(2n+1)}{2}=n(2n+1).
+$$
+Explicitly, $\mathfrak{sp}_{2n}$ consists of $2n\times 2n$ block matrices
+$$
+\left(
+\begin{smallmatrix}
+a & b \\
+c & -a^t
+\end{smallmatrix}
+\right)
+$$
+such that $b=b^t,c=c^t$.
+\end{example}
+
+
+
+
+
+
+\section{Actions}
+\label{section-actions}
+
+\noindent
+A few results on actions of group schemes.
+Let $k$ be a field.
+Let $G$ be a $k$-group scheme.
+Let $X$ be a scheme over $k$.
+Let $a : G \times X \to X$ be an action of $G$ on $X$ over $k$.
+We say that {\it the action $a$ has a single orbit} if
+the morphism $G \times X \to X \times X$, $(g, x) \mapsto (a(g, x), x)$
+is surjective as a morphism of schemes. If $G$ and $X$ are algebraic, i.e.,
+quasi-compact, then this is equivalent to $G \times X \to X \times X$
+being surjective on closed points.
+
+\begin{lemma}
+\label{lemma-patch-universally-open}
+Let $k$ be a field. Let $X \to Y$ be a surjective morphism of locally
+algebraic $k$-schemes. For every generic point $\eta$ of an irreducible
+component of $Y$ there exists an open $U \subset X$ such that
+$U \to Y$ is universally open and $\eta$ is in the image of this map.
+\end{lemma}
+
+\begin{proof}
+Follows immediately from generic flatness and the fact that
+flat and finitely presented morphisms are universally open.
+More precisely, in order to prove the lemma we may replace
+$Y$ by its reduction $Y_{red}$ and $X$ by $Y_{red} \times_Y X$
+to get to the situation where $Y$ is reduced.
+Choose an affine open $U \subset X$ such that $\eta$
+is in the image of $U \to Y$. After shrinking $U$
+we may assume $U \to Y$ is flat, see Morphisms, Proposition
+\ref{morphisms-proposition-generic-flatness}.
+Then $U \to Y$ is universally open by
+Morphisms, Lemma \ref{morphisms-lemma-fppf-open}.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-one-orbit-open}
+Let $k$ be a field. Let $G$ be a locally algebraic $k$-group scheme.
+Let $X$ be a locally algebraic $k$-scheme.
+Let $a : G \times X \to X$ be an action.
+If the action has a single orbit, then
+$G \times X \to X \times X$ is universally open.
+\end{lemma}
+
+\begin{proof}
+If $K/k$ is an extension of fields, then $\Spec(K) \to \Spec(k)$
+is universally open and surjective (Morphisms, Lemma
+\ref{morphisms-lemma-scheme-over-field-universally-open}).
+Hence it suffices to prove the result after replacing $k$ by $K$.
+Thus we may assume that $k$ is algebraically closed.
+
+\medskip\noindent
+By Lemma \ref{lemma-patch-universally-open} we can choose a nonempty open
+$W \subset G \times X$ such that $W \to X \times X$
+is universally open. Choose $(g_0, x_0) \in W$ be a closed point.
+Let $(g_1, x_1) \in G \times X$ be an arbitrary closed point.
+Since $G \times X \to X \times X$ is surjective, we can
+choose a closed point $h \in G$ such that $a(h, x_0) = x$
+(here we use that schemes locally of finite type over a field
+are Jacobson; some details omitted).
+Then we can choose a closed point $h' \in G$ such that $g_1 = h' g h^{-1}$.
+Consider the commutative diagram
+$$
+\xymatrix{
+G \times X \ar[r] \ar[d]_{(g, x) \mapsto (h'gh^{-1}, hx)} &
+X \times X \ar[d]^{(x, y) \mapsto (h'x, hy)} \\
+G \times X \ar[r] &
+X \times X
+}
+$$
+Since the vertical arrows are isomorphisms and since the left vertical
+arrow maps $(g_0, x_0)$ to $(g_1, x_1)$ we conclude that the
+horizontal arrow is universally open in a neighbourhood of
+$(g_1, x_1)$ as well. This proves the lemma.
+\end{proof}
+
+\begin{remark}
+\label{remark-stabilizer}
+Let $k$ be a field. If a $k$-group scheme $G$ acts on a scheme $X$
+over $k$ and $x \in X(k)$ then $\text{Stab}_G(x)$
+is the scheme theoretical fiber of $a$ over $x$.
+Since it represents the stabilizer-subgroup functor of $G$,
+it follows that it is a subgroup scheme of $G$.
+But in characteristic $p$ it might not be reduced, resp.\ smooth
+if $G$ is locally algebraic. This can only happen
+in positive characteristic, as in characteristic $0$
+group schemes are reduced, resp.\ smooth, see
+Groupoids, Lemma
+\ref{groupoids-lemma-group-scheme-characteristic-zero-smooth}
+and
+Groupoids, Remark \ref{groupoids-remark-when-reduced}.
+\end{remark}
+
+
+
+
+
+
+
+
+
+\section{Connectedness of some classical groups}
+\label{section-connectedness}
+
+\noindent
+In this section we prove connectedness of some of the classical groups.
+
+\begin{example}
+\label{example-O2-disconnected}
+A prototypical example is $O(q)$ with $q=xy$ on $V=k^2$ where
+$k$ is any field. Then
 $$
 \text{O}(q) =
 \left\{
@@ -2027,12 +2180,11 @@ c & d
 (ax+by) (cx+dy) = xy
 \right\}
 $$
-These conditions are equivalent to $ac=bd=0$ and $ad+bc=1$.
+These conditions are equivalent to $ac = bd = 0$ and $ad + bc = 1$.
 Over any local ring one can track units and show that
 $a=d=0,bc=1$ or $b=c=0,ad=1$.
-In generally these equations will define $\text{O}(q)$, Zariski-locally on $\Spec R$
-over any ring $R$.
-Thus
+In generally these equations will define $\text{O}(q)$,
+Zariski-locally on $\Spec R$ over any ring $R$. Thus
 $$
 \text{O}(q) =
 \text{SO}(q) \amalg \text{SO}(q)
@@ -2064,66 +2216,123 @@ b^{-1} & 0
 \right)
 \}.
 $$
+Thus $O(q)$ has two connected components.
 \end{example}
-The technique for proving a finite type $k$-group scheme $G$ to be connected is the following.
-\begin{itemize}
-\item[1.] Find a smooth, geometrically connected $k$-scheme $X$
-(usually not affine!) with a $G$-action $\alpha:G\times X\to X$.
-\item[2.] Ensure the action is transitive on $\bar k$-points,
-i.e. $\alpha_{x_0}:G_{\bar k}\to X_{\bar k}$ should be surjective
-for $x_0\in X(\bar k)$.
-\item[3.] Prove the stabilizer $\text{Stab}_{G_{\bar k}}(x_0)$ is connected.
-\end{itemize}
-\begin{proposition}Given 1-3 above, $G$ is connected
-(and this holds if and only if $G_{\bar k}$ is connected).\footnote{By Homework 1, Problem 3(i), a connected $k$-group $G$ of finite type is automatically geometrically connected.}
-\end{proposition}
-\begin{proof}
-Rename $k=\bar k$, and replace $G$ with $G_{\text{red}}$ so that it is smooth.
-Now $G$ is regular and equidimensional of some dimension $d$
-(by translating a neighborhood of the origin!).
-The surjection $G\to X$ has equidimensional fibers all of the same dimension,
-since they are conjugates of $\text{Stab}_G(x_0)$.
-The base $X$ is regular, hence irreducible of some pure dimension $d'$.
-Therefore all the fibers are of expected dimension $d-d'$.
-(This holds on a Zariski-open subset of $X$, by a classical fact;
-since all the fibers are conjugate - hence isomorphic - it holds everywhere.)
 
-Now we invoke the Miracle Flatness Theorem  \cite[23.1]{Ma},
-which entails that $G\to X$ is flat,
-and hence open.
-By an easy topological argument, the existence of
-an open continuous surjection from a topological space $Y$
-onto a connected base with connected fibers entails that $Y$ is connected.
+\noindent
+A technique for proving a finite type $k$-group scheme $G$
+to be connected is the given in the following lemma.
+
+\begin{lemma}
+\label{lemma-connected}
+Let $k$ be a field. Let $G$ be a locally algebraic $k$-group scheme.
+Suppose given a geometrically connected scheme $X$ over $k$
+with a $G$-action $a : G \times X \to X$ such that
+for $x \in X(\bar k)$ we have
+\begin{enumerate}
+\item $a_x : G_{\bar k} \to X_{\bar k}$ is a
+surjective morphism of schemes, and
+\item the stabilizer $\text{Stab}_{G_{\bar k}}(x)$ is connected.
+\end{enumerate}
+Then $G$ is connected.
+\end{lemma}
+
+\noindent
+If $G$ is quasi-compact and $a_x : G(\bar k) \to X(\bar k)$
+is surjective, then (1) is true.
+
+\begin{proof}
+To prove that $G$ is connected, it suffices to show that $G_{\bar k}$
+is connected. Thus we may assume $k$ is algebraically closed.
+Any locally algebraic $k$-scheme $Y$ is Jacobson
+(Morphisms, Lemma \ref{morphisms-lemma-ubiquity-Jacobson-schemes}).
+Hence topological properties (such as connectedness) of $Y$
+can be read of from the underlying set of closed points $Y_0$
+with induced topology. Let $x$ be a closed point of $X$ and
+consider the morphism
+$$
+\alpha_x : G \longrightarrow X
+$$
+Assumptions (1) and (2) imply that $G_0 \to X_0$
+is surjective with connected fibres. Since the scheme $X$ is connected
+we have that $X_0$ is connected (by the remark above). If we can show that
+$G_0 \to X_0$ is submersive, then we conclude that $G_0$ (and hence $G$)
+is connected by Topology, Lemma
+\ref{topology-lemma-connected-fibres-quotient-topology-connected-components}.
+Thus it suffices to show that $\alpha_x$ is open, see
+Topology, Lemma \ref{topology-lemma-open-morphism-quotient-topology}.
+This follows from Lemma \ref{lemma-one-orbit-open}
+by base change via $X \times \{x\} \to X \times X$.
 \end{proof}
-\begin{remark}If $G$ acts on $X$ and $x\in X(k)$ then $\text{Stab}_G(x)$
-is the scheme-theoretical fiber of $\alpha_x$ over $x$.
-Since it represents the stabilizer-subgroup functor of $G$,
-it follows that it is a subgroup scheme of $G$.
-But it might not be smooth! (In characteristic $p$, that is;
-everything is OK in characteristic 0, by a theorem of Cartier
-which says \textit{all} $k$-group schemes locally of finite type are smooth
-when ${\text{char}}(k)=0$.)
-\end{remark}
-\subsection{Connectedness of the special linear group}\label{slnconn}
-Fix an $n$-dimensional vector space $V$ and let $G=\SL(V)\simeq \SL_n$.
-\subsubsection{Method 1 - Flag varieties}
-For $V$ a $k$-vector space of dimension $n> 0$, let $X$ be the functor on $k$-algebras given by
-\begin{multline*}
-R\mapsto X(R)=
-\{0 = F_0 \subset F_1\subset F_2\subset \cdots \subset F_n = V_R
-\mid \\
-F_i = \text{locally free $R$-submodule of $V_R$ of finite rank},
-F_i/F_{i-1}=\text{locally free of rank $1$}\}.
-\end{multline*}
-The following is standard (so we omit the proof):
-\begin{proposition}$X$ is representable by a smooth geometrically connected projective variety, covered by
-open sets isomorphic to affine spaces having non-empty overlaps.\qed\end{proposition}
-Let $\GL(V)$ act on $X$ in the obvious way.
-We can restrict this to an action $\alpha:\SL(V)\times X\to X$.
-\begin{exercise}
-The map $\alpha$ is transitive on $\bar k$-points.\qed
-\end{exercise}
-Compute the stabilizer $\text{Stab}$ in $\SL(k^n)$ of the standard flag in $k^n$ explicitly: we find as schemes
+
+\noindent
+The flag variety. Let $k$ be a field.
+Let $V$ a $k$-vector space of dimension $n > 0$.
+Let $X$ be the functor on $k$-algebras $R$ given by
+$$
+X(R) =
+\{
+0 = F_0 \subset F_1\subset F_2\subset \cdots \subset F_n = V_R
+\}
+$$
+Here the $F_i$ form an increasing filtration by $R$-submodules with each
+$F_i/F_{i - 1}$ a locally free $R$-module of rank $1$.
+
+\begin{lemma}
+\label{lemma-flag-variety}
+The functor $X$ is representable by a smooth geometrically connected
+projective variety, covered by open sets isomorphic to affine spaces
+having non-empty overlaps.
+\end{lemma}
+
+\begin{proof}
+Choose a basis $e_1, \ldots, e_n$ of $V$. Then we can define an
+open subfunctor $U$ of $X$ by considering those flags such that
+$$
+e_i, \ldots, e_n\text{ map to generators of }V_R/F_{i - 1}
+$$
+for $i = 1, \ldots, n$. This implies that
+\begin{enumerate}
+\item $F_1$ is generated by
+$e_1 + a_{12} e_2 + \ldots a_{1n} e_n$ for some unique $a_{1i} \in R$,
+\item $F_2$ is generated by $F_1$ and
+$e_2 + a_{23} e_3 + \ldots a_{2n} e_n$ for some unique $a_{2i} \in R$,
+\item etc.
+\end{enumerate}
+Conversely, given $a_{ij} \in R$ we can produce a filtration
+corresponding to an $R$-valued point of $U$ by the prescription given.
+Thus $U$ is representable by the affine scheme with coordinates
+$a_{ij}$, $1 \leq i < j \leq n$. Since for any flag we can find,
+locally on $\Spec(R)$, a choice of basis such that our flag
+satisfies the conditions above, we see that $X$ is covered
+by the affine opens $U$. (In fact, you can show that it suffices
+to consider the bases you get by changing the order of the
+basis elements of one given basis.)
+Then we conclude that $X$ is a scheme by
+Schemes, Lemma \ref{schemes-lemma-glue-functors}.
+We omit the proof that $X$ is projective.
+Please compare with
+Constructions, Section \ref{constructions-section-grassmannian}.
+\end{proof}
+
+\begin{example}
+\label{example-connectedness-SL}
+Let us use Lemma \ref{lemma-connected} to prove the connectedness
+of the special linear group. Fix an $n$-dimensional vector space
+$V$ and let $G = \SL(V)\simeq \SL_n$. Let $X$ be the flag variety
+of $V$, see Lemma \ref{lemma-flag-variety}. Let $\GL(V)$ act on $X$ in
+the obvious way. We can restrict this to an action $a :\SL(V) \times X \to X$.
+We will check conditions (1) and (2) of Lemma \ref{lemma-connected}.
+Condition (1) follows from the fact that given any two
+choices $F_\bullet$ and $F'_\bullet$ of complete flags in $V$,
+there is an automorphism $g : V \to V$ such that $g(F_i) = F'_i$.
+The reason is that given a complete flag $F_\bullet$, there exists a basis
+$e_1, \ldots, e_n$ such that $F_i = \text{span}(e_1, \ldots, e_i)$.
+This argument also shows that we can assume $\det(g) = 1$ because
+we can scale one of the basis elements to make this true (detail omitted).
+To prove (2) we compute the stabilizer $\text{Stab}$ in $\SL(k^n)$
+of the standard flag $F_i = \text{span}(e_1, \ldots, e_i)$
+in $k^n$ explicitly: we find as schemes
 \[
 \text{Stab} =
 \left\{
@@ -2141,17 +2350,19 @@ a_1 & * & * & * & \cdots & * \\
 \prod a_i = 1
 \right\}
 \]
-This is visibly isomorphic to $\mathbf{G}_m^{n-1}\times \mathbf{A}^{\binom{n}{2}}$ as a variety,
+This is visibly isomorphic to
+$\mathbf{G}_m^{n-1} \times \mathbf{A}^{\binom{n}{2}}$ as a variety,
 and is thus irreducible and geometrically connected by inspection.
-So the method of the previous section will go through.
-\subsubsection{Method 2 - Projective Space}
-More naively, if you cannot guess what the right homogeneous space is,
-one can try to use a more obvious action of the linear group one is trying to prove connected, namely the action on $\mathbf{P}^{n-1}$ if $G\subset \GL_n$.
+\end{example}
 
-So give the geometrically connected, etc., variety $\mathbf{P}^{n-1}$ the standard
-(transitive) action of $\SL_n$.
-The stabilizer in this case is
-\[
+\begin{example}[Alternative method]
+\label{example-connectedness-SL-alternative}
+Given an algebraic group $G \subset \GL_n$ you can consider the
+action of $G$ on $\mathbf{P}^{n - 1}$. Since $\mathbf{P}^{n - 1}$
+is geometrically connected this is a good choice.
+If $G = \SL_n$ the action is transitive. Moreover, the stabilizer
+in this case is
+$$
 \text{Stab}_{\SL_n}(
 [1 : 0 : \cdots : 0]) =
 \left\{
@@ -2167,69 +2378,50 @@ a & * & \cdots & * \\
 \mid
 a = \det g^{-1}
 \right\}.
-\]
-
+$$
 Here the top row is arbitrary after the first entry;
 the $x$'s denote that the bottom right $(n-1)\times(n-1)$ block
-is given by $g\in \GL_{n-1}$.
-Hence $\text{Stab}_{\SL_n}([1:0:\cdots:0])=\GL_{n-1}\times \mathbf{A}^{n-1}$ as a variety.
-Again we get lucky and can see that it is connected, so we're done.
+is given by $g\in \GL_{n-1}$. Hence
+$\text{Stab}_{\SL_n}([1:0:\cdots:0])=\GL_{n-1}\times \mathbf{A}^{n-1}$
+as a variety. Since $\GL_{n - 1}$ is connected as an open
+subscheme of an affine space
+we conclude that $\SL_n$ is connected for all $n$ by
+Lemma \ref{lemma-connected}.
+\end{example}
 
+\noindent
+The proof of connectedness of the symplectic group
+is by induction following the strategy outlined in
+Example \ref{example-connectedness-SL-alternative}.
+The inductive step comes down to an exercise in (fairly delicate)
+linear algebra. If anything, it is an indication that
+connectedness results for algebraic groups should be treated with respect.
 
-
-
-
-Finally, we can compute the Lie algebra $\mathfrak{sp}_{2n}$
-and determine $\dim\text{Sp}_{2n}$.
-As usual, we regard $T_{\id}(\text{Sp}(V,B))\subset T_{\id}(\GL(V))=\mathfrak{gl}(V)=\text{End}(V)$.
-Then
-\[\mathfrak{sp}_{2n}=\{\id +\epsilon T\in \text{Aut}_{k[\epsilon]}(V_{k[\epsilon]})\mid
-T\in \text{End}(V), B((\id+\epsilon T)v,(\id+\epsilon T)v')=B(v,v') \text{ for all } v,v'\in V\subset V_{k[\epsilon]}\}.\]
-We compute
-that the condition on $T$
-is that $B(Tv,v')+B(v,Tv')=0$;
-i.e. $B(T(\cdot),(\cdot))\in (\wedge ^2V)^*$,
-since $B$ is alternating.
-Hence $\mathfrak{sp}_{2n}=\mathfrak{sp}(B,V)=(\wedge^2V)^*$
-identified as a subspace of $\text{End}(V)$ via $B$.
-Thus its dimension is
-\[\dim \text{Sp}_{2n}=\frac{(2n)(2n+1)}{2}=n(2n+1).\]
-Explicitly, $\mathfrak{sp}_{2n}$
-consists of $2n\times 2n$ block matrices
-$$
-\left(
-\begin{smallmatrix}
-a & b \\
-c & -a^t
-\end{smallmatrix}
-\right)
-$$
-such that $b=b^t,c=c^t$.
-\section*{January 27}
-\subsection*{The symplectic group is connected}\label{spconn}
-The goal for today is to prove the following result.
-\begin{theorem}Let $V$ be a vector space of dimension $2n\geq 0$
+\begin{lemma}
+\label{lemma-connectedness-Sp}
+Let $k$ be a field. Let $V$ be a vector space of dimension $2n \geq 0$
 equipped with a nondegenerate alternating bilinear form $B$.
 Then the symplectic group $\text{Sp}(V,B)$ is connected.
-\end{theorem}
-The proof is by induction following the general strategy outlined earlier;
-the inductive step comes down to an exercise in (fairly delicate) linear algebra. If anything, it is an indication that \textbf{connectedness results for algebraic groups should be treated with respect}!
-\begin{proof}
-We induct on $n$.
-The case $n=0$ is OK (alternatively, $n=1$ is $\SL_2$, which we know is connected).
-Let $G=\text{Sp}(V,B)$ act on $\mathbf{P}^{2n-1}$ in the obvious way.
-After renaming $\bar k$ as $k$, what we need to check is that
-(i) the action is transitive, and (ii) one stabilizer is connected.
+\end{lemma}
 
+\begin{proof}
+We induct on $n$. The case $n = 0$ is OK, or alternatively,
+for $n=1$ we get $\text{Sp}_2 = \SL_2$, which we know is connected
+by Example \ref{example-connectedness-SL-alternative}.
+Let $G = \text{Sp}(V,B)$ act on $\mathbf{P}^{2n - 1}$ in the obvious way.
+According to Lemma \ref{lemma-connected} we need to check is that
+(1) the action is transitive, and (2) the stabilizer is connected.
+
+\medskip\noindent
 For transitivity, choose two lines $ke,ke'\subset V$.
 We seek a symplectic automorphism $g$ such that $g(ke)=ke'$.
 There are two cases.
 
+\medskip\noindent
 Case 1: $B(e,e')\neq 0$. After rescaling $e'$ we can take $B(e,e')=1$.
-So $H=ke\oplus ke'$ is a \textbf{hyperbolic plane}; i.e. the restriction
+So $H = ke \oplus ke'$ is a hyperbolic plane; i.e. the restriction
 $B|_H$ is nondegenerate, or equivalently $B = H \oplus^\perp H^\perp$.
-So we can just take $g$ to be the automorphism of $V$
-given by
+So we can just take $g$ to be the automorphism of $V$ given by
 $$
 \left(
 \begin{smallmatrix}
@@ -2238,26 +2430,23 @@ $$
 \end{smallmatrix}
 \right)
 $$
-on $H$ and the identity on $H^\perp$.
-This swaps the lines and is easily seen to be symplectic.
+on $H$ and the identity on $H^\perp$. This swaps the lines and is
+easily seen to be symplectic.
 
+\medskip\noindent
 Case 2: $B(e,e')=0$. Since $e$ and $e'$ are (without loss of generality)
-linearly independent and $B$ is nondegenerate, there exists a pair of hyperbolic planes $H,H'$ containing $e$ and $e'$ respectively, which are orthogonal to one another; i.e. $V=W \oplus^\perp H \oplus^\perp H'$.
+linearly independent and $B$ is nondegenerate, there exists a pair of
+hyperbolic planes $H,H'$ containing $e$ and $e'$ respectively, which
+are orthogonal to one another; i.e. $V=W \oplus^\perp H \oplus^\perp H'$.
 Take $g$ to be the automorphism of $V$ which swaps $H$ and $H'$,
-taking $e$ and $e'$ to one another, and fixes $W$. Thus transitivity is established.
+taking $e$ and $e'$ to one another, and fixes $W$.
+Thus transitivity is established.
 
+\medskip\noindent
 For the connectedness of the stabilizer, fix a line $L\subset V$.
-We want $G_L=\text{Stab}_G(L)$ to be connected.
-Since $B$ is alternating, we have $L\subset L^\perp$, and $L^\perp$ is a hyperplane in $V$.
-Let $\bar V = L^\perp/L$, which
-is a vector space of dimension $2(n-1)$.
-The form $B|_{L^\perp}$ descends (check!) to an alternating (check!)
-nondegenerate (check!) form on $\bar V$.
-Hence we get a $k$-group homomorphism $\xi:G_L\to \text{Sp}(\bar V, \bar B)$
-sending $g\mapsto \bar g =g |_{L^\perp}\mod L$.
-\begin{remark}
+We want $G_L=\text{Stab}_G(L)$ to be connected\footnote{
 If $\dim V = 2$ then
-$$
+$
 G_L =
 \{
 \left(
@@ -2269,14 +2458,21 @@ a & * \\
 \}
 \simeq
 \mathbf{G}_m \times \mathbf{A}^1
-$$
-is connected.
-\end{remark}
+$
+is connected.}. Since $B$ is alternating,
+we have $L\subset L^\perp$, and $L^\perp$ is a hyperplane in $V$.
+Let $\bar V = L^\perp/L$, which is a vector space of dimension $2(n-1)$.
+The form $B|_{L^\perp}$ descends to an alternating
+nondegenerate form on $\bar V$ (details omitted).
+Hence we get a $k$-group homomorphism
+$\xi : G_L \to \text{Sp}(\bar V, \bar B)$
+sending $g\mapsto \bar g =g |_{L^\perp}\mod L$.
 By induction $\text{Sp}(\bar V, \bar B)$ is connected.
 If  we knew that $\xi$ were surjective with connected kernel then
 connectedness of $G_L$ follows, completing the proof. Thus it remains only
 to show the claim: $\xi$ is surjective with connected kernel.
 
+\medskip\noindent
 For surjectivity, choose $L=ke\subset V$,
 and $e'$ such that $B(e,e')=1$ (by nondegeneracy)
 so that $H=ke\oplus ke'$ is hyperbolic
@@ -2290,44 +2486,29 @@ and view it in $\text{Sp}(H^\perp,B|_{H^\perp})$;
 extend it by the identity on $H$ to get $g\in G_L$
 which induced $\bar g$, i.e. such that $\xi(g)=\bar g$.
 
+\medskip\noindent
 To describe the kernel $\Ker\xi$, and in particular show it is connected, we will view its elements as $g=\id + T$ for $T\in \text{End}(V)$
 and figure out the conditions on $T$ which encode the defining properties
 (i) $g$ is an automorphism, (ii) $g$ fixes $L$, (iii) $g\in \Ker \xi$,
 and (iv) $g$ preserves $B$.
 Seeing that the result is connected appears, \textit{a priori}, nontrivial,
 since while (i)--(-iii) are Zariski-open or linear conditions,
-(iv) is a quadratic condition.
-But in fact, it will work out quite nicely.
-As motivation, consider a special case.
-\begin{example}
-Let $G=\text{Sp}(k^2,B)=\SL_2$
-and let $L= ke=L^\perp$.
-Then $G_L$ is the Borel subgroup,
-which is of the form
-$$
-\{ \id +
-\left(
-\begin{smallmatrix}
-\lambda & b \\
-0 & \frac{-\lambda}{1+\lambda}
-\end{smallmatrix}
-\right)
-\mid
-\lambda\neq -1\},
-$$
-which is quite tractable.
-\end{example}
-If we decompose $V=L^\perp\oplus ke'$,
-then $T:V\to V$ must satisfy some conditions:
-We have $T_0=T|_L:L\to L$ is a scalar $\lambda$ different from $-1$ (since $g$ is an automorphism fixing $L$).
-We have $S=T|_{L^\perp}:L^\perp\to L$ since $g$ must induce the identity on $\bar V$.
-Hence, since $g$ is an automorphism, we must certainly have $T(e')=ce'+\ell^\perp\not\in L^\perp$; i.e. $c\neq 0$.
+(iv) is a quadratic condition. If we decompose $V = L^\perp \oplus ke'$,
+then $T : V \to V$ must satisfy some conditions:
+We have $T_0=T|_L:L\to L$ is a scalar $\lambda$
+different from $-1$ (since $g$ is an automorphism fixing $L$).
+We have $S=T|_{L^\perp}:L^\perp\to L$ since $g$
+must induce the identity on $\bar V$.
+Hence, since $g$ is an automorphism, we must certainly have
+$T(e')=ce'+\ell^\perp\not\in L^\perp$; i.e. $c\neq 0$.
 
+\medskip\noindent
 This much ensures that $g=\id+T$
 where $T=T_0\oplus S$
 is an automorphism preserving $L^\perp$ and $L$ and inducing the identity
 on $\bar V$. But what is the condition that $g$ preserves $B$?
 
+\medskip\noindent
 Using the condition that $B(e,e')\neq 0$,
 the condition $B(ge,ge')=B(e,e')$
 says exactly that $\lambda c + \lambda + c = 0$,
@@ -2335,6 +2516,7 @@ or $(1+\lambda)(1+c)=1$.
 So necessarily $\lambda\neq 0,-1$
 and $c=-\lambda/(1+\lambda)$; cf. the example above.
 
+\medskip\noindent
 Assuming $c=-\lambda/(1+\lambda)$,
 one can check that $\phi_S:L^\perp\to k$
 defined by $v\mapsto -cB(v,e)-(1+c)B(Sc,e)$
@@ -2344,10 +2526,13 @@ so all functionals $\bar\psi\in \bar V^*$, including $\bar \phi_S$,
 must be of the form $\bar \psi(\bar v)=\bar B(\bar v, \bar x_S)$
 for some $\bar x_S\in \bar V$.
 
+\medskip\noindent
 It then follows (check!) that the full condition that $g=\id+(S\oplus T_0)$
-[where now we know $T_0$ is determined by $S$, since $\lambda$ is determined by $c$!]
+(where now we know $T_0$ is determined by $S$, since
+$\lambda$ is determined by $c$!)
 is encoded by the condition that $\bar x_S=\ell^\perp\mod L$.
 
+\medskip\noindent
 Putting all this together, we have a map
 $\Ker\xi\to \Hom(L^\perp,L)$
 sending $g\mapsto S$,
@@ -2356,16 +2541,20 @@ A point in the fiber over $S$
 is given by a choice of $\ell^\perp$ satisfying $\ell^\perp=\bar x_S\mod L$;
 i.e. the fibers are copies of $L$.
 
+\medskip\noindent
 So the conclusion is that $\Ker\xi$ is fibered over a Zariski open subset of an affine space, with connected fibers, and is thus connected,
 which completes the proof.
 \end{proof}
-\section{January 29}
-\subsection{A little more about the symplectic group}
-We proved $G=\text{Sp}(V,B)$ is connected. Here is a useful ``matrix description'' of the group, using our proof.
-Recall that we endowed $\mathbf{P}(V)$ with the natural
+
+\begin{remark}[More about the symplectic group]
+\label{remark-more-symplectic}
+In Lemma \ref{lemma-connectedness-Sp} we proved $G = \text{Sp}(V,B)$
+is connected. Here is a useful ``matrix description'' of the group,
+using our proof. Recall that we endowed $\mathbf{P}(V)$ with the natural
 action of $G\subset\GL(V)$, chose a line $L\subset V$ spanned by $e\in V$,
 and took a complementary line $ke'\subset V$
-so that $H=ke \oplus^\perp ke'$ is a hyperbolic plane; i.e. $B(e,e')=1$. Then $L\subset L^\perp$,
+so that $H=ke \oplus^\perp ke'$ is a hyperbolic plane; i.e. $B(e,e')=1$.
+Then $L\subset L^\perp$,
 $V=L^\perp \oplus^\perp ke'= H\oplus H^\perp \simeq H\oplus L^\perp/L
 \simeq H\oplus \bar V$.
 The stabilizer $G_L$ had the following structure, where the first two basis
@@ -2390,86 +2579,195 @@ a & * & [ & & S \in \Hom(L^\perp/L,L) & & ] \\
 This description makes connectedness obvious, since visibly
 $\text{Sp}_{2n}=(\mathbf{A}^1-\{0,-1\})\times \mathbf{A}^1\times \mathbf{A}^{2n-2}\times\text{Sp}_{2n-2}$
 and $\text{Sp}_2=\SL_2$.
-\begin{lemma}[of connectedness, or the matrix description]
-$\text{Sp}(V,B)\subset \SL(V)$.
+\end{remark}
+
+\noindent
+From connectedness we conclude the following lemma holds.
+
+\begin{lemma}
+\label{lemma-Sp-in-SL}
+Let $k$ be a field. Let $V$ be a finite dimensional $k$-vector space
+endowed with a symplectic form $B$. Then $\text{Sp}(V,B)\subset \SL(V)$.
 \end{lemma}
+
 \begin{proof}
-Recall that we know  $\text{Sp}(V,B)$ is smooth and connected,
-For any geometric point $T\in \text{Sp}(V,B)$ we have $(\det T)^2=1$ from the equation which says $T$ is symplectic.
-Hence $\det:\text{Sp}(V,B)\to \mathbf{G}_m$ factors through the finite group scheme
-$\mu_2\subset \mathbf{G}_m$ on geometric points (even in characteristic 2).
-Thus, since $\text{Sp}(V,B)$ is smooth and connected, it follows that $\det$ is trivial on $\text{Sp}(V,B)$.
+By Lemma \ref{lemma-connectedness-Sp} and Example \ref{example-spsmooth}
+we know that $\text{Sp}(V,B)$ is smooth and connected.
+For any geometric point $T\in \text{Sp}(V,B)$ we have
+$(\det T)^2 = 1$ from the equation which says $T$ is symplectic.
+Hence $\det:\text{Sp}(V,B)\to \mathbf{G}_m$ factors through the
+finite group scheme $\mu_2 \subset \mathbf{G}_m$ on geometric points
+(even in characteristic 2). Thus, since $\text{Sp}(V,B)$ is smooth
+and connected, it follows that $\det$ is trivial on $\text{Sp}(V,B)$.
 
-Alternately, use the matrix description and argue by induction,
-row expanding along the second row.
-This says that $G_L\subset \SL(V)$.
+\medskip\noindent
+Alternately, use the matrix description given in
+Remark \ref{remark-more-symplectic} and argue by induction,
+row expanding along the second row. This says that $G_L \subset \SL(V)$.
 Now you need to do a bit of work to check that this implies all of $G$
-has determinant 1, but it shouldn't be so bad.
+has determinant 1; we omit the details.
 \end{proof}
-\subsection{Actions, Centralizers and Normalizers}
-Now we want to study actions of $k$-groups on $k$-schemes.
-\begin{definition}
-An \textit{action} $\alpha:G\times X\to X$
-is a map defined on the product of a finite type
-$k$-group $G$
-and a finite type $k$-scheme $X$,
-such that the induced map on $S$-points
-endows $X(S)$ with an action of $G(S)$ functorially in $S$
-[or even just in $R$ as $S$ ranges through $\Spec R$
-for $k$-algebras $R$].
-Of course this is equivalent to another definition with diagrams
-expressing that the identity acts trivially and the action is ``associative'' in the usual sense.
-\end{definition}
-The key example is when $X=G$ and $\alpha$ is multiplication (left translation).
-This will be crucial in proving that a linear algebraic $k$-group actually occurs
-as a closed subgroup scheme of some $\GL_n$! \footnote{Briefly, the idea is to have $G$ act on itself
-by multiplication, endowing it with an action on its own coordinate ring, an infinite dimensional vector space, but with a certain exhaustive filtration by finite-dimensional $G$-stable subspaces. A sufficiently large one of these subspaces will contain all the generators of the algebra, and $G$ will act faithfully on that subspace, producing the desired closed immersion that is a homomorphism too.}
 
-Let $\alpha:G\times X\to X$ be a left action,
-and $W,W'\subset X$ closed subschemes, for example smooth.
-\begin{example}Take $X=G$ and $\alpha$ to be the conjugation action.
-Given $W=H\subset G=X$ a closed $k$-subgroup,
-asking whether $H$ is normal amounts to asking whether it is
-preserved by the action.
-\end{example}
+
+
+
+\section{Centralizers and Normalizers}
+\label{section-centralizers-normalizers}
+
+\noindent
+In this section we study actions of $k$-groups $G$ on $k$-schemes.
+An important example is the multiplication map
+$m : G \times G \to G$ viewed as an action of $G$ on $G$.
+Another action is the conjugation action
+$$
+G \times G \longrightarrow G,\quad
+(g, g') \longmapsto g g' g^{-1}
+$$
+Given $H\subset G=X$ a $k$-subgroup, asking whether $H$ is normal amounts
+to asking whether it is preserved by the action.
 This example motivates the following definition.
-\begin{definition}The \textit{functorial centralizer}
-is
-$${\underline Z}_G(W):R\mapsto\{g\in G(R):g:X_R\to X_R\text{ is the identity on }W_R\}.
-\footnote{It should be emphasized that the condtion
-that $g\in G(R)$ be in ${\underline Z}_G(W)(R)$ is \textbf{much} stronger
-than that $g$ act trivially on $W(R)\subset X(R)$!}$$
-The \textit{functorial transporter}
-is ${\underline{\text{Tran}}}_G(W,W'):R\mapsto\{g\in G( R):g(W_R)\subset W'_R\}$.
-The \textit{functorial normalizer}
-is ${\underline N}_G(W)={\underline{\text{Tran}}}_G(W,W)$.
+
+\begin{definition}
+\label{definition-centralizer}
+Let $k$ be a field. Let $G$ be a group scheme over $k$.
+Let $X$ be a scheme over $k$. Let $W$ and $W'$ be closed
+subschemes of $X$. Let $a : G \times X \to X$ be an action.
+\begin{enumerate}
+\item The {\it functorial transporter} $\underline{\text{Tran}}_G(W, W')$
+is the functor which
+sends a $k$-algebra $R$ to $\{g\in G( R):g(W_R)\subset W'_R\}$.
+\item The {\it functorial normalizer} $\underline{\text{N}}_G(W)$
+is $\underline{\text{Tran}}_G(W, W)$.
+\item The {\it functorial centralizer} $\underline{\text{Z}}_G(W)$
+is the functor which sends a $k$-algebra $R$ to
+$\{g\in G(R): g : X_R \to X_R \text{ is the identity on }W_R\}$.
+\end{enumerate}
 \end{definition}
-\begin{proposition}[Homework 3]
-If $W\subset X$ is geometrically reduced,
-then ${\underline Z}_G(W)$ and ${\underline N}_G(W)$ are representable
-by closed $k$-subgroup schemes $Z_G(W),N_G(W)$ of $G$.\qed
-\end{proposition}
-(The idea of the proof is to deduce the general case from the case $k=k_s$
-by Galois descent. In the separably closed case, since $W$ is geometrically reduced, $W$ has a dense set of rational points, which allows one to prove representability quite easily.)
-\begin{example}Let $X=G$ be a smooth $k$-group of finite type,
-and $\alpha$ the conjugation action.
-Then $Z_G=Z_G(G)$ is the \textbf{scheme theoretic center} of $G$;
-its $R$-points are $$Z_G(R)=\{g\in G(R)\mid g\text{ conjugates trivially on }G_R\}=\{g\in G(R)\mid
-g \in Z(G(A)) \text{ for all } A\in {\text{Alg}}/R\}.$$
+
+\noindent
+These functors in fact extend (uniquely) to functors defined
+on the category of all schemes over $k$ (from the full subcategory
+of affine schemes over $k$). Namely, you just use the same formulas.
+
+\begin{lemma}
+\label{lemma-representability}
+In the situation of Definition \ref{definition-centralizer} if
+\begin{enumerate}
+\item $G$ and $X$ are locally of finite type over $k$, and
+\item $W \subset X$ is geometrically reduced,
+\end{enumerate}
+then $\underline{\text{Tran}}_G(W, W')$ is represented
+by a closed subscheme $\text{Tran}_G(W, W')$ of $G$
+and ${\underline N}_G(W)$ is  represented by a $k$-subgroup
+$N_G(W)$ of $G$. If $W$ is separated, then
+${\underline Z}_G(W)$ is represented by a $k$-subgroup $Z_G(W)$ of $G$.
+\end{lemma}
+
+\begin{proof}
+The restriction of the functor $\underline{\text{Tran}}_G(W, W')$
+to schemes over $\bar k$ is the functor
+$\underline{\text{Tran}}_{G_{\bar k}}(W_{\bar k}, W'_{\bar k})$.
+Thus by fpqc descent of closed immersions
+(Descent, Lemma \ref{descent-lemma-closed-immersion} and
+\ref{descent-lemma-descending-property-closed-immersion})
+it suffices to prove the representability of
+$\underline{\text{Tran}}_G(W, W')$
+for $k$ algebraically closed.
+
+\medskip\noindent
+First, suppose that $W$ is given by a single closed point $x \in X$.
+Then $\text{Tran}_G(W, W')$ is given by the scheme theoretic
+inverse image $a_x^{-1}(W')$
+of $W'$ under the morphism $a_x : G \to X$, $g \mapsto a(g, x)$.
+In general consider the closed subscheme
+$$
+Z = \bigcap\nolimits_{x \in W \text{ closed}} a_x^{-1}(W')
+$$
+(scheme theoretic intersection, i.e., given by the sum of
+the ideal sheaves). It is clear that
+$\underline{\text{Tran}}_G(W, W') \subset Z$
+as subfunctors of $G$. Let $T$ be a scheme over $k$ and let
+$g \in Z(T)$. We claim that $g$ is a point of
+$\underline{\text{Tran}}_G(W, W')$. The claim
+proves representability of $\underline{\text{Tran}}_G(W, W')$
+by the closed subscheme $Z$ of $G$.
+
+\medskip\noindent
+To prove the claim it suffices to show that the ``universal'' map
+$$
+a|_{Z \times W} : Z \times W \longrightarrow X
+$$
+factors through $W'$ (details omitted).
+Let $U \subset X$ be an affine open
+and let $f \in \mathcal{O}_X(U)$ be an element of the ideal sheaf
+of $W'$. Let $U' \subset Z \times W$ be the inverse image of $U$
+and let $f' \in \mathcal{O}_{Z \times W}(U')$ be the pullback of $f$.
+Then $f'$ restricts to zero on the scheme $U' \cap (Z \times \{x\})$
+for all closed points $x \in W$ and we have to prove that $f'$ is zero.
+Thus it suffices to show that
+$$
+\mathcal{O}_{Z \times W}(U') \longrightarrow
+\prod\nolimits_{x \in W\text{ closed}} 
+\mathcal{O}_{Z \times \{x\}}(U' \cap (Z \times \{x\}))
+$$
+is injective. If $U'$ is of the form $U' = V \times V'$
+with $V \subset Z$ and $V' \subset W$ affine open this
+follows from the fact that
+$$
+\mathcal{O}(V \times V') = \mathcal{O}(V) \otimes_k \mathcal{O}(V')
+$$
+and the fact that $\mathcal{O}(V') \to \prod_{x \in V'} k$
+is injective as $W$ is closed. For general opens you argue in
+the same manner using localizations; some details omitted.
+
+\medskip\noindent
+The case of ${\underline N}_G(W)$ follows immediately from the
+above and the observation that its points over $T$ form a subgroup of
+$G(T)$ for all scheme $T$ over $k$.
+
+\medskip\noindent
+The case of ${\underline Z}_G(W)$. Again we reduce to the case $k$
+is algebraically closed by the argument in the first paragraph of
+the proof. Since we have ${\underline Z}_G(W) \subset {\underline N}_G(W)$
+we may replace $X$ by $W$ and $G$ by $N_G(W)$ and assume
+that $W = X$. Then we are looking for the normalizer of
+$\Delta \subset X \times X$ under the action
+$$
+G \times X \times X \longrightarrow X \times X, \quad
+(g, x, x') \mapsto (gx, x')
+$$
+Thus, if $X$ is separated, then this case follows from
+the above again.
+\end{proof}
+
+\begin{example}[Center]
+\label{example-center}
+Let $k$ be a field. Let $G$ be a smooth $k$-group.
+Observe that $G$ is separated by Groupoids, Lemma
+\ref{groupoids-lemma-group-scheme-over-field-separated}.
+Hence we can define the {\it scheme theoretic center}
+$Z_G$ of $G$ as the centralizer of $G$ under the conjugacy action of
+$G$ on itself. By Lemma \ref{lemma-representability}
+we find that $Z_G$ is a $k$-subgroup whose
+$R$-points are
+\begin{align*}
+Z_G(R)
+& =
+\{g\in G(R)\mid g\text{ conjugates trivially on }G_R\} \\
+& =\{g\in G(R)\mid
+g \in Z(G(A)) \text{ for all } A\in {\text{Alg}}/R\}.
+\end{align*}
+The center exists for any locally algebraic $k$-group, see
+Groupoids, Lemma \ref{groupoids-lemma-algebraic-center}.
 \end{example}
-\begin{example}[Homework 3]$Z_{\GL_n}\simeq GL_1$ is the diagonal copy
-of $\mathbf{G}_m$. $Z_{\SL_n}\simeq \mu_n\subset\GL_1$ is the diagonal copy
-of the scheme of $n$th roots of unity.
-$Z_{\GL_n}(T)=T$ where $T$ is the diagonal torus.
-In particular $Z_{\GL_n}(T)$ is smooth by inspection,
-which will turn out to be an instance of a more general phenomenon.
-\end{example}
+
 \begin{example}
-When $k=\bar k$ is algebraically closed,
-we have $Z_G(W)(\bar k)=\{g\in G(\bar k)\mid g\text{ centralizes }W_{\bar k}\subset X_{\bar k}\}$. But since $W_{\bar k}$ is reduced and $\bar k$ is algebraically closed,
-\textit{in this case} the condition is the same as centralizing $W(\bar k)\subset X(\bar k)$!
+\label{example-center-GL-SL}
+The center $Z_{\GL_n}$ of $\GL_n$ is the diagonal copy
+of $\mathbf{G}_m$. The center $Z_{\SL_n}$ is is the diagonal copy
+of the scheme of $n$th roots of unity $\mu_n$.
 \end{example}
-\subsection{Closed orbit lemma}
+
 \begin{example}
 Let $G=\mathbf{G}_m$ act on $X=\mathbf{A}^2$
 by $t(x,y)=(tx, t^2y)$.
@@ -30324,55 +30622,68 @@ $X_{k_s}$.  (Hint: it suffices to prove $X(k_s)$ is non-empty!)
 
 
 \section{Algebraic Groups I. Homework 3}
+\label{section-HW3}
 
-\noindent
-1.  Let $k[x_{ij}]$ be the polynomial ring in
+\begin{exercise}
+\label{exercise-HW3-1}
+Let $k[x_{ij}]$ be the polynomial ring in
 variables $x_{ij}$ with $1 \le i, j \le n$.
-Observe that the localization $k[x_{ij}]_{\det}$ has a natural $\mathbf{Z}$-grading, since
-$\det \in k[x_{ij}]$ is homogeneous.  Let $k[x_{ij}]_{(\det)}$ denote the degree-0 part
-(i.e., fractions $f/\det^e$ with $f$ homogenous of degree $e\deg(\det) = e n$, for $e \ge 0$).
-
-(i) Define ${\text{PGL}}_n = \Spec(k[x_{ij}]_{(\det)})$.
+Observe that the localization $k[x_{ij}]_{\det}$
+has a natural $\mathbf{Z}$-grading, since
+$\det \in k[x_{ij}]$ is homogeneous.
+Let $k[x_{ij}]_{(\det)}$ denote the degree-0 part
+(i.e., fractions $f/\det^e$ with $f$ homogenous
+of degree $e\deg(\det) = e n$, for $e \ge 0$).
+\begin{enumerate}
+\item Define ${\text{PGL}}_n = \Spec(k[x_{ij}]_{(\det)})$.
 Identify this with the open affine $\{\det \ne 0\}$ in $\mathbf{P}^{n^2-1}$, and
 construct an injective map of sets
 ${\text{GL}}_n(R)/R^{\times} \rightarrow
 {\text{PGL}}_n(R) := \Hom_k(\Spec R, {\text{PGL}}_n)$
 naturally in $k$-algebras $R$.
-
-(ii) For any $R$ and any $m \in {\text{PGL}}_n(R)$, show that there is an affine open covering
-$\{\Spec R_i\}$ of $\Spec R$ such that $m|_{R_i} \in {\text{GL}}_n(R_i)/R_i^{\times}$.
+\item For any $R$ and any $m \in {\text{PGL}}_n(R)$,
+show that there is an affine open covering
+$\{\Spec R_i\}$ of $\Spec R$ such that
+$m|_{R_i} \in {\text{GL}}_n(R_i)/R_i^{\times}$.
 Deduce that ${\text{PGL}}_n(R)$ is the {\em sheafification} of the presheaf
 $U \mapsto {\text{GL}}_n(U)/{\text{GL}}_1(U)$ on $\Spec U$, and that
 ${\text{PGL}}_n$ has a unique $k$-group structure such that
 ${\text{GL}}_n \rightarrow {\text{PGL}}_n$ is a $k$-homomorphism.
-
-(iii) Prove that if $R$ is {\em local} then ${\text{GL}}_n(R)/R^{\times} =
+\item Prove that if $R$ is {\em local} then ${\text{GL}}_n(R)/R^{\times} =
 {\text{PGL}}_n(R)$, and construct a {\em counterexample} with $n = 2$
 for any Dedekind domain $R$ whose class group has nontrivial 2-torsion.
 (Hint: $I \oplus I \simeq R^2$ when $I$ is 2-torsion.)
+\item Write out the effect of multiplication and inversion on
+${\text{PGL}}_n$ at the level of coordinate rings.
+\end{enumerate}
+\end{exercise}
 
-(iv) Write out the effect of multiplication and inversion on ${\text{PGL}}_n$ at the level of coordinate rings.
-
-\medskip\noindent
-2.  The {\em scheme-theoretic kernel} of a $k$-homomorphism
-$f:G' \rightarrow G$ between $k$-group schemes is the scheme-theoretic fiber $f^{-1}(e)$
+\begin{exercise}
+\label{exercise-HW3-2}
+The {\em scheme-theoretic kernel} of a $k$-homomorphism
+$f:G' \rightarrow G$ between $k$-group schemes is
+the scheme-theoretic fiber $f^{-1}(e)$
 (with $e:\Spec k \rightarrow G$ the identity). It is denoted $\Ker f$.
-
-(i) Prove that if $R$ is any $k$-algebra then $(\Ker f)(R) = \Ker(G'(R) \rightarrow G(R))$
+\begin{enumerate}
+\item Prove that if $R$ is any $k$-algebra then
+$(\Ker f)(R) = \Ker(G'(R) \rightarrow G(R))$
 as subgroups of $G'(R)$; deduce that $\Ker f$ is a normal $k$-subgroup of $G'$.
-
-(ii) Prove that the homomorphism ${\text{GL}}_n \rightarrow {\text{PGL}}_n$
-constructed in Exercise 1 is surjective with scheme-theoretic kernel equal to the $k$-subgroup
+\item Prove that the homomorphism ${\text{GL}}_n \rightarrow {\text{PGL}}_n$
+constructed in Exercise 1 is surjective with
+scheme-theoretic kernel equal to the $k$-subgroup
 $D \simeq {\text{GL}}_1$ of scalar diagonal matrices.
-
-(iii) Let $\mu_n = \Ker(t^n:\mathbf{G}_m \rightarrow \mathbf{G}_m) =
-\Spec(k[t,1/t]/(t^n - 1))$.  Identify $\mu_n(R)$ with the group of $n$th roots of unity
+\item Let $\mu_n = \Ker(t^n:\mathbf{G}_m \rightarrow \mathbf{G}_m) =
+\Spec(k[t,1/t]/(t^n - 1))$.  Identify $\mu_n(R)$
+with the group of $n$th roots of unity
 in $R^{\times}$ naturally in any $k$-algebra $R$, and
 prove that the homomorphism ${\text{SL}}_n \rightarrow {\text{PGL}}_n$
 obtained by restriction of the map in (ii) to ${\text{SL}}_n$ is surjective,
 with kernel $\mu_n$.
+\end{enumerate}
+\end{exercise}
 
-\medskip\noindent
+\begin{exercise}
+\label{exercise-HW3-3}
 3.  Let $G$ be a $k$-group of finite type equipped with an action on
 $k$-scheme $V$ of finite type.   Let $W, W' \subset V$ be closed
 subschemes.   Define the {\em functorial centralizer}
@@ -30384,52 +30695,76 @@ and $\underline{\text{Tran}}_G(W,W')(S)$ is the subset of points $g \in G(S)$
 such that $g.(W_S) \subset W'_S$ (as closed subschemes of
 $V_S$).   The {\em functorial normalizer}
 $\underline{N}_G(W)$ is $\underline{\text{Tran}}_G(W,W)$.
-
-These are of most interest when $W$ is a smooth closed $k$-subgroup of $V = G$
-equipped with the left translation action.  Below, assume $W$ is {\em geometrically reduced} and {\em separated} over $k$.
-
-(i) Prove $W$ is smooth on a dense open, so $W(k_s)$ is Zariski-dense in $W_{k_s}$
-(by Exercise 5(iii), HW2).  Hint: if $k = k_s$ then $W_{\overline{k}} \rightarrow W$ is a homeomorphism,
+These are of most interest when $W$ is a smooth closed
+$k$-subgroup of $V = G$
+equipped with the left translation action.
+Below, assume $W$ is {\em geometrically reduced} and {\em separated} over $k$.
+\begin{enumerate}
+\item
+Prove $W$ is smooth on a dense open, so $W(k_s)$
+is Zariski-dense in $W_{k_s}$
+(by Exercise 5(iii), HW2).  Hint: if $k = k_s$ then
+$W_{\overline{k}} \rightarrow W$ is a homeomorphism,
 and in general use Galois descent (as in Exercise 3(iii), HW2).
-
-(ii) For each $w \in W(k)$, let $\alpha_w:G \rightarrow W$ be the orbit map $g \mapsto g.w$.
+\item For each $w \in W(k)$, let $\alpha_w:G \rightarrow W$
+be the orbit map $g \mapsto g.w$.
 Define $Z_G(w) = \alpha_w^{-1}(w)$.
 Prove that $Z_G(w)(S)$ is the subgroup of points $g \in G(S)$
 such that $g.w_S = w_S$ in $W(S)$.
-
-(iii) If $k = k_s$ prove $\cap_{w \in W(k)} Z_G(w)$ represents
-$\underline{Z}_G(W)$.  (You need to use separatedness.) For general $k$ apply Galois descent
+\item If $k = k_s$ prove $\cap_{w \in W(k)} Z_G(w)$ represents
+$\underline{Z}_G(W)$.
+(You need to use separatedness.) For general $k$ apply Galois descent
 to $Z_{G_{k_s}}(W_{k_s})$; the representing scheme is denoted $Z_G(W)$.
-
-(iv) If $k = k_s$, prove that
+\item If $k = k_s$, prove that
 $\cap_{w \in W(k)} \alpha_w^{-1}(W')$ represents $\underline{{\text{Tran}}}_G(W,W')$.  Then use Galois
 descent to prove representability by a closed subscheme ${\text{Tran}}_G(W,W')$ for any $k$.
 The representing scheme is denoted ${\text{Tran}}_G(W,W)$,
 so $N_G(W) := {\text{Tran}}_G(W,W)$ represents $\underline{N}_G(W)$.
-
-(v) Prove that for any $k$-algebra $R$ and $g \in N_G(W)(R)$,
+\item Prove that for any $k$-algebra $R$ and $g \in N_G(W)(R)$,
 the $g$-action $V_R \simeq V_R$ carries $W_R$ {\em isomorphically} onto itself,
-and deduce that $N_G(W)$ is a $k$-subgroup of $G$. (Hint: reduce to artin local $R$
+and deduce that $N_G(W)$ is a $k$-subgroup of $G$.
+(Hint: reduce to artin local $R$
 and $k = \overline{k}$.)
+\end{enumerate}
+\end{exercise}
 
-\medskip\noindent
-4.  Let $G$ be a $k$-group of finite type.  This exercise builds on the previous one.
-Note $G$ is separated:  $\Delta_{G/k}$ is a base change of $e:\Spec k \rightarrow G$!
-If $G$ is smooth then the {\em scheme-theoretic center} of $G$ is $Z_G := Z_G(G)$.
-
-(i) Let $G$ be ${\text{SL}}_n$ or ${\text{GL}}_n$ or ${\text{PGL}}_n$, and let
+\begin{exercise}
+\label{exercise-HW3-4}
+Let $G$ be a $k$-group of finite type.
+This exercise builds on the previous one.
+Note $G$ is separated:
+$\Delta_{G/k}$ is a base change of $e:\Spec k \rightarrow G$!
+If $G$ is smooth then the {\em scheme-theoretic center}
+of $G$ is $Z_G := Z_G(G)$.
+\begin{enumerate}
+\item
+Let $G$ be ${\text{SL}}_n$ or ${\text{GL}}_n$ or ${\text{PGL}}_n$, and let
 $T$ be the diagonal $k$-torus in each case.
-Prove that $Z_G(T) = T$ (as subschemes of $G$, not just at the level of geometric points!).
-Hint: to deduce the ${\text{PGL}}_n$-case from the ${\text{GL}}_n$-case, prove that
-the diagonal $k$-torus in ${\text{GL}}_n$ is the scheme-theoretic preimage of the
+Prove that $Z_G(T) = T$ (as subschemes of $G$,
+not just at the level of geometric points!).
+Hint: to deduce the ${\text{PGL}}_n$-case from
+the ${\text{GL}}_n$-case, prove that
+the diagonal $k$-torus in ${\text{GL}}_n$ is
+the scheme-theoretic preimage of the
 one in ${\text{PGL}}_n$.
-
-(ii) Using (i), prove $Z_{{\text{SL}}_n} = \mu_n$, $Z_{{\text{PGL}}_n} = 1$, and
+\item Using (i), prove
+$Z_{{\text{SL}}_n} = \mu_n$, $Z_{{\text{PGL}}_n} = 1$, and
 $Z_{{\text{GL}}_n}$ is the $k$-subgroup of scalar diagonal matrices.
-
-(iii) Prove that for a smooth closed subscheme $V$ in $G$, the formation of $Z_G(V)$
-and $N_G(V)$ commutes with any extension of the ground field.  (Hint: use the functorial characterizations,
+\item Prove that for a smooth closed subscheme $V$ in $G$,
+the formation of $Z_G(V)$
+and $N_G(V)$ commutes with any extension of the ground field.
+(Hint: use the functorial characterizations,
 not the explicit constructions.)  This applies to $Z_G$ when $G$ is smooth.
+\end{enumerate}
+\end{exercise}
+
+
+
+
+
+
+
+
 
 
 \section{Algebraic Groups I. Homework 4}
