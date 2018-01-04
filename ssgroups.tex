@@ -166,7 +166,7 @@ at the classical points $G_{\bar k}(\bar k)=G(\bar k)$.
 But by commutative algebra plus the aforementioned ``homogeneity'',
 it is thus enough to check that the completed local ring
 $\mathcal{O}^\wedge_{G_{\bar k},e}$ is regular.
-On Homework 1, it is shown that it is equivalent to check
+It is equivalent to check
 that $\mathcal{O}^\wedge_{G_{\bar k},e}\simeq \bar k [\![x_1,\ldots, x_n]\!]$
 is a power series ring.
 In fact it is also shown there that it is equivalent to do this on the
@@ -175,7 +175,8 @@ $$
 \mathcal{O}^\wedge_{G,e}\simeq k[[x_1,\ldots, x_n]]
 $$
 is a power series ring over $k$;
-and also that the latter has a functorial characterization due to Grothendieck.
+and also that the latter has a functorial characterization
+due to Grothendieck. See Lemma \ref{lemma-criteria-smoooth} below.
 This is very useful for proving smoothness.
 
 \medskip\noindent
@@ -1475,6 +1476,28 @@ while there can be many isomorphism classes of 1-dimensional
 smooth connected linear algebraic groups, they all become isomorphic to
 $\mathbf{G}_m$ or $\mathbf{G}_a$ over $\bar k$.
 We say that they are {\it forms} of $\mathbf{G}_m$ or $\mathbf{G}_a$.
+Here is a formal definition.
+
+\begin{definition}
+\label{definition-forms}
+Let $k$ be a field. Let $X$ be a finite type $k$-scheme.
+A {\it $k$-form} of $X$ is a $k$-scheme $X'$ of finite type
+such that $X'_{\bar k} \simeq X_{\bar k}$. If $X$ and $X'$
+have additional structure (for example if both are $k$-groups),
+then we require the isomorphism to be compatible with this structure.
+\end{definition}
+
+\noindent
+It turns out this is equivalent to
+the condition that $X'_K \simeq X_K$ for some
+algebraically closed extension field $K/k$
+(so we can consider $\mathbf{C}/\mathbf{Q}$ for example).
+It is also equivalent to ask that $X'_K\simeq X_K$
+for some finite extension $K/k$.
+If we ever need these facts we will carefully state
+and prove them here.
+
+\medskip\noindent
 We finish this section with some examples
 of non-split 1-dimensional linear algebraic groups, i.e., of
 nontrivial forms of $\mathbf{G}_m$ or $\mathbf{G}_a$.
@@ -1555,326 +1578,246 @@ Let $q=p^r>2$. Then $U\subset \mathbf{A}^2$ defined by $y^q=x-tx^p$
 is such a form.
 \end{example}
 
-\subsection{Smoothness criteria}
-\begin{theorem}\label{smoothnesscriteria}Let $k$ be a field.
-Let $A$ be a complete local Noetherian $k$-algebra
-with maximal ideal $\mathfrak m_A$ and residue field $A/\mathfrak m_A=k$. Then the following are equivalent:
-\begin{itemize}
-\item[(i)]$A$ is regular; i.e. $\dim_k \mathfrak m_A/\mathfrak m_A^2=\dim A$.
-\item[(ii)]$A\simeq k[\![x_1,\ldots, x_d]\!]$ for some $d$.
-\item[(iii)]$A$ satisfies Grothendieck's ``infinitesimal criterion for smoothness'': for an Artin local $k$-algebra $R$
-and an ideal $J\vartriangleleft R$ satisfying $J^2=0$,
-any $k$-homomorphism $A\to R/J$ lifts to a $k$-map $A\to R$.
-\end{itemize}
-\end{theorem}
-Before giving the proof, let's see a non-example.
+
+
+
+
+
+
+
+
+
+\section{Smoothness of some classical groups}
+\label{section-smoothness}
+
+\noindent
+Our next goal will be to establish smoothness for
+the general linear groups, the special linear groups, and
+the series $C_n$, $B_n$ and $D_n$ corresponding to symplectic groups
+$\text{Sp}(V,B)$ and orthogonal groups $\text{O}(q)$. Actually, we'll do
+defer the orthogonal case to Appendix \ref{O(q)}
+where we systematically incorporate characteristic 2.
+Our main tool will be Grothendieck's infinitesimal lifting criterion
+which can be found as More on Morphisms, Lemma
+\ref{more-morphisms-lemma-lifting-along-artinian-at-point}.
+Let us give some examples to see how this can be applied in practice.
+
 \begin{example}
-Let $X=\Spec k[x,y]/xy$ be the axes in $\mathbf{A}^2$.
-Let $A=\mathcal{O}^\wedge_{X,0}$ be the completed local ring at the origin.
-Let $R=k[\epsilon]/(\epsilon^3)$
-and $R/J=k[\epsilon]/(\epsilon^2)$.
-Then $x\mapsto \epsilon, y\mapsto \epsilon: A\to R/J$
-does not lift to a $k$-map $A\to R$.
+\label{example-axes-not-smooth}
+Let $X = \Spec(k[x,y]/(xy))$ be the axes in $\mathbf{A}^2$.
+Let $A = \mathcal{O}^\wedge_{X, 0}$ be the completed local ring
+at the origin, i.e., at the point $0$ corresponding to the
+maximal ideal $(x, y)$ in $A$. Let $R = k[\epsilon]/(\epsilon^3)$
+and $R/J = k[\epsilon]/(\epsilon^2)$.
+Then the $k$-algebra map $A \to R/J$, $x \mapsto \epsilon, y \mapsto \epsilon$
+does not lift to a $k$-map $A\to R$. It follows from
+More on Morphisms, Lemma
+\ref{more-morphisms-lemma-lifting-along-artinian-at-point}
+that $X$ is not smooth at $0$ over $k$.
 \end{example}
-\begin{proof}[Proof of Theorem $\ref{smoothnesscriteria}$]
-We'll prove the equivalences one by one.
-\begin{itemize}
-\item[(ii)$\Rightarrow$(i)] This is easy. One just needs to check that
-$\dim k[\![x_1,\ldots, x_n]\!]=n$, which follows from the
-characterization of the dimension of a ring via its Hilbert polynomial; i.e.
-$\dim_k R/\mathfrak m^\ell$
-is eventually polynomial of degree $\dim R$ in $\ell$.\\
 
-\item[(i)$\Rightarrow$(ii)] Pick generators $\bar x_1,\ldots, \bar x_d$ for
-$\mathfrak m_A/\mathfrak m_A^2$ as a $k$-vector space. Lifting them gives a map
-$\phi:R=k[\![t_1,\ldots, t_d]\!]\to A$
-sending $t_i\mapsto x_i$.
-The claim is that $\phi$ is an isomorphism.
-For surjectivity, we argue by ``successive approximation''.
-Given $a\in A$ we can find $r\in R$
-so that $\phi(r)\in a+\mathfrak m_A^2$.
-Write $\phi(r)=a+\sum m_im_i'$ where $m_i,m_i'\in \mathfrak m_A$.
-Now we can find $r_i,r_i'\in \mathfrak m_R$
-so that $\phi(r_i)\in m_i+\mathfrak m_A^2$.
-Thus $\phi(r-\sum r_ir_i')\in a+\mathfrak m_A^3$.
-Continue in this manner. We can pass to the limit since $R$
-is complete. So there exists $r$ with $\phi(r)=a$.
-
-For injectivity, suppose otherwise. Then there is a nontrivial power series relation
-over $k$ among the $x_i$'s. That is, choose a nonzero $f\in \Ker(\phi)$.
-Then $A$ is a quotient of $R/(f)$.
-But $\dim R/(f)=\dim R - 1 = d - 1 < \dim A$, which is a contradiction.\\
-
-\item[(ii)$\Rightarrow$(iii)] If $A=k[\![x_1,\ldots, x_n]\!]$
-then (iii) is easy to verify. This is because $\Hom_{{\text{Alg}}/k}(A,R)$
-for an Artin local $k$-algebra $R$
-is just a product of $n$ copies of $\mathfrak m_R$, one for each generator of $A$.
-The lifting property thus holds trivially, since $\mathfrak m_R$ surjects
-onto $\mathfrak m_{R/J}$. So given $A\to R/J$, wherever you're sending the generators
-of $A$ in $\mathfrak m_{R/J}$, lift those elements arbitrarily to $\mathfrak m_R$
-to get the desired map $A\to R$.\\
-
-\item[(iii)$\Rightarrow$(ii)]
-Choose a $k$-basis $\bar x_1,\ldots, \bar x_d$ for $\mathfrak m_A/\mathfrak m_A^2$.
-Lift $\bar x_i$ to $x_i\in \mathfrak m_A$.
-We get a map $\phi:R=k[\![t_1,\ldots, t_d]\!]\to A$
-as before.
-By construction $\phi$ induces an isomorphism $\bar\phi:R/\mathfrak m_R^2 \xrightarrow{\sim} A/\mathfrak m_A^2$.
-So we have a map $\theta^{(2)}:A\to A/\mathfrak m_A^2 \xrightarrow{\bar\phi^{-1}} R/\mathfrak m_R^2$.
-Apply the lifting property
-for $J=\mathfrak m_R^2/\mathfrak m_R^3\vartriangleleft R/\mathfrak m_R^3$.
-So we can lift $\theta^{(2)}$ to $\theta^{(3)}:A\to R/\mathfrak m_R^3$.
-We can then continue in this manner getting $\theta^{(i)}:A\to R/\mathfrak m_R^i$
-for all $i$.
-By completeness of $R$, there is thus a map $\theta:A\to R$.
-The claim is that $\theta$ is an isomorphism.
-
-For surjectivity, argue by successive approximation as in (i)$\Rightarrow$(ii).
-This works because $\theta$ induces the isomorphism $\theta_2=\bar\phi^{-1}:A/\mathfrak m_A^2 \xrightarrow{\sim} R/\mathfrak m_R^2$, which lets the inductive proof get started.
-
-For injectivity, one could argue by dimension as in (i)$\Rightarrow$(ii), but
-here is a rephrasing of the same idea.
-It suffices to show that each $\theta_i:A/\mathfrak m_A^ito R/\mathfrak m_R^i$
-is injective, since $\Ker\theta$ must ``show up'' at some finite level if it is nonzero (Krull intersection theorem).
-We know $\theta_i$
-is surjective for each $i$, since $\theta$ is.
-Now count $k$-dimensions.
-Observe that $\mathfrak m_A^{i-1}/\mathfrak m_A^i$ is spanned by monomials of degree
-$n-1$ in $x_1,\ldots, x_d$.
-They go to $t_1,\ldots, t_d$, which are linearly independent in
-$\mathfrak m_R^{i-1}/\mathfrak m_R^i$.
-Hence $\dim_k\mathfrak m_A^{i-1}/\mathfrak m_A^i\leq \dim_k\mathfrak m_R^{i-1}/\mathfrak m_R^i$
-for each $i$.
-Thus $\dim_k A/\mathfrak m_A^i\leq \dim_k R/\mathfrak m_R^i$
-for each $i$, since we have the corresponding inequality
-on the dimensions of the subquotients
-of the obvious filtrations.
-So by linear algebra, the surjectivity
-of $\theta_i$ implies that equality holds,
-and that $\theta_i$ is an isomorphism, and in particular
-is injective.
-\end{itemize}
-\end{proof}
-\begin{remark}\label{ILHremark}
-We did not use the full strength of the infinitesimal lifting hypothesis.
-It is enough to assume that hypothesis holds when $R$ is a finite local $k$-algebra, since that's all we used.
-We can also assume $J=(\epsilon)$ for some $\epsilon\in R$
-satisfying $\epsilon\mathfrak m_R=0$,
-since we can factor the general case $R\to R/J$ into a composition of
-maps of the form $R\to R/\epsilon \to R/(\epsilon,\epsilon')\to \cdots \to R/J$.
-\end{remark}
 \begin{example}
-As an example of the usefulness of the infinitesimal criterion, we will rederive the Jacobian criterion
-for an affine hypersurface.
-Choose a nonzero $f\in k[x_1,\ldots, x_n]$ and suppose $f(0,\ldots,0)=0$.
-Note that $X=V(f)$ is smooth at $0$
-if and only if $\mathcal{O}^\wedge_{X,0}$ is regular.
-
-Claim: A sufficient condition for such regularity to hold
-is that $(\partial x_1 f,\ldots, \partial x_nf)(0)\neq \vec 0$.
-
-We will show this by verifying the infinitesimal criterion.
-A map $\mathcal{O}^\wedge_{X,0}\to R/J$,
-or the corresponding map $\phi:A=k[x_1,\ldots, x_n]/(f)\to R/J$,
-is specified by choosing $t_i=\phi(x_i)\in \mathfrak m_R+J$
-satisfying $f(t_1,\ldots, t_n)=0\mod J$.
-The claim is that we can lift this to a map $\tilde\phi:A\to R$ under the Jacobian non-vanishing hypothesis.
-In other words, we need to find $\tilde t_i\in R$ lifting the $t_i\in R/J$
+\label{example-hypersurface-at-rational-point}
+As an example of the usefulness of the infinitesimal criterion of
+More on Morphisms, Lemma
+\ref{more-morphisms-lemma-lifting-along-artinian-at-point}
+we will rederive the Jacobian criterion
+for an affine hypersurface at a rational point.
+Choose a nonzero $f \in k[x_1,\ldots, x_n]$ and
+suppose $f(0, \ldots, 0) = 0$. We will show that
+$X = V(f)$ is smooth at $0$ if $\partial f/\partial x_i(0, \ldots, 0)$
+is nonzero for some $i$. Namely,
+let $R \to R/J$ be a small extension of local $k$-algebras with
+residue field $k$. A local $k$-algebra map
+$\mathcal{O}^\wedge_{X, 0} \to R/J$,
+or the corresponding map $\phi : A = k[x_1,\ldots, x_n]/(f) \to R/J$,
+is specified by choosing $t_i = \phi(x_i) \in \mathfrak m_R + J$
+satisfying $f(t_1,\ldots, t_n) = 0\mod J$.
+The claim is that we can lift this to a map
+$\tilde\phi : A \to R$ under the Jacobian non-vanishing hypothesis.
+In other words, we need to find $\tilde t_i \in R$ lifting the $t_i \in R/J$
 and satisfying $f(\tilde t_1,\ldots, \tilde t_n)=0$.
 First choose arbitrary lifts $\tilde t_i'$ of $t_i$.
-So $f(\tilde t_1',\ldots,\tilde t_n')\in J$.
-Set $\tilde t_i=\tilde t_i'+j_i$.
+So $f(\tilde t_1',\ldots,\tilde t_n') \in J$.
+Set $\tilde t_i = \tilde t_i' + j_i$.
 We're trying to solve $f(\tilde t_1,\ldots,\tilde t_n)=0$ for $j_i$.
-The point is that
-by Taylor expanding,
-$f(\tilde t_1,\ldots, \tilde t_n)=f(\tilde t_1',\ldots, \tilde t_n')
-+\sum \partial_{x_i}f(0)j_i+O(J^2)$. The quadratic term vanishes since $J^2=0$.
-So we just need show that the map $J^n\to J$
-defined by $\vec j\mapsto \sum\partial_{x_i}f(0)j_i$ is surjective,
-since then we can take $\vec j$ to be something mapping to $-f(\tilde t_1',\ldots,\tilde t_n')\in J$.
+The point is that by expanding we see
+$$
+f(\tilde t_1,\ldots, \tilde t_n) =
+f(\tilde t_1',\ldots, \tilde t_n')
++\sum j_i \partial f/\partial x_i(0, \ldots, 0) + O(J^2)
+$$
+The quadratic term vanishes since $J^2=0$.
+So we just need show that the map $J^n \to J$
+defined by $\vec j\mapsto \sum j_i \partial f/\partial x_i(0, \ldots, 0)$
+is surjective, since then we can solve.
 But in fact it is surjective since $\partial_{x_i}f(0)\neq 0$ for some $i$.
 \end{example}
 
-\section{January 22}
-\subsection{More on forms}
-\begin{definition}
-Let $k$ be a field and $X$ a finite type $k$-scheme.
-A \textit{$k$-form} of $X$ is a $k$-scheme $X'$ of finite type
-such that $X'_{\bar k}\simeq X_{\bar k}$.
-Equivalently (but not tautologically so),
-the condition is $X'_K\simeq X_K$ for some
-algebraically closed extension field $K/k$
-(so we can consider $\mathbf{C}/\mathbf{Q}$ for example).
-Equivalently (but not tautologically so), the condition is that
-$X'_K\simeq X_K$ for some finite extension $K/k$.
-\end{definition}
-This definition has an evident analogue for $k$-schemes with extra structure, like $k$-groups.
+\noindent
+The following lemma, which deals with extensions of ground fields and
+regularity, should probably be moved somewhere else.
 
-We saw already that every 1-dimensional connected linear algebraic $k$-group $G$ is a form of $\mathbf{G}_a$ or $\mathbf{G}_m$.
-In fact, we also saw refinements of this. On Homework 2
-it is shown that if $G$ is additive then in fact it splits
-(becomes isomorphic to $\mathbf{G}_a$) over a finite, purely inseparable
-extension $k'/k$.
-In the multiplicative case we saw that $G$ splits over a finite separable extension.
-
-The additive case is ill-behaved in the sense that there can be forms
-of $\mathbf{G}_a$ with only a single rational point.
-The multiplicative case turns out to be much better. We'll see later that
-when $k$ is infinite then when $G$ is multiplicative, $G(k)$ is Zariski-dense.
-Really we'll show something stronger (over an arbitrary, even finite, field):
-if $T$ is a torus then $T$ is \textbf{unirational}.
-(Recall that a variety $X$ over a field $k$ is unirational if it admits a dominant rational
-$k$-map from an open subscheme of an affine space over $k$.
-This is equivalent to there being  a $k$-embedding of the function field $k(X)$
-into a rational function field $k(t_1,\ldots, t_n)$.)
-
-\subsection{A loose end concerning smoothness}
-One thing not quite addressed by Theorem \ref{smoothnesscriteria}
-is  the sensitivity of the notion of smoothness to ground field extension.
-Here is a lemma to clear this up.
-\begin{lemma}\label{smoothnesslem}
+\begin{lemma}
+\label{lemma-smoothnesslem}
 Let $A$ be a local Noetherian $k$-algebra with residue field $k$.
 Let $k'/k$ be a field extension.
-Let $\mathfrak m' = \Ker(A\otimes_k k'\to k')$.
-Assume $A'=(A_{k'})_{\mathfrak m'}$ is Noetherian.
+Let $\mathfrak m' = \Ker(A \otimes_k k'\to k')$.
+Assume $A' = (A_{k'})_{\mathfrak m'}$ is Noetherian.
 Then $A$ is regular if and only if $A'$ is regular.
 \end{lemma}
-\begin{example}
-A ring which does \textit{not} satisfy the hypotheses
-of Lemma \ref{smoothnesslem} is
-$A = \mathbf{Q}[\![x]\!]$ and $k' = \mathbf{C}$; i.e.,
-$\mathbf{Q}[\![x]\!]\otimes_\mathbf{Q} \mathbf{C}$ has non-noetherian local ring at the ``origin''.
-This localization injects into $\mathbf{C}[\![x]\!]$,
-but it is far from the whole thing. You only get power series whose coefficients
-all live in a finite dimensional $\mathbf{Q}$-subspace of $\mathbf{C}$.
-\end{example}
-\begin{example}A ring which does satisfy the hypotheses of lemma \ref{smoothnesslem}
-is $A=\mathcal{O}_{X,x}=B_\mathfrak m$ where $x\in X(k)$ is a rational point of a finite type $k$-scheme $X$, and $x$ sits inside an open affine $\Spec B\subset X$.
-\textbf{Exercise.} Show that $A'=(A_{k'})_{\mathfrak m'}=\mathcal{O}_{X_{k'},x'}$
-where $x'=x\in X(k)\to X_{k'}(k')$.
 
-An example of this situation is $A=\mathcal{O}_{G,e}$ and $A'=\mathcal{O}_{G_{k'},e'}$ for an algebraic $k$-group $G$.
-\end{example}
-\begin{proof}[Proof of Lemma $\ref{smoothnesslem}$]
-$A\to A'$ is a local map of local Noetherian rings, and it is flat
-since $A\to A_{k'}$ is, as it is a localization.
-So by the dimension formula (e.g. [CRT, \S15]) we have
-$\dim A'=\dim A + \dim(A'/\mathfrak m A')$.
-But $\mathfrak m A'=\mathfrak m'$ so $\dim(A'/\mathfrak m A')=\dim(k')=0$.
-Check that $k'\otimes_k \mathfrak m/\mathfrak m^2 \xrightarrow{\sim} \mathfrak m'/\mathfrak m'^2$ canonically.
-Hence by comparing the definitions of regularity, the lemma follows.
-\end{proof}
-\begin{lemma}Let
-$G$ be an algebraic $k$-group.
-Then the following are equivalent.
-\begin{itemize}
-\item[(i)]$G$ is smooth.
-\item[(ii)]$G_{\bar k}$ is regular.
-\item[(iii)]$\mathcal{O}_{G_{\bar k},e_{\bar k}}$ is regular.
-\item[(iv)]$\mathcal{O}_{G,e}$ is regular.
-\item[(v)]$\mathcal{O}^\wedge_{G,e}=k[\![x_1,\ldots, x_n]\!]$.
-\item[(vi)]$\mathcal{O}^\wedge_{G,e}$ satisfies the infinitesimal lifting criterion.
-\end{itemize}
-\end{lemma}
+\noindent
+If $A = \mathbf{Q}[[x]]$, $k = \mathbf{Q}$, and $k' = \mathbf{C}$,
+then the hypothesis of the lemma does not hold. On the other hand,
+if $A$ is essentially of finite type over $k$, then the hypothesis
+does hold. See Varieties, Section \ref{varieties-section-local-rings}.
+
 \begin{proof}
-(i) is equivalent to (ii) by definition.
-(ii) is equivalent to (iii) by translating  by $G_{\bar k}(\bar k)$.
-(iii) is equivalent to (iv) by the lemma.
-(vi) is equivalent to (v) and (vi) by Theorem \ref{smoothnesscriteria}.
+$A\to A'$ is a local map of local Noetherian rings, and it is flat
+as the composition of $A \to A_{k'}$ and a localization.
+So by the dimension formula
+(Algebra, Lemma \ref{algebra-lemma-dimension-base-fibre-equals-total})
+we have $\dim A' = \dim A + \dim(A'/\mathfrak m A')$.
+But $\mathfrak m A'=\mathfrak m'$ so $\dim(A'/\mathfrak m A')=\dim(k')=0$.
+Observe that
+$k'\otimes_k \mathfrak m/\mathfrak m^2 \to \mathfrak m'/\mathfrak m'^2$
+is surjective (hint: use Nakayama's lemma).
+Hence by comparing the definitions of regularity
+(Algebra, Definition \ref{algebra-definition-regular-local}),
+the lemma follows.
 \end{proof}
 
-\subsection{How to apply Grothendieck's smoothness criterion}
-Recall the infinitesimal lifting criterion
-for the smoothness
-of a complete local Noetherian $k$-algebra $A$ with residue field $k$, from Theorem \ref{smoothnesscriteria}:
-it says that for all local Artin $k$-algebras $(R,\mathfrak m)$ and all
-square zero ideals $J\vartriangleleft \mathfrak m$,
-and local $k$-map $f:A\to R/J$ can be lifted
-along $\pi:R\to R/J$
-to a map $\tilde f:A\to R$ so that $f=\pi \tilde f$.
+\noindent
+The following is a long list of equivalent conditions
+guaranteeing that a locally algebraic $k$-group is smooth.
+We observe that a small extension is defined in
+Algebra, Definition \ref{algebra-definition-small-extension}.
 
-How should this criterion be interpreted?
-Loosely speaking, $A\simeq k[\![x_1,\ldots, x_N]\!]/(g_1,\ldots, g_m)$
-``for free''. The power series $g_i$ can be evaluated
-at \textit{nilpotent} elements of $R$,
-even though in general it does not make sense to evaluate a power series
-at an arbitrary element of a ring.
-So the map $f$ above is nothing more than a solution to $\{g_i=0\}$ in $\mathfrak m/J$,
-and $\tilde f$ is a lift of it to a solution in $\mathfrak m$.
-Thus, the criterion is that $A$ is a power series ring over $k$
-if and only if there are no obstruction to such lifting problems.
-Also bear in mind Remark \ref{ILHremark},
-which says that the class of lifting problems we need to consider is actually quite narrow.
+\begin{lemma}
+\label{lemma-criteria-smoooth}
+Let $k$ be a field.
+Let $G$ be a locally algebraic $k$-group. Then the following are equivalent.
+\begin{enumerate}
+\item $G$ is smooth,
+\item $G$ is smooth at $e$,
+\item $G_{\bar k}$ is regular,
+\item $\mathcal{O}_{G_{\bar k},e_{\bar k}}$ is regular,
+\item $\mathcal{O}_{G,e}$ is regular,
+\item $\mathcal{O}^\wedge_{G,e}$ is regular,
+\item $\mathcal{O}^\wedge_{G,e}=k[[x_1,\ldots, x_n]]$,
+\item $\mathcal{O}_{G,e}$ is formally smooth over $k$ in the
+$\mathfrak m_e$-adic topology,
+\item $\mathcal{O}^\wedge_{G,e}$ is formally smooth over $k$ in the
+$\mathfrak m_e$-adic topology,
+\item for every solid commutative diagram
+$$
+\xymatrix{
+G \ar[d] & \Spec(R/J) \ar[d]^i \ar[l]^-{g'} \\
+\Spec(k) & \Spec(R) \ar[l] \ar@{-->}[lu]^g
+}
+$$
+where $R \to R/J$ is a small extension of Artinian local
+rings with residue field $k$ and $\alpha$ mapping the
+closed point of $\Spec(R)$ to $e$ there exists
+a dotted arrow making the diagram commute, and
+\item for every Artinian local $k$-algebra $R$ with residue field $k$ and
+ideal $J \subset R$ generated by a single element $\epsilon$
+annihilated by $\mathfrak m_R$, the map
+$$
+\Ker(G(R)\to G(k)) \longrightarrow \Ker(G(R/J)\to G(k))
+$$
+is surjective.
+\end{enumerate}
+\end{lemma}
 
-The following special case will be the most important one for us.
-\begin{example}\label{smoothnesscriterionex}
-Let $X$ be a finite type $k$-scheme, $x\in X(k)$ a rational point,
-and $A=\mathcal{O}^\wedge_{X,x}$.
-Consider $R$ as in the criterion.
-Since $R$ is artinian, and in particular complete,
-by the universal property of completion,
-to give a local $k$-map $A\to R$ is the same
-as to give a local $k$-map $\mathcal{O}_{X,x}\to R$.
-By the universal property of the local ring $\mathcal{O}_{X,x}$,
-to give a local $k$-map $\mathcal{O}_{X,x}\to R$,
-or equivalently a map $\Spec R\to \Spec \mathcal{O}_{X,x}$,
-is the same as to give a map $\Spec R\to X$ sending the closed point to $x$.
+\begin{proof}
+By More on Morphisms, Lemma
+\ref{more-morphisms-lemma-lifting-along-artinian-at-point}
+conditions (2) and (10) are equivalent.
 
-Thus we actually have a fairly ``global'' interpretation of the infinitesimal criterion in this situation, or at least one that can be viewed in terms of the functor of points of $X$:
-namely, we require that $X(R)\to X(R/J)$ surjects
-onto the points of $X(R/J)$ that lift $x\in X(k)$.
+\medskip\noindent
+Trivially (1) implies (2). If (2) is true, then there is a nonempty
+open subscheme $U \subset G$ smooth over $k$. Thus $U_{\bar  k}$
+is a nonempty open subscheme of $G_{\bar k}$ which is smooth.
+Then $G_{\bar k} \to \Spec(\bar k)$ is smooth as every closed
+point $g$ of $G_{\bar k}$ is $\bar k$-rational and we can use
+translation to conclude $G_{\bar k}$ is smooth at $g$.
+Then by descent of smoothness
+(Descent, Lemma \ref{descent-lemma-descending-property-smooth})
+we conclude $G$ is smooth, i.e., (1) holds.
 
-If $(X,x)=(G,e)$ for a $k$-group $G$,
-it follows that $G$ is smooth if and only if $G(R)\to G(R/J)$
-maps $\Ker(G(R)\to G(k))$ surjectively onto $\Ker(G(R/J)\to G(k))$.
+\medskip\noindent
+By More on Algebra, Lemma \ref{more-algebra-lemma-completion-regular}
+conditions (5) and (6) are equivalent.
+
+\medskip\noindent
+By More on Algebra, Lemma \ref{more-algebra-lemma-formally-smooth-completion}
+conditions (8) and (9) are equivalent.
+
+\medskip\noindent
+By More on Algebra, Lemma \ref{more-algebra-lemma-fs-local}
+we see that (8) is equivalent to saying that in
+every solid commutative diagram
+$$
+\xymatrix{
+\mathcal{O}_{G, e} \ar[r] \ar@{-->}[rd] & R/J \\
+k \ar[r] \ar[u] & R \ar[u]
+}
+$$
+of local homomorphisms of local rings
+where $R \to R/J$ is a small extension of Artinian local
+$k$-algebras with residue field $k$ there exists
+a dotted arrow making the diagram commute.
+We find the condition of (9).
+Thus (8) and (10) are the ``same'' condition.
+
+\medskip\noindent
+If (8) holds, then $\mathcal{O}_{G, e}$ is regular
+by More on Algebra, Lemma \ref{more-algebra-lemma-fs-implies-regular}
+and (6) holds. If (6) holds, then More on Algebra, Lemma
+\ref{more-algebra-lemma-power-series-over-residue-field}
+implies (7) holds. Conversely (7)
+implies (9) by the universal property of power series rings.
+Thus now we see that (1), (2), (5), (6), (7), (8), (9), (10)
+are equivalent.
+
+\medskip\noindent
+Condition (11) is a reformulation of (10) using the group
+structure on the $R$-valued points of $G$.
+
+\medskip\noindent
+The equivalence of (2) and (4) follows from
+Varieties, Lemma \ref{varieties-lemma-geometrically-regular-smooth} and
+the criterion in
+Varieties, Lemma \ref{varieties-lemma-geometrically-regular-upstairs}.
+Since (3) and (4) are equivalent by the already proven
+implications over $\bar k$, the proof is complete.
+\end{proof}
+
+\begin{example}
+\label{example-GL-smooth}
+Let us apply Lemma \ref{lemma-criteria-smoooth} part (11)
+to smoothness of the general linear group. With $(R, J)$ as
+in the lemma, let us show $\GL_n(R)\to \GL_n(R/J)$
+is surjective. Take $\bar M \in \GL_n(R/J)$ and lift it entry-wise
+to $M \in \text{Mat}_n(R)$. Is $M$ invertible?
+Yes, because $\det(M) \in R$ maps to the unit $\det(\bar M)$
+in $R/J$ and every element of $R$ which maps to a unit in $R/J$
+is a unit (Algebra, Lemma \ref{algebra-lemma-locally-nilpotent-unit}).
+Thus $\GL_n$ is smooth.
 \end{example}
 
-\subsection{How to show algebraic groups are smooth}
-Now we apply the method of Example \ref{smoothnesscriterionex}
-to show how one might prove that a $k$-group $G$ is smooth
-and
-compute its tangent space, and hence (by smoothness)
-its dimension.
-It should be remarked that proving connectedness is an entirely separate issue!
-
-The idea follows Example \ref{smoothnesscriterionex} closely.
-Take a $k$-finite Artin local ring $R$,
-and $J\vartriangleleft \mathfrak m$ a square zero ideal.
-Sometimes it will be computationally convenient to restrict to \textbf{small extensions} $R\to R/\epsilon$, i.e. we take $J=(\epsilon)$ with $\epsilon\mathfrak =0$.
-It might also be helpful to assume $R/\mathfrak m=k$.
-Then we will show that $G(R)\to G(R/J)$ is surjective, at least when we restrict
-to points lifting $e\in G(k)$.
-Next we compute $T_e(G)$, which as a set
-is $\mathfrak g=\Ker(G(k[\epsilon])\to G(k))$.
-However, that kernel will turn out to have a natural vector space
-structure, with addition coming from the group structure on $G$
-(whether or not $G$ is commutative!)
-and a $k$-action from scaling $\epsilon$.
-On Homework 4 it is shown that $T_e(G)=\mathfrak g$ as vector spaces,
-not just sets.
-
-\subsubsection{Smoothness of the general and special linear group in coordinates,  via matrices}
-In fact $\GL_n(R)\to \GL_n(R/J)$ is surjective, which we can see as follows.
-Take $\bar M\in \GL_n(R/J)$, and lift it entry-wise
-to $M\in {\text{Mat}}_n(R)$.
-Is $M$ invertible?
-Yes, because $\det(M)\equiv \det(\bar M)\in (R/J)^\times\mod J$.
-So $\det M = r+j$
-and there exists $r'$ so that $(r+j)r'=1+j'$ for $j'\in J$.
-Hence some multiple of $\det M$ is in $1 + \mathfrak m \subset R^\times$.
-So $\det M\in R^\times$.
-
-Now $T_{\id}(\GL_n)=\Ker(\GL_n(k[\epsilon])\to \GL_n(k))
-=\{\id +\epsilon M\mid M\in {\text{Mat}}_n(k)\}\simeq {\text{Mat}}_n(k)$
-as an abelian group,
-since $(\id+\epsilon M)(\id+\epsilon M')=\id +\epsilon(M+M')+O(\epsilon^2)$
-and $\epsilon^2=0$; in fact the vector space structure is correct, as Homework 4 will address.
-
-Also $\SL_n(R)\to\SL_n(R/J)$ is surjective;
-lift $\bar M\in \SL_n(R/J)$ to $M\in \GL_n(R)$.
-Suppose $\det M = a\in 1+J\subset R^\times$.
-Adjust $M$ to
+\begin{example}
+\label{example-SL-smooth}
+Let us apply Lemma \ref{lemma-criteria-smoooth} part (11)
+to smoothness of the general linear group. With $(R, J)$ as
+in the lemma, let us show $\SL_n(R) \to \SL_n(R/J)$ is surjective.
+Say $\bar M \in \SL_n(R/J)$. Let $\bar M$ to $M \in \GL_n(R)$
+as above. Suppose $\det M = a \in 1 + J \subset R^*$.
+Then
 $$
+M' = 
 \left(
 \begin{smallmatrix}
 a^{-1} & & & \\
@@ -1885,51 +1828,186 @@ a^{-1} & & & \\
 \right)
 M,
 $$
-which still lifts $\bar M$ and has determinant $1$.
+is a lift of $\bar M$ which has determinant $1$. In other words
+$M' \in \SL_n(R)$ lifts $\bar M$ as desired.
+Thus $\SL_n$ is smooth.
+\end{example}
 
-Finally we compute $T_{\id}(\SL_n)=\{\id+\epsilon M\mid M\in {\text{Mat}}_n(k),\det(\id+\epsilon M)=1\}$.
-Since $\det(\id+\epsilon M)=1+\epsilon \text{Tr}(M)$,
-this shows that $\mathfrak{sl}_n = {\text{Mat}}_n(k)^{\text{Tr} = 0}$.
-\subsubsection{Smoothness of the general and special linear group without using coordinates}
-This ``functorial'' method will lead to an intrinsic description
-of $\mathfrak{gl}(V),\mathfrak{sl}(V)$,
-which is useful because it is obviously functorial in $V$.
-When we have representations floating around, this functoriality will
-be a convenient way to avoid having to think too much.
+\begin{example}
+\label{example-spsmooth}
+Let $G=\text{Sp}_{2n}\simeq\text{Sp}(V,B)$ where $V$ is a
+$2n$-dimensional vector space over $k$ and $B : V \times V\to k$
+is a symplectic form. Let us apply Lemma \ref{lemma-criteria-smoooth} part (11)
+to prove smoothness of $G$. With $(R, J)$ and $\epsilon \in J$ as
+in the lemma, let us show $G(R) \to G(R/J)$ is surjective.
 
-For $\GL(V)$, we ask whether $\text{Aut}_R(V_R)\to \text{Aut}_{R/J}(V_{R/J})$ is surjective.
-If $\bar T:V_{R/J} \xrightarrow{\sim} V_{R/J}$,
-observe that since these are free modules
-we can lift $\bar T$ to an $R$-endomorphism $T:V_R\to V_R$.
-It's an automorphism because its determinant is a unit mod $J$,
-and so it is itself a unit.
+\medskip\noindent
+Choose $\bar T\in \text{Aut}_{R/J}(V_{R/J})$ preserving $B_{R/J}$.
+We want to lift it to an element of $\text{Aut}_R(V_R)$ preserving $V_R$.
+In other words, $\bar T$ satisfies
+$B_{R/J}(\bar T v,\bar T v')=B_{R/J}(v,v')$ for all $v,v'\in V_{R/J}$.
+But note that by $R/J$-bilinearity, this condition is completely
+determined by the fact that it holds for all $v,v'\in V\subset V_{R/J}$.
+In other words, the right side of the equation is ``constant''
+in $k\subset R/J$.
 
-For $\SL(V)$ we do similarly, and exhibit an explicit element
-of $\text{Aut}_R(V_R)$ with any determinant in $1+J$ which is congruent to $\id\mod J$. Just use the same matrix as in the previous example.
+\medskip\noindent
+Start by choosing any $R$-linear automorphism $T$ of $V_R$ lifting $\bar T$.
+We want to know whether $B_R(T v, Tv')=B_R(v,v')\in R$,
+for all $v,v'\in V\subset V_R$.
+Probably this is not the case.
+But since $T$ lifts $\bar T$,
+we know, at least, that $B_R(Tv, T v')=B_R(v,v')\mod J$.
+We shall contemplate
+the automorphism $T+S$ for $S\in \Hom_R(V_R,V\otimes_k J)$.
+These are precisely the lifts of $\bar T$.
+A choice of $S\in \Hom_R(V_R,V\otimes_k J)$ is equivalent to a choice
+of $\epsilon S_0\in \Hom_k(V, V\otimes_k J)$ where $S_0\in \text{End}_k(V)$.
+Note that $S_1\in\Hom_k(V,V\otimes_kJ)$ is automatically of the form
+$\epsilon S_0$ since
+$\dim_k J/\mathfrak m_R = \dim_k (\epsilon R/\mathfrak m_R)=1$
+since $\epsilon \mathfrak m_R=0$;
+so we're really using the fact that small extensions are small
+to make our life easier.
 
-To do the tangent spaces,
-we compute $T_{\id}(\GL(V))=\Ker(\text{Aut}_{k[\epsilon]}(V_{k[\epsilon]})\to \text{Aut}_k(V))$.
-Since $$\text{Aut}_{k[\epsilon]}(V_{k[\epsilon]})\subset\text{End}_{k[\epsilon]}(V_{k[\epsilon]})
+\medskip\noindent
+Now we calculate
+$$
+B_R((T+\epsilon S_0)v,(T+\epsilon S_0)v') =
+B_R(Tv,Tv')+\epsilon(B_R(Tv, S_0v')+B_R(S_0v, Tv')).
+$$
+Since $\epsilon\mathfrak m_R=0$, the coefficient
+of $\epsilon$, namely
+$B_R(Tv,S_0v')+B_R(S_0v,Tv')$, only matters mod $\mathfrak m_R$.
+Let $T_0=\bar T\mod \mathfrak m_R$.
+The $\epsilon$-coefficient
+is $B(T_0v,S_0v')+B(S_0v,T_0v')\in k$.
+Thus the condition on $S_0$ for $T+\epsilon S_0$ to be our desired
+lift is that
+$$
+\epsilon(B(T_0v,S_0v')+B(S_0v,T_0v')) =
+B(v,v')-B(Tv,Tv')
+=:
+\epsilon h(v,v')
+\in J = \epsilon R.
+$$
+Here $h : V \times V \to k$ is defined uniquely
+by the condition that $B(v,v') - B(Tv,Tv') = \epsilon h(v,v')$.
+By inspection it is alternating and bilinear.
+
+\medskip\noindent
+So we have reduced ourselves to a problem in linear algebra:
+is the map
+$$
+\text{End}(V)\to (\wedge^2 V)^{\ast}
+$$
+defined by $S_0\mapsto [(v,v')\mapsto B(T_0,S_0v')+B(S_0v,T_0v')]$
+surjective, so that it must hit $h$?
+
+\medskip\noindent
+If $\dim_k V=2n$
+then $\dim_k\text{End}(V)=4n^2$
+and $\dim_k(\wedge^2 V)^* =\binom{2n}{2}=\frac{2n(2n-1)}{2}=n(2n-1)$.)
+So we want
+the dimension of the kernel of the map above
+to be $n(2n+1)$.
+
+\medskip\noindent
+What is the kernel?
+It is
+\[
+\{S_0\in \text{End}(V) \mid
+B(T_0v,S_0v') = -B(S_0v,T_0v') = B(T_0v',S_0v)
+\text{ for all } v,v'\in V\}.\]
+In other words, it is
+\[\{S_0\in\text{End}(V)\mid [(v,v')\mapsto B(T_0v,S_0v')]\in (\text{Sym}^2V)^*\}.\]
+Since $T_0\in \text{Sp}(V,B)$ is invertible, we can set $S_1=T_0^{-1}S_0$;
+then the space above is the same as
+\[\{S_1\in \text{End}(V)\mid B((\cdot),S_1(\cdot))\in(\text{Sym}^2V)^*\}.\]
+But $S_1\leftrightarrow B((\cdot),S_1(\cdot))$
+gives an identification of $\text{End}(V)$ with $V^*\otimes V^* = (V \otimes V)^*$,
+since $B$ is non-degenerate.
+Hence the space above
+is precisely
+$(\text{Sym}^2 V)^*\subset V^*\otimes V^*$
+which has the correct dimension.
+\end{example}
+
+\begin{remark}[Tangent space at origin]
+\label{remark-tangent-space}
+Let $k$ be a field. Let $G$ be a $k$-group scheme. Recall that the
+{\it tangent space} $T_eG = T_{G/k, e}$ of $G$ over $k$ at $e$
+is defined in Varieties, Definition \ref{varieties-definition-tangent-space}
+using morphisms from the spectrum of the dual numbers
+$k[\epsilon]$ into $G$. It is clear that
+$$
+T_e(G) = \Ker(G(k[\epsilon]) \to G(k))
+$$
+You can show that this identification is compatible with
+the group structure given on both sides. If it is known that $G$
+is smooth, then $\dim_k T_e(G)$ is equal to the dimension of $G$.
+\end{remark}
+
+\begin{example}
+\label{example-tangent-space-GL}
+Let us apply Remark \ref{remark-tangent-space} to compute
+the tangent space for $G = \GL_n$. We often abbreviate
+$\mathfrak{gl}_n = T_e(\GL_n)$. Then we have
+$$
+\mathfrak{gl}_n = \Ker(\GL_n(k[\epsilon])\to \GL_n(k))
+=\{\id +\epsilon M \mid M \in {\text{Mat}}_n(k)\} \simeq {\text{Mat}}_n(k)
+$$
+This is true as abelian groups, since
+$(\id + \epsilon M)(\id + \epsilon M') =
+\id + \epsilon(M + M')$ since $\epsilon^2=0$;
+in fact the vector space structure is correct as well.
+
+\medskip\noindent
+Let $V$ be a finite dimensional vector space over $k$. In this case we
+denote the tangent space $\mathfrak{gl}(V) = T_e\GL(V)$. We compute
+$$
+\mathfrak{gl}(V) =
+\Ker(\text{Aut}_{k[\epsilon]}(V_{k[\epsilon]})\to \text{Aut}_k(V)).
+$$
+Since
+$$\text{Aut}_{k[\epsilon]}(V_{k[\epsilon]})\subset\text{End}_{k[\epsilon]}(V_{k[\epsilon]})
 =k[\epsilon]\otimes_k\text{End}_kV,$$ we have a natural ambient vector space.
 Observe that the kernel
 $$\{\id +\epsilon T\mid T\in \text{End}_k(V)\}
 =\id+\epsilon k[\epsilon]\otimes_k\text{End}_k(V)$$ is naturally a $k$-affine linear
 subspace of $k[\epsilon]\otimes_k\text{End}_k(V)$, so
 by subtracting off $\id$ it gets a canonical vector space structure itself.
-Hence we can identify $\mathfrak{gl}(V)=\epsilon\text{End}_k(V)$.
-Similarly, since $\det(\id+\epsilon T)=1+\epsilon \text{Tr} T$
-[which can be proved in a coordinate-free manner
-using exterior algebra, should one wish to do so]
-we obtain $T_{\id}(\SL(V))$ in similar fashion
-to be $\sl(V)=\epsilon \text{End}_k^0(V)$.
+Hence we can identify $\mathfrak{gl}(V) = \text{End}_k(V)$.
+\end{example}
+
+\begin{example}
+\label{example-tangent-space-SL}
+Let us apply Remark \ref{remark-tangent-space} to compute
+the tangent space for $G = \SL_n$. We often abbreviate
+$\mathfrak{sl}_n = T_e(\SL_n)$. We compute
+$$
+\mathfrak{sl}_n =
+\{\id + \epsilon M \mid M \in {\text{Mat}}_n(k),\ \det(\id+\epsilon M)=1\}.
+$$
+Since $\det(\id + \epsilon M) = 1+\epsilon \text{Tr}(M)$,
+this shows that $\mathfrak{sl}_n = {\text{Mat}}_n(k)^{\text{Tr} = 0}$.
+
+\medskip\noindent
+Let $V$ be a finite dimensional $k$-vector space. If $\id + \epsilon T$
+is an endomorphism of $V_{k[\epsilon]}$ with $T \in \text{End}_k(V)$, then
+$\det(\id + \epsilon T)=1+\epsilon \text{Tr}(T)$
+(can be proved in a coordinate-free manner
+using exterior algebra, should one wish to do so). Hence
+the tangent space of $\SL(V)$, denoted $\mathfrak{sl}(V)$, is
+$\mathfrak{sl}(V) = \text{End}_k^0(V)$ where as usual
+$\text{End}^0$ denotes endomorphisms with trace zero.
+\end{example}
 
 
-\section{January 25}
-Our next goal will be to establish smoothness for other classical groups,
-the series $C_n$, $B_n$ and $D_n$ corresponding to symplectic groups
-$\text{Sp}(V,B)$ and orthogonal groups $\text{O}(q)$. Actually, we'll do $\text{Sp}$ and defer
-the orthogonal case to Appendix \ref{O(q)} (where we systematically incorporate
-characteristic 2). Before doing so, let us consider connectedness.
+
+
+
+Before doing so, let us consider connectedness.
 \subsection{How to Show Connectedness}
 \begin{example}$\text{O}(q)$ is actually always disconnected, scheme-theoretically.
 A prototypical example is $q=xy$ on $V=k^2$.
@@ -2096,90 +2174,10 @@ the $x$'s denote that the bottom right $(n-1)\times(n-1)$ block
 is given by $g\in \GL_{n-1}$.
 Hence $\text{Stab}_{\SL_n}([1:0:\cdots:0])=\GL_{n-1}\times \mathbf{A}^{n-1}$ as a variety.
 Again we get lucky and can see that it is connected, so we're done.
-\subsection{Smoothness of the symplectic group}\label{spsmooth}
-Let $G=\text{Sp}_{2n}\simeq\text{Sp}(V,B)$
-where $V$ is an $2n$-dimensional vector space
-over $k$
-and $B:V\times V\to k$ is a symplectic form.
-We will prove that $G$ is smooth via the infinitesimal criterion.
-We will also use Remark \ref{ILHremark}
-to reduce our work to the case where $R$ is a local finite $k$-algebra
-with residue field $k$,
-$0\neq \epsilon\in \mathfrak m_R$ satisfies
-$\epsilon\mathfrak m_R=0$,
-and $J=\epsilon R$;
-we must prove $G(R)\to G(R/J)$.
 
-Choose $\bar T\in \text{Aut}_{R/J}(V_{R/J})$ preserving $B_{R/J}$.
-We want to lift it to an element of $\text{Aut}_R(V_R)$ preserving $V_R$.
-In other words, $\bar T$ satisfies
-$B_{R/J}(\bar T v,\bar T v')=B_{R/J}(v,v')$ for all $v,v'\in V_{R/J}$.
-But note that by $R/J$-bilinearity, this condition is completely
-determined by the fact that it holds for all $v,v'\in V\subset V_{R/J}$.
-In other words, the right side of the equation is ``constant''
-in $k\subset R/J$.
 
-Start by choosing any $R$-linear automorphism $T$ of $V_R$ lifting $\bar T$.
-We want to know whether $B_R(T v, Tv')=B_R(v,v')\in R$,
-for all $v,v'\in V\subset V_R$.
-Probably this is not the case.
-But since $T$ lifts $\bar T$,
-we know, at least, that $B_R(Tv, T v')=B_R(v,v')\mod J$.
-We shall contemplate
-the automorphism $T+S$ for $S\in \Hom_R(V_R,V\otimes_k J)$.
-These are precisely the lifts of $\bar T$.
-A choice of $S\in \Hom_R(V_R,V\otimes_k J)$ is equivalent to a choice
-of $\epsilon S_0\in \Hom_k(V, V\otimes_k J)$ where $S_0\in \text{End}_k(V)$.
-Note that $S_1\in\Hom_k(V,V\otimes_kJ)$ is automatically of the form $\epsilon S_0$ since $\dim_k J/\mathfrak m_R = \dim_k (\epsilon R/\mathfrak m_R)=1$ since $\epsilon \mathfrak m_R=0$;
-so we're really using the fact that small extensions are small
-to make our life easier.
 
-Now we calculate
-\[B_R((T+\epsilon S_0)v,(T+\epsilon S_0)v')=B_R(Tv,Tv')+\epsilon(B_R(Tv, S_0v')+B_R(S_0v, Tv')).\]
-Since $\epsilon\mathfrak m_R=0$, the coefficient
-of $\epsilon$, namely
-$B_R(Tv,S_0v')+B_R(S_0v,Tv')$, only matters mod $\mathfrak m_R$.
-Let $T_0=\bar T\mod \mathfrak m_R$.
-The $\epsilon$-coefficient
-is $B(T_0v,S_0v')+B(S_0v,T_0v')\in k$.
-Thus the condition on $S_0$ for $T+\epsilon S_0$ to be our desired
-lift is that
-\[\epsilon(B(T_0v,S_0v')+B(S_0v,T_0v'))=B(v,v')-B(Tv,Tv')=:\epsilon h(v,v')\in J=\epsilon R.\]
-Here $h:V\times V\to k$ is defined uniquely
-by the condition that $B(v,v')-B(Tv,Tv')=\epsilon h(v,v')$.
-By inspection it is alternating and bilinear.
 
-So we have reduced ourselves to a problem in linear algebra:
-is the map
-\[\text{End}(V)\to (\wedge^2 V)^{\ast}\]
-defined by $S_0\mapsto [(v,v')\mapsto B(T_0,S_0v')+B(S_0v,T_0v')]$
-surjective, so that it must hit $h$?
-
-If $\dim_k V=2n$
-then $\dim_k\text{End}(V)=4n^2$
-and $\dim_k(\wedge^2 V)^* =\binom{2n}{2}=\frac{2n(2n-1)}{2}=n(2n-1)$.)
-So we want
-the dimension of the kernel of the map above
-to be $n(2n+1)$.
-
-What is the kernel?
-It is
-\[
-\{S_0\in \text{End}(V) \mid
-B(T_0v,S_0v') = -B(S_0v,T_0v') = B(T_0v',S_0v)
-\text{ for all } v,v'\in V\}.\]
-In other words, it is
-\[\{S_0\in\text{End}(V)\mid [(v,v')\mapsto B(T_0v,S_0v')]\in (\text{Sym}^2V)^*\}.\]
-Since $T_0\in \text{Sp}(V,B)$ is invertible, we can set $S_1=T_0^{-1}S_0$;
-then the space above is the same as
-\[\{S_1\in \text{End}(V)\mid B((\cdot),S_1(\cdot))\in(\text{Sym}^2V)^*\}.\]
-But $S_1\leftrightarrow B((\cdot),S_1(\cdot))$
-gives an identification of $\text{End}(V)$ with $V^*\otimes V^* = (V \otimes V)^*$,
-since $B$ is non-degenerate.
-Hence the space above
-is precisely
-$(\text{Sym}^2 V)^*\subset V^*\otimes V^*$
-which has the correct dimension. QED
 
 Finally, we can compute the Lie algebra $\mathfrak{sp}_{2n}$
 and determine $\dim\text{Sp}_{2n}$.
