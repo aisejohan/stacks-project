@@ -294,15 +294,71 @@ Part (3) follows from (2), since the coimage is a cokernel.
 Similarly, (4) follows from (1).
 \end{proof}
 
+\begin{lemma}
+\label{lemma-coim-im-map}
+Let $f : x \to y$ be a morphism in a preadditive category
+such that the kernel, cokernel, image and coimage all exist.
+Then $f$ can be factored uniquely as
+$x \to \Coim(f) \to \Im(f) \to y$.
+\end{lemma}
+
+\begin{proof}
+There is a canonical morphism $\Coim(f) \to y$
+because $\Ker(f) \to x \to y$ is zero.
+The composition $\Coim(f) \to y \to \Coker(f)$
+is zero, because it is the unique morphism which gives
+rise to the morphism $x \to y \to \Coker(f)$ which
+is zero
+(the uniqueness follows from
+Lemma \ref{lemma-kernel-mono} (3)).
+Hence $\Coim(f) \to y$ factors uniquely through
+$\Im(f) \to y$, which gives us the desired map.
+\end{proof}
+
+\begin{example}
+\label{example-not-abelian}
+Let $k$ be a field.
+Consider the category
+of filtered vector spaces over $k$.
+(See Definition \ref{definition-filtered}.)
+Consider the filtered vector spaces $(V, F)$ and $(W, F)$ with
+$V = W = k$ and
+$$
+F^iV
+=
+\left\{
+\begin{matrix}
+V & \text{if} & i < 0 \\
+0 & \text{if} & i \geq 0
+\end{matrix}
+\right.
+\text{ and }
+F^iW
+=
+\left\{
+\begin{matrix}
+W & \text{if} & i \leq 0 \\
+0 & \text{if} & i > 0
+\end{matrix}
+\right.
+$$
+The map $f : V \to W$ corresponding to $\text{id}_k$ on the underlying
+vector spaces has trivial kernel and cokernel but is not
+an isomorphism. Note also that $\Coim(f) = V$ and $\Im(f) = W$.
+This means that the category of filtered vector spaces over $k$
+is not abelian.
+\end{example}
+
 \noindent
-Recall that an endomorphism $f$ is said to be
-idempotent if and only if $f \circ f = f$.
+We finish this section by some lemmas on splitting images of
+idempotent endormorphisms. Recall that an endomorphism $f$
+is idempotent if $f \circ f = f$.
 
 \begin{remark}
 \label{remark-idempotent-symmetry}
 Let $\mathcal{A}$ be a preadditive category,
-$x$ be an object of $\mathcal{A}$,
-and $f : x \to x$ be idempotent.
+$x$ an object of $\mathcal{A}$,
+and $f : x \to x$ idempotent.
 Writing $g = \text{id} _ x - f$,
 one has $f \circ g = 0$, $g \circ f = 0$, and $g \circ g = g$.
 \end{remark}
@@ -445,62 +501,6 @@ and apply Lemma \ref{lemma-idempotent-splitting}
 and Lemma \ref{lemma-split-morphism-kernel-cokernel}.
 \end{proof}
 
-\begin{lemma}
-\label{lemma-coim-im-map}
-Let $f : x \to y$ be a morphism in a preadditive category
-such that the kernel, cokernel, image and coimage all exist.
-Then $f$ can be factored uniquely as
-$x \to \Coim(f) \to \Im(f) \to y$.
-\end{lemma}
-
-\begin{proof}
-There is a canonical morphism $\Coim(f) \to y$
-because $\Ker(f) \to x \to y$ is zero.
-The composition $\Coim(f) \to y \to \Coker(f)$
-is zero, because it is the unique morphism which gives
-rise to the morphism $x \to y \to \Coker(f)$ which
-is zero
-(the uniqueness follows from
-Lemma \ref{lemma-kernel-mono} (3)).
-Hence $\Coim(f) \to y$ factors uniquely through
-$\Im(f) \to y$, which gives us the desired map.
-\end{proof}
-
-\begin{example}
-\label{example-not-abelian}
-Let $k$ be a field.
-Consider the category
-of filtered vector spaces over $k$.
-(See Definition \ref{definition-filtered}.)
-Consider the filtered vector spaces $(V, F)$ and $(W, F)$ with
-$V = W = k$ and
-$$
-F^iV
-=
-\left\{
-\begin{matrix}
-V & \text{if} & i < 0 \\
-0 & \text{if} & i \geq 0
-\end{matrix}
-\right.
-\text{ and }
-F^iW
-=
-\left\{
-\begin{matrix}
-W & \text{if} & i \leq 0 \\
-0 & \text{if} & i > 0
-\end{matrix}
-\right.
-$$
-The map $f : V \to W$ corresponding to $\text{id}_k$ on the underlying
-vector spaces has trivial kernel and cokernel but is not
-an isomorphism. Note also that $\Coim(f) = V$ and $\Im(f) = W$.
-This means that the category of filtered vector spaces over $k$
-is not abelian.
-\end{example}
-
-
 
 
 
@@ -537,9 +537,8 @@ that $p$ corresponds to the projection onto $y$.
 \end{lemma}
 
 \begin{proof}
-Immediate via Lemma \label{lemma-idempotent-kernel-cokernel}
-and Lemma \label{lemma-idempotent-splitting},
-and Lemma \label{lemma-additive-cat-biproduct-kernel}.
+Immediate via Lemmas \ref{lemma-idempotent-kernel-cokernel},
+\ref{lemma-idempotent-splitting}, and \ref{lemma-additive-cat-biproduct-kernel}.
 \end{proof}
 
 \begin{lemma}
