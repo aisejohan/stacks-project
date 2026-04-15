@@ -9687,6 +9687,24 @@ has $p^n$ points, i.e., the kernel of $F - 1$ is a group with $p^n$ elements.
 \end{proof}
 
 \begin{lemma}
+\label{lemma-F-2}
+In the situation of Lemma \ref{lemma-F-1} let $k'/k$ be an extension
+of algebraically closed fields. Set $V' = V \otimes_k k'$ and
+$F' : V' \to V'$ be the Frobenius linear map induced by $F$.
+Then $\Ker(F - 1)$ maps isomorphically onto $\Ker(F' - 1)$.
+\end{lemma}
+
+\begin{proof}
+Let $v_1, \ldots, v_n$ be a basis of $V$ and say $F(v_i) = \sum a_{ij}v_j$.
+Then $v = \sum \lambda_i v_i$ is in $\Ker(F - 1)$ if and only if
+$\sum \lambda_i^pa_{ij} = \lambda_j$ for $j = 1, \ldots, n$.
+By Lemma \ref{lemma-F-1} these equations
+cut out a closed subscheme $Z$ of
+$\mathbf{A}^n_k = \Spec(k[\lambda_1, \ldots, \lambda_n])$
+finite over $\Spec(k)$. Then $Z(k) = Z(k')$ and we conclude.
+\end{proof}
+
+\begin{lemma}
 \label{lemma-top-cohomology-coherent}
 Let $X$ be a separated scheme of finite type over a field $k$.
 Let $\mathcal{F}$ be a coherent sheaf of $\mathcal{O}_X$-modules.
@@ -9868,9 +9886,10 @@ $$
 H^q(X, \mathcal{O}_X) \xrightarrow{F - 1} H^q(X, \mathcal{O}_X) \to 0
 $$
 and moreover the $\mathbf{F}_p$-dimension of the cohomology groups
-$H_\etale^q(X, \underline{\mathbf{Z}/p\mathbf{Z}})$ is equal to the
+$H_\etale^q(X, \underline{\mathbf{Z}/p\mathbf{Z}})$ is less than or equal to the
 $k$-dimension of the vector space $H^q(X, \mathcal{O}_X)$.
 This proves the first statement. The second statement follows
+from Lemma \ref{lemma-F-2}
 as $H^q(X, \mathcal{O}_X) \otimes_k k' \to H^q(X_{k'}, \mathcal{O}_{X_{k'}})$
 is an isomorphism by flat base change
 (Cohomology of Schemes,
