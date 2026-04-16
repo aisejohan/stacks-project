@@ -4942,6 +4942,87 @@ Thus we indeed have a morphism of distinguished triangles.
 
 
 
+\section{Nonfinite cohomology of the structure sheaf of a projective scheme}
+\label{section-nonfinite-h0}
+
+\noindent
+Let $R$ be any non-Noetherian ring and $I$ an ideal of $R$
+that is not finitely generated. Let $S = R[x, y]/xyI$ viewed
+as a graded ring with $x$ and $y$ having degree $1$.
+Then $X = \text{Proj}(S)$ is a projective scheme over $R$.
+We claim that $H^0(X, \mathcal{O}_X)$ is not
+a finitely generated $R$-module.
+
+\medskip\noindent
+Decomposing the rings $S_x$, $S_y$, and $S_{xy}$ by bidegree,
+we can write
+$$
+S_x = \bigoplus_{\substack{(a, b) \in \mathbf{Z}^2 \\ b \geq 0}} R'_{a, b},
+\quad\quad
+S_y = \bigoplus_{\substack{(a, b) \in \mathbf{Z}^2 \\ a \geq 0}} R''_{a, b},
+\quad\quad
+S_{xy} = \bigoplus_{\substack{(a, b) \in \mathbf{Z}^2}} R/I,
+$$
+where the $(a, b)$-summands sit in degree $a + b$ and we have
+$$
+R'_{a, b} =
+\left\{
+\begin{matrix}
+R & b = 0, \\
+R/I & b \ne 0,
+\end{matrix}
+\right.
+\quad\quad
+R''_{a, b} =
+\left\{
+\begin{matrix}
+R & a = 0, \\
+R/I & a \ne 0.
+\end{matrix}
+\right.
+$$
+The $R$-module $H^0(X, \mathcal{O}_X)$ can be computed as the kernel of the map
+$$
+(S_x)_0 \times (S_y)_0 \to (S_{xy})_0
+$$
+defined by $(F, G) \mapsto F - G$. Here the notation $A_0$ refers to the
+degree $0$ component of a $\mathbf{Z}$-graded ring $A$. By our explicit
+description of $S_x, S_y, S_{xy}$ above, this kernel is isomorphic
+to the submodule $M \subset R^2$ consisting of those pairs $(F, G)$
+with $F - G \in I$. Since the map $M \to I$ of $R$-modules
+given by $(F, G) \mapsto F - G$ is surjective,
+$M$ is not a finitely generated $R$-module.
+
+\medskip\noindent
+The surjection $R[x, y] \to S$ corresponds to a closed
+immersion $i : X \to \mathbf{P}^1_R$. Then $\mathcal{F} = i_*\mathcal{O}_X$
+is a finite type quasi-coherent $\mathcal{O}_{\mathbf{P}^1_R}$-module
+whose $H^0$ is equal to the non-finitely generated module $M$
+we computed above.
+
+\begin{lemma}
+\label{lemma-nonfinite-h0}
+Non-finite $H^0$.
+\begin{enumerate}
+\item There exists a ring $R$ and a projective scheme $X$
+over $R$ such that $H^0(X, \mathcal{O}_X)$ is not
+a finite $R$-module.
+\item There exists a ring $R$ and a finite type quasi-coherent module
+$\mathcal{F}$ on $\mathbf{P}^1_R$ such that
+$H^0(\mathbf{P}^1_R, \mathcal{F})$ is not a finite $R$-module.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+See discussion above.
+\end{proof}
+
+
+
+
+
+
+
 
 
 \section{Being projective is not local on the base}
