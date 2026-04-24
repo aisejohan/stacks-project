@@ -33122,15 +33122,22 @@ $$
 $$
 such that
 \begin{enumerate}
-\item $P = \{\sigma \in D \mid
-\sigma|_{B/\mathfrak m^2} = \text{id}_{B/\mathfrak m^2}\}$
-where $D$ is the decomposition group,
+\item if $D$ is the decomposition group we have
+$$
+P = \{\sigma \in I \mid
+\sigma|_{\mathfrak m/\mathfrak m^2} = \text{id}_{\mathfrak m/\mathfrak m^2}\}
+= \{\sigma \in D \mid \sigma \text{ acts trivially on }\text{Gr}_\mathfrak m(B)\}
+$$
 \item $P$ is a normal subgroup of $D$,
 \item $P$ is a $p$-group if the characteristic of $\kappa_A$ is
 $p > 0$ and $P = \{1\}$ if the characteristic of $\kappa_A$ is zero,
-\item $I_t$ is cyclic of order the prime to $p$ part of the integer $e$, and
+\item $I_t$ is cyclic of order the prime to $p$ part of the integer $e$,
 \item there is a canonical isomorphism
-$\theta : I_t \to \mu_e(\kappa(\mathfrak m))$.
+$\theta : I_t \to \mu_e(\kappa(\mathfrak m))$, and
+\item
+$P =
+\{\sigma \in D \mid \sigma|_{B/\mathfrak m^2} = \text{id}_{B/\mathfrak m^2}\}$
+if $\kappa(m)$ is separable over the residue field of $A$.
 \end{enumerate}
 Here $e$ is the integer of Lemma \ref{lemma-galois-conclusion}.
 \end{lemma}
@@ -33197,18 +33204,28 @@ $\mu_e(\kappa(\mathfrak m))$ is cyclic of order at most the prime
 to $p$ part of $e$ (see Fields, Section \ref{fields-section-roots-of-1}).
 
 \medskip\noindent
-Let $P = \Ker(\theta)$. The elements of $P$ are exactly the elements
-of $D$ acting trivially on $C/\pi_C^2C \cong B/\mathfrak m^2$.
-Thus (a) is true. This implies (b) as $P$ is the kernel
-of the map $D \to \text{Aut}(B/\mathfrak m^2)$.
-If we can prove (c), then parts (d) and (e) will follow as $I_t$
+Let $P = \Ker(\theta)$. By construction the elements of $P$ are exactly
+the elements of $I$ which act trivially on
+$\mathfrak m/\mathfrak m^2 = \text{Gr}_\mathfrak m^1(B)$,
+i.e., $P = \{\sigma \in I \mid \sigma|_{\mathfrak m/\mathfrak m^2} =
+\text{id}_{\mathfrak m/\mathfrak m^2}\}$. Also
+$I$ consists of the elements of $D$ which act trivially on
+$\kappa(\mathfrak m) = B/\mathfrak m$.
+Since the graded ring $\text{Gr}_\mathfrak m(B)$ is generated
+by $\text{Gr}^1_\mathfrak m(B) = \mathfrak m/\mathfrak m^2$ over
+$\text{Gr}^0_\mathfrak m(B) = B/\mathfrak m$, we conclude that
+$P = \{\sigma \in D \mid \sigma \text{ acts trivially on }
+\text{Gr}_\mathfrak m(B)\}$.
+Thus (1) is true. This implies (2) as $P$ is the kernel
+of the homomorphism $D \to \text{Aut}(\text{Gr}_\mathfrak m(B))$.
+If we can prove (3), then parts (4) and (5) will follow as $I_t$
 will be isomorphic to $\mu_e(\kappa(\mathfrak m))$ as the arguments above show
 that $|I_t| \geq |\mu_e(\kappa(\mathfrak m))|$.
 
 \medskip\noindent
 Thus it suffices to prove that the
-kernel $P$ of $\theta$ is a $p$-group. Let $\sigma$ be a nontrivial element of
-the kernel. Then $\sigma - \text{id}$
+kernel $P$ of $\theta$ is a $p$-group.
+Let $\sigma$ be a nontrivial element of the kernel. Then $\sigma - \text{id}$
 sends $\mathfrak m_C^i$ into $\mathfrak m_C^{i + 1}$
 for all $i$. Let $m$ be the order of $\sigma$. Pick $c \in C$ such
 that $\sigma(c) \not = c$. Then $\sigma(c) - c \in \mathfrak m_C^i$,
@@ -33228,7 +33245,36 @@ m(\sigma(c) - c) \bmod \mathfrak m_C^{i + 1}
 It follows that $p | m$ (or $m = 0$ if $p = 1$). Thus every element of the
 kernel of $\theta$ has order divisible by $p$, i.e., $\Ker(\theta)$
 is a $p$-group.
+
+\medskip\noindent
+Proof of (6). Assume $\kappa(\mathfrak m)/\kappa$ is separable.
+In this case $f = |D/I|$ by Lemma \ref{lemma-galois-galois}
+and $I$ has order $e$. If $e = 1$, then $P = I = \{\text{id}\}$
+and the result is true. If $e > 1$, then
+$B/\mathfrak m^2 = C/\pi_C^2C$ is a $\kappa$-algebra
+and a small extension of $\kappa(\mathfrak m)$.
+Because $\kappa(\mathfrak m)$ is formally \'etale over $\kappa$
+(Algebra, Lemma
+\ref{algebra-lemma-characterize-separable-algebraic-field-extensions})
+there is a unique $\kappa$-algebra map
+$\kappa(\mathfrak m) \to B/\mathfrak m^2$
+right inverse to $B/\mathfrak m^2 \to \kappa(\mathfrak m)$.
+In other words, there is a $D$-equivariant isomorphism
+$B/\mathfrak m^2 = \mathfrak m/\mathfrak m^2 \oplus \kappa(\mathfrak m)$
+of $\kappa$-algebras. This immediately shows that
+$P =
+\{\sigma \in D \mid \sigma|_{B/\mathfrak m^2} = \text{id}_{B/\mathfrak m^2}\}$
+in this case.
 \end{proof}
+
+\begin{example}
+\label{example-counter-description-P}
+The equality in (6) of Lemma \ref{lemma-galois-inertia}
+is false without the assumption on $\kappa(\mathfrak m)$.
+A counterexample is the extension of $A = Z_2[t]_{(2)}$
+given by $B = A[x]/(x^2 - t)$. Namely then $\sigma(x) = -x = x - 2x$
+and $2x$ is not in $\mathfrak m^2$.
+\end{example}
 
 \begin{definition}
 \label{definition-wild-inertia}
