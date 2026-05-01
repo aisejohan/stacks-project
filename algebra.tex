@@ -42747,7 +42747,8 @@ henselization and strict henselization of a local ring.
 \begin{lemma}
 \label{lemma-base-change-colimit-etale}
 Let $R \to A$ and $R \to R'$ be ring maps. If $A$ is a filtered
-colimit of \'etale ring maps, then so is $R' \to R' \otimes_R A$.
+colimit of \'etale $R$-algebras, then so is $R' \otimes_R A$
+is a filtered colimit of \'etale $R'$-algebras.
 \end{lemma}
 
 \begin{proof}
@@ -42758,10 +42759,10 @@ and \'etale ring maps are preserved under base change
 
 \begin{lemma}
 \label{lemma-composition-colimit-etale}
-Let $A \to B \to C$ be ring maps. If $A \to B$ is a filtered
-colimit of \'etale ring maps and $B \to C$ is a filtered colimit
-of \'etale ring maps, then $A \to C$ is a filtered colimit of
-\'etale ring maps.
+Let $A \to B \to C$ be ring maps. If $B$ is a filtered
+colimit of \'etale $A$-algebras and $C$ is a filtered colimit
+of \'etale $B$-algebras, then $C$ is a filtered colimit of
+\'etale $A$-algebras.
 \end{lemma}
 
 \begin{proof}
