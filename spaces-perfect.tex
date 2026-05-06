@@ -3163,14 +3163,20 @@ for $i \not \in [a, b]$.
 
 \begin{proof}
 It is clear that (1) implies (2). Assume (2). Let $j : U \to X$ be
-an \'etale morphism with $U$ affine. As $X$ is quasi-separated $j : U \to X$
-is quasi-compact and separated, hence $j_*$ transforms quasi-coherent
+an \'etale morphism with $U$ affine. As $X$ is quasi-separated, we
+see that $j$ is both quasi-compact and separated.
+Hence $j_*$ transforms quasi-coherent
 modules into quasi-coherent modules (Morphisms of Spaces, Lemma
 \ref{spaces-morphisms-lemma-pushforward}).
-Thus the functor
-$\QCoh(\mathcal{O}_X) \to \QCoh(\mathcal{O}_U)$
-is essentially surjective. It follows that condition (2)
-implies the vanishing of
+Take any quasi-coherent module $\mathcal{G}$ on $U$.
+By assumption we see that
+$H^i(E \otimes_{\mathcal{O}_X}^\mathbf{L} j_*\mathcal{G})$ vanishes
+for $i \not \in [a, b]$. Pulling back by the flat morphism $j$ we find that
+$H^i(E|_U \otimes_{\mathcal{O}_U}^\mathbf{L} j^*j_*\mathcal{G})$
+vanishes for $i \not \in [a, b]$. By
+Cohomology of Spaces, Lemma \ref{spaces-cohomology-lemma-etale-pull-push-split}
+we see that $\mathcal{G}$ is a direct summand of $j^*j_*\mathcal{G}$.
+It follows that condition (2) implies the vanishing of
 $H^i(E|_U \otimes_{\mathcal{O}_U}^\mathbf{L} \mathcal{G})$
 for $i \not \in [a, b]$ for all quasi-coherent $\mathcal{O}_U$-modules
 $\mathcal{G}$. Since it suffices to prove that $E|_U$ has tor amplitude

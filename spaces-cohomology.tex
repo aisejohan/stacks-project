@@ -1801,6 +1801,38 @@ The fifth because $\otimes$ commutes with colimits.
 The sixth by choice of our system.
 \end{proof}
 
+\begin{lemma}
+\label{lemma-etale-pull-push-split}
+Let $f : X \to Y$ be a quasi-compact, separated, \'etale morphism
+of algebraic spaces. Then for any quasi-coherent $\mathcal{O}_X$-module
+$\mathcal{F}$ the map $f^*f_*\mathcal{F} \to \mathcal{F}$ is split.
+\end{lemma}
+
+\begin{proof}
+Consider the cartesian diagram
+$$
+\xymatrix{
+X \times_Y X \ar[r]_-p \ar[d]_q & X \ar[d]^f \\
+X \ar[r]^f & Y
+}
+$$
+By Lemma \ref{lemma-affine-base-change} we have
+$f^*f_*\mathcal{F} = q_*p^*\mathcal{F}$. The morphism
+$\Delta : X \to X \times_Y X$ is open (as a morphism between
+algebraic spaces \'etale over $Y$) and closed as $f$ is separated.
+Thus we see that $p^*\mathcal{F}$ is a direct sum of
+$\Delta_*\mathcal{F}$ and a quasi-coherent module supported
+on the (open and closed) complement of $\Delta(X)$.
+Tracing the maps the reader verifies that
+$$
+\mathcal{F} = q_*\Delta_*\mathcal{F} \to
+q_*p^*\mathcal{F} = f^*f_*\mathcal{F} \to
+\mathcal{F}
+$$
+is the identity map. Details omitted.
+\end{proof}
+
+
 
 \section{Coherent modules on locally Noetherian algebraic spaces}
 \label{section-coherent}
