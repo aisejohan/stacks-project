@@ -10230,8 +10230,14 @@ works.
 In the general case we write $k' = \bigcup k_i$ as the union
 of its finite subfield extensions over $k$. For each $i$ there
 is a multiplicative subset $S_i \subset k_i \otimes_k k_i$
-such that $k_i = S_i^{-1}(k_i \otimes_k k_i)$. Then
-$S = \bigcup S_i \subset k' \otimes_k k'$ works.
+such that $k_i = S_i^{-1}(k_i \otimes_k k_i)$. Let
+$S$ be the multiplicative closure of $\bigcup S_i \subset k' \otimes_k k'$.
+Clearly, the multiplication maps sends every element of $S$
+to an invertible element of $k'$. Using that $k' \otimes_k k'$
+is the union of the rings $k_i \otimes_k k_i$ we see that
+every element in the kernel of the multiplication map is mapped to zero
+in $S^{-1}(k' \otimes_k k')$. Using exactness of localization
+the result follows.
 \end{proof}
 
 \begin{lemma}
