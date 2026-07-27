@@ -22465,6 +22465,40 @@ the desired equality holds because the number of points of a geometric
 fibre is unchanged by a field extension.
 \end{proof}
 
+\begin{lemma}
+\label{lemma-weighting-specialization}
+Let $f : X \to Y$ be a locally quasi-finite morphism of schemes.
+Let $w : X \to \mathbf{Z}$ be a weighting of $f$.
+Let $y \leadsto y'$ be a specialization of points of $Y$.
+Assume $w(x) = 0$ for all $x \in X$ with $f(x) = y$. Then
+$w(x') = 0$ for all $x' \in X$ with $f(x') = y'$.
+\end{lemma}
+
+\begin{proof}
+Let $x' \in X$ be a point mapping to $y'$. By
+Lemma \ref{lemma-etale-makes-quasi-finite-finite-at-point}
+we can choose a diagram
+$$
+\xymatrix{
+U \ar[r] \ar[dr]_\pi & X_V \ar[d] \ar[r] & X \ar[d]^f \\
+& V \ar[r]^\varphi & Y
+}
+$$
+with $V \to Y$ \'etale, with a point $v' \in V$ mapping to $y'$,
+with $U \subset Y_V$ open, such that $U \to V$ is finite, and
+such that there exists an unique point $u' \in U$ mapping to $v'$
+which moreover maps to $x'$ in $X$. Note that since $V \to Y$ is open,
+there exists a point $v \in V$ specializing to $v'$ and mapping to $y$.
+By Definition \ref{definition-weighting} the function
+$\int_\pi (w \circ h)$ is locally constant where $h : U \to X$ is
+the composition of the top horizontal arrows.
+Since $\int_\pi (w \circ h)$ is zero in $v$ by
+our assumption on $w$, we conclude that it is zero
+at $v'$. However, the value at $v'$ is $w(x')[\kappa(u'):\kappa(v')]_s$
+and we conclude.
+\end{proof}
+
+
 
 
 \section{More on weightings}
@@ -22538,6 +22572,47 @@ Since $w$ is a weighting, it follows that $w|_{X(j)}$
 is locally constant\footnote{In fact, if $f : X \to Y$ is an
 immersion and $w$ is a weighting of $f$, then $f$ restricts to an
 open map on the locus where $w$ is nonzero.} and we conclude.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-weighting-on-dense-set}
+Let $f : X \to Y$ be a locally quasi-finite morphism of schemes.
+Let $w : X \to \mathbf{Z}$ be a weighting of $f$.
+Let $E \subset X$ be a dense subset.
+Assume $w(x) = 0$ for all $x \in E$. Then $w = 0$.
+\end{lemma}
+
+\begin{proof}
+We suggest reading Lemma \ref{lemma-weighting-specialization} first.
+Let $x \in X$ with image $y \in Y$. We will show that $w(x) = 0$. By
+Lemma \ref{lemma-etale-makes-quasi-finite-finite-at-point}
+we can choose a diagram
+$$
+\xymatrix{
+U \ar[r] \ar[dr]_\pi & X_V \ar[d] \ar[r] & X \ar[d]^f \\
+& V \ar[r]^\varphi & Y
+}
+$$
+with $V \to Y$ \'etale, with a point $v \in V$ mapping to $y$,
+with $U \subset Y_V$ open, such that $U \to V$ is finite, and
+such that there exists an unique point $u \in U$ mapping to $v$
+which moreover maps to $x$ in $X$. We may and do assume that $V$
+(and hence $U$) is affine. By Definition \ref{definition-weighting}
+the function $\int_\pi (w \circ h)$ is locally constant where
+$h : U \to X$ is the composition of the top horizontal arrows.
+The set of points $U_0$ where $w \circ h$ is $0$ is a
+constructible subset of $U$ by Lemma \ref{lemma-jumps-w}
+and dense in $U$ because it contains $h^{-1}(E)$ (use that $h$ is open).
+By Topology, Lemma \ref{topology-lemma-dense-in-constructible}
+we see that $U_0$ contains a dense open,
+i.e., the set of points where $w \circ h$ is nonzero is contained
+in a nowhere dense closed subset $Z \subset U$. Then $\pi(Z)$
+is a nowhere dense closed subset of $V$ by
+Morphisms, Lemma \ref{morphisms-lemma-image-nowhere-dense-finite}.
+Hence $\int_\pi (w \circ h)$ is zero on a dense open hence
+vanishes everywhere.
+However, the value at $v$ is $w(x)[\kappa(u):\kappa(v)]_s$
+and we conclude.
 \end{proof}
 
 \begin{lemma}
