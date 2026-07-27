@@ -1425,7 +1425,19 @@ $W \to S$ has relative dimension $\leq r$ holds if $W_i \to S$
 has relative dimension $\leq r + e$ for all $i$.
 \end{proof}
 
+
+
+
+
+\section{Weightings and relative zero cycles}
+\label{section-weightings}
+
 \noindent
+In this section we show that for a quasi-finite morphism,
+relative zero cycles are closely related to weighthings, as defined in
+More on Morphisms, Section \ref{more-morphisms-section-weightings}.
+
+\medskip\noindent
 Let $S$ be a locally Noetherian scheme. Let $f : X \to S$ be a locally
 quasi-finite morphism of schemes. Then we have $z(X/S, 0) = z_{equi}(X/S, 0)$
 and $z(X/S, r) = 0$ for $r > 0$. Given $\alpha \in z(X/S, 0)$ let us
@@ -1437,28 +1449,17 @@ $$
 Here $\alpha(x)$ denotes the coefficient of $x$ in the $0$-cycle
 $\alpha_s$ on the fibre $X_s$ and $[K : k]_i$ denotes the inseparable
 degree of a finite field extension.
-The following lemma shows that this map is a weighting of $f$
-(More on Morphisms, Definition \ref{more-morphisms-definition-weighting})
-and that every weighting is of this form up to taking a multiple.
 
 \begin{lemma}
-\label{lemma-weightings}
-Let $S$ be a locally Noetherian scheme. Let $f : X \to S$ be a locally
-quasi-finite morphism of schemes. Let $\alpha \in z(X/S, 0)$.
-The map $w_\alpha : X \to \mathbf{Z}$ constructed above is a weighting.
-Conversely, if $X$ is quasi-compact, then given a weighting
-$w : X \to \mathbf{Z}$ there exists an integer $n > 0$ such
-that $nw = w_\alpha$ for some $\alpha \in z(X/S, 0)$. Finally, the
-integer $n$ may be chosen to be a power of the prime $p$ if $S$ is a scheme
-over $\mathbf{F}_p$.
+\label{lemma-weightings-pre}
+In the situation above, if $g : S' \to S$ is a morphism of locally
+Noetherian schemes, then $w_{g^*\alpha} = w_\alpha \circ g'$ where
+$g' : X' \to X$ is the projection $X' = S' \times_S X \to X$.
 \end{lemma}
 
 \begin{proof}
-First, let us show that the construction is compatible with base
-change: if $g : S' \to S$ is a morphism of locally Noetherian schemes,
-then $w_{g^*\alpha} = w_\alpha \circ g'$ where $g' : X' \to X$ is the
-projection $X' = S' \times_S X \to X$. Namely, let $x' \in X'$ with
-images $s', s, x$ in $S', S, X$. Then the coefficient of $[x']$ in
+Let $x' \in X'$ with images $s', s, x$ in $S', S, X$.
+Then the coefficient of $[x']$ in
 the base change of $[x]$ by $\kappa(s')/\kappa(s)$ is the length of
 the local ring $(\kappa(s') \otimes_{\kappa(s)} \kappa(x))_\mathfrak q$.
 Here $\mathfrak q$ is the prime ideal corresponding to $x'$.
@@ -1498,8 +1499,24 @@ $$
 and each of the factors is local of degree
 $[\kappa(x) : \kappa] = [\kappa(x) : \kappa(s)]_i$
 as desired.
+\end{proof}
 
-\medskip\noindent
+\begin{lemma}
+\label{lemma-weightings}
+Let $S$ be a locally Noetherian scheme. Let $f : X \to S$ be a locally
+quasi-finite morphism of schemes.
+\begin{enumerate}
+\item For $\alpha \in z(X/S, 0)$ the map $w_\alpha : X \to \mathbf{Z}$
+constructed above is a weighting.
+\item If $X$ is quasi-compact, then given a weighting
+$w : X \to \mathbf{Z}$ there exists an integer $n > 0$ such
+that $nw = w_\alpha$ for some $\alpha \in z(X/S, 0)$.
+\item The integer $n$ in (2) may be chosen to be a power of
+the prime $p$ if $S$ is a scheme over $\mathbf{F}_p$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
 Let $\alpha \in z(X/S, 0)$ and choose a diagram
 $$
 \xymatrix{
@@ -1509,8 +1526,8 @@ Y & V \ar[l]_g
 $$
 as in More on Morphisms, Definition \ref{more-morphisms-definition-weighting}.
 Denote $\beta \in z(U/V, 0)$ the restriction of the base change $g^*\alpha$.
-By the compatibility with base change above we have
-$w_\beta = w_\alpha \circ h$ and it suffices to show that
+By the compatibility with base change (Lemma \ref{lemma-weightings-pre})
+we have $w_\beta = w_\alpha \circ h$ and it suffices to show that
 $\int_\pi w_\beta$ is locally constant on $V$. Next, note that
 \begin{align*}
 \left( \int_\pi w_\beta \right)(v)
@@ -1522,7 +1539,7 @@ $\int_\pi w_\beta$ is locally constant on $V$. Next, note that
 \end{align*}
 This last expression is the coefficient of $v$ in $\pi_*\beta \in z(V/V, 0)$.
 By Lemma \ref{lemma-relative-cycle-smooth} this function is locally
-constand on $V$.
+constant on $V$.
 
 \medskip\noindent
 Conversely, let $w : X \to S$ be a weighting and $X$ quasi-compact.
@@ -1540,10 +1557,11 @@ hence we can find $n$ such that the right hand side is an integer for
 all $s \in S$. The final statement of the lemma also follows, provided
 we show $\alpha$ is a relative $0$-cycle. To do this we have to
 show that $\alpha$ is compatible with specializations along discrete
-valuation rings. By the first paragraph of the proof our construction
-is compatible with base change (small detail omitted; it is the ``inverse''
-construction we are discussing here). Also, the base
-change of a weighting is a weighting, see
+valuation rings. Note that neither the construction of $w_\alpha$
+nor the proof of Lemma \ref{lemma-weightings-pre} uses that $\alpha$
+is a relative cycle. Hence we have $w_\alpha = nw$ and this remains
+true after base change. As well, the base change of a weighting
+is a weighting, see
 More on Morphisms, Lemma \ref{more-morphisms-lemma-weighting-base-change}.
 Thus we reduce to the problem studied in the next paragraph.
 
@@ -1557,11 +1575,63 @@ Let $\beta \in z(X/S, 0)$ be the relative $0$-cycle on $X/S$
 with $\beta_\eta = \alpha_\eta$ and $\beta_0 = sp_{X/S}(\alpha_\eta)$.
 Then $w' = w_\beta - nw : X \to \mathbf{Z}$
 is a weighting (using the result above) and zero in the points of $X$
-which map to $\eta$. Now it is easy to see that a weighting which
-is zero on all points of $X$ mapping to $\eta$ has to be zero;
-details omitted. Hence $w' = 0$, i.e., $w_\beta = nw$, hence
-$\alpha = \beta$ as desired.
+which map to $\eta$. It follows from More on Morphisms,
+Lemma \ref{more-morphisms-lemma-weighting-specialization}
+that $w' = 0$. This means $w_\beta = nw$, hence $\alpha = \beta$ as desired.
 \end{proof}
+
+\begin{example}
+\label{example-n-must-be-positive-sometimes}
+Let $p$ be a prime number. Let $k'/k$ be a purely inseparable extension
+of fields of degree $p^f$. Set $X = \Spec(k')$ and $S = \Spec(k)$.
+The map $w : X \to \mathbf{Z}$ sending the unique point $x$ of $X$ to $1$
+is a weighting of $X \to S$. On the other hand,
+the group $z(X/S, 0)$ is freely generated by the cycle $\alpha = [x]$.
+Thus we see that the smallest integer $n$ that works in
+Lemma \ref{lemma-weightings} is $n = p^f$ in this case.
+\end{example}
+
+\begin{example}
+\label{example-Merkurjev}
+The discussion above can be used to ``explain'' an example due to
+A.S.~Merkurjev \cite[Example 3.5.10]{SV}. Let $p$ be a prime number
+and let $k = \mathbf{F}_p(a, b)$ be the purely transcendental extension
+of $\mathbf{F}_p$ on $a$ and $b$. Set
+$$
+A = k[x, y, z]/(a x^p + b y^p - z^p)
+$$
+This is a normal domain of finite type over $k$. The spectrum
+$S = \Spec(A)$ is regular, except for a unique singular point $s$
+corresponding to the maximal ideal $(x, y, z)$ of $A$ with residue field $k$.
+Let $k' = k(a^{1/p}, b^{1/p})$ and $B = k'[x, y]$. Consider the map
+$A \to B$ using the inclusion $k \to k'$, sending $x$ to $x$, $y$ to $y$,
+and $z$ to $a^{1/p}x + b^{1/p}y$. Set $X = \Spec(B)$ and consider the morphism
+$f : X \to S$ corresponding to the ring map $A \to B$.
+The weighting $w : X \to \mathbf{Z}$ of $f$
+produced by More on Morphisms, Lemma
+\ref{more-morphisms-lemma-weighting-quasi-finite-Noetherian}
+has constant value $1$ since the fraction field of $B$ is purely inseparable
+over $A$!
+Set $V = f^{-1}(U) \subset X$. By miracle flatness we see that
+$V \to U$ is flat of degree $p$. It follows that the cycle
+$\alpha = [V/V/U]_0 \in z(V/U, 0)$ satisfies $w_\alpha = pw|_V$.
+However, since the unique point $x$ of $X$ lying over $s$
+has residue field $k'$ of degree $p^2$ over $k$, we see that
+there cannot be an element $\beta$ of $z(X/S, 0)$ restricting to $\alpha$.
+Namely, the weighting $pw - w_\beta$ would be zero by More on Morphisms,
+Lemma \ref{more-morphisms-lemma-weighting-specialization} which
+would imply (by the formula in the proof of the lemma above) that
+$$
+\beta_s = \frac{pw(x)}{[\kappa(x) : \kappa(s)]_i} [x] =
+\frac{1}{p}[x]
+$$
+in $Z_0(X_s)$ and this is impossible\footnote{In \cite{SV} there does
+exist an element of the group of relative cycles $Cycl(X/S, 0)$
+corresponding to $pw$ and this cycle does specialize to a cycle
+on $X_s$ with non-integer coefficients.}. Of course, 
+the cycle $p\alpha$ is the restriction of a unique element of
+$z(X/S, 0)$.
+\end{example}
 
 
 
@@ -2852,7 +2922,7 @@ of finite presentation such that $g^*\alpha$ is in the image of
 
 \begin{proof}
 Let a diagram and $\alpha_0 \in z(X_0/S_0, r)$ as in (1) be given.
-By Lemma \ref{lemma-get-cycles} there exists a proper surjective
+By Lemma \ref{lemma-get-cycles} there exists a completely decomposed proper
 morphism $g_0 : S'_0 \to S_0$ such that $g_0^*\alpha_0$ is in
 the image of (\ref{equation-cycle-classes-general}). Namely, since
 $S'_0$ is Noetherian, every closed subscheme of $S'_0 \times_{S_0} X_0$
@@ -2860,8 +2930,8 @@ is of finite presentation over $S'_0$. Setting $S' = S \times_{S_0} S'_0$
 and using base change by $S' \to S'_0$ we see that (2) holds.
 
 \medskip\noindent
-Conversely, assume that (2) holds. Choose a surjective proper morphism
-$g : S' \to S$ of finite presentation such that $g^*\alpha$ is in the
+Conversely, assume that (2) holds. Choose a completely decomposed proper
+morphism $g : S' \to S$ of finite presentation such that $g^*\alpha$ is in the
 image of (\ref{equation-cycle-classes-general}). Set $X' = S' \times_S X$.
 Write $g^*\alpha = \sum n_a [Z_a/X'/S']_r$ for some $Z_a \subset X'$
 closed subscheme flat, of finite presentation, and of relative dimension
