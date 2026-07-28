@@ -2228,6 +2228,27 @@ if we take $\mathcal{F} = \mathcal{O}_Z$ and $\mathcal{F} = \mathcal{O}_W$.
 \end{proof}
 
 \begin{lemma}
+\label{lemma-flat-pullback-as-action}
+Let $(S, \delta)$ and $f : X \to Y$ be as above. Assume
+$f$ is flat of relative dimension $e$. For $\beta \in Z_r(Y)$
+we have $f^*\beta = [X/X/Y]_e \cap \beta$ in $Z_{e + r}(X)$.
+\end{lemma}
+
+\begin{proof}
+It suffices to prove the equality locally on $X$. Thus we may assume
+$Y$ is affine. In this case $\beta$ is a finite integer linear combination
+of prime cycles. Since both sides of the equality are additive in $\beta$
+we may assume $\beta = [W]$ where $W$ is an integral closed subscheme of
+$Y$ of $\delta$-dimension $r$. Let $f^{-1}(W) = W \times_Y X$ be the
+scheme theoretic inverse image of $W$ in $X$. By
+Lemma \ref{lemma-action-closed} we have
+$[X/X/Y]_e \cap \beta = [W \times_Y X]_{r + e}$ and by
+Chow Homology, Definition \ref{chow-definition-flat-pullback}
+we have $f^*\beta = [f^{-1}(W)]_{r + e}$. Thus we have the desired
+equality.
+\end{proof}
+
+\begin{lemma}
 \label{lemma-action-push-pull}
 Let $(S, \delta)$ be as above. Let
 $$
@@ -2268,7 +2289,7 @@ is the closure of $V_j$ in the closed subscheme $X' \subset X$.
 
 \medskip\noindent
 Back to the general case with $\beta' = [Z']$ as above.
-Set $W = Z \times_X Y$ and $W' = Z' \times_{X'} Y'$.
+Set $W = Z \times_Y X$ and $W' = Z' \times_{Y'} X'$.
 Consider the cartesian squares
 $$
 \xymatrix{
@@ -2306,7 +2327,7 @@ f_*(g^*\alpha \cap \beta') =
 f_*(g^*\alpha \cap g^*[Y]) =
 f_*f^*(\alpha \cap [Y]) =
 d (\alpha \cap [Y]) =
-\alpha \cap g_*\beta')
+\alpha \cap g_*\beta'
 $$
 as desired. The second equality is Lemma \ref{lemma-action-base-change}
 and the third equality is Chow Homology, Lemma \ref{chow-lemma-finite-flat}.
@@ -2641,6 +2662,22 @@ then $\alpha \circ \beta = [Z \times_Y W/X/S]_{r + e}$.
 \begin{proof}
 This is a special case of Lemma \ref{lemma-construction-coherent}
 if we take $\mathcal{F} = \mathcal{O}_Z$ and $\mathcal{F} = \mathcal{O}_W$.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-flat-pullback-as-composition}
+Let $f : X \to Y$ and $Y \to S$ be morphisms of schemes, both locally of
+finite type. Assume $f$ is flat of relative dimension $e$. Let $\beta$ be
+a family of $r$-cycles on the fibres of $Y/S$. Then
+$f^*\beta = [X/X/Y]_e \circ \beta$
+as families of $(e + r)$-cycles on $X/S$.
+\end{lemma}
+
+\begin{proof}
+After unwinding the definitions and using that formation of
+$[X/X/Y]_e$ is compatible with base change
+(Lemma \ref{lemma-family-associated-closed}) this follows from
+Lemma \ref{lemma-flat-pullback-as-action}.
 \end{proof}
 
 \begin{lemma}
