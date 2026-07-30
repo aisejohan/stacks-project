@@ -2914,8 +2914,33 @@ H_\etale^0(S, \mu_{n, S}) \ar[r] &
 \ldots
 }
 $$
-at least if $n$ is invertible on $S$. When $n$ is not invertible on $S$
-we can apply the following lemma.
+at least if $n$ is invertible on $S$. The map
+$$
+c_1 = c^n_1 : \Pic(S) \longrightarrow H^2_\etale(S, \mu_{n, S})
+$$
+in the long exact sequence above is called the first chern class map.
+If $m$ is also invertible on $S$, then the composition
+$$
+\Pic(S) \xrightarrow{c^{nm}_1}
+H^2_\etale(S, \mu_{nm, S})
+\xrightarrow{(\cdot)^m}
+H^2_\etale(S, \mu_{n, S})
+$$
+is equal to $c^n_1$. Thus for $\ell$ a prime invertible on $S$
+we get an $\ell$-adic chern class map
+$\Pic(S) \to \lim H^2_\etale(S, \mu_{\ell^e})$.
+Finally, given a morphism $f : S' \to S$ of schemes the diagram
+$$
+\xymatrix{
+\Pic(S') \ar[r]_-{c_1} & H^2_\etale(S', \mu_{n, S'}) \\
+\Pic(S) \ar[r]^-{c_1} \ar[u]^{f^*} &
+H^2_\etale(S, \mu_{n, S}) \ar[u]_{f^{-1}}
+}
+$$
+is commutative.
+
+\medskip\noindent
+When $n$ is not invertible on $S$ we can apply the following lemma.
 
 \begin{lemma}
 \label{lemma-kummer-sequence-syntomic}
