@@ -959,10 +959,9 @@ A key feature of relative $r$-cycles is that they are locally
 \begin{lemma}
 \label{lemma-get-cycles}
 Let $f : X \to S$ be a finite type morphism of schemes with $S$ Noetherian.
-Let $r \geq 0$. Let $\alpha$ be a relative $r$-cycle on $X/S$. Then there is
-a proper, completely decomposed
-(More on Morphisms, Definition \ref{more-morphisms-definition-cd-morphism})
-morphism $g : S' \to S$ such that $g^*\alpha$ is in the image of
+Let $r \geq 0$. Let $\alpha$ be a relative $r$-cycle on $X/S$. Then there
+exists an envelope (Chow Homology, Definition \ref{chow-definition-envelope})
+$g : S' \to S$ such that $g^*\alpha$ is in the image of
 (\ref{equation-cycle-classes}).
 \end{lemma}
 
@@ -976,14 +975,12 @@ subscheme). Let $S_2 \subset S$ be the closure of the complement of $S'$
 (viewed as a reduced closed subscheme). If $S_2 \not = \emptyset$, then
 the result holds for the pullback of $\alpha$ by $S_1 \to S$ and $S_2 \to S$.
 If $g_1 : S'_1 \to S_1$ and $g_2 : S'_2 \to S_2$
-are the corresponding completely decomposed proper morphisms,
-then $S' = S'_1 \amalg S'_2 \to S$
-is a completely decomposed proper morphism and
-we see the result holds for $S$\footnote{Namely, any closed
+are the corresponding envelopes, then $S' = S'_1 \amalg S'_2 \to S$
+is an envelope and we see the result holds for $S$\footnote{Namely, any closed
 subscheme of $S'_1 \times_S X$ flat and of relative dimension
 $\leq r$ over $S'_1$ may be viewed as a closed subscheme of $S' \times_S X$
-flat and of relative dimension $\leq r$ over $S'$.}
-. Thus we may assume $S' \to S$ is bijective
+flat and of relative dimension $\leq r$ over $S'$.}.
+Thus we may assume $S' \to S$ is bijective
 and we reduce to the case described in the next paragraph.
 
 \medskip\noindent
@@ -1027,6 +1024,76 @@ on $X/S$. Write $\alpha_\eta = \sum n_i[Z_i]$ (the sum is finite). Denote
 $\overline{Z}_i \subset X$ the closure of $Z_i$ as in
 Section \ref{section-specialization}. Then
 $\alpha = \sum n_i[\overline{Z}_i/X/S]$.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-relative-cycle-support-stratification}
+Let $f : X \to S$ be a finite type morphism of schemes with $S$ Noetherian.
+Let $\alpha$ be a relative $r$-cycle on $X/S$. There exists
+a finite partition $S = \bigcup S_i$ of $S$ such that
+$\text{Supp}(\alpha) \cap f^{-1}(S_i)$ is closed in $f^{-1}(S_i)$.
+In particular $\text{Supp}(\alpha)$ is constructible in $X$.
+\end{lemma}
+
+\begin{proof}
+Since a partition has locally closed parts
+(Topology, Definition \ref{topology-definition-paritition})
+we see the last statement holds by
+Topology, Lemma \ref{topology-lemma-constructible-Noetherian-space}.
+The proof repeats some of the arguments in the proof of
+Lemma \ref{lemma-get-cycles}. We will use
+Lemmas \ref{lemma-support-family} and
+\ref{lemma-relative-cycle-functoriality}
+without further mention.
+
+\medskip\noindent
+Let $\eta \in S$ be a generic point of an irreducible component of $S$.
+By Noetherian induction it suffices to find an open neighbourhood
+$U \subset S$ of $\eta$ such that $\text{Supp}(\alpha) \cap f^{-1}(U)$
+is closed in $f^{-1}(U)$. To do this we may replace $S$ by an open
+neighbourhood of $\eta$ and we may replace $S$ by the reduction of $S$.
+Thus we may assume $S$ is integral with generic point $\eta$.
+
+\medskip\noindent
+Assume $S$ is integral. We may still replace $S$ by a nonempty open
+during the rest of the argument. Write
+$\alpha_\eta = \sum n_i[Y_i]$ as a finite sum with $n_i \not = 0$
+and $Y_i \not = Y_j$ if $i \not = j$. Take the closure $Z_i \subset X$
+of $Y_i$. By generic flatness (for example Morphisms,
+Proposition \ref{morphisms-proposition-generic-flatness}),
+we may assume $Z_i \to S$ is flat for each $i$.
+Then $\alpha = \sum n_i[Z_i/X/S]_r$ by
+Lemmas \ref{lemma-family-associated-closed-specialization} and
+\ref{lemma-uniqueness-extension}.
+Since $\dim(Y_i \cap Y_j) < r$ we can find an open
+neighbourhood $U \subset S$ of $\eta$ such that the fibres of
+$Z_i \cap Z_j \to S$ over $U$ have dimension $< r$, see
+for example More on Morphisms, Lemma
+\ref{more-morphisms-lemma-dimension-in-neighbourhood}.
+Replacing $S$ by $U$ we see
+that for $s \in S$ no irreducible component of $Z_{i, s}$
+agrees with an irreducible component of $Z_{j, s}$; after all
+these irreducible components have dimension $r$ by
+More on Morphisms, Lemma
+\ref{more-morphisms-lemma-flat-associated-equidimensional}
+(see also More on Morphisms, Remark
+\ref{more-morphisms-remark-flat-equidimensional}).
+Thus $\text{Supp}(\alpha) = \bigcup Z_i$ is closed in $X$ as desired.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-relative-cycle-support}
+Let $\alpha$ be a relative $r$-cycle on $f : X \to S$ as in
+Definition \ref{definition-relative-cycles}.
+The support of $\alpha$ is a locally constructible subset of $X$.
+\end{lemma}
+
+\begin{proof}
+By Lemmas \ref{lemma-support-family} and
+\ref{lemma-relative-cycle-functoriality}
+we may assume $X$ and $S$ are affine. In this case the goal is to
+show that the support of $\alpha$ is constructible.
+This follows from Lemma \ref{lemma-relative-cycle-support-stratification}.
 \end{proof}
 
 \begin{lemma}
@@ -1189,7 +1256,7 @@ $\alpha_i$ and $\beta_i$ to $S_j$ agree. Thus the map is injective.
 
 \medskip\noindent
 Let $\alpha \in z(X/S, r)$. Applying Lemma \ref{lemma-get-cycles}
-a completely decomposed proper morphism $g : S' \to S$ such that $g^*\alpha$
+we get an envelope $g : S' \to S$ such that $g^*\alpha$
 is in the image of (\ref{equation-cycle-classes}).
 Set $X' = S' \times_S X$. We write $g^*\alpha = \sum n_a [Z_a/X'/S']_r$
 for some $Z_a \subset X'$ closed subscheme
@@ -1200,7 +1267,7 @@ Now we bring the machinery of
 Limits, Section \ref{limits-section-descending-relative} ff to bear.
 We can find an $i \geq 0$ such that there exist
 \begin{enumerate}
-\item a completely decomposed proper morphism $g_i : S'_i \to S_i$
+\item an envelope $g_i : S'_i \to S_i$
 whose base change to $S$ is $g : S' \to S$,
 \item setting $X'_i = S'_i \times_{S_i} X_i$
 closed subschemes $Z_{ai} \subset X'_i$ flat and of
@@ -1423,6 +1490,19 @@ one shows that the inverse image by $f_i$ of the closure $W$ of the support of
 $\alpha$ is the closure $W_i$ of the support of $f_i^*\alpha$. Then
 $W \to S$ has relative dimension $\leq r$ holds if $W_i \to S$
 has relative dimension $\leq r + e$ for all $i$.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-get-equidimensional-cycles}
+Let $f : X \to S$ be a finite type morphism of schemes with $S$ Noetherian.
+Let $r \geq 0$. Let $\alpha$ be a relative $r$-cycle on $X/S$. Then there
+exists an envelope
+(Chow Homology, Definition \ref{chow-definition-envelope})
+$g : S' \to S$ such that $g^*\alpha$ is equidimensional.
+\end{lemma}
+
+\begin{proof}
+Immediate from Lemma \ref{lemma-get-cycles}.
 \end{proof}
 
 
@@ -2802,7 +2882,7 @@ Lemmas \ref{lemma-construction-opens} and
 to see that the constructions commute with restriction).
 Thus we may assume $X$ and $Y$ are affine.
 By Lemma \ref{lemma-get-cycles}
-we can find a completely decomposed proper morphism
+we can find an envelope
 $g : Y' \to Y$ such that $g^*\alpha$ is in the image of
 (\ref{equation-cycle-classes}).
 
@@ -2914,9 +2994,6 @@ agrees with the operation $Cor_{X/Y}(-, -)$ in
 \label{section-non-noetherian}
 
 \noindent
-We urge the reader to skip this section.
-
-\medskip\noindent
 Let $f : X \to S$ be a morphism of schemes of finite presentation.
 Let $r \geq 0$. Denote $Hilb(X/S, r)$ the set of closed subschemes
 $Z \subset X$ such that $Z \to S$ is flat, of finite presentation,
@@ -2952,7 +3029,7 @@ $$
 where $X_0 \to S_0$ is a finite type morphism of Noetherian schemes
 and $\alpha_0 \in z(X_0/S_0, r)$ such that $\alpha$ is the base change
 of $\alpha_0$ by $S \to S_0$
-\item there exists a completely decomposed proper morphism $g : S' \to S$
+\item there exists an envelope $g : S' \to S$
 of finite presentation such that $g^*\alpha$ is in the image of
 (\ref{equation-cycle-classes-general}).
 \end{enumerate}
@@ -2960,16 +3037,16 @@ of finite presentation such that $g^*\alpha$ is in the image of
 
 \begin{proof}
 Let a diagram and $\alpha_0 \in z(X_0/S_0, r)$ as in (1) be given.
-By Lemma \ref{lemma-get-cycles} there exists a completely decomposed proper
-morphism $g_0 : S'_0 \to S_0$ such that $g_0^*\alpha_0$ is in
+By Lemma \ref{lemma-get-cycles} there exists an envelope
+$g_0 : S'_0 \to S_0$ such that $g_0^*\alpha_0$ is in
 the image of (\ref{equation-cycle-classes-general}). Namely, since
 $S'_0$ is Noetherian, every closed subscheme of $S'_0 \times_{S_0} X_0$
 is of finite presentation over $S'_0$. Setting $S' = S \times_{S_0} S'_0$
 and using base change by $S' \to S'_0$ we see that (2) holds.
 
 \medskip\noindent
-Conversely, assume that (2) holds. Choose a completely decomposed proper
-morphism $g : S' \to S$ of finite presentation such that $g^*\alpha$ is in the
+Conversely, assume that (2) holds. Choose an envelope $g : S' \to S$
+of finite presentation such that $g^*\alpha$ is in the
 image of (\ref{equation-cycle-classes-general}). Set $X' = S' \times_S X$.
 Write $g^*\alpha = \sum n_a [Z_a/X'/S']_r$ for some $Z_a \subset X'$
 closed subscheme flat, of finite presentation, and of relative dimension
@@ -2981,8 +3058,10 @@ morphisms with $S_i$ of finite type over $\mathbf{Z}$,
 see Limits, Proposition \ref{limits-proposition-approximate}.
 We can find an $i$ large enough such that there exist
 \begin{enumerate}
-\item a completely decomposed proper morphism $g_i : S'_i \to S_i$
-whose base change to $S$ is $g : S' \to S$,
+\item a finite type morphism $X_i \to S_i$ whose base change to $S$
+is $X \to S$,
+\item an envelope $g_i : S'_i \to S_i$ whose base change to $S$ is
+$g : S' \to S$,
 \item setting $X'_i = S'_i \times_{S_i} X_i$
 closed subschemes $Z_{ai} \subset X'_i$ flat and of
 relative dimension $\leq r$ over $S'_i$ whose base change to $S'$
@@ -2995,7 +3074,6 @@ To do this one uses Limits, Lemmas
 \ref{limits-lemma-descend-surjective},
 \ref{limits-lemma-eventually-proper}, and
 \ref{limits-lemma-limit-dimension}
-and
 and More on Morphisms, Lemma
 \ref{more-morphisms-lemma-descend-cd}.
 Consider $\alpha'_i = \sum n_a [Z_{ai}/X'_i/S_i]_r \in z(X'_i/S'_i, r)$.
@@ -3031,20 +3109,176 @@ The uniqueness in Lemma \ref{lemma-descend-family} implies that the
 base change of $\alpha_i$ is $\alpha$ and we see (1) holds.
 \end{proof}
 
-\noindent
-{\bf Discussion.}
-If $f : X \to S$, $r$, and $\alpha$ are as in
-Lemma \ref{lemma-relative-r-cycle-general}, then it makes sense to
-say that $\alpha$ is a {\it relative $r$-cycle on $X/S$} if
-the equivalent conditions
-(1) and (2) of Lemma \ref{lemma-relative-r-cycle-general} hold.
-This definition has many good properties; for example it
-doesn't conflict with the earlier definition in case $S$
-is Noetherian and most of the results of
-Section \ref{section-families-specialization} generalize
-to this setting.
+\begin{lemma}
+\label{lemma-add-relative-cycles-general}
+Let $f : X \to S$ be a morphism of finite presentation where $S$
+is a quasi-compact and quasi-separated scheme. Let $r \geq 0$ and
+let $\alpha$ and $\beta$ be families of $r$-cycles on fibres of $X/S$.
+If $\alpha$ and $\beta$ satisfy the equivalent conditions (1) and (2)
+of Lemma \ref{lemma-relative-r-cycle-general}, then so does $\alpha + \beta$.
+\end{lemma}
 
-\medskip\noindent
+\begin{proof}
+Choose an envelope $p : S' \to S$ of finite presentation
+such that $p^*\alpha$ is in the image of
+(\ref{equation-cycle-classes-general}). Choose an envelope
+$q : S'' \to S$ of finite presentation such that $q^*\beta$
+is in the image of (\ref{equation-cycle-classes-general}).
+Then $r : S''' = S' \times_S S'' \to S$ is an envelope of
+finite presentation (see proof of Chow Homology, Lemma
+\ref{chow-lemma-category-envelopes}
+and use Morphisms, Lemmas \ref{morphisms-lemma-base-change-finite-presentation}
+and \ref{morphisms-lemma-composition-finite-presentation}
+to see that $r$ is of finite presentation).
+By the compatibility with base change described in
+Lemma \ref{lemma-family-associated-closed}
+we see that both $r^*\alpha$ and $r^*\beta$
+are in the image of (\ref{equation-cycle-classes-general}).
+Hence so is $r^*(\alpha + \beta) = r^*\alpha + r^*\beta$.
+\end{proof}
+
+\noindent
+The lemmas above allow us to make the following definition.
+
+\begin{definition}
+\label{definition-relative-cycles-general}
+Let $S$ be a quasi-compact and quasi-separated scheme.
+Let $f : X \to S$ be a morphism of finite presentation.
+A {\it relative $r$-cycle on $X/S$} is a family $\alpha$ of $r$-cycles
+on fibres of $X/S$ such the equivalent conditions
+(1) and (2) of Lemma \ref{lemma-relative-r-cycle-general} hold.
+The group of all relative $r$-cycles on $X/S$ is denoted $z(X/S, r)$.
+\end{definition}
+
+\noindent
+This definition agrees with Definition \ref{definition-relative-cycles}
+in case $S$ is Noetherian.
+
+\begin{lemma}
+\label{lemma-relative-cycle-functoriality-general}
+Let $X \to S$ be a morphism of finite presentation between
+quasi-compact and quasi-separated schemes. Let $\alpha$ be a
+relative $r$-cycle on $X/S$ as in
+Definition \ref{definition-relative-cycles-general}.
+Then any restriction, base change, flat pullback, or proper pushforward
+of $\alpha$ is a relative $r$-cycle (see proof for precise statements).
+\end{lemma}
+
+\begin{proof}
+The precise statements are as follows
+\begin{enumerate}
+\item If $U \subset X$ is a quasi-compact open, then the restriction
+of $\alpha$ to $U$ is a relative $r$-cycle on $U/S$.
+\item If $g : S' \to S$ is a morphism of quasi-compact and
+quasi-separated schemes and $X' = S' \times_S X$, then $g^*\alpha$
+is a relative $r$-cycle on $X'/S'$.
+\item If $f : X' \to X$ is a flat morphism of finite presentstion
+and of relative dimension $e$, then $f^*\alpha$ is a relative
+$(e + r)$-cycle on $X'/S$.
+\item If $f : X \to Y$ is a proper morphism of schemes over $S$
+with $Y$ of finite presentation over $S$, then $f_*\alpha$
+is a relative $r$-cycle on $Y/S$.
+\end{enumerate}
+We omit the proofs.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-descend-through-limit-general}
+Let $S = \lim_{i \in I} S_i$ be the limit of a directed inverse system of
+quasi-compact and quasi-separated schemes with affine transition morphisms.
+Let $0 \in I$ and let $X_0 \to S_0$ be a morphism of schemes of finite
+presentation. For $i \geq 0$ set $X_i = S_i \times_{S_0} X_0$ and set
+$X = S \times_{S_0} X_0$. Then
+$$
+z(X/S, r) = \colim_{i \geq 0} z(X_i/S_i, r)
+$$
+where the transition maps are given by base change of relative $r$-cycles.
+\end{lemma}
+
+\noindent
+In fact our definition of relative $r$-cycles in the non-Noetherian
+setting is precisely chosen such that this lemma is true and such that
+we obtain the previously defined notion in the Noetherian case.
+
+\begin{proof}
+Omitted.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-relative-r-cycle-general-bis}
+If in Lemma \ref{lemma-relative-r-cycle-general} the morphism $f$ is
+separated, then in (1) we may assume the morphism $X_0 \to S_0$ is
+separated.
+\end{lemma}
+
+\begin{proof}
+This follows from the proof of the lemma by applying
+Limits, Lemma \ref{limits-lemma-descend-separated-finite-presentation}
+in the proof of (2) $\Rightarrow$ (1) to obtain $X_i \to S_i$ separated.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-supported-on-closed}
+Let $X \to S$ be a morphism of finite presentation between
+quasi-compact and quasi-separated schemes. Let $X' \subset X$
+be a closed subscheme of finite presentation over $S$.
+If $\alpha \in z(X/S, r)$ has support contained in $X'$
+then $\alpha$ is the pushforward of a unique $\alpha'$
+in $z(X'/S, r)$.
+\end{lemma}
+
+\begin{proof}
+This lemma is clear for our definition of relative $r$-cycles
+in the Noetherian case, but it is not immediate for the general case.
+Write $S = \lim S_i$ as a directed limit with affine transition
+morphisms with $S_i$ of finite type over $\mathbf{Z}$,
+see Limits, Proposition \ref{limits-proposition-approximate}.
+We can find an $i$ large enough such that there exist
+a finite type morphism $X_i \to S_i$ whose base change to $S$
+is $X \to S$, and a closed subscheme $X'_i \subset X_i$ whose
+base change is $X' \subset X$. By the discussion in the proof
+of Lemma \ref{} we find that after increasing $i$ we may
+assume there exists a relative $r$-cycle $\alpha_i$ on $X_i/S_i$
+whose base change by $S \to S_i$ is $\alpha$.
+
+
+
+\end{proof}
+
+\begin{lemma}
+\label{lemma-equidimensional-general}
+Let $X \to S$ be a morphism of finite presentation between
+quasi-compact and quasi-separated schemes. Let $\alpha$ be a
+relative $r$-cycle on $X/S$. The following are equivalent
+\begin{enumerate}
+\item there exists a closed subscheme $X' \subset X$
+of finite presentation over $S$ with fibres of dimension $\leq r$
+such that $\alpha$ is the pushforward of a relative $r$-cycle on $X'/S$,
+\item the closure of the support of $\alpha$ has fibres of dimension
+$\leq r$ over $S$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Omitted. Hint: the interesting implication is (2) $\Rightarrow$ (1).
+For this, let $W \subset X$ be a closed subscheme of relative
+dimension $\leq r$ over $S$. We may
+write $W$ as a limit of closed subschemes of $X$ which are
+of finite presentation over $S$, see Limits, Lemma
+\ref{limits-lemma-closed-is-limit-closed-and-finite-presentation}.
+Then by Limits, Lemma \ref{} one of these closed subschemes
+is of relative dimension $\leq r$ over $S$.
+Thus if $\alpha$ satisfies (2), then $\alpha$ is supported
+on a closed subscheme $W \subset X$ of finite presentation over $S$
+with fibres of relative dimension $\leq r$ over $S$.
+
+
+on which $\alpha$
+is supported, then
+\end{proof}
+
+\begin{remark}
+\label{remark-more-general}
 We may still generalize further as follows.
 Assume $S$ is arbitrary and $f : X \to S$ is locally of finite presentation.
 Let $r \geq 0$ and let $\alpha$ be a family of $r$-cycles $\alpha$ on fibres of
@@ -3053,10 +3287,9 @@ for $U \subset X$ and $V \subset S$ affine open with $f(U) \subset V$
 the restriction $\alpha|_U$ is a relative $r$-cycle on $U/V$ as
 defined in the previous paragraph. Again many of the earlier results
 generalize to this setting.
-
-\medskip\noindent
-If we ever need these generalizations we will carefully state and prove
+If we ever need this generalization we will carefully state and prove
 them here.
+\end{remark}
 
 
 
