@@ -2978,10 +2978,18 @@ in $D(Z_\etale, \Lambda)$. This map is an isomorphism if
 \end{lemma}
 
 \begin{proof}
-This is a special case of Lemma \ref{lemma-shriek-proper-and-open}
-if $f$ and $g$ are separated. We urge the reader to skip the proof
-in the general case
-as we'll mainly use the case where $f$ and $g$ are separated.
+If $f$ and $g$ are separated, then we can apply
+Lemma \ref{lemma-shriek-proper-and-open} to the square
+$$
+\xymatrix{
+X \ar[r]_f \ar[d]_{\text{id}} & Y \ar[d]^h \\
+X \ar[r]^g & Z
+}
+$$
+to obtain this map. We urge the reader to skip the proof in the general case
+as we'll mainly use the case where $f$ and $g$ are separated. Let us
+point out here that the map constructed below does agree with the map
+from Lemma \ref{lemma-shriek-proper-and-open} in case both lemmas apply.
 
 \medskip\noindent
 Represent $K$ by a complex $\mathcal{K}^\bullet$ of sheaves of
@@ -3037,8 +3045,38 @@ in the proof of Lemma \ref{lemma-shriek-proper-and-open}
 Lemma \ref{lemma-lqf-f-shriek-separated-colimits}).
 \end{proof}
 
-
-
+\begin{remark}
+\label{remark-map-is-pullback}
+In Lemma \ref{lemma-shriek-lqf-and-proper} assume that $f$ and $g$
+are open immersions and that $h^{-1}(g(X)) = f(X)$ as opens of $Y$.
+Then by
+\'Etale Cohomology, Lemma \ref{etale-cohomology-lemma-shriek-base-change}
+we have a canonical isomorphism of functors $f_! = h^{-1}g_!$
+between categories of sheaves of modules. Thus we have a second map
+$$
+g_!K \longrightarrow Rh_* h^{-1} g_!K = Rh_*f_!K
+$$
+using the unit of the adjunction in the arrow. Looking at the proof of
+Lemma \ref{lemma-shriek-lqf-and-proper} to see the equality it suffices
+to prove that the diagram
+$$
+\xymatrix{
+g_!\mathcal{K}^\bullet \ar@{=}[r] \ar[rd] &
+h_!f_!\mathcal{K}^\bullet \ar@{=}[r] &
+h_*f_!\mathcal{K}^\bullet \\
+& h_*h^{-1}g_!\mathcal{K}^\bullet \ar@{=}[ru]
+}
+$$
+commutes. This can be checked on individual sheaves and then
+one can check on stalks by unwinding the definitions. We omit
+the details. As a consequence we see that for any $i \in \mathbf{Z}$
+the map
+$$
+H^i(Z, g_!K) \to H^i(Z, Rh_*f_!K) = H^i(Y, f_!K)
+$$
+agrees with pullback by the morphism $h$ via the isomorphism
+$f_!K = h^{-1}g_!K$.
+\end{remark}
 
 
 
@@ -3490,8 +3528,7 @@ for (2) by Remark \ref{remark-f-shriek-base-change-composition}, and
 \begin{remark}
 \label{remark-shriek-to-star}
 Let $f : X \to Y$ be a finite type separated morphism of schemes
-with $Y$ quasi-compact and quasi-separated. Below we will construct
-a map
+with $Y$ quasi-compact and quasi-separated. There is a map
 $$
 Rf_!K \longrightarrow Rf_*K
 $$
@@ -3509,8 +3546,8 @@ of Lemma \ref{lemma-base-change-shriek}
 and the base change map of
 Cohomology on Sites, Remark \ref{sites-cohomology-remark-base-change}.
 \end{enumerate}
-Namely, choose a compactification $j : X \to \overline{X}$ over $Y$
-and denote $\overline{f} : \overline{X} \to Y$ the structure morphism.
+To construct our map we choose a compactification $j : X \to \overline{X}$
+over $Y$ and denote $\overline{f} : \overline{X} \to Y$ the structure morphism.
 Since $Rf_! = R\overline{f}_* \circ j_!$ and
 $Rf_* = R\overline{f}_* \circ Rj_*$ it suffices to construct a
 transformation of functors $j_! \to Rj_*$. For this we use the
@@ -3522,7 +3559,171 @@ of the choice of compactification and we omit the proof of the
 compatibilities (1) and (2).
 \end{remark}
 
+\begin{lemma}
+\label{lemma-proper-Rf-lower-shriek}
+Let $f : X \to Y$ be a proper morphism of schemes with $Y$ quasi-compact
+and quasi-separated. The map $Rf_!K \to Rf_*K$ of
+Remark \ref{remark-shriek-to-star} is an isomorphism.
+\end{lemma}
 
+\begin{proof}
+If one uses $\overline{X} = X$ to define $Rf_!$, then the result is clear.
+If $j : X \to \overline{X}$ is an arbitrary compactification, then
+$j$ is both open and closed. Then the transformation of functors
+$j_! \to Rj_*$ used in the remark is an isomorphism.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-Rf-shriek-for-quasi-finite}
+Let $f : X \to Y$ be a quasi-finite separated morphism of quasi-compact and
+quasi-separated schemes. The functor $Rf_!$ agrees with the functor
+$f_! : D(X_\etale, \Lambda) \to D(Y_\etale, \Lambda)$ constructed in
+Lemma \ref{lemma-lqf-shriek-derived}.
+\end{lemma}
+
+\begin{proof}
+By Zariski's main theorem (More on Morphisms, Lemma
+\ref{more-morphisms-lemma-quasi-finite-separated-pass-through-finite})
+we can find an open immersion $j : X \to \overline{X}$ and a finite morphism
+$\overline{f} : \overline{X} \to Y$ with $f = \overline{f} \circ j$.
+By construction we have $Rf_! = R\overline{f}_* \circ j_!$.
+Since $\overline{f}$ is finite, we have $R\overline{f}_* = \overline{f}_*$
+by \'Etale Cohomology, Proposition
+\ref{etale-cohomology-proposition-finite-higher-direct-image-zero}.
+The lemma follows because $\overline{f}_* \circ j_! = f_!$
+for example by Lemma \ref{lemma-compactify-f-shriek-separated}.
+\end{proof}
+
+\begin{remark}[Covariance]
+\label{remark-covariance-shriek}
+Consider a commutative diagram
+$$
+\xymatrix{
+X' \ar[rr]_j \ar[rd]_{f'} & & X \ar[ld]^f \\
+& Y
+}
+$$
+of quasi-compact and quasi-separated schemes with $f$ and $f'$
+separated and of finite type and with $j$ \'etale.
+Let $\Lambda$ be a ring. For $K$ in $D^+_{tors}(X, \Lambda)$
+or $K$ in $D(X, \Lambda)$ if $\Lambda$ is a torsion ring, there
+is a canonical map
+$$
+Rf'_!(K|_{X'}) \longrightarrow Rf_!K
+$$
+in $D(Y_\etale, \Lambda)$. Namely, by Lemmas \ref{lemma-shriek-composition}
+and \ref{lemma-Rf-shriek-for-quasi-finite} we have $Rf'_! = Rf_! \circ j_!$.
+Since $j_!$ is left adjoint to $j^{-1}$ we have
+the counit $\text{Tr}_j : j_!j^{-1}K \to K$;
+we also call this the trace map for $j$, see
+Remark \ref{remark-trace-etale-counit}.
+Observing that the restriction $K|_{X'}$ is equal to $j^{-1}K$
+the map above is constructed as the composition
+$$
+Rf'_!(K|_{X'}) = Rf'_!j^{-1}K = Rf_!j_!j^{-1}K
+\xrightarrow{Rf_! \text{Tr}_j}
+Rf_!K
+$$
+Given a second \'etale morphism $j' : X'' \to X'$
+for some $f'' : X'' \to Y$ separated and of finite type
+the composition
+$$
+Rf''_!(K|_{X''}) \longrightarrow Rf'_!(K|_{X'}) \longrightarrow Rf_!K
+$$
+of the maps for $j$ and $j'$ is equal to the map
+$Rf''_!K|_{X''} \longrightarrow Rf_!K$ constructed for $j \circ j'$.
+This follows from the corresponding statement on trace maps, namely
+``$\text{Tr}_j \circ \text{Tr}_{j'} = \text{Tr}_{j \circ j'}$'',
+see Categories, Lemma \ref{categories-lemma-compose-counits}.
+\end{remark}
+
+\begin{remark}[Contravariance]
+\label{remark-contravariance-shriek}
+Consider a commutative diagram
+$$
+\xymatrix{
+X' \ar[rr]_h \ar[rd]_{f'} & & X \ar[ld]^f \\
+& Y
+}
+$$
+of quasi-compact and quasi-separated schemes with $f$ and $f'$
+separated and of finite type and with $h$ proper.
+Let $\Lambda$ be a ring. For $K$ in $D^+_{tors}(X, \Lambda)$
+or $K$ in $D(X, \Lambda)$ if $\Lambda$ is a torsion ring, there
+is a canonical map
+$$
+Rf_!K \longrightarrow Rf'_!h^{-1}K
+$$
+in $D(Y_\etale, \Lambda)$. Namely, by Lemmas \ref{lemma-shriek-composition}
+and \ref{lemma-proper-Rf-lower-shriek} we have $Rf'_! = Rf_! \circ Rh_*$.
+Since $Rh_*$ is right adjoint to $h^{-1}$ we have the unit
+$\eta : K \to Rh_*h^{-1}K$. The map above is constructed as the composition
+$$
+Rf_!K
+\xrightarrow{Rf_! \eta}
+Rf_!Rh_*h^{-1}K = Rf'_!h^{-1}K
+$$
+Given a second proper morphism $h' : X'' \to X'$
+the composition
+$$
+Rf_!K \longrightarrow Rf'_!h^{-1}K
+\longrightarrow Rf''_!(h')^{-1}h^{-1}K = Rf''_!((h \circ h')^{-1}K)
+$$
+of the maps for $h$ and $h'$ is equal to the map
+constructed for $h \circ h'$. Details omitted; hint: use that the
+composition
+$$
+K \xrightarrow{\eta} Rh_*h^{-1}K
+\xrightarrow{Rh_*\eta'} Rh_*Rh'_*(h')^{-1}h^{-1}K
+$$
+is the unit for the pair $R(h \circ h')_*$ and $(h \circ h')^{-1}$
+dually to
+Categories, Lemma \ref{categories-lemma-compose-counits}.
+\end{remark}
+
+\begin{remark}
+\label{remark-covariance-weighting}
+We can extend the covariance of Remark \ref{remark-contravariance-shriek}
+to the case of a locally quasi-finite morphism endowed with a weigthing.
+Namely, consider a commutative diagram
+$$
+\xymatrix{
+X' \ar[rr]_g \ar[rd]_{f'} & & X \ar[ld]^f \\
+& Y
+}
+$$
+of quasi-compact and quasi-separated schemes with $f$ and $f'$
+separated and of finite type and with $g$ locally quasi-finite.
+Assume given a weighting $w : X' \to \mathbf{Z}$ of $g$
+(More on Morphisms, Definition \ref{more-morphisms-definition-weighting}).
+Let $\Lambda$ be a ring. For $K$ in $D^+_{tors}(X, \Lambda)$
+or $K$ in $D(X, \Lambda)$ if $\Lambda$ is a torsion ring, there
+is a canonical map
+$$
+Rf'_!(g^{-1}K) \longrightarrow Rf_!K
+$$
+in $D(Y_\etale, \Lambda)$. Namely, by Lemmas \ref{lemma-shriek-composition}
+and \ref{lemma-Rf-shriek-for-quasi-finite} we have $Rf'_! = Rf_! \circ g_!$.
+By the discussion in Section \ref{section-weightings} the weighting
+$w$ induces a trace map $\text{Tr}_{g, w, K} : g_!g^{-1}K \to K$.
+The displayed arrow above is constructed as the composition
+$$
+Rf'_!(g^{-1}K) = Rf_!g_!g^{-1}K
+\xrightarrow{Rf_! \text{Tr}_{g, w, K}}
+Rf_!K
+$$
+Given a second locally quasi-finite morphism $g' : X'' \to X'$
+equipped with a weighting $w'$ for some $f'' : X'' \to Y$ separated
+and of finite type the composition
+$$
+Rf''_!((g')^{-1}g^{-1}K) \longrightarrow Rf'_!(g^{-1}K) \longrightarrow Rf_!K
+$$
+of the maps for $(g, w)$ and $(g', w')$ is equal to the map
+$Rf''_!((g \circ g')^{-1}K) \longrightarrow Rf_!K$
+constructed for $(g \circ g', w'')$ where $w''(x'') = w'(x'')w(g'(x''))$.
+This follows from the corresponding statement
+on trace maps, see Lemma \ref{lemma-trace-composition}.
+\end{remark}
 
 
 
@@ -3619,30 +3820,6 @@ Part (2) follows from (3). Details omitted.
 \end{proof}
 
 \begin{lemma}
-\label{lemma-Rf-shriek-for-quasi-finite}
-Let $f : X \to Y$ be a quasi-finite separated morphism of quasi-compact and
-quasi-separated schemes. Then the functors $Rf_!$ constructed in
-Section \ref{section-derived-lower-shriek-compactification}
-agree with the restriction of the functor
-$f_! : D(X_\etale, \Lambda) \to D(Y_\etale, \Lambda)$
-constructed in Section \ref{section-derived-duality-locally-quasi-finite}
-to their common domains of definition.
-\end{lemma}
-
-\begin{proof}
-By Zariski's main theorem (More on Morphisms, Lemma
-\ref{more-morphisms-lemma-quasi-finite-separated-pass-through-finite})
-we can find an open immersion $j : X \to \overline{X}$ and a finite morphism
-$\overline{f} : \overline{X} \to Y$ with $f = \overline{f} \circ j$.
-By construction we have $Rf_! = R\overline{f}_* \circ j_!$.
-Since $\overline{f}$ is finite, we have $R\overline{f}_* = \overline{f}_*$
-by \'Etale Cohomology, Proposition
-\ref{etale-cohomology-proposition-finite-higher-direct-image-zero}.
-The lemma follows because $\overline{f}_* \circ j_! = f_!$
-for example by Lemma \ref{lemma-compactify-f-shriek-separated}.
-\end{proof}
-
-\begin{lemma}
 \label{lemma-relative-mayer-vietoris}
 Let $f : X \to Y$ be a finite type separated morphism of quasi-compact and
 quasi-separated schemes. Let $U$ and $V$ be quasi-compact opens of $X$
@@ -3669,8 +3846,8 @@ $Rj_{U!} = j_{U!}$ by Lemma \ref{lemma-Rf-shriek-for-quasi-finite}.
 \begin{lemma}
 \label{lemma-relative-triangle-associated-to-open}
 Let $f : X \to Y$ be a finite type separated morphism of quasi-compact and
-quasi-separated schemes. Let $U$ be a quasi-compact open of $X$ with
-complement $Z \subset X$.  Denote $g : U \to Y$ and $h : Z \to Y$
+quasi-separated schemes. Let $Z$ be a closed subscheme of $X$ whose
+complement $U$ is quasi-compact. Denote $g : U \to Y$ and $h : Z \to Y$
 the restrictions of $f$. Let $\Lambda$ be a ring.
 For $K$ in $D^+_{tors}(X_\etale, \Lambda)$ or $K \in D(X_\etale, \Lambda)$
 if $\Lambda$ is torsion, we have a distinguished triangle
@@ -4085,7 +4262,7 @@ write  $H^i_c(X, K) = H^i(R\Gamma_c(X, K))$.
 
 \noindent
 We will check that this definition doesn't conflict with
-Definition \ref{definition-compact-support} by
+Definition \ref{definition-compact-support} in
 Lemma \ref{lemma-compact-support-h0}.
 The utility of this definition lies in the following result.
 
@@ -4145,54 +4322,91 @@ Then $H^q_c(X, \mathcal{F}) = H^q(\overline{X}, j_!\mathcal{F})$
 and the theorem applies.
 \end{proof}
 
+\begin{lemma}
+\label{lemma-bounded-algebraic-scheme}
+Let $k$ be an algebraically closed field. Let $X$ be a separated
+scheme of finite type type over $k$ of dimension $\leq d$.
+Let $\mathcal{F}$ be an abelian torsion sheaf on $X$.
+Then $H^q_c(X, \mathcal{F}) = 0$ for $q > 2d$.
+\end{lemma}
+
+\begin{proof}
+This is a consequence of \'Etale Cohomology, Lemma
+\ref{etale-cohomology-lemma-cohomological-dimension-proper}.
+Namely, choose a compactification $j : X \to \overline{X}$.
+After replacing $\overline{X}$ by the scheme theoretic closure
+of $X$, we see that we may assume $\dim(\overline{X}) \leq d$.
+Then $H^q_c(X, \mathcal{F}) = H^q(\overline{X}, j_!\mathcal{F})$
+and the lemma applies.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-triangle-compactly-supported}
+Let $X$ be a separated finite type scheme over a field $k$.
+Let $Z$ be a closed subscheme of $X$ with complement $U$.
+There exists a long exact sequence of compactly supported
+cohomology
+$$
+H^i_c(U, K|_U) \to H^i_c(X, K) \to H^i_c(Z, K|_Z) \to H^{i + 1}_c(U, K|_U)
+$$
+for $K$ in $D^+_{tors}(X_\etale, \Lambda)$ or $K \in D(X_\etale, \Lambda)$
+if $\Lambda$ is torsion.
+\end{lemma}
+
+\begin{proof}
+This follows from Lemma \ref{lemma-relative-triangle-associated-to-open}
+and the definitions.
+\end{proof}
+
 \begin{remark}[Covariance of compactly supported cohomology]
 \label{remark-covariance-compactly-supported}
 Let $k$ be a field. Let $f : X \to Y$ be a morphism of separated
-schemes of finite type over $k$. If $X$, $Y$, and $f$ satisfies one
-of the following conditions
+schemes of finite type over $k$. If $f$ is \'etale, then there
+is a natural covariance map
+$$
+R\Gamma_c(X, f^{-1}K) \to R\Gamma_c(Y, K)
+$$
+Namely, we get this by applying $R\Gamma(\Spec(k), -)$ to the map
+in Remark \ref{remark-covariance-shriek}. More generally, suppose
+$X$, $Y$, and $f$ satisfy one of the following conditions
 \begin{enumerate}
-\item $f$ is \'etale, or
 \item $f$ is flat and quasi-finite, or
 \item $f$ is quasi-finite and $Y$ is geometrically unibranch, or
-\item $f$ is quasi-finite and there exists a weighting
-$w : X \to \mathbf{Z}$ of $f$
+\item $f$ is quasi-finite and we are given a weighting
+$w : X \to \mathbf{Z}$ of $f$.
 \end{enumerate}
-then compactly supported cohomology is covariant with respect to $f$.
-More precisely, let $\Lambda$ be a ring. Let $K$ be an object of
-$D^+_{tors}(Y_\etale, \Lambda)$ or of $D(Y_\etale, \Lambda)$ in case
-$\Lambda$ is torsion. Under one of the assumptions (1) -- (4)
-there is a canonical map
+In case (3) we obtain a map
 $$
-\text{Tr}_{f, w, K} : f_!f^{-1}K \longrightarrow K
+R\Gamma_c(X, f^{-1}K) \to R\Gamma_c(Y, K)
 $$
-See Section \ref{section-weightings} for the existence of the
-trace map and Examples \ref{example-trace-for-flat-quasi-finite} and
-\ref{example-trace-for-quasi-finite-over-normal} for cases (2) and (3).
-If $p : X \to \Spec(k)$ and $q : Y \to \Spec(k)$ denote
-the structure morphisms, then we have $Rq_! \circ f_! = Rp_!$
-by Lemma \ref{lemma-shriek-composition} and the fact that
-$Rf_! = f_!$ for the quasi-finite separated morphism $f$ by
-Lemma \ref{lemma-Rf-shriek-for-quasi-finite}. Hence we can look
-at the map
-\begin{align*}
-R\Gamma_c(X, f^{-1}K)
-& =
-R\Gamma(\Spec(k), Rp_!f^{-1}K) \\
-& =
-R\Gamma(\Spec(k), Rq_!f_!f^{-1}K) \\
-& \xrightarrow{Rq_!\text{Tr}_{f, w, K}}
-R\Gamma(\Spec(k), Rq_!K) \\
-& =
-R\Gamma_c(Y, K)
-\end{align*}
-In particular, if $\Lambda$ is a torsion ring, then we obtain an arrow
+depending on the choice of weighting $w$ in exactly the same manner
+as above using Remark \ref{remark-covariance-weighting}.
+In cases (1) and (2) we can use the weightings discussed
+in Examples \ref{example-trace-for-flat-quasi-finite} and
+\ref{example-trace-for-quasi-finite-over-normal}.
+For example, if $\Lambda$ is a torsion ring, then we obtain an arrow
 $$
 \text{Tr}_f : R\Gamma_c(X, \Lambda) \longrightarrow R\Gamma_c(Y, \Lambda)
 $$
+canonical if $f$ is \'etale and depending on the choice of $w$ in general.
 This map has lots of additional properties, for example it is
 compatible with taking ground field extensions.
 \end{remark}
 
+\begin{lemma}
+\label{lemma-top-algebraic-scheme}
+Let $k$ be an algebraically closed field. Let $X$ be a separated
+scheme of finite type type over $k$ of dimension $\leq d$. Let $U \subset X$
+be an open subscheme which meets every irreducible component of $X$
+having dimension $d$. Let $\mathcal{F}$ be an abelian torsion sheaf on $X$.
+The map $H^{2d}_c(U, \mathcal{F}|_U) \to H^{2d}_c(X, \mathcal{F})$
+is an isomorphism.
+\end{lemma}
+
+\begin{proof}
+This follows from Lemma \ref{lemma-triangle-compactly-supported}
+and the vanishing in Lemma \ref{lemma-bounded-algebraic-scheme}.
+\end{proof}
 
 
 
@@ -4871,33 +5085,18 @@ U \ar[rr]_j \ar[rd]_g & & U' \ar[ld]^{g'} \\
 }
 $$
 of quasi-compact and quasi-separated schemes with $g$ and $g'$
-separated and of finite type and with $j$ \'etale. This induces
-a canonical map
+separated and of finite type and with $j$ \'etale. As discussed in
+Remark \ref{remark-covariance-shriek} the diagram gives rise to a canonical map
 $$
 Rg_!\Lambda \longrightarrow Rg'_!\Lambda
 $$
-in $D(Y_\etale, \Lambda)$. Namely, by Lemmas \ref{lemma-shriek-composition}
-and \ref{lemma-Rf-shriek-for-quasi-finite} we have $Rg_! = Rg'_! \circ j_!$.
-On the other hand, since $j_!$ is left adjoint to $j^{-1}$ we have
-the counit $\text{Tr}_j : j_!\Lambda = j_!j^{-1}\Lambda \to \Lambda$;
-we also call this the trace map for $j$, see
-Remark \ref{remark-trace-etale-counit}.
-The map above is constructed as the composition
-$$
-Rg_!\Lambda = Rg'_!j_!\Lambda
-\xrightarrow{Rg'_! \text{Tr}_j}
-Rg'_!\Lambda
-$$
-Given a second \'etale morphism $j' : U' \to U''$
-for some $g'' : U'' \to Y$ separated and of finite type
-the composition
+in $D(Y_\etale, \Lambda)$. Given $g'' : U'' \to Y$ separated of finite type
+and a second \'etale morphism $j' : U' \to U''$ the composition
 $$
 Rg_!\Lambda \longrightarrow Rg'_!\Lambda \longrightarrow Rg''_!\Lambda
 $$
 of the maps for $j$ and $j'$ is equal to the map
 $Rg_!\Lambda \longrightarrow Rg''_!\Lambda$ constructed for $j' \circ j$.
-This follows from the corresponding statement on trace maps,
-see Lemma \ref{lemma-trace-composition} for a more general case.
 
 \medskip\noindent
 Let $f : X \to Y$ be a separated finite type morphism of quasi-compact
@@ -4947,6 +5146,598 @@ above.
 
 
 
+\section{Tate twists}
+\label{section-tate-twists}
+
+\noindent
+Let $S$ be a scheme. Let $n$ be an integer invertible on $S$.
+We will use notation as in
+\'Etale Cohomology, Section \ref{etale-cohomology-section-kummer}.
+The sheaf $\mu_{n, S}$ on $S_\etale$ is an invertible sheaf
+of $\mathbf{Z}/n\mathbf{Z}$-modules. Thus for any integer $i \in \mathbf{Z}$
+we can consider the $i$th tensor power $\mu_{n, S}^{\otimes i}$
+and we have
+$\mu_{n, S}^{\otimes i} \otimes_{\mathbf{Z}/n\mathbf{Z}}
+\mu_{n, S}^{\otimes j} = \mu_{n, S}^{\otimes i + j}$.
+
+\medskip\noindent
+For a sheaf $\mathcal{F}$ of $\mathbf{Z}/n\mathbf{Z}$-modules on $S_\etale$
+we set
+$$
+\mathcal{F}(i) = \mathcal{F} \otimes_{\mathbf{Z}/n\mathbf{Z}}
+\mu_{n, S}^{\otimes i}
+$$
+Then we have $\mathcal{F}(i)(j) = \mathcal{F}(i + j)$. If $K$ is an
+object of $D(X_\etale, \mathbf{Z}/n\mathbf{Z})$, then we can similarly
+define $K(i)$. We will also use this notation for sheaves of
+$\mathbf{Z}/n\mathbf{Z}$-modules or complexes of sheaves of
+$\mathbf{Z}/n\mathbf{Z}$-modules on the big \'etale site of $S$.
+
+\medskip\noindent
+Additionally, if $\Lambda$ is a ring annihilated by $n$ and
+$\mathcal{F}$ is a sheaf of $\Lambda$-modules on $S_\etale$,
+then we use the same construction to define $\mathcal{F}(i)$,
+but we view it as a sheaf of $\Lambda$-modules. Similarly
+for complexes (on $S_\etale$ or on the big \'etale site of $S$).
+Given a torsion ring $\Lambda$ the construction of $\mathcal{F}(i)$
+is independent of the choice $n$ which annihilates $\Lambda$
+(provided $n$ is invertible on $S$).
+
+
+
+
+
+\section{The trace map associated to a relative cycle}
+\label{section-trace-relative-cycle}
+
+\noindent
+Let $f : X \to Y$ be a separated morphism of finite presentation
+where $Y$ is quasi-compact and quasi-separated. Let $\Lambda$
+be a ring annihlated by an integer invertible on $Y$.
+Finally, let $r \geq 0$ be an integer and let $\alpha$ be a
+relative $r$-cycle on $X/Y$.
+The goal of this section is to construct maps
+$$
+\text{Tr}_{f, \alpha, K} : Rf_!f^{-1}K(r)[2r] \to K
+$$
+for $K$ in $D(X_\etale, \Lambda)$. These maps should satisfy the
+following requirements
+\begin{enumerate}
+\item $\text{Tr}_{f, \alpha, K}$ is additive in $\alpha$,
+\item $\text{Tr}_{f, \alpha, K}$ is functorial in $K$,
+\item if $\Lambda'$ is a ring annihlated by an integer invertible on $Y$
+and $\Lambda' \to \Lambda$ is a ring homomorphism, then the
+diagram
+$$
+\xymatrix{
+Rf_!\Lambda'(r)[2r] \ar[rr]_-{\text{Tr}_{f, \alpha, \Lambda'}} \ar[d] & &
+\Lambda' \ar[d] \\
+Rf_!\Lambda(r)[2r] \ar[rr]^-{\text{Tr}_{f, \alpha, \Lambda}} & & \Lambda
+}
+$$
+commutes,
+\item $\text{Tr}_{f, \alpha, K}$ is equal to
+$\text{Tr}_{f, \alpha, \Lambda} \otimes \text{id}_K$ via
+the projection formula, Lemma \ref{lemma-projection-formula-Rf-lower-shriek},
+\item $\text{Tr}_{f, \alpha, K}$ is compatible with base change
+by morphisms $g : Y' \to Y$ where $Y'$ is quasi-compact and quasi-separated,
+\item if $f$ is locally quasi-finite, $Y$ is Noetherian, and $r = 0$, then
+$\text{Tr}_{f, \alpha, \mathcal{F}} =
+\text{Tr}_{f, w_\alpha, \mathcal{F}}$, see
+Relative Cycles, Lemma \ref{relative-cycles-lemma-weightings}
+and Section \ref{section-weightings},
+\item if $f$ is \'etale
+and $\alpha = [X/X/Y]_0$ then $\text{Tr}_{f, \alpha, K}$
+is equal to the counit $f_!f^{-1}K \to K$,
+\item given a morphism $f' : X' \to X$ of finite presentation
+and $\alpha'$ a relative $r'$-cycle on $X'/X$, then
+$$
+\text{Tr}_{f \circ f', \alpha \circ \alpha', K} :
+R((f \circ f')_!(f \circ f')^{-1}K(r + r')[2r + 2r'] \to K
+$$
+is equal to the composition
+$$
+\text{Tr}_{f, \alpha, K} \circ
+Rf_!(\text{Tr}_{f', \alpha', f^{-1}K})(r)[2r]
+$$
+via the identification
+$$
+R((f \circ f')_!(f \circ f')^{-1}K(r + r')[2r + 2r'] \\
+= 
+Rf_!\Big(Rf'_!(f')^{-1} f^{-1}K(r')[2r']\Big)(r)[2r]
+$$
+\item Let $j : X' \to X$ be an \'etale morphism
+of separated schemes of finite type over $Y$ with
+structure morphisms $f : X \to Y$ and $f' : X' \to Y$.
+Let $\alpha \in z(X/Y, r)$ and denote $\alpha' = j^*\alpha$.
+Then the diagram
+$$
+\xymatrix{
+Rf_!f^{-1}K(r)[2r]
+\ar[rr]_-{\text{Tr}_{f, \alpha, K}} & &
+K \ar@{=}[d] \\
+Rf'_!(f')^{-1}K(r)[2r] \ar[rr]^-{\text{Tr}_{f', \alpha', K}} \ar[u] & &
+K
+}
+$$
+commutes where the vertical arrow is
+Remark \ref{remark-covariance-shriek}.
+\item Let $h : X' \to X$ be a proper morphism
+of separated schemes of finite type over $Y$ with
+structure morphisms $f : X \to Y$ and $f' : X' \to Y$.
+Let $\alpha \in z(X'/Y, r)$ and denote $\alpha = h_*\alpha'$.
+Then the diagram
+$$
+\xymatrix{
+Rf_!f^{-1}K(r)[2r]
+\ar[rr]_-{\text{Tr}_{f, \alpha, K}} \ar[d] & &
+K \ar@{=}[d] \\
+Rf'_!(f')^{-1}K(r)[2r] \ar[rr]^-{\text{Tr}_{f', \alpha', K}} & &
+K
+}
+$$
+commutes where the vertical arrow is
+Remark \ref{remark-contravariance-shriek}.
+\end{enumerate}
+
+
+
+
+\section{The chern class of an invertible module}
+\label{section-chern-class-invertible}
+
+\noindent
+Let $X$ be a scheme. Let $n$ be an integer invertible on $X$.
+The {\it first chern class} is the homomorphism
+$$
+c_1 : \Pic(X) \longrightarrow H^2(X, \mu_n)
+$$
+which comes from the identification $\Pic(X) = H^1(X, \mathbf{G}_m)$
+(\'Etale Cohomology, Theorem \ref{etale-cohomology-theorem-picard-group}) 
+and the boundary map in the Kummer exact sequence
+(\'Etale Cohomology, Lemma \ref{etale-cohomology-lemma-kummer-sequence}).
+Please see \'Etale Cohomology, Section \ref{etale-cohomology-section-kummer}
+for more information. In this chapter we will use a slight generalization.
+
+\medskip\noindent
+Let $Z \subset X$ be a closed subscheme and let $U = X \setminus Z$
+be the complementary open subscheme. Consider pairs
+$(\mathcal{L}, \sigma)$ consisting of an invertible
+$\mathcal{O}_X$-module together with a trivialization
+$\sigma$ of the restriction of $\mathcal{L}$ to $Z$.
+Given two such pairs $(\mathcal{L}, \sigma)$ and $(\mathcal{L}', \sigma')$
+the tensor product $(\mathcal{L} \otimes \mathcal{L}', \sigma \otimes \sigma')$
+is another pair. The set of these pairs up to isomorphism forms a group,
+which we will denote $\Pic(X, Z)$, with group law given by tensor product.
+We will define a first chern class
+$$
+c_1 : \Pic(X, Z) \longrightarrow H^2(X, j_!\mu_n)
+$$
+Here $j : U \to X$ is the inclusion morphism. To do this we generalize both
+\'Etale Cohomology, Theorem \ref{etale-cohomology-theorem-picard-group} and
+\'Etale Cohomology, Lemma \ref{etale-cohomology-lemma-kummer-sequence}.
+Namely, let $\mathcal{I} \subset \mathcal{O}_{X_\etale}$
+be the ideal sheaf of $Z$ on the small \'etale site of $X$. Below the
+notation $(1 + \mathcal{I})^*$ refers to
+$(1 + \mathcal{I}) \cap \mathcal{O}_{X_\etale}^*$.
+
+\begin{lemma}
+\label{lemma-picard-group-extended}
+We have $\Pic(X, Z) = H^1(X, (1 + \mathcal{I})^*)$.
+\end{lemma}
+
+\begin{proof}
+Given a pair $(\mathcal{L}, \sigma)$ the sheaf
+$$
+V \longmapsto \{s \in \mathcal{L}(V) \mid s|_{V \times_X Z} = \sigma|_{V \times_X Z}\}
+$$
+is a torsor for $(1 + \mathcal{I})^*$. Taking the class of this
+torsor using Cohomology on Sites, Lemma \ref{sites-cohomology-lemma-torsors-h1}
+we obtain an element of $H^1(X_\etale, (1 + \mathcal{I})^*)$.
+
+\medskip\noindent
+Conversely, suppose given an element
+$\eta \in H^1(X_\etale, (1 + \mathcal{I})^*)$.
+We claim that $\eta$ is Zariski locally trivial.
+Namely, consider the short exact sequence
+$$
+0 \to (1 + \mathcal{I})^* \to \mathcal{O}_{X_\etale}^* \to
+i_*\mathcal{O}_{Z_\etale}^* \to 0
+$$
+where $i : Z \to X$ is the inclusion morphism\footnote{This sequence
+provides an alternative definition the sheaf $(1 + \mathcal{I})^*$.}.
+By \'Etale Cohomology, Theorem \ref{etale-cohomology-theorem-picard-group}
+elements in $H^1(X_\etale, \mathcal{O}_{X_\etale}^*)$ are Zariski
+locally trivial. Since $i$ is a closed immersion a section
+of $i_*\mathcal{O}_{Z_\etale}^*$ over an object $V$ of $X_\etale$
+lifts Zariski locally on $V$ to a section of $\mathcal{O}_{X_\etale}^*$.
+These two remarks imply the claim; details omitted. Thus we can find a Zariski
+open covering $X = \bigcup V_j$ such that $\eta$ is given by
+a $1$-cocycle $(u_{jj'})$ with
+$u_{jj'} \in (1 + \mathcal{I})^*(V_j \cap V_{j'})$.
+The cocycle $(u_{jj'})$ defines an invertible $\mathcal{O}_X$-module
+(on the scheme $X$) which is trivialized after restricting to $Z$.
+
+\medskip\noindent
+We omit the proof that the constructions given above are mutually inverse.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-kummer-sequence-extended}
+In the situation above we have a sort exact sequence
+$$
+0 \to j_!\mu_n \to (1 + \mathcal{I})^*
+\xrightarrow{(\cdot)^n} (1 + \mathcal{I})^* \to 0
+$$
+on $X_\etale$.
+\end{lemma}
+
+\begin{proof}
+The statement makes sense because
+$j_!\mu_n \subset \mu_n \subset \mathbf{G}_m = \mathcal{O}_{X_\etale}^*$ as
+sheaves on $X_\etale$. The sequence is exact in the middle as
+any local section in the kernel of the right arrow must restrict
+to $1$ in an open neighbourhood of $Z$.
+The interesting point is to see surjectivity of the right arrow.
+We discuss the corresponding algebra problem below.
+
+\medskip\noindent
+Let $A$ be a ring with $n$ invertible in $A$. Let $I \subset A$ be an ideal.
+Let $u = 1 + i \in A$ be a unit with $i \in I$.
+Consider the \'etale extension
+$$
+B = A[x]/(-1 + nx + {n \choose 2}ix^2 + \ldots + i^{n - 1}x^n)
+\left[\frac{1}{n + 2{n \choose 2}ix + \ldots + ni^{n - 1}x^{n - 1}}\right]
+$$
+In $B$ we have $1 + i = (1 + ix)^n$. Thus $1 + ix$ is a unit in $B$
+whose $n$th power is $u$. Moreover, we have $B/IB = A/IA$.
+Thus the \'etale morphism $\Spec(B) \to \Spec(A)$, while not necessarily
+surjective, covers an open neighbourhood of $V(I)$. On the complement of $V(I)$
+we have the surjectivity by the usual Kummer sequence in \'etale cohomology.
+\end{proof}
+
+\noindent
+Exactly as in the case of chern classes of invertible modules we
+define $c_1$ as the boundary map
+$$
+\Pic(X, Z) = H^1(X, (1 + \mathcal{I})^*) \xrightarrow{\partial}
+H^2(X, j_!\mu_n)
+$$
+in the long exact sequence of cohomology associated to the short
+exact (Kummer) sequence of sheaves of
+Lemma \ref{lemma-kummer-sequence-extended}.
+
+\begin{lemma}
+\label{lemma-n-m-c1}
+If $m$ is also invertible on $X$, then the composition
+$$
+\Pic(X, Z) \xrightarrow{c_1}
+H^2_\etale(X, j_!\mu_{nm}) \xrightarrow{(\cdot)^m}
+H^2_\etale(S, j_!\mu_n)
+$$
+is equal to $c_1$.
+\end{lemma}
+
+\begin{proof}
+Omitted.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-restrict-c1}
+If $Z \subset Z' \subset X$ are closed subschemes then the diagram
+$$
+\xymatrix{
+\Pic(X, Z) \ar[r]_{c_1} & H^2(X, j_!\mu_n) \\
+\Pic(X, Z') \ar[r]^{c_1} \ar[u] & H^2(X, j'_!\mu_n) \ar[u]
+}
+$$
+is commutative where $j' : X \setminus Z' \to X$ is the inclusion,
+where the left vertical arrow sends $(\mathcal{L}, \sigma')$
+to $(\mathcal{L}, \sigma'|_Z)$ and where the right vertical arrow
+comes from the inclusion $j'_!\mu_n \subset j_!\mu_n$.
+\end{lemma}
+
+\begin{proof}
+Omitted.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-pullback-c1}
+If $f : X' \to X$ is a morphism of schemes and $Z' = f^{-1}(Z)$,
+then the diagram
+$$
+\xymatrix{
+\Pic(X', Z') \ar[r]_{c_1} & H^2(X', j'_!\mu_n) \\
+\Pic(X, Z) \ar[r]^{c_1} \ar[u] & H^2(X, j_!\mu_n) \ar[u]
+}
+$$
+commutes where the vertical arrows are given by pullback by $f$.
+\end{lemma}
+
+\begin{proof}
+Note that pullback by $f$ makes sense on the right hand side
+because $f^{-1}j_!\mu_n = j'_!\mu_n$. We omit the proof.
+\end{proof}
+
+
+
+
+
+
+\section{The chern class of an effective Cartier divisor}
+\label{section-chern-class-divisor}
+
+\noindent
+Let $X$ be a scheme. Let $n$ be an integer invertible on $X$.
+Given an effective Cartier divisor $D \subset X$ we define
+$$
+c_1(D) = c_1(\mathcal{O}_X(D)) \in H^2(X, \mu_n)
+$$
+See Section \ref{section-chern-class-invertible}.
+
+\medskip\noindent
+Let $Z \subset X$ be a closed subscheme and let $U = X \setminus Z$
+be the complementary open subscheme. Let $D \subset X$ be an effective
+Cartier divisor which is entirely contained in $U$; equivalently,
+$D \subset U$ is an effective Cartier divisor whose image in $X$ is closed.
+In this case the invertible module $\mathcal{O}_X(D)$ comes with a
+canonical trivialization $1$ over the open $X \setminus D$,
+hence a fortiori $1|_Z$ is a trivialization over the closed subscheme $Z$.
+Thus we may define
+$$
+c_1(D) = c_1(\mathcal{O}_X(D), 1|_Z) \in H^2(X, j_!\mu_n)
+$$
+See Section \ref{section-chern-class-invertible}.
+
+\medskip\noindent
+Let $f : X \to Y$ be a separated morphism of finite type with $Y$
+quasi-compact and quasi-separated. Consider an effective Cartier divisor
+$D \subset X$ such that $f|_D : D \to Y$ is proper. In this situation
+there is a first chern class
+$$
+c_1(D) \in H^2(Y, Rf_!\mu_n)
+$$
+defined as follows. Choose a compactification $j : X \to \overline{X}$
+of $X$ over $Y$. Since $D$ is proper over $Y$ the image $j(D)$ is
+closed in $\overline{X}$. Thus the discussion above determines
+an element
+$$
+c_1(D) \in H^2(\overline{X}, j_!\mu_n)
+$$
+By construction $Rf_!\mu_n = R\overline{f}_*j_!\mu_n$ and hence
+the two cohomology groups in the displayed equations agree.
+
+\begin{lemma}
+\label{lemma-well-defined-c1-divisor}
+This is well defined, i.e., independent of the choice of the compactification.
+\end{lemma}
+
+\begin{proof}
+Consider two compactifications $j_i : X \to \overline{X}_i$, $i = 1, 2$
+of $X$ over $Y$. By More on Flatness, Lemma
+\ref{flat-lemma-compactifications-cofiltered} part (b)
+we can find a compactification $j : X \to \overline{X}$
+with dense image and morphisms
+$g_i : \overline{X} \to \overline{X}_i$ of compactifications.
+By More on Flatness, Lemma
+\ref{flat-lemma-compactifications-cofiltered} part (c)
+we have $g_i^{-1}(j_i(X)) = j(X)$. Thus we may assume
+we have a morphism $g : \overline{X}_1 \to \overline{X}_2$
+between compactifications $j_i : X \to \overline{X}_i$ over $Y$
+with $g^{-1}(j_2(X)) = j_1(X)$. Denote
+$$
+\xi_i \in H^2(\overline{X}_i, j_{i, !}\mu_n)
+$$
+the cohomology class constructed above from
+$D \subset X \subset \overline{X}_i$.
+By our construction in the proof of Lemma \ref{lemma-shriek-well-defined}
+we have to show the map
+$$
+H^2(\overline{X}_2, j_{2, !}\mu_n)
+\longrightarrow
+H^2(\overline{X}_1, j_{1, !}\mu_n)
+$$
+sends $\xi_2$ to $\xi_1$ where the map comes from the map
+$$
+j_{2, !}\mu_n \longrightarrow Rg_*j_{1, !}\mu_n
+$$
+constructed in Lemma \ref{lemma-shriek-lqf-and-proper}.
+However, we have $j_{2, !}\mu_n = g^{-1}j_{1, !}\mu_n$ and
+the map on cohomology is given by pullback, see
+Remark \ref{remark-map-is-pullback}.
+Noting that the pullback of $\mathcal{O}_{\overline{X}_2}(D)$ by $g$
+is $\mathcal{O}_{\overline{X}_1}(D)$, 
+the statement follows from Lemma \ref{lemma-pullback-c1}.
+\end{proof}
+
+\noindent
+In particular, suppose that $X$ is a separated finite type scheme
+over a field $k$ and $D \subset X$ is an effective Cartier divisor
+proper over $k$. Then, if $n$ is invertible in $k$, we have a
+first chern class
+$$
+c_1(D) \in H^2_c(X, \mu_n)
+$$
+These classes will play an important role in the following.
+
+\begin{lemma}
+\label{lemma-generation-by-c1}
+Let $k$ be an algebraically closed field. Let $X$ be a separated finite
+type scheme over $k$ of dimension $\leq 1$. Then $H^2_c(X, \mu_n)$
+is generated by Chern classes of effective Cartier divisors $D \subset X$.
+\end{lemma}
+
+\begin{proof}
+
+
+
+
+
+\end{proof}
+
+
+
+
+
+
+
+
+\section{Construction of the trace map in the equidimensional case}
+\label{section-construction-equidimensional}
+
+\noindent
+FIXME
+
+
+
+
+
+
+\section{Construction of the trace map in general}
+\label{section-construction-general}
+
+\noindent
+Let $f : X \to Y$ be a separated morphism of finite presentation
+with $Y$ quasi-compact and quasi-separated. Let $r \geq 0$
+and $\alpha \in z(X/Y, r)$. If $\alpha$ is not equidimensional, then
+we use a descent argument to define the trace map
+$\text{Tr}_{f, \alpha, \Lambda} : Rf_!\Lambda(r)[2r] \to \Lambda$.
+
+\medskip\noindent
+First we reduce to the case where $Y$ is Noetherian. Namely, by
+our definition of $z(X/Y, r)$ in
+Relative Cycles, Definition
+\ref{relative-cycles-definition-relative-cycles-general}
+there exists a cartesian diagram
+$$
+\xymatrix{
+X \ar[r] \ar[d]_f & X' \ar[d]^{f'} \\
+Y \ar[r] & Y'
+}
+$$
+where $X' \to Y'$ is a finite type morphism of Noetherian schemes
+and $\alpha' \in z(X'/S', r)$ such that $\alpha$ is the base change
+of $\alpha'$ by $Y \to Y'$. Moreover, by Relative Cycles, Lemma
+\ref{relative-cycles-lemma-relative-r-cycle-general-bis}
+we may assume $f'$ is separated.
+Below we construct the map $\text{Tr}_{f', \alpha', \Lambda}$
+and we obtain $\text{Tr}_{f, \alpha, \Lambda}$ by base change.
+
+\medskip\noindent
+Assume $Y$ is Noetherian.
+Choose a compactification $j : X \to \overline{X}$ over $Y$.
+Choose a proper, completely decomposed morphism
+$b_0 : Y_0 \to Y$ such that the pullback $\alpha_0 = a_0^*\alpha$
+is equidimensional, see
+Relative Cycles, Lemma \ref{relative-cycles-lemma-get-equidimensional-cycles}.
+
+\medskip\noindent
+For $m \geq 1$ denote $Y_m$ the $(m + 1)$-fold fibre product of $Y_0$ over $Y$.
+We obtain a simplicial scheme $Y_\bullet$ which comes with an augmentation
+$b : Y_\bullet \to Y$. This is a proper hypercovering, see
+Simplicial Spaces, Section
+\ref{spaces-simplicial-section-proper-hypercovering-spaces}
+for the definition and compare with
+Hypercoverings, Example \ref{hypercovering-example-cech}.
+Denote $X_m$, $\overline{X}_m$, and $\alpha_m$ the pullback of
+$X$, $\overline{X}$, and $\alpha$ to $Y_m$. Let $W_m \subset X_m$
+be the closure of the support of $\alpha_m$ (viewed as a reduced
+closed subscheme of $X_m$). Since $\alpha_0$ and hence $\alpha_m$
+is equidimensional, the fibres of $W_m \to Y_m$ all have dimension $\leq r$.
+Denote $\overline{W}_m$ the scheme theoretic closure of $W_m$ in
+$\overline{X}_m$. The schemes $X_m$, resp.\ $\overline{X}_m$
+form a proper hypercovering of $X$, resp.\ $\overline{X}$ (by base change).
+Denote $j_\bullet : X_\bullet \to \overline{X}_\bullet$ the inclusion
+morphism. Moreover, the $W_m$, resp.\ $\overline{W}_m$ form a simplicial
+scheme which comes with a closed immersion
+$i_\bullet : W_\bullet \to X_\bullet$,
+resp.\ $\overline{i}_\bullet : \overline{W}_\bullet \to \overline{X}_\bullet$.
+Namely, since taking the support of a cycle is compatible with base
+change (Relative Cycles, Lemma \ref{relative-cycles-lemma-support-family}),
+and since given any morphism $\varphi : [n] \to [m]$ in $\Delta$ the diagram
+$$
+\xymatrix{
+X_m \ar[r]_{X_\varphi} \ar[d]_{f_m} & X_n \ar[d]^{f_n} \\
+Y_m \ar[r]^{Y_\varphi} & Y_n
+}
+$$
+is cartesian, it follows that the top horizontal morphism sends
+$W_m$ into $W_n$ and consequently the morphism $\overline{X}_\varphi$ sends
+$\overline{W}_m$ into $\overline{W}_n$. Denote
+$j'_\bullet : W_\bullet \to \overline{W}_\bullet$ the inclusion morphism.
+
+\medskip\noindent
+By the equivalence of Simplicial Spaces, Lemma
+\ref{spaces-simplicial-lemma-ph-hypercovering-equivalence-bounded}
+to define our map $\text{Tr}_\alpha : Rf_!\Lambda(r)[2r] \to \Lambda$,
+it suffices to define a map
+$$
+b^{-1}Rf_!\Lambda(r) \longrightarrow \Lambda[-2r]
+$$
+in the derived category of sheaves of $\Lambda$-modules on the \'etale
+site of $Y_\bullet$. Now we have
+$$
+b^{-1}Rf_!\Lambda(r) =
+b^{-1}R\overline{f}_*j_!\Lambda(r) =
+R\overline{f}_{\bullet, *}\overline{a}^{-1}j_!\Lambda(r) =
+R\overline{f}_{\bullet, *}j_{\bullet, !}\Lambda(r) 
+$$
+Here the first equality is the definition of $Rf_!$. The second
+equality follows from the cartesian diagram
+$$
+\xymatrix{
+\overline{X}_\bullet \ar[d]_{\overline{f}_\bullet} \ar[r]_{\overline{a}} &
+X \ar[d]^f \\
+Y_\bullet \ar[r]^a & Y
+}
+$$
+and the fact that the base change map is an isomorphism in this case
+(details omitted; use that we may check on $Y_m$ for each $m$ to reduce
+to the usual proper base change theorem in \'etale cohomology).
+Consider the commutative diagram
+$$
+\xymatrix{
+W_\bullet \ar[r]_{i_\bullet} \ar[d]_{j'_\bullet} &
+X_\bullet \ar[r]_a \ar[d]_{j_\bullet} & X \ar[d]^j \\
+\overline{W}_\bullet \ar[r]^{\overline{i}_\bullet} &
+\overline{X}_\bullet \ar[r]^{\overline{a}} & \overline{X}
+}
+$$
+with cartesian squares. The third equality follows by looking
+at the right square and using that
+$\bar{a}^{-1} \circ j_! = j_{\bullet, !} \circ a^{-1}$
+on abelian sheaves. By the same token, looking at the left square,
+we have $\overline{i}_\bullet^{-1} j_\bullet\Lambda =
+j'_{\bullet, !}\Lambda$ as sheaves on $\overline{W}_\bullet$.
+We use this to produce a canonical map
+$$
+j_{\bullet, !}\Lambda(r) \longrightarrow
+\overline{i}_{\bullet, *}j'_{\bullet, !}\Lambda(r)
+$$
+Applying the functor $R\overline{f}_{\bullet, *}$ we obtain a map
+$$
+R\overline{f}_{\bullet, *}j_{\bullet, !}\Lambda(r) 
+\longrightarrow
+R\overline{f}_{\bullet, *}\overline{i}_{\bullet, *}j'_{\bullet, !}\Lambda(r)
+=
+R\overline{g}_{\bullet, *}j'_{\bullet, !}\Lambda(r)
+$$
+where $\overline{g}_\bullet : \overline{W}_\bullet \to Y_\bullet$
+is the structure morphism. In conclusion, it suffices to define
+$$
+R\overline{g}_{\bullet, *}j'_{\bullet, !}\Lambda(r)
+\longrightarrow
+\Lambda[-2r]
+$$
+Now the left hand side is an object of $D^+(Y_\bullet, \Lambda)$
+with nonzero cohomology sheaves only in degrees $0, \ldots, 2r$
+because we arranged it so that the fibres of $W_n$ over $Y_n$
+have dimension $\leq r$. Hence it suffices to define maps
+$$
+R^{2r}g_{m, !}\Lambda(r) \to \Lambda
+$$
+over $Y_m$ compatible with the morphisms in the simplicial scheme.
+This was done in the earlier sections.
 
 
 
