@@ -1693,7 +1693,8 @@ produced by More on Morphisms, Lemma
 \ref{more-morphisms-lemma-weighting-quasi-finite-Noetherian}
 has constant value $1$ since the fraction field of $B$ is purely inseparable
 over $A$!
-Set $V = f^{-1}(U) \subset X$. By miracle flatness we see that
+Set $U = S \setminus \{s\}$ and $V = f^{-1}(U) \subset X$.
+By miracle flatness we see that
 $V \to U$ is flat of degree $p$. It follows that the cycle
 $\alpha = [V/V/U]_0 \in z(V/U, 0)$ satisfies $w_\alpha = pw|_V$.
 However, since the unique point $x$ of $X$ lying over $s$
@@ -3014,12 +3015,12 @@ sending $\sum n_i[Z_i]$ to $\sum n_i[Z_i/X/S]_r$.
 
 \begin{lemma}
 \label{lemma-relative-r-cycle-general}
-Let $S$ be a quasi-compact and quasi-separated scheme.
-Let $f : X \to S$ be a morphism of finite presentation.
+Let $f : X \to S$ be a morphism of schemes. Assume $f$ of finite presentation
+and $S$ quasi-compact and quasi-separated.
 Let $r \geq 0$ and let $\alpha$ be a family of $r$-cycles on fibres of $X/S$.
 The following are equivalent
 \begin{enumerate}
-\item there exists a cartesian diagram
+\item there exists a cartesian diagram of schemes
 $$
 \xymatrix{
 X \ar[r] \ar[d] & X_0 \ar[d] \\
@@ -3111,11 +3112,12 @@ base change of $\alpha_i$ is $\alpha$ and we see (1) holds.
 
 \begin{lemma}
 \label{lemma-add-relative-cycles-general}
-Let $f : X \to S$ be a morphism of finite presentation where $S$
-is a quasi-compact and quasi-separated scheme. Let $r \geq 0$ and
-let $\alpha$ and $\beta$ be families of $r$-cycles on fibres of $X/S$.
-If $\alpha$ and $\beta$ satisfy the equivalent conditions (1) and (2)
-of Lemma \ref{lemma-relative-r-cycle-general}, then so does $\alpha + \beta$.
+Let $f : X \to S$ be a morphism of schemes. Assume $f$ of
+finite presentation and $S$ quasi-compact and quasi-separated.
+Let $r \geq 0$ and let $\alpha$ and $\beta$ be families of
+$r$-cycles on fibres of $X/S$. If $\alpha$ and $\beta$ satisfy
+the equivalent conditions (1) and (2) of
+Lemma \ref{lemma-relative-r-cycle-general}, then so does $\alpha + \beta$.
 \end{lemma}
 
 \begin{proof}
@@ -3143,7 +3145,7 @@ The lemmas above allow us to make the following definition.
 \begin{definition}
 \label{definition-relative-cycles-general}
 Let $S$ be a quasi-compact and quasi-separated scheme.
-Let $f : X \to S$ be a morphism of finite presentation.
+Let $X$ be a scheme of finite presentation over $S$.
 A {\it relative $r$-cycle on $X/S$} is a family $\alpha$ of $r$-cycles
 on fibres of $X/S$ such the equivalent conditions
 (1) and (2) of Lemma \ref{lemma-relative-r-cycle-general} hold.
@@ -3156,9 +3158,9 @@ in case $S$ is Noetherian.
 
 \begin{lemma}
 \label{lemma-relative-cycle-functoriality-general}
-Let $X \to S$ be a morphism of finite presentation between
-quasi-compact and quasi-separated schemes. Let $\alpha$ be a
-relative $r$-cycle on $X/S$ as in
+Let $S$ be a quasi-compact and quasi-separated scheme.
+Let $X$ be a scheme of finite presentation over $S$.
+Let $\alpha$ be a relative $r$-cycle on $X/S$ as in
 Definition \ref{definition-relative-cycles-general}.
 Then any restriction, base change, flat pullback, or proper pushforward
 of $\alpha$ is a relative $r$-cycle (see proof for precise statements).
