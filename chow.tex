@@ -3565,8 +3565,6 @@ is the main motivation for the definition.
 
 \begin{lemma}
 \label{lemma-composition-envelope}
-Let $(S, \delta)$ be as in Situation \ref{situation-setup}.
-Let $X$ be a scheme locally of finite type over $S$.
 If $f : Y \to X$ and $g : Z \to Y$ are envelopes, then
 $f \circ g$ is an envelope.
 \end{lemma}
@@ -3578,15 +3576,26 @@ and More on Morphisms, Lemma \ref{more-morphisms-lemma-composition-cd}.
 
 \begin{lemma}
 \label{lemma-base-change-envelope}
-Let $(S, \delta)$ be as in Situation \ref{situation-setup}.
-Let $X' \to X$ be a morphism of schemes locally of finite type over $S$.
-If $f : Y \to X$ is an envelope, then the base change $f' : Y' \to X'$
-of $f$ is an envelope too.
+Let $X' \to X$ be a morphism of schemes. If $f : Y \to X$ is an envelope,
+then the base change $f' : Y' \to X'$ of $f$ is an envelope too.
 \end{lemma}
 
 \begin{proof}
 Follows from Morphisms, Lemma \ref{morphisms-lemma-base-change-proper}
 and More on Morphisms, Lemma \ref{more-morphisms-lemma-base-change-cd}.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-category-envelopes}
+Let $X$ be a scheme. Any two envelopes of $X$ are dominated by a third.
+\end{lemma}
+
+\begin{proof}
+If $p : Y \to X$ and $q : Z \to X$ are envelopes, then
+so is $r : Y \times_X Z \to X$. Namely, $r$ is the composition
+of a base change of $p$ and $q$, whence is an envelope
+by Lemmas \ref{lemma-base-change-envelope} and
+\ref{lemma-composition-envelope}.
 \end{proof}
 
 \begin{lemma}
