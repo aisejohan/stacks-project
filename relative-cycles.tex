@@ -1424,12 +1424,17 @@ contains the whole fibre over $(0, 0)$.
 Let $f : X \to S$ be a morphism of schemes. Assume $S$ is locally Noetherian
 and $f$ is locally of finite type. Let $r \geq 0$ be an integer. Let
 $\alpha$ be a relative $r$-cycle on $X/S$. If $\alpha$ is equidimensional,
-then any restriction, base change, or flat pullback of $\alpha$ is
-equidimensional.
+then any restriction, base change, flat pullback, or proper pushforward
+of $\alpha$ is equidimensional.
 \end{lemma}
 
 \begin{proof}
-Omitted.
+Omitted. Hint: for restriction, base change, and flat pullback use
+Lemma \ref{lemma-support-family} and for proper pushforward by
+a proper morphism $f : X \to Y$ over $S$ use
+that the support of $f_*\alpha$ is contained in the image of the
+support of $\alpha$ (but equality may not hold) and that $f$
+is closed.
 \end{proof}
 
 \begin{lemma}
@@ -3029,7 +3034,9 @@ S \ar[r] & S_0
 $$
 where $X_0 \to S_0$ is a finite type morphism of Noetherian schemes
 and $\alpha_0 \in z(X_0/S_0, r)$ such that $\alpha$ is the base change
-of $\alpha_0$ by $S \to S_0$
+of $\alpha_0$ by $S \to S_0$,
+\item same as in (1) but with $S_0$ a
+scheme of finite type over $\mathbf{Z}$, and
 \item there exists an envelope $g : S' \to S$
 of finite presentation such that $g^*\alpha$ is in the image of
 (\ref{equation-cycle-classes-general}).
@@ -3037,21 +3044,22 @@ of finite presentation such that $g^*\alpha$ is in the image of
 \end{lemma}
 
 \begin{proof}
+The implication (2) $\Rightarrow$ (1) is immediate.
+
+\medskip\noindent
 Let a diagram and $\alpha_0 \in z(X_0/S_0, r)$ as in (1) be given.
 By Lemma \ref{lemma-get-cycles} there exists an envelope
 $g_0 : S'_0 \to S_0$ such that $g_0^*\alpha_0$ is in
 the image of (\ref{equation-cycle-classes-general}). Namely, since
 $S'_0$ is Noetherian, every closed subscheme of $S'_0 \times_{S_0} X_0$
 is of finite presentation over $S'_0$. Setting $S' = S \times_{S_0} S'_0$
-and using base change by $S' \to S'_0$ we see that (2) holds.
+and using base change by $S' \to S'_0$ we see that (3) holds.
 
 \medskip\noindent
-Conversely, assume that (2) holds. Choose an envelope $g : S' \to S$
-of finite presentation such that $g^*\alpha$ is in the
-image of (\ref{equation-cycle-classes-general}). Set $X' = S' \times_S X$.
-Write $g^*\alpha = \sum n_a [Z_a/X'/S']_r$ for some $Z_a \subset X'$
-closed subscheme flat, of finite presentation, and of relative dimension
-$\leq r$ over $S'$.
+Let an envelope $g : S' \to S$ of finite presentation as in (3) be given.
+Set $X' = S' \times_S X$. Write $g^*\alpha = \sum n_a [Z_a/X'/S']_r$
+for some $Z_a \subset X'$ closed subscheme flat, of finite presentation,
+and of relative dimension $\leq r$ over $S'$.
 
 \medskip\noindent
 Write $S = \lim S_i$ as a directed limit with affine transition
@@ -3107,7 +3115,7 @@ is completely decomposed).
 By Lemma \ref{lemma-relative-cycles-h-descent}
 we see that $\alpha_i \in z(X_i/S_i, r)$.
 The uniqueness in Lemma \ref{lemma-descend-family} implies that the
-base change of $\alpha_i$ is $\alpha$ and we see (1) holds.
+base change of $\alpha_i$ is $\alpha$ and we see (2) holds.
 \end{proof}
 
 \begin{lemma}
@@ -3116,7 +3124,7 @@ Let $f : X \to S$ be a morphism of schemes. Assume $f$ of
 finite presentation and $S$ quasi-compact and quasi-separated.
 Let $r \geq 0$ and let $\alpha$ and $\beta$ be families of
 $r$-cycles on fibres of $X/S$. If $\alpha$ and $\beta$ satisfy
-the equivalent conditions (1) and (2) of
+the equivalent conditions of
 Lemma \ref{lemma-relative-r-cycle-general}, then so does $\alpha + \beta$.
 \end{lemma}
 
@@ -3147,8 +3155,8 @@ The lemmas above allow us to make the following definition.
 Let $S$ be a quasi-compact and quasi-separated scheme.
 Let $X$ be a scheme of finite presentation over $S$.
 A {\it relative $r$-cycle on $X/S$} is a family $\alpha$ of $r$-cycles
-on fibres of $X/S$ such the equivalent conditions
-(1) and (2) of Lemma \ref{lemma-relative-r-cycle-general} hold.
+on fibres of $X/S$ such that the equivalent conditions of
+Lemma \ref{lemma-relative-r-cycle-general} hold.
 The group of all relative $r$-cycles on $X/S$ is denoted $z(X/S, r)$.
 \end{definition}
 
@@ -3157,42 +3165,47 @@ This definition agrees with Definition \ref{definition-relative-cycles}
 in case $S$ is Noetherian.
 
 \begin{lemma}
-\label{lemma-relative-cycle-functoriality-general}
-Let $S$ be a quasi-compact and quasi-separated scheme.
-Let $X$ be a scheme of finite presentation over $S$.
+\label{lemma-base-change-relative-cycle-general}
 Let $\alpha$ be a relative $r$-cycle on $X/S$ as in
 Definition \ref{definition-relative-cycles-general}.
-Then any restriction, base change, flat pullback, or proper pushforward
-of $\alpha$ is a relative $r$-cycle (see proof for precise statements).
+If $g : S' \to S$ is a morphism of quasi-compact and
+quasi-separated schemes and $X' = S' \times_S X$, then
+the base change $g^*\alpha$ is a relative $r$-cycle on $X'/S'$.
 \end{lemma}
 
 \begin{proof}
-The precise statements are as follows
-\begin{enumerate}
-\item If $U \subset X$ is a quasi-compact open, then the restriction
-of $\alpha$ to $U$ is a relative $r$-cycle on $U/S$.
-\item If $g : S' \to S$ is a morphism of quasi-compact and
-quasi-separated schemes and $X' = S' \times_S X$, then $g^*\alpha$
-is a relative $r$-cycle on $X'/S'$.
-\item If $f : X' \to X$ is a flat morphism of finite presentstion
-and of relative dimension $e$, then $f^*\alpha$ is a relative
-$(e + r)$-cycle on $X'/S$.
-\item If $f : X \to Y$ is a proper morphism of schemes over $S$
-with $Y$ of finite presentation over $S$, then $f_*\alpha$
-is a relative $r$-cycle on $Y/S$.
-\end{enumerate}
-We omit the proofs.
+This is immediate from transitivity of base change and
+condition (1) in Lemma \ref{lemma-relative-r-cycle-general}.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-relative-cycle-support-stratification-general}
+Let $\alpha$ be a relative $r$-cycle on $f : X \to S$ as in
+Definition \ref{definition-relative-cycles-general}.
+There exists a finite partition $S = \bigcup S_i$ of $S$
+with constructible parts such that
+$\text{Supp}(\alpha) \cap f^{-1}(S_i)$ is closed in $f^{-1}(S_i)$.
+In particular $\text{Supp}(\alpha)$ is constructible in $X$.
+\end{lemma}
+
+\begin{proof}
+Choose $X_0, S_0, \alpha_0$ as in (1) of
+Lemma \ref{lemma-relative-r-cycle-general}.
+We have the result for $\alpha_0$ by
+Lemma \ref{lemma-relative-cycle-support-stratification}.
+Pulling back to $X/S$ using Lemma \ref{lemma-support-family}
+we obtain the lemma.
 \end{proof}
 
 \begin{lemma}
 \label{lemma-descend-through-limit-general}
 Let $S = \lim_{i \in I} S_i$ be the limit of a directed inverse system of
 quasi-compact and quasi-separated schemes with affine transition morphisms.
-Let $0 \in I$ and let $X_0 \to S_0$ be a morphism of schemes of finite
-presentation. For $i \geq 0$ set $X_i = S_i \times_{S_0} X_0$ and set
-$X = S \times_{S_0} X_0$. Then
+Let $i \in I$ and let $X_i \to S_i$ be a morphism of schemes of finite
+presentation. For $j \geq i$ set $X_j = S_j \times_{S_i} X_i$ and set
+$X = S \times_{S_i} X_i$. Then
 $$
-z(X/S, r) = \colim_{i \geq 0} z(X_i/S_i, r)
+z(X/S, r) = \colim_{j \geq i} z(X_j/S_j, r)
 $$
 where the transition maps are given by base change of relative $r$-cycles.
 \end{lemma}
@@ -3203,48 +3216,152 @@ setting is precisely chosen such that this lemma is true and such that
 we obtain the previously defined notion in the Noetherian case.
 
 \begin{proof}
-Omitted.
+Base change provides an arrow from right to left.
+We will show it is injective and surjective.
+
+\medskip\noindent
+Suppose that $\alpha_j \in z(X_j/S_j, r)$ for some $j \geq i$. Let
+let $\alpha_{j'} \in Z(X_{j'}/S_{j'}, r)$ for $j' \geq j$ and
+$\alpha \in z(X/S, r)$ be the pullbacks. By Lemma \ref{lemma-support-family}
+we have $\text{Supp}(\alpha) = \lim_{j' \geq j} \text{Supp}(\alpha_{j'})$.
+If $\alpha = 0$ we have $\text{Supp}(\alpha) = \emptyset$.
+Since these supports are constructible by
+Lemma \ref{lemma-relative-cycle-support-stratification-general}
+we conclude that $\text{Supp}(\alpha_{j'}) = \emptyset$
+for some $j' \geq j$, see Topology, Lemma
+\ref{topology-lemma-inverse-limit-spectral-spaces-nonempty}
+(and Limits, Lemma \ref{limits-lemma-topology-limit}).
+Thus $\alpha_{j'} = 0$. We conclude the arrow is injective.
+
+\medskip\noindent
+Let $\alpha \in z(X/S, r)$. Choose $X_0, S_0, \alpha_0$
+as in part (2) of Lemma \ref{lemma-relative-r-cycle-general}.
+Since $S_0$ is of finite
+type over $\Spec(\mathbf{Z})$ (and hence of finite presentation),
+there exists an $j \geq i$ and a morphism $S_j \to S_0$ such
+that the composition $S \to S_j \to S_0$ is the given morphism.
+See Limits, Proposition
+\ref{limits-proposition-characterize-locally-finite-presentation}.
+Then $\alpha$ is the pullback of the pullback of $\alpha_0$
+to $S_j$. We conclude the arrow is surjective.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-relative-cycle-functoriality-general}
+Let $\alpha$ be a relative $r$-cycle on $X/S$ as in
+Definition \ref{definition-relative-cycles-general}.
+Any restriction, base change, flat pullback, or proper pushforward
+of $\alpha$ is a relative $r$-cycle, more precisely:
+\begin{enumerate}
+\item If $U \subset X$ is a quasi-compact open, then the restriction
+of $\alpha$ to $U$ is a relative $r$-cycle on $U/S$.
+\item If $g : S' \to S$ is a morphism of quasi-compact and
+quasi-separated schemes and $X' = S' \times_S X$, then
+the base change $g^*\alpha$ is a relative $r$-cycle on $X'/S'$.
+\item If $f : X' \to X$ is a flat morphism of finite presentation
+and of relative dimension $e$, then $f^*\alpha$ is a relative
+$(e + r)$-cycle on $X'/S$.
+\item If $f : X \to Y$ is a proper morphism of schemes over $S$
+with $Y$ of finite presentation over $S$, then $f_*\alpha$
+is a relative $r$-cycle on $Y/S$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+We omit the proof of (1).
+
+\medskip\noindent
+Part (2) is Lemma \ref{lemma-base-change-relative-cycle-general}.
+
+\medskip\noindent
+Proof of (3). Write $S = \lim S_i$ as a directed limit with
+affine transition morphisms with $S_i$ of finite type over $\mathbf{Z}$,
+see Limits, Proposition \ref{limits-proposition-approximate}.
+For large enough $i$ we can find a finite type flat morphism
+$f_i : X'_i \to X_i$ of relative dimension $e$ of schemes of
+finite type over $S_i$ whose base change to $S$ is $f : X' \to X$.
+See
+Limits, Lemmas
+\ref{limits-lemma-descend-finite-presentation},
+\ref{limits-lemma-descend-flat-finite-presentation},
+\ref{limits-lemma-descend-dimension-d}.
+By Lemma \ref{lemma-descend-through-limit-general},
+after increasing $i$, we may assume $\alpha$
+is the pullback of $\alpha_i \in z(X_i/S_i, r)$. Then
+$f_i^*\alpha_i$ is in $z(X'_i/S_i, r + e)$ by
+Lemma \ref{lemma-relative-cycle-functoriality}.
+Now $f^*\alpha$ is the pullback of $f_i^*\alpha_i$ by
+Lemma \ref{lemma-compatibilities} and we conclude.
+
+\medskip\noindent
+Proof of (4). Write $S = \lim S_i$ as a directed limit with
+affine transition morphisms with $S_i$ of finite type over $\mathbf{Z}$,
+see Limits, Proposition \ref{limits-proposition-approximate}.
+For large enough $i$ we can find a proper morphism
+$f_i : X_i \to Y_i$ of schemes of finite type over $S_i$
+whose base change to $S$ is $f : X \to Y$. See
+Limits, Lemmas
+\ref{limits-lemma-descend-finite-presentation} and
+\ref{limits-lemma-eventually-proper}.
+By Lemma \ref{lemma-descend-through-limit-general}, after increasing $i$,
+we may assume $\alpha$ is the pullback of $\alpha_i \in z(X_i/S_i, r)$. Then
+$f_{i, *}\alpha_i$ is in $z(Y_i/S_i, r)$ by
+Lemma \ref{lemma-relative-cycle-functoriality}.
+Now $f_*\alpha$ is the pullback of $f_{i, *}\alpha_i$ by
+Lemma \ref{lemma-compatibilities} and we conclude.
 \end{proof}
 
 \begin{lemma}
 \label{lemma-relative-r-cycle-general-bis}
 If in Lemma \ref{lemma-relative-r-cycle-general} the morphism $f$ is
-separated, then in (1) we may assume the morphism $X_0 \to S_0$ is
+separated, then in (2) we may also assume the morphism $X_0 \to S_0$ is
 separated.
 \end{lemma}
 
 \begin{proof}
 This follows from the proof of the lemma by applying
 Limits, Lemma \ref{limits-lemma-descend-separated-finite-presentation}
-in the proof of (2) $\Rightarrow$ (1) to obtain $X_i \to S_i$ separated.
+in the proof of (3) $\Rightarrow$ (2) to obtain $X_i \to S_i$ separated.
 \end{proof}
 
 \begin{lemma}
 \label{lemma-supported-on-closed}
-Let $X \to S$ be a morphism of finite presentation between
-quasi-compact and quasi-separated schemes. Let $X' \subset X$
-be a closed subscheme of finite presentation over $S$.
+Let $\alpha$ be a relative $r$-cycle on $X/S$ as in
+Definition \ref{definition-relative-cycles-general}.
+Let $X' \subset X$ be a closed subscheme of finite presentation over $S$.
 If $\alpha \in z(X/S, r)$ has support contained in $X'$
 then $\alpha$ is the pushforward of a unique $\alpha'$
 in $z(X'/S, r)$.
 \end{lemma}
 
 \begin{proof}
-This lemma is clear for our definition of relative $r$-cycles
-in the Noetherian case, but it is not immediate for the general case.
 Write $S = \lim S_i$ as a directed limit with affine transition
 morphisms with $S_i$ of finite type over $\mathbf{Z}$,
 see Limits, Proposition \ref{limits-proposition-approximate}.
-We can find an $i$ large enough such that there exist
-a finite type morphism $X_i \to S_i$ whose base change to $S$
-is $X \to S$, and a closed subscheme $X'_i \subset X_i$ whose
-base change is $X' \subset X$. By the discussion in the proof
-of Lemma \ref{} we find that after increasing $i$ we may
-assume there exists a relative $r$-cycle $\alpha_i$ on $X_i/S_i$
-whose base change by $S \to S_i$ is $\alpha$.
-
-
-
+For $i$ large enough we can find a finite type morphism $X_i \to S_i$
+whose base change to $S$ is $X \to S$, and a closed subscheme
+$X'_i \subset X_i$ whose base change is $X' \subset X$. See
+Limits, Lemmas
+\ref{limits-lemma-descend-finite-presentation} and
+\ref{limits-lemma-descend-closed-immersion-finite-presentation}.
+By Lemma \ref{lemma-descend-through-limit-general},
+after increasing $i$, we may find
+$\alpha_i \in z(X_i/S_i, r)$ whose base change to $S$ is $\alpha$.
+If the support of $\alpha_i$ was contained in $X'_i$,
+then $\alpha_i$ would be the pushforward of an element
+$\alpha'_i \in z(X'_i/S_i, r)$ by Lemma \ref{lemma-check-after-closed}
+and by Lemma \ref{lemma-compatibilities}
+the pullback $\alpha' \in z(X'/S, r)$ of $\alpha'_i$
+would pushforward to $\alpha$. Using
+Lemma \ref{lemma-relative-cycle-support-stratification-general} we see
+that $E_i = \text{Supp}(\alpha_i) \setminus X'_i$ is a constructible subset
+of $X_i$. By Lemma \ref{lemma-support-family}
+we see that $E_i$ pulls back to $E_j = \text{Supp}(\alpha_j) \setminus X'_j$
+for $j \geq i$ and by assumption $E_i$ pulls back to the empty set in $X$.
+We conclude that $E_j = \emptyset$ for some $j \geq i$, see Topology, Lemma
+\ref{topology-lemma-inverse-limit-spectral-spaces-nonempty}
+(and Limits, Lemma \ref{limits-lemma-topology-limit}).
+Thus we win.
 \end{proof}
 
 \begin{lemma}
@@ -3253,30 +3370,131 @@ Let $X \to S$ be a morphism of finite presentation between
 quasi-compact and quasi-separated schemes. Let $\alpha$ be a
 relative $r$-cycle on $X/S$. The following are equivalent
 \begin{enumerate}
+\item the closure of the support of $\alpha$ has fibres of dimension
+$\leq r$ over $S$,
 \item there exists a closed subscheme $X' \subset X$
 of finite presentation over $S$ with fibres of dimension $\leq r$
 such that $\alpha$ is the pushforward of a relative $r$-cycle on $X'/S$,
-\item the closure of the support of $\alpha$ has fibres of dimension
-$\leq r$ over $S$.
+\item there exist $X_0, S_0, \alpha_0$ as in (1) of
+Lemma \ref{lemma-relative-r-cycle-general}
+with $\alpha_0 \in z_{equi}(X_0/S_0, r)$,
+\item there exist $X_0, S_0, \alpha_0$ as in (2) of
+Lemma \ref{lemma-relative-r-cycle-general}
+with $\alpha_0 \in z_{equi}(X_0/S_0, r)$.
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-Omitted. Hint: the interesting implication is (2) $\Rightarrow$ (1).
-For this, let $W \subset X$ be a closed subscheme of relative
-dimension $\leq r$ over $S$. We may
-write $W$ as a limit of closed subschemes of $X$ which are
+Assume (1). Let $W \subset X$ be the closure of the support of $\alpha$
+viewed as a reduced closed subscheme of $X$. Then the fibres of $W \to S$
+have dimension $\leq r$ but the problem is that $W \to S$ is not necessarily
+of finite presentation. To fix this, we
+write $W$ as a directed limit of closed subschemes of $X$ which are
 of finite presentation over $S$, see Limits, Lemma
 \ref{limits-lemma-closed-is-limit-closed-and-finite-presentation}.
-Then by Limits, Lemma \ref{} one of these closed subschemes
-is of relative dimension $\leq r$ over $S$.
-Thus if $\alpha$ satisfies (2), then $\alpha$ is supported
-on a closed subscheme $W \subset X$ of finite presentation over $S$
+Then by Limits, Lemma \ref{limits-lemma-limit-dimension}
+one of these closed subschemes is of relative dimension $\leq r$ over $S$.
+Thus if $\alpha$ satisfies (2), then $\alpha$ has support contained
+in a closed subscheme $X' \subset X$ of finite presentation over $S$
 with fibres of relative dimension $\leq r$ over $S$.
+We conclude that (2) holds by Lemma \ref{lemma-supported-on-closed}.
 
+\medskip\noindent
+Assume (2). Say $\alpha$ is the pushforward of $\alpha' \in z(X'/S, r)$.
+Write $S = \lim S_i$ as a directed limit with affine transition
+morphisms with $S_i$ of finite type over $\mathbf{Z}$,
+see Limits, Proposition \ref{limits-proposition-approximate}.
+For $i$ large enough we can find a finite type morphism $X_i \to S_i$
+whose base change to $S$ is $X \to S$, and a closed subscheme
+$X'_i \subset X_i$ whose base change is $X' \subset X$ and whose
+fibres over $S_i$ have dimension $\leq r$. See
+Limits, Lemmas
+\ref{limits-lemma-descend-finite-presentation},
+\ref{limits-lemma-limit-dimension}, and
+\ref{limits-lemma-descend-closed-immersion-finite-presentation}.
+By Lemma \ref{lemma-descend-through-limit-general}
+after increasing $i$ we may find
+$\alpha'_i \in z(X'_i/S_i, r)$ whose base change to $S$ is $\alpha'$.
+Then we see that the image $\alpha_i \in z(X_i/S_i, r)$
+is in fact in $z_{equi}(X_i/S_i, r)$. We conclude (4) holds.
 
-on which $\alpha$
-is supported, then
+\medskip\noindent
+The implication (4) $\Rightarrow$ (3) is immediate.
+We omit the proof of (3) $\Rightarrow$ (1).
+\end{proof}
+
+\begin{definition}
+\label{definition-equidimensional-general}
+Let $\alpha$ be a relative $r$-cycle on $X/S$ as in
+Definition \ref{definition-relative-cycles-general}.
+We say $\alpha$ is {\it equidimensional} if the equivalent conditions
+of Lemma \ref{lemma-equidimensional-general} are satisfied.
+The group of all equidimensional relative $r$-cycles on $X/S$ is
+denoted $z_{equi}(X/S, r)$.
+\end{definition}
+
+\begin{lemma}
+\label{lemma-equidimensional-functoriality-general}
+Let $\alpha$ be an equidimensional relative $r$-cycle on $X/S$ as in
+Definition \ref{definition-equidimensional-general}.
+Any restriction, base change, flat pullback, or proper pushforward
+of $\alpha$ is an equidimensional relative $r$-cycle.
+More precisely, each of the operations in
+Lemma \ref{lemma-relative-cycle-functoriality-general}
+produces an equidimensional relative $r$-cycle.
+\end{lemma}
+
+\begin{proof}
+Omitted. Hint: the proof is the same as the proof of
+Lemma \ref{lemma-equidimensional-functoriality}
+using the characterization of equidimensionality
+given by part (1) of 
+Lemma \ref{lemma-equidimensional-general}.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-equi-descend-through-limit-general}
+Let $S = \lim_{i \in I} S_i$ be the limit of a directed inverse system of
+quasi-compact and quasi-separated schemes with affine transition morphisms.
+Let $i \in I$ and let $X_i \to S_i$ be a morphism of schemes of finite
+presentation. For $j \geq i$ set $X_j = S_j \times_{S_i} X_i$ and set
+$X = S \times_{S_i} X_i$. Then
+$$
+z_{equi}(X/S, r) = \colim_{j \geq i} z_{equi}(X_j/S_j, r)
+$$
+where the transition maps are given by base change of relative $r$-cycles.
+\end{lemma}
+
+\begin{proof}
+There is a map from right to left given by base change.
+This map is injective since $z_{equi}(\cdot, \cdot) \subset z(\cdot, \cdot)$
+by definition and since we have
+Lemma \ref{lemma-descend-through-limit-general}.
+Finally, suppose that $\alpha \in z_{equi}(X/S, r)$.
+Choose $X_0, S_0, \alpha_0$
+as in part (2) of Lemma \ref{lemma-relative-r-cycle-general}
+with $\alpha_0 \in z_{equi}(X_0/S_0, r)$ (possible by our
+definitions). Since $S_0$ is of finite
+type over $\Spec(\mathbf{Z})$ (and hence of finite presentation),
+there exists an $j \geq i$ and a morphism $S_j \to S_0$ such
+that the composition $S \to S_j \to S_0$ is the given morphism.
+See Limits, Proposition
+\ref{limits-proposition-characterize-locally-finite-presentation}.
+Then $\alpha$ is the pullback of the pullback of $\alpha_0$
+to $S_j$. We conclude the arrow is surjective.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-equidimensional-general-bis}
+If in Lemma \ref{lemma-equidimensional-general} the morphism $X \to S$ is
+separated, then we can find $X_0, S_0, \alpha_0$ as in part (4) of that
+lemma such that also the morphism $X_0 \to S_0$ is separated.
+\end{lemma}
+
+\begin{proof}
+This follows from the proof of the lemma by applying
+Limits, Lemma \ref{limits-lemma-descend-separated-finite-presentation}
+in the proof of (2) $\Rightarrow$ (4) to obtain $X_i \to S_i$ separated.
 \end{proof}
 
 \begin{remark}
