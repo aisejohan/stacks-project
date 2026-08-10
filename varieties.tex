@@ -315,6 +315,81 @@ we see that $\mathcal{O}_{Y, y}/\mathfrak m_x \mathcal{O}_{Y, y}$
 has dimension $0$ and is reduced. Hence it is a field.
 \end{proof}
 
+\noindent
+The following lemma doesn't fit anywhere else, so we've put it here.
+
+\begin{lemma}
+\label{lemma-base-change-and-length}
+Let $K/k$ be an extension of fields. Let $A$ be a finite dimensional
+$k$-algebra and set $B = A \otimes_k K$. For any prime ideal
+$\mathfrak q \subset B$ lying over $\mathfrak p \subset A$ we have
+$$
+\text{length}(A_\mathfrak p)[\kappa(\mathfrak p) : k]_i
+=
+\text{length}(B_\mathfrak q)[\kappa(\mathfrak q) : K]_i
+$$
+where $[\kappa':\kappa]_i$ denotes the inseparable degree
+(Fields, Definition \ref{fields-definition-insep-degree}).
+\end{lemma}
+
+\begin{proof}
+By Algebra, Lemma \ref{algebra-lemma-finite-dimensional-algebra}
+the rings $A$ and $B$ are Artinian. By 
+Algebra, Lemma \ref{algebra-lemma-artinian-finite-length} the ring $A$
+is the product of local rings, hence we may assume
+$A$ is local with maximal ideal $\mathfrak p$.
+Since $A \to B$ is flat, also $A \to B_\mathfrak q$ is
+flat. By Algebra, Lemma \ref{algebra-lemma-pullback-module} we have
+$\text{length}(B_\mathfrak q) =
+\text{length}(A)\text{length}(B_\mathfrak q/\mathfrak pB_\mathfrak q)$.
+Since $B_\mathfrak q/\mathfrak pB_\mathfrak q =
+(A/\mathfrak p \otimes_k K)_\mathfrak q$ this reduces us to the case 
+$A = A/\mathfrak p = \kappa(\mathfrak p)$. In other words, we
+may assume $A$ is a field.
+
+\medskip\noindent
+Assume $A = k'$ is a field and $\mathfrak q \subset k' \otimes_k K$.
+Let $F/K$ be an algebraic closure. Choose a prime
+$\mathfrak q' \subset k' \otimes_k F$ lying over $\mathfrak q$.
+Suppose we can show that
+$$
+[k' : k]_i =
+\text{length}((k' \otimes_k F)_{\mathfrak q'})
+\quad\text{and}\quad
+[\kappa(\mathfrak q) : K]_i =
+\text{length}((\kappa(\mathfrak q) \otimes_K F)_{\mathfrak q'})
+$$
+Then we win because
+\begin{align*}
+[k' : k]_i
+& =
+\text{length}((k' \otimes_k F)_{\mathfrak q'}) \\
+& =
+\text{length}((k' \otimes_k K)_\mathfrak q)
+\text{length}((\kappa(\mathfrak q) \otimes_K F)_{\mathfrak q'}) \\
+& =
+\text{length}((k' \otimes_k K)_\mathfrak q)
+[\kappa(\mathfrak q) : K]_i
+\end{align*}
+The second equality by Algebra, Lemma \ref{algebra-lemma-pullback-module}
+and flatness of
+$(k' \otimes_k K)_\mathfrak q \to (k' \otimes_k F)_{\mathfrak q'}$.
+
+\medskip\noindent
+To show the two equalities, it suffices to prove the first.
+Let $k'/k_{sep}/k$ be the subfield constructed in
+Fields, Lemma \ref{fields-lemma-separable-first}. Then we see that
+$$
+k' \otimes_k F =
+\prod\nolimits_{\sigma : k_{sep} \to F}
+k' \otimes_{k_{sep}, \sigma} F
+$$
+and each of the factors is local of degree
+$[k' : k_{sep}] = [k' : k]_i$
+as desired.
+\end{proof}
+
+
 
 
 
