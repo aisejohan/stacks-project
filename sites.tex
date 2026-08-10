@@ -8851,6 +8851,33 @@ This is equal to the expression of the lemma by our
 construction of the points $q$.
 \end{proof}
 
+\begin{lemma}
+\label{lemma-adjunction-on-stalk-j-shriek-j-inverse}
+Let $\mathcal{C}$ be a site.
+Let $p$ be a point of $\mathcal{C}$. Let $U$ be an object of $\mathcal{C}$.
+For a sheaf $\mathcal{F}$ on $\mathcal{C}$ the adjunction mapping
+$j_{U!}j_U^{-1}\mathcal{F} \to \mathcal{F}$ induces the map
+$$
+(j_{U!}j_U^{-1}\mathcal{F})_p =
+\coprod\nolimits_q \mathcal{F}_p
+\longrightarrow
+\mathcal{F}_p
+$$
+whose components are the identity maps. Here the coproduct
+is over the points $q$ of $\mathcal{C}/U$ lying over $p$.
+\end{lemma}
+
+\begin{proof}
+By Lemmas \ref{lemma-stalk-j-shriek} and \ref{lemma-point-morphism-sites}
+we have the description of the stalk on the left hand side.
+The truth of the statement comes from the explicit
+description of $j_{U!}$ in Lemma \ref{lemma-describe-j-shriek}
+and the explicit description of the equality of stalks
+$(j_U^{-1}\mathcal{F})_q = \mathcal{F}_p$
+in the proof of Lemma \ref{lemma-point-functor}.
+Details omitted.
+\end{proof}
+
 \begin{remark}
 \label{remark-not-pushforward}
 Warning: The result of

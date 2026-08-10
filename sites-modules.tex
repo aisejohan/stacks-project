@@ -7190,6 +7190,33 @@ Lemma \ref{lemma-stalk-j-shriek}
 has no analogue for $j_{U, *}$.
 \end{remark}
 
+\begin{lemma}
+\label{lemma-adjunction-on-stalk-j-shriek-j-inverse}
+Let $(\mathcal{C}, \mathcal{O})$ be a ringed site.
+Let $p$ be a point of $\mathcal{C}$. Let $U$ be an object of $\mathcal{C}$.
+For $\mathcal{F}$ in $\textit{Mod}(\mathcal{O})$ the adjunction mapping
+$j_{U!}j_U^{-1}\mathcal{F} \to \mathcal{F}$ induces the ``sum'' map
+$$
+(j_{U!}j_U^{-1}\mathcal{F})_p =
+\bigoplus\nolimits_q \mathcal{F}_p
+\longrightarrow
+\mathcal{F}_p
+$$
+where the coproduct is over the points $q$ of $\mathcal{C}/U$
+lying over $p$.
+\end{lemma}
+
+\begin{proof}
+By Lemma \ref{lemma-stalk-j-shriek} and
+Sites, Lemma \ref{sites-lemma-point-morphism-sites}
+we have the description of the stalk on the left hand side.
+The truth of the statement comes from the explicit
+description of the adjunction between $j_{U!}$ and restriction to $U$
+in the proof of Lemma \ref{lemma-extension-by-zero} and the explicit
+description of the equality of stalks $(j_U^{-1}\mathcal{F})_q = \mathcal{F}_p$
+in the proof of Sites, Lemma \ref{sites-lemma-point-functor}.
+Details omitted.
+\end{proof}
 
 
 
