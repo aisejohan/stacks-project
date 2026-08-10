@@ -1554,36 +1554,8 @@ $$
 \text{length}((\kappa(s') \otimes_{\kappa(s)} \kappa(x))_\mathfrak q)
 [\kappa(x') : \kappa(s')]_i
 $$
-Let $k/\kappa(s')$ be an algebraically closure. Choose a prime
-$\mathfrak p \subset k \otimes_{\kappa(s)} \kappa(x)$ lying
-over $\mathfrak q$. Suppose we can show that
-$$
-[\kappa(x) : \kappa(s)]_i =
-\text{length}((k \otimes_{\kappa(s)} \kappa(x))_\mathfrak p)
-\quad\text{and}\quad
-[\kappa(x') : \kappa(s')]_i =
-\text{length}((k \otimes_{\kappa(s')} \kappa(x'))_\mathfrak p)
-$$
-Then we win because
-$$
-\text{length}((\kappa(s') \otimes_{\kappa(s)} \kappa(x))_\mathfrak q)
-\text{length}((k \otimes_{\kappa(s')} \kappa(x'))_\mathfrak p)
-=
-\text{length}((k \otimes_{\kappa(s)} \kappa(x))_\mathfrak p)
-$$
-by Algebra, Lemma \ref{algebra-lemma-pullback-module} and flatness of
-$\kappa(s') \otimes_{\kappa(s)} \kappa(x) \to k \otimes_{\kappa(s)} \kappa(x)$.
-To show the two equalities, it suffices to prove the first.
-Let $\kappa(x)/\kappa/\kappa(s)$ be the subfield constructed in
-Fields, Lemma \ref{fields-lemma-separable-first}. Then we see that
-$$
-k \otimes_{\kappa(s)} \kappa(x) =
-\prod\nolimits_{\sigma : \kappa \to k}
-k \otimes_{\sigma, \kappa} \kappa(x)
-$$
-and each of the factors is local of degree
-$[\kappa(x) : \kappa] = [\kappa(x) : \kappa(s)]_i$
-as desired.
+This follows from
+Varieties, Lemma \ref{varieties-lemma-base-change-and-length}.
 \end{proof}
 
 \begin{lemma}
