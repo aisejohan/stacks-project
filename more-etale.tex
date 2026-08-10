@@ -2078,25 +2078,32 @@ w(x) = \text{length}_{\mathcal{O}_{X, x}}
 (\mathcal{O}_{X, x}/\mathfrak m_{f(x)} \mathcal{O}_{X, x})
 [\kappa(x) : \kappa(f(x))]_i
 $$
-See More on Morphisms, Lemma
+and the formation of this weighting commutes with base change, see
+More on Morphisms, Lemma
 \ref{more-morphisms-lemma-weighting-flat-quasi-finite}.
 Thus by Lemmas \ref{lemma-trace-map-exists} and
 \ref{lemma-properties-trace-map} for $f$ we obtain trace maps
 $$
-\text{Tr}_{f, K} : f_!f^{-1}K \longrightarrow K
+\text{Tr}_{f, \mathit{flat}, K} =
+\text{Tr}_{f, w, K} :
+f_!f^{-1}K
+\longrightarrow
+K
 $$
 functorial for $K$ in $D(Y_\etale, \Lambda)$ and compatible
-with arbitrary base change. Note that any base change
-$f' : X' \to Y'$ of $f$ satisfies the same properties and that $w$
-restricts to the canonical weighting for $f'$.
+with arbitrary base change.
 \end{example}
 
 \begin{remark}
 \label{remark-trace-etale-counit}
 Let $j : U \to X$ be an \'etale morphism of schemes. Then the trace
-map $\text{Tr} : j_!j^{-1}K \to K$ of
+map $\text{Tr}_{j, \mathit{flat}, K} : j_!j^{-1}K \to K$ of
 Example \ref{example-trace-for-flat-quasi-finite} is equal to the
 counit for the adjunction between $j_!$ and $j^{-1}$.
+This follows as the weighting for $j$ is the constant function $1$
+and thus $\text{Tr}_{j, \mathit{flat}, K}$ agrees with adjunction
+by Modules on Sites, Lemma
+\ref{sites-modules-lemma-adjunction-on-stalk-j-shriek-j-inverse}.
 We already used the terminology ``trace'' for this counit in
 \'Etale Cohomology, Section \ref{etale-cohomology-section-trace-method}.
 \end{remark}
@@ -3614,8 +3621,8 @@ $$
 in $D(Y_\etale, \Lambda)$. Namely, by Lemmas \ref{lemma-shriek-composition}
 and \ref{lemma-Rf-shriek-for-quasi-finite} we have $Rf'_! = Rf_! \circ j_!$.
 Since $j_!$ is left adjoint to $j^{-1}$ we have
-the counit $\text{Tr}_j : j_!j^{-1}K \to K$;
-we also call this the trace map for $j$, see
+the counit $\text{Tr}_j : j_!j^{-1}K \to K$ of the adjunction;
+we recall that this map agrees with the ``flat'' trace map map for $j$, see
 Remark \ref{remark-trace-etale-counit}.
 Observing that the restriction $K|_{X'}$ is equal to $j^{-1}K$
 the map above is constructed as the composition
@@ -3624,15 +3631,16 @@ Rf'_!(K|_{X'}) = Rf'_!j^{-1}K = Rf_!j_!j^{-1}K
 \xrightarrow{Rf_! \text{Tr}_j}
 Rf_!K
 $$
-Given a second \'etale morphism $j' : X'' \to X'$
-for some $f'' : X'' \to Y$ separated and of finite type
-the composition
+The covariance map $Rf'_!(K|_{X'}) \longrightarrow Rf_!K$ is compatible
+with base change by morphisms $Y' \to Y$ of quasi-compact and quasi-separated
+schemes. Furthermore, given a second \'etale morphism $j' : X'' \to X'$
+for some $f'' : X'' \to Y$ separated and of finite type the composition
 $$
 Rf''_!(K|_{X''}) \longrightarrow Rf'_!(K|_{X'}) \longrightarrow Rf_!K
 $$
 of the maps for $j$ and $j'$ is equal to the map
 $Rf''_!K|_{X''} \longrightarrow Rf_!K$ constructed for $j \circ j'$.
-This follows from the corresponding statement on trace maps, namely
+This follows from the corresponding statement on counits, namely
 ``$\text{Tr}_j \circ \text{Tr}_{j'} = \text{Tr}_{j \circ j'}$'',
 see Categories, Lemma \ref{categories-lemma-compose-counits}.
 \end{remark}
@@ -3723,6 +3731,17 @@ $Rf''_!((g \circ g')^{-1}K) \longrightarrow Rf_!K$
 constructed for $(g \circ g', w'')$ where $w''(x'') = w'(x'')w(g'(x''))$.
 This follows from the corresponding statement
 on trace maps, see Lemma \ref{lemma-trace-composition}.
+\end{remark}
+
+\begin{remark}
+\label{remark-flat-covariance}
+In Remark \ref{remark-covariance-weighting} if $g$ is flat and we
+use the weighting described in
+Example \ref{example-trace-for-flat-quasi-finite}, i.e., we use
+$Rf_! \text{Tr}_{g, \mathit{flat}, K}$, then we call
+$Rf'_!(g^{-1}K) \longrightarrow Rf_!K$ the ``flat'' covariance map.
+The construction of this map is compatible with base change by
+morphisms $Y' \to Y$ of quasi-compact and quasi-separated schemes.
 \end{remark}
 
 
@@ -4360,37 +4379,28 @@ and the definitions.
 
 \begin{remark}[Covariance of compactly supported cohomology]
 \label{remark-covariance-compactly-supported}
-Let $k$ be a field. Let $f : X \to Y$ be a morphism of separated
-schemes of finite type over $k$. If $f$ is \'etale, then there
+Let $k$ be a field. Let $j : X \to Y$ be an \'etale morphism of separated
+schemes of finite type over $k$. Then there
 is a natural covariance map
 $$
-R\Gamma_c(X, f^{-1}K) \to R\Gamma_c(Y, K)
+\text{Tr}_j : R\Gamma_c(X, K|_X) \to R\Gamma_c(Y, K)
 $$
-Namely, we get this by applying $R\Gamma(\Spec(k), -)$ to the map
-in Remark \ref{remark-covariance-shriek}. More generally, suppose
-$X$, $Y$, and $f$ satisfy one of the following conditions
-\begin{enumerate}
-\item $f$ is flat and quasi-finite, or
-\item $f$ is quasi-finite and $Y$ is geometrically unibranch, or
-\item $f$ is quasi-finite and we are given a weighting
-$w : X \to \mathbf{Z}$ of $f$.
-\end{enumerate}
-In case (3) we obtain a map
+which is compatible with extension of ground field.
+Namely, we get this by applying $R\Gamma(\Spec(k), -)$ to the map in
+Remark \ref{remark-covariance-shriek}. If $f : X \to Y$ is a
+flat and quasi-finite morphism of separated schemes of finite type over $k$,
+then there is a ``flat'' covariance map
 $$
 R\Gamma_c(X, f^{-1}K) \to R\Gamma_c(Y, K)
 $$
-depending on the choice of weighting $w$ in exactly the same manner
-as above using Remark \ref{remark-covariance-weighting}.
-In cases (1) and (2) we can use the weightings discussed
-in Examples \ref{example-trace-for-flat-quasi-finite} and
-\ref{example-trace-for-quasi-finite-over-normal}.
-For example, if $\Lambda$ is a torsion ring, then we obtain an arrow
+obtained by applying $R\Gamma(\Spec(k), -)$ to the map in
+Remark \ref{remark-flat-covariance}. This map is also compatible
+with extending ground fields. For example, we obtain a
+``flat'' covariance arrow
 $$
-\text{Tr}_f : R\Gamma_c(X, \Lambda) \longrightarrow R\Gamma_c(Y, \Lambda)
+R\Gamma_c(X, \Lambda) \longrightarrow R\Gamma_c(Y, \Lambda)
 $$
-canonical if $f$ is \'etale and depending on the choice of $w$ in general.
-This map has lots of additional properties, for example it is
-compatible with taking ground field extensions.
+which agrees with the natural covariance map $\text{Tr}_f$ when $f$ is \'etale.
 \end{remark}
 
 \begin{lemma}
@@ -5203,11 +5213,10 @@ $$
 for $K$ in $D(X_\etale, \Lambda)$. These maps should satisfy the
 following requirements
 \begin{enumerate}
-\item $\text{Tr}_{f, \alpha, K}$ is additive in $\alpha$,
-\item $\text{Tr}_{f, \alpha, K}$ is functorial in $K$,
-\item if $\Lambda'$ is a ring annihlated by an integer invertible on $Y$
-and $\Lambda' \to \Lambda$ is a ring homomorphism, then the
-diagram
+\item The map $\text{Tr}_{f, \alpha, K}$ is additive in $\alpha$.
+\item The map $\text{Tr}_{f, \alpha, K}$ is functorial in $K$,
+\item If $\Lambda'$ is a ring annihlated by an integer invertible on $Y$
+and $\Lambda' \to \Lambda$ is a ring homomorphism, then the diagram
 $$
 \xymatrix{
 Rf_!\Lambda'(r)[2r] \ar[rr]_-{\text{Tr}_{f, \alpha, \Lambda'}} \ar[d] & &
@@ -5215,21 +5224,23 @@ Rf_!\Lambda'(r)[2r] \ar[rr]_-{\text{Tr}_{f, \alpha, \Lambda'}} \ar[d] & &
 Rf_!\Lambda(r)[2r] \ar[rr]^-{\text{Tr}_{f, \alpha, \Lambda}} & & \Lambda
 }
 $$
-commutes,
-\item $\text{Tr}_{f, \alpha, K}$ is equal to
+commutes.
+\item The map $\text{Tr}_{f, \alpha, K}$ is equal to
 $\text{Tr}_{f, \alpha, \Lambda} \otimes \text{id}_K$ via
-the projection formula, Lemma \ref{lemma-projection-formula-Rf-lower-shriek},
-\item $\text{Tr}_{f, \alpha, K}$ is compatible with base change
-by morphisms $g : Y' \to Y$ where $Y'$ is quasi-compact and quasi-separated,
-\item if $f$ is locally quasi-finite, $Y$ is Noetherian, and $r = 0$, then
+the projection formula, Lemma \ref{lemma-projection-formula-Rf-lower-shriek}.
+\item The formation of $\text{Tr}_{f, \alpha, K}$ is compatible
+with base change by morphisms $g : Y' \to Y$ where $Y'$ is
+quasi-compact and quasi-separated.
+\item If $f$ is locally quasi-finite, $Y$ is Noetherian, and $r = 0$, then
 $\text{Tr}_{f, \alpha, \mathcal{F}} =
 \text{Tr}_{f, w_\alpha, \mathcal{F}}$, see
 Relative Cycles, Lemma \ref{relative-cycles-lemma-weightings}
-and Section \ref{section-weightings},
-\item if $f$ is \'etale
-and $\alpha = [X/X/Y]_0$ then $\text{Tr}_{f, \alpha, K}$
-is equal to the counit $f_!f^{-1}K \to K$,
-\item given a morphism $f' : X' \to X$ of finite presentation
+and Section \ref{section-weightings}.
+\item If $f$ is \'etale and $\alpha = [X/X/Y]_0$ then
+$\text{Tr}_{f, \alpha, K}$ is equal to the counit $f_!f^{-1}K \to K$.
+\item If $f$ is flat and locally quasi-finite and $\alpha = [X/X/Y]_0$ then
+$\text{Tr}_{f, \alpha, K} = \text{Tr}_{f, \mathit{flat}, K}$.
+\item Given a morphism $f' : X' \to X$ of finite presentation
 and $\alpha'$ a relative $r'$-cycle on $X'/X$, then
 $$
 \text{Tr}_{f \circ f', \alpha \circ \alpha', K} :
@@ -5246,9 +5257,8 @@ R((f \circ f')_!(f \circ f')^{-1}K(r + r')[2r + 2r'] \\
 = 
 Rf_!\Big(Rf'_!(f')^{-1} f^{-1}K(r')[2r']\Big)(r)[2r]
 $$
-\item Let $j : X' \to X$ be an \'etale morphism
-of separated schemes of finite type over $Y$ with
-structure morphisms $f : X \to Y$ and $f' : X' \to Y$.
+\item if $j : X' \to X$ is a separated \'etale morphism and
+$f' = f \circ j : X' \to Y$.
 Let $\alpha \in z(X/Y, r)$ and denote $\alpha' = j^*\alpha$.
 Then the diagram
 $$
@@ -5262,11 +5272,24 @@ K
 $$
 commutes where the vertical arrow is
 Remark \ref{remark-covariance-shriek}.
-\item Let $h : X' \to X$ be a proper morphism
-of separated schemes of finite type over $Y$ with
-structure morphisms $f : X \to Y$ and $f' : X' \to Y$.
-Let $\alpha \in z(X'/Y, r)$ and denote $\alpha = h_*\alpha'$.
+\item Let $g : X' \to X$ be a separated, flat, quasi-finite morphism
+of finite presentation and set $f' = f \circ g : X' \to Y$.
+Let $\alpha \in z(X/Y, r)$ and denote $\alpha' = g^*\alpha$.
 Then the diagram
+$$
+\xymatrix{
+Rf_!f^{-1}K(r)[2r]
+\ar[rr]_-{\text{Tr}_{f, \alpha, K}} & &
+K \ar@{=}[d] \\
+Rf'_!(f')^{-1}K(r)[2r] \ar[rr]^-{\text{Tr}_{f', \alpha', K}} \ar[u] & &
+K
+}
+$$
+commutes where the vertical arrow is the ``flat'' covariance
+map, see Remark \ref{remark-flat-covariance}.
+\item Let $h : X' \to X$ be a proper morphism of finite presentation
+and set $f' = f \circ h : X' \to Y$. Let $\alpha \in z(X'/Y, r)$ and
+denote $\alpha = h_*\alpha'$. Then the diagram
 $$
 \xymatrix{
 Rf_!f^{-1}K(r)[2r]
@@ -5476,20 +5499,178 @@ $$
 See Section \ref{section-chern-class-invertible}.
 
 \medskip\noindent
-Let $Z \subset X$ be a closed subscheme and let $U = X \setminus Z$
-be the complementary open subscheme. Let $D \subset X$ be an effective
-Cartier divisor which is entirely contained in $U$; equivalently,
-$D \subset U$ is an effective Cartier divisor whose image in $X$ is closed.
-In this case the invertible module $\mathcal{O}_X(D)$ comes with a
+Let $U \subset X$ be an open subscheme and denote $j : U \to X$
+the inclusion morphism. Let $D \subset U$ be an effective Cartier divisor
+whose image in $X$ is closed. Choose any closed subscheme $Z \subset X$
+whose underlying closed subset is $X \setminus U$.
+The invertible module $\mathcal{O}_X(D)$ comes with a
 canonical trivialization $1$ over the open $X \setminus D$,
 hence a fortiori $1|_Z$ is a trivialization over the closed subscheme $Z$.
 Thus we may define
 $$
 c_1(D) = c_1(\mathcal{O}_X(D), 1|_Z) \in H^2(X, j_!\mu_n)
 $$
-See Section \ref{section-chern-class-invertible}.
+See Section \ref{section-chern-class-invertible}. This class is independent
+of the choice of the closed subscheme $Z$ by Lemma \ref{lemma-restrict-c1}
+(so for example one can replace $Z$ by any infinitesimal neighbourhood
+of $Z$).
+
+\begin{lemma}
+\label{lemma-pullback-c1D}
+Let $f : X' \to X$ is a morphism of schemes and $U' = f^{-1}(U)$.
+Assume $D' = f^{-1}(D)$ is an effective Cartier divisor in $U'$.
+Then the image of $c_1(D)$ by the pullback map
+$H^2(X, j_!\mu_n) \to H^2(X', j'_!\mu_n)$ is $c_1(D')$.
+\end{lemma}
+
+\begin{proof}
+Note that pullback by $f$ makes sense
+because $f^{-1}j_!\mu_n = j'_!\mu_n$.
+Choose any closed subscheme $Z \subset X$ 
+whose underlying closed subset is $X \setminus U$
+and set $Z' = f^{-1}(Z)$. Note that $f^*\mathcal{O}_X(D)$
+is canonically isomorphic to $\mathcal{O}_{X'}(D')$
+and this isomorphism is compatible with trivializations over
+$X \setminus D$ and $X' \setminus D'$. Thus the lemma
+follows from Lemma \ref{lemma-pullback-c1}.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-finite-trivialize-invertible-upstairs-restricts-to-1}
+Let $f : X \to Y$ be a finite morphism of schemes. Let $Z \subset X$
+be a closed subscheme. Let $(\mathcal{L}, \sigma)$ be an pair.
+Let $y \in Y$. There exists an open neighbourhood
+$V \subset Y$ of $y$ such that there exists a generator
+$s$ of $\mathcal{L}|_{f^{-1}(V)}$ whose restriction to $Z$ is $\sigma$.
+\end{lemma}
+
+\begin{proof}
+By Divisors, Lemma \ref{divisors-lemma-finite-trivialize-invertible-upstairs}
+we may assume $\mathcal{L}$ is trivial. Then it suffices to show
+that $f_*\mathcal{O}_X^* \to \mathcal{O}_Z^*$ is surjective.
+Looking at stalks, this translates into the following algebra problem:
+Let $A \to B$ be a finite ring map with $(A, \mathfrak m)$ local
+and let $I \subset B$ be an ideal. If $v$ is a unit of $B/I$, then there
+exists a unit $u$ of $B$ mapping to $v$. First take any element $b \in B$
+lifing $v$. The ring $B$ has finitely many maximal ideals
+$\mathfrak m_1, \ldots, \mathfrak m_r$ all lying over
+$\mathfrak m$. By prime avoidance we can pick an element $b' \in B$
+contained in $I$ and in all maximal ideals which do not contain $b$ but
+not in the maximal ideals containing both $b$ and $I$. Then
+$u = b + b'$ is a unit lifting $v$.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-norm-c1D}
+Let $f : X' \to X$ be a finite morphism of Noetherian schemes.
+Let $U' \subset X'$ and $U \subset X$ be open subschemes such
+that $f(U') \subset U$ and such that $g = f|_{U'} : U' \to U$
+is flat. Let $D' \subset U'$ be an effective Cartier divisor
+closed in $X'$ and let $D \subset U$ be its norm, see
+Discriminants, Lemma \ref{discriminant-remark-norm-divisor}.
+Then the image of $c_1(D')$ by the trace map
+$$
+H^2(X', j'_!\mu_n) = H^2(X, j_!(g_!\mu_n))
+\xrightarrow{j_!\text{Tr}_{g, \mathit{flat}, \mu_n}}
+H^2(X, j_!\mu_n)
+$$
+is $c_1(D)$.
+\end{lemma}
+
+\begin{proof}
+(The equality in displayed equation of the lemma follows because
+$j_! \circ g_! = f_! \circ j'_!$ and $f_! = f_* = Rf_*$.)
+Choose a coherent ideal sheaves
+$\mathcal{I}' \subset \mathcal{O}_{X'}$ and
+$\mathcal{I} \subset \mathcal{O}_X$ such that
+$V(\mathcal{I}) = X \setminus U$ and
+$V(\mathcal{I}') = X' \setminus U'$.
+Discriminants, Lemmas \ref{discriminant-lemma-norm} and
+\ref{discriminant-lemma-multiplicative-norm} produce,
+after replacing $\mathcal{I}'$ by a power, a polynomial law
+$$
+\nu : f_*\mathcal{I}' \longrightarrow \mathcal{I}
+$$
+satisfying a certain multiplicative property. This produces
+a homomorphism of sheaves of groups
+$$
+N : f_*(1 + \mathcal{I}')^* \longrightarrow (1 + \mathcal{I})^*,\quad
+1 + s \longmapsto 1 + \nu(1 + s)
+$$
+on $X_\etale$. We claim that the following diagram
+$$
+\xymatrix{
+0 \ar[r] &
+f_*j'_!\mu_n \ar[r] \ar[d]^{\text{Tr}_{g, \mathit{flat}, \mu_n}} &
+f_*(1 + \mathcal{I}')^* \ar[r]^n \ar[d]^N &
+f_*(1 + \mathcal{I}')^* \ar[r] \ar[d]^N &
+0 \\
+0 \ar[r] &
+j_!\mu_n \ar[r] &
+(1 + \mathcal{I})^* \ar[r]^n &
+(1 + \mathcal{I})^* \ar[r] &
+0 
+}
+$$
+is commutative. The commutativity of the right square follows
+from the fact that $N$ is a group homomorphism. The commutativity
+of the left hand square can be checked on stalks.
+Let $\overline{x}$ be a geometric point of $X$.
+Let $\overline{x}'_1, \ldots, \overline{x}'_t$ be the geometric points
+of $X'$ lying over $\overline{x}$. If $\overline{x} \not \in U$,
+then the stalk of the sheaf $f_*j'_!\mu_n$ at $\overline{x}$ is zero
+and the commutativity is clear. If $\overline{x} \in U$, then
+we obtain the square
+$$
+\xymatrix{
+\prod_{\overline{x}'_i \in U'} \mu_n(\mathcal{O}_{X', \overline{x}'_i})
+\times
+\prod_{\overline{x}'_i \not \in U'} 0
+\ar[r] \ar[d]^{\text{Tr}_{g, \mathit{flat}, \mu_n}} &
+\prod_{\overline{x}'_i \in U'} \mathcal{O}_{X', \overline{x}_i}^*
+\times
+\prod_{\overline{x}'_i \not \in U'}
+(1 + \mathcal{I}')^*_{\overline{x}'_i} \ar[d]^{\prod N_i} \\
+\mu_n(\mathcal{O}_{X', \overline{x}'_i})
+\ar[r] &
+\mathcal{O}_{X, \overline{x}}^*
+}
+$$
+By Discriminants, Lemma \ref{discriminant-lemma-stalks-norm} we see that
+$N_i : \mathcal{O}_{X', \overline{x}_i}^* \to \mathcal{O}_{X, \overline{x}}^*$
+is the norm map for the finite flat ring map
+$\mathcal{O}_{X, \overline{x}}^* \to \mathcal{O}_{X', \overline{x}_i}^*$.
+Moreover, the map
+$\mathcal{O}_{X, \overline{x}}^* \to \mathcal{O}_{X', \overline{x}_i}^*$
+induces a bijection between groups of $n$th roots of unity and for
+a family of elements
+$\zeta_i \in \mu_n(\mathcal{O}_{X, \overline{x}}^*)$ with image
+$\zeta'_i \in \mu_n(\mathcal{O}_{X', \overline{x}_i}^*)$ we have
+$$
+\text{Tr}_{g, \mathit{flat}, mu_n}((\zeta_1, \ldots, \zeta_r) \times 0) =
+\prod \zeta_i^{d_i}
+$$
+where $d_i$ is the degree of the finite flat ring map
+$\mathcal{O}_{X, \overline{x}}^* \to \mathcal{O}_{X', \overline{x}_i}^*$.
 
 \medskip\noindent
+Having said this, choose a finite affine open covering $X = \bigcup W_e$
+such that $D' \cap f^{-1}W_e$ is principal and cut out by
+$h'_e \in \mathcal{O}_{X'}(f^{-1}W_e)$ which restricts to $1$ on 
+$Z' \cap W_e$, see
+Lemma \ref{lemma-finite-trivialize-invertible-upstairs-restricts-to-1}.
+Then $D' \cap W_e$ is cut out by $N(h'_e)$, see
+Discriminants, Lemma \ref{discriminant-lemma-norm-divisor}.
+Writing $u_e = \epsilon_{ee'} u_{e'}$ we see that the cocycle
+$(\epsilon_{ee'})$ defines the class of
+$(\mathcal{O}_{X'}(D'), 1|_{Z'})$ in $H^1(X', (1 + \mathcal{I}')^*)$.
+What we just said shows that $N$ of this element is the class
+of $(\mathcal{O}_X(D), 1|_Z)$ in $H^1(X, (1 + \mathcal{I})^*)$.
+Since the diagram above is commutative, we see that the boundaries
+match via the trace map and the proof is complete.
+\end{proof}
+
+\noindent
 Let $f : X \to Y$ be a separated morphism of finite type with $Y$
 quasi-compact and quasi-separated. Consider an effective Cartier divisor
 $D \subset X$ such that $f|_D : D \to Y$ is proper. In this situation
@@ -5545,14 +5726,22 @@ constructed in Lemma \ref{lemma-shriek-lqf-and-proper}.
 However, we have $j_{2, !}\mu_n = g^{-1}j_{1, !}\mu_n$ and
 the map on cohomology is given by pullback, see
 Remark \ref{remark-map-is-pullback}.
-Noting that the pullback of $\mathcal{O}_{\overline{X}_2}(D)$ by $g$
-is $\mathcal{O}_{\overline{X}_1}(D)$, 
-the statement follows from Lemma \ref{lemma-pullback-c1}.
+Thus the statement follows from Lemma \ref{lemma-pullback-c1D}.
 \end{proof}
 
+
+\section{Trace map for curves}
+
 \noindent
-In particular, suppose that $X$ is a separated finite type scheme
-over a field $k$ and $D \subset X$ is an effective Cartier divisor
+Let $X$ be a separated finite type scheme over a field $k$
+with $\dim(X) \leq 1$. We are going to construct a trace map
+$$
+\text{Tr}_X : H^2_c(X, \mu_n) \longrightarrow \mathbf{Z}/n\mathbf{Z}
+$$
+for all $n$ prime to the characteristic of $k$.
+
+
+and $D \subset X$ is an effective Cartier divisor
 proper over $k$. Then, if $n$ is invertible in $k$, we have a
 first chern class
 $$
@@ -5582,11 +5771,12 @@ is generated by Chern classes of effective Cartier divisors $D \subset X$.
 
 
 
-\section{Construction of the trace map in the equidimensional case}
+\section{The trace map in the equidimensional case}
 \label{section-construction-equidimensional}
 
 \noindent
-FIXME
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $f : X \to Y$ be a separated morphism of finite presentation.
 
 
 
