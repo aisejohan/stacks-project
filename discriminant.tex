@@ -3378,6 +3378,357 @@ Lemma \ref{lemma-compare-trace}.
 
 
 
+\section{Polynomial laws}
+\label{section-polynomial-laws}
+
+\noindent
+This section continues the discussion in
+More on Algebra, Section \ref{more-algebra-section-polynomial-laws}.
+
+\begin{definition}
+\label{definition-polynomial-law}
+Let $X$ be a scheme. Let $\mathcal{F}$ and $\mathcal{G}$ be
+quasi-coherent $\mathcal{O}_X$-modules. A polynomial law
+$\alpha : \mathcal{F} \to \mathcal{G}$ is a rule that to every
+morphism $g : X' \to X$ of schemes assigns a map
+$f_{X'} : g^*\mathcal{F} \to g^*\mathcal{G}$ of sheaves of sets
+functorial in $X'$.
+\end{definition}
+
+\noindent
+The functoriality tells us that given $g' : X'' \to X'$ and $g : X' \to X$
+the diagram
+$$
+\xymatrix{
+\Gamma(X', g^*\mathcal{F})
+\ar[rr]_-{\text{pullback by }g'} \ar[d]_{f_{X'}} & &
+\Gamma(X'', (g \circ g')^*\mathcal{F}) \ar[d]^{f_{X''}} \\
+\Gamma(X', g^*\mathcal{G}) \ar[rr]^-{\text{pullback by }g'} & &
+\Gamma(X'', (g \circ g')^*\mathcal{G})
+}
+$$
+commutes (and in fact it is equivalent to this).
+
+\begin{lemma}
+\label{lemma-affine-polynomial-law}
+Assume in Definition \ref{definition-polynomial-law}
+we have $X = \Spec(R)$ and $\mathcal{F} = \widetilde{M}$ and
+$\mathcal{G} = \widetilde{N}$. Then there is a bijection between
+polynomial laws from $\mathcal{F}$ to $\mathcal{G}$
+and polynomial laws from $M$ to $N$, see
+More on Algebra, Definition \ref{more-algebra-definition-polynomial-law}.
+\end{lemma}
+
+\begin{proof}
+Omitted.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-polynomial-laws-over-open}
+Let $X$ be a Noetherian scheme.
+Let $\mathcal{F}$ and $\mathcal{G}$ be coherent $\mathcal{O}_X$-modules.
+Let $\mathcal{I} \subset \mathcal{O}_X$ be a coherent ideal sheaf.
+Set $U = X \setminus V(\mathcal{I})$. Restriction determines a
+bijection
+$$
+\colim_n
+\left\{
+\begin{matrix}
+\text{polymonial laws }
+\mathcal{I}^n\mathcal{F} \to \mathcal{G} \\
+\text{with vanishing constant term}
+\end{matrix}
+\right\}
+\longrightarrow
+\left\{
+\begin{matrix}
+\text{polymonial laws }
+\mathcal{F}|_U \to \mathcal{G}|_U \\
+\text{with vanishing constant term}
+\end{matrix}
+\right\}
+$$
+\end{lemma}
+
+\begin{proof}
+It suffices to prove this in the affine case; details omitted.
+The affine case translates into the algebra problem stated and
+solved below.
+
+\medskip\noindent
+Let $R$ be a Noetherian ring. Let $I = (f_1, \ldots, f_r)$ be an ideal of $R$.
+Let $M$ and $N$ be finite $R$-modules.
+If $n \geq 1$ and $\nu : I^nM \to N$ is a polynomial law, then
+we obtain by base change a collection of polynomial laws
+$\nu_i : M_{f_i} = (I^nM)_{f_i} \to N_{f_i}$ such that the further
+base change of $\nu_i$ and $\nu_j$ agree over $R_{f_if_j}$.
+The problem is to show that given a collection
+$(\nu_1, \ldots, \nu_r)$ with the gluing condition
+we obtain a pair $(n, \nu)$, unique up to increasing $n$,
+giving rise to it.
+
+\medskip\noindent
+Uniquess. Suppose $\nu, \nu' : M \to N$ give rise to the same
+polynomial laws $M_{f_i} \to N_{f_i}$. Let $m_1, \ldots, m_k \in M$
+be generators for $M$. Let $F, F' \in N[x_1, \ldots, x_k]$
+correspond to $\nu, \nu'$ as in More on Algebra, Lemma \ref{}.
+Then we see that the coefficients $a_E$ and $a_{E'}$ of $F$ and $F'$ agree in
+$N_{f_i}$ for each $i$. Thus by Properties, Lemma \ref{}
+$a_E, a_{E'} : I^n \to N$ are the same for some $n$. This proves
+that the restrictions of $\nu$ and $\nu'$ to $I^nM$ are the same
+polynomial law.
+
+\medskip\noindent
+Existence. First, assume that $M$ is free with basis $m_1, \ldots, m_k$.
+Then by More on Algebra, Lemma \ref{} each
+$\nu_i$ is given by a polynomial
+$$
+F_i(x_1, \ldots, x_k) \in N_{f_i}[x_1, \ldots, x_k]
+$$
+with vanishing constant term. Moreover $F_i$ and $F_j$ map
+to the same polynomial in $N_{f_if_j}[x_1, \ldots, x_k]$.
+In other words, the coefficients of these polynomials
+define sections of the structure sheaf of $\Spec(R)$
+over the complement of $V(I)$. By Properties, Lemma \ref{},
+for each multiindex $E$ we can find an $n$ and a map
+$\varphi_E : I^n \to R$ such that the coefficient of $x^E$
+in $F_i$ is $\varphi_E(f_i^n)/f_i^{-n}$. We may pick the same $n$
+for all $E$. Then for any $R$-algebra $R'$ we can define
+$$
+I^nM \otimes_R R' = M \otimes_R (I^n \otimes_R R') \to N \otimes_R R'
+,\quad
+\nu(\sum b_i \otimes a_i = \sum \varphi_E(a^E)
+$$
+with obvious notation. Thus a polynomial law restricting to $\nu_i$
+over $R_{f_i}$.
+
+\medskip\noindent
+Existence in general. Choose generators $m_1, \ldots, m_k$ of $M$.
+Above we've constructed a polynomial law $\nu : I^nR^{\oplus k} \to N$
+which after localization at $f_i$ agrees with the compositon
+$R_{f_i}^{\oplus k} \to M_{f_i} \xrightarrow{\nu_i} N_{f_i}$.
+Suppose the relations $\sum r_{ji} m_i = 0$, $j = 1, \ldots, l$
+generate the module of relations among $m_1, \ldots, m_k$.
+Consider the diagram
+$$
+\xymatrix{
+I^nR^{\oplus k} \oplus I^nR^{\oplus l} \ar[r] \ar[d] &
+I^nR^{\oplus k} \ar[d]^\nu \\
+I^nR^{\oplus k} \ar[r]^\nu &
+N
+}
+$$
+where the left vertical arrow is the first projection and the
+top horizontal arrow sends $((a_1, \ldots, a_k), (c_1, \ldots, c_k))$ to
+$(a_1, \ldots, a_k) + \sum c_j(r_{j1}, \ldots, r_{jk})$.
+By the uniqueness proved earlier, after increasing $n$
+we see that this diagram becomes commutative.
+According to More on Algebra, Lemma \ref{} this
+means $\nu$ descends to a polynomial law $M \to N$.
+\end{proof}
+
+
+
+
+
+
+
+\section{Norms}
+\label{section-norms}
+
+\noindent
+Let $d \geq 1$ be an integer. In Divisors, Section \ref{divisors-section-norms}
+we introduced an ad hoc notion of a {\it norm of degree $d$} for a finite
+morphism $f : X \to Y$. In
+Divisors, Lemma \ref{divisors-lemma-finite-locally-free-has-norm}
+we proved that if $f$ is finite locally free of degree $d$,
+then there exists a canonical norm $N : f_*\mathcal{O}_X \to \mathcal{O}_Y$
+of degree $d$ and its formation commutes with arbitrary base change.
+Thus $N$ is a polynomial law (Definition \ref{definition-polynomial-law}).
+
+\medskip\noindent
+In this section we extend this construction to finite morphisms
+which are not necessarily flat. More precisely, we will construct
+a map $\nu$ related to $N$ by the rule $\nu(s) = N(1 + s) - 1$.
+Please keep this in mind as it will explain some of the formulae
+below.
+
+\begin{lemma}
+\label{lemma-norm}
+Consider pairs $(f : X \to Y, \mathcal{I})$ consisting of a
+finite morphism of Noetherian schemes $f : X \to Y$ and a
+coherent ideal sheaf $\mathcal{I} \subset \mathcal{O}_X$
+such that $f$ is flat over $X \setminus V(\mathcal{I})$.
+For each pair $(f : X \to Y, \mathcal{I})$ there exists an
+element
+$$
+\nu \in \colim_n
+\left\{
+\begin{matrix}
+\text{polymonial laws }
+f_*(\mathcal{I}^n) \longrightarrow \mathcal{O}_Y \\
+\text{with vanishing constant term}
+\end{matrix}
+\right\}
+$$
+uniquely characterized by the following properties
+\begin{enumerate}
+\item formation of $\nu$ commutes with \'etale base change,
+\item given an \'etale morphism $h : Y' \to Y$ and a disjoint union
+decomposition $X \times_Y Y' = X'_1 \amalg X'_2$ the base change
+of $\nu$ by $h$ sends a local section $s = (s_1, s_2)$
+to $(1 + \nu_1(s_1))(1 + \nu_2(s_2)) - 1$ where
+$\nu_i$ is the polynomial law
+associated to the pair $(X'_i \to Y', \mathcal{I}\mathcal{O}_{X'_i})$,
+\item if $f$ is flat, then $\nu(s) = N(1 + s) - 1$
+where $N$ is the norm of $f$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+FIXME. The construction is by induction on the maximal degree $d$ of
+a fibre of the morphism $f$.
+
+\medskip\noindent
+If $d = 0$, then $X$ is empty and there is nothing to construct.
+
+\medskip\noindent
+Let $d > 0$. Let $y \in Y$. We've already constructed our law
+in the following cases
+\begin{enumerate}
+\item If $\deg(X_y) < d$ then the same is true in an open
+neighbhourhood and we have our map on this by induction.
+\item If $f^{-1}(y)$ has more than $1$ point, then
+in an \'etale neighbourhood of $y$ we can split
+$X$ into two pieces each of lower degree and we can
+use induction and the requirement (3).
+\item If $f^{-1}(y)$ contains exactly $1$ point and $f$ is flat at
+that point, then we use requirement (4) to define $\nu$ in an
+open neighbourhood.
+\end{enumerate}
+Let $Z \subset Y$ be the closed subset of points $y \in Y$
+such that $\deg(X_y) = d$, $f^{-1}(y) = \{x\}$, and $f$ is not
+flat at $x$. Then we already have an $n \geq 1$
+and a polynomial law
+$$
+\nu :
+f_*(\mathcal{I}^n)|_{Y \setminus Z}
+\longrightarrow
+\mathcal{O}_{Y \setminus Z}
+$$
+Let $\mathcal{J} \subset \mathcal{O}_Y$ be the ideal sheaf of $Z$.
+According to Lemma \ref{}
+we can extend $\nu$ to an essentially unique polynomial law
+$$
+\mathcal{J}^mf_*(\mathcal{I}^n)
+\longrightarrow
+\mathcal{O}_Y
+$$
+Since $\mathcal{I}^e \subset \mathcal{J}\mathcal{O}_X$
+for $e$ large enough this suffices.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-base-change-norm}
+The construction of $\nu$ commutes with flat base change.
+\end{lemma}
+
+\begin{proof}
+Omitted.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-stalks-norm}
+Let $\overline{x}$ be a geometric point of $X$ with
+image $\overline{y}$ in $Y$. Assume $f$ is flat at $\overline{x}$.
+The induced map
+$$
+\nu : \mathcal{O}^{sh}_{X, \overline{x}} \to \mathcal{O}^{sh}_{Y, \overline{y}}
+$$
+is given by $a \mapsto N(1 + a) - a$ where $N$ is the norm map
+for the finite flat ring map
+$\mathcal{O}^{sh}_{Y, \overline{y}} \to \mathcal{O}^{sh}_{X, \overline{x}}$.
+\end{lemma}
+
+\begin{proof}
+This is immediate from the construction.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-multiplicative-norm}
+For $n$ large enough the representative
+$\nu : f_*(\mathcal{I}^n) \to \mathcal{O}_Y$
+is multiplicative in the sense that
+$\nu(s + s' + ss') = (1 + \nu(s))(1 + \nu(s')) - 1$
+for local sections $s$ and $s'$.
+\end{lemma}
+
+\begin{proof}
+The assertion is that the two polynomial laws
+$$
+f_*(\mathcal{I}^n) \oplus f_*(\mathcal{I}^n) \to \mathcal{O}_Y
+$$
+given by the respective formulae are the same. The same uniqueness
+arguemnt as in the proof of the construction works to show these
+have to be equal for $n$ large enough.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-ideals-norm}
+Let $\mathcal{J} \subset \mathcal{O}_Y$ be a coherent sheaf of ideals
+such that $f^{-1}V(\mathcal{J}) \subset V(\mathcal{I})$.
+For $n$ large enough the representative
+$\nu : f_*(\mathcal{I}^n) \to \mathcal{O}_Y$
+factors (uniquely) through $\mathcal{J}$.
+\end{lemma}
+
+\begin{proof}
+Omitted.
+\end{proof}
+
+\begin{remark}
+\label{remark-norm-divisor}
+Let $f : X \to Y$ be a locally quasi-finite morphism of schemes with
+$Y$ Noetherian. Let $D \subset X$ be an effective Cartier divisor and
+assume (a) $g = f|_D : D \to Y$ is finite and (b) $f$ is flat at every point
+of $D$. Then there is a canonical norm $E \subset Y$ of $D$. We
+give two constructions:
+\begin{enumerate}
+\item Consider the coherent $\mathcal{O}_Y$-module $g_*\mathcal{O}_D$.
+The assumptions imply that the support of $g_*\mathcal{O}_D$
+is nowhere dense in $Y$ and that $g_*\mathcal{O}_D$
+has Tor amplitude in $[-1, 0]$. Thus
+$L = g_*\mathcal{O}_D$ is a perfect object of $D(\mathcal{O}_Y)$
+with Tor amplitude in $[-1, 0]$ having rank $0$. Then
+we let $E$ be the vanishing locus of $\delta(L)$ in $\det(L)$, see
+Derived Categories of Schemes, Lemma
+\ref{perfect-lemma-determinant-two-term-complexes}.
+\item Given $y \in Y$ we can find an \'etale neighbourhood
+$(V, v) \to (Y, y)$ and an open $U \subset X_V$ such that
+$U \to V$ is finite and flat and such that $D_V$ is contained in $U$.
+This reduces to the finite flat case where we can take the usual
+norm of $D$ as in Divisors, Section \ref{}.
+\end{enumerate}
+\end{remark}
+
+\begin{lemma}
+\label{lemma-norm-divisor}
+Consider a pair $(f : X \to Y, \mathcal{I})$ and an effective
+Cartier divisor $D \subset X$ which avoids $V(\mathcal{I})$.
+Then the norm $E \subset Y$ of $E$ (Remark \ref{})
+agrees with the closed subscheme obtained by taking $\nu(a)$
+where $a$ is a local equation for $D$.
+\end{lemma}
+
+\begin{proof}
+Omitted.
+\end{proof}
+
+
+
+
+
+
 
 
 \input{chapters}
