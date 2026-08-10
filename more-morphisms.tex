@@ -22335,10 +22335,9 @@ and the proof is complete.
 
 \begin{lemma}
 \label{lemma-weighting-flat-quasi-finite}
-Let $f : X \to Y$ be a morphism of schemes. Assume $f$ is
-locally quasi-finite, locally of finite presentation, and flat.
-Then there is a positive weighting $w : X \to \mathbf{Z}_{> 0}$ of $f$
-given by the rule that sends $x \in X$ lying over $y \in Y$ to
+Let $f : X \to Y$ be a locally quasi-finite morphism of schemes.
+Consider the function $w : X \to \mathbf{Z}_{> 0}$ sending
+$x \in X$ with image $y \in Y$ to
 $$
 w(x) =
 \text{length}_{\mathcal{O}_{X, x}}
@@ -22346,41 +22345,39 @@ w(x) =
 [\kappa(x) : \kappa(y)]_i
 $$
 where $[\kappa' : \kappa]_i$ is the inseparable degree
-(Fields, Definition \ref{fields-definition-insep-degree}).
+(Fields, Definition \ref{fields-definition-insep-degree}). Then
+\begin{enumerate}
+\item formation of this function is compatible with base change, and
+\item if $f$ is flat and locally of finite presentation, then
+$w$ is a weighting of $f$.
+\end{enumerate}
 \end{lemma}
 
 \begin{proof}
-Consider a diagram as in Definition \ref{definition-weighting}.
-Let $u \in U$ with images $x, y, v$ in $X, Y, V$. Then we claim that
+Let $x \in X$ map to $y \in Y$. Then
+$\mathcal{O}_{X, x}/\mathfrak m_y\mathcal{O}_{X, x} = \mathcal{O}_{X_y, x}$
+is a finite dimensional $\kappa(y)$-algebra.
+Suppose that $Y' \to Y$ is a morphism of schemes and $y' \in Y'$
+maps to $y$ and $x' \in X' = X \times_Y Y'$ is a point mapping to
+$x$ and $y'$. Then $x'$ corresponds to a prime ideal
 $$
-\text{length}_{\mathcal{O}_{X, x}}
-(\mathcal{O}_{X, x}/\mathfrak m_y \mathcal{O}_{X, x}) =
-\text{length}_{\mathcal{O}_{U, u}}
-(\mathcal{O}_{U, u}/\mathfrak m_v \mathcal{O}_{U, u})
+\mathfrak q \subset \mathcal{O}_{X_y, x} \otimes_{\kappa(y)} \kappa(y')
 $$
 and
 $$
-[\kappa(x) : \kappa(y)]_i =
-[\kappa(u) : \kappa(v)]_i
+\mathcal{O}_{X'_{y'}, x'} =
+(\mathcal{O}_{X_y, x} \otimes_{\kappa(y)} \kappa(y'))_{\mathfrak q}
 $$
-The first equality follows as $\mathcal{O}_{X, x} \to \mathcal{O}_{U, u}$
-is a flat local homomorphism such that
-$\mathfrak m_y \mathcal{O}_{U, u} = \mathfrak m_v \mathcal{O}_{U, u}$
-and $\mathfrak m_x \mathcal{O}_{U, u} = \mathfrak m_u$
-(because $\mathcal{O}_{Y, y} \to \mathcal{O}_{V, v}$ and
-$\mathcal{O}_{X, x} \to \mathcal{O}_{U, u}$ are unramified)
-and hence the equality by Algebra, Lemma \ref{algebra-lemma-pullback-module}.
-The second equality follows because $\kappa(v)/\kappa(y)$ is a finite
-separable extension and $\kappa(u)$ is a factor of
-$\kappa(x) \otimes_{\kappa(y)} \kappa(v)$ and hence the inseparable
-degree is unchanged. Having said this, we see that formation
-of the function in the lemma commutes with \'etale base change.
-This reduces the problem to the discussion of the next paragraph.
+Thus the function $w' : X' \to \mathbf{Z}_{> 0}$ constructed in the
+same manner is the pullback of $w$ by
+Varieties, Lemma \ref{varieties-lemma-base-change-and-length}.
+This proves (1).
 
 \medskip\noindent
-Assume that $f$ is a finite, flat morphism of finite presentation.
-We have to show that $\int_f w$ is locally constant on $Y$.
-In fact, $f$ is finite locally free
+Since the construction of $w$ is compatible with base change,
+in order to prove (2) it suffices to show: if $f$ is a finite,
+flat morphism of finite presentation, then $\int_f w$
+is locally constant on $Y$. In fact, $f$ is finite locally free
 (Morphisms, Lemma \ref{morphisms-lemma-finite-flat})
 and we will show that $\int_f w$ is equal to the degree of $f$
 (which is a locally constant function on $Y$). Namely,
