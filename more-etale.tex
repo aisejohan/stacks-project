@@ -3645,6 +3645,64 @@ This follows from the corresponding statement on counits, namely
 see Categories, Lemma \ref{categories-lemma-compose-counits}.
 \end{remark}
 
+\begin{remark}
+\label{remark-covariance-weighting}
+We can extend the covariance of Remark \ref{remark-contravariance-shriek}
+to the case of a locally quasi-finite morphism endowed with a weigthing.
+Namely, consider a commutative diagram
+$$
+\xymatrix{
+X' \ar[rr]_g \ar[rd]_{f'} & & X \ar[ld]^f \\
+& Y
+}
+$$
+of quasi-compact and quasi-separated schemes with $f$ and $f'$
+separated and of finite type and with $g$ locally quasi-finite.
+Assume given a weighting $w : X' \to \mathbf{Z}$ of $g$
+(More on Morphisms, Definition \ref{more-morphisms-definition-weighting}).
+Let $\Lambda$ be a ring. For $K$ in $D^+_{tors}(X, \Lambda)$
+or $K$ in $D(X, \Lambda)$ if $\Lambda$ is a torsion ring, there
+is a canonical map
+$$
+Rf'_!(g^{-1}K) \longrightarrow Rf_!K
+$$
+in $D(Y_\etale, \Lambda)$. Namely, by Lemmas \ref{lemma-shriek-composition}
+and \ref{lemma-Rf-shriek-for-quasi-finite} we have $Rf'_! = Rf_! \circ g_!$.
+By the discussion in Section \ref{section-weightings} the weighting
+$w$ induces a trace map $\text{Tr}_{g, w, K} : g_!g^{-1}K \to K$.
+The displayed arrow above is constructed as the composition
+$$
+Rf'_!(g^{-1}K) = Rf_!g_!g^{-1}K
+\xrightarrow{Rf_! \text{Tr}_{g, w, K}}
+Rf_!K
+$$
+Given a second locally quasi-finite morphism $g' : X'' \to X'$
+equipped with a weighting $w'$ for some $f'' : X'' \to Y$ separated
+and of finite type the composition
+$$
+Rf''_!((g')^{-1}g^{-1}K) \longrightarrow Rf'_!(g^{-1}K) \longrightarrow Rf_!K
+$$
+of the maps for $(g, w)$ and $(g', w')$ is equal to the map
+$Rf''_!((g \circ g')^{-1}K) \longrightarrow Rf_!K$
+constructed for $(g \circ g', w'')$ where $w''(x'') = w'(x'')w(g'(x''))$.
+This follows from the corresponding statement
+on trace maps, see Lemma \ref{lemma-trace-composition}.
+\end{remark}
+
+\begin{remark}[``Flat'' covariance]
+\label{remark-flat-covariance}
+In Remark \ref{remark-covariance-weighting} if $g$ is flat
+(as well as separated, quasi-finite, and of finite presentation)
+and we use the weighting described in
+Example \ref{example-trace-for-flat-quasi-finite}, i.e., we use
+$Rf_! \text{Tr}_{g, \mathit{flat}, K}$, then we call
+$Rf'_!(g^{-1}K) \longrightarrow Rf_!K$ the ``flat'' covariance map.
+The construction of this map is compatible with base change by
+morphisms $Y' \to Y$ of quasi-compact and quasi-separated schemes
+and compatible with composition of flat and quasi-finite
+morphisms between schemes separated and of finite presentation over $Y$.
+\end{remark}
+
 \begin{remark}[Contravariance]
 \label{remark-contravariance-shriek}
 Consider a commutative diagram
@@ -3690,59 +3748,35 @@ Categories, Lemma \ref{categories-lemma-compose-counits}.
 \end{remark}
 
 \begin{remark}
-\label{remark-covariance-weighting}
-We can extend the covariance of Remark \ref{remark-contravariance-shriek}
-to the case of a locally quasi-finite morphism endowed with a weigthing.
-Namely, consider a commutative diagram
+\label{remark-covariance-and-contravariance-commute}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Consider a cartesian diagram
 $$
 \xymatrix{
-X' \ar[rr]_g \ar[rd]_{f'} & & X \ar[ld]^f \\
-& Y
+X_1 \ar[r]_{h'} \ar[d]_{g'} & X_2 \ar[d]^g \\
+X_3 \ar[r]^h & X_4
 }
 $$
-of quasi-compact and quasi-separated schemes with $f$ and $f'$
-separated and of finite type and with $g$ locally quasi-finite.
-Assume given a weighting $w : X' \to \mathbf{Z}$ of $g$
-(More on Morphisms, Definition \ref{more-morphisms-definition-weighting}).
-Let $\Lambda$ be a ring. For $K$ in $D^+_{tors}(X, \Lambda)$
-or $K$ in $D(X, \Lambda)$ if $\Lambda$ is a torsion ring, there
-is a canonical map
+of schemes over $Y$ with $g$ flat and quasi-finite and
+$h$ proper. Assume the structure morphisms $f_i : X_i \to Y$
+are separated and of finite presentation. Let $K_4$ in
+$D^+_{tors}(X_4, \Lambda)$
+or $K_4$ in $D(X_4, \Lambda)$ if $\Lambda$ is a torsion ring.
+For $i = 1, 2, 3$ denote $K_i$ the pullback of $K_4$ to $X_i$.
+Then the diagram
 $$
-Rf'_!(g^{-1}K) \longrightarrow Rf_!K
+\xymatrix{
+Rf_{1, !}K_1 \ar[d]_{\text{flat covariance}} & &
+Rf_{2, !}K_2 \ar[ll]^{\text{contravariance}} \ar[d]^{\text{flat covariance}} \\
+Rf_{3, !}K_3 & &
+Rf_{4, !}K_4 \ar[ll]_{\text{contravariance}}
+}
 $$
-in $D(Y_\etale, \Lambda)$. Namely, by Lemmas \ref{lemma-shriek-composition}
-and \ref{lemma-Rf-shriek-for-quasi-finite} we have $Rf'_! = Rf_! \circ g_!$.
-By the discussion in Section \ref{section-weightings} the weighting
-$w$ induces a trace map $\text{Tr}_{g, w, K} : g_!g^{-1}K \to K$.
-The displayed arrow above is constructed as the composition
-$$
-Rf'_!(g^{-1}K) = Rf_!g_!g^{-1}K
-\xrightarrow{Rf_! \text{Tr}_{g, w, K}}
-Rf_!K
-$$
-Given a second locally quasi-finite morphism $g' : X'' \to X'$
-equipped with a weighting $w'$ for some $f'' : X'' \to Y$ separated
-and of finite type the composition
-$$
-Rf''_!((g')^{-1}g^{-1}K) \longrightarrow Rf'_!(g^{-1}K) \longrightarrow Rf_!K
-$$
-of the maps for $(g, w)$ and $(g', w')$ is equal to the map
-$Rf''_!((g \circ g')^{-1}K) \longrightarrow Rf_!K$
-constructed for $(g \circ g', w'')$ where $w''(x'') = w'(x'')w(g'(x''))$.
-This follows from the corresponding statement
-on trace maps, see Lemma \ref{lemma-trace-composition}.
+commutes. Here the arrows are as defined in
+Remarks \ref{remark-flat-covariance} and \ref{remark-contravariance-shriek}.
+We omit the detailed proof of this.
 \end{remark}
 
-\begin{remark}
-\label{remark-flat-covariance}
-In Remark \ref{remark-covariance-weighting} if $g$ is flat and we
-use the weighting described in
-Example \ref{example-trace-for-flat-quasi-finite}, i.e., we use
-$Rf_! \text{Tr}_{g, \mathit{flat}, K}$, then we call
-$Rf'_!(g^{-1}K) \longrightarrow Rf_!K$ the ``flat'' covariance map.
-The construction of this map is compatible with base change by
-morphisms $Y' \to Y$ of quasi-compact and quasi-separated schemes.
-\end{remark}
 
 
 
@@ -3759,6 +3793,27 @@ morphisms $Y' \to Y$ of quasi-compact and quasi-separated schemes.
 
 \noindent
 Here are some properties of derived lower shriek.
+
+\begin{lemma}
+\label{lemma-two-ss-complex-functor}
+Let $f : X \to Y$ be a finite type separated morphism of quasi-compact
+and quasi-separated schemes. Let $\Lambda$ be a ring. For
+$K \in D^+_{tors}(X_\etale, \Lambda)$ there is a spectral sequence
+$$
+E^{p, q}_2 = R^pf_!H^q(K) \Rightarrow R^{p + q}f_!K
+$$
+This spectral sequence is bounded, converges, and
+induces finite filtrations on $R^nf_!K$.
+\end{lemma}
+
+\begin{proof}
+Since $Rf_!$ isn't the derived functor of a left exact functor, we need
+to say something. Choose a compactification $j : X \to \overline{X}$
+of $X$ over $Y$. Since $j_!$ is exact, we see that
+$H^q(j_!K) = j_!H^q(K)$. Thus, since $Rf_! = R\overline{f}_* \circ j_!$
+we can use the second spectral sequence of
+Derived Categories, Lemma \ref{derived-lemma-two-ss-complex-functor}.
+\end{proof}
 
 \begin{lemma}
 \label{lemma-derived-lower-shriek-commute-direct-sums}
@@ -4360,6 +4415,26 @@ and the lemma applies.
 \end{proof}
 
 \begin{lemma}
+\label{lemma-base-change-separably-closed}
+Let $k'/k$ be an extension of separably closed fields.
+Let $X$ be a separated scheme of finite type over $k$.
+Let $\Lambda$ be a ring. Let $K$ be an object of
+$D^+_{tors}(X_\etale, \Lambda)$
+or of $D(X_\etale, \Lambda)$ in case $\Lambda$ is torsion.
+Denote $K'$ the pullback of $K$ to $X'$.
+Then the base change map $R\Gamma_c(X, K) \to R\Gamma_c(X'. K')$
+is an isomorphism.
+\end{lemma}
+
+\begin{proof}
+Choosing a compactification $j : X \to \overline{X}$, this
+immediately translates into a question on cohomology over $\overline{X}$
+and this question is answered positively by
+\'Etale Cohomology, Lemma
+\ref{etale-cohomology-lemma-base-change-separably-closed}.
+\end{proof}
+
+\begin{lemma}
 \label{lemma-triangle-compactly-supported}
 Let $X$ be a separated finite type scheme over a field $k$.
 Let $Z$ be a closed subscheme of $X$ with complement $U$.
@@ -4387,9 +4462,9 @@ $$
 $$
 which is compatible with extension of ground field.
 Namely, we get this by applying $R\Gamma(\Spec(k), -)$ to the map in
-Remark \ref{remark-covariance-shriek}. If $f : X \to Y$ is a
-flat and quasi-finite morphism of separated schemes of finite type over $k$,
-then there is a ``flat'' covariance map
+Remark \ref{remark-covariance-shriek}. More generally, if $f : X \to Y$
+is a flat and quasi-finite morphism of separated schemes of finite type
+over $k$, then there is a ``flat'' covariance map
 $$
 R\Gamma_c(X, f^{-1}K) \to R\Gamma_c(Y, K)
 $$
@@ -4401,6 +4476,18 @@ $$
 R\Gamma_c(X, \Lambda) \longrightarrow R\Gamma_c(Y, \Lambda)
 $$
 which agrees with the natural covariance map $\text{Tr}_f$ when $f$ is \'etale.
+\end{remark}
+
+\begin{remark}[Contravariance of compactly supported cohomology]
+\label{remark-contravariance-compactly-supported}
+Let $k$ be a field. Let $h : X \to Y$ be a proper morphism of separated
+schemes of finite type over $k$. Then there is a natural pullback map
+$$
+R\Gamma_c(Y, K) \longrightarrow R\Gamma_c(X, h^{-1}K)
+$$
+which is compatible with extension of ground field.
+Namely, we get this by applying $R\Gamma(\Spec(k), -)$ to the map in
+Remark \ref{remark-contravariance-shriek}.
 \end{remark}
 
 \begin{lemma}
@@ -4417,6 +4504,31 @@ is an isomorphism.
 This follows from Lemma \ref{lemma-triangle-compactly-supported}
 and the vanishing in Lemma \ref{lemma-bounded-algebraic-scheme}.
 \end{proof}
+
+\begin{lemma}
+\label{lemma-pullback-top-algebraic-scheme}
+Let $k$ be an algebraically closed field. Let $f : X \to Y$ be a
+proper morphism of separated schemes of finite type type over $k$ both
+of dimension $\leq d$. Assume $f$ induces an isomorphism
+$U_{red} \to V_{red}$ for open subschemes $U \subset X$ and $V \subset Y$
+which meet every irreducible component of $X$ and $Y$ having dimension $d$.
+Let $\mathcal{F}$ be an abelian torsion sheaf on $X$.
+Then the map $H^{2d}_c(Y, f^{-1}\mathcal{F}) \to H^{2d}_c(X, \mathcal{F})$
+of Remark \ref{remark-contravariance-compactly-supported}
+is an isomorphism.
+\end{lemma}
+
+\begin{proof}
+By Lemma \ref{lemma-top-algebraic-scheme}
+and the compatibility between the maps of
+Remarks \ref{remark-covariance-compactly-supported} and
+\ref{remark-contravariance-compactly-supported} given in
+Remark \ref{remark-covariance-and-contravariance-commute},
+we may replace $X$ by $U$ and $Y$ by $V$.
+Then the result holds by the insensitivity to
+thickenings given in Lemma \ref{lemma-shriek-and-thickening}.
+\end{proof}
+
 
 
 
@@ -4968,8 +5080,8 @@ we may assume $n = 1$.
 Assume $Y$ is affine and $X = \mathbf{A}^1_Y$. Since $Rf_!$ has
 finite cohomological dimension
 (Lemma \ref{lemma-derived-lower-shriek-bounded})
-we may assume $K$ is bounded below. Using the first spectral sequence of
-Derived Categories, Lemma \ref{derived-lemma-two-ss-complex-functor}
+we may assume $K$ is bounded below. Using the spectral sequence of
+Lemma \ref{lemma-two-ss-complex-functor}
 (or alternatively using an argument with truncations),
 we reduce to showing the result of
 Lemma \ref{lemma-constructible-shriek-rel-dim-1}.
@@ -5436,7 +5548,7 @@ If $m$ is also invertible on $X$, then the composition
 $$
 \Pic(X, Z) \xrightarrow{c_1}
 H^2_\etale(X, j_!\mu_{nm}) \xrightarrow{(\cdot)^m}
-H^2_\etale(S, j_!\mu_n)
+H^2_\etale(X, j_!\mu_n)
 $$
 is equal to $c_1$.
 \end{lemma}
@@ -5487,7 +5599,7 @@ because $f^{-1}j_!\mu_n = j'_!\mu_n$. We omit the proof.
 
 
 
-\section{The chern class of an effective Cartier divisor}
+\section{The cohomology class of an effective Cartier divisor}
 \label{section-chern-class-divisor}
 
 \noindent
@@ -5496,7 +5608,8 @@ Given an effective Cartier divisor $D \subset X$ we define
 $$
 c_1(D) = c_1(\mathcal{O}_X(D)) \in H^2(X, \mu_n)
 $$
-See Section \ref{section-chern-class-invertible}.
+See Section \ref{section-chern-class-invertible}. We are going to
+generalize this to ``relative'' cohomology as in the previous section.
 
 \medskip\noindent
 Let $U \subset X$ be an open subscheme and denote $j : U \to X$
@@ -5514,6 +5627,17 @@ See Section \ref{section-chern-class-invertible}. This class is independent
 of the choice of the closed subscheme $Z$ by Lemma \ref{lemma-restrict-c1}
 (so for example one can replace $Z$ by any infinitesimal neighbourhood
 of $Z$).
+
+\begin{lemma}
+\label{lemma-additive-c1D}
+If $D_1, D_2 \subset U$ are effective Cartier divisors closed in $X$
+then so is $D_1 + D_2$ and $c_1(D_1 + D_2) = c_1(D_1) + c_1(D_2)$.
+\end{lemma}
+
+\begin{proof}
+True because the construction in Section \ref{section-chern-class-invertible}
+is additive.
+\end{proof}
 
 \begin{lemma}
 \label{lemma-pullback-c1D}
@@ -5670,8 +5794,12 @@ Since the diagram above is commutative, we see that the boundaries
 match via the trace map and the proof is complete.
 \end{proof}
 
+
+\section{Cohomology classes of divisors in compactly supported cohomology}
+\label{section-class-divisor-compactly-supported}
+
 \noindent
-Let $f : X \to Y$ be a separated morphism of finite type with $Y$
+Let $f : X \to Y$ be a separated morphism of finite presentation with $Y$
 quasi-compact and quasi-separated. Consider an effective Cartier divisor
 $D \subset X$ such that $f|_D : D \to Y$ is proper. In this situation
 there is a first chern class
@@ -5686,7 +5814,11 @@ $$
 c_1(D) \in H^2(\overline{X}, j_!\mu_n)
 $$
 By construction $Rf_!\mu_n = R\overline{f}_*j_!\mu_n$ and hence
-the two cohomology groups in the displayed equations agree.
+the two cohomology groups in the displayed equations agree. In particular,
+if $Y = \Spec(k)$ where $k$ is a field, then we obtain a class
+$$
+c_1(D) \in H^2_c(X, \mu_n)
+$$
 
 \begin{lemma}
 \label{lemma-well-defined-c1-divisor}
@@ -5729,41 +5861,706 @@ Remark \ref{remark-map-is-pullback}.
 Thus the statement follows from Lemma \ref{lemma-pullback-c1D}.
 \end{proof}
 
-
-\section{Trace map for curves}
-
-\noindent
-Let $X$ be a separated finite type scheme over a field $k$
-with $\dim(X) \leq 1$. We are going to construct a trace map
-$$
-\text{Tr}_X : H^2_c(X, \mu_n) \longrightarrow \mathbf{Z}/n\mathbf{Z}
-$$
-for all $n$ prime to the characteristic of $k$.
-
-
-and $D \subset X$ is an effective Cartier divisor
-proper over $k$. Then, if $n$ is invertible in $k$, we have a
-first chern class
-$$
-c_1(D) \in H^2_c(X, \mu_n)
-$$
-These classes will play an important role in the following.
-
 \begin{lemma}
-\label{lemma-generation-by-c1}
-Let $k$ be an algebraically closed field. Let $X$ be a separated finite
-type scheme over $k$ of dimension $\leq 1$. Then $H^2_c(X, \mu_n)$
-is generated by Chern classes of effective Cartier divisors $D \subset X$.
+\label{lemma-additive-c1D-relative}
+Let $Y$ be a quasi-compact and quasi-separated scheme. Let $f : X \to Y$
+be a separated scheme of finite presentation over $Y$.
+If $D_1, D_2 \subset X$ are effective Cartier divisors proper over $Y$,
+then so is $D_1 + D_2$ and $c_1(D_1 + D_2) = c_1(D_1) + c_1(D_2)$
+in $H^2(Y, Rf_!\mu_n)$.
 \end{lemma}
 
 \begin{proof}
-
-
-
-
-
+Follows from Lemma \ref{lemma-additive-c1D}.
 \end{proof}
 
+\begin{lemma}
+\label{lemma-flat-covariance-c1D}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $g : X' \to X$ be a flat quasi-finite morphism of
+schemes separated and of finite presentation over $Y$.
+Let $D' \subset X'$ be an effective Cartier divisor proper over $Y$
+and let $D \subset X$ be its norm, see
+Discriminants, Lemma \ref{discriminant-remark-norm-divisor}.
+Then $c_1(D') \in H^2(Y, Rf'_!\mu_n)$ maps to
+$c_1(D) \in H^2(Y, Rf_!\mu_n)$ by the flat covariance map
+of Remark \ref{remark-flat-covariance}.
+\end{lemma}
+
+\begin{proof}
+Omitted but see Lemma \ref{lemma-norm-c1D}.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-proper-contravariance-c1D}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $h : X' \to X$ be a proper morphism
+schemes separated and of finite presentation over $Y$.
+Let $D \subset X$ be an effective Cartier divisor
+proper over $Y$ such that the inverse image $D' = h^{-1}D$
+is an effective Cartier divisor on $X'$.
+Then $c_1(D) \in H^2(Y, Rf_!\mu_n)$ maps to
+$c_1(D') \in H^2(Y, Rf'_!\mu_n)$ by the contravariance map
+of Remark \ref{remark-contravariance-shriek}.
+\end{lemma}
+
+\begin{proof}
+Omitted but see Lemma \ref{lemma-pullback-c1D}.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-generation-by-c1}
+Let $k$ be an algebraically closed field. Let $X$ be a separated
+scheme of finite type over $k$ of dimension $\leq 1$. Let
+$C_1, \ldots, C_r$ be the irreducible components of $X$ of dimension $1$.
+For each $i$ we may
+\begin{enumerate}
+\item pick a closed point $c_i \in C_i$ such that
+\begin{enumerate}
+\item $c_i \not \in C_j$ for $i \not = j$,
+\item $C_i$ is smooth at $c_i$, and
+\item $\mathcal{O}_{X, c_i}$ is Cohen-Macaulay
+\end{enumerate}
+\item pick an effective Cartier divisor $D_i \subset X$ such that
+$D_i \cap C_j = \emptyset$ for $i \not = j$ and $D_i \cap C_i = c_i$
+as a closed subscheme of $C_i$.
+\end{enumerate}
+Then $H^2_c(X, \mu_n)$ is a free $\mathbf{Z}/n\mathbf{Z}$-module
+with basis $c_1(D_1), \ldots, c_1(D_r)$.
+\end{lemma}
+
+\begin{proof}
+The existence of $c_i$ is a consequence of (a) openness of the smooth
+locus of $C_i$, see Varieties, Lemma
+\ref{varieties-lemma-dense-smooth-open-variety-over-perfect-field} and
+(b) open dense locus where $X$ is CM, see
+More on Morphisms, Lemma
+\ref{more-morphisms-lemma-flat-finite-presentation-CM-open}.
+Pick an $f_i \in \mathcal{O}_{X, c_i}$ which maps to a uniformizer
+in the discrete valuation ring $\mathcal{O}_{C_i, c_i}$.
+Observe that $f_i$ is a nonzerodivisor for example by
+Algebra, Lemma \ref{algebra-lemma-CM-one-g}.
+Choose an affine open $c_i \in U_i \subset X$ set theoretically
+contained in $C_i$ such that $f_i$ comes from an element
+$f_i \in \mathcal{O}_X(U_i)$ which only vanishes at $c_i$ (note that for
+dimension reasons, $f_i$ a priori vanishes at only a finite number
+of closed points). Then $f_i$ is a nonzerodivisor in $\mathcal{O}_X(U_i)$
+too and we can set $D_i = V(f_i) \subset U_i$.
+Clearly, $D_i$ is closed in $X$ whence is also an effective Cartier
+divisor on $X$. The property $D_i \cap C_i = c_i$ holds by construction.
+
+\medskip\noindent
+Consider the morphism $g : C = \coprod C_i \to X$. Away from the finite
+set $\bigcup_{i \not = j} C_i \cap C_j$ this morphism induces an
+isomorphism from the source onto the reduction of $X$.
+Hence pullback by $g$ induces an isomorphism
+$H^2_c(X, \mu_n) \to H^2_c(C, \mu_n)$ by
+Lemma \ref{lemma-pullback-top-algebraic-scheme}.
+Moreover, this is compatible with taking $c_1(D_i)$, see
+Lemma \ref{lemma-proper-contravariance-c1D}.
+This reduces us to the case discussed in the next paragraph.
+
+\medskip\noindent
+Let $C$ be a curve over $k$ and let $c \in C$ be a nonsingular closed
+point. Then we have to show that $H^2_c(C, \mu_n)$ is freely generated by
+$c_1(c)$. By the exact same argument as before we may replace $C$
+by its normalization, i.e., we may assume $C$ is nonsingular.
+Then we may choose an embedding $j : C \to \overline{C}$ into a projective
+nonsingular curve. Using Lemma \ref{lemma-top-algebraic-scheme}
+we see the covariance map along $j$ defines an isomorphism, compatible
+with taking cohomology classes of divisors by
+Lemma \ref{lemma-flat-covariance-c1D}. Thus we conclude it suffices
+to show that if $Y$ is a smooth projective curve, then
+$H^2(Y, \mu_n)$ is freely generated by $c_1(\mathcal{O}_Y(y))$ for
+any closed point $y$ of $Y$. This was shown in
+\'Etale Cohomology, Lemma
+\ref{etale-cohomology-lemma-cohomology-smooth-projective-curve}.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-generation-by-c1-nonperfect}
+Let $k$ be a separably closed field. Let $X$ be a separated
+scheme of finite type over $k$ of dimension $\leq 1$.
+Every element of $H^2_c(X, \mu_n)$ is the cohomology class $c_1(D)$
+of an effective Cartier divisor $D$ on $X$.
+\end{lemma}
+
+\begin{proof}
+We may assume the characteristic of $k$ is $p > 0$ otherwise
+the lemma follows from Lemma \ref{lemma-generation-by-c1}.
+Choose an algebraic closure $k'$ of $k$. Denote $X'$ the base
+change of $X$ to $\Spec(k')$. The base change map gives an isomorphism
+$H^2_c(X, \mu_n) \to H^2_c(X', \mu_n)$, see
+Lemma \ref{lemma-base-change-separably-closed}.
+Let $D_1, \ldots, D_r \subset X'$ be effective Cartier divisors
+whose Chern classes generate $H^2_c(X', \mu_n)$ for example
+as in Lemma \ref{lemma-generation-by-c1}.
+Below we will show that there exist an effective Cartier divisors
+$E_i \subset X$ whose pullback to $X'$ is $q_iD_i$
+where $q_i$ is a power of $p$. Then $c_1(E_i) \in H^2_c(X, \mu_n)$
+pulls back to $c_1(q_iD_i) = q_ic_1(D_i)$
+(Lemma \ref{lemma-additive-c1D-relative})
+and these still generate as $n$ is prime to $p$.
+Thus any $\xi \in H^2_c(X, \mu_n)$ can be written as $\xi = \sum a_ic_1(E_i)$
+with integers $a_i \geq 0$. Then the effective Cartier divisor
+$D = \sum a_iE_i$ does the job.
+
+\medskip\noindent
+We will show that an effective Cartier divisor $D \subset X'$
+is up to a $p$-power multiple a pullback of an effective Cartier
+divisor $E$ on $X$. Recall that $X' \to X$ is a homeomorphism on
+underlying topological spaces. Thus by
+Divisors, Lemma \ref{divisors-lemma-characterize-effective-Cartier-divisor}
+we can find an affine open covering $X = \bigcup U_i$,
+$U_i = \Spec(A_i)$ such that $D \cap (U_i)_{k'}$
+is cut out by a single nonzerodivisor $f_i \in A_i \otimes_k k'$.
+Since $k'/k$ is a purely inseparable extension, every element
+of $k'$ to some large $p$-power is in $k$. It easily follows
+that for a sufficiently large power $q$ of $p$ we have
+$g_i = f_i^q \in A_i$. Then we can let $E \subset X$ be the
+effective Cartier divisor such that $E \cap U_i$ is cut
+out by $g_i$.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-relative-generation}
+Let $Y$ be a quasi-compact and quasi-separated scheme. Let $f : X \to Y$
+be a separated flat morphism of finite presentation and
+of relative dimension $\leq 1$. Let $s$ be a section of $R^2f_!\mu_n$
+over an object $V$ of $Y_\etale$. There exists an \'etale covering
+$\{V_j \to V\}$ such that $s|_{V_j}$ is the cohomology class of
+a relative effective Cartier divisor $D_j \subset X \times_Y V_j$
+finite over $V_j$.
+\end{lemma}
+
+\begin{proof}
+Let $v \in V$ be a point. It suffices to find an \'etale neighbourhood
+$(V', v') \to (V, v)$ such that we have such an effective Cartier divisor
+over $V'$. Let $k/\kappa(v)$ be a separable algebraic closure. By
+Lemma \ref{lemma-generation-by-c1-nonperfect}
+we can write the base change of $s$ to $X_k/k$ as the
+cohomology class of an effective Cartier divisor $E' \subset X_k$.
+Write $k = \colim k_i$ as a filtered colimit of finite separable
+extensions of $\kappa(v)$. By
+Limits, Lemma \ref{limits-lemma-descend-finite-presentation}
+and a very easy case of
+Limits, Lemma \ref{limits-lemma-descend-relative-effective-Cartier}
+we see that $E'$ is the base change of an effective Cartier
+divisor $E_i \subset X_{k_i}$ for some $i$. By
+More on Morphisms, Lemma
+\ref{more-morphisms-lemma-realize-prescribed-residue-field-extension-etale}
+we can replace $V$ by an \'etale neighbourhood of $v$
+and assume that we have an effective Cartier divisor $E \subset X_v$
+in the fibre whose base change to $X_k$ is $E'$.
+Then $c_1(E)$ agrees with the pullback of $s$ to $v = \Spec(\kappa(v))$
+(because the map $\Spec(k) \to v$ induces an injective map on sections).
+If we can find an elementary \'etale neighbourhood $(V', v') \to (V, v)$
+and a relative effective Cartier divisor $D \subset X_{V'}$ finite
+over $V'$ with $E = D_v$, then we win. Namely, in this case
+$c_1(D)$ will be a section of $R^2f_!\mu_n$ over $V'$ whose value
+at the point $v$ is the same as $s|_{V'}$. Then
+$s$ and $c_1(D)$ have the same image in the stalk of $R^2f_!\mu_n$ and
+thus agree on a further \'etale neighbourhood of $v$.
+
+\medskip\noindent
+Proof of the existence of $D$.
+Since $\dim(X_v) \leq 1$ we see that $\dim(E) = 0$ and $E$ is finite
+over $v$. Thus we can write $E = E_1 + \ldots + E_r$ where
+each $E_i$ is set theoretically a single point. Since the category
+of elementary \'etale neighbourhoods is cofiltered
+(More on Morphisms, Lemma
+\ref{more-morphisms-lemma-elementary-etale-neighbourhoods}), it suffices
+to prove existence for $E_i$. Thus we may and do
+assume $E$ is set theoretically
+supported at a single point $x \in X_v$. By
+More on Morphisms, Lemma \ref{more-morphisms-lemma-construct-relative-divisors}
+we can find an open neighbourhood
+$U \subset X_V$ of $c$ and a relative effective Cartier divisor
+$D \subset U$ with $D \cap U_v = E \cap U_v$ (which consists set
+theoretically of exactly 1 point, namely $x$). Then $D \to V$
+has relative dimension $\leq 0$, i.e., is quasi-finite.
+By \'etale localization of quasi-finite morphisms
+(for example More on Morphisms, Lemma
+\ref{more-morphisms-lemma-etale-splits-off-quasi-finite-part-technical})
+we may after replacing $V$ by an elementary \'etale neighbourhood
+assume $D = D_{fin} \amalg D'$ with $x \in D_{fin}$ and
+$D_{fin} \to V$ finite. Then $D_{fin}$ is the divisor we
+are looking for.
+\end{proof}
+
+
+\section{Trace map for curves}
+\label{section-trace-curves}
+
+\noindent
+Let $X$ be a separated finite type scheme over a field $k$
+with $\dim(X) \leq 1$. We are going to construct a ``flat'' trace map
+$$
+\text{Tr}_{X/k, \mathit{flat}, n} :
+H^2_c(X, \mu_n)
+\longrightarrow
+\mathbf{Z}/n\mathbf{Z}
+$$
+for all $n$ prime to the characteristic of $k$ and prove some of its
+properties.
+
+\begin{lemma}
+\label{lemma-fixed-by-c1}
+Let $k$ be a field. Let $n \geq 1$ invertible in $k$. Let $X$ be a
+separated finite type scheme over $k$ of dimension $\leq 1$.
+There exists a unique map
+$\text{Tr}_{X/k, \mathit{flat}, n} :
+H^2_c(X, \mu_n)
+\to
+\mathbf{Z}/n\mathbf{Z}$
+with the following properties
+\begin{enumerate}
+\item formation of $\text{Tr}_{X/k, \mathit{flat}, n}$ is compatible with
+change of fields, and
+\item $\text{Tr}_{X/k, \mathit{flat}, n}(c_1(D)) = \deg(D)$ when
+$D \subset X$ is an effective Cartier divisor.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Proof of uniqueness. For an algebraically closed field $k$
+we have the uniqueness of our map by condition (2) and
+Lemma \ref{lemma-generation-by-c1}. For arbitrary fields $k$
+the uniqueness then follows by (1) and the case of the base
+change of $X$ to the algebraic closure of $k$.
+
+\medskip\noindent
+Proof of existence. Choose an open immersion $j : X \to \overline{X}$
+into a projective scheme of dimension $1$ over $k$, see
+Varieties, Lemma \ref{varieties-lemma-dim-1-projective-completion}.
+Consider the map
+$\text{Tr}_j : H^2_c(X, \mu_n) \to H^2_c(\overline{X}, \mu_n)$
+of Remark \ref{remark-covariance-compactly-supported}.
+This map is compatible with change of fields.
+Observe that any effective Cartier divisor $D$ in $X$ is finite
+(hence proper) over $k$, hence $c_1(D\text{ in }X)$
+maps to $c_1(D\text{ in }\overline{X})$ by the map $\text{Tr}_j$, see
+Lemma \ref{lemma-flat-covariance-c1D} (although in this case
+this compatibility holds more or less by construction).
+Thus it suffices to prove existence when $X$ is projective over $k$.
+
+\medskip\noindent
+Assume $X$ is projective over $k$. In this case we have
+$H^2_c(X, \mu_n) = H^2(X, \mu_n)$, see
+Lemma \ref{lemma-proper-Rf-lower-shriek}.
+By the Kummer sequence discussed in
+\'Etale Cohomology, Section \ref{etale-cohomology-section-kummer}.
+we have a short exact sequence
+$$
+0 \to
+\Pic(X)/n\Pic(X) \xrightarrow{c_1}
+H^2(X, \mu_n) \to
+H^2(X, \mathbf{G}_m)[n] \to 0
+$$
+By Varieties, Section \ref{varieties-section-divisors-curves}
+we have a well defined degree map
+$\deg : \Pic(X)/n\Pic(X) \to \mathbf{Z}/n\mathbf{Z}$
+compatible with change of field such that
+$\deg(\mathcal{O}_X(D)) = \deg(D)$.
+Since $c_1(D) = c_1(\mathcal{O}_X(D))$ and using
+Divisors, Lemma
+\ref{divisors-lemma-quasi-projective-Noetherian-pic-effective-Cartier}
+we see that condition (2) forces us to use the degree map
+on the image of $c_1$ in the short exact sequence above
+and moreover this rule is compatible with change of fields.
+However, over the algebraic closure we see that $c_1$ is surjective by
+Lemma \ref{lemma-generation-by-c1} and this finishes the proof.
+Namely, for a general element $\xi$ of
+$H^2(X, \mu_n)$ we compute $\text{Tr}_{X/k, \mathit{flat}, n}(\xi)$
+by pulling $\xi$ to the base change of $X$ to the algebraic closure,
+writing it as the chern class of an invertible module, and
+taking the degree modulo $n$.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-flat-covariance-trace-curve}
+Let $k$ be a field and $n \geq 1$ invertible in $k$.
+Let $g : X' \to X$ be a flat quasi-finite morphism of
+separated finite type schemes of dimension $\leq 1$ over $k$.
+Then $\text{Tr}_{X'/k, \mathit{flat}, n} =
+\text{Tr}_{X'/k, \mathit{flat}, n} \circ \text{Tr}_g$
+where $\text{Tr}_g$ is the ``flat'' covariance map
+of Remark \ref{remark-covariance-compactly-supported}.
+\end{lemma}
+
+\begin{proof}
+This follows from the uniqueness in
+Lemma \ref{lemma-fixed-by-c1}, combined with
+Lemma \ref{lemma-flat-covariance-c1D}, and
+Discriminants, Lemma \ref{discriminant-lemma-degree-norm}.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-proper-contravariance-trace-curve}
+Let $k$ be a field and $n \geq k$ invertible in $k$. Let $d \geq 1$.
+Let $X$ be a separated finite type scheme of dimension $\leq 1$ over $k$.
+Let $f : X' \to X$ be a finite flat morphism of degree $d$.
+We have
+$$
+\text{Tr}_{X'/k, \mathit{flat}, n} \circ f^* =
+d \text{Tr}_{X/k, \mathit{flat}, n}
+$$
+where $f^*$ is the contravariance map of
+Remark \ref{remark-contravariance-compactly-supported}.
+\end{lemma}
+
+\begin{proof}
+Any effective Cartier divisor $D \subset X$
+pulls back to an effective Cartier divisor $D' \subset X'$
+and $D' \to D$ is finite free of degree $d$.
+Hence $\deg(D') = d\deg(D)$. Hence the lemma follows from the uniqueness in
+Lemma \ref{lemma-fixed-by-c1} combined with
+Lemma \ref{lemma-proper-contravariance-c1D}.
+\end{proof}
+
+\begin{example}
+\label{example-elucidate}
+Let $k$ be an algebraically closed field and $n \geq 1$ invertible in $k$.
+Let $X$ be a separated finite type scheme of dimension $\leq 1$ over $k$.
+Let $C_1, \ldots, C_r \subset X$ be the irreducible components of
+dimension $1$, viewed as reduced closed subschemes of $X$.
+The inclusion morphisms $h_i : C_i \to X$ induce pullback maps
+$$
+h_i^* : H^2_c(X, \mu_n) \to H^2_c(C_i, \mu_n)
+$$
+see Remark \ref{remark-contravariance-compactly-supported}.
+Choose $c_i \in C_i$ and effective Cartier divisors $D_i \subset X$ as in
+Lemma \ref{lemma-generation-by-c1}. It follows immediately from the
+description of the cohomology in the lemma (for both $X$ and the
+$C_i$) and our construction that
+$$
+\text{Tr}_{X/k, \mathit{flat}, n} = 
+\sum\nolimits_{i = 1, \ldots, r}
+\deg(D_i) \text{Tr}_{C_i/k, \mathit{flat}, n} \circ h_i^*
+$$
+This suggest that the value of $\deg(D_i)$ is intrinsic (independent
+of the choice of $c_i \in C_i$ and $D_i$). Indeed, this follows from
+Chow Homology, Lemma \ref{chow-lemma-prepare-geometric-cap} which tells
+us that $\deg(D_i)$ is the multiplicity of $C_i$ in $X$.
+In other words, if we write
+$$
+[X]_1 = \sum m_i [C_i]
+$$
+in the cycle group $Z_1(X)$, see Chow Homology, Definition
+\ref{chow-definition-cycle-associated-to-closed-subscheme}, then we have
+$$
+\text{Tr}_{X/k, \mathit{flat}, n} = 
+\sum\nolimits_{i = 1, \ldots, r}
+m_i \text{Tr}_{C_i/k, \mathit{flat}, n} \circ h_i^*
+$$
+This means our trace map for curves agrees with the one in
+\cite[Exposee XVII, Equation (1.1.3.3)]{SGA4}.
+\end{example}
+
+
+
+
+
+
+\section{The trace map for flat morphisms of relative dimension 1}
+\label{section-construction-dim-1}
+
+\noindent
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $n \geq 1$ be invertible on $Y$.
+Let $f : X \to Y$ be a flat, separated morphism of finite presentation
+of relative dimension $\leq 1$. We will construct a map
+$$
+\text{Tr}_{f, \mathit{flat}, n} :
+R^2f_!\mu_n
+\longrightarrow
+\mathbf{Z}/n\mathbf{Z}
+$$
+which on the stalks reproduces the construction of
+Section \ref{section-trace-curves}.
+
+\begin{lemma}
+\label{lemma-fixed-by-c1-relative}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $n \geq 1$ be invertible on $Y$. Let $f : X \to Y$
+be flat, separated, of finite presentation, and of
+relative dimension $\leq 1$. There exists a unique map
+$\text{Tr}_{f, \mathit{flat}, n} :
+R^2f_!\mu_n
+\to
+\mathbf{Z}/n\mathbf{Z}$
+with the following properties
+\begin{enumerate}
+\item formation of $\text{Tr}_{f, \mathit{flat}, n}$ is compatible with
+base change by morphisms $Y' \to Y$ with $Y'$
+quasi-compact and quasi-separated, and
+\item $\text{Tr}_{f, \mathit{flat}, n}(c_1(D)) = \deg(D \to Y)$
+when $D \subset X$ is a relative effective Cartier divisor
+which is finite over $Y$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+We already know this is true when $Y$ is the spectrum of a field,
+see Lemma \ref{lemma-fixed-by-c1}.
+
+\medskip\noindent
+Let $Y$ be general as in the statement of the lemma. We introduce
+a bit of notation. For an object $V$ of $Y_\etale$, a point $v \in V$,
+a sheaf $\mathcal{F}$ on $Y_\etale$, and a section $s \in \mathcal{F}(V)$,
+we say the {\it value} of $s$ at $v$ is the element
+$s|_v \in \Gamma(v, \mathcal{F}|_v)$ which is the pullback of
+$s$ by the morphism $v \to V$.
+
+\medskip\noindent
+Let $s$ be a section of $R^2f_!\mu_n$ over an object $V$ of $Y_\etale$.
+We claim there exists a unique section $t$ of $\mathbf{Z}/n\mathbf{Z}$
+over $V$ such that for every point $v$ of $V$ the value of $t$ at $v$
+is the image of the value of $s$ at $v$ via the trace map for $X_v/v$.
+Once we've shown this, the rule sending $s$ to $t$ defines a map
+$\text{Tr}_{f, \mathit{flat}, n} : R^2f_!\mu_n \to \mathbf{Z}/n\mathbf{Z}$,
+it shows uniquess of the map, and it these maps are compatible
+with base change as this holds for the maps in Lemma \ref{lemma-fixed-by-c1}.
+
+\medskip\noindent
+The uniqueness of $t$ is obvious. To show existence of $t$
+choose an \'etale covering $\{V_j \to V\}$ such that $s|_{V_j}$
+is the cohomology class of a relative effective Cartier divisor
+$D_j \subset X_{V_j}$ finite over $V_j$, see
+Lemma \ref{lemma-relative-generation}.
+Set $t_j = \deg(D_j \to V_j) \in \Gamma(V_j, \mathbf{Z}/n\mathbf{Z})$.
+For any point $v_j \in V_j$ the value of $t_j$ at $v_j$ is the
+image of the value of $s$ at $v_j$ by the trace map for $X_{v_j}/v_j$;
+this is true because the value of $\deg(D_j \to V_j)$ at $v_j$
+is the degree of $(D_j)_{v_j}$ over $v_j$ and the construction
+of the map over fields. By uniqueness and compatibility with base
+chase, the sections $t_j$ and $t_{j'}$ agree over $V_j \times_V V_{j'}$
+(small detail omitted).
+Thus these sections glue to a section $t$ over $V$
+and this section has the desired property (small detail omitted).
+
+\medskip\noindent
+Finally, if $D \subset X$ is as in (2), then
+$\text{Tr}_{f, \mathit{flat}, n}(c_1(D)) = \deg(D \to Y)$
+as this holds for the values at all points by construction.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-flat-covariance-trace-relative-curve}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $n \geq 1$ be invertible on $Y$. Let $f : X \to Y$
+and $f' : X' \to Y$ be separated morphisms of finite presentation
+and of relative dimension $\leq 1$. Let $g : X' \to X$
+be a flat quasi-finite morphism over $Y$.
+Then $\text{Tr}_{f', \mathit{flat}, n} =
+\text{Tr}_{f, \mathit{flat}, n} \circ \text{Tr}_g$
+where $\text{Tr}_g$ is the ``flat'' covariance map
+of Remark \ref{remark-flat-covariance}.
+\end{lemma}
+
+\begin{proof}
+Looking at stalks this lemma reduces to the case of fields
+which is Lemma \ref{lemma-flat-covariance-trace-curve}
+(but one can also directly deduce as in the proof of that lemma).
+\end{proof}
+
+\begin{lemma}
+\label{lemma-proper-contravariance-trace-relative-curve}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $n \geq 1$ be invertible on $Y$. Let $f : X \to Y$
+and $f' : X' \to Y$ be separated morphisms of finite presentation
+and of relative dimension $\leq 1$. Let $g : X' \to X$ be
+a morphism over $Y$ which is finite locally free of degree $d$.
+We have
+$$
+\text{Tr}_{f', \mathit{flat}, n} \circ g^* =
+d \text{Tr}_{f, \mathit{flat}, n}
+$$
+where $g^*$ is the contravariance map of
+Remark \ref{remark-contravariance-compactly-supported}.
+\end{lemma}
+
+\begin{proof}
+Looking at stalks this lemma reduces to the case of fields
+which is Lemma \ref{lemma-proper-contravariance-trace-curve}
+(but one can also directly deduce as in the proof of that lemma).
+\end{proof}
+
+\begin{lemma}
+\label{lemma-trace-iso-relative-curve}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $n \geq 1$ be invertible on $Y$. Let $f : X \to Y$
+be a separated flat morphism of finite presentation all
+of whose fibres are geometrically integral of dimension $1$.
+Then
+$\text{Tr}_{f, \mathit{flat}, n} : R^2f_!\mu_n \to \mathbf{Z}/n\mathbf{Z}$
+is an isomorphism.
+\end{lemma}
+
+\begin{proof}
+(Recall that an integral scheme is irreducible and hence nonempty.)
+Checking in geometric points of $Y$ we see we obtain isomorphisms
+by the discussion in Example \ref{example-elucidate}.
+\end{proof}
+
+
+
+
+\section{The trace map for an affine space}
+\label{section-trace-affine-space}
+
+\noindent
+Let $Y$ be a quasi-compact and quasi-separated scheme. By induction
+on $d \geq 0$ we are going to construct a canonical isomorphism
+$$
+\text{Tr}_{d, Y, n} :
+R(\mathbf{A}^d_Y \to Y)_!\mu_n^{\otimes d}
+\longrightarrow
+\mathbf{Z}/n\mathbf{Z}
+$$
+compatible with base change by morphisms $Y' \to Y$ of quasi-compact
+and quasi-separated schemes. For $d = 0$ we use the identity map.
+
+\medskip\noindent
+For $d = 1$ we use the canonical map
+$\text{Tr}_{\mathbf{A}^1_Y \to Y, \mathit{flat}, n}$,
+see Lemma \ref{lemma-trace-iso-relative-curve}. Given any automorphism
+$g : \mathbf{A}^1_Y \to \mathbf{A}^1_Y$ over $Y$ the diagram
+$$
+\xymatrix{
+R^2(\mathbf{A}^1_Y \to Y)_!\mu_n
+\ar[rd]_{\text{Tr}_{1, Y, n}} \ar[rr]_{covariance} & &
+R^2(\mathbf{A}^1_Y \to Y)_!\mu_n \ar[ld]^{\text{Tr}_{1, Y, n}} \\
+& \mathbf{Z}/n\mathbf{Z}
+}
+$$
+commutes. Here $covariance$ is the map associated to $g$ in
+Remark \ref{remark-covariance-shriek}; the diagram commutes by
+Lemma \ref{lemma-flat-covariance-trace-relative-curve}.
+
+\medskip\noindent
+Let $d > 1$ we consider the sequence of maps
+$$
+\mathbf{A}^d_Y \xrightarrow{projection} \mathbf{A}^{d - 1}_Y \to Y
+$$
+Then the spectral sequence of Lemma \ref{lemma-two-ss-complex-functor}
+and the vanishing of Lemma \ref{}
+
+
+
+
+
+
+
+
+
+\section{The trace map for flat morphisms}
+\label{section-construction-flat}
+
+\noindent
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $n \geq 1$ be invertible on $Y$.
+Let $d \geq 0$.
+Let $f : X \to Y$ be a flat, separated morphism of finite presentation
+of relative dimension $\leq d$. We will construct a map
+$$
+\text{Tr}_{f, \mathit{flat}, n} :
+R^2f_!\mu_n^{\otimes d}
+\longrightarrow
+\mathbf{Z}/n\mathbf{Z}
+$$
+The approach to the construction is to choose a quasi-finite map
+$g : X \to \mathbf{A}^d_Y$ and then to use an explicity produced
+map for $\mathbf{A}^d_Y$ composed with ``flat'' covariance along $g$.
+
+\begin{lemma}
+\label{lemma-covering-right-exact}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $f : X \to Y$ be separated and of finite presentation
+with fibres of dimension $\leq d$. Let $U_1, \ldots, U_n \subset X$
+be quasi-compact open subschemes such that
+$X \setminus (U_1 \cup \ldots \cup U_n)$
+has fibres of dimension $\leq d -1$ over $Y$.
+For any torsion sheaf $\mathcal{F}$ on $X$ there is an
+exact sequence
+$$
+\bigoplus\nolimits_{i, i'} R^{2d}f_{ii'!}\mathcal{F}|_{U_{ii'}}
+\to
+\bigoplus\nolimits_i R^{2d}f_{i!}\mathcal{F}|_{U_i}
+\to
+R^{2d}f_!\mathcal{F}
+\to
+0
+$$
+of sheaves on $Y_\etale$ where the arrows are given up to sign
+by the covariance maps of Remark \ref{}.
+\end{lemma}
+
+\begin{proof}
+By Lemma \ref{} we may replace $X$ by $\bigcup U_i$ and hence
+we may assume $X = U_1 \cup \ldots \cup U_n$.
+Consider the exact complex of sheaves
+$$
+\bigoplus\nolimits_{i, i'} j_{ii'!}j_{ii'}^{-1}\mathcal{F}
+\to
+\bigoplus\nolimits_i j_{i!}j_i^{-1}\mathcal{F}
+\to
+\mathcal{F}
+\to
+0
+$$
+on $X$ and apply the right exact functor $R^{2d}f_!$ to get
+the result of the lemma.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-good-covering}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $f : X \to Y$ be separated and of finite presentation
+with fibres of dimension $\leq d$. There exists a finite
+affine open covering $X = \bigcup U_i$ such that $f : U_i \to Y$
+factors as $U_i \to \mathbf{A}^d_Y \to Y$ where the first
+arrow is quasi-finite.
+\end{lemma}
+
+\begin{proof}
+Reducing to affines, this follows from More on Morphisms, Lemma
+\ref{more-morphisms-lemma-weak-relative-noether-normalization}.
+It can also be deduced from the easier
+Algebra, Lemma \ref{algebra-lemma-quasi-finite-over-polynomial-algebra}.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-switch-coordinates}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $X$ be separated and of finite presentation over $Y$.
+Let $(f_1, \ldots, f_n) : X \to \mathbf{A}^d_Y$ and
+$(g_1, \ldots, g_n) : X \to \mathbf{A}^d_Y$
+be quasi-finite. Let $U_i \subset X$ be the quasi-compact
+open subset where $(g_i, f_2, \ldots, f_n) : X \to \mathbf{A}^d_Y$
+is quasi-finite. Then $X = U_1 \cup \ldots \cup U_n$.
+\end{lemma}
+
+\begin{proof}
+Omitted.
+\end{proof}
+
+
+
+
+There are several
+problems with this strategy:
+(a) why is there a quasi-finite morphism $g : X \to \mathbf{P}^d_Y$?
+(b) if such an $g$ exists, why is it flat?
+(c) why is the resulting trace map independent of $g$?
+The answer to (a) is negative, but we won't use the existence
+of global maps in the construction, only local ones.
+The answer to (b) is that it requires $X \to Y$ to be Cohen-Macaulay,
+see More on Morphisms, Lemma
+\ref{more-morphisms-lemma-flat-finite-presentation-characterize-CM}.
+The answer to (c) is that this holds because we may check on
+stalks where we reduce to the construction of
+Section \ref{section-trace-curves}.
 
 
 
