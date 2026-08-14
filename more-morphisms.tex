@@ -6261,6 +6261,38 @@ After replacing $B$ by $B_g$ we see that $h$ is a nonzerodivisor.
 \end{proof}
 
 \begin{lemma}
+\label{lemma-construct-relative-divisors}
+Let $f : X \to S$ be a flat morphism of finite presentation.
+Let $x \in X$ with image $s \in S$. Let $D \subset X_s$ be an
+effective Cartier divisor. There exists an open neighbourhood
+$U \subset X$ of $x$ and a relative effective Cartier divisor
+$E \subset U$ such that $E_s = D \cap U_s$ as effective Cartier
+divisors on $U_s$.
+\end{lemma}
+
+\begin{proof}
+Let $V \subset X_s$ be an affine open neighbourhood of $x$
+such that $D \cap V$ is the zero scheme of a nonzerodivisor
+$h' \in \Gamma(V, \mathcal{O}_V)$, see
+Divisors, Lemma \ref{divisors-lemma-characterize-effective-Cartier-divisor}.
+Let $\overline{h} \in \mathcal{O}_{X_s, x}$ be the image of $h'$.
+Since $\mathcal{O}_{X_s, x}$ is a quotient of $\mathcal{O}_{X, x}$
+(Schemes, Lemma \ref{schemes-lemma-local-ring-fibre})
+we may choose an element $h \in \mathcal{O}_{X, x}$ lifting $\overline{h}$.
+By Lemma \ref{lemma-slice-given-element} we see that
+$h$ defines an effective Cartier divisor $E$ on an open $U$
+with $E \to S$ flat and locally of finite presentation.
+Thus $E$ is a relative effective Cartier divisor by
+Divisors, Definition
+\ref{divisors-definition-relative-effective-Cartier-divisor}.
+Finally, after shrinking $U$ we may assume that $U_s \subset V$
+and that $h'|_{U_s}$ and $h|_{U_s}$ agree; this is true because
+the topology on $X_s$ is induced from $X$, see
+Schemes, Lemma \ref{schemes-lemma-fibre-topological}.
+Thus we'll have $E_s = D \cap U_s$ as desired.
+\end{proof}
+
+\begin{lemma}
 \label{lemma-slice-given-elements}
 Let $f : X \to S$ be a morphism of schemes.
 Let $x \in X$ be a point with image $s \in S$.
