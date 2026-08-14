@@ -18792,22 +18792,6 @@ In this section we discuss some more or less immediate
 consequences of the proper base change theorem.
 
 \begin{lemma}
-\label{lemma-base-change-separably-closed}
-Let $K/k$ be an extension of separably closed fields.
-Let $X$ be a proper scheme over $k$.
-Let $\mathcal{F}$ be a torsion abelian sheaf on $X_\etale$.
-Then the map $H^q_\etale(X, \mathcal{F}) \to
-H^q_\etale(X_K, \mathcal{F}|_{X_K})$ is an isomorphism
-for $q \geq 0$.
-\end{lemma}
-
-\begin{proof}
-Looking at stalks we see that
-this is a special case of
-Theorem \ref{theorem-proper-base-change}.
-\end{proof}
-
-\begin{lemma}
 \label{lemma-cohomological-dimension-proper}
 Let $f : X \to Y$ be a proper morphism of schemes
 all of whose fibres have dimension $\leq n$.
@@ -18957,6 +18941,30 @@ that we may compute $Rf'_*(g')^{-1}E$ by the complex
 $f'_*(g')^{-1}\mathcal{I}^\bullet$. Another application
 of the usual proper base change theorem shows that
 this is equal to $g^{-1}f_*\mathcal{I}^\bullet$ as desired.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-base-change-separably-closed}
+Let $K/k$ be an extension of separably closed fields.
+Let $X$ be a proper scheme over $k$.
+\begin{enumerate}
+\item If $\mathcal{F}$ is a torsion abelian sheaf on $X_\etale$, then
+the map $H^q_\etale(X, \mathcal{F}) \to H^q_\etale(X_K, \mathcal{F}|_{X_K})$
+is an isomorphism for $q \geq 0$.
+\item If $E \in D^+(X_\etale)$ has torsion cohomology sheaves,
+then the maps $H^q_\etale(X, E) \to H^q_\etale(X_K, E|_{X_K})$
+are isomorphisms.
+\item If $E \in D(X_\etale, \mathbf{Z}/n\mathbf{Z})$, then the 
+maps $H^q_\etale(X, E) \to H^q_\etale(X_K, E|_{X_K})$
+are isomorphisms.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Looking at stalks we see that (1) is a special case of
+Theorem \ref{theorem-proper-base-change}, (2) is a special case of
+Lemma \ref{lemma-proper-base-change}, and (3) is a special case of
+Lemma \ref{lemma-proper-base-change-mod-n}.
 \end{proof}
 
 \begin{lemma}
