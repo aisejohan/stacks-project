@@ -4093,31 +4093,18 @@ of $x$ such that $f|_U$ is flat. Hence the lemma reduces to the case
 that $X = \Spec(B)$ and $S = \Spec(A)$ are affine
 and that $D$ is given by a nonzerodivisor $h \in B$. By assumption
 $B$ is a finitely presented $A$-algebra and $B/hB$ is a flat
-$A$-algebra. We are going to use absolute Noetherian approximation.
-
-\medskip\noindent
-Write $B = A[x_1, \ldots, x_n]/(g_1, \ldots, g_m)$. Assume
-$h$ is the image of $h' \in A[x_1, \ldots, x_n]$. Choose a finite type
-$\mathbf{Z}$-subalgebra $A_0 \subset A$ such that all the coefficients
-of the polynomials $h', g_1, \ldots, g_m$ are in $A_0$. Then we can set
-$B_0 = A_0[x_1, \ldots, x_n]/(g_1, \ldots, g_m)$ and $h_0$ the image
-of $h'$ in $B_0$. Then $B = B_0 \otimes_{A_0} A$ and
-$B/hB = B_0/h_0B_0 \otimes_{A_0} A$. By Algebra, Lemma
-\ref{algebra-lemma-flat-finite-presentation-limit-flat}
-we may, after enlarging $A_0$, assume that $B_0/h_0B_0$ is flat
-over $A_0$. Let $K_0 = \Ker(h_0 : B_0 \to B_0)$.
-As $B_0$ is of finite type over $\mathbf{Z}$ we see that $K_0$ is
-a finitely generated ideal. Let $A_1 \subset A$ be a finite type
-$\mathbf{Z}$-subalgebra containing $A_0$ and denote $B_1$, $h_1$, $K_1$
-the corresponding objects over $A_1$. By
-More on Algebra, Lemma \ref{more-algebra-lemma-base-change-H1-regular}
-the map $K_0 \otimes_{A_0} A_1 \to K_1$ is surjective. On the other hand,
-the kernel of $h : B \to B$ is zero by assumption. Hence every element
-of $K_0$ maps to zero in $K_1$ for sufficiently large subrings
-$A_1 \subset A$. Since $K_0$ is finitely generated, we conclude that
-$K_1 = 0$ for a suitable choice of $A_1$.
-
-\medskip\noindent
+$A$-algebra. By More on Algebra, Lemma
+\ref{more-algebra-lemma-relative-regular-element} we can find
+a cocartesian diagram
+$$
+\xymatrix{
+B_1 \ar[r] & B \\
+A_1 \ar[u] \ar[r] & A \ar[u]
+}
+$$
+where $A_1$ and $B_1$ are finite type $\mathbf{Z}$-algebras
+and a nonzerodivisor $h_1 \in B_1$ mapping to $h$ such that
+$B_1/h_1B_1$ is $A_1$-flat.
 Set $f_1 : X_1 \to S_1$ equal to $\Spec$ of the
 ring map $A_1 \to B_1$. Set $D_1 = \Spec(B_1/h_1B_1)$.
 Since $B = B_1 \otimes_{A_1} A$, i.e., $X = X_1 \times_{S_1} S$,
@@ -4193,14 +4180,17 @@ Let $\varphi : X \to S$ be a flat morphism which is locally of finite
 presentation. Let $Z \subset X$ be a closed subscheme.
 Let $x \in Z$ with image $s \in S$.
 \begin{enumerate}
-\item If $Z_s \subset X_s$ is a Cartier divisor in a neighbourhood of $x$,
+\item If $Z_s \subset X_s$ is an effective Cartier divisor
+in a neighbourhood of $x$,
 then there exists an open $U \subset X$ and a
 relative effective Cartier divisor $D \subset U$ such that
 $Z \cap U \subset D$ and $Z_s \cap U = D_s$.
-\item If $Z_s \subset X_s$ is a Cartier divisor in a neighbourhood of $x$,
+\item If $Z_s \subset X_s$ is an effective Cartier divisor
+in a neighbourhood of $x$,
 the morphism $Z \to X$ is of finite presentation, and $Z \to S$ is flat at
 $x$, then we can choose $U$ and $D$ such that $Z \cap U = D$.
-\item If $Z_s \subset X_s$ is a Cartier divisor in a neighbourhood of $x$
+\item If $Z_s \subset X_s$ is an effective Cartier divisor
+in a neighbourhood of $x$
 and $Z$ is a locally principal closed subscheme of $X$ in a neighbourhood
 of $x$, then we can choose $U$ and $D$ such that $Z \cap U = D$.
 \end{enumerate}
@@ -5411,58 +5401,19 @@ $U \subset X$ of $x$ such that $U \to S$ is flat. Hence the lemma reduces
 to the case that $X = \Spec(B)$ and $S = \Spec(A)$ are affine
 and that $Z$ is given by an $H_1$-regular sequence $f_1, \ldots, f_r \in B$.
 By assumption $B$ is a finitely presented $A$-algebra and
-$B/(f_1, \ldots, f_r)B$ is a flat $A$-algebra. We are going to use
-absolute Noetherian approximation.
-
-\medskip\noindent
-Write $B = A[x_1, \ldots, x_n]/(g_1, \ldots, g_m)$. Assume
-$f_i$ is the image of $f_i' \in A[x_1, \ldots, x_n]$. Choose a finite type
-$\mathbf{Z}$-subalgebra $A_0 \subset A$ such that all the coefficients
-of the polynomials $f_1', \ldots, f_r', g_1, \ldots, g_m$ are in $A_0$.
-We set $B_0 = A_0[x_1, \ldots, x_n]/(g_1, \ldots, g_m)$ and we denote
-$f_{i, 0}$ the image of $f_i'$ in $B_0$. Then $B = B_0 \otimes_{A_0} A$
-and
+$B/(f_1, \ldots, f_r)B$ is a flat $A$-algebra. By
+More on Algebra, Lemma \ref{more-algebra-lemma-relative-H1-regular}
+we can find a cocartesian diagram
 $$
-B/(f_1, \ldots, f_r) =
-B_0/(f_{0, 1}, \ldots, f_{0, r}) \otimes_{A_0} A.
+\xymatrix{
+B_1 \ar[r] & B \\
+A_1 \ar[u] \ar[r] & A \ar[u]
+}
 $$
-By
-Algebra, Lemma \ref{algebra-lemma-flat-finite-presentation-limit-flat}
-we may, after enlarging $A_0$, assume that
-$B_0/(f_{0, 1}, \ldots, f_{0, r})$ is flat over $A_0$.
-It may not be the case at this point that the Koszul cohomology group
-$H_1(K_\bullet(B_0, f_{0, 1}, \ldots, f_{0, r}))$ is zero.
-On the other hand, as $B_0$ is Noetherian, it is a finitely
-generated $B_0$-module. Let
-$\xi_1, \ldots, \xi_n \in H_1(K_\bullet(B_0, f_{0, 1}, \ldots, f_{0, r}))$
-be generators. Let $A_0 \subset A_1 \subset A$ be a larger finite type
-$\mathbf{Z}$-subalgebra of $A$. Denote $f_{1, i}$ the image
-of $f_{0, i}$ in $B_1 = B_0 \otimes_{A_0} A_1$. By
-More on Algebra, Lemma \ref{more-algebra-lemma-base-change-H1-regular}
-the map
-$$
-H_1(K_\bullet(B_0, f_{0, 1}, \ldots, f_{0, r})) \otimes_{A_0} A_1
-\longrightarrow
-H_1(K_\bullet(B_1, f_{1, 1}, \ldots, f_{1, r}))
-$$
-is surjective. Furthermore, it is clear that the colimit (over all
-choices of $A_1$ as above) of the
-complexes $K_\bullet(B_1, f_{1, 1}, \ldots, f_{1, r})$ is the complex
-$K_\bullet(B, f_1, \ldots, f_r)$ which is acyclic in degree $1$. Hence
-$$
-\colim_{A_0 \subset A_1 \subset A}
-H_1(K_\bullet(B_1, f_{1, 1}, \ldots, f_{1, r}))
-= 0
-$$
-by
-Algebra, Lemma \ref{algebra-lemma-directed-colimit-exact}.
-Thus we can find a choice of $A_1$ such that $\xi_1, \ldots, \xi_n$
-all map to zero in $H_1(K_\bullet(B_1, f_{1, 1}, \ldots, f_{1, r}))$.
-In other words, the Koszul cohomology group
-$H_1(K_\bullet(B_1, f_{1, 1}, \ldots, f_{1, r}))$
-is zero.
-
-\medskip\noindent
+where $A_1$ and $B_1$ are finite type $\mathbf{Z}$-algebras
+and a $H_1$-regular sequence $f_{1, 1} \ldots f_{1, r} \in B_1$
+mapping to $f_1, \ldots, f_r$ such that
+$B_1/(f_{1, 1}, \ldots, f_{1, r})$ is $A_1$-flat.
 Consider the morphism of affine schemes
 $X_1 \to S_1$ equal to $\Spec$ of the
 ring map $A_1 \to B_1$ and
