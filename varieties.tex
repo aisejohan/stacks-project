@@ -9641,6 +9641,18 @@ at the generic point $\xi$ of $X$.}.
 In a series of lemmas we show that this definition has all the properties
 one expects of the degree.
 
+\begin{example}
+\label{example-degree-P1}
+The degree of $\mathcal{O}(n)$ on $\mathbf{P}^1_k$ is $n$. For example
+$\deg(\mathcal{O}(1) = \chi(\mathcal{O}(1)) - \chi(\mathcal{O}) = 2 - 1 = 1$;
+this uses the computation of cohomology of $\mathcal{O}(n)$ in
+Cohomology of Schemes, Section
+\ref{coherent-section-cohomology-projective-space}.
+Another way to see $\deg(\mathcal{O}(1)) = 1$ is to use that it
+has a nonzero section vanishing to order $1$ in a rational point
+and use Lemma \ref{lemma-degree-if-regular-section}.
+\end{example}
+
 \begin{lemma}
 \label{lemma-degree-base-change}
 Let $k'/k$ be an extension of fields. Let $X$ be a proper scheme of
@@ -9941,6 +9953,22 @@ $$
 The equation of the lemma follows from additivity of
 the Euler characteristic (Lemma \ref{lemma-euler-characteristic-additive})
 and Lemma \ref{lemma-chi-tensor-finite}.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-degree-if-regular-section}
+Let $k$ be a field.
+Let $X$ be a proper scheme of dimension $\leq 1$ over $k$.
+Let $\mathcal{L}$ be an invertible $\mathcal{O}_X$-module
+and let $s$ be a regular section of $\mathcal{L}$ (for example
+a nonzero section if $X$ is a curve). Then
+$\deg(\mathcal{L}) = \deg(D)$ where $D = Z(s) \subset X$.
+\end{lemma}
+
+\begin{proof}
+This follows from Lemma \ref{lemma-degree-effective-Cartier-divisor}
+and the fact that $\mathcal{L} \cong \mathcal{O}_X(D)$ by
+Divisors, Lemma \ref{divisors-lemma-characterize-OD}.
 \end{proof}
 
 \begin{lemma}
