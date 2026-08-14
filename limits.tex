@@ -2121,6 +2121,153 @@ This follows from Algebra,
 Lemma \ref{algebra-lemma-colimit-lci}.
 \end{proof}
 
+\begin{lemma}
+\label{lemma-descend-relative-effective-Cartier}
+Notation and assumptions as in Situation \ref{situation-descent-property}.
+If
+\begin{enumerate}
+\item $f$ is the inclusion of a relative effective Cartier divisor
+(Divisors, Definition
+\ref{divisors-definition-relative-effective-Cartier-divisor})
+over $S$, and
+\item $f_0$ is locally of finite presentation,
+\end{enumerate}
+then there exists an $i \geq 0$ such that $f_i$ is the inclusion of
+a relative effective Cartier divisor over $S_i$.
+\end{lemma}
+
+\begin{proof}
+We can choose a finite affine open covering $Y = \bigcup V_j$
+such that $f^{-1}(V_j) \to V_j$ is cut out by a nonzerodivisor, see
+Divisors, Lemma \ref{divisors-lemma-characterize-effective-Cartier-divisor}.
+We may in addition assume that each $V_j$ maps into an affine open
+$U_j$ of $S$.
+By Lemmas \ref{lemma-descend-opens} and \ref{lemma-limit-affine}
+after increasing $0$ we can find an affine open covering
+$Y_0 = \bigcup V_{0j}$ and affine opens $W_{0j} \subset S_0$
+such that $V$ is the inverse image of $V_0$, such that $W_j$ is the
+inverse image of $W_{0j}$ and such that $V_{0j}$ maps into $W_{0j}$.
+This reduces us to the algebra problem discussed in the next
+paragraph.
+
+\medskip\noindent
+Suppose that $R = \colim_{i \in I} R_i$. For some $0 \in I$ we are given
+an $R_0$-algebra map $A_0 \to B_0$ of finite presentation. Set
+$A_i = A_0 \otimes_{R_0} R_i$, $B_i = B_0 \otimes_{R_0} R_i$,
+$A = A_0 \otimes_{R_0} R$, and $B = B_0 \otimes_{R_0} R$.
+Assume $B = A/hA$ where $h \in A$ is a nonzerodivisor and
+$B$ is flat over $R$. Problem: show that for $i$ large enough
+$B_i = A_i/h_iA_i$ is flat over $R_i$ and $h_i$ is a nonzerodivisor in $A_i$.
+By More on Algebra, Lemma
+\ref{more-algebra-lemma-relative-regular-element}
+we can choose a cocartesian diagram
+$$
+\xymatrix{
+A' \ar[r] & A \\
+R' \ar[u] \ar[r] & R \ar[u]
+}
+$$
+where $A'$ and $R'$ are finite type $\mathbf{Z}$-algebras
+and a nonzerodivisor $h' \in A'$ mapping to $h$ such that
+$A'/h'A'$ is $R'$-flat. Since $R = \colim_{i \geq 0} R_i$
+and $R'$ is a finite type $\mathbf{Z}$-algebra, we can factor
+$R' \to R$ as $R' \to R_i \to R$ for some $i$.
+After increasing $i$ we may assume we have a commutative diagram
+$$
+\xymatrix{
+A' \ar[r] & A_i \ar[r] & A \\
+R' \ar[u] \ar[r] & R_i \ar[r] \ar[u] & R \ar[u]
+}
+$$
+with both squares cocartesian, see
+Algebra, Lemma \ref{algebra-lemma-colimit-category-fp-algebras}.
+Denoting $h_i \in A_i$ the image of $h'$, we see by
+Divisors, Lemma \ref{divisors-lemma-relative-Cartier} (or its proof)
+that $h_i$ is a nonzerodivisor
+and that $A_i/h_iA_i$ is $R_i$-flat. Finally, for large enough
+$i$ the $A_i$-algebras $B_i$ and $A_i/h_iA_i$ agree
+(by the already cited
+Algebra, Lemma \ref{algebra-lemma-colimit-category-fp-algebras})
+and the
+proof is complete.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-descend-relative-H1-regular}
+Notation and assumptions as in Situation \ref{situation-descent-property}.
+If
+\begin{enumerate}
+\item $f$ is a relative $H_1$-regular immersion
+(Divisors, Definition
+\ref{divisors-definition-relative-H1-regular-immersion})
+over $S$, and
+\item $f_0$ is locally of finite presentation,
+\end{enumerate}
+then there exists an $i \geq 0$ such that $f_i$
+a relative $H_1$-regular immersion over $S_i$.
+\end{lemma}
+
+\begin{proof}
+Unwinding the definitions and using Divisors, Lemma
+\ref{divisors-lemma-regular-ideal-sheaf-scheme},
+we can choose a finite affine open
+covering $Y = \bigcup V_j$ such that $f^{-1}(V_j) \to V_j$ is cut
+out by a $H_1$-regular sequence
+We may in addition assume that each $V_j$ maps into an affine open
+$U_j$ of $S$.
+By Lemmas \ref{lemma-descend-opens} and \ref{lemma-limit-affine}
+after increasing $0$ we can find an affine open covering
+$Y_0 = \bigcup V_{0j}$ and affine opens $W_{0j} \subset S_0$
+such that $V$ is the inverse image of $V_0$, such that $W_j$ is the
+inverse image of $W_{0j}$ and such that $V_{0j}$ maps into $W_{0j}$.
+This reduces us to the algebra problem discussed in the next
+paragraph.
+
+\medskip\noindent
+Suppose that $R = \colim_{i \in I} R_i$. For some $0 \in I$ we are given
+an $R_0$-algebra map $A_0 \to B_0$ of finite presentation. Set
+$A_i = A_0 \otimes_{R_0} R_i$, $B_i = B_0 \otimes_{R_0} R_i$,
+$A = A_0 \otimes_{R_0} R$, and $B = B_0 \otimes_{R_0} R$.
+Assume $B = A/(f_1, \ldots, f_r)$ where $f_1, \ldots, f_r$
+is an $H_1$-regular sequence in $A$ and $B$ is flat over $R$.
+Problem: show that for $i$ large enough
+$B_i = A_i/(f_{i, 1}, \ldots, f_{i, r})$ is flat over $R_i$
+where $f_{i, 1}, \ldots, f_{i, r}$ is an $H_1$-regular sequence
+in $A_i$. By More on Algebra, Lemma
+\ref{more-algebra-lemma-relative-H1-regular}
+we can choose a cocartesian diagram
+$$
+\xymatrix{
+A' \ar[r] & A \\
+R' \ar[u] \ar[r] & R \ar[u]
+}
+$$
+where $A'$ and $R'$ are finite type $\mathbf{Z}$-algebras
+and an $H_1$-regular sequence $f'_1, \ldots, f'_r \in A'$
+mapping to $f_1, \ldots, f_r$ such that $A/(f'_1, \ldots, f'_r)$
+is $R'$-flat. Since $R = \colim_{i \geq 0} R_i$
+and $R'$ is a finite type $\mathbf{Z}$-algebra, we can factor
+$R' \to R$ as $R' \to R_i \to R$ for some $i$.
+After increasing $i$ we may assume we have a commutative diagram
+$$
+\xymatrix{
+A' \ar[r] & A_i \ar[r] & A \\
+R' \ar[u] \ar[r] & R_i \ar[r] \ar[u] & R \ar[u]
+}
+$$
+with both squares cocartesian, see
+Algebra, Lemma \ref{algebra-lemma-colimit-category-fp-algebras}.
+Denoting $f_{i, 1}, \ldots, f_{i, r} \in A_i$ the image of
+$f'_1, \ldots, f'_r$, we see by More on Algebra, Lemma
+\ref{more-algebra-lemma-relative-regular-immersion-algebra}.
+that $f_{i, 1}, \ldots, f_{i, r}$ is an $H_1$-regular sequence
+and that $A_i/(f_{i, 1}, \ldots, f_{i, r})$ is $R_i$-flat.
+Finally, for large enough $i$ the $A_i$-algebras $B_i$ and
+$A_i/(f_{i, 1}, \ldots, f_{i, r})$ agree (by the already cited
+Algebra, Lemma \ref{algebra-lemma-colimit-category-fp-algebras})
+and the
+proof is complete.
+\end{proof}
 
 
 
