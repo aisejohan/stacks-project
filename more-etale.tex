@@ -2091,7 +2091,18 @@ f_!f^{-1}K
 K
 $$
 functorial for $K$ in $D(Y_\etale, \Lambda)$ and compatible
-with arbitrary base change.
+with arbitrary base change. Moreover, combining
+More on Morphisms, Lemma
+\ref{more-morphisms-lemma-weighting-composition-flat-quasi-finite}
+with Lemma \ref{lemma-trace-composition} we see that
+we have the compatibility with composition:
+$$
+\text{Tr}_{g, \mathit{flat}, K} \circ
+g_!\text{Tr}_{f, \mathit{flat}, g^{-1}K} =
+\text{Tr}_{g \circ f, \mathit{flat}, K}
+$$
+when $g : Y \to Z$ is another morphism of schemes which is flat,
+locally quasi-finite, and locally of finite presentation.
 \end{example}
 
 \begin{remark}
@@ -3699,7 +3710,7 @@ $Rf_! \text{Tr}_{g, \mathit{flat}, K}$, then we call
 $Rf'_!(g^{-1}K) \longrightarrow Rf_!K$ the ``flat'' covariance map.
 The construction of this map is compatible with base change by
 morphisms $Y' \to Y$ of quasi-compact and quasi-separated schemes
-and compatible with composition of flat and quasi-finite
+and compatible with composition of flat, quasi-finite
 morphisms between schemes separated and of finite presentation over $Y$.
 \end{remark}
 
@@ -4415,6 +4426,19 @@ and the lemma applies.
 \end{proof}
 
 \begin{lemma}
+\label{lemma-bounded-f-shriek}
+Let $f : X \to Y$ be a finite type separated morphism of schemes
+with $Y$ quasi-compact and quasi-separated. Assume all fibres
+of $f$ have dimension $\leq d$. Let $\mathcal{F}$ be an abelian
+torsion sheaf on $X$. Then $R^qf_!\mathcal{F} = 0$ for $q > 2d$.
+\end{lemma}
+
+\begin{proof}
+Combine Lemmas \ref{lemma-stalk-R-f-shriek} and
+\ref{lemma-bounded-algebraic-scheme}.
+\end{proof}
+
+\begin{lemma}
 \label{lemma-base-change-separably-closed}
 Let $k'/k$ be an extension of separably closed fields.
 Let $X$ be a separated scheme of finite type over $k$.
@@ -4506,6 +4530,22 @@ and the vanishing in Lemma \ref{lemma-bounded-algebraic-scheme}.
 \end{proof}
 
 \begin{lemma}
+\label{lemma-top-restrict-to-open}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $f : X \to Y$ be a separated morphism of finite presentation
+of relative dimension $\leq d$. Let $U \subset X$ be an open
+such that $X \setminus U$ has fibres of dimension $< d$ over $Y$.
+Then the map $R^{2d}(f|_U)_!\mathcal{F}|_U \to R^{2d}f_!\mathcal{F}$
+is an isomorphism for any torsion abelian sheaf $\mathcal{F}$ on $X$.
+\end{lemma}
+
+\begin{proof}
+Looking at stalks using Lemma \ref{lemma-stalk-R-f-shriek}
+we see this follows from
+Lemma \ref{lemma-top-algebraic-scheme}.
+\end{proof}
+
+\begin{lemma}
 \label{lemma-pullback-top-algebraic-scheme}
 Let $k$ be an algebraically closed field. Let $f : X \to Y$ be a
 proper morphism of separated schemes of finite type type over $k$ both
@@ -4519,7 +4559,9 @@ is an isomorphism.
 \end{lemma}
 
 \begin{proof}
-By Lemma \ref{lemma-top-algebraic-scheme}
+Observe that $X \setminus U$ is a closed subset of $X$ of dimension $< d$.
+Hence we may replace $V$ by $V \setminus f(X \setminus U)$ and we may assume
+$U = f^{-1}(U)$. In this case, by Lemma \ref{lemma-top-algebraic-scheme}
 and the compatibility between the maps of
 Remarks \ref{remark-covariance-compactly-supported} and
 \ref{remark-contravariance-compactly-supported} given in
@@ -6403,6 +6445,42 @@ Checking in geometric points of $Y$ we see we obtain isomorphisms
 by the discussion in Example \ref{example-elucidate}.
 \end{proof}
 
+\begin{remark}
+\label{remark-cup-product-trace}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $f : X \to Y$ be a proper, flat morphism of finite presentation
+with fibres of dimension $\leq 1$. Let $\mathcal{L}$ be an invertible
+$\mathcal{O}_X$-module whose degree on every fibre of $f$ is $d$.
+Let $n$ be an integer invertible on $Y$ and let
+$\mathcal{F}$ be a sheaf of $\mathbf{Z}/n\mathbf{Z}$-modules on $Y_\etale$.
+For $\eta \in H^i(Y, \mathcal{F})$ consider the element
+$$
+c_1(\mathcal{L}) \cup f^*\eta \in
+H^{2 + i}(X, \mu_n \otimes f^{-1}\mathcal{F})
+$$
+All tensor products are over $\mathbf{Z}/n\mathbf{Z}$ in this remark.
+Then we can use the sequence of maps
+\begin{align*}
+H^{2 + i}(X, \mu_n \otimes f^{-1}\mathcal{F})
+& =
+H^{2 + i}(Y, Rf_*(\mu_n \otimes f^{-1}\mathcal{F})) \\
+& =
+H^{2 + i}(Y, Rf_*\mu_n \otimes \mathcal{F}) \\
+& \to
+H^i(Y, R^2f_*\mu_n \otimes \mathcal{F}) \\
+& \xrightarrow{\text{Tr}_{f, \mathit{flat}, n}}
+H^i(Y, \mathcal{F})
+\end{align*}
+to get back to an element of $H^i(Y, \mathcal{F})$. It turns out that
+the output is the element $d\eta$. This follows from the defining property
+of our trace map, namely that the composition
+$$
+\mathbf{Z}/n\mathbf{Z} \xrightarrow{c_1(\mathcal{L})}
+R^2f_*\mu_n \xrightarrow{\text{Tr}_{f, \mathit{flat}, n}} \mathbf{Z}/\mathbf{Z}
+$$
+is equal to multiplication by $d$ (as one sees on the stalks for example).
+\end{remark}
+
 
 
 
@@ -6441,10 +6519,147 @@ Lemma \ref{lemma-flat-covariance-trace-relative-curve}.
 \medskip\noindent
 Let $d > 1$ we consider the sequence of maps
 $$
-\mathbf{A}^d_Y \xrightarrow{projection} \mathbf{A}^{d - 1}_Y \to Y
+\mathbf{A}^d_Y \xrightarrow{p} \mathbf{A}^{d - 1}_Y \xrightarrow{q} Y
 $$
-Then the spectral sequence of Lemma \ref{lemma-two-ss-complex-functor}
-and the vanishing of Lemma \ref{}
+where $p$ is the projection onto the last $d - 1$ coordinates
+and $q$ is the structure morphism.
+The isomorphism $R(q \circ p)_! = Rq_! \circ Rp_!$ of
+Lemma \ref{lemma-shriek-composition},
+the spectral sequence of
+Lemma \ref{lemma-two-ss-complex-functor},
+and the vanishing of
+Lemma \ref{lemma-bounded-f-shriek}
+combine to produce an isomorphism
+$$
+R^{2d}(\mathbf{A}^d_Y \to Y)_!\mathcal{F} =
+R^{2d - 2}q_!R^2p_!\mathcal{F}
+$$
+for any torsion sheaf $\mathcal{F}$ on $\mathbf{A}^d_Y$. Then we construct
+our map as the composition
+\begin{align*}
+R^{2d}(\mathbf{A}^d_Y \to Y)_!\mu_n^{\otimes d}
+& =
+R^{2d - 2}q_!R^2p_!\mu_n^{\otimes d} \\
+& =
+R^{2d - 2}q_!((R^2p_!\mu_n) \otimes \mu_n^{\otimes d - 1}) \\
+& \xrightarrow{\text{Tr}_{1, \mathbf{A}^{d - 1}_Y, n}}
+R^{2d - 2}q_!(\mu_n^{\otimes d - 1}) \\
+& \xrightarrow{\text{Tr}_{d - 1, Y, n}}
+\mathbf{Z}/n\mathbf{Z}
+\end{align*}
+Let us prove that this map does not depend on the choice of the
+projection; in fact taking $p$ to be any affine linear projection
+would give the same map.
+
+\begin{lemma}
+\label{lemma-independent-choice-affine-space}
+Let $Y$ be a quasi-compact and quasi-separated scheme. Let $d \geq 0$.
+For any affine linear automorphism $g : \mathbf{A}^d_Y \to \mathbf{A}^d_Y$
+the diagram
+$$
+\xymatrix{
+R^{2d}(\mathbf{A}^d_Y \to Y)_!\mu_n^{\otimes d}
+\ar[rd]_{\text{Tr}_{d, Y, n}} \ar[rr]_{covariance} & &
+R^{2d}(\mathbf{A}^d_Y \to Y)_!\mu_n^{\otimes d}
+\ar[ld]^{\text{Tr}_{d, Y, n}} \\
+& \mathbf{Z}/n\mathbf{Z}
+}
+$$
+commutes. Here $covariance$ is the map associated to $g$ in
+Remark \ref{remark-covariance-shriek}.
+\end{lemma}
+
+\begin{proof}
+The idea of the proof is as follows: the diagram defines two
+arrows
+$$
+\varphi, \psi :
+R^{2d}(\mathbf{A}^d_Y \to Y)_!\mu_n^{\otimes d}
+\longrightarrow
+\mathbf{Z}/n\mathbf{Z}
+$$
+The source and target of these arrows are both isomorphic to the
+constant sheaf $\mathbf{Z}/n\mathbf{Z}$, hence if $\varphi$ and $\psi$ agree
+in a point $y \in Y$, then they agree at every point of the connected
+component of $Y$ that $y$ is in. Since the space of all affine
+linear automorphisms is connected, this proves the lemma. Below
+we give a bit more detail.
+
+\medskip\noindent
+An affine linear automorphism is one of the form
+$$
+x \longmapsto Ax + b
+$$
+were $A$ is an invertible $d \times d$ matrix and $b$ is a vector
+both with coefficients in $\Gamma(Y, \mathcal{O}_Y)$. There exists
+a smooth scheme $G \to Y$ and a universal affine linear automorphism
+$$
+\mathbf{A}^d_G = G \times_Y \mathbf{A}^d_Y
+\longrightarrow
+G \times_Y \mathbf{A}^d_Y = \mathbf{A}^d_G
+$$
+Namely, we set $G = \text{GL}_{d, Y} \times_Y \mathbf{A}^d_Y$
+and use the formula above to define the arrow. Thus we get two
+arrows $\varphi_{univ}, \psi_{univ}$ over $G$ with the following
+property: given $(A, b)$ as above, these define a morphism
+$\tau : Y \to G$ over $Y$ and the pullbacks of $\varphi_{uni}, \psi_{univ}$ 
+are $\varphi$ and $\psi$. Consider the morphism
+$\sigma : Y \to G$ corresponding to the identity
+affine linear automorphism. By the same token as above the pullbacks of
+$\varphi_{univ}$ and $\psi_{univ}$ agree! Thus every fibre of $G \to Y$
+contains a point where $\varphi_{univ}$ and $\psi_{univ}$ agree.
+Since the fibres of $G \to Y$ are connected we conclude.
+\end{proof}
+
+\begin{remark}
+\label{remark-trace-P1d}
+Let $k$ be an algebraically closed field. Let $n \geq 1$ be invertible in $k$.
+Let us give a little bit more insight into the map
+$\text{Tr}_{d, \Spec(k), n}$ which we may view as a map
+$$
+H^{2d}_c(\mathbf{A}^d_k, \mu_n^{\otimes d}) \to \mathbf{Z}/n\mathbf{Z}
+$$
+It follows from Lemma \ref{lemma-flat-covariance-trace-relative-curve}
+that the diagram
+$$
+\xymatrix{
+H^{2d}_c(\mathbf{A}^d_k, \mu_n^{\otimes d}) \ar[r] \ar[d] &
+H^{2d}((\mathbf{P}^1_k)^d, \mu_n^{\otimes d}) \ar[d] \\
+H^{2d}_c(\mathbf{A}^{d - 1}_k, \mu_n^{\otimes d - 1}) \ar[r] &
+H^{2d}((\mathbf{P}^1_k)^{d - 1}, \mu_n^{\otimes d - 1})
+}
+$$
+commutes. Here the horizontal arrows are covariance along the open
+embeddings $\mathbf{A}^w_k \to (\mathbf{P}^1_k)^w$ and are isomorphisms
+and the vertical maps are the ``flat'' trace maps for the
+flat families of curves defined by the projections
+$p : \mathbf{A}_k^d \to \mathbf{A}_k^{d - 1}$ and
+$p' : (\mathbf{P}_k^1)^d \to (\mathbf{P}_k^1)^{d - 1}$ onto the last
+$d - 1$ coordinates. Denote
+$\xi_i \in H^2((\mathbf{P}^1_k)^d, \mu_n)$ the pullback
+of $c_1(\mathcal{O}(1))$ from the $i$ projection onto $\mathbf{P}^1_k$.
+By Remark \ref{remark-cup-product-trace} we see that given
+$\eta \in H^{2d - 2}((\mathbf{P}^1_k)^{d - 1}, \mu_n^{\otimes d - 1})$
+the cup product
+$\xi_1 \cup (p')^*\eta$ maps to $\eta$ by the right most arrow.
+Repeating this $d - 1$ more times and using that our map
+is constructed by successively using these traces along projections,
+we see that our map sends
+$$
+\xi_1 \cup \ldots \cup \xi_d \in
+H^{2d}((\mathbf{P}^1_k)^d, \mu_n^{\otimes d}) =
+H^{2d}_c(\mathbf{A}_k^d, \mu_n^{\otimes d})
+$$
+to $1$. The result of Lemma \ref{lemma-independent-choice-affine-space}
+says in particular that if we permute the coordinates, we get the same result.
+This can also be seen, since we know that the displayed cohomology
+group is free on $\xi_1 \cup \ldots \cup \xi_d$, by proving that
+the cup product is independent of the ordering of the $\xi_i$.
+Indeed, this follows from Cohomology on Sites, Lemma
+\ref{sites-cohomology-lemma-cup-product-commutative}
+and the fact that our classes have even degrees.
+\end{remark}
+
 
 
 
@@ -6459,28 +6674,26 @@ and the vanishing of Lemma \ref{}
 
 \noindent
 Let $Y$ be a quasi-compact and quasi-separated scheme.
-Let $n \geq 1$ be invertible on $Y$.
-Let $d \geq 0$.
+Let $n \geq 1$ be invertible on $Y$. Let $d \geq 0$.
 Let $f : X \to Y$ be a flat, separated morphism of finite presentation
-of relative dimension $\leq d$. We will construct a map
+of relative dimension $\leq d$. In this section we construct the map
 $$
 \text{Tr}_{f, \mathit{flat}, n} :
-R^2f_!\mu_n^{\otimes d}
+R^{2d}f_!\mu_n^{\otimes d}
 \longrightarrow
 \mathbf{Z}/n\mathbf{Z}
 $$
-The approach to the construction is to choose a quasi-finite map
-$g : X \to \mathbf{A}^d_Y$ and then to use an explicity produced
-map for $\mathbf{A}^d_Y$ composed with ``flat'' covariance along $g$.
+The integer $d$ does not appear in the notation and has to be
+inferred from context.
 
 \begin{lemma}
 \label{lemma-covering-right-exact}
 Let $Y$ be a quasi-compact and quasi-separated scheme.
 Let $f : X \to Y$ be separated and of finite presentation
-with fibres of dimension $\leq d$. Let $U_1, \ldots, U_n \subset X$
+with fibres of dimension $\leq d$. Let $U_1, \ldots, U_r \subset X$
 be quasi-compact open subschemes such that
-$X \setminus (U_1 \cup \ldots \cup U_n)$
-has fibres of dimension $\leq d -1$ over $Y$.
+$X \setminus (U_1 \cup \ldots \cup U_r)$
+has fibres of dimension $\leq d - 1$ over $Y$.
 For any torsion sheaf $\mathcal{F}$ on $X$ there is an
 exact sequence
 $$
@@ -6493,12 +6706,12 @@ R^{2d}f_!\mathcal{F}
 0
 $$
 of sheaves on $Y_\etale$ where the arrows are given up to sign
-by the covariance maps of Remark \ref{}.
+by the covariance maps of Remark \ref{remark-covariance-shriek}.
 \end{lemma}
 
 \begin{proof}
-By Lemma \ref{} we may replace $X$ by $\bigcup U_i$ and hence
-we may assume $X = U_1 \cup \ldots \cup U_n$.
+By Lemma \ref{lemma-top-restrict-to-open} we may replace $X$ by $\bigcup U_i$.
+Thus we may assume $X = U_1 \cup \ldots \cup U_n$.
 Consider the exact complex of sheaves
 $$
 \bigoplus\nolimits_{i, i'} j_{ii'!}j_{ii'}^{-1}\mathcal{F}
@@ -6509,8 +6722,10 @@ $$
 \to
 0
 $$
-on $X$ and apply the right exact functor $R^{2d}f_!$ to get
-the result of the lemma.
+on $X$; this is a special case of Lemma \ref{lemma-lqf-colimit-f-shriek}.
+Apply the right exact functor $R^{2d}f_!$ (by the vanishing of
+Lemma \ref{lemma-bounded-f-shriek}) to get
+the result of the lemma. Details omitted.
 \end{proof}
 
 \begin{lemma}
@@ -6534,33 +6749,177 @@ Algebra, Lemma \ref{algebra-lemma-quasi-finite-over-polynomial-algebra}.
 \label{lemma-switch-coordinates}
 Let $Y$ be a quasi-compact and quasi-separated scheme.
 Let $X$ be separated and of finite presentation over $Y$.
-Let $(f_1, \ldots, f_n) : X \to \mathbf{A}^d_Y$ and
-$(g_1, \ldots, g_n) : X \to \mathbf{A}^d_Y$
+Let $(g_1, \ldots, g_d) : X \to \mathbf{A}^d_Y$ and
+$(h_1, \ldots, h_d) : X \to \mathbf{A}^d_Y$
 be quasi-finite. Let $U_i \subset X$ be the quasi-compact
-open subset where $(g_i, f_2, \ldots, f_n) : X \to \mathbf{A}^d_Y$
-is quasi-finite. Then $X = U_1 \cup \ldots \cup U_n$.
+open subset where $(h_i, g_2, \ldots, g_n) : X \to \mathbf{A}^d_Y$
+is quasi-finite. Then $X \setminus (U_1 \cup \ldots \cup U_n)$
+has fibres of dimension $< d$ over $Y$.
 \end{lemma}
 
 \begin{proof}
-Omitted.
+Observe that $U_i$ is open and quasi-compact by Morphisms, Lemma
+\ref{morphisms-lemma-openness-bounded-dimension-fibres-finite-presentation}.
+To prove the final statement, we may base change to a geometric
+point of $Y$ to reduce to the case discussed in the next paragraph.
+
+\medskip\noindent
+Let $Y = \Spec(k)$ where $k$ is an algebraically closed field.
+Suppose that $x \in X$ is a closed point which
+is not contained in any of the $U_i$.
+Let $t$ be the image of $x$ by the morphism
+$G = (g_2, \ldots, g_d) : X \to \mathbf{A}^{d - 1}_k$.
+Let $X_t$ be the scheme theoretic fibre of $F$ over $t$.
+Since $(g_1, \ldots, g_d)$ is quasi-finite, it follows
+that $g_1|_{X_t} : X_t \to \mathbf{A}^1_k$ is quasi-finite.
+Hence $X_t$ is a finite type scheme of dimension $\leq 1$ over $k$.
+By assumption for every $i$ the morphism
+$h_i|_{X_t} : X_t \to \mathbf{A}^1_k$ is not quasi-finite at $x$.
+This means there is an irreducible component $x \in C_i \subset X_t$
+of dimension $1$ such that $h_i$ collapses $C_i$ to a point.
+It cannot be the case that $C_1 = \ldots = C_d$, since that
+would imply that $(h_1, \ldots, h_d)$ sends $C_1$ to a point,
+contradiction the assumption that $(h_1, \ldots, h_d)$ is quasi-finite.
+Thus $x$ is contained in an intersection of irreducible components
+of $X_t$. It follows that the fibres of the restricition of $G$ to
+$X \setminus (U_1 \cup \ldots \cup U_n)$ are finite (set theoretically).
+Hence the dimension of $X \setminus (U_1 \cup \ldots \cup U_n)$
+is at most $d - 1$.
+\end{proof}
+
+\noindent
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $f : X \to Y$ be a separated flat morphism of finite presentation
+which is in addition Cohen-Macaulay (More on Morphisms, Definition
+\ref{more-morphisms-definition-CM}) and has relative dimension $d$
+(Morphisms, Definition \ref{morphisms-definition-relative-dimension-d}).
+Let $g : X \to \mathbf{A}^d_Y$ be a quasi-finite morphism over $Y$;
+note that by More on Morphisms, Lemma
+\ref{more-morphisms-lemma-flat-finite-presentation-characterize-CM}
+the condition that $f$ is Cohen-Macaulay of relative dimension $d$
+implies that $g$ is flat (and the converse holds true as well).
+In this case we can consider the map
+\begin{equation}
+\label{equation-trace-by-qf}
+Rf_!\mu_n^{\otimes d} \xrightarrow{\text{Remark \ref{remark-flat-covariance}}}
+R(\mathbf{A}^d_Y \to Y)_!\mu_n^{\otimes d}
+\xrightarrow{\text{Tr}_{d, Y, n}}
+\mathbf{Z}/n\mathbf{Z}
+\end{equation}
+Thus the first arrow is ``flat'' covariance and the second arrow is
+the map construction in Section \ref{section-trace-affine-space}.
+
+\begin{lemma}
+\label{lemma-trace-by-qf}
+The map (\ref{equation-trace-by-qf}) does not depend on the choice of $g$.
+\end{lemma}
+
+\begin{proof}
+We have to show: given two quasi-finite morphisms
+$g = (g_1, \ldots, g_d) : X \to \mathbf{A}^d_Y$ and
+$h = (h_1, \ldots, h_d) : X \to \mathbf{A}^d_Y$, we
+obtain the same arrow.
+
+\medskip\noindent
+Note that we already know that $(g_1, g_2, g_3, \ldots, g_d)$ and
+$(g_2, g_1, g_3, \ldots, g_d)$ produce the same map by
+Lemma \ref{lemma-independent-choice-affine-space} (this also
+uses the compatibility of the ``flat'' covariance maps with compositions
+discussed in Remark \ref{remark-contravariance-shriek}).
+The same goes for any permutation of the $g_i$. (See also
+discussion in Remark \ref{remark-trace-P1d} for why this holds.)
+
+\medskip\noindent
+Suppose we have quasi-compact open subschemes $U_i \subset X$,
+$i = 1, \ldots, r$ such that $X \setminus \bigcup U_i$ has
+fibres of dimension $< d$ over $Y$. Then it suffices to
+show that the two arrows, composed with the covariance maps
+$$
+R^{2d}(f|_{U_i})_!\mu_n^{\otimes d}
+\to
+R^{2d}f_!\mu_n^{\otimes d}
+$$
+agree, see Lemma \ref{lemma-covering-right-exact}.
+By the compatibility of the ``flat'' covariance maps
+with compositions, this reduces us to proving the result
+for $g|_{U_i}$ and $h|_{U_i}$ for $i = 1, \ldots, r$.
+In this sense the problem is local on $X$.
+
+\medskip\noindent
+Note that if for some
+$i \not = j$ we have $g_i = g_j$. Then we see that
+the relative dimension of $X$ over $Y$ is at most $d - 1$.
+In this case the source of our arrow is $0$ and the
+lemma holds in this case. Similarly for the functions $h_i$.
+Thus we may assume the functions $g_i$ are pairwise distinct
+and the same is true for the functions $h_i$.
+(This step is not necessary but it simplifies the arguments
+below.)
+
+\medskip\noindent
+We argue by descending induction on the number $r$
+of indices $i$ such that $g_i$ occurs in the set
+$\{h_1, \ldots, h_d\}$. If $r = d$, then $g = h$ up to a
+permutation of the coordinates and the result is true.
+If $r < d$, then we may, after permuting the coordinates,
+assume $g_1$ is not equal to any of the $h_i$.
+Let $U_i \subset X$ be the open subset where
+$(h_i, g_2, \ldots, g_d) : X \to \mathbf{A}^d_Y$ is quasi-finite.
+By Lemma \ref{lemma-switch-coordinates} and the discussion above,
+we may replace $X$ by $U_i$, in other words, we may assume
+$(h_i, g_2, \ldots, g_d)$ is quasi-finite for some $i$.
+
+\medskip\noindent
+In the last paragraph of the proof we will show that $(g_1, \ldots, g_d)$ and
+$(h_i, g_2, \ldots, g_d)$ define the same arrow.
+Since may assume $h_i$ is not equal to $g_2, \ldots, g_d$ (see above),
+a simple counting argument shows that $\{h_i, g_2, \ldots, g_d\}$
+and $\{h_1, \ldots, h_d\}$ have at least $r + 1$ elements in common
+and we conclude by induction.
+
+\medskip\noindent
+Suppose that $g = (g_1, \ldots, g_d) : X \to \mathbf{A}^d_Y$
+is quasi-finite. We will show that (\ref{equation-trace-by-qf})
+only depends on $G = (g_2, \ldots, g_d) : X \to \mathbf{A}^{d - 1}_Y$.
+Observe that $G$ is a flat morphism of relative dimension $1$
+(as the composition of the two flat morphisms $g$ and projection onto
+the last $d - 1$ coordinates).
+Consider the commutative diagram
+$$
+\xymatrix{
+X \ar[rr]_{(g_1, \ldots, g_d)} \ar[rd]_G & & \mathbf{A}^d_Y \ar[ld]^p \\
+& \mathbf{A}^{d - 1}_Y \ar[d]^q \\
+& Y
+}
+$$
+where $p$ is the projection onto the last $d - 1$ coordinates. 
+By construction the map (\ref{equation-trace-by-qf}) is constructed
+by writing the source as
+$$
+R^{2d}f_!\mu_n^{\otimes d} =
+R^{2d - 2}q_!(R^2p_!(g_!\mu_n) \otimes \mu_n^{\otimes d - 1})
+$$
+and then using
+$$
+\text{Tr}_{d - 1, Y, n}
+\circ
+R^{2d - 2}q_!\left(
+\left(\text{Tr}_{p, \mathit{flat}, n} \circ R^2p_!(\text{Tr}_g)\right)
+\otimes \text{id}_{\mu_n^{\otimes d - 1}}\right)
+$$
+By Lemma \ref{lemma-flat-covariance-trace-relative-curve} this is equal to
+$$
+\text{Tr}_{d - 1, Y, n}
+\circ
+R^{2d - 2}q_!\left(\text{Tr}_{G, \mathit{flat}, n} \otimes
+\text{id}_{\mu_n^{\otimes d - 1}}\right)
+$$
+and this finishes the proof.
 \end{proof}
 
 
 
 
-There are several
-problems with this strategy:
-(a) why is there a quasi-finite morphism $g : X \to \mathbf{P}^d_Y$?
-(b) if such an $g$ exists, why is it flat?
-(c) why is the resulting trace map independent of $g$?
-The answer to (a) is negative, but we won't use the existence
-of global maps in the construction, only local ones.
-The answer to (b) is that it requires $X \to Y$ to be Cohen-Macaulay,
-see More on Morphisms, Lemma
-\ref{more-morphisms-lemma-flat-finite-presentation-characterize-CM}.
-The answer to (c) is that this holds because we may check on
-stalks where we reduce to the construction of
-Section \ref{section-trace-curves}.
 
 
 
