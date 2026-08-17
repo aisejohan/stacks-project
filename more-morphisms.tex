@@ -22436,6 +22436,51 @@ The final number is the rank of $f_*\mathcal{O}_X$ at $y$ as desired.
 \end{proof}
 
 \begin{lemma}
+\label{lemma-weighting-composition-flat-quasi-finite}
+Let $f : X \to Y$ and $g : Y \to Z$ be flat, locally quasi-finite,
+and locally of finite presentation. Let $w_f : X \to \mathbf{Z}$
+be the weighting of $f$ constructed in
+Lemma \ref{lemma-weighting-flat-quasi-finite} and let
+$w_g : Y \to \mathbf{Z}$ be a weighting of $g$ constructed in
+Lemma \ref{lemma-weighting-flat-quasi-finite}.
+Then $g \circ f$ is flat, locally quasi-finite, and
+locally of finite presentation and the function
+$$
+X \longrightarrow \mathbf{Z},\quad
+x \longmapsto w_f(x) w_g(f(x))
+$$
+is the weighting of $g \circ f$ constructed in
+Lemma \ref{lemma-weighting-flat-quasi-finite}.
+\end{lemma}
+
+\begin{proof}
+Let $x \in X$ have images $y \in Y$ and $z \in Z$. We have to show that
+$$
+\text{length}_{\mathcal{O}_{X, x}}
+(\mathcal{O}_{X, x}/\mathfrak m_z \mathcal{O}_{X, x})
+[\kappa(x) : \kappa(z)]_i
+$$
+is equal to the product
+$$
+\text{length}_{\mathcal{O}_{X, x}}
+(\mathcal{O}_{X, x}/\mathfrak m_y \mathcal{O}_{X, x})
+[\kappa(x) : \kappa(y)]_i
+\cdot
+\text{length}_{\mathcal{O}_{Y, y}}
+(\mathcal{O}_{Y, y}/\mathfrak m_z \mathcal{O}_{Y, y})
+[\kappa(y) : \kappa(z)]_i
+$$
+This follows from the multiplicativity of inseparable degrees
+(Fields, Lemma \ref{fields-lemma-multiplicativity-all-degrees})
+and
+Algebra, Lemma \ref{algebra-lemma-pullback-module}
+applied to the flat ring map
+$A = \mathcal{O}_{Y, y} \to \mathcal{O}_{X, x} = B$
+and the $A$-module
+$M = \mathcal{O}_{Y, y}/\mathfrak m_z \mathcal{O}_{Y, y}$.
+\end{proof}
+
+\begin{lemma}
 \label{lemma-weighting-quasi-finite-Noetherian}
 Let $f : X \to Y$ be a morphism of schemes. Assume
 \begin{enumerate}
