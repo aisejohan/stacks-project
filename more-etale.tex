@@ -6733,7 +6733,7 @@ the result of the lemma. Details omitted.
 Let $Y$ be a quasi-compact and quasi-separated scheme.
 Let $f : X \to Y$ be separated and of finite presentation
 with fibres of dimension $\leq d$. There exists a finite
-affine open covering $X = \bigcup U_i$ such that $f : U_i \to Y$
+affine open covering $X = \bigcup U_i$ such that $f|_{U_i} : U_i \to Y$
 factors as $U_i \to \mathbf{A}^d_Y \to Y$ where the first
 arrow is quasi-finite.
 \end{lemma}
@@ -6917,6 +6917,173 @@ $$
 and this finishes the proof.
 \end{proof}
 
+\begin{proposition}
+\label{proposition-flat-trace-map}
+Let $Y$ be a quasi-compact and quasi-separated scheme.
+Let $n \geq 1$ be invertible on $Y$. Let $d \geq 0$.
+Let $f : X \to Y$ be a flat, separated morphism of finite presentation
+of relative dimension $\leq d$. There exists a unique map
+$$
+\text{Tr}_{f, \mathit{flat}, n} :
+R^{2d}f_!\mu_n^{\otimes d}
+\longrightarrow
+\mathbf{Z}/n\mathbf{Z}
+$$
+with the following properties:
+\begin{enumerate}
+\item formation of $\text{Tr}_{f, \mathit{flat}, n}$ is compatible with
+base change by morphisms $Y' \to Y$ with
+$Y'$ quasi-compact and quasi-separated, and
+\item given a flat, quasi-finite morphism $g : X' \to X$ of
+finite presentation, setting $f' = f \circ g$, we have
+$\text{Tr}_{f', \mathit{flat}, n} =
+\text{Tr}_{f, \mathit{flat}, n} \circ \text{Tr}_g$ where
+$\text{Tr}_g$ is the ``flat'' covariance map
+of Remark \ref{remark-flat-covariance}, and
+\item if $X = \mathbf{A}^d_Y$ and $f$ is the structure morphism,
+then $\text{Tr}_{f, \mathit{flat}, n}$ equals the map $\text{Tr}_{d, Y, n}$
+constructed in Section \ref{section-trace-affine-space}.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Let $W \subset X$ be the locus where $f$ is Cohen-Macaulay. By
+More on Morphisms, Lemma
+\ref{more-morphisms-lemma-flat-finite-presentation-CM-open}
+this is a quasi-compact open dense in every fibre.
+If $g : X' \to X$ is as in (2) and $W' \subset X'$ is the
+locus where $f'$ is Cohen-Macaulay, then
+$W' = g^{-1}(W)$ by
+More on Morphisms, Lemma \ref{more-morphisms-lemma-composition-CM}
+(combined with the fact that a quasi-finite flat morphism
+is Cohen-Macaulay, see More on Morphisms, Lemma
+\ref{more-morphisms-lemma-quasi-finite-flat-CM}).
+Thus the covariance map for $W \subset X$ induces
+an isomorphism
+$R^{2d}(f|_W)_!\mu_n^{\otimes d} \to R^{2d}f_!\mu_n^{\otimes d}$
+by Lemma \ref{lemma-top-restrict-to-open}
+and this is compatible with base change and with ``flat'' covariance
+along morphisms $g$ as in part (2) of the statement of the lemma.
+It follows that it suffices to prove the existence and uniqueness
+of the maps for Cohen-Macaulay morphisms.
+
+\medskip\noindent
+If $f$ is a Cohen-Macaulay morphism, then we can
+write $X = X_d \amalg X_{<d}$ as a disjoint union of schemes
+where $X_d \to Y$ has relative dimension $d$ and $X_{< d} \to Y$
+has relative dimension $< d$, see 
+Morphisms, Lemma
+\ref{morphisms-lemma-flat-finite-presentation-CM-fibres-relative-dimension}.
+If $g : X' \to X$ is as in (2), then $g^{-1}(X_d)$ is the open of $X'$
+where $f'$ has relative dimension $d$.
+As in the previous paragraph, we reduce to proving the existence
+and uniqueness of the maps for Cohen-Macaulay morphisms of
+relative dimension $d$.
+
+\medskip\noindent
+Assume $f$ is Cohen-Macaulay of relative dimension $d$.
+Choose a finite open covering $X = U_1 \cup \ldots \cup U_r$
+such that each $U_i$ admits a quasi-finite morphism
+$g_i : U_i \to \mathbf{A}^d_Y$, see Lemma \ref{lemma-good-covering}.
+Set $f_i = f|_{U_i}$ and $f_{ii'} = f|_{U_{ii'}}$ where
+$U_{ii'} = U_i \cap U_{i'}$.
+By conditions (2) and (3) we are forced to let
+$\text{Tr}_{f_i, \mathit{flat}, n}$
+be the map (\ref{equation-trace-by-qf})
+constructed using $g_i$.
+Then we have two quasi-finite maps
+$g_i|_{U_{ii'}}, g_{i'}|_{U_{ii'}} : U_{ii'} \to \mathbf{A}^d_Y$
+but by Lemma \ref{lemma-switch-coordinates} the map
+(\ref{equation-trace-by-qf})
+constructed using either of these produces the same
+$\text{Tr}_{f_{ii'}, \mathit{flat}, n}$. It follows that the diagrams
+$$
+\xymatrix{
+R^{2d}f_{ii', !}\mu_n^{\otimes d} \ar[r] \ar[d]
+\ar[rd]^{\text{Tr}_{f_{ii'}, \mathit{flat}, n}} &
+R^{2d}f_{i', !}\mu_n^{\otimes d}
+\ar[d]^{\text{Tr}_{f_{i'}, \mathit{flat}, n}} \\
+R^{2d}f_{i, !}\mu_n^{\otimes d} \ar[r]^{\text{Tr}_{f_i, \mathit{flat}, n}} &
+\mathbf{Z}/n\mathbf{Z}
+}
+$$
+commute (this uses that ``flat'' covariance is compatible with compositions
+of flat quasi-finite morphisms). Thus we can use the canonical exact
+sequence of Lemma \ref{lemma-covering-right-exact}
+to get a unique map $\text{Tr}_{f, \mathit{flat}, n}$
+such that the diagrams
+$$
+\xymatrix{
+R^{2d}f_{i, !}\mu_n^{\otimes d} \ar[rr]
+\ar[rd]_{\text{Tr}_{f_i, \mathit{flat}, n}} & &
+R^{2d}f_!\mu_n^{\otimes d}
+\ar[ld]^{\text{Tr}_{f, \mathit{flat}, n}} \\
+&
+\mathbf{Z}/n\mathbf{Z}
+}
+$$
+commute. Moreover, this choice of $\text{Tr}_{f, \mathit{flat}, n}$
+is forced.
+
+\medskip\noindent
+The only remaining issue is to prove (2) for 
+flat, quasi-finite morphisms $g : X' \to X$ when both $f$ and $f'$
+are Cohen-Macaulay of relative dimension $d$.
+Let $X = U_1 \cup \ldots \cup U_r$ and $g_i : U_i \to \mathbf{A}^d_Y$
+be the data used to construct $\text{Tr}_{f, \mathit{flat}, n}$
+and let
+$X' = U'_1 \cup \ldots \cup U'_{r'}$ amd $g'_i : U'_i \to \mathbf{A}^d_Y$
+be the data used to construct $\text{Tr}_{f', \mathit{flat}, n}$.
+It is easy to see that we may refine the open covering
+of $X'$ without changing the resulting arrow
+$\text{Tr}_{f', \mathit{flat}, n}$.
+Thus we may assume that for every $i'$ there is an $i(i')$ such that
+$g(U'_{i'}) \subset U_{i(i')}$. It follows that we have
+commutative diagrams
+$$
+\xymatrix{
+R^{2d}f'_{i', !}\mu_n^{\otimes d} \ar[r]  \ar[d] &
+R^{2d}f_{i(i'), !}\mu_n^{\otimes d} \ar[d] \\
+R^{2d}f'_!\mu_n^{\otimes d} \ar[r] &
+R^{2d}f_!\mu_n^{\otimes d}
+}
+$$
+by the compatibility of flat covariance with composition.
+Here the top arrow is flat covariance with respect to the restriction
+$U'_{i'} \to U_{i(i')}$ of $g$. Since we have
+Lemma \ref{lemma-switch-coordinates}
+we know that the top horizontal arrow composed with
+$\text{Tr}_{f_{i(i')}, \mathit{flat}, n}$ is equal to
+$\text{Tr}_{f'_{i'}, \mathit{flat}, n}$.
+It follows from this that
+$\text{Tr}_{f', \mathit{flat}, n} =
+\text{Tr}_{f, \mathit{flat}, n} \circ \text{Tr}_g$
+and the proof is complete.
+\end{proof}
+
+\begin{lemma}
+\label{lemma-composition-flat-trace}
+Let $Z$ be a quasi-compact and quasi-separated scheme.
+Let $g : Y \to Z$ be a separated flat morphism of finite presentation
+and of relative dimension $\leq e$.
+Let $f : X \to Y$ be a separated flat morphism of finite presentation
+and of relative dimension $\leq d$.
+Then the composition
+\begin{align*}
+R^{2e + 2d}(g \circ f)_!\mu_n^{\otimes d + e}
+& =
+R^{2e}g_!\left(R^{2d}f_!\mu_n^{\otimes d} \otimes \mu_n^{\otimes e}\right) \\
+& \xrightarrow{R^{2e}g_!(\text{Tr}_{f, \mathit{flat}, n} \otimes \text{id})}
+R^{2e}g_!\mu_n^{\otimes e} \\
+& \xrightarrow{\text{Tr}_{g, \mathit{flat}, n}}
+\mathbf{Z}/n\mathbf{Z}
+\end{align*}
+is equal to $\text{Tr}_{g \circ f, \mathit{flat}, n}$.
+\end{lemma}
+
+\begin{proof}
+Omitted.
+\end{proof}
 
 
 
