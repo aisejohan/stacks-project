@@ -5844,6 +5844,19 @@ This follows directly from the definitions.
 \end{proof}
 
 \begin{lemma}
+\label{lemma-quasi-finite-flat-CM}
+Let $f : X \to Y$ be a locally quasi-finite morphism of schemes.
+If $f$ is flat at $x \in X$, then $f$ is Cohen-Macaulay at $x$.
+If $f$ is flat, then $f$ is Cohen-Macaulay.
+\end{lemma}
+
+\begin{proof}
+Let $y = f(x)$. Then $\mathcal{O}_{X_y, x}$
+is a zero dimensional Noetherian local ring
+and hence Cohen-Macaulay by definition.
+\end{proof}
+
+\begin{lemma}
 \label{lemma-CM-dimension}
 Let $f : X \to Y$ be a morphism of locally Noetherian schemes
 which is locally of finite type and Cohen-Macaulay.
@@ -5990,7 +6003,7 @@ $$
 Then
 \begin{enumerate}
 \item $W = \{x \in X \mid \mathcal{O}_{X_{f(x)}, x}\text{ is Cohen-Macaulay}\}$,
-\item $W$ is open in $X$,
+\item $W$ is (a) open in $X$ and (b) retrocompact in $X$,
 \item $W$ is dense in every fibre of $X \to S$,
 \item the formation of $W$ commutes with arbitrary base change of $f$:
 For any morphism $g : S' \to S$, consider
@@ -6002,12 +6015,27 @@ set $W'$ for the morphism $f'$ is equal to $W' = (g')^{-1}(W)$.
 
 \begin{proof}
 As $f$ is flat with locally Noetherian fibres the equality in (1) holds
-by definition. Parts (2) and (3) follow from
+by definition. Parts (2) (a) and (3) follow from
 Algebra, Lemma \ref{algebra-lemma-generic-CM-flat-finite-presentation}.
 Part (4) follows either from
 Algebra, Lemma \ref{algebra-lemma-CM-locus-commutes-base-change}
 or
 Varieties, Lemma \ref{varieties-lemma-CM-base-change}.
+
+\medskip\noindent
+Proof of (2)(b). It is enough to show that $W \cap U$ is
+quasi-compact for any affine open of $X$ which maps into
+and affine open of $S$ (since $X$ is covered by such $U$).
+Thus reduce to the affine case. Say $X \to S$ corresponds to
+the flat and finitely presented ring map $A \to B$.
+By Algebra, Lemma \ref{algebra-lemma-flat-finite-presentation-limit-flat}
+part (1) there exists a flat finite type ring homorphism $A_0 \to B_0$
+of Noetherian rings and a ring map $A_0 \to A$ such that
+$B = B_0 \otimes_{A_0} A$. Then the open $W_0 \subset X_0 = \Spec(B_0)$
+of the lemma for $X_0 \to S_0 = \Spec(A_0)$
+is quasi-compact (as $X_0$ is a Noetherian topological space).
+By (4) the open $W$ is the pullback of $W_0$ by the quasi-compact
+map $X \to X_0$. Thus $W$ is quasi-compact.
 \end{proof}
 
 \begin{lemma}
